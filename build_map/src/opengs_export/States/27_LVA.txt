@@ -1,0 +1,28 @@
+state={
+    id=27
+    name="STATE_LVA"
+    provinces={
+        564
+        565
+        566
+        567
+        568
+        569
+        570
+        571
+        572
+        573
+        574
+        575
+        576
+        577
+        578
+        579
+        580
+        581
+        582
+        583
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

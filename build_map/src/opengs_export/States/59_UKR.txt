@@ -1,0 +1,33 @@
+state={
+    id=59
+    name="STATE_UKR"
+    provinces={
+        2
+        4
+        6
+        7
+        8
+        146
+        468
+        471
+        472
+        475
+        490
+        498
+        501
+        502
+        505
+        535
+        657
+        659
+        981
+        982
+        983
+        984
+        985
+        986
+        1540
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

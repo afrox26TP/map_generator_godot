@@ -1,0 +1,29 @@
+state={
+    id=27
+    name="STATE_IT"
+    provinces={
+        61
+        62
+        93
+        143
+        144
+        145
+        169
+        170
+        171
+        172
+        173
+        174
+        175
+        176
+        190
+        191
+        192
+        193
+        194
+        195
+        196
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

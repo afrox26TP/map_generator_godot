@@ -1,0 +1,26 @@
+state={
+    id=8
+    name="STATE_BIH"
+    provinces={
+        356
+        357
+        424
+        430
+        432
+        435
+        436
+        438
+        439
+        440
+        442
+        445
+        606
+        607
+        608
+        609
+        610
+        611
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

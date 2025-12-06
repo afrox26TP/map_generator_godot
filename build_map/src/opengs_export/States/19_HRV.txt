@@ -1,0 +1,27 @@
+state={
+    id=19
+    name="STATE_HRV"
+    provinces={
+        382
+        383
+        384
+        385
+        386
+        387
+        388
+        389
+        390
+        391
+        392
+        393
+        394
+        395
+        396
+        397
+        398
+        399
+        400
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

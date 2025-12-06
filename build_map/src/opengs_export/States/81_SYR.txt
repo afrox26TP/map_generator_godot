@@ -1,0 +1,23 @@
+state={
+    id=81
+    name="STATE_SYR"
+    provinces={
+        10
+        24
+        25
+        26
+        618
+        620
+        622
+        626
+        627
+        674
+        675
+        686
+        743
+        1348
+        1980
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

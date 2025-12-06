@@ -1,0 +1,9 @@
+state={
+    id=29
+    name="STATE_LU"
+    provinces={
+        179
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

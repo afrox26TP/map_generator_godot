@@ -1,0 +1,20 @@
+state={
+    id=34
+    name="STATE_NLD"
+    provinces={
+        1016
+        1017
+        1018
+        1019
+        1020
+        1021
+        1022
+        1023
+        1024
+        1025
+        1026
+        1027
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

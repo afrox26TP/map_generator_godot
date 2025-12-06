@@ -1,0 +1,12 @@
+state={
+    id=30
+    name="STATE_MNE"
+    provinces={
+        606
+        607
+        608
+        609
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

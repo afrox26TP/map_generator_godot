@@ -1,0 +1,18 @@
+state={
+    id=35
+    name="STATE_NL"
+    provinces={
+        78
+        79
+        138
+        139
+        140
+        141
+        142
+        226
+        227
+        228
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

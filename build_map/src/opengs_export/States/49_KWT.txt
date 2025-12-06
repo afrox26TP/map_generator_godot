@@ -1,0 +1,14 @@
+state={
+    id=49
+    name="STATE_KWT"
+    provinces={
+        327
+        684
+        866
+        867
+        868
+        1606
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

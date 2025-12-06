@@ -1,0 +1,21 @@
+state={
+    id=74
+    name="STATE_SAU"
+    provinces={
+        308
+        677
+        680
+        688
+        690
+        692
+        855
+        856
+        857
+        1459
+        1460
+        1461
+        1462
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

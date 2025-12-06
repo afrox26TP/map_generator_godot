@@ -1,0 +1,15 @@
+state={
+    id=12
+    name="STATE_BLR"
+    provinces={
+        16
+        18
+        28
+        31
+        589
+        1647
+        1976
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

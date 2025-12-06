@@ -1,0 +1,14 @@
+state={
+    id=50
+    name="STATE_LBN"
+    provinces={
+        8
+        9
+        22
+        23
+        1073
+        1074
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

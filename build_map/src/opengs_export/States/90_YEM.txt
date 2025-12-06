@@ -1,0 +1,21 @@
+state={
+    id=90
+    name="STATE_YEM"
+    provinces={
+        687
+        689
+        691
+        693
+        858
+        859
+        860
+        1290
+        1291
+        1292
+        1293
+        1294
+        1972
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

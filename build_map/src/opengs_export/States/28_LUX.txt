@@ -1,0 +1,11 @@
+state={
+    id=28
+    name="STATE_LUX"
+    provinces={
+        776
+        777
+        778
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

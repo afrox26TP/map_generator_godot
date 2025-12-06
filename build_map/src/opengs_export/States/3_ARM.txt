@@ -1,0 +1,19 @@
+state={
+    id=3
+    name="STATE_ARM"
+    provinces={
+        115
+        117
+        118
+        124
+        127
+        128
+        133
+        534
+        535
+        1236
+        1237
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

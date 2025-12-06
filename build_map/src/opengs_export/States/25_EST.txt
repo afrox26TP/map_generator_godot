@@ -1,0 +1,23 @@
+state={
+    id=25
+    name="STATE_EST"
+    provinces={
+        41
+        44
+        46
+        49
+        732
+        733
+        734
+        735
+        1023
+        1024
+        1025
+        1275
+        1276
+        1631
+        1632
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

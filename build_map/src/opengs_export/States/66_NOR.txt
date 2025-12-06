@@ -1,0 +1,28 @@
+state={
+    id=66
+    name="STATE_NOR"
+    provinces={
+        79
+        81
+        84
+        85
+        86
+        89
+        90
+        93
+        1042
+        1043
+        1044
+        1045
+        1046
+        1047
+        1048
+        1049
+        1050
+        1051
+        1280
+        1510
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

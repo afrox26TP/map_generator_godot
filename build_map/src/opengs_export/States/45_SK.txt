@@ -1,0 +1,12 @@
+state={
+    id=45
+    name="STATE_SK"
+    provinces={
+        272
+        273
+        274
+        275
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

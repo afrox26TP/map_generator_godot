@@ -1,0 +1,9 @@
+state={
+    id=82
+    name="STATE_TCD"
+    provinces={
+        696
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

@@ -1,0 +1,21 @@
+state={
+    id=7
+    name="STATE_CHE"
+    provinces={
+        78
+        79
+        80
+        81
+        82
+        83
+        84
+        85
+        86
+        87
+        88
+        89
+        90
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

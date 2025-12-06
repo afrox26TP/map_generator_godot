@@ -1,0 +1,15 @@
+state={
+    id=70
+    name="STATE_QAT"
+    provinces={
+        307
+        861
+        862
+        863
+        864
+        865
+        1529
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

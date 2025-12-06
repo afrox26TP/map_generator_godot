@@ -1,0 +1,10 @@
+state={
+    id=69
+    name="STATE_PSX"
+    provinces={
+        3
+        5
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

@@ -1,0 +1,12 @@
+state={
+    id=8
+    name="STATE_CYP"
+    provinces={
+        91
+        92
+        93
+        94
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

@@ -1,0 +1,29 @@
+state={
+    id=62
+    name="STATE_MNE"
+    provinces={
+        412
+        425
+        427
+        428
+        429
+        431
+        484
+        485
+        486
+        487
+        542
+        543
+        544
+        545
+        1087
+        1088
+        1535
+        1536
+        1537
+        1538
+        1539
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

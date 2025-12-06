@@ -1,0 +1,13 @@
+state={
+    id=83
+    name="STATE_TKM"
+    provinces={
+        615
+        616
+        617
+        646
+        652
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

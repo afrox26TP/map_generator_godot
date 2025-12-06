@@ -1,0 +1,21 @@
+state={
+    id=17
+    name="STATE_EL"
+    provinces={
+        55
+        56
+        57
+        58
+        59
+        74
+        80
+        81
+        124
+        125
+        126
+        127
+        128
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

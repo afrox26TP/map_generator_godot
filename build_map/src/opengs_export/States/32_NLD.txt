@@ -1,0 +1,23 @@
+state={
+    id=32
+    name="STATE_NLD"
+    provinces={
+        181
+        183
+        184
+        186
+        187
+        351
+        353
+        905
+        906
+        907
+        912
+        915
+        990
+        1200
+        1201
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

@@ -1,0 +1,12 @@
+state={
+    id=19
+    name="STATE_FI"
+    provinces={
+        94
+        95
+        96
+        197
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

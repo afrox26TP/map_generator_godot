@@ -1,0 +1,19 @@
+state={
+    id=4
+    name="STATE_BEL"
+    provinces={
+        22
+        23
+        24
+        25
+        26
+        27
+        28
+        29
+        30
+        31
+        32
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

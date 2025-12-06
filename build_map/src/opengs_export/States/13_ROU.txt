@@ -1,0 +1,9 @@
+state={
+    id=13
+    name="STATE_ROU"
+    provinces={
+        13
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

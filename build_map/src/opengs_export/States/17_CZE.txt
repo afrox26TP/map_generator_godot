@@ -1,0 +1,22 @@
+state={
+    id=17
+    name="STATE_CZE"
+    provinces={
+        34
+        36
+        37
+        39
+        40
+        203
+        205
+        206
+        207
+        215
+        509
+        1973
+        1974
+        1975
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

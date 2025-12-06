@@ -1,0 +1,13 @@
+state={
+    id=34
+    name="STATE_GRL"
+    provinces={
+        1182
+        1183
+        1184
+        1185
+        1186
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

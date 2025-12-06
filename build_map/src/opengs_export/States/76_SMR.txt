@@ -1,0 +1,17 @@
+state={
+    id=76
+    name="STATE_SMR"
+    provinces={
+        316
+        318
+        319
+        321
+        322
+        323
+        324
+        325
+        326
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

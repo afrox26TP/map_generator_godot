@@ -1,0 +1,18 @@
+state={
+    id=37
+    name="STATE_LTU"
+    provinces={
+        10
+        11
+        13
+        40
+        44
+        46
+        50
+        166
+        494
+        1187
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

@@ -1,0 +1,13 @@
+state={
+    id=15
+    name="STATE_DK"
+    provinces={
+        35
+        112
+        113
+        114
+        115
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

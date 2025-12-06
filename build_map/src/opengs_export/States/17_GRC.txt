@@ -1,0 +1,22 @@
+state={
+    id=17
+    name="STATE_GRC"
+    provinces={
+        149
+        150
+        287
+        457
+        807
+        808
+        809
+        810
+        811
+        812
+        922
+        923
+        956
+        957
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

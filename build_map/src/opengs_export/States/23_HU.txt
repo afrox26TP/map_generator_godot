@@ -1,0 +1,15 @@
+state={
+    id=23
+    name="STATE_HU"
+    provinces={
+        118
+        119
+        120
+        121
+        158
+        159
+        160
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

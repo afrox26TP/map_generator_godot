@@ -1,0 +1,26 @@
+state={
+    id=26
+    name="STATE_FIN"
+    provinces={
+        92
+        269
+        270
+        271
+        272
+        274
+        1027
+        1028
+        1029
+        1030
+        1031
+        1955
+        1956
+        1957
+        1958
+        1959
+        1960
+        1961
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

@@ -1,0 +1,24 @@
+state={
+    id=12
+    name="STATE_DEU"
+    provinces={
+        13
+        16
+        71
+        74
+        119
+        201
+        204
+        380
+        459
+        461
+        872
+        873
+        1210
+        1211
+        1212
+        1213
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

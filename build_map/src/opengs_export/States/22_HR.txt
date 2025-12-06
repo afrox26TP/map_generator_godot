@@ -1,0 +1,11 @@
+state={
+    id=22
+    name="STATE_HR"
+    provinces={
+        156
+        157
+        293
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

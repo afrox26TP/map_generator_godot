@@ -1,0 +1,12 @@
+state={
+    id=87
+    name="STATE_UZB"
+    provinces={
+        649
+        651
+        653
+        654
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

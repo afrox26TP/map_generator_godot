@@ -1,0 +1,14 @@
+state={
+    id=42
+    name="STATE_ISR"
+    provinces={
+        2
+        4
+        6
+        7
+        776
+        871
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

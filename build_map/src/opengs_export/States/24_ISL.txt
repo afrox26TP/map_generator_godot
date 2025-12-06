@@ -1,0 +1,17 @@
+state={
+    id=24
+    name="STATE_ISL"
+    provinces={
+        724
+        725
+        726
+        727
+        728
+        729
+        730
+        731
+        732
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

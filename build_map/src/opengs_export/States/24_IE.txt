@@ -1,0 +1,11 @@
+state={
+    id=24
+    name="STATE_IE"
+    provinces={
+        90
+        91
+        122
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

@@ -1,0 +1,24 @@
+state={
+    id=36
+    name="STATE_POL"
+    provinces={
+        1048
+        1049
+        1050
+        1051
+        1052
+        1053
+        1054
+        1055
+        1056
+        1057
+        1058
+        1059
+        1060
+        1061
+        1062
+        1063
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

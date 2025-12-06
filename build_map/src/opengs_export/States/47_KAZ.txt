@@ -1,0 +1,22 @@
+state={
+    id=47
+    name="STATE_KAZ"
+    provinces={
+        27
+        151
+        152
+        647
+        648
+        650
+        658
+        662
+        663
+        668
+        672
+        1920
+        1921
+        1978
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

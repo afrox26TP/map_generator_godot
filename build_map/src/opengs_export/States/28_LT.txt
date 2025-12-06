@@ -1,0 +1,10 @@
+state={
+    id=28
+    name="STATE_LT"
+    provinces={
+        177
+        178
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

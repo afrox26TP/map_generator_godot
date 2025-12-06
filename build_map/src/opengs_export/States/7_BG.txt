@@ -1,0 +1,14 @@
+state={
+    id=7
+    name="STATE_BG"
+    provinces={
+        5
+        6
+        18
+        19
+        20
+        21
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

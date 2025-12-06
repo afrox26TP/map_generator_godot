@@ -1,0 +1,16 @@
+state={
+    id=57
+    name="STATE_TUN"
+    provinces={
+        522
+        601
+        602
+        603
+        604
+        605
+        606
+        987
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

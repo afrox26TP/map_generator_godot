@@ -1,0 +1,16 @@
+state={
+    id=18
+    name="STATE_GEO"
+    provinces={
+        503
+        504
+        505
+        506
+        507
+        508
+        509
+        510
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

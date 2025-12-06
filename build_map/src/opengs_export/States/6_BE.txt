@@ -1,0 +1,17 @@
+state={
+    id=6
+    name="STATE_BE"
+    provinces={
+        11
+        12
+        13
+        14
+        15
+        16
+        17
+        36
+        37
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

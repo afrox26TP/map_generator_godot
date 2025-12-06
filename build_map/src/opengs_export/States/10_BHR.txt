@@ -1,0 +1,13 @@
+state={
+    id=10
+    name="STATE_BHR"
+    provinces={
+        1281
+        1282
+        1283
+        1284
+        1289
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

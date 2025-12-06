@@ -1,0 +1,25 @@
+state={
+    id=18
+    name="STATE_ES"
+    provinces={
+        38
+        39
+        40
+        41
+        42
+        43
+        60
+        82
+        83
+        84
+        85
+        86
+        87
+        88
+        89
+        116
+        117
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

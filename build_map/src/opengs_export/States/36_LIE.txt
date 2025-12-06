@@ -1,0 +1,19 @@
+state={
+    id=36
+    name="STATE_LIE"
+    provinces={
+        176
+        177
+        178
+        179
+        180
+        181
+        182
+        183
+        184
+        354
+        355
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

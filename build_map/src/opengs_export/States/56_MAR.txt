@@ -1,0 +1,24 @@
+state={
+    id=56
+    name="STATE_MAR"
+    provinces={
+        11
+        13
+        14
+        146
+        315
+        706
+        707
+        845
+        846
+        847
+        848
+        849
+        850
+        851
+        1533
+        1534
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

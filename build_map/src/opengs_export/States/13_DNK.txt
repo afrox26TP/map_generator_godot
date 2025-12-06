@@ -1,0 +1,13 @@
+state={
+    id=13
+    name="STATE_DNK"
+    provinces={
+        120
+        874
+        875
+        887
+        888
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

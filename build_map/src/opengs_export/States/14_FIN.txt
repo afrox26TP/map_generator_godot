@@ -1,0 +1,26 @@
+state={
+    id=14
+    name="STATE_FIN"
+    provinces={
+        191
+        192
+        193
+        194
+        195
+        196
+        197
+        198
+        199
+        200
+        201
+        202
+        203
+        204
+        205
+        206
+        207
+        208
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

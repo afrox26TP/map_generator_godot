@@ -1,0 +1,29 @@
+state={
+    id=42
+    name="STATE_SWE"
+    provinces={
+        60
+        62
+        63
+        67
+        68
+        71
+        764
+        765
+        766
+        767
+        768
+        769
+        770
+        771
+        772
+        773
+        981
+        1106
+        1107
+        1108
+        1109
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

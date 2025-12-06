@@ -1,0 +1,26 @@
+state={
+    id=15
+    name="STATE_FIN"
+    provinces={
+        216
+        217
+        218
+        219
+        220
+        221
+        222
+        223
+        224
+        225
+        226
+        227
+        228
+        229
+        230
+        231
+        232
+        233
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

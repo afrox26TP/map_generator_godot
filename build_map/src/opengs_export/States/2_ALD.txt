@@ -1,0 +1,19 @@
+state={
+    id=2
+    name="STATE_ALD"
+    provinces={
+        963
+        964
+        965
+        966
+        967
+        968
+        972
+        973
+        974
+        978
+        979
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

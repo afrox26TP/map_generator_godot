@@ -1,0 +1,26 @@
+state={
+    id=40
+    name="STATE_IRQ"
+    provinces={
+        217
+        220
+        328
+        329
+        628
+        631
+        633
+        634
+        678
+        679
+        685
+        815
+        816
+        1922
+        1923
+        1924
+        1925
+        1926
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

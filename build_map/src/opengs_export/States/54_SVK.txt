@@ -1,0 +1,16 @@
+state={
+    id=54
+    name="STATE_SVK"
+    provinces={
+        120
+        123
+        147
+        413
+        414
+        415
+        418
+        421
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

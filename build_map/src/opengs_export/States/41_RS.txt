@@ -1,0 +1,12 @@
+state={
+    id=41
+    name="STATE_RS"
+    provinces={
+        221
+        222
+        223
+        243
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

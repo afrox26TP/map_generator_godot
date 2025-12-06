@@ -1,0 +1,9 @@
+state={
+    id=33
+    name="STATE_MK"
+    provinces={
+        77
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

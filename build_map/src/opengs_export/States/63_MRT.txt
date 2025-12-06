@@ -1,0 +1,14 @@
+state={
+    id=63
+    name="STATE_MRT"
+    provinces={
+        699
+        708
+        709
+        725
+        726
+        852
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

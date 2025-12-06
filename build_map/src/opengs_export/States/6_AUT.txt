@@ -1,0 +1,17 @@
+state={
+    id=6
+    name="STATE_AUT"
+    provinces={
+        214
+        216
+        222
+        234
+        235
+        330
+        332
+        462
+        1663
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

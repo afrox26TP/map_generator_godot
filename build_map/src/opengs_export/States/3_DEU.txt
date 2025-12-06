@@ -1,0 +1,10 @@
+state={
+    id=3
+    name="STATE_DEU"
+    provinces={
+        2
+        3
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

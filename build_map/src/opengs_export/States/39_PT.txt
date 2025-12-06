@@ -1,0 +1,14 @@
+state={
+    id=39
+    name="STATE_PT"
+    provinces={
+        161
+        162
+        183
+        184
+        216
+        217
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

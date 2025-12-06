@@ -1,0 +1,28 @@
+state={
+    id=35
+    name="STATE_PRT"
+    provinces={
+        378
+        379
+        578
+        580
+        581
+        583
+        585
+        586
+        589
+        590
+        878
+        879
+        880
+        881
+        882
+        883
+        884
+        921
+        955
+        1199
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

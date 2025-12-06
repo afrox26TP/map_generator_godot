@@ -1,0 +1,9 @@
+state={
+    id=16
+    name="STATE_TUR"
+    provinces={
+        30
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

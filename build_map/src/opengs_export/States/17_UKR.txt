@@ -1,0 +1,9 @@
+state={
+    id=17
+    name="STATE_UKR"
+    provinces={
+        31
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000

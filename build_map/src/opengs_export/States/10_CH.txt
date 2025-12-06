@@ -1,0 +1,13 @@
+state={
+    id=10
+    name="STATE_CH"
+    provinces={
+        7
+        44
+        45
+        46
+        47
+    }
+}
+manpower=0
+buildings_max_level_factor=1.000
