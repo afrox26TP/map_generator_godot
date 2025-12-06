@@ -1,9 +1,0 @@
-state={
-    id=22
-    name="STATE_ERI"
-    provinces={
-        730
-    }
-}
-manpower=0
-buildings_max_level_factor=1.000

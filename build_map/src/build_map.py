@@ -254,6 +254,10 @@ debug("PART 4 DONE")
 debug("Starting export...")
 
 from export_to_opengs import run_export
+
+# předá provinces + voronoi sea regions
 run_export(land, final_regions)
+
+
 
 debug("Export complete.")
