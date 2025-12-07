@@ -1,0 +1,9 @@
+geopandas
+shapely
+pyproj
+rtree
+numpy
+pandas
+matplotlib
+scikit-learn
+pillow
