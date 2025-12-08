@@ -1,0 +1,10 @@
+state={
+    id=30
+    name="STATE_MNE"
+    provinces={
+        606
+        607
+        608
+        609
+    }
+}

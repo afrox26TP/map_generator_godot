@@ -10,6 +10,7 @@ from export_theme_map import (
     export_population_map,
     export_ideology_map,
 )
+from import_population import generate_population_dataset
 
 
 # --------------------------------------------------------
@@ -227,6 +228,22 @@ def export_provinces_txt(province_colors, id_map, land):
     print(f"[EXPORT] Provinces.txt written ({len(rows)} entries).")
 
 
+def write_population_txt(rows, debug_rows, path):
+    debug_map = {r["province_id"]: r for r in debug_rows}
+    with open(path, "w", encoding="utf-8") as f:
+        f.write("id;population;population_source;population_date;source_region;source_country;match_method\n")
+        for r in rows:
+            pid = r["province_id"]
+            pop = r["population"] if r["population"] != "" else 0
+            pop_date = r.get("population_date", "")
+            source = r.get("population_source", "")
+            d = debug_map.get(pid, {})
+            f.write(
+                f"{pid};{pop};{source};{pop_date};"
+                f"{d.get('source_region','')};{d.get('source_country','')};{d.get('match_method','')}\n"
+            )
+
+
 # --------------------------------------------------------
 # MAIN EXPORT
 # --------------------------------------------------------
@@ -246,11 +263,36 @@ def run_export(land, sea_regions):
     max_pid = int(id_map.max())
     print(f"[DEBUG] MAX PID DETECTED = {max_pid}")
 
+    print("[EXPORT] Population CSV + map colors...")
+    pop_values, rows, unmatched, debug_rows = generate_population_dataset(
+        land,
+        out_path=os.path.join(OUT, "Population.csv"),
+        debug_path=os.path.join(OUT, "Population_debug.csv"),
+    )
+    if unmatched:
+        print(f"[WARN] Population unmatched regions: {len(unmatched)} (showing up to 5)")
+        for name, country in unmatched[:5]:
+            print(f" - {name} ({country})")
+    write_population_txt(rows, debug_rows, os.path.join(OUT, "Population.txt"))
+
+    land_areas = {
+        pid: land.loc[pid].geometry.area / 1_000_000
+        for pid in land.index
+        if land.loc[pid].geometry.area > 0
+    }
+
     print("[EXPORT] GDP Map...")
     export_gdp_map(id_map, sea_regions, bounds, max_pid=max_pid)
 
     print("[EXPORT] Population Map...")
-    export_population_map(id_map, sea_regions, bounds, max_pid=max_pid)
+    export_population_map(
+        id_map,
+        sea_regions,
+        bounds,
+        population=pop_values,
+        land_areas=land_areas,
+        max_pid=max_pid,
+    )
 
     print("[EXPORT] Ideology Map...")
     export_ideology_map(id_map, sea_regions, bounds, max_pid=max_pid)

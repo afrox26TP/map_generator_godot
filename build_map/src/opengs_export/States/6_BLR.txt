@@ -1,0 +1,12 @@
+state={
+    id=6
+    name="STATE_BLR"
+    provinces={
+        72
+        73
+        74
+        75
+        76
+        77
+    }
+}

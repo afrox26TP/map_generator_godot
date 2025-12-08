@@ -1,0 +1,14 @@
+state={
+    id=38
+    name="STATE_SVK"
+    provinces={
+        797
+        798
+        799
+        800
+        801
+        802
+        803
+        804
+    }
+}

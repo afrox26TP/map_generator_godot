@@ -1,0 +1,6 @@
+{
+    "id": "population",
+    "name": "Population",
+    "description": "Population density map",
+    "map_file": "PopulationMap.png"
+}

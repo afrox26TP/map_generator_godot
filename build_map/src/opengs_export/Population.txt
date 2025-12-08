@@ -1,0 +1,928 @@
+id;population;population_source;population_date;source_region;source_country;match_method
+0;109585;matched;2022-01-01;Dibër County;Albania;matched
+1;72768;matched;2022-01-01;Kukës County;Albania;matched
+2;197303;matched;2022-01-01;Korçë County;Albania;matched
+3;259112;matched;2022-01-01;Elbasan County;Albania;matched
+4;55278;matched;2022-01-01;Gjirokastër County;Albania;matched
+5;184955;matched;2022-01-01;Vlorë County;Albania;matched
+6;193009;matched;2022-01-01;Shkodër County;Albania;matched
+7;278413;matched;2022-01-01;Fier County;Albania;matched
+8;919511;matched;2022-01-01;Tirana County;Albania;matched
+9;117283;matched;2022-01-01;Lezhë County;Albania;matched
+10;115050;matched;2022-01-01;Berat County;Albania;matched
+11;1684287;matched;2020-01-01;Lower Austria;Austria;matched
+12;1490279;matched;2020-01-01;Upper Austria;Austria;matched
+13;294436;matched;2020-01-01;Burgenland;Austria;matched
+14;404963;matched;2022-06-30;Vorarlberg;Austria;matched
+15;757634;matched;2020-01-01;Tyrol;Austria;matched
+16;558410;matched;2020-01-01;Salzburg;Austria;matched
+17;561293;matched;2020-01-01;Carinthia;Austria;matched
+18;1246395;matched;2020-01-01;Styria;Austria;matched
+19;6864785;filled_country;;;;unmatched
+20;6864786;filled_country;;;;unmatched
+21;6864787;filled_country;;;;unmatched
+22;6864788;filled_country;;;;unmatched
+23;6864789;filled_country;;;;unmatched
+24;6864790;filled_country;;;;unmatched
+25;6864791;filled_country;;;;unmatched
+26;6864792;filled_country;;;;unmatched
+27;6864766;fuzzy_contain;2025-01-01;Flemish Region;Belgium;fuzzy_contain
+28;6864794;filled_country;;;;unmatched
+29;388919;matched;2024-12-31;Burgas;Bulgaria;matched
+30;105429;matched;2024-12-31;Yambol;Bulgaria;matched
+31;207356;matched;2024-12-31;Haskovo;Bulgaria;matched
+32;70542;matched;2024-12-31;Vidin;Bulgaria;matched
+33;109886;matched;2024-12-31;Pernik;Bulgaria;matched
+34;224701;matched;2024-12-31;Sofia Oblast;Bulgaria;matched
+35;112737;matched;2024-12-31;Montana Oblast;Bulgaria;matched
+36;106131;matched;2024-12-31;Kyustendil;Bulgaria;matched
+37;286333;matched;2024-12-31;Blagoevgrad;Bulgaria;matched
+38;93549;matched;2024-12-31;Silistra;Bulgaria;matched
+39;186093;matched;2024-12-31;Ruse;Bulgaria;matched
+40;145207;matched;2024-12-31;Dobrich;Bulgaria;matched
+41;146002;matched;2024-12-31;Vratsa;Bulgaria;matched
+42;215326;matched;2024-12-31;Pleven;Bulgaria;matched
+43;200413;matched;2024-12-31;Veliko Tarnovo;Bulgaria;matched
+44;149478;matched;2024-12-31;Kardzhali;Bulgaria;matched
+45;90534;matched;2024-12-31;Smolyan;Bulgaria;matched
+46;437521;matched;2024-12-31;Varna;Bulgaria;matched
+47;635630;matched;2024-12-31;Plovdiv;Bulgaria;matched
+48;288736;matched;2024-12-31;Stara Zagora;Bulgaria;matched
+49;169299;matched;2024-12-31;Sliven;Bulgaria;matched
+50;149279;matched;2024-12-31;Shumen;Bulgaria;matched
+51;99459;matched;2024-12-31;Razgrad;Bulgaria;matched
+52;94735;matched;2024-12-31;Targovishte;Bulgaria;matched
+53;93817;matched;2024-12-31;Gabrovo;Bulgaria;matched
+54;223494;matched;2024-12-31;Pazardzhik;Bulgaria;matched
+55;110823;matched;2024-12-31;Lovech;Bulgaria;matched
+56;149335;filled_country;;;;unmatched
+57;2219277;filled_country;;;;unmatched
+58;2219278;filled_country;;;;unmatched
+59;2219279;filled_country;;;;unmatched
+60;2219280;filled_country;;;;unmatched
+61;2219281;filled_country;;;;unmatched
+62;2219282;filled_country;;;;unmatched
+63;2219283;filled_country;;;;unmatched
+64;2219284;filled_country;;;;unmatched
+65;2219285;filled_country;;;;unmatched
+66;2219286;filled_country;;;;unmatched
+67;2219287;filled_country;;;;unmatched
+68;2219220;matched;2013-01-01;Federation of Bosnia and Herzegovina;Bosnia and Herzegovina;matched
+69;2219289;filled_country;;;;unmatched
+70;2219290;filled_country;;;;unmatched
+71;2219291;filled_country;;;;unmatched
+72;1327973;matched;2025-01-01;Gomel Region;Belarus;matched
+73;1299912;matched;2025-01-01;Brest Region;Belarus;matched
+74;1072063;matched;2025-01-01;Vitebsk Region;Belarus;matched
+75;984880;matched;2025-01-01;Grodno Region;Belarus;matched
+76;971365;matched;2025-01-01;Mogilev region;Belarus;matched
+77;1456357;matched;2025-01-01;Minsk Region;Belarus;matched
+78;343955;fuzzy_contain;2018-12-31;Canton of Valais;Switzerland;fuzzy_contain
+79;353343;fuzzy_contain;2018-12-31;Canton of Ticino;Switzerland;fuzzy_contain
+80;198379;fuzzy_contain;2018-12-31;Canton of the Grisons;Switzerland;fuzzy_contain
+81;276472;fuzzy_contain;2018-12-31;Canton of Thurgau;Switzerland;fuzzy_contain
+82;1520968;fuzzy_contain;2018-12-31;Canton of Zürich;Switzerland;fuzzy_contain
+83;678207;fuzzy_contain;2018-12-31;Canton of Aargau;Switzerland;fuzzy_contain
+84;507697;fuzzy_contain;2018-12-31;Canton of St. Gallen;Switzerland;fuzzy_contain
+85;273194;fuzzy_contain;2018-12-31;Canton of Solothurn;Switzerland;fuzzy_contain
+86;799145;fuzzy_contain;2018-12-31;Canton of Vaud;Switzerland;fuzzy_contain
+87;1034977;fuzzy_contain;2018-12-31;Canton of Berne;Switzerland;fuzzy_contain
+88;409557;fuzzy_contain;2018-12-31;Canton of Lucerne;Switzerland;fuzzy_contain
+89;36433;fuzzy_contain;2018-12-31;Canton of Uri;Switzerland;fuzzy_contain
+90;318714;fuzzy_contain;2018-12-31;Canton of Fribourg;Switzerland;fuzzy_contain
+91;46629;matched;2011-01-01;Famagusta District;Cyprus;matched
+92;326980;matched;2011-01-01;Nicosia District;Cyprus;matched
+93;235330;matched;2011-01-01;Limassol District;Cyprus;matched
+94;88276;matched;2011-01-01;Paphos District;Cyprus;matched
+95;808356;matched;2025-01-01;Ústí nad Labem Region;Czech Republic;matched
+96;449494;matched;2025-01-01;Liberec Region;Czech Republic;matched
+97;293195;matched;2025-01-01;Karlovy Vary Region;Czech Republic;matched
+98;614640;matched;2025-01-01;Plzeň Region;Czech Republic;matched
+99;653227;matched;2025-01-01;South Bohemian Region;Czech Republic;matched
+100;555923;matched;2025-01-01;Hradec Králové Region;Czech Republic;matched
+101;631500;matched;2025-01-01;Olomouc Region;Czech Republic;matched
+102;530469;matched;2025-01-01;Pardubice Region;Czech Republic;matched
+103;1189204;matched;2024-01-01;Moravian-Silesian Region;Czech Republic;matched
+104;1229343;matched;2025-01-01;South Moravian Region;Czech Republic;matched
+105;578998;matched;2025-01-01;Zlín Region;Czech Republic;matched
+106;517647;matched;2025-01-01;Vysočina Region;Czech Republic;matched
+107;1455940;matched;2024-01-01;Central Bohemian Region;Czech Republic;matched
+108;4089467;matched;2023-12-31;Saxony;Germany;matched
+109;13124737;matched;2022-01-01;Bavaria;Germany;matched
+110;4094169;matched;2022-01-01;Rhineland-Palatinate;Germany;matched
+111;1017567;matched;2022-01-01;Saarland;Germany;matched
+112;2953270;matched;2022-12-31;Schleswig-Holstein;Germany;matched
+113;8003421;matched;2022-01-01;Lower Saxony;Germany;matched
+114;17932651;matched;2022-01-01;North Rhine-Westphalia;Germany;matched
+115;11104040;matched;2022-01-01;Baden-Württemberg;Germany;matched
+116;2534075;matched;2022-01-01;Brandenburg;Germany;matched
+117;1570817;matched;2022-01-01;Mecklenburg-Vorpommern;Germany;matched
+118;5507777;matched;2022-01-01;Hesse;Germany;matched
+119;2161000;matched;2022-01-01;Thuringia;Germany;matched
+120;2245470;matched;2022-01-01;Saxony-Anhalt;Germany;matched
+121;1223894;matched;2019-10-01;Southern Denmark;Denmark;matched
+122;1326913;matched;2019-10-01;Central Denmark;Denmark;matched
+123;1275526;filled_country;;;;unmatched
+124;837087;matched;2019-10-01;Region Zealand;Denmark;matched
+125;1848989;fuzzy_contain;2019-10-01;Capital Region of Denmark;Denmark;fuzzy_contain
+126;678338;matched;2024-01-01;Navarre;Spain;matched
+127;1262373;filled_country;;;;unmatched
+128;1262374;filled_country;;;;unmatched
+129;1262375;filled_country;;;;unmatched
+130;1262376;filled_country;;;;unmatched
+131;1262377;filled_country;;;;unmatched
+132;1262378;filled_country;;;;unmatched
+133;1262379;filled_country;;;;unmatched
+134;1262380;filled_country;;;;unmatched
+135;1262381;filled_country;;;;unmatched
+136;1262382;filled_country;;;;unmatched
+137;1262383;filled_country;;;;unmatched
+138;1262384;filled_country;;;;unmatched
+139;1262385;filled_country;;;;unmatched
+140;1347834;fuzzy_contain;2024-01-01;Aragon;Spain;fuzzy_contain
+141;1262387;filled_country;;;;unmatched
+142;5316541;fuzzy_contain;2024-01-01;Valencian Community;Spain;fuzzy_contain
+143;1262389;filled_country;;;;unmatched
+144;1571933;fuzzy_contain;2024-01-01;Region of Murcia;Spain;fuzzy_contain
+145;1262391;filled_country;;;;unmatched
+146;1262392;filled_country;;;;unmatched
+147;1262393;filled_country;;;;unmatched
+148;1262394;filled_country;;;;unmatched
+149;1262395;filled_country;;;;unmatched
+150;1262396;filled_country;;;;unmatched
+151;1008028;matched;2024-01-01;Asturias;Spain;matched
+152;591563;matched;2024-01-01;Cantabria;Spain;matched
+153;1262399;filled_country;;;;unmatched
+154;1262400;filled_country;;;;unmatched
+155;1262401;filled_country;;;;unmatched
+156;1176659;matched;2022-01-01;Balearic Islands;Spain;matched
+157;1262403;filled_country;;;;unmatched
+158;324399;matched;2024-01-01;La Rioja;Spain;matched
+159;1262405;filled_country;;;;unmatched
+160;1262406;filled_country;;;;unmatched
+161;1262407;filled_country;;;;unmatched
+162;1262408;filled_country;;;;unmatched
+163;1262409;filled_country;;;;unmatched
+164;2388350;fuzzy_contain;2024-01-01;Castile and León;Spain;fuzzy_contain
+165;1262411;filled_country;;;;unmatched
+166;1262412;filled_country;;;;unmatched
+167;1262413;filled_country;;;;unmatched
+168;1262414;filled_country;;;;unmatched
+169;1262415;filled_country;;;;unmatched
+170;1262416;filled_country;;;;unmatched
+171;1262417;filled_country;;;;unmatched
+172;1262418;filled_country;;;;unmatched
+173;7001715;matched;2024-01-01;Community of Madrid;Spain;matched
+174;1262420;filled_country;;;;unmatched
+175;1262421;filled_country;;;;unmatched
+176;45637;matched;2023-01-01;Viljandi County;Estonia;matched
+177;87418;matched;2023-01-01;Pärnu County;Estonia;matched
+178;27924;matched;2024-01-01;Valga County;Estonia;matched
+179;34049;matched;2024-01-01;Võru County;Estonia;matched
+180;133358;matched;2023-01-01;Ida-Viru County;Estonia;matched
+181;24036;matched;2023-01-01;Põlva County;Estonia;matched
+182;162390;matched;2023-01-01;Tartu County;Estonia;matched
+183;27739;matched;2023-01-01;Jõgeva County;Estonia;matched
+184;20625;matched;2024-01-01;Lääne County;Estonia;matched
+185;646315;matched;2024-01-01;Harju County;Estonia;matched
+186;59608;matched;2023-01-01;Lääne-Viru County;Estonia;matched
+187;32021;matched;2024-01-01;Saare County;Estonia;matched
+188;8418;matched;2024-01-01;Hiiu County;Estonia;matched
+189;34038;matched;2023-01-01;Rapla County;Estonia;matched
+190;30072;matched;2023-01-01;Järva County;Estonia;matched
+191;176711;matched;2021-01-01;Lapland;Finland;matched
+192;176458;filled_country;;;;unmatched
+193;71683;matched;2021-01-01;Kainuu;Finland;matched
+194;163570;matched;2021-01-01;North Karelia;Finland;matched
+195;126107;matched;2021-12-31;South Karelia;Finland;matched
+196;162840;matched;2021-01-01;Kymenlaakso;Finland;matched
+197;1704607;matched;2021-01-01;Uusimaa;Finland;matched
+198;176464;filled_country;;;;unmatched
+199;215351;matched;2021-01-01;Satakunta;Finland;matched
+200;175821;matched;2021-01-01;Ostrobothnia;Finland;matched
+201;67976;matched;2021-01-01;Central Ostrobothnia;Finland;matched
+202;248226;fuzzy_best;2021-01-01;North Savo;Finland;fuzzy_best
+203;132695;fuzzy_best;2021-01-01;South Savo;Finland;fuzzy_best
+204;272548;matched;2021-01-01;Central Finland;Finland;matched
+205;176471;filled_country;;;;unmatched
+206;523598;matched;2021-01-01;Pirkanmaa;Finland;matched
+207;176473;filled_country;;;;unmatched
+208;205862;matched;2021-01-01;Päijät-Häme;Finland;matched
+209;4060741;fuzzy_contain;2013-01-01;Nord-Pas-de-Calais;France;fuzzy_contain
+210;2954367;filled_country;;;;unmatched
+211;6263;fuzzy_best;2022-01-01;Huahine;France;fuzzy_best
+212;2954369;filled_country;;;;unmatched
+213;2954370;filled_country;;;;unmatched
+214;2954371;filled_country;;;;unmatched
+215;2954372;filled_country;;;;unmatched
+216;2954373;filled_country;;;;unmatched
+217;2954374;filled_country;;;;unmatched
+218;6399927;matched;2013-01-01;Rhône-Alpes;France;matched
+219;2954376;filled_country;;;;unmatched
+220;2954377;filled_country;;;;unmatched
+221;1339008;fuzzy_best;2013-01-01;Champagne-Ardenne;France;fuzzy_best
+222;2954157;fuzzy_best;2013-01-01;Midi-Pyrénées;France;fuzzy_best
+223;2954380;filled_country;;;;unmatched
+224;2954381;filled_country;;;;unmatched
+225;2954382;filled_country;;;;unmatched
+226;2954383;filled_country;;;;unmatched
+227;2954384;filled_country;;;;unmatched
+228;6113384;fuzzy_contain;2022-01-01;Nouvelle-Aquitaine;France;fuzzy_contain
+229;2954386;filled_country;;;;unmatched
+230;2954387;filled_country;;;;unmatched
+231;2954388;filled_country;;;;unmatched
+232;2954389;filled_country;;;;unmatched
+233;2954390;filled_country;;;;unmatched
+234;2954391;filled_country;;;;unmatched
+235;5560079;fuzzy_best;2022-01-01;Grand Est;France;fuzzy_best
+236;2954393;filled_country;;;;unmatched
+237;2954394;filled_country;;;;unmatched
+238;2954395;filled_country;;;;unmatched
+239;2954396;filled_country;;;;unmatched
+240;2954397;filled_country;;;;unmatched
+241;2954398;filled_country;;;;unmatched
+242;2954399;filled_country;;;;unmatched
+243;12380964;fuzzy_best;2022-01-01;Île-de-France;France;fuzzy_best
+244;1138;fuzzy_best;2022-01-01;Manihi;France;fuzzy_best
+245;2954402;filled_country;;;;unmatched
+246;2954403;filled_country;;;;unmatched
+247;2954404;filled_country;;;;unmatched
+248;2954405;filled_country;;;;unmatched
+249;2954406;filled_country;;;;unmatched
+250;2954407;filled_country;;;;unmatched
+251;2954408;filled_country;;;;unmatched
+252;2954409;filled_country;;;;unmatched
+253;2954410;filled_country;;;;unmatched
+254;2954411;filled_country;;;;unmatched
+255;2954412;filled_country;;;;unmatched
+256;2954413;filled_country;;;;unmatched
+257;2954414;filled_country;;;;unmatched
+258;2954415;filled_country;;;;unmatched
+259;2954416;filled_country;;;;unmatched
+260;2954417;filled_country;;;;unmatched
+261;2954418;filled_country;;;;unmatched
+262;2954419;filled_country;;;;unmatched
+263;2954420;filled_country;;;;unmatched
+264;2954421;filled_country;;;;unmatched
+265;2954422;filled_country;;;;unmatched
+266;2954423;filled_country;;;;unmatched
+267;2954424;filled_country;;;;unmatched
+268;5998916;fuzzy_best;2022-01-01;Hauts-de-France;France;fuzzy_best
+269;361019;fuzzy_best;2022-01-01;Martinique;France;fuzzy_best
+270;2954427;filled_country;;;;unmatched
+271;8163884;fuzzy_contain;2022-01-01;Auvergne-Rhône-Alpes;France;fuzzy_contain
+272;2954429;filled_country;;;;unmatched
+273;2954430;filled_country;;;;unmatched
+274;2581597;fuzzy_contain;2022-01-01;Centre-Val de Loire;France;fuzzy_contain
+275;2954432;filled_country;;;;unmatched
+276;1570;fuzzy_best;2022-01-01;Gambier;France;fuzzy_best
+277;2954434;filled_country;;;;unmatched
+278;2954435;filled_country;;;;unmatched
+279;2954436;filled_country;;;;unmatched
+280;2954437;filled_country;;;;unmatched
+281;2954438;filled_country;;;;unmatched
+282;1789779;fuzzy_contain;2013-01-01;Poitou-Charentes;France;fuzzy_contain
+283;2954440;filled_country;;;;unmatched
+284;2954441;filled_country;;;;unmatched
+285;2954442;filled_country;;;;unmatched
+286;2954443;filled_country;;;;unmatched
+287;2954444;filled_country;;;;unmatched
+288;2954445;filled_country;;;;unmatched
+289;2954446;filled_country;;;;unmatched
+290;2954447;filled_country;;;;unmatched
+291;2954448;filled_country;;;;unmatched
+292;2954449;filled_country;;;;unmatched
+293;2954450;filled_country;;;;unmatched
+294;2954451;filled_country;;;;unmatched
+295;2954452;filled_country;;;;unmatched
+296;2954453;filled_country;;;;unmatched
+297;2954454;filled_country;;;;unmatched
+298;2954455;filled_country;;;;unmatched
+299;2954456;filled_country;;;;unmatched
+300;974171;filled_country;;;;unmatched
+301;974172;filled_country;;;;unmatched
+302;974173;filled_country;;;;unmatched
+303;974174;filled_country;;;;unmatched
+304;974175;filled_country;;;;unmatched
+305;974176;filled_country;;;;unmatched
+306;974177;filled_country;;;;unmatched
+307;974178;filled_country;;;;unmatched
+308;1903200;fuzzy_best;2021-01-01;Northern Ireland;United Kingdom;fuzzy_best
+309;974180;filled_country;;;;unmatched
+310;974181;filled_country;;;;unmatched
+311;974182;filled_country;;;;unmatched
+312;974183;filled_country;;;;unmatched
+313;974184;filled_country;;;;unmatched
+314;974185;filled_country;;;;unmatched
+315;974186;filled_country;;;;unmatched
+316;974187;filled_country;;;;unmatched
+317;974188;filled_country;;;;unmatched
+318;974189;filled_country;;;;unmatched
+319;974190;filled_country;;;;unmatched
+320;974191;filled_country;;;;unmatched
+321;974192;filled_country;;;;unmatched
+322;974193;filled_country;;;;unmatched
+323;974194;filled_country;;;;unmatched
+324;974195;filled_country;;;;unmatched
+325;974196;filled_country;;;;unmatched
+326;974197;filled_country;;;;unmatched
+327;974198;filled_country;;;;unmatched
+328;974199;filled_country;;;;unmatched
+329;974200;filled_country;;;;unmatched
+330;974201;filled_country;;;;unmatched
+331;974202;filled_country;;;;unmatched
+332;974203;filled_country;;;;unmatched
+333;974204;filled_country;;;;unmatched
+334;974205;filled_country;;;;unmatched
+335;974206;filled_country;;;;unmatched
+336;974207;filled_country;;;;unmatched
+337;974208;filled_country;;;;unmatched
+338;974209;filled_country;;;;unmatched
+339;974210;filled_country;;;;unmatched
+340;974211;filled_country;;;;unmatched
+341;974212;filled_country;;;;unmatched
+342;974213;filled_country;;;;unmatched
+343;44542;fuzzy_best;2020-01-01;Turks and Caicos Islands;United Kingdom;fuzzy_best
+344;974215;filled_country;;;;unmatched
+345;974216;filled_country;;;;unmatched
+346;974217;filled_country;;;;unmatched
+347;974218;filled_country;;;;unmatched
+348;974219;filled_country;;;;unmatched
+349;974220;filled_country;;;;unmatched
+350;974221;filled_country;;;;unmatched
+351;974222;filled_country;;;;unmatched
+352;974223;filled_country;;;;unmatched
+353;974224;filled_country;;;;unmatched
+354;974225;filled_country;;;;unmatched
+355;974226;filled_country;;;;unmatched
+356;974227;filled_country;;;;unmatched
+357;974228;filled_country;;;;unmatched
+358;974229;filled_country;;;;unmatched
+359;974230;filled_country;;;;unmatched
+360;974231;filled_country;;;;unmatched
+361;2013;fuzzy_contain;1996-01-01;Autonomous Republic of Abkhazia;Georgia;fuzzy_contain
+362;308405;matched;2021-01-01;Samegrelo-Zemo Svaneti;Georgia;matched
+363;254100;matched;2021-01-01;Shida Kartli;Georgia;matched
+364;32089;matched;2021-01-01;Racha-Lechkhumi and Kvemo Svaneti;Georgia;matched
+365;151100;matched;2021-01-01;Samtskhe–Javakheti;Georgia;matched
+366;151466;filled_country;;;;unmatched
+367;107100;matched;2021-01-01;Guria;Georgia;matched
+368;481500;matched;2021-01-01;Imereti;Georgia;matched
+369;551237;filled_country;;;;unmatched
+370;319991;matched;2021-01-01;Epirus Region;Greece;matched
+371;1795669;fuzzy_contain;2021-01-01;Central Macedonia Region;Greece;fuzzy_contain
+372;562201;fuzzy_contain;2021-01-01;Eastern Macedonia and Thrace Region;Greece;fuzzy_contain
+373;688255;matched;2021-01-01;Thessaly Region;Greece;matched
+374;508254;matched;2021-01-01;Central Greece Region;Greece;matched
+375;3814064;matched;2021-01-01;Attica Region;Greece;matched
+376;539535;matched;2021-01-01;Peloponnese Region;Greece;matched
+377;648220;matched;2021-01-01;West Greece Region;Greece;matched
+378;624408;matched;2021-01-01;Crete Region;Greece;matched
+379;327820;matched;2021-01-01;South Aegean Region;Greece;matched
+380;194943;matched;2021-01-01;North Aegean Region;Greece;matched
+381;204532;matched;2021-01-01;Ionian Islands Region;Greece;matched
+382;84836;matched;2011-01-01;Virovitica-Podravina County;Croatia;matched
+383;115584;matched;2011-01-01;Koprivnica-Križevci County;Croatia;matched
+384;305032;matched;2011-01-01;Osijek-Baranja County;Croatia;matched
+385;195237;matched;2021-08-31;Istria County;Croatia;matched
+386;115862;matched;2021-01-01;Dubrovnik-Neretva County;Croatia;matched
+387;185387;matched;2001-03-31;Sisak-Moslavina County;Croatia;matched
+388;158575;matched;2011-01-01;Brod-Posavina County;Croatia;matched
+389;128899;matched;2011-01-01;Karlovac County;Croatia;matched
+390;159766;matched;2021-08-31;Zadar County;Croatia;matched
+391;179521;matched;2011-01-01;Vukovar-Srijem County;Croatia;matched
+392;423407;matched;2021-08-31;Split-Dalmatia County;Croatia;matched
+393;175951;matched;2011-01-01;Varaždin County;Croatia;matched
+394;120702;matched;2021-08-31;Krapina-Zagorje County;Croatia;matched
+395;317642;matched;2011-01-01;Zagreb County;Croatia;matched
+396;265419;matched;2021-08-31;Primorje-Gorski Kotar County;Croatia;matched
+397;109375;matched;2011-01-01;Šibenik-Knin County;Croatia;matched
+398;42748;matched;2021-08-31;Lika-Senj County;Croatia;matched
+399;119764;matched;2011-01-01;Bjelovar-Bilogora County;Croatia;matched
+400;64084;matched;2021-08-31;Požega-Slavonia County;Croatia;matched
+401;529381;matched;2022-10-01;Szabolcs-Szatmár-Bereg County;Hungary;matched
+402;315222;matched;2022-10-01;Békés County;Hungary;matched
+403;519141;matched;2022-10-01;Hajdú-Bihar County;Hungary;matched
+404;391184;matched;2022-10-01;Csongrád-Csanád County;Hungary;matched
+405;465945;matched;2022-10-01;Győr-Moson-Sopron County;Hungary;matched
+406;249513;matched;2022-10-01;Vas County;Hungary;matched
+407;495318;matched;2022-10-01;Bács-Kiskun County;Hungary;matched
+408;260800;matched;2022-10-01;Zala County;Hungary;matched
+409;293470;matched;2022-10-01;Somogy County;Hungary;matched
+410;354022;matched;2022-10-01;Baranya County;Hungary;matched
+411;623024;matched;2022-10-01;Borsod-Abaúj-Zemplén County;Hungary;matched
+412;182459;matched;2022-10-01;Nógrád County;Hungary;matched
+413;300631;matched;2022-10-01;Komárom-Esztergom County;Hungary;matched
+414;1333533;matched;2022-10-01;Pest County;Hungary;matched
+415;355809;matched;2022-10-01;Jász-Nagykun-Szolnok County;Hungary;matched
+416;419656;matched;2022-10-01;Fejér County;Hungary;matched
+417;55118;matched;2025-01-01;Veszprém;Hungary;matched
+418;207931;matched;2022-10-01;Tolna County;Hungary;matched
+419;285892;matched;2022-10-01;Heves County;Hungary;matched
+420;63122;filled_country;;;;unmatched
+421;63123;filled_country;;;;unmatched
+422;63124;filled_country;;;;unmatched
+423;63125;filled_country;;;;unmatched
+424;63126;filled_country;;;;unmatched
+425;63127;filled_country;;;;unmatched
+426;63128;filled_country;;;;unmatched
+427;48369;matched;2016-01-01;Waterford;Ireland;matched
+428;222333;matched;2022-01-01;Cork;Ireland;matched
+429;63131;filled_country;;;;unmatched
+430;62702;matched;2022-04-03;Limerick;Ireland;matched
+431;63133;filled_country;;;;unmatched
+432;63134;filled_country;;;;unmatched
+433;63135;filled_country;;;;unmatched
+434;63136;filled_country;;;;unmatched
+435;63137;filled_country;;;;unmatched
+436;63138;filled_country;;;;unmatched
+437;63139;filled_country;;;;unmatched
+438;63140;filled_country;;;;unmatched
+439;63141;filled_country;;;;unmatched
+440;63142;filled_country;;;;unmatched
+441;63143;filled_country;;;;unmatched
+442;63144;filled_country;;;;unmatched
+443;63145;filled_country;;;;unmatched
+444;17985;filled_country;;;;unmatched
+445;28399;matched;2020-01-01;Southern Region;Iceland;matched
+446;17541;matched;2023-01-01;Western Region;Iceland;matched
+447;7379;matched;2023-01-01;Westfjords;Iceland;matched
+448;7322;matched;2020-01-01;Northwestern Region;Iceland;matched
+449;30600;matched;2020-01-01;Northeastern Region;Iceland;matched
+450;125666;fuzzy_contain;2019-01-01;Aosta Valley;Italy;fuzzy_contain
+451;1429996;filled_country;;;;unmatched
+452;1429997;filled_country;;;;unmatched
+453;1429998;filled_country;;;;unmatched
+454;1429999;filled_country;;;;unmatched
+455;1072276;matched;2019-01-01;Trentino-South Tyrol;Italy;matched
+456;1430001;filled_country;;;;unmatched
+457;1430002;filled_country;;;;unmatched
+458;1430003;filled_country;;;;unmatched
+459;1430004;filled_country;;;;unmatched
+460;1430005;filled_country;;;;unmatched
+461;1430006;filled_country;;;;unmatched
+462;1430007;filled_country;;;;unmatched
+463;1430008;filled_country;;;;unmatched
+464;1430009;filled_country;;;;unmatched
+465;1430010;filled_country;;;;unmatched
+466;1430011;filled_country;;;;unmatched
+467;1430012;filled_country;;;;unmatched
+468;1430013;filled_country;;;;unmatched
+469;1430014;filled_country;;;;unmatched
+470;1430015;filled_country;;;;unmatched
+471;1430016;filled_country;;;;unmatched
+472;1430017;filled_country;;;;unmatched
+473;1430018;filled_country;;;;unmatched
+474;1430019;filled_country;;;;unmatched
+475;1430020;filled_country;;;;unmatched
+476;1430021;filled_country;;;;unmatched
+477;1430022;filled_country;;;;unmatched
+478;1430023;filled_country;;;;unmatched
+479;1430024;filled_country;;;;unmatched
+480;1430025;filled_country;;;;unmatched
+481;1430026;filled_country;;;;unmatched
+482;1430027;filled_country;;;;unmatched
+483;1430028;filled_country;;;;unmatched
+484;1430029;filled_country;;;;unmatched
+485;1947131;fuzzy_contain;2019-01-01;Calabria;Italy;fuzzy_contain
+486;1430031;filled_country;;;;unmatched
+487;1430032;filled_country;;;;unmatched
+488;1430033;filled_country;;;;unmatched
+489;1430034;filled_country;;;;unmatched
+490;1430035;filled_country;;;;unmatched
+491;1430036;filled_country;;;;unmatched
+492;1430037;filled_country;;;;unmatched
+493;1430038;filled_country;;;;unmatched
+494;1430039;filled_country;;;;unmatched
+495;1430040;filled_country;;;;unmatched
+496;1430041;filled_country;;;;unmatched
+497;1430042;filled_country;;;;unmatched
+498;1430043;filled_country;;;;unmatched
+499;1550640;matched;2019-01-01;Liguria;Italy;matched
+500;1430045;filled_country;;;;unmatched
+501;1430046;filled_country;;;;unmatched
+502;1430047;filled_country;;;;unmatched
+503;1430048;filled_country;;;;unmatched
+504;1430049;filled_country;;;;unmatched
+505;1430050;filled_country;;;;unmatched
+506;1430051;filled_country;;;;unmatched
+507;1430052;filled_country;;;;unmatched
+508;5786373;fuzzy_contain;2019-01-01;Campania;Italy;fuzzy_contain
+509;1430054;filled_country;;;;unmatched
+510;1430055;filled_country;;;;unmatched
+511;1430056;filled_country;;;;unmatched
+512;1430057;filled_country;;;;unmatched
+513;1430058;filled_country;;;;unmatched
+514;1430059;filled_country;;;;unmatched
+515;1430060;filled_country;;;;unmatched
+516;1430061;filled_country;;;;unmatched
+517;1430062;filled_country;;;;unmatched
+518;1430063;filled_country;;;;unmatched
+519;1430064;filled_country;;;;unmatched
+520;1430065;filled_country;;;;unmatched
+521;1430066;filled_country;;;;unmatched
+522;1430067;filled_country;;;;unmatched
+523;1430068;filled_country;;;;unmatched
+524;1430069;filled_country;;;;unmatched
+525;1430070;filled_country;;;;unmatched
+526;1308451;fuzzy_best;2019-01-01;Abruzzo;Italy;fuzzy_best
+527;1430072;filled_country;;;;unmatched
+528;1430073;filled_country;;;;unmatched
+529;1430074;filled_country;;;;unmatched
+530;1430075;filled_country;;;;unmatched
+531;1430076;filled_country;;;;unmatched
+532;1430077;filled_country;;;;unmatched
+533;1430078;filled_country;;;;unmatched
+534;1430079;filled_country;;;;unmatched
+535;1430080;filled_country;;;;unmatched
+536;1430081;filled_country;;;;unmatched
+537;1430082;filled_country;;;;unmatched
+538;1430083;filled_country;;;;unmatched
+539;1430084;filled_country;;;;unmatched
+540;1430085;filled_country;;;;unmatched
+541;1430086;filled_country;;;;unmatched
+542;1430087;filled_country;;;;unmatched
+543;1430088;filled_country;;;;unmatched
+544;1430089;filled_country;;;;unmatched
+545;1430090;filled_country;;;;unmatched
+546;1430091;filled_country;;;;unmatched
+547;1430092;filled_country;;;;unmatched
+548;1430093;filled_country;;;;unmatched
+549;331670;matched;;Prizren District;Kosovo;matched
+550;332220;filled_country;;;;unmatched
+551;332221;filled_country;;;;unmatched
+552;332222;filled_country;;;;unmatched
+553;37555;matched;2023-01-01;Utena District Municipality;Lithuania;matched
+554;101943;matched;2023-01-01;Vilnius District Municipality;Lithuania;matched
+555;25356;matched;2023-01-01;Alytus District Municipality;Lithuania;matched
+556;35225;matched;2023-01-01;Panevėžys District Municipality;Lithuania;matched
+557;39141;matched;2023-01-01;Telšiai District Municipality;Lithuania;matched
+558;63862;matched;2023-01-01;Klaipėda District Municipality;Lithuania;matched
+559;40638;matched;2023-01-01;Šiauliai District Municipality;Lithuania;matched
+560;54710;matched;2023-01-01;Marijampolė Municipality;Lithuania;matched
+561;37582;matched;2023-01-01;Tauragė District Municipality;Lithuania;matched
+562;99265;matched;2023-01-01;Kaunas District Municipality;Lithuania;matched
+563;85439;matched;2015-01-01;Diekirch District;Luxembourg;matched
+564;4520;matched;2021-01-01;Aloja Municipality;Latvia;matched
+565;7645;matched;2025-01-01;Valka Municipality;Latvia;matched
+566;13154;matched;2025-01-01;Alūksne Municipality;Latvia;matched
+567;5127;matched;2021-01-01;Kārsava Municipality;Latvia;matched
+568;7795;matched;2021-01-01;Vecumnieki Municipality;Latvia;matched
+569;26631;matched;2025-01-01;Saldus Municipality;Latvia;matched
+570;2216;matched;2021-01-01;Vaiņode Municipality;Latvia;matched
+571;32009;matched;2025-01-01;Jelgava Municipality;Latvia;matched
+572;78126;matched;2025-01-01;Daugavpils;Latvia;matched
+573;19505;matched;2025-01-01;Krāslava Municipality;Latvia;matched
+574;10295;matched;2025-01-01;Ventspils Municipality;Latvia;matched
+575;34801;matched;2025-01-01;Talsi Municipality;Latvia;matched
+576;595053;matched;2025-01-01;Riga;Latvia;matched
+577;27613;matched;2025-01-01;Limbaži Municipality;Latvia;matched
+578;27709;matched;2025-01-01;Rēzekne Municipality;Latvia;matched
+579;18497;matched;2025-01-01;Gulbene Municipality;Latvia;matched
+580;29898;matched;2025-07-01;Madona Municipality;Latvia;matched
+581;57668;matched;2025-01-01;Ogre Municipality;Latvia;matched
+582;26666;matched;2025-01-01;Kuldīga Municipality;Latvia;matched
+583;43439;matched;2025-01-01;Tukums Municipality;Latvia;matched
+584;50429;matched;2024-04-08;Edineț District;Moldova;matched
+585;43652;matched;2024-04-08;Rîșcani District;Moldova;matched
+586;56039;matched;2024-04-08;Fălești District;Moldova;matched
+587;75804;matched;2024-04-08;Ungheni District;Moldova;matched
+588;69462;matched;2024-04-08;Hîncești District;Moldova;matched
+589;33181;matched;2024-04-08;Cantemir District;Moldova;matched
+590;72775;matched;2024-04-08;Cahul District;Moldova;matched
+591;42285;matched;2024-04-08;Ștefan Vodă District;Moldova;matched
+592;57261;matched;2024-04-08;Căușeni District;Moldova;matched
+593;30986;matched;2024-04-08;Cimișlia District;Moldova;matched
+594;26435;matched;2024-04-08;Taraclia District;Moldova;matched
+595;19947;matched;2024-04-08;Comrat;Moldova;matched
+596;79242;matched;2024-04-08;Orhei District;Moldova;matched
+597;385590;filled_global;;;;unmatched
+598;385591;filled_global;;;;unmatched
+599;385592;filled_global;;;;unmatched
+600;385593;filled_global;;;;unmatched
+601;385594;filled_global;;;;unmatched
+602;385595;filled_global;;;;unmatched
+603;385596;filled_global;;;;unmatched
+604;385597;filled_global;;;;unmatched
+605;385598;filled_global;;;;unmatched
+606;27256;matched;2017-01-01;Berane Municipality;Montenegro;matched
+607;28124;matched;2017-01-01;Pljevlja Municipality;Montenegro;matched
+608;72443;matched;2011-01-01;Nikšić Municipality;Montenegro;matched
+609;150977;matched;2011-01-01;Podgorica;Montenegro;matched
+610;582728;matched;2013-12-31;Groningen;Netherlands;matched
+611;491792;matched;2017-01-01;Drenthe;Netherlands;matched
+612;1142360;matched;2015-08-01;Overijssel;Netherlands;matched
+613;2019692;matched;2013-12-31;Gelderland;Netherlands;matched
+614;1120006;matched;2013-12-31;Limburg;Netherlands;matched
+615;386707;matched;2022-01-01;Zeeland;Netherlands;matched
+616;2256848;matched;2015-01-01;North Brabant;Netherlands;matched
+617;3577032;matched;2013-12-31;South Holland;Netherlands;matched
+618;2813466;matched;2017-01-01;North Holland;Netherlands;matched
+619;649944;matched;2021-01-01;Friesland;Netherlands;matched
+620;399893;matched;2013-12-31;Flevoland;Netherlands;matched
+621;1253672;matched;2013-12-31;Utrecht;Netherlands;matched
+622;167207;matched;2019-01-01;Troms;Norway;matched
+623;243385;matched;2019-01-01;Nordland;Norway;matched
+624;136399;matched;2016-01-01;Nord-Trøndelag;Norway;matched
+625;318359;matched;2017-06-30;Sør-Trøndelag;Norway;matched
+626;197406;matched;2019-01-01;Hedmark;Norway;matched
+627;716020;matched;2023-01-01;Akershus;Norway;matched
+628;297520;matched;2019-01-01;Østfold;Norway;matched
+629;75758;matched;2016-01-01;Finnmark;Norway;matched
+630;270543;matched;2024-08-01;Buskerud;Norway;matched
+631;251078;matched;2019-01-01;Vestfold;Norway;matched
+632;173318;matched;2019-01-01;Telemark;Norway;matched
+633;117655;matched;2019-01-01;Aust-Agder;Norway;matched
+634;187589;matched;2019-01-01;Vest-Agder;Norway;matched
+635;499417;matched;2024-01-01;Rogaland;Norway;matched
+636;524495;matched;2019-01-01;Hordaland;Norway;matched
+637;109774;matched;2019-01-01;Sogn og Fjordane;Norway;matched
+638;265392;matched;2019-01-01;Møre og Romsdal;Norway;matched
+639;2668;matched;;Svalbard;Norway;matched
+640;189545;matched;2019-01-01;Oppland;Norway;matched
+641;4617000;matched;;Silesian Voivodeship;Poland;matched
+642;3360581;matched;2013-01-01;Lesser Poland Voivodeship;Poland;matched
+643;2121229;matched;2020-01-01;Subcarpathian Voivodeship;Poland;matched
+644;2915245;matched;2012-12-31;Lower Silesian Voivodeship;Poland;matched
+645;1010203;matched;2017-01-01;Opole Voivodeship;Poland;matched
+646;1193348;matched;2014-06-30;Podlaskie Voivodeship;Poland;matched
+647;1437812;matched;2016-06-30;Warmian-Masurian Voivodeship;Poland;matched
+648;1020767;matched;2014-01-01;Lubusz Voivodeship;Poland;matched
+649;1622760;matched;2024-12-31;West Pomeranian Voivodeship;Poland;matched
+650;2151836;matched;2014-01-01;Lublin Voivodeship;Poland;matched
+651;2300000;matched;2019-01-01;Pomeranian Voivodeship;Poland;matched
+652;5492000;matched;2011-03-31;Masovian Voivodeship;Poland;matched
+653;2508464;matched;2014-01-01;Łódź Voivodeship;Poland;matched
+654;2090836;matched;2014-01-01;Kuyavian-Pomeranian Voivodeship;Poland;matched
+655;3495470;matched;2019-01-01;Greater Poland Voivodeship;Poland;matched
+656;1241546;matched;2018-01-01;Świętokrzyskie Voivodeship;Poland;matched
+657;52454;matched;2018-01-01;Évora;Portugal;matched
+658;22359;matched;2018-01-01;Portalegre;Portugal;matched
+659;84636;matched;2018-01-01;Viana do Castelo;Portugal;matched
+660;52192;matched;2018-01-01;Castelo Branco;Portugal;matched
+661;39103;matched;2018-01-01;Guarda;Portugal;matched
+662;33586;matched;2018-01-01;Bragança;Portugal;matched
+663;49868;matched;2018-01-01;Vila Real;Portugal;matched
+664;181919;matched;2018-01-01;Braga;Portugal;matched
+665;60974;matched;2018-01-01;Faro;Portugal;matched
+666;81942;filled_country;;;;unmatched
+667;788459;matched;2018-01-01;Setúbal;Portugal;matched
+668;2135992;matched;;Lisbon;Portugal;matched
+669;57398;matched;2018-01-01;Santarém;Portugal;matched
+670;124857;matched;2018-01-01;Leiria;Portugal;matched
+671;133724;matched;2018-01-01;Coimbra;Portugal;matched
+672;77916;matched;2018-01-01;Aveiro;Portugal;matched
+673;1817172;matched;;Porto;Portugal;matched
+674;236440;matched;2021-01-01;Azores;Portugal;matched
+675;96991;matched;2018-01-01;Viseu;Portugal;matched
+676;330668;matched;2021-12-01;Satu Mare County;Romania;matched
+677;410143;matched;2021-12-01;Arad County;Romania;matched
+678;551297;matched;2021-12-01;Bihor County;Romania;matched
+679;650533;matched;2021-12-01;Timiș County;Romania;matched
+680;234339;matched;2021-12-01;Mehedinți County;Romania;matched
+681;599442;matched;2021-12-01;Dolj County;Romania;matched
+682;283458;matched;2021-12-01;Călărași County;Romania;matched
+683;323544;matched;2021-12-01;Teleorman County;Romania;matched
+684;262066;matched;2021-12-01;Giurgiu County;Romania;matched
+685;655997;matched;2021-12-01;Constanța County;Romania;matched
+686;383280;matched;2021-12-01;Olt County;Romania;matched
+687;246588;matched;2021-12-01;Caraș-Severin County;Romania;matched
+688;392821;matched;2021-12-01;Botoșani County;Romania;matched
+689;760774;matched;2021-12-01;Iași County;Romania;matched
+690;374700;matched;2021-12-01;Vaslui County;Romania;matched
+691;496892;matched;2021-12-01;Galați County;Romania;matched
+692;642551;matched;2021-12-01;Suceava County;Romania;matched
+693;452475;matched;2021-12-01;Maramureș County;Romania;matched
+694;193355;matched;2021-12-01;Tulcea County;Romania;matched
+695;679141;matched;2021-12-01;Cluj County;Romania;matched
+696;295988;matched;2021-12-01;Bistrița-Năsăud County;Romania;matched
+697;212224;matched;2021-12-01;Sălaj County;Romania;matched
+698;479404;matched;2021-12-01;Dâmbovița County;Romania;matched
+699;542704;matched;2021-12-01;Ilfov County;Romania;matched
+700;569932;matched;2021-12-01;Argeș County;Romania;matched
+701;314685;matched;2021-12-01;Gorj County;Romania;matched
+702;361657;matched;2021-12-01;Hunedoara County;Romania;matched
+703;341861;matched;2021-12-01;Vâlcea County;Romania;matched
+704;695119;matched;2021-12-01;Prahova County;Romania;matched
+705;200042;matched;2021-12-01;Covasna County;Romania;matched
+706;335312;matched;2021-12-01;Vrancea County;Romania;matched
+707;404979;matched;2021-12-01;Buzău County;Romania;matched
+708;546615;matched;2021-12-01;Brașov County;Romania;matched
+709;388326;matched;2021-12-01;Sibiu County;Romania;matched
+710;518193;matched;2021-12-01;Mureș County;Romania;matched
+711;291950;matched;2021-12-01;Harghita County;Romania;matched
+712;454203;matched;2021-12-01;Neamț County;Romania;matched
+713;601387;matched;2021-12-01;Bacău County;Romania;matched
+714;325941;matched;2021-12-01;Alba County;Romania;matched
+715;281452;matched;2021-12-01;Brăila County;Romania;matched
+716;250816;matched;2021-12-01;Ialomița County;Romania;matched
+717;574480;matched;2025-01-01;Pskov Oblast;Russia;matched
+718;5842238;matched;2025-01-01;Krasnodar Krai;Russia;matched
+719;468322;fuzzy_contain;2024-01-01;Karachay-Cherkessia;Russia;fuzzy_contain
+720;905464;matched;2024-01-01;Kabardino-Balkaria;Russia;matched
+721;678879;fuzzy_contain;2024-01-01;North Ossetia–Alania;Russia;fuzzy_contain
+722;656438;matched;2024-01-01;Murmansk Oblast;Russia;matched
+723;518950;matched;2025-01-01;Karelia;Russia;matched
+724;2035762;matched;2024-01-01;Leningrad Oblast;Russia;matched
+725;994599;matched;2023-01-01;Kaliningrad Oblast;Russia;matched
+726;863987;matched;2024-01-01;Smolensk Oblast;Russia;matched
+727;1132795;matched;2025-01-01;Bryansk Oblast;Russia;matched
+728;1049783;matched;2025-01-01;Kursk Oblast;Russia;matched
+729;1482025;matched;2025-01-01;Belgorod Oblast;Russia;matched
+730;2260045;matched;2025-01-01;Voronezh Oblast;Russia;matched
+731;4137335;matched;2025-01-01;Rostov Oblast;Russia;matched
+732;1828655;matched;2024-01-01;Orenburg Oblast;Russia;matched
+733;2369405;matched;2025-01-01;Saratov Oblast;Russia;matched
+734;946429;matched;2024-01-01;Astrakhan Oblast;Russia;matched
+735;2434046;matched;2025-01-01;Volgograd Oblast;Russia;matched
+736;1896393;matched;2022-01-01;Republic of Crimea;Russia;matched
+737;42224;matched;2024-01-01;Nenets Autonomous Okrug;Russia;matched
+738;5652922;matched;2025-01-01;Saint Petersburg;Russia;matched
+739;989434;matched;2025-01-01;Arkhangelsk Oblast;Russia;matched
+740;267588;fuzzy_contain;2025-01-01;Kalmykia;Russia;fuzzy_contain
+741;4042377;matched;2025-01-01;Bashkortostan;Russia;matched
+742;4221452;matched;2025-01-01;Sverdlovsk Oblast;Russia;matched
+743;1125921;matched;2023-01-01;Lipetsk Oblast;Russia;matched
+744;956292;matched;2024-01-01;Tambov Oblast;Russia;matched
+745;4003016;matched;2024-01-01;Tatarstan;Russia;matched
+746;1172782;matched;2024-01-01;Ulyanovsk Oblast;Russia;matched
+747;1213113;matched;2024-01-01;Penza Oblast;Russia;matched
+748;692486;matched;2024-01-01;Oryol Oblast;Russia;matched
+749;778965;matched;2021-01-01;Mordovia;Russia;matched
+750;1000980;matched;2021-01-01;Kaluga Oblast;Russia;matched
+751;566266;matched;2024-01-01;Kostroma Oblast;Russia;matched
+752;1187558;matched;2024-01-01;Yaroslavl Oblast;Russia;matched
+753;1309942;matched;2024-01-01;Vladimir Oblast;Russia;matched
+754;1043231;matched;2024-01-01;Ryazan Oblast;Russia;matched
+755;905900;matched;2024-01-01;Ivanovo Oblast;Russia;matched
+756;3039421;matched;2025-01-01;Nizhny Novgorod Oblast;Russia;matched
+757;1471140;matched;2024-01-01;Tula Oblast;Russia;matched
+758;1167061;fuzzy_contain;2024-01-01;Chuvashia;Russia;fuzzy_contain
+759;1160445;matched;2021-01-01;Vologda Oblast;Russia;matched
+760;566960;matched;2025-01-01;Novgorod Oblast;Russia;matched
+761;1190574;matched;2025-01-01;Tver Oblast;Russia;matched
+762;13274285;matched;2025-01-01;Moscow;Russia;matched
+763;1147383;filled_country;;;;unmatched
+764;669854;matched;2024-01-01;Mari El;Russia;matched
+765;1129935;matched;2024-01-01;Kirov Oblast;Russia;matched
+766;1493356;fuzzy_contain;2021-01-01;Udmurtia;Russia;fuzzy_contain
+767;714785;matched;2025-01-01;Komi Republic;Russia;matched
+768;2483633;matched;2025-01-01;Perm Krai;Russia;matched
+769;3112566;matched;2025-01-01;Samara Oblast;Russia;matched
+770;2884363;matched;2025-01-01;Stavropol Krai;Russia;matched
+771;500731;fuzzy_contain;2025-01-01;Adygea;Russia;fuzzy_contain
+772;385765;filled_global;;;;unmatched
+773;385766;filled_global;;;;unmatched
+774;385767;filled_global;;;;unmatched
+775;385768;filled_global;;;;unmatched
+776;385769;filled_global;;;;unmatched
+777;385770;filled_global;;;;unmatched
+778;385771;filled_global;;;;unmatched
+779;385772;filled_global;;;;unmatched
+780;385773;filled_global;;;;unmatched
+781;385774;filled_global;;;;unmatched
+782;385775;filled_global;;;;unmatched
+783;385776;filled_global;;;;unmatched
+784;385777;filled_global;;;;unmatched
+785;385778;filled_global;;;;unmatched
+786;385779;filled_global;;;;unmatched
+787;385780;filled_global;;;;unmatched
+788;385781;filled_global;;;;unmatched
+789;385782;filled_global;;;;unmatched
+790;385783;filled_global;;;;unmatched
+791;385784;filled_global;;;;unmatched
+792;385785;filled_global;;;;unmatched
+793;385786;filled_global;;;;unmatched
+794;385787;filled_global;;;;unmatched
+795;385788;filled_global;;;;unmatched
+796;385789;filled_global;;;;unmatched
+797;686063;matched;2024-12-31;Žilina region;Slovakia;matched
+798;810008;matched;2024-12-31;Prešov Region;Slovakia;matched
+799;778799;matched;2024-12-31;Košice Region;Slovakia;matched
+800;736385;matched;2024-12-31;Bratislava Region;Slovakia;matched
+801;565900;matched;2024-12-31;Trnava Region;Slovakia;matched
+802;565572;matched;2024-12-31;Trenčín Region;Slovakia;matched
+803;611124;matched;2024-12-31;Banská Bystrica Region;Slovakia;matched
+804;665600;matched;2024-12-31;Nitra Region;Slovakia;matched
+805;10997;fuzzy_contain;2020-07-01;Municipality of Tolmin;Slovenia;fuzzy_contain
+806;2354;fuzzy_contain;2020-07-01;Municipality of Podvelka;Slovenia;fuzzy_contain
+807;248876;matched;2025-09-30;Norrbotten County;Sweden;matched
+808;279571;matched;2025-09-30;Västerbotten County;Sweden;matched
+809;132636;matched;2025-09-30;Jämtland County;Sweden;matched
+810;286143;matched;2025-09-30;Dalarna County;Sweden;matched
+811;283336;matched;2025-09-30;Värmland County;Sweden;matched
+812;1778031;matched;2025-09-30;Västra Götaland County;Sweden;matched
+813;241143;matched;2025-09-30;Västernorrland County;Sweden;matched
+814;283862;matched;2025-09-30;Gävleborg County;Sweden;matched
+815;410601;matched;2025-09-30;Uppsala County;Sweden;matched
+816;2485275;matched;2025-09-30;Stockholm County;Sweden;matched
+817;300990;matched;2025-09-30;Södermanland County;Sweden;matched
+818;472755;matched;2025-09-30;Östergötland County;Sweden;matched
+819;245753;matched;2025-09-30;Kalmar County;Sweden;matched
+820;156880;matched;2025-09-30;Blekinge County;Sweden;matched
+821;1433573;matched;2025-09-30;Skåne County;Sweden;matched
+822;346065;matched;2025-09-30;Halland County;Sweden;matched
+823;61032;matched;2025-09-30;Gotland County;Sweden;matched
+824;280998;matched;2025-09-30;Västmanland County;Sweden;matched
+825;369998;matched;2025-09-30;Jönköping County;Sweden;matched
+826;308519;matched;2025-09-30;Örebro County;Sweden;matched
+827;203425;matched;2025-09-30;Kronoberg County;Sweden;matched
+828;385821;filled_global;;;;unmatched
+829;385822;filled_global;;;;unmatched
+830;385823;filled_global;;;;unmatched
+831;385824;filled_global;;;;unmatched
+832;385825;filled_global;;;;unmatched
+833;385826;filled_global;;;;unmatched
+834;385827;filled_global;;;;unmatched
+835;385828;filled_global;;;;unmatched
+836;385829;filled_global;;;;unmatched
+837;385830;filled_global;;;;unmatched
+838;385831;filled_global;;;;unmatched
+839;385832;filled_global;;;;unmatched
+840;385833;filled_global;;;;unmatched
+841;385834;filled_global;;;;unmatched
+842;385835;filled_global;;;;unmatched
+843;385836;filled_global;;;;unmatched
+844;385837;filled_global;;;;unmatched
+845;385838;filled_global;;;;unmatched
+846;385839;filled_global;;;;unmatched
+847;385840;filled_global;;;;unmatched
+848;385841;filled_global;;;;unmatched
+849;385842;filled_global;;;;unmatched
+850;385843;filled_global;;;;unmatched
+851;385844;filled_global;;;;unmatched
+852;385845;filled_global;;;;unmatched
+853;385846;filled_global;;;;unmatched
+854;385847;filled_global;;;;unmatched
+855;385848;filled_global;;;;unmatched
+856;385849;filled_global;;;;unmatched
+857;385850;filled_global;;;;unmatched
+858;385851;filled_global;;;;unmatched
+859;385852;filled_global;;;;unmatched
+860;385853;filled_global;;;;unmatched
+861;385854;filled_global;;;;unmatched
+862;385855;filled_global;;;;unmatched
+863;385856;filled_global;;;;unmatched
+864;385857;filled_global;;;;unmatched
+865;385858;filled_global;;;;unmatched
+866;385859;filled_global;;;;unmatched
+867;385860;filled_global;;;;unmatched
+868;385861;filled_global;;;;unmatched
+869;385862;filled_global;;;;unmatched
+870;385863;filled_global;;;;unmatched
+871;385864;filled_global;;;;unmatched
+872;385865;filled_global;;;;unmatched
+873;385866;filled_global;;;;unmatched
+874;385867;filled_global;;;;unmatched
+875;385868;filled_global;;;;unmatched
+876;385869;filled_global;;;;unmatched
+877;385870;filled_global;;;;unmatched
+878;385871;filled_global;;;;unmatched
+879;385872;filled_global;;;;unmatched
+880;385873;filled_global;;;;unmatched
+881;385874;filled_global;;;;unmatched
+882;385875;filled_global;;;;unmatched
+883;385876;filled_global;;;;unmatched
+884;385877;filled_global;;;;unmatched
+885;385878;filled_global;;;;unmatched
+886;385879;filled_global;;;;unmatched
+887;385880;filled_global;;;;unmatched
+888;385881;filled_global;;;;unmatched
+889;385882;filled_global;;;;unmatched
+890;385883;filled_global;;;;unmatched
+891;385884;filled_global;;;;unmatched
+892;385885;filled_global;;;;unmatched
+893;385886;filled_global;;;;unmatched
+894;385887;filled_global;;;;unmatched
+895;385888;filled_global;;;;unmatched
+896;385889;filled_global;;;;unmatched
+897;385890;filled_global;;;;unmatched
+898;385891;filled_global;;;;unmatched
+899;385892;filled_global;;;;unmatched
+900;385893;filled_global;;;;unmatched
+901;385894;filled_global;;;;unmatched
+902;959315;matched;2022-01-01;Chernihiv Oblast;Ukraine;matched
+903;1021356;matched;2022-01-01;Volyn Oblast;Ukraine;matched
+904;1141784;matched;2022-01-01;Rivne Oblast;Ukraine;matched
+905;1179032;matched;2022-01-01;Zhytomyr Oblast;Ukraine;matched
+906;1795079;matched;2022-01-01;Kyiv Oblast;Ukraine;matched
+907;1244476;matched;2022-01-01;Zakarpattia Oblast;Ukraine;matched
+908;890457;matched;2022-01-01;Chernivtsi Oblast;Ukraine;matched
+909;1351822;matched;2022-01-01;Ivano-Frankivsk Oblast;Ukraine;matched
+910;2351392;fuzzy_contain;2022-01-01;Odesa Oblast;Ukraine;fuzzy_contain
+911;1509515;matched;2022-01-01;Vinnytsia Oblast;Ukraine;matched
+912;2478133;matched;2022-01-01;Lviv Oblast;Ukraine;matched
+913;1035772;matched;2022-01-01;Sumy Oblast;Ukraine;matched
+914;2598961;matched;2022-01-01;Kharkiv Oblast;Ukraine;matched
+915;2167802;matched;2018-01-01;Luhansk Oblast;Ukraine;matched
+916;4200461;matched;2018-01-01;Donetsk Oblast;Ukraine;matched
+917;1001598;matched;2022-01-01;Kherson Oblast;Ukraine;matched
+918;1638462;matched;2022-01-01;Zaporizhzhia Oblast;Ukraine;matched
+919;1091821;matched;2022-01-01;Mykolaiv Oblast;Ukraine;matched
+920;1352283;matched;2022-01-01;Poltava Oblast;Ukraine;matched
+921;1228829;matched;2022-01-01;Khmelnytskyi Oblast;Ukraine;matched
+922;1021713;matched;2022-01-01;Ternopil Oblast;Ukraine;matched
+923;3096485;matched;2022-01-01;Dnipropetrovsk Oblast;Ukraine;matched
+924;1160744;matched;2022-01-01;Cherkasy Oblast;Ukraine;matched
+925;903712;matched;2022-01-01;Kirovohrad Oblast;Ukraine;matched
+926;1237578;filled_country;;;;unmatched

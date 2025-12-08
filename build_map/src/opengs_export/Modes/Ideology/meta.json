@@ -1,0 +1,6 @@
+{
+    "id": "ideology",
+    "name": "Ideology",
+    "description": "Ideological spectrum map",
+    "map_file": "IdeologyMap.png"
+}
