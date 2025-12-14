@@ -44,6 +44,12 @@ def normalize(text: str) -> str:
     return " ".join(words).strip()
 
 
+def normalize_iso(val: Optional[str]) -> str:
+    if not isinstance(val, str):
+        return ""
+    return val.strip().upper().replace(" ", "")
+
+
 def remove_holes(g):
     if g.geom_type == "Polygon":
         return Polygon(g.exterior)
@@ -132,17 +138,25 @@ def load_population() -> pd.DataFrame:
         df["countryLabel"] = ""
     if "regionLabel" not in df.columns:
         raise KeyError("Missing required column 'regionLabel' in population CSV")
+    if "iso" not in df.columns:
+        df["iso"] = ""
 
+    df["norm_iso"] = df["iso"].apply(normalize_iso)
     df["norm_region"] = df["regionLabel"].apply(normalize)
     df["norm_country"] = df["countryLabel"].apply(normalize)
 
-    df = df.sort_values(["norm_region", "norm_country", "populationDate"])
-    latest = (
-        df.groupby(["norm_region", "norm_country"], as_index=False)
-        .last()
-        .rename(columns={"region": "region_uri"})
-    )
-    return latest
+    df = df.sort_values(["norm_iso", "norm_region", "norm_country", "populationDate"])
+
+    frames = []
+    df_iso = df[df["norm_iso"] != ""]
+    df_rest = df[df["norm_iso"] == ""]
+    if not df_iso.empty:
+        frames.append(df_iso.groupby("norm_iso", as_index=False).last())
+    if not df_rest.empty:
+        frames.append(df_rest.groupby(["norm_region", "norm_country"], as_index=False).last())
+
+    latest = pd.concat(frames, ignore_index=True, sort=False) if frames else df.head(0)
+    return latest.rename(columns={"region": "region_uri"})
 
 
 def build_lookup(land: gpd.GeoDataFrame):
@@ -150,10 +164,23 @@ def build_lookup(land: gpd.GeoDataFrame):
     lookup_region: Dict[str, List[int]] = {}
     region_index: List[Tuple[int, str]] = []
     country_map: Dict[int, str] = {}
+    iso_map: Dict[str, int] = {}
+
+    iso_col = None
+    for candidate in ["iso_3166_2", "iso", "adm1_code", "code_hasc"]:
+        if candidate in land.columns:
+            iso_col = candidate
+            break
 
     for pid, row in land.iterrows():
         n_country = normalize(row.get("admin", "")) or normalize(row.get("country", ""))
         country_map[pid] = n_country
+
+        if iso_col:
+            n_iso = normalize_iso(row.get(iso_col, ""))
+            if n_iso:
+                iso_map[n_iso] = pid
+
         for candidate in [row.get("name_en"), row.get("name"), row.get("name_alt")]:
             n_region = normalize(candidate)
             if not n_region:
@@ -164,7 +191,7 @@ def build_lookup(land: gpd.GeoDataFrame):
         if main_name:
             region_index.append((pid, main_name))
 
-    return lookup_full, lookup_region, region_index, country_map
+    return lookup_full, lookup_region, region_index, country_map, iso_map
 
 
 def fuzzy_region_match(norm_region: str, region_index: List[Tuple[int, str]]) -> List[int]:
@@ -185,10 +212,11 @@ def fuzzy_region_match(norm_region: str, region_index: List[Tuple[int, str]]) ->
     return best
 
 
-def match_population_to_land(pop_df: pd.DataFrame, lookup_full, lookup_region, region_index, country_map):
+def match_population_to_land(pop_df: pd.DataFrame, lookup_full, lookup_region, region_index, country_map, iso_map):
     matched = {}  # pid -> (row, method, priority)
     unmatched = []
     priority = {
+        "iso": 4,
         "exact_country": 3,
         "region_only": 2,
         "fuzzy_contain": 1,
@@ -197,8 +225,19 @@ def match_population_to_land(pop_df: pd.DataFrame, lookup_full, lookup_region, r
 
     for _, row in pop_df.iterrows():
         key = (row["norm_region"], row["norm_country"])
-        hits = lookup_full.get(key)
+        hits = None
         method = "exact_country"
+
+        # Highest-priority: ISO 3166-2 exact match if present
+        if row.get("norm_iso"):
+            pid = iso_map.get(row["norm_iso"])
+            if pid is not None:
+                hits = [pid]
+                method = "iso"
+
+        if hits is None:
+            hits = lookup_full.get(key)
+            method = "exact_country"
 
         if not hits:
             hits = lookup_region.get(row["norm_region"])
@@ -311,8 +350,8 @@ def generate_population_dataset(
     """
     land = land if land is not None else load_land()
     pop_df = load_population()
-    lookup_full, lookup_region, region_index, country_map = build_lookup(land)
-    matched, unmatched = match_population_to_land(pop_df, lookup_full, lookup_region, region_index, country_map)
+    lookup_full, lookup_region, region_index, country_map, iso_map = build_lookup(land)
+    matched, unmatched = match_population_to_land(pop_df, lookup_full, lookup_region, region_index, country_map, iso_map)
 
     rows, debug_rows = build_output_rows(land, matched)
 
