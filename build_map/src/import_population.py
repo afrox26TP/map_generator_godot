@@ -3,7 +3,7 @@ import re
 import glob
 import unicodedata
 import difflib
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List, Optional, Set, Tuple
 from statistics import median
 
 import geopandas as gpd
@@ -15,6 +15,17 @@ QUERY_PATH = os.path.join(BASE, "query.csv")
 SHAPE_PATH = os.path.join(BASE, "ne_10m_admin_1_states_provinces.shp")
 OUT_DIR = os.path.join(BASE, "opengs_export")
 OUT_PATH = os.path.join(OUT_DIR, "Population.csv")
+ALIAS_PATH = os.path.join(BASE, "population_aliases_starter.csv")
+COUNTRY_TOTALS_PATH = os.path.join(BASE, "country_population_totals.csv")
+PROVINCE_SEED_PATH = os.path.join(BASE, "province_population_seed.csv")
+
+# Aliases are only applied when status is one of these values.
+ALIAS_ENABLED_STATUSES = {"suggested", "approved", "active"}
+USE_CONSISTENT_DISTRIBUTION = True
+TARGET_POP_YEAR = 2023
+MIN_POP_YEAR = 2000
+# Only these match methods are trusted to estimate density for imputation.
+DENSITY_CONFIDENT_METHODS = {"iso", "exact_country", "region_only"}
 
 EUROPE_COUNTRIES = [
     "ISL", "IRL", "GBR", "PRT", "ESP", "FRA", "AND", "BEL", "NLD", "LUX",
@@ -129,7 +140,392 @@ def resolve_query_path() -> str:
     raise FileNotFoundError("No query CSV found (expected query*.csv in src/)")
 
 
-def load_population() -> pd.DataFrame:
+def load_aliases() -> Tuple[Dict[str, str], Dict[Tuple[str, str], Tuple[str, str]]]:
+    """Load approved country/region aliases from population_aliases_starter.csv."""
+    if not os.path.exists(ALIAS_PATH):
+        return {}, {}
+
+    alias_df = pd.read_csv(ALIAS_PATH, sep=";", encoding="utf-8-sig")
+    required = {
+        "alias_type",
+        "source_country",
+        "source_region",
+        "target_country",
+        "target_region",
+        "status",
+    }
+    missing = required.difference(alias_df.columns)
+    if missing:
+        print(f"[POP] Alias file missing columns {sorted(missing)}; aliases disabled.")
+        return {}, {}
+
+    country_aliases: Dict[str, str] = {}
+    region_aliases: Dict[Tuple[str, str], Tuple[str, str]] = {}
+
+    for _, row in alias_df.iterrows():
+        status = normalize(str(row.get("status", "")))
+        if status and status not in ALIAS_ENABLED_STATUSES:
+            continue
+
+        alias_type = normalize(str(row.get("alias_type", "")))
+        src_country = normalize(row.get("source_country", ""))
+        src_region = normalize(row.get("source_region", ""))
+        tgt_country = normalize(row.get("target_country", ""))
+        tgt_region = normalize(row.get("target_region", ""))
+
+        if alias_type == "country":
+            if src_country and tgt_country:
+                country_aliases[src_country] = tgt_country
+            continue
+
+        if alias_type == "region":
+            if src_region and (tgt_country or tgt_region):
+                region_aliases[(src_country, src_region)] = (tgt_country, tgt_region)
+
+    if country_aliases or region_aliases:
+        print(
+            f"[POP] Loaded aliases: {len(country_aliases)} country, "
+            f"{len(region_aliases)} region"
+        )
+    return country_aliases, region_aliases
+
+
+def apply_aliases(
+    pop_df: pd.DataFrame,
+    country_aliases: Dict[str, str],
+    region_aliases: Dict[Tuple[str, str], Tuple[str, str]],
+) -> pd.DataFrame:
+    """Apply configured aliases to normalized country/region fields before matching."""
+    if pop_df.empty or (not country_aliases and not region_aliases):
+        return pop_df
+
+    pop_df = pop_df.copy()
+    out_country: List[str] = []
+    out_region: List[str] = []
+    country_changes = 0
+    region_rules = 0
+
+    for _, row in pop_df.iterrows():
+        src_country = row["norm_country"]
+        src_region = row["norm_region"]
+
+        country_norm = country_aliases.get(src_country, src_country)
+        if country_norm != src_country:
+            country_changes += 1
+
+        region_norm = src_region
+        alias = region_aliases.get((src_country, src_region))
+        if alias is None:
+            alias = region_aliases.get((country_norm, src_region))
+        if alias is None:
+            alias = region_aliases.get(("", src_region))
+
+        if alias is not None:
+            alias_country, alias_region = alias
+            if alias_country:
+                country_norm = alias_country
+            if alias_region:
+                region_norm = alias_region
+            region_rules += 1
+
+        out_country.append(country_norm)
+        out_region.append(region_norm)
+
+    pop_df["norm_country"] = out_country
+    pop_df["norm_region"] = out_region
+
+    if country_changes or region_rules:
+        print(f"[POP] Alias applications: country={country_changes}, region={region_rules}")
+
+    return pop_df
+
+
+def filter_current_entities(pop_df: pd.DataFrame, allowed_countries: Optional[Set[str]]) -> pd.DataFrame:
+    """
+    Option 1: keep only current-like entities.
+    - drop non-positive populations
+    - drop unresolved QID region labels
+    - drop very old observations
+    - keep only countries represented in current Natural Earth land set (or ISO-coded rows)
+    """
+    if pop_df.empty:
+        return pop_df
+
+    before = len(pop_df)
+    df = pop_df.copy()
+
+    df = df[pd.notna(df["population"]) & (df["population"] > 0)]
+    df = df[df["norm_region"] != ""]
+
+    region_raw = df["regionLabel"].fillna("").astype(str).str.strip()
+    df = df[~region_raw.str.match(r"^Q\\d+$", case=False, na=False)]
+
+    if "populationDate" in df.columns:
+        date_ok = df["populationDate"].isna() | (df["populationDate"].dt.year >= MIN_POP_YEAR)
+        df = df[date_ok]
+
+    if allowed_countries:
+        allowed = set(allowed_countries)
+        df = df[(df["norm_iso"] != "") | (df["norm_country"].isin(allowed))]
+    else:
+        df = df[(df["norm_iso"] != "") | (df["norm_country"] != "")]
+
+    removed = before - len(df)
+    if removed > 0:
+        print(f"[POP] Current-entity filter removed {removed} rows.")
+
+    return df
+
+
+def load_country_totals(land: gpd.GeoDataFrame, target_year: int) -> Dict[str, float]:
+    """Load optional official country totals used for country calibration."""
+    if not os.path.exists(COUNTRY_TOTALS_PATH):
+        return {}
+
+    totals_df = pd.read_csv(COUNTRY_TOTALS_PATH, sep=";")
+    if len(totals_df.columns) == 1:
+        totals_df = pd.read_csv(COUNTRY_TOTALS_PATH)
+
+    country_col = next(
+        (c for c in ["country_iso3", "iso3", "country", "country_code"] if c in totals_df.columns),
+        None,
+    )
+    pop_col = next(
+        (c for c in ["population", "total_population", "pop"] if c in totals_df.columns),
+        None,
+    )
+    year_col = next((c for c in ["year", "population_year"] if c in totals_df.columns), None)
+
+    if country_col is None or pop_col is None:
+        print("[POP] country_population_totals.csv missing required columns; ignoring official totals.")
+        return {}
+
+    land_isos = set(str(v).upper() for v in land["country"].dropna().unique()) if "country" in land.columns else set()
+    name_to_iso: Dict[str, str] = {}
+    if "country" in land.columns:
+        for _, row in land[["country", "admin"]].drop_duplicates().iterrows():
+            iso = str(row.get("country", "")).upper().strip()
+            admin_name = normalize(row.get("admin", ""))
+            if iso:
+                name_to_iso[normalize(iso)] = iso
+                if admin_name:
+                    name_to_iso[admin_name] = iso
+
+    selected_rows = []
+    for _, group in totals_df.groupby(country_col):
+        grp = group.copy()
+        if year_col and year_col in grp.columns:
+            grp[year_col] = pd.to_numeric(grp[year_col], errors="coerce")
+            dated = grp[pd.notna(grp[year_col])]
+            if dated.empty:
+                pick = grp.iloc[-1]
+            else:
+                at_or_before = dated[dated[year_col] <= target_year]
+                pick = (at_or_before if not at_or_before.empty else dated).sort_values(year_col).iloc[-1]
+        else:
+            pick = grp.iloc[-1]
+        selected_rows.append(pick)
+
+    selected_df = pd.DataFrame(selected_rows)
+    totals: Dict[str, float] = {}
+
+    for _, row in selected_df.iterrows():
+        raw_country = str(row.get(country_col, "")).strip()
+        pop = pd.to_numeric(row.get(pop_col), errors="coerce")
+        if pd.isna(pop) or pop <= 0:
+            continue
+
+        iso = None
+        if re.fullmatch(r"[A-Za-z]{3}", raw_country):
+            cand = raw_country.upper()
+            if cand in land_isos:
+                iso = cand
+
+        if iso is None:
+            iso = name_to_iso.get(normalize(raw_country))
+
+        if iso is not None:
+            totals[iso] = float(pop)
+
+    if totals:
+        print(f"[POP] Loaded {len(totals)} official country totals.")
+    return totals
+
+
+def load_province_seed_weights(land: gpd.GeoDataFrame) -> Dict[int, float]:
+    """
+    Baseline weights for option 3.
+    - default: province area (stable full-coverage fallback)
+    - optional override: province_population_seed.csv (e.g., raster sums)
+    """
+    weights = {
+        pid: max(float(row.geometry.area), 1.0)
+        for pid, row in land.iterrows()
+        if row.geometry is not None
+    }
+
+    if not os.path.exists(PROVINCE_SEED_PATH):
+        return weights
+
+    seed_df = pd.read_csv(PROVINCE_SEED_PATH, sep=";")
+    if len(seed_df.columns) == 1:
+        seed_df = pd.read_csv(PROVINCE_SEED_PATH)
+
+    if "province_id" not in seed_df.columns:
+        print("[POP] province_population_seed.csv missing province_id; ignoring seed overrides.")
+        return weights
+
+    seed_col = next((c for c in ["seed_population", "population", "weight"] if c in seed_df.columns), None)
+    if seed_col is None:
+        print("[POP] province_population_seed.csv missing seed column; ignoring seed overrides.")
+        return weights
+
+    used = 0
+    for _, row in seed_df.iterrows():
+        pid = pd.to_numeric(row.get("province_id"), errors="coerce")
+        seed = pd.to_numeric(row.get(seed_col), errors="coerce")
+        if pd.isna(pid) or pd.isna(seed) or seed <= 0:
+            continue
+        ipid = int(pid)
+        if ipid in weights:
+            weights[ipid] = float(seed)
+            used += 1
+
+    if used:
+        print(f"[POP] Applied {used} province seed overrides.")
+    return weights
+
+
+def allocate_country_total(province_ids: List[int], weights: Dict[int, float], target_total: float) -> Dict[int, int]:
+    """Allocate integer population across provinces by weight, preserving country total."""
+    if not province_ids:
+        return {}
+
+    target = max(int(round(target_total)), len(province_ids))
+    allocations = {pid: 1 for pid in province_ids}
+    remaining = target - len(province_ids)
+    if remaining <= 0:
+        return allocations
+
+    safe_weights = {pid: max(weights.get(pid, 1.0), 1e-9) for pid in province_ids}
+    total_weight = sum(safe_weights.values())
+    consumed = 0
+    fractions: List[Tuple[int, float]] = []
+
+    for pid in province_ids:
+        exact = remaining * safe_weights[pid] / total_weight
+        base = int(exact)
+        allocations[pid] += base
+        consumed += base
+        fractions.append((pid, exact - base))
+
+    rest = remaining - consumed
+    if rest > 0:
+        fractions.sort(key=lambda item: item[1], reverse=True)
+        for i in range(rest):
+            allocations[fractions[i % len(fractions)][0]] += 1
+
+    return allocations
+
+
+def build_consistent_population(
+    land: gpd.GeoDataFrame,
+    matched: Dict[int, Tuple[pd.Series, str, int]],
+    target_year: int,
+) -> Tuple[Dict[int, float], Dict[int, str]]:
+    """
+    Option 3 (province-first):
+    1) keep matched province populations as baseline values
+    2) impute only missing provinces using country/global density and seed weights
+    3) calibrate to official country totals when provided
+    """
+    weights = load_province_seed_weights(land)
+    official_totals = load_country_totals(land, target_year)
+
+    matched_pop_by_pid: Dict[int, float] = {}
+    matched_method_by_pid: Dict[int, str] = {}
+    for pid, entry in matched.items():
+        src_row = entry[0]
+        match_method = entry[1]
+        pop = pd.to_numeric(src_row.get("population"), errors="coerce")
+        if pd.isna(pop) or pop <= 0:
+            continue
+        matched_pop_by_pid[pid] = float(pop)
+        matched_method_by_pid[pid] = match_method
+
+    country_to_pids: Dict[str, List[int]] = {}
+    for pid, row in land.iterrows():
+        iso3 = str(row.get("country", "")).upper().strip()
+        if not iso3:
+            continue
+        country_to_pids.setdefault(iso3, []).append(pid)
+
+    trusted_global = [
+        pid
+        for pid in matched_pop_by_pid
+        if matched_method_by_pid.get(pid) in DENSITY_CONFIDENT_METHODS
+    ]
+    density_source_global = trusted_global if trusted_global else list(matched_pop_by_pid.keys())
+
+    matched_pop_total = 0.0
+    matched_weight_total = 0.0
+    for pid in density_source_global:
+        matched_pop_total += matched_pop_by_pid[pid]
+        matched_weight_total += max(weights.get(pid, 1.0), 1.0)
+
+    global_density = (matched_pop_total / matched_weight_total) if matched_weight_total > 0 else 1e-6
+
+    pop_values: Dict[int, float] = {}
+    source_by_pid: Dict[int, str] = {}
+
+    for iso3, pids in country_to_pids.items():
+        matched_pids = [pid for pid in pids if pid in matched_pop_by_pid]
+        unmatched_pids = [pid for pid in pids if pid not in matched_pop_by_pid]
+
+        trusted_country = [
+            pid
+            for pid in matched_pids
+            if matched_method_by_pid.get(pid) in DENSITY_CONFIDENT_METHODS
+        ]
+        use_country_density = bool(trusted_country)
+        if use_country_density:
+            matched_total = sum(matched_pop_by_pid[pid] for pid in trusted_country)
+            matched_weight = sum(max(weights.get(pid, 1.0), 1.0) for pid in trusted_country)
+            country_density = (matched_total / matched_weight) if matched_weight > 0 else global_density
+        else:
+            country_density = global_density
+
+        baseline: Dict[int, float] = {}
+        baseline_source: Dict[int, str] = {}
+
+        for pid in matched_pids:
+            baseline[pid] = matched_pop_by_pid[pid]
+            baseline_source[pid] = "matched_province"
+
+        for pid in unmatched_pids:
+            seed_w = max(weights.get(pid, 1.0), 1.0)
+            baseline[pid] = max(seed_w * country_density, 1.0)
+            baseline_source[pid] = "imputed_country_density" if use_country_density else "imputed_global_density"
+
+        if iso3 in official_totals and official_totals[iso3] > 0:
+            allocations = allocate_country_total(pids, baseline, official_totals[iso3])
+            for pid, val in allocations.items():
+                pop_values[pid] = float(val)
+                if baseline_source.get(pid, "").startswith("matched"):
+                    source_by_pid[pid] = "matched_scaled_official"
+                else:
+                    source_by_pid[pid] = "imputed_scaled_official"
+            continue
+
+        for pid in pids:
+            pop_values[pid] = float(max(int(round(baseline.get(pid, 1.0))), 1))
+            source_by_pid[pid] = baseline_source.get(pid, "imputed_global_density")
+
+    print(f"[POP] Consistent distribution built for {len(country_to_pids)} countries.")
+    return pop_values, source_by_pid
+
+
+def load_population(allowed_countries: Optional[Set[str]] = None) -> pd.DataFrame:
     qpath = resolve_query_path()
     df = pd.read_csv(qpath).reset_index().rename(columns={"index": "source_index"})
     df["population"] = pd.to_numeric(df["population"], errors="coerce")
@@ -144,6 +540,10 @@ def load_population() -> pd.DataFrame:
     df["norm_iso"] = df["iso"].apply(normalize_iso)
     df["norm_region"] = df["regionLabel"].apply(normalize)
     df["norm_country"] = df["countryLabel"].apply(normalize)
+
+    country_aliases, region_aliases = load_aliases()
+    df = apply_aliases(df, country_aliases, region_aliases)
+    df = filter_current_entities(df, allowed_countries)
 
     df = df.sort_values(["norm_iso", "norm_region", "norm_country", "populationDate"])
 
@@ -198,18 +598,30 @@ def fuzzy_region_match(norm_region: str, region_index: List[Tuple[int, str]]) ->
     if not norm_region:
         return []
 
-    hits = [pid for pid, name in region_index if norm_region in name or name in norm_region]
+    region_tokens = [tok for tok in norm_region.split() if tok]
+    region_token_set = set(region_tokens)
+
+    hits: List[int] = []
+    for pid, name in region_index:
+        name_tokens = [tok for tok in name.split() if tok]
+        name_token_set = set(name_tokens)
+        if not name_token_set:
+            continue
+
+        # Token containment avoids false positives like "aragon" -> "tarragona".
+        if region_token_set == name_token_set:
+            hits.append(pid)
+            continue
+        if region_token_set.issubset(name_token_set) and len(region_token_set) >= 2:
+            hits.append(pid)
+            continue
+        if name_token_set.issubset(region_token_set):
+            hits.append(pid)
+
     if hits:
         return hits
 
-    best = []
-    best_ratio = 0.0
-    for pid, name in region_index:
-        r = difflib.SequenceMatcher(None, norm_region, name).ratio()
-        if r > best_ratio and r >= 0.8:
-            best = [pid]
-            best_ratio = r
-    return best
+    return []
 
 
 def match_population_to_land(pop_df: pd.DataFrame, lookup_full, lookup_region, region_index, country_map, iso_map):
@@ -249,13 +661,24 @@ def match_population_to_land(pop_df: pd.DataFrame, lookup_full, lookup_region, r
 
         if not hits:
             best_pid = None
+            best_name = ""
             best_ratio = 0.0
             for pid, name in region_index:
                 r = difflib.SequenceMatcher(None, row["norm_region"], name).ratio()
                 if r > best_ratio:
                     best_ratio = r
                     best_pid = pid
-            if best_ratio >= 0.55 and best_pid is not None:
+
+                    best_name = name
+
+            src_name = row["norm_region"]
+            src_tokens = [tok for tok in src_name.split() if tok]
+            best_tokens = [tok for tok in best_name.split() if tok]
+            single_token_mode = len(src_tokens) == 1 and len(best_tokens) == 1
+            min_ratio = 0.9 if single_token_mode else 0.8
+            length_ok = (abs(len(src_name) - len(best_name)) <= 2) if single_token_mode else True
+
+            if best_ratio >= min_ratio and best_pid is not None and length_ok:
                 hits = [best_pid]
                 method = "fuzzy_best"
 
@@ -349,46 +772,55 @@ def generate_population_dataset(
         unmatched: list of (regionLabel, countryLabel) that did not match
     """
     land = land if land is not None else load_land()
-    pop_df = load_population()
     lookup_full, lookup_region, region_index, country_map, iso_map = build_lookup(land)
+    pop_df = load_population(allowed_countries=set(country_map.values()))
     matched, unmatched = match_population_to_land(pop_df, lookup_full, lookup_region, region_index, country_map, iso_map)
 
     rows, debug_rows = build_output_rows(land, matched)
 
-    pop_values = {
-        pid: float(row[0]["population"])
-        for pid, row in matched.items()
-        if pd.notna(row[0]["population"])
-    }
+    if USE_CONSISTENT_DISTRIBUTION:
+        pop_values, source_by_pid = build_consistent_population(land, matched, target_year=TARGET_POP_YEAR)
+        for row in rows:
+            pid = row["province_id"]
+            row["population"] = int(pop_values.get(pid, 1.0))
+            row["population_source"] = source_by_pid.get(pid, "calibrated_density")
+            if not row.get("population_date"):
+                row["population_date"] = f"{TARGET_POP_YEAR}-01-01"
+    else:
+        pop_values = {
+            pid: float(row[0]["population"])
+            for pid, row in matched.items()
+            if pd.notna(row[0]["population"])
+        }
 
-    if fill_missing:
-        country_values: Dict[str, List[float]] = {}
-        for pid, val in pop_values.items():
-            country = (land.loc[pid]["admin"] if "admin" in land.columns else land.loc[pid].get("country")) or ""
-            country_values.setdefault(country, []).append(val)
+        if fill_missing:
+            country_values: Dict[str, List[float]] = {}
+            for pid, val in pop_values.items():
+                country = (land.loc[pid]["admin"] if "admin" in land.columns else land.loc[pid].get("country")) or ""
+                country_values.setdefault(country, []).append(val)
 
-        country_median = {c: median(vs) for c, vs in country_values.items() if vs}
-        global_vals = list(pop_values.values())
-        global_median = median(global_vals) if global_vals else 0.0
+            country_median = {c: median(vs) for c, vs in country_values.items() if vs}
+            global_vals = list(pop_values.values())
+            global_median = median(global_vals) if global_vals else 0.0
+
+            for row in rows:
+                if row["population"] == "" or row["population"] == 0:
+                    c = row["country"] or ""
+                    fallback = country_median.get(c, global_median)
+                    val = int(fallback) if fallback else 1
+                    val += (row["province_id"] % 997)
+                    row["population"] = val
+                    row["population_source"] = "filled_country" if c in country_median else "filled_global"
+                    pop_values[row["province_id"]] = float(val)
 
         for row in rows:
-            if row["population"] == "" or row["population"] == 0:
-                c = row["country"] or ""
-                fallback = country_median.get(c, global_median)
-                val = int(fallback) if fallback else 1
-                val += (row["province_id"] % 997)
+            pid = row["province_id"]
+            if pid not in pop_values or pop_values[pid] <= 0:
+                base = row["population"] if row["population"] else 1
+                val = int(base) + (pid % 991)
                 row["population"] = val
-                row["population_source"] = "filled_country" if c in country_median else "filled_global"
-                pop_values[row["province_id"]] = float(val)
-
-    for row in rows:
-        pid = row["province_id"]
-        if pid not in pop_values or pop_values[pid] <= 0:
-            base = row["population"] if row["population"] else 1
-            val = int(base) + (pid % 991)
-            row["population"] = val
-            row["population_source"] = row.get("population_source", "filled_global")
-            pop_values[pid] = float(val)
+                row["population_source"] = row.get("population_source", "filled_global")
+                pop_values[pid] = float(val)
 
     if write_csv:
         os.makedirs(os.path.dirname(out_path), exist_ok=True)

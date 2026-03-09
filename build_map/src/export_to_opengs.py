@@ -275,6 +275,15 @@ def run_export(land, sea_regions):
             print(f" - {name} ({country})")
     write_population_txt(rows, debug_rows, os.path.join(OUT, "Population.txt"))
 
+    pop_source_by_pid = {
+        r["province_id"]: r.get("population_source", "")
+        for r in rows
+    }
+    pop_country_by_pid = {
+        r["province_id"]: r.get("country", "")
+        for r in rows
+    }
+
     land_areas = {
         pid: land.loc[pid].geometry.area / 1_000_000
         for pid in land.index
@@ -291,6 +300,8 @@ def run_export(land, sea_regions):
         bounds,
         population=pop_values,
         land_areas=land_areas,
+        population_source=pop_source_by_pid,
+        province_country=pop_country_by_pid,
         max_pid=max_pid,
     )
 

@@ -1,0 +1,945 @@
+source_country;source_region;rows
+Albania;Durrës County;1
+Andorra;Andorra la Vella;1
+Andorra;Canillo;1
+Andorra;Encamp;1
+Andorra;Escaldes-Engordany;1
+Andorra;La Massana;1
+Andorra;Ordino;1
+Andorra;Sant Julià de Lòria;1
+Austria;Vienna;1
+Belgium;Brussels-Capital Region;1
+Belgium;German-speaking Community of Belgium;1
+Belgium;Wallonia;1
+Bosnia and Herzegovina;Brčko District;1
+Cisalpine Republic;Adda;1
+County of Württemberg;Württemberg;1
+Croatia;Međimurje County;1
+Crown of the Kingdom of Poland;Rawa Voivodeship;1
+Cyprus;Kyrenia District;1
+Cyprus;Larnaca District;1
+Czech Republic;Northern Bohemia;1
+Czech Republic;Prague;1
+Czech Republic;Southern Bohemia;1
+Czechoslovak Republic;Q90818610;1
+Czechoslovakia;Autonomous Land of Slovakia;1
+Czechoslovakia;Bratislava region (1948 – 1960);1
+Czechoslovakia;Brno Region;1
+Czechoslovakia;Central Slovakia;1
+Czechoslovakia;Eastern Slovakia;1
+Czechoslovakia;Hradec Králové Region;1
+Czechoslovakia;Karlovarský kraj;1
+Czechoslovakia;Land of Moravia;1
+Czechoslovakia;Moravian-Silesian country;1
+Czechoslovakia;Ostrava region;1
+Czechoslovakia;Q10861593;1
+Czechoslovakia;Q11177290;1
+Czechoslovakia;Q11247545;1
+Czechoslovakia;Q12018407;1
+Czechoslovakia;Q12024718;1
+Czechoslovakia;Q12031326;1
+Czechoslovakia;Q12040959;1
+Czechoslovakia;Q12043819;1
+Czechoslovakia;Q12045981;1
+Czechoslovakia;Q12046621;1
+Czechoslovakia;Q12046944;1
+Czechoslovakia;Q13425116;1
+Czechoslovakia;Q27917023;1
+Czechoslovakia;Q56219884;1
+Czechoslovakia;Q66022735;1
+Czechoslovakia;Q66022759;1
+Czechoslovakia;Q66022806;1
+Czechoslovakia;Q67032769;1
+Czechoslovakia;Q8534961;1
+Czechoslovakia;Q90818597;1
+Czechoslovakia;Q90818603;1
+Czechoslovakia;Q90818604;1
+Czechoslovakia;Q90818609;1
+Czechoslovakia;Q90818610;1
+Czechoslovakia;Q90884090;1
+Czechoslovakia;Q91122357;1
+Czechoslovakia;Q91122362;1
+Czechoslovakia;Q91122364;1
+Czechoslovakia;Q91122367;1
+Czechoslovakia;Q91122372;1
+Czechoslovakia;Q91122375;1
+Czechoslovakia;Q91122380;1
+Czechoslovakia;Q91122384;1
+Czechoslovakia;Q91122389;1
+Czechoslovakia;Q91122392;1
+Czechoslovakia;Q91122399;1
+Czechoslovakia;Q91122401;1
+Czechoslovakia;Q91122406;1
+Czechoslovakia;Q91122410;1
+Czechoslovakia;Q91785411;1
+Czechoslovakia;Q91809911;1
+Czechoslovakia;Western Slovakia;1
+Czechoslovakia;Země Slezská;1
+Czechoslovakia;Země Česká;1
+Czechoslovakia;Žilina region (1948 – 1960);1
+Democratic Federal Yugoslavia;Aračinovo Municipality;1
+Democratic Federal Yugoslavia;Dojran Municipality;1
+Democratic Federal Yugoslavia;Petrovec Municipality;1
+Democratic Federal Yugoslavia;Staro Nagoričane Municipality;1
+Democratic Federal Yugoslavia;Valandovo Municipality;1
+Denmark;North Jutland Region;1
+Duchy of Württemberg;Württemberg;1
+Federal People's Republic of Yugoslavia;Aračinovo Municipality;1
+Federal People's Republic of Yugoslavia;Dojran Municipality;1
+Federal People's Republic of Yugoslavia;Petrovec Municipality;1
+Federal People's Republic of Yugoslavia;Staro Nagoričane Municipality;1
+Federal People's Republic of Yugoslavia;Valandovo Municipality;1
+Finland;Kanta-Häme;1
+Finland;Southwest Finland;1
+Finland;Åland;1
+First Republic of Austria;Styria;1
+France;Anaa;1
+France;Arue;1
+France;Arutua;1
+France;Auvergne;1
+France;Bora-Bora;1
+France;Bourgogne-Franche-Comté;1
+France;Brittany;1
+France;Burgundy;1
+France;Corsica;1
+France;Fakarava;1
+France;Fangatau;1
+France;Fatu-Hiva;1
+France;Faʻaʻā;1
+France;Franche-Comté;1
+France;French Guiana;1
+France;French Polynesia;1
+France;Guadeloupe;1
+France;Hao;1
+France;Hikueru;1
+France;Hitiaa O Te Ra;1
+France;Hiva-Oa;1
+France;Languedoc-Roussillon;1
+France;Lower Normandy;1
+France;Makemo;1
+France;Maupiti;1
+France;Mayotte;1
+France;Moorea-Maiao;1
+France;Napuka;1
+France;New Caledonia;1
+France;Normandy;1
+France;Nuku-Hiva;1
+France;Nukutavake;1
+France;Occitania;1
+France;Paea;1
+France;Papara;1
+France;Papeete;1
+France;Picardy;1
+France;Pirae;1
+France;Provence-Alpes-Côte d'Azur;1
+France;Pukapuka;1
+France;Punaauia;1
+France;Q22010895;1
+France;Raivavae;1
+France;Rangiroa;1
+France;Rapa;1
+France;Reao;1
+France;Rimatara;1
+France;Rurutu;1
+France;Réunion;1
+France;Tahaa;1
+France;Tahuata;1
+France;Taiarapu-Est;1
+France;Taiarapu-Ouest;1
+France;Takaroa;1
+France;Taputapuatea;1
+France;Tatakoto;1
+France;Teva I Uta;1
+France;Tubuai;1
+France;Tumaraa;1
+France;Tureia;1
+France;Ua-Huka;1
+France;Ua-Pou;1
+France;Upper Normandy;1
+France;Uturoa;1
+France;Wallis and Futuna;1
+Georgia;Gali District;1
+Georgia;Georgia;1
+Georgia;Kakheti;1
+Georgia;Kvemo Kartli;1
+German Democratic Republic;Cottbus District;1
+German Democratic Republic;Erfurt District;1
+German Democratic Republic;Frankfurt (Oder) District;1
+German Democratic Republic;Halle District;1
+German Democratic Republic;Magdeburg District;1
+German Democratic Republic;Potsdam District;1
+German Democratic Republic;Rostock District;1
+German Democratic Republic;Saxony;1
+German Democratic Republic;State of Brandenburg;1
+German Democratic Republic;Suhl District;1
+German Reich;Grand Duchy of Hesse;1
+German Reich;Hesse;1
+German Reich;Kingdom of Bavaria;1
+German Reich;Principality of Waldeck;1
+Germany;Berlin;1
+Germany;Bremen;1
+Germany;Hamburg;1
+Germany;Margraviate of Baden-Durlach;1
+Germany;Prince-Bishopric of Freising;1
+Greece;Decentralized Administration of the Aegean;1
+Greece;Western Macedonia Region;1
+Hesse-Homburg;Hesse-Homburg;1
+Holy Roman Empire;Electorate of Saxony;1
+Holy Roman Empire;Free Imperial City of Strasbourg;1
+Holy Roman Empire;Imperial City of Dinkelsbühl;1
+Holy Roman Empire;Landgraviate of Hesse-Kassel;1
+Holy Roman Empire;Prince-Bishopric of Paderborn;1
+Holy Roman Empire;Principality of Waldeck;1
+Holy Roman Empire;Republic of Mulhouse;1
+Hungary;Baja;1
+Hungary;Debrecen;1
+Hungary;Dunaújváros;1
+Hungary;Eger;1
+Hungary;Kaposvár;1
+Hungary;Kecskemét;1
+Hungary;Miskolc;1
+Hungary;Nagykanizsa;1
+Hungary;Nyíregyháza;1
+Hungary;Salgótarján;1
+Hungary;Szeged;1
+Hungary;Szekszárd;1
+Hungary;Szombathely;1
+Hungary;Székesfehérvár;1
+Hungary;Érd;1
+Iceland;Capital Region;1
+Independent State of Croatia;Great Parish of Dubrava;1
+Ireland;Dublin City;1
+Ireland;Dún Laoghaire–Rathdown;1
+Ireland;Fingal;1
+Ireland;South Dublin;1
+Isle of Man;Glenfaba;1
+Isle of Man;Michael;1
+Isle of Man;Rushen;1
+Italy;Apulia;1
+Italy;Basilicata;1
+Italy;Emilia-Romagna;1
+Italy;Friuli Venezia Giulia;1
+Italy;Lazio;1
+Italy;Lombardy;1
+Italy;Marche;1
+Italy;Molise;1
+Italy;Piedmont;1
+Italy;Sardinia;1
+Italy;Sicily;1
+Italy;Tuscany;1
+Italy;Umbria;1
+Italy;Veneto;1
+Jersey;Saint Clement;1
+Jersey;Saint Helier;1
+Jersey;Saint John;1
+Jersey;Saint Mary;1
+Jersey;Saint Ouen;1
+Jersey;Saint Saviour;1
+Jersey;Trinity;1
+Kingdom of Bavaria;Buchhorn;1
+Kingdom of Bulgaria;Dojran Municipality;1
+Kingdom of Bulgaria;Petrovec Municipality;1
+Kingdom of Bulgaria;Staro Nagoričane Municipality;1
+Kingdom of Bulgaria;Valandovo Municipality;1
+Kingdom of France;Free Imperial City of Strasbourg;1
+Kingdom of Hungary;Municipality of Brezovica;1
+Kingdom of Romania;Dubăsari County;1
+Kingdom of Romania;Golta;1
+Kingdom of Romania;Ismail County;1
+Kingdom of Romania;Lăpușna County;1
+Kingdom of Romania;Q12731453;1
+Kingdom of Romania;Q12731468;1
+Kingdom of Romania;Q12731472;1
+Kingdom of Romania;Q12731479;1
+Kingdom of Romania;Q12731481;1
+Kingdom of Romania;Q12731483;1
+Kingdom of Romania;Q12731494;1
+Kingdom of Romania;Q18537383;1
+Kingdom of Romania;Q18537682;1
+Kingdom of Romania;Q18548594;1
+Kingdom of Serbia;Dojran Municipality;1
+Kingdom of Serbia;Petrovec Municipality;1
+Kingdom of Serbia;Staro Nagoričane Municipality;1
+Kingdom of Serbia;Valandovo Municipality;1
+Kingdom of Serbs, Croats and Slovenes;Dojran Municipality;1
+Kingdom of Serbs, Croats and Slovenes;Petrovec Municipality;1
+Kingdom of Serbs, Croats and Slovenes;Staro Nagoričane Municipality;1
+Kingdom of Serbs, Croats and Slovenes;Valandovo Municipality;1
+Kingdom of Württemberg;Württemberg;1
+Kingdom of Yugoslavia;Dojran Municipality;1
+Kingdom of Yugoslavia;Petrovec Municipality;1
+Kingdom of Yugoslavia;Staro Nagoričane Municipality;1
+Kingdom of Yugoslavia;Valandovo Municipality;1
+Kosovo;Peja District;1
+Latvia;Aizkraukle Municipality;1
+Latvia;Aizpute Municipality;1
+Latvia;Aknīste Municipality;1
+Latvia;Alsunga Municipality;1
+Latvia;Amata Municipality;1
+Latvia;Ape Municipality;1
+Latvia;Auce Municipality;1
+Latvia;Babīte Municipality;1
+Latvia;Baldone Municipality;1
+Latvia;Baltinava Municipality;1
+Latvia;Balvi Municipality;1
+Latvia;Bauska Municipality;1
+Latvia;Beverīna Municipality;1
+Latvia;Brocēni Municipality;1
+Latvia;Carnikava Municipality;1
+Latvia;Cesvaine Municipality;1
+Latvia;Cibla Municipality;1
+Latvia;Cēsis Municipality;1
+Latvia;Dagda Municipality;1
+Latvia;Dobele Municipality;1
+Latvia;Dundaga Municipality;1
+Latvia;Durbe Municipality;1
+Latvia;Engure Municipality;1
+Latvia;Garkalne Municipality;1
+Latvia;Grobiņa Municipality;1
+Latvia;Iecava Municipality;1
+Latvia;Ikšķile Municipality;1
+Latvia;Inčukalns Municipality;1
+Latvia;Jaunpiebalga Municipality;1
+Latvia;Jēkabpils Municipality;1
+Latvia;Jūrmala;1
+Latvia;Kocēni Municipality;1
+Latvia;Koknese Municipality;1
+Latvia;Krimulda Municipality;1
+Latvia;Krustpils Municipality;1
+Latvia;Lielvārde Municipality;1
+Latvia;Liepāja;1
+Latvia;Lubāna Municipality;1
+Latvia;Ludza Municipality;1
+Latvia;Līgatne Municipality;1
+Latvia;Līvāni Municipality;1
+Latvia;Mazsalaca Municipality;1
+Latvia;Mālpils Municipality;1
+Latvia;Mārupe Municipality;1
+Latvia;Mērsrags Municipality;1
+Latvia;Naukšēni Municipality;1
+Latvia;Nereta Municipality;1
+Latvia;Nīca Municipality;1
+Latvia;Olaine Municipality;1
+Latvia;Ozolnieki Municipality;1
+Latvia;Preiļi Municipality;1
+Latvia;Priekule Municipality;1
+Latvia;Priekuļi Municipality;1
+Latvia;Pārgauja Municipality;1
+Latvia;Pāvilosta Municipality;1
+Latvia;Pļaviņas Municipality;1
+Latvia;Rauna Municipality;1
+Latvia;Riebiņi Municipality;1
+Latvia;Roja Municipality;1
+Latvia;Ropaži Municipality;1
+Latvia;Rucava Municipality;1
+Latvia;Rugāji Municipality;1
+Latvia;Rundāle Municipality;1
+Latvia;Rūjiena Municipality;1
+Latvia;Sala Municipality;1
+Latvia;Salacgrīva Municipality;1
+Latvia;Salaspils Municipality;1
+Latvia;Saulkrasti Municipality;1
+Latvia;Sigulda Municipality;1
+Latvia;Skrunda Municipality;1
+Latvia;Skrīveri Municipality;1
+Latvia;Smiltene Municipality;1
+Latvia;South Kurzeme Municipality;1
+Latvia;Stopiņi Municipality;1
+Latvia;Strenči Municipality;1
+Latvia;Sēja Municipality;1
+Latvia;Tērvete Municipality;1
+Latvia;Valmiera Municipality;1
+Latvia;Varakļāni Municipality;1
+Latvia;Vecpiebalga Municipality;1
+Latvia;Viesīte Municipality;1
+Latvia;Viļaka Municipality;1
+Latvia;Viļāni Municipality;1
+Latvia;Vārkava Municipality;1
+Latvia;Zilupe Municipality;1
+Latvia;Ādaži Municipality;1
+Latvia;Ērgļi Municipality;1
+Liechtenstein;Balzers;1
+Liechtenstein;Eschen;1
+Liechtenstein;Gamprin;1
+Liechtenstein;Mauren;1
+Liechtenstein;Planken;1
+Liechtenstein;Ruggell;1
+Liechtenstein;Schaan;1
+Liechtenstein;Schellenberg;1
+Liechtenstein;Triesen;1
+Liechtenstein;Triesenberg;1
+Liechtenstein;Vaduz;1
+Lithuania;Akmenė District Municipality;1
+Lithuania;Anykščiai District Municipality;1
+Lithuania;Birštonas Municipality;1
+Lithuania;Biržai District Municipality;1
+Lithuania;Druskininkai municipality;1
+Lithuania;Elektrėnai Municipality;1
+Lithuania;Ignalina District Municipality;1
+Lithuania;Jonava District Municipality;1
+Lithuania;Joniškis District Municipality;1
+Lithuania;Jurbarkas District Municipality;1
+Lithuania;Kaišiadorys District Municipality;1
+Lithuania;Kalvarija Municipality;1
+Lithuania;Kazlų Rūda Municipality;1
+Lithuania;Kelmė District Municipality;1
+Lithuania;Kretinga Municipality;1
+Lithuania;Kupiškis District Municipality;1
+Lithuania;Kėdainiai District Municipality;1
+Lithuania;Lazdijai District Municipality;1
+Lithuania;Mažeikiai District Municipality;1
+Lithuania;Molėtai District Municipality;1
+Lithuania;Neringa Municipality;1
+Lithuania;Pagėgiai Municipality;1
+Lithuania;Pakruojis District Municipality;1
+Lithuania;Palanga City Municipality;1
+Lithuania;Pasvalys District Municipality;1
+Lithuania;Plungė District Municipality;1
+Lithuania;Prienai District Municipality;1
+Lithuania;Radviliškis District Municipality;1
+Lithuania;Raseiniai District Municipality;1
+Lithuania;Rietavas Municipality;1
+Lithuania;Rokiškis District Municipality;1
+Lithuania;Trakai District Municipality;1
+Lithuania;Ukmergė District Municipality;1
+Lithuania;Varėna District Municipality;1
+Lithuania;Vilkaviškis District Municipality;1
+Lithuania;Visaginas Municipality;1
+Lithuania;Zarasai District Municipality;1
+Lithuania;Šalčininkai District Municipality;1
+Lithuania;Šilalė District Municipality;1
+Lithuania;Šilutė District Municipality;1
+Lithuania;Širvintos District Municipality;1
+Lithuania;Švenčionys District Municipality;1
+Luxembourg;Canton of Capellen;1
+Luxembourg;Canton of Clervaux;1
+Luxembourg;Canton of Echternach;1
+Luxembourg;Canton of Esch-sur-Alzette;1
+Luxembourg;Canton of Grevenmacher;1
+Luxembourg;Canton of Luxembourg;1
+Luxembourg;Canton of Mersch;1
+Luxembourg;Canton of Redange;1
+Luxembourg;Canton of Remich;1
+Luxembourg;Canton of Vianden;1
+Luxembourg;Canton of Wiltz;1
+Luxembourg;Grevenmacher District;1
+Luxembourg;Luxembourg District;1
+Moldova;Anenii Noi District;1
+Moldova;Basarabeasca District;1
+Moldova;Bender;1
+Moldova;Bălți Municipality;1
+Moldova;Ceadîr-Lunga;1
+Moldova;Chișinău Municipality;1
+Moldova;Călărași District;1
+Moldova;Drochia District;1
+Moldova;Dubăsari District;1
+Moldova;Gagauzia;1
+Moldova;Glodeni District;1
+Moldova;Ialoveni District;1
+Moldova;Leova District;1
+Moldova;Nisporeni District;1
+Moldova;Ocnița District;1
+Moldova;Rezina District;1
+Moldova;Soroca District;1
+Moldova;Strășeni District;1
+Moldova;Sîngerei District;1
+Moldova;Telenești District;1
+Moldova;Tiraspol;1
+Moldova;Șoldănești District;1
+Montenegro;Andrijevica Municipality;1
+Montenegro;Bar Municipality;1
+Montenegro;Bijelo Polje Municipality;1
+Montenegro;Budva Municipality;1
+Montenegro;Danilovgrad Municipality;1
+Montenegro;Gusinje Municipality;1
+Montenegro;Herceg Novi Municipality;1
+Montenegro;Kolašin Municipality;1
+Montenegro;Kotor Municipality;1
+Montenegro;Mojkovac Municipality;1
+Montenegro;Old Royal Capital Cetinje;1
+Montenegro;Petnjica Municipality;1
+Montenegro;Plav Municipality;1
+Montenegro;Plužine Municipality;1
+Montenegro;Rožaje Municipality;1
+Montenegro;Tivat Municipality;1
+Montenegro;Tuzi Municipality;1
+Montenegro;Ulcinj Municipality;1
+Montenegro;Zeta Municipality;1
+Montenegro;Šavnik Municipality;1
+Montenegro;Žabljak Municipality;1
+Nazi Germany;Reichsgau Steiermark;1
+North German Confederation;Principality of Waldeck;1
+North Macedonia;Aerodrom Municipality;1
+North Macedonia;Aračinovo Municipality;1
+North Macedonia;Berovo Municipality;1
+North Macedonia;Bitola Municipality;1
+North Macedonia;Bogdanci Municipality;1
+North Macedonia;Bogovinje Municipality;1
+North Macedonia;Bosilovo Municipality;1
+North Macedonia;Brvenica Municipality;1
+North Macedonia;Butel Municipality;1
+North Macedonia;Centar Municipality;1
+North Macedonia;Centar Župa Municipality;1
+North Macedonia;Debar Municipality;1
+North Macedonia;Debarca Municipality;1
+North Macedonia;Delčevo Municipality;1
+North Macedonia;Demir Hisar Municipality;1
+North Macedonia;Demir Kapija Municipality;1
+North Macedonia;Dojran Municipality;1
+North Macedonia;Dolneni Municipality;1
+North Macedonia;Gazi Baba Municipality;1
+North Macedonia;Gevgelija Municipality;1
+North Macedonia;Gostivar Municipality;1
+North Macedonia;Ilinden Municipality;1
+North Macedonia;Jegunovce Municipality;1
+North Macedonia;Karbinci Municipality;1
+North Macedonia;Karpoš Municipality;1
+North Macedonia;Kavadarci Municipality;1
+North Macedonia;Kisela Voda Municipality;1
+North Macedonia;Kičevo Municipality;1
+North Macedonia;Konče Municipality;1
+North Macedonia;Kočani Municipality;1
+North Macedonia;Kratovo Municipality;1
+North Macedonia;Kriva Palanka Municipality;1
+North Macedonia;Krivogaštani Municipality;1
+North Macedonia;Kruševo Municipality;1
+North Macedonia;Kumanovo Municipality;1
+North Macedonia;Lipkovo Municipality;1
+North Macedonia;Lozovo Municipality;1
+North Macedonia;Makedonska Kamenica Municipality;1
+North Macedonia;Makedonski Brod Municipality;1
+North Macedonia;Mavrovo i Rostuše Municipality;1
+North Macedonia;Mogila Municipality;1
+North Macedonia;Negotino Municipality;1
+North Macedonia;Novaci Municipality;1
+North Macedonia;Novo Selo Municipality;1
+North Macedonia;Ohrid Municipality;1
+North Macedonia;Oslomej Municipality;1
+North Macedonia;Pehčevo Municipality;1
+North Macedonia;Petrovec Municipality;1
+North Macedonia;Plasnica Municipality;1
+North Macedonia;Prilep Municipality;1
+North Macedonia;Probištip Municipality;1
+North Macedonia;Radoviš Municipality;1
+North Macedonia;Rankovce Municipality;1
+North Macedonia;Resen Municipality;1
+North Macedonia;Rosoman Municipality;1
+North Macedonia;Saraj Municipality;1
+North Macedonia;Sopište Municipality;1
+North Macedonia;Staro Nagoričane Municipality;1
+North Macedonia;Struga Municipality;1
+North Macedonia;Strumica Municipality;1
+North Macedonia;Studeničani Municipality;1
+North Macedonia;Sveti Nikole Municipality;1
+North Macedonia;Tearce Municipality;1
+North Macedonia;Tetovo Municipality;1
+North Macedonia;Valandovo Municipality;1
+North Macedonia;Vasilevo Municipality;1
+North Macedonia;Veles Municipality;1
+North Macedonia;Vevčani Municipality;1
+North Macedonia;Vinica Municipality;1
+North Macedonia;Vrapčište Municipality;1
+North Macedonia;Zelenikovo Municipality;1
+North Macedonia;Zrnovci Municipality;1
+North Macedonia;Čair Municipality;1
+North Macedonia;Čaška Municipality;1
+North Macedonia;Češinovo-Obleševo Municipality;1
+North Macedonia;Čučer-Sandevo Municipality;1
+North Macedonia;Štip Municipality;1
+North Macedonia;Šuto Orizari Municipality;1
+North Macedonia;Želino Municipality;1
+North Macedonia;Ǵorče Petrov municipality;1
+Norway;Innlandet;1
+Norway;Jan Mayen;1
+Norway;Oslo Municipality;1
+Norway;Viken;1
+Old Swiss Confederacy;Republic of Mulhouse;1
+Ottoman Empire;Adana vilayet;1
+Ottoman Empire;Adrianople eyalet;1
+Ottoman Empire;Adrianople vilayet;1
+Ottoman Empire;Aleppo vilayet;1
+Ottoman Empire;Beirut vilayet;1
+Ottoman Empire;Bosnia eyalet;1
+Ottoman Empire;Bosnia vilayet;1
+Ottoman Empire;Harran sanjak;1
+Ottoman Empire;Homs sanjak;1
+Ottoman Empire;Hudavendigar vilayet;1
+Ottoman Empire;Istanbul vilayet;1
+Ottoman Empire;Konya vilayet;1
+Ottoman Empire;Kosovo vilayet;1
+Ottoman Empire;Mamuret-ul-Aziz vilayet;1
+Ottoman Empire;Mosul Vilayet;1
+Ottoman Empire;Mutasarrifate of Jerusalem;1
+Ottoman Empire;Rumelia eyalet;1
+Ottoman Empire;Salonica vilayet;1
+Ottoman Empire;Scutari vilayet;1
+Ottoman Empire;Syria Vilayet;1
+Ottoman Empire;Van vilayet;1
+Ottoman Empire;Yemen Vilayet;1
+Poland;Kalisz Voivodeship;1
+Poland;Koszalin Voivodeship;1
+Poland;Rzeszów Voivodeship;1
+Poland;Suwałki Voivodeship;1
+Poland;Warsaw Voivodeship;1
+Poland;Wrocław Voivodeship;1
+Polish People's Republic;Białystok Voivodeship;1
+Polish People's Republic;Koszalin Voivodeship;1
+Polish People's Republic;Kraków Voivodeship;1
+Polish People's Republic;Łódzkie Voivodeship;1
+Polish–Lithuanian Commonwealth;Sanok Land;1
+Portugal;Madeira;1
+Republic of Abkhazia;Gagra District;1
+Republic of Abkhazia;Gali District;1
+Republic of Abkhazia;Gudauta District;1
+Romania;Bucharest;1
+Russia;Altai Krai;1
+Russia;Altai Republic;1
+Russia;Amur Oblast;1
+Russia;Buryatia;1
+Russia;Chechnya;1
+Russia;Chukotka Autonomous Okrug;1
+Russia;Dagestan;1
+Russia;Donetsk People's Republic;1
+Russia;Ingushetia;1
+Russia;Jewish Autonomous Oblast;1
+Russia;Kemerovo Oblast;1
+Russia;Khakassia;1
+Russia;Kurgan Oblast;1
+Russia;Luhansk People's Republic;1
+Russia;Magadan Oblast;1
+Russia;Novosibirsk Oblast;1
+Russia;Omsk Oblast;1
+Russia;Sevastopol;1
+Russia;Tomsk Oblast;1
+Russia;Tyumen Oblast;1
+Russia;Zabaykalsky Krai;1
+Russia;Zaporozhye Oblast;1
+Russian Republic;Russian Turkestan;1
+San Marino;Acquaviva;1
+San Marino;Borgo Maggiore;1
+San Marino;Chiesanuova;1
+San Marino;Domagnano;1
+San Marino;Faetano;1
+San Marino;Fiorentino;1
+San Marino;Montegiardino;1
+San Marino;San Marino;1
+San Marino;Serravalle;1
+Second Polish Republic;Białystok Voivodeship;1
+Second Polish Republic;Lwów Voivodeship;1
+Second Polish Republic;Nowogródek Voivodeship;1
+Second Polish Republic;Polesie Voivodeship;1
+Second Polish Republic;Stanisławów Voivodeship;1
+Second Polish Republic;Tarnopol Voivodeship;1
+Second Polish Republic;Wilno Voivodeship;1
+Serbia;Bor District;1
+Serbia;Braničevo District;1
+Serbia;Central Banat District;1
+Serbia;City of Belgrade;1
+Serbia;Jablanica District;1
+Serbia;Kolubara District;1
+Serbia;Kosovo District;1
+Serbia;Kosovo and Metohija;1
+Serbia;Kosovo-Pomoravlje District;1
+Serbia;Kosovska Mitrovica District;1
+Serbia;Mačva District;1
+Serbia;Moravica District;1
+Serbia;Nišava District;1
+Serbia;North Banat District;1
+Serbia;North Bačka District;1
+Serbia;Peć District;1
+Serbia;Pirot District;1
+Serbia;Podunavlje District;1
+Serbia;Pomoravlje District;1
+Serbia;Pčinja District;1
+Serbia;Rasina District;1
+Serbia;Raška District;1
+Serbia;South Banat District;1
+Serbia;South Bačka District;1
+Serbia;Srem District;1
+Serbia;Toplica District;1
+Serbia;Vojvodina;1
+Serbia;West Bačka District;1
+Serbia;Zaječar District;1
+Serbia;Zlatibor District;1
+Serbia;Šumadija District;1
+Slovak Republic;Q90884090;1
+Slovenia;Ajdovščina Municipality;1
+Slovenia;Ankaran Municipality;1
+Slovenia;Birčna Vas;1
+Slovenia;Bohinj Municipality;1
+Slovenia;City Municipality of Celje;1
+Slovenia;City Municipality of Koper;1
+Slovenia;City Municipality of Kranj;1
+Slovenia;City Municipality of Krško;1
+Slovenia;City Municipality of Murska Sobota;1
+Slovenia;City Municipality of Nova Gorica;1
+Slovenia;City Municipality of Novo Mesto;1
+Slovenia;City Municipality of Ptuj;1
+Slovenia;City Municipality of Slovenj Gradec;1
+Slovenia;City Municipality of Velenje;1
+Slovenia;Dolž;1
+Slovenia;Gabrje;1
+Slovenia;Hrastnik Municipality;1
+Slovenia;Ig Municipality;1
+Slovenia;Kobarid Municipality;1
+Slovenia;Komen Municipality;1
+Slovenia;Komenda Municipality;1
+Slovenia;Kostel Municipality;1
+Slovenia;Laško Municipality;1
+Slovenia;Ljubljana City Municipality;1
+Slovenia;Ljutomer Municipality;1
+Slovenia;Loška Dolina Municipality;1
+Slovenia;Mali Slatnik;1
+Slovenia;Maribor City Municipality;1
+Slovenia;Miren–Kostanjevica Municipality;1
+Slovenia;Mirna Municipality;1
+Slovenia;Mirna Peč Municipality;1
+Slovenia;Mislinja Municipality;1
+Slovenia;Mokronog-Trebelno Municipality;1
+Slovenia;Municipality of Apače;1
+Slovenia;Municipality of Beltinci;1
+Slovenia;Municipality of Benedikt;1
+Slovenia;Municipality of Bistrica ob Sotli;1
+Slovenia;Municipality of Bled;1
+Slovenia;Municipality of Bloke;1
+Slovenia;Municipality of Borovnica;1
+Slovenia;Municipality of Bovec;1
+Slovenia;Municipality of Braslovče;1
+Slovenia;Municipality of Brda;1
+Slovenia;Municipality of Brezovica;1
+Slovenia;Municipality of Brežice;1
+Slovenia;Municipality of Cankova;1
+Slovenia;Municipality of Cerklje na Gorenjskem;1
+Slovenia;Municipality of Cerknica;1
+Slovenia;Municipality of Cerkvenjak;1
+Slovenia;Municipality of Cirkulane;1
+Slovenia;Municipality of Destrnik;1
+Slovenia;Municipality of Divača;1
+Slovenia;Municipality of Dobje;1
+Slovenia;Municipality of Dobrepolje;1
+Slovenia;Municipality of Dobrna;1
+Slovenia;Municipality of Dobrova–Polhov Gradec;1
+Slovenia;Municipality of Dobrovnik;1
+Slovenia;Municipality of Dol pri Ljubljani;1
+Slovenia;Municipality of Dolenjske Toplice;1
+Slovenia;Municipality of Domžale;1
+Slovenia;Municipality of Dornava;1
+Slovenia;Municipality of Dravograd;1
+Slovenia;Municipality of Duplek;1
+Slovenia;Municipality of Gorenja Vas-Poljane;1
+Slovenia;Municipality of Gorišnica;1
+Slovenia;Municipality of Gorje;1
+Slovenia;Municipality of Gornja Radgona;1
+Slovenia;Municipality of Gornji Grad;1
+Slovenia;Municipality of Gornji Petrovci;1
+Slovenia;Municipality of Grad;1
+Slovenia;Municipality of Grosuplje;1
+Slovenia;Municipality of Hajdina;1
+Slovenia;Municipality of Hodoš;1
+Slovenia;Municipality of Horjul;1
+Slovenia;Municipality of Hoče-Slivnica;1
+Slovenia;Municipality of Hrpelje-Kozina;1
+Slovenia;Municipality of Idrija;1
+Slovenia;Municipality of Ilirska Bistrica;1
+Slovenia;Municipality of Ivančna Gorica;1
+Slovenia;Municipality of Izola;1
+Slovenia;Municipality of Jesenice;1
+Slovenia;Municipality of Jezersko;1
+Slovenia;Municipality of Juršinci;1
+Slovenia;Municipality of Kamnik;1
+Slovenia;Municipality of Kanal ob Soči;1
+Slovenia;Municipality of Kidričevo;1
+Slovenia;Municipality of Kobilje;1
+Slovenia;Municipality of Kostanjevica na Krki;1
+Slovenia;Municipality of Kozje;1
+Slovenia;Municipality of Kočevje;1
+Slovenia;Municipality of Kranjska Gora;1
+Slovenia;Municipality of Križevci;1
+Slovenia;Municipality of Kungota;1
+Slovenia;Municipality of Kuzma;1
+Slovenia;Municipality of Lenart;1
+Slovenia;Municipality of Lendava;1
+Slovenia;Municipality of Litija;1
+Slovenia;Municipality of Ljubno;1
+Slovenia;Municipality of Logatec;1
+Slovenia;Municipality of Log–Dragomer;1
+Slovenia;Municipality of Lovrenc na Pohorju;1
+Slovenia;Municipality of Loški Potok;1
+Slovenia;Municipality of Lukovica;1
+Slovenia;Municipality of Luče;1
+Slovenia;Municipality of Majšperk;1
+Slovenia;Municipality of Makole;1
+Slovenia;Municipality of Markovci;1
+Slovenia;Municipality of Medvode;1
+Slovenia;Municipality of Mengeš;1
+Slovenia;Municipality of Metlika;1
+Slovenia;Municipality of Mežica;1
+Slovenia;Municipality of Miklavž na Dravskem Polju;1
+Slovenia;Municipality of Moravske Toplice;1
+Slovenia;Municipality of Moravče;1
+Slovenia;Municipality of Mozirje;1
+Slovenia;Municipality of Muta;1
+Slovenia;Municipality of Naklo;1
+Slovenia;Municipality of Nazarje;1
+Slovenia;Municipality of Odranci;1
+Slovenia;Municipality of Oplotnica;1
+Slovenia;Municipality of Osilnica;1
+Slovenia;Municipality of Pesnica;1
+Slovenia;Municipality of Pivka;1
+Slovenia;Municipality of Podlehnik;1
+Slovenia;Municipality of Podčetrtek;1
+Slovenia;Municipality of Poljčane;1
+Slovenia;Municipality of Polzela;1
+Slovenia;Municipality of Postojna;1
+Slovenia;Municipality of Prebold;1
+Slovenia;Municipality of Preddvor;1
+Slovenia;Municipality of Prevalje;1
+Slovenia;Municipality of Puconci;1
+Slovenia;Municipality of Radenci;1
+Slovenia;Municipality of Radlje ob Dravi;1
+Slovenia;Municipality of Radovljica;1
+Slovenia;Municipality of Ravne na Koroškem;1
+Slovenia;Municipality of Razkrižje;1
+Slovenia;Municipality of Rače–Fram;1
+Slovenia;Municipality of Renče–Vogrsko;1
+Slovenia;Municipality of Rečica ob Savinji;1
+Slovenia;Municipality of Ribnica;1
+Slovenia;Municipality of Ribnica na Pohorju;1
+Slovenia;Municipality of Rogatec;1
+Slovenia;Municipality of Rogaška Slatina;1
+Slovenia;Municipality of Rogašovci;1
+Slovenia;Municipality of Selnica ob Dravi;1
+Slovenia;Municipality of Semič;1
+Slovenia;Municipality of Sežana;1
+Slovenia;Municipality of Slovenska Bistrica;1
+Slovenia;Municipality of Sodražica;1
+Slovenia;Municipality of Središče ob Dravi;1
+Slovenia;Municipality of Starše;1
+Slovenia;Municipality of Straža;1
+Slovenia;Municipality of Sveta Trojica v Slovenskih Goricah;1
+Slovenia;Municipality of Sveti Andraž v Slovenskih Goricah;1
+Slovenia;Municipality of Sveti Jurij ob Ščavnici;1
+Slovenia;Municipality of Sveti Jurij v Slovenskih Goricah;1
+Slovenia;Municipality of Sveti Tomaž;1
+Slovenia;Municipality of Tabor;1
+Slovenia;Municipality of Tišina;1
+Slovenia;Municipality of Trbovlje;1
+Slovenia;Municipality of Trnovska Vas;1
+Slovenia;Municipality of Trzin;1
+Slovenia;Municipality of Tržič;1
+Slovenia;Municipality of Turnišče;1
+Slovenia;Municipality of Velika Polana;1
+Slovenia;Municipality of Velike Lašče;1
+Slovenia;Municipality of Veržej;1
+Slovenia;Municipality of Vipava;1
+Slovenia;Municipality of Vitanje;1
+Slovenia;Municipality of Vodice;1
+Slovenia;Municipality of Vojnik;1
+Slovenia;Municipality of Vransko;1
+Slovenia;Municipality of Vrhnika;1
+Slovenia;Municipality of Vuzenica;1
+Slovenia;Municipality of Zavrč;1
+Slovenia;Municipality of Črenšovci;1
+Slovenia;Municipality of Črna na Koroškem;1
+Slovenia;Municipality of Šalovci;1
+Slovenia;Municipality of Šempeter–Vrtojba;1
+Slovenia;Municipality of Šentilj;1
+Slovenia;Municipality of Šentjernej;1
+Slovenia;Municipality of Šentrupert;1
+Slovenia;Municipality of Šenčur;1
+Slovenia;Municipality of Škocjan;1
+Slovenia;Municipality of Škofja Loka;1
+Slovenia;Municipality of Škofljica;1
+Slovenia;Municipality of Šmarje pri Jelšah;1
+Slovenia;Municipality of Šmarješke Toplice;1
+Slovenia;Municipality of Šmartno ob Paki;1
+Slovenia;Municipality of Šmartno pri Litiji;1
+Slovenia;Municipality of Šoštanj;1
+Slovenia;Municipality of Štore;1
+Slovenia;Municipality of Žalec;1
+Slovenia;Municipality of Žetale;1
+Slovenia;Municipality of Žiri;1
+Slovenia;Municipality of Žirovnica;1
+Slovenia;Municipality of Žužemberk;1
+Slovenia;Ormož Municipality;1
+Slovenia;Otočec;1
+Slovenia;Piran Municipality;1
+Slovenia;Podgrad;1
+Slovenia;Prečna;1
+Slovenia;Radeče Municipality;1
+Slovenia;Ruše Municipality;1
+Slovenia;Sevnica Municipality;1
+Slovenia;Slovenske Konjice Municipality;1
+Slovenia;Solčava Municipality;1
+Slovenia;Stopiče;1
+Slovenia;Sveta Ana Municipality;1
+Slovenia;Trebnje Municipality;1
+Slovenia;Uršna Sela;1
+Slovenia;Zagorje ob Savi Municipality;1
+Slovenia;Zreče Municipality;1
+Slovenia;municipality of Cerkno;1
+Slovenia;municipality of Videm;1
+Slovenia;Črnomelj Municipality;1
+Slovenia;Šentjur Municipality;1
+Slovenia;Železniki Municipality;1
+Socialist Federal Republic of Yugoslavia;Petrovec Municipality;1
+Socialist Federal Republic of Yugoslavia;Socialist Autonomous Province of Vojvodina;1
+Socialist Federal Republic of Yugoslavia;Staro Nagoričane Municipality;1
+Socialist Federal Republic of Yugoslavia;Valandovo Municipality;1
+Socialist Republic of Macedonia;Petrovec Municipality;1
+Socialist Republic of Macedonia;Staro Nagoričane Municipality;1
+Socialist Republic of Macedonia;Valandovo Municipality;1
+Soviet Union;Aghdam District;1
+Soviet Union;Atyrau Region;1
+Soviet Union;Karelo-Finnish Soviet Socialist Republic;1
+Soviet Union;Kirghiz Soviet Socialist Republic;1
+Soviet Union;Kyzylorda Region;1
+Soviet Union;Latvian Soviet Socialist Republic;1
+Soviet Union;Lithuanian Soviet Socialist Republic;1
+Soviet Union;Mangystau Region;1
+Soviet Union;Marijampolė District Municipality;1
+Soviet Union;Moldavian Soviet Socialist Republic;1
+Soviet Union;Q55700152;1
+Soviet Union;Salyan District;1
+Soviet Union;Samara Oblast;1
+Soviet Union;Socialist Soviet Republic of Abkhazia;1
+Soviet Union;Turgay Oblast;1
+Soviet Union;Turkmen Soviet Socialist Republic;1
+Spain;Andalusia;1
+Spain;Basque Autonomous Community;1
+Spain;Castilla–La Mancha;1
+Spain;Catalonia;1
+Spain;Ceuta;1
+Spain;Extremadura;1
+Spain;Melilla;1
+Switzerland;Canton of Appenzell Ausserrhoden;1
+Switzerland;Canton of Appenzell Innerrhoden;1
+Switzerland;Canton of Basel-Landschaft;1
+Switzerland;Canton of Basel-Stadt;1
+Switzerland;Canton of Geneva;1
+Switzerland;Canton of Glarus;1
+Switzerland;Canton of Jura;1
+Switzerland;Canton of Neuchâtel;1
+Switzerland;Canton of Nidwalden;1
+Switzerland;Canton of Obwalden;1
+Switzerland;Canton of Schaffhausen;1
+Switzerland;Canton of Schwyz;1
+Switzerland;Canton of Zug;1
+Transnistria;Tiraspol;1
+Ukraine;Autonomous Republic of Crimea;1
+Ukraine;Sevastopol;1
+United Kingdom;Akrotiri and Dhekelia;1
+United Kingdom;Anguilla;1
+United Kingdom;Bermuda;1
+United Kingdom;British Indian Ocean Territory;1
+United Kingdom;British Virgin Islands;1
+United Kingdom;Cayman Islands;1
+United Kingdom;England;1
+United Kingdom;Gibraltar;1
+United Kingdom;Montserrat;1
+United Kingdom;Pitcairn Islands;1
+United Kingdom;Saint Helena, Ascension and Tristan da Cunha;1
+United Kingdom;Scotland;1
+United Kingdom;South Georgia and the South Sandwich Islands;1
+United Kingdom;Wales;1
+Yugoslavia;Socialist Autonomous Province of Vojvodina;1

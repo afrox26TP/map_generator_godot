@@ -26,7 +26,7 @@ province_id;province_name;province_country;match_method;matched_population;match
 24;East Flanders;Belgium;unmatched;;;;;;;
 25;Antwerp;Belgium;unmatched;;;;;;;
 26;Limburg;Belgium;unmatched;;;;;;;
-27;Flemish Brabant;Belgium;fuzzy_contain;6864766;2025-01-01;Flemish Region;Belgium;6864766.0;2025-01-01;1122
+27;Flemish Brabant;Belgium;unmatched;;;;;;;
 28;Walloon Brabant;Belgium;unmatched;;;;;;;
 29;Burgas;Bulgaria;matched;388919;2024-12-31;Burgas;Bulgaria;388919.0;2024-12-31;1326
 30;Yambol;Bulgaria;matched;105429;2024-12-31;Yambol;Bulgaria;105429.0;2024-12-31;2635
@@ -86,7 +86,7 @@ province_id;province_name;province_country;match_method;matched_population;match
 84;St. Gallen;Switzerland;fuzzy_contain;507697;2018-12-31;Canton of St. Gallen;Switzerland;507697.0;2018-12-31;56959
 85;Solothurn;Switzerland;fuzzy_contain;273194;2018-12-31;Canton of Solothurn;Switzerland;273194.0;2018-12-31;56957
 86;Vaud;Switzerland;fuzzy_contain;799145;2018-12-31;Canton of Vaud;Switzerland;799145.0;2018-12-31;56969
-87;Bern;Switzerland;fuzzy_contain;1034977;2018-12-31;Canton of Berne;Switzerland;1034977.0;2018-12-31;56927
+87;Bern;Switzerland;unmatched;;;;;;;
 88;Lucerne;Switzerland;fuzzy_contain;409557;2018-12-31;Canton of Lucerne;Switzerland;409557.0;2018-12-31;56945
 89;Uri;Switzerland;fuzzy_contain;36433;2018-12-31;Canton of Uri;Switzerland;36433.0;2018-12-31;56965
 90;Fribourg;Switzerland;fuzzy_contain;318714;2018-12-31;Canton of Fribourg;Switzerland;318714.0;2018-12-31;56929
@@ -139,9 +139,9 @@ province_id;province_name;province_country;match_method;matched_population;match
 137;Pontevedra;Spain;unmatched;;;;;;;
 138;Huelva;Spain;unmatched;;;;;;;
 139;Barcelona;Spain;unmatched;;;;;;;
-140;Tarragona;Spain;fuzzy_contain;1347834;2024-01-01;Aragon;Spain;1347834.0;2024-01-01;55119
+140;Tarragona;Spain;unmatched;;;;;;;
 141;Castellón;Spain;unmatched;;;;;;;
-142;Valencia;Spain;fuzzy_contain;5316541;2024-01-01;Valencian Community;Spain;5316541.0;2024-01-01;55431
+142;Valencia;Spain;unmatched;;;;;;;
 143;Alicante;Spain;unmatched;;;;;;;
 144;Murcia;Spain;fuzzy_contain;1571933;2024-01-01;Region of Murcia;Spain;1571933.0;2024-01-01;55414
 145;Almería;Spain;unmatched;;;;;;;
@@ -201,8 +201,8 @@ province_id;province_name;province_country;match_method;matched_population;match
 199;Satakunta;Finland;matched;215351;2021-01-01;Satakunta;Finland;215351.0;2021-01-01;4793
 200;Ostrobothnia;Finland;matched;175821;2021-01-01;Ostrobothnia;Finland;175821.0;2021-01-01;4760
 201;Central Ostrobothnia;Finland;matched;67976;2021-01-01;Central Ostrobothnia;Finland;67976.0;2021-01-01;4724
-202;Northern Savonia;Finland;fuzzy_best;248226;2021-01-01;North Savo;Finland;248226.0;2021-01-01;4757
-203;Southern Savonia;Finland;fuzzy_best;132695;2021-01-01;South Savo;Finland;132695.0;2021-01-01;4817
+202;Northern Savonia;Finland;unmatched;;;;;;;
+203;Southern Savonia;Finland;unmatched;;;;;;;
 204;Central Finland;Finland;matched;272548;2021-01-01;Central Finland;Finland;272548.0;2021-01-01;4721
 205;Southern Ostrobothnia;Finland;unmatched;;;;;;;
 206;Pirkanmaa;Finland;matched;523598;2021-01-01;Pirkanmaa;Finland;523598.0;2021-01-01;4763
@@ -210,7 +210,7 @@ province_id;province_name;province_country;match_method;matched_population;match
 208;Päijänne Tavastia;Finland;matched;205862;2021-01-01;Päijät-Häme;Finland;205862.0;2021-01-01;4790
 209;Nord;France;fuzzy_contain;4060741;2013-01-01;Nord-Pas-de-Calais;France;4060741.0;2013-01-01;6333
 210;Ardennes;France;unmatched;;;;;;;
-211;Aisne;France;fuzzy_best;6263;2022-01-01;Huahine;France;6263.0;2022-01-01;6145
+211;Aisne;France;unmatched;;;;;;;
 212;Meuse;France;unmatched;;;;;;;
 213;Meurthe-et-Moselle;France;unmatched;;;;;;;
 214;Moselle;France;unmatched;;;;;;;
@@ -220,21 +220,21 @@ province_id;province_name;province_country;match_method;matched_population;match
 218;Savoie;France;matched;6399927;2013-01-01;Rhône-Alpes;France;6399927.0;2013-01-01;6753
 219;Haute-Savoie;France;unmatched;;;;;;;
 220;Pyrenees-Atlantics;France;unmatched;;;;;;;
-221;Haute-Garonne;France;fuzzy_best;1339008;2013-01-01;Champagne-Ardenne;France;1339008.0;2013-01-01;5125
-222;Hautes-Pyrénées;France;fuzzy_best;2954157;2013-01-01;Midi-Pyrénées;France;2954157.0;2013-01-01;6295
+221;Haute-Garonne;France;unmatched;;;;;;;
+222;Hautes-Pyrénées;France;unmatched;;;;;;;
 223;Ariège;France;unmatched;;;;;;;
 224;Pyrénées-Orientales;France;unmatched;;;;;;;
 225;Bas-Rhin;France;unmatched;;;;;;;
 226;Haut-Rhin;France;unmatched;;;;;;;
 227;Doubs;France;unmatched;;;;;;;
-228;Ain;France;fuzzy_contain;6113384;2022-01-01;Nouvelle-Aquitaine;France;6113384.0;2022-01-01;6403
+228;Ain;France;unmatched;;;;;;;
 229;Jura;France;unmatched;;;;;;;
 230;Var;France;unmatched;;;;;;;
 231;Bouches-du-Rhône;France;unmatched;;;;;;;
 232;Gard;France;unmatched;;;;;;;
 233;Hérault;France;unmatched;;;;;;;
 234;Aude;France;unmatched;;;;;;;
-235;Landes;France;fuzzy_best;5560079;2022-01-01;Grand Est;France;5560079.0;2022-01-01;5971
+235;Landes;France;unmatched;;;;;;;
 236;Gironde;France;unmatched;;;;;;;
 237;Charente-Maritime;France;unmatched;;;;;;;
 238;Vendée;France;unmatched;;;;;;;
@@ -242,8 +242,8 @@ province_id;province_name;province_country;match_method;matched_population;match
 240;Morbihan;France;unmatched;;;;;;;
 241;Finistère;France;unmatched;;;;;;;
 242;Côtes-d'Armor;France;unmatched;;;;;;;
-243;Ille-et-Vilaine;France;fuzzy_best;12380964;2022-01-01;Île-de-France;France;12380964.0;2022-01-01;7280
-244;Manche;France;fuzzy_best;1138;2022-01-01;Manihi;France;1138.0;2022-01-01;6210
+243;Ille-et-Vilaine;France;unmatched;;;;;;;
+244;Manche;France;unmatched;;;;;;;
 245;Calvados;France;unmatched;;;;;;;
 246;Eure;France;unmatched;;;;;;;
 247;Seine-Maritime;France;unmatched;;;;;;;
@@ -267,21 +267,21 @@ province_id;province_name;province_country;match_method;matched_population;match
 265;Mayenne;France;unmatched;;;;;;;
 266;Sarthe;France;unmatched;;;;;;;
 267;Vaucluse;France;unmatched;;;;;;;
-268;Haute-Marne;France;fuzzy_best;5998916;2022-01-01;Hauts-de-France;France;5998916.0;2022-01-01;6051
-269;Marne;France;fuzzy_best;361019;2022-01-01;Martinique;France;361019.0;2022-01-01;6237
+268;Haute-Marne;France;unmatched;;;;;;;
+269;Marne;France;unmatched;;;;;;;
 270;Dordogne;France;unmatched;;;;;;;
 271;Rhône;France;fuzzy_contain;8163884;2022-01-01;Auvergne-Rhône-Alpes;France;8163884.0;2022-01-01;4979
 272;Vosges;France;unmatched;;;;;;;
 273;Ardèche;France;unmatched;;;;;;;
 274;Loire;France;fuzzy_contain;2581597;2022-01-01;Centre-Val de Loire;France;2581597.0;2022-01-01;5111
 275;Puy-de-Dôme;France;unmatched;;;;;;;
-276;Allier;France;fuzzy_best;1570;2022-01-01;Gambier;France;1570.0;2022-01-01;5949
+276;Allier;France;unmatched;;;;;;;
 277;Loiret;France;unmatched;;;;;;;
 278;Maine-et-Loire;France;unmatched;;;;;;;
 279;Aube;France;unmatched;;;;;;;
 280;Val-d'Oise;France;unmatched;;;;;;;
 281;Yvelines;France;unmatched;;;;;;;
-282;Charente;France;fuzzy_contain;1789779;2013-01-01;Poitou-Charentes;France;1789779.0;2013-01-01;6588
+282;Charente;France;unmatched;;;;;;;
 283;Cher;France;unmatched;;;;;;;
 284;Eure-et-Loir;France;unmatched;;;;;;;
 285;Haute-Loire;France;unmatched;;;;;;;
@@ -307,7 +307,7 @@ province_id;province_name;province_country;match_method;matched_population;match
 305;Herefordshire;United Kingdom;unmatched;;;;;;;
 306;Gloucestershire;United Kingdom;unmatched;;;;;;;
 307;Scottish Borders;United Kingdom;unmatched;;;;;;;
-308;Northumberland;United Kingdom;fuzzy_best;1903200;2021-01-01;Northern Ireland;United Kingdom;1903200.0;2021-01-01;63289
+308;Northumberland;United Kingdom;unmatched;;;;;;;
 309;Cumbria;United Kingdom;unmatched;;;;;;;
 310;Dumfries and Galloway;United Kingdom;unmatched;;;;;;;
 311;Stirling;United Kingdom;unmatched;;;;;;;
@@ -342,7 +342,7 @@ province_id;province_name;province_country;match_method;matched_population;match
 340;Perth and Kinross;United Kingdom;unmatched;;;;;;;
 341;Fife;United Kingdom;unmatched;;;;;;;
 342;Outer Hebrides;United Kingdom;unmatched;;;;;;;
-343;Shetland Islands;United Kingdom;fuzzy_best;44542;2020-01-01;Turks and Caicos Islands;United Kingdom;44542.0;2020-01-01;63397
+343;Shetland Islands;United Kingdom;unmatched;;;;;;;
 344;East Ayrshire;United Kingdom;unmatched;;;;;;;
 345;South Lanarkshire;United Kingdom;unmatched;;;;;;;
 346;Omagh;United Kingdom;unmatched;;;;;;;
@@ -360,7 +360,7 @@ province_id;province_name;province_country;match_method;matched_population;match
 358;Oxfordshire;United Kingdom;unmatched;;;;;;;
 359;Surrey;United Kingdom;unmatched;;;;;;;
 360;Wiltshire;United Kingdom;unmatched;;;;;;;
-361;Abkhazia;Georgia;fuzzy_contain;2013;1996-01-01;Autonomous Republic of Abkhazia;Georgia;2013.0;1996-01-01;7302
+361;Abkhazia;Georgia;unmatched;;;;;;;
 362;Samegrelo-Zemo Svaneti;Georgia;matched;308405;2021-01-01;Samegrelo-Zemo Svaneti;Georgia;308405.0;2021-01-01;7472
 363;Shida Kartli;Georgia;matched;254100;2021-01-01;Shida Kartli;Georgia;254100.0;2021-01-01;7481
 364;Racha-Lechkhumi and Kvemo Svaneti;Georgia;matched;32089;2021-01-01;Racha-Lechkhumi and Kvemo Svaneti;Georgia;32089.0;2021-01-01;7468
@@ -370,8 +370,8 @@ province_id;province_name;province_country;match_method;matched_population;match
 368;Imereti;Georgia;matched;481500;2021-01-01;Imereti;Georgia;481500.0;2021-01-01;7454
 369;West Macedonia;Greece;unmatched;;;;;;;
 370;Epirus;Greece;matched;319991;2021-01-01;Epirus Region;Greece;319991.0;2021-01-01;9429
-371;Centre Macedonia;Greece;fuzzy_contain;1795669;2021-01-01;Central Macedonia Region;Greece;1795669.0;2021-01-01;9394
-372;East Macedonia and Thrace;Greece;fuzzy_contain;562201;2021-01-01;Eastern Macedonia and Thrace Region;Greece;562201.0;2021-01-01;9427
+371;Centre Macedonia;Greece;fuzzy_best;1795669;2021-01-01;Central Macedonia Region;Greece;1795669.0;2021-01-01;9394
+372;East Macedonia and Thrace;Greece;fuzzy_best;562201;2021-01-01;Eastern Macedonia and Thrace Region;Greece;562201.0;2021-01-01;9427
 373;Thessalia;Greece;matched;688255;2021-01-01;Thessaly Region;Greece;688255.0;2021-01-01;9449
 374;Central Greece;Greece;matched;508254;2021-01-01;Central Greece Region;Greece;508254.0;2021-01-01;9391
 375;Attica;Greece;matched;3814064;2021-01-01;Attica Region;Greece;3814064.0;2021-01-01;9385
@@ -484,7 +484,7 @@ province_id;province_name;province_country;match_method;matched_population;match
 482;Cosenza;Italy;unmatched;;;;;;;
 483;Crotone;Italy;unmatched;;;;;;;
 484;Catanzaro;Italy;unmatched;;;;;;;
-485;Reggio Calabria;Italy;fuzzy_contain;1947131;2019-01-01;Calabria;Italy;1947131.0;2019-01-01;11162
+485;Reggio Calabria;Italy;unmatched;;;;;;;
 486;Vibo Valentia;Italy;unmatched;;;;;;;
 487;Potenza;Italy;unmatched;;;;;;;
 488;Salerno;Italy;unmatched;;;;;;;
@@ -507,7 +507,7 @@ province_id;province_name;province_country;match_method;matched_population;match
 505;Caltanissetta;Italy;unmatched;;;;;;;
 506;Ragusa;Italy;unmatched;;;;;;;
 507;Syracuse;Italy;unmatched;;;;;;;
-508;Catania;Italy;fuzzy_contain;5786373;2019-01-01;Campania;Italy;5786373.0;2019-01-01;11165
+508;Catania;Italy;unmatched;;;;;;;
 509;Carbonia-Iglesias;Italy;unmatched;;;;;;;
 510;Sassari;Italy;unmatched;;;;;;;
 511;Nuoro;Italy;unmatched;;;;;;;
@@ -525,7 +525,7 @@ province_id;province_name;province_country;match_method;matched_population;match
 523;Mantua;Italy;unmatched;;;;;;;
 524;Milan;Italy;unmatched;;;;;;;
 525;Siena;Italy;unmatched;;;;;;;
-526;Arezzo;Italy;fuzzy_best;1308451;2019-01-01;Abruzzo;Italy;1308451.0;2019-01-01;11146
+526;Arezzo;Italy;unmatched;;;;;;;
 527;Florence;Italy;unmatched;;;;;;;
 528;Vercelli;Italy;unmatched;;;;;;;
 529;Pavia;Italy;unmatched;;;;;;;
@@ -718,7 +718,7 @@ province_id;province_name;province_country;match_method;matched_population;match
 716;Ialomița;Romania;matched;250816;2021-12-01;Ialomița County;Romania;250816.0;2021-12-01;26705
 717;Pskov;Russia;matched;574480;2025-01-01;Pskov Oblast;Russia;574480.0;2025-01-01;31893
 718;Krasnodar Krai;Russia;matched;5842238;2025-01-01;Krasnodar Krai;Russia;5842238.0;2025-01-01;31020
-719;Karachay-Cherkess Republic;Russia;fuzzy_contain;468322;2024-01-01;Karachay-Cherkessia;Russia;468322.0;2024-01-01;30818
+719;Karachay-Cherkess Republic;Russia;fuzzy_best;468322;2024-01-01;Karachay-Cherkessia;Russia;468322.0;2024-01-01;30818
 720;Kabardino-Balkaria;Russia;matched;905464;2024-01-01;Kabardino-Balkaria;Russia;905464.0;2024-01-01;30731
 721;Republic of North Ossetia-Alania;Russia;fuzzy_contain;678879;2024-01-01;North Ossetia–Alania;Russia;678879.0;2024-01-01;31720
 722;Murmansk;Russia;matched;656438;2024-01-01;Murmansk Oblast;Russia;656438.0;2024-01-01;31645
@@ -739,7 +739,7 @@ province_id;province_name;province_country;match_method;matched_population;match
 737;Nenets Autonomous Okrug;Russia;matched;42224;2024-01-01;Nenets Autonomous Okrug;Russia;42224.0;2024-01-01;31672
 738;Saint Petersburg;Russia;matched;5652922;2025-01-01;Saint Petersburg;Russia;5652922.0;2025-01-01;32214
 739;Arkhangelsk;Russia;matched;989434;2025-01-01;Arkhangelsk Oblast;Russia;989434.0;2025-01-01;27094
-740;Republic of Kalmykia;Russia;fuzzy_contain;267588;2025-01-01;Kalmykia;Russia;267588.0;2025-01-01;30760
+740;Republic of Kalmykia;Russia;fuzzy_best;267588;2025-01-01;Kalmykia;Russia;267588.0;2025-01-01;30760
 741;Bashkortostan;Russia;matched;4042377;2025-01-01;Bashkortostan;Russia;4042377.0;2025-01-01;27137
 742;Sverdlovsk;Russia;matched;4221452;2025-01-01;Sverdlovsk Oblast;Russia;4221452.0;2025-01-01;33422
 743;Lipetsk;Russia;matched;1125921;2023-01-01;Lipetsk Oblast;Russia;1125921.0;2023-01-01;31164
@@ -757,20 +757,20 @@ province_id;province_name;province_country;match_method;matched_population;match
 755;Ivanovo;Russia;matched;905900;2024-01-01;Ivanovo Oblast;Russia;905900.0;2024-01-01;30680
 756;Nizhny Novgorod;Russia;matched;3039421;2025-01-01;Nizhny Novgorod Oblast;Russia;3039421.0;2025-01-01;31701
 757;Tula;Russia;matched;1471140;2024-01-01;Tula Oblast;Russia;1471140.0;2024-01-01;33558
-758;Chuvash Republic;Russia;fuzzy_contain;1167061;2024-01-01;Chuvashia;Russia;1167061.0;2024-01-01;27271
+758;Chuvash Republic;Russia;unmatched;;;;;;;
 759;Vologda;Russia;matched;1160445;2021-01-01;Vologda Oblast;Russia;1160445.0;2021-01-01;33702
 760;Novgorod;Russia;matched;566960;2025-01-01;Novgorod Oblast;Russia;566960.0;2025-01-01;31739
 761;Tver;Russia;matched;1190574;2025-01-01;Tver Oblast;Russia;1190574.0;2025-01-01;33600
-762;Moscow;Russia;matched;13274285;2025-01-01;Moscow;Russia;13274285.0;2025-01-01;31604
+762;Moscow;Russia;matched;13274285;2025-01-01;Moscow;Russia;13274285.0;2025-01-01;31608
 763;Moscow;Russia;unmatched;;;;;;;
 764;Mari El Republic;Russia;matched;669854;2024-01-01;Mari El;Russia;669854.0;2024-01-01;31221
 765;Kirov;Russia;matched;1129935;2024-01-01;Kirov Oblast;Russia;1129935.0;2024-01-01;30954
-766;Udmurt Republic;Russia;fuzzy_contain;1493356;2021-01-01;Udmurtia;Russia;1493356.0;2021-01-01;33633
+766;Udmurt Republic;Russia;unmatched;;;;;;;
 767;Komi Republic;Russia;matched;714785;2025-01-01;Komi Republic;Russia;714785.0;2025-01-01;30973
 768;Perm Krai;Russia;matched;2483633;2025-01-01;Perm Krai;Russia;2483633.0;2025-01-01;31852
-769;Samara;Russia;matched;3112566;2025-01-01;Samara Oblast;Russia;3112566.0;2025-01-01;32448
+769;Samara;Russia;matched;3112566;2025-01-01;Samara Oblast;Soviet Union;3112566.0;2025-01-01;55087
 770;Stavropol Krai;Russia;matched;2884363;2025-01-01;Stavropol Krai;Russia;2884363.0;2025-01-01;33398
-771;Republic of Adygea;Russia;fuzzy_contain;500731;2025-01-01;Adygea;Russia;500731.0;2025-01-01;27007
+771;Republic of Adygea;Russia;fuzzy_best;500731;2025-01-01;Adygea;Russia;500731.0;2025-01-01;27007
 772;North Bačka;Republic of Serbia;unmatched;;;;;;;
 773;West Bačka;Republic of Serbia;unmatched;;;;;;;
 774;North Banat;Republic of Serbia;unmatched;;;;;;;
@@ -909,7 +909,7 @@ province_id;province_name;province_country;match_method;matched_population;match
 907;Zakarpattia;Ukraine;matched;1244476;2022-01-01;Zakarpattia Oblast;Ukraine;1244476.0;2022-01-01;62582
 908;Chernivtsi;Ukraine;matched;890457;2022-01-01;Chernivtsi Oblast;Ukraine;890457.0;2022-01-01;57905
 909;Ivano-Frankivsk;Ukraine;matched;1351822;2022-01-01;Ivano-Frankivsk Oblast;Ukraine;1351822.0;2022-01-01;61337
-910;Odessa;Ukraine;fuzzy_contain;2351392;2022-01-01;Odesa Oblast;Ukraine;2351392.0;2022-01-01;61557
+910;Odessa;Ukraine;fuzzy_best;2351392;2022-01-01;Odesa Oblast;Ukraine;2351392.0;2022-01-01;61557
 911;Vinnytsia;Ukraine;matched;1509515;2022-01-01;Vinnytsia Oblast;Ukraine;1509515.0;2022-01-01;62551
 912;Lviv;Ukraine;matched;2478133;2022-01-01;Lviv Oblast;Ukraine;2478133.0;2022-01-01;61491
 913;Sumy;Ukraine;matched;1035772;2022-01-01;Sumy Oblast;Ukraine;1035772.0;2022-01-01;62502

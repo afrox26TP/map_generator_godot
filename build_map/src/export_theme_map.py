@@ -65,24 +65,44 @@ def export_gdp_map(id_map, sea_regions, bounds, max_pid=None):
     export_mode_folder("GDP", "GDPMap", "Gross Domestic Product heatmap")
 
 
-def export_population_map(id_map, sea_regions, bounds, population=None, land_areas=None, max_pid=None):
+def export_population_map(
+    id_map,
+    sea_regions,
+    bounds,
+    population=None,
+    land_areas=None,
+    population_source=None,
+    province_country=None,
+    max_pid=None,
+):
     """
     population: dict pid -> population number
-    land_areas: dict pid -> area in km^2 (for density). If provided, density is used; otherwise raw pop.
+    land_areas: dict pid -> area in km^2
+    population_source: dict pid -> source label (matched_*/imputed_*)
+    province_country: dict pid -> country name
+
+    Rendering rule:
+    - use global density scale for all provinces (stable cross-country meaning)
+    - add mild within-country variation for imputed_* provinces so constant-density fills are not flat
     """
     max_pid = max_pid if max_pid is not None else int(id_map.max())
 
     pop_values = None
     metric = None
+    metric_t = None
 
     if population:
-        if land_areas:
-            metric = {
-                pid: (population.get(pid) or 0) / land_areas.get(pid, 1)
-                for pid in range(max_pid + 1)
-            }
-        else:
-            metric = {pid: population.get(pid, 0) for pid in range(max_pid + 1)}
+        metric = {}
+        for pid in range(max_pid + 1):
+            pop = population.get(pid, 0) or 0
+            if pop <= 0:
+                metric[pid] = 0
+                continue
+
+            if land_areas:
+                metric[pid] = pop / land_areas.get(pid, 1)
+            else:
+                metric[pid] = pop
 
     if metric:
         vals = [v for v in metric.values() if v > 0]
@@ -90,6 +110,49 @@ def export_population_map(id_map, sea_regions, bounds, population=None, land_are
             log_min = min(math.log10(v) for v in vals)
             log_max = max(math.log10(v) for v in vals)
             span = log_max - log_min or 1.0
+
+            metric_t = {}
+            for pid in range(max_pid + 1):
+                v = metric.get(pid, 0)
+                if v <= 0:
+                    metric_t[pid] = 0.0
+                    continue
+                metric_t[pid] = (math.log10(v) - log_min) / span
+
+            if population_source and province_country:
+                country_pop_values = {}
+                for pid in range(max_pid + 1):
+                    pop = population.get(pid, 0) or 0
+                    if pop <= 0:
+                        continue
+                    country = province_country.get(pid, "")
+                    if not country:
+                        continue
+                    country_pop_values.setdefault(country, []).append(math.log10(pop))
+
+                country_log_bounds = {}
+                for country, logs in country_pop_values.items():
+                    country_log_bounds[country] = (min(logs), max(logs))
+
+                for pid in range(max_pid + 1):
+                    source = population_source.get(pid, "")
+                    if not source.startswith("imputed_"):
+                        continue
+
+                    pop = population.get(pid, 0) or 0
+                    if pop <= 0:
+                        continue
+
+                    country = province_country.get(pid, "")
+                    country_bounds = country_log_bounds.get(country)
+                    if not country_bounds:
+                        continue
+
+                    cmin, cmax = country_bounds
+                    cspan = cmax - cmin
+                    local_t = 0.5 if cspan <= 1e-12 else (math.log10(pop) - cmin) / cspan
+                    base_t = metric_t.get(pid, 0.0)
+                    metric_t[pid] = max(0.0, min(1.0, 0.7 * base_t + 0.3 * local_t))
 
             def lerp(a, b, t):
                 return int(a + (b - a) * t)
@@ -103,7 +166,7 @@ def export_population_map(id_map, sea_regions, bounds, population=None, land_are
                 if v <= 0:
                     pop_values[pid] = (120, 120, 120)
                     continue
-                t = (math.log10(v) - log_min) / span
+                t = metric_t.get(pid, 0.0) if metric_t is not None else (math.log10(v) - log_min) / span
                 pop_values[pid] = (
                     lerp(low[0], high[0], t),
                     lerp(low[1], high[1], t),
@@ -117,7 +180,7 @@ def export_population_map(id_map, sea_regions, bounds, population=None, land_are
         }
 
     export_theme_map(id_map, bounds, sea_regions, "PopulationMap.png", pop_values)
-    export_mode_folder("Population", "PopulationMap", "Population density map")
+    export_mode_folder("Population", "PopulationMap", "Population map")
 
 
 def export_ideology_map(id_map, sea_regions, bounds, max_pid=None):

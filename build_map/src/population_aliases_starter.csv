@@ -1,0 +1,171 @@
+﻿alias_type;source_country;source_region;target_country;target_region;count;status;note
+country;Slovenia;;;;219;todo;review_country_or_region_aliases
+country;Latvia;;;;87;todo;review_country_or_region_aliases
+country;North Macedonia;;;;80;todo;review_country_or_region_aliases
+country;France;;;;65;todo;review_country_or_region_aliases
+country;Czechoslovakia;;Czech Republic;;55;suggested;historical_country_alias
+country;Lithuania;;;;42;todo;review_country_or_region_aliases
+country;Serbia;;;;31;todo;review_country_or_region_aliases
+country;Ottoman Empire;;Turkey;;22;suggested;historical_country_alias
+country;Moldova;;;;22;todo;review_country_or_region_aliases
+country;Russia;;;;22;todo;review_country_or_region_aliases
+country;Montenegro;;;;21;todo;review_country_or_region_aliases
+country;Soviet Union;;Russia;;16;suggested;historical_country_alias
+country;Hungary;;;;15;todo;review_country_or_region_aliases
+country;Italy;;;;14;todo;review_country_or_region_aliases
+country;United Kingdom;;;;14;todo;review_country_or_region_aliases
+country;Kingdom of Romania;;Romania;;14;suggested;historical_country_alias
+country;Switzerland;;;;13;todo;review_country_or_region_aliases
+country;Luxembourg;;;;13;todo;review_country_or_region_aliases
+country;Liechtenstein;;;;11;todo;review_country_or_region_aliases
+country;German Democratic Republic;;Germany;;10;suggested;historical_country_alias
+country;San Marino;;;;9;todo;review_country_or_region_aliases
+country;Second Polish Republic;;Poland;;7;suggested;historical_country_alias
+country;Holy Roman Empire;;Germany;;7;suggested;historical_country_alias
+country;Spain;;;;7;todo;review_country_or_region_aliases
+country;Jersey;;;;7;todo;review_country_or_region_aliases
+country;Andorra;;;;7;todo;review_country_or_region_aliases
+country;Poland;;;;6;todo;review_country_or_region_aliases
+country;Democratic Federal Yugoslavia;;Serbia;;5;suggested;historical_country_alias
+country;Germany;;;;5;todo;review_country_or_region_aliases
+country;Federal People's Republic of Yugoslavia;;Serbia;;5;suggested;historical_country_alias
+country;German Reich;;Germany;;4;suggested;historical_country_alias
+country;Ireland;;;;4;todo;review_country_or_region_aliases
+country;Georgia;;;;4;todo;review_country_or_region_aliases
+country;Kingdom of Serbia;;Serbia;;4;suggested;historical_country_alias
+country;Kingdom of Bulgaria;;Bulgaria;;4;suggested;historical_country_alias
+country;Socialist Federal Republic of Yugoslavia;;Serbia;;4;suggested;historical_country_alias
+country;Norway;;;;4;todo;review_country_or_region_aliases
+country;Polish People's Republic;;Poland;;4;suggested;historical_country_alias
+country;Kingdom of Serbs, Croats and Slovenes;;Serbia;;4;suggested;historical_country_alias
+country;Kingdom of Yugoslavia;;Serbia;;4;suggested;historical_country_alias
+country;Isle of Man;;;;3;todo;review_country_or_region_aliases
+country;Republic of Abkhazia;;Georgia;;3;suggested;historical_country_alias
+country;Socialist Republic of Macedonia;;North Macedonia;;3;suggested;historical_country_alias
+country;Czech Republic;;;;3;todo;review_country_or_region_aliases
+country;Belgium;;;;3;todo;review_country_or_region_aliases
+country;Finland;;;;3;todo;review_country_or_region_aliases
+country;Greece;;;;2;todo;review_country_or_region_aliases
+country;Ukraine;;;;2;todo;review_country_or_region_aliases
+country;Cyprus;;;;2;todo;review_country_or_region_aliases
+country;North German Confederation;;Germany;;1;suggested;historical_country_alias
+region;Andorra;Andorra la Vella;Andorra;;1;todo;region_alias_candidate
+region;Andorra;Canillo;Andorra;;1;todo;region_alias_candidate
+region;Andorra;Encamp;Andorra;;1;todo;region_alias_candidate
+region;Andorra;Escaldes-Engordany;Andorra;;1;todo;region_alias_candidate
+region;Andorra;La Massana;Andorra;;1;todo;region_alias_candidate
+region;Andorra;Ordino;Andorra;;1;todo;region_alias_candidate
+region;Andorra;Sant Julià de Lòria;Andorra;;1;todo;region_alias_candidate
+region;Belgium;Brussels-Capital Region;Belgium;;1;todo;region_alias_candidate
+region;Belgium;German-speaking Community of Belgium;Belgium;;1;todo;region_alias_candidate
+region;Belgium;Wallonia;Belgium;;1;todo;region_alias_candidate
+region;Cyprus;Kyrenia District;Cyprus;;1;todo;region_alias_candidate
+region;Cyprus;Larnaca District;Cyprus;;1;todo;region_alias_candidate
+region;Czech Republic;Northern Bohemia;Czech Republic;;1;todo;region_alias_candidate
+region;Czech Republic;Prague;Czech Republic;;1;todo;region_alias_candidate
+region;Czech Republic;Southern Bohemia;Czech Republic;;1;todo;region_alias_candidate
+region;Czechoslovakia;Autonomous Land of Slovakia;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Bratislava region (1948 – 1960);Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Brno Region;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Central Slovakia;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Eastern Slovakia;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Hradec Králové Region;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Karlovarský kraj;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Land of Moravia;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Moravian-Silesian country;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Ostrava region;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q10861593;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q11177290;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q11247545;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q12018407;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q12024718;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q12031326;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q12040959;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q12043819;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q12045981;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q12046621;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q12046944;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q13425116;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q27917023;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q56219884;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q66022735;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q66022759;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q66022806;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q67032769;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q8534961;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q90818597;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q90818603;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q90818604;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q90818609;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q90818610;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q90884090;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q91122357;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q91122362;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q91122364;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q91122367;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q91122372;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q91122375;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q91122380;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q91122384;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q91122389;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q91122392;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q91122399;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q91122401;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q91122406;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q91122410;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q91785411;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Q91809911;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Western Slovakia;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Země Slezská;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Země Česká;Czech Republic;;1;review;region_alias_candidate
+region;Czechoslovakia;Žilina region (1948 – 1960);Czech Republic;;1;review;region_alias_candidate
+region;Democratic Federal Yugoslavia;Aračinovo Municipality;Serbia;;1;review;region_alias_candidate
+region;Democratic Federal Yugoslavia;Dojran Municipality;Serbia;;1;review;region_alias_candidate
+region;Democratic Federal Yugoslavia;Petrovec Municipality;Serbia;;1;review;region_alias_candidate
+region;Democratic Federal Yugoslavia;Staro Nagoričane Municipality;Serbia;;1;review;region_alias_candidate
+region;Democratic Federal Yugoslavia;Valandovo Municipality;Serbia;;1;review;region_alias_candidate
+region;Federal People's Republic of Yugoslavia;Aračinovo Municipality;Serbia;;1;review;region_alias_candidate
+region;Federal People's Republic of Yugoslavia;Dojran Municipality;Serbia;;1;review;region_alias_candidate
+region;Federal People's Republic of Yugoslavia;Petrovec Municipality;Serbia;;1;review;region_alias_candidate
+region;Federal People's Republic of Yugoslavia;Staro Nagoričane Municipality;Serbia;;1;review;region_alias_candidate
+region;Federal People's Republic of Yugoslavia;Valandovo Municipality;Serbia;;1;review;region_alias_candidate
+region;Finland;Kanta-Häme;Finland;;1;todo;region_alias_candidate
+region;Finland;Southwest Finland;Finland;;1;todo;region_alias_candidate
+region;Finland;Åland;Finland;;1;todo;region_alias_candidate
+region;France;Anaa;France;;1;todo;region_alias_candidate
+region;France;Arue;France;;1;todo;region_alias_candidate
+region;France;Arutua;France;;1;todo;region_alias_candidate
+region;France;Auvergne;France;;1;todo;region_alias_candidate
+region;France;Bora-Bora;France;;1;todo;region_alias_candidate
+region;France;Bourgogne-Franche-Comté;France;;1;todo;region_alias_candidate
+region;France;Brittany;France;;1;todo;region_alias_candidate
+region;France;Burgundy;France;;1;todo;region_alias_candidate
+region;France;Corsica;France;;1;todo;region_alias_candidate
+region;France;Fakarava;France;;1;todo;region_alias_candidate
+region;France;Fangatau;France;;1;todo;region_alias_candidate
+region;France;Fatu-Hiva;France;;1;todo;region_alias_candidate
+region;France;Faʻaʻā;France;;1;todo;region_alias_candidate
+region;France;Franche-Comté;France;;1;todo;region_alias_candidate
+region;France;French Guiana;France;;1;todo;region_alias_candidate
+region;France;French Polynesia;France;;1;todo;region_alias_candidate
+region;France;Guadeloupe;France;;1;todo;region_alias_candidate
+region;France;Hao;France;;1;todo;region_alias_candidate
+region;France;Hikueru;France;;1;todo;region_alias_candidate
+region;France;Hitiaa O Te Ra;France;;1;todo;region_alias_candidate
+region;France;Hiva-Oa;France;;1;todo;region_alias_candidate
+region;France;Languedoc-Roussillon;France;;1;todo;region_alias_candidate
+region;France;Lower Normandy;France;;1;todo;region_alias_candidate
+region;France;Makemo;France;;1;todo;region_alias_candidate
+region;France;Maupiti;France;;1;todo;region_alias_candidate
+region;France;Mayotte;France;;1;todo;region_alias_candidate
+region;France;Moorea-Maiao;France;;1;todo;region_alias_candidate
+region;France;Napuka;France;;1;todo;region_alias_candidate
+region;France;New Caledonia;France;;1;todo;region_alias_candidate
+region;France;Normandy;France;;1;todo;region_alias_candidate
+region;France;Nuku-Hiva;France;;1;todo;region_alias_candidate
+region;France;Nukutavake;France;;1;todo;region_alias_candidate
+region;France;Occitania;France;;1;todo;region_alias_candidate
+region;France;Paea;France;;1;todo;region_alias_candidate
+region;France;Papara;France;;1;todo;region_alias_candidate
+region;France;Papeete;France;;1;todo;region_alias_candidate
+region;France;Picardy;France;;1;todo;region_alias_candidate
