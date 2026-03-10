@@ -1,2 +1,2 @@
 mode=GDP
-map=GDPMap.png
+map=GDPMap_1773183351.png

@@ -27,6 +27,23 @@ MIN_POP_YEAR = 2000
 # Only these match methods are trusted to estimate density for imputation.
 DENSITY_CONFIDENT_METHODS = {"iso", "exact_country", "region_only"}
 
+# Built-in aliases normalize common UK naming variants in source datasets.
+DEFAULT_COUNTRY_ALIASES = {
+    "great britain": "united kingdom",
+    "britain": "united kingdom",
+    "england": "united kingdom",
+    "scotland": "united kingdom",
+    "wales": "united kingdom",
+    "northern ireland": "united kingdom",
+    "uk": "united kingdom",
+}
+
+# These countries are known to have mixed/cross-level source rows in query.csv.
+# For them we use seed/area weights + official totals for stable province values.
+FORCE_SEED_ONLY_COUNTRIES = {"FRA", "ESP", "GBR"}
+FORCE_WEIGHT_EXPONENT = 0.85
+REGION_MATCH_MIN_SCORE = 0.82
+
 EUROPE_COUNTRIES = [
     "ISL", "IRL", "GBR", "PRT", "ESP", "FRA", "AND", "BEL", "NLD", "LUX",
     "DEU", "CHE", "AUT", "LIE", "ITA", "SMR", "MLT", "DNK", "NOR", "SWE",
@@ -196,7 +213,9 @@ def apply_aliases(
     region_aliases: Dict[Tuple[str, str], Tuple[str, str]],
 ) -> pd.DataFrame:
     """Apply configured aliases to normalized country/region fields before matching."""
-    if pop_df.empty or (not country_aliases and not region_aliases):
+    if pop_df.empty:
+        return pop_df
+    if not country_aliases and not region_aliases and not DEFAULT_COUNTRY_ALIASES:
         return pop_df
 
     pop_df = pop_df.copy()
@@ -205,11 +224,14 @@ def apply_aliases(
     country_changes = 0
     region_rules = 0
 
+    effective_country_aliases = dict(DEFAULT_COUNTRY_ALIASES)
+    effective_country_aliases.update(country_aliases)
+
     for _, row in pop_df.iterrows():
         src_country = row["norm_country"]
         src_region = row["norm_region"]
 
-        country_norm = country_aliases.get(src_country, src_country)
+        country_norm = effective_country_aliases.get(src_country, src_country)
         if country_norm != src_country:
             country_changes += 1
 
@@ -286,6 +308,13 @@ def load_country_totals(land: gpd.GeoDataFrame, target_year: int) -> Dict[str, f
     if len(totals_df.columns) == 1:
         totals_df = pd.read_csv(COUNTRY_TOTALS_PATH)
 
+    def _looks_like_iso3(series: pd.Series) -> bool:
+        sample = series.dropna().astype(str).str.strip().head(20)
+        if sample.empty:
+            return False
+        ratio = sample.str.fullmatch(r"[A-Za-z]{3}").mean()
+        return bool(ratio >= 0.8)
+
     country_col = next(
         (c for c in ["country_iso3", "iso3", "country", "country_code"] if c in totals_df.columns),
         None,
@@ -297,8 +326,22 @@ def load_country_totals(land: gpd.GeoDataFrame, target_year: int) -> Dict[str, f
     year_col = next((c for c in ["year", "population_year"] if c in totals_df.columns), None)
 
     if country_col is None or pop_col is None:
-        print("[POP] country_population_totals.csv missing required columns; ignoring official totals.")
-        return {}
+        raw_df = pd.read_csv(COUNTRY_TOTALS_PATH, sep=";", header=None)
+        if raw_df.shape[1] >= 2 and _looks_like_iso3(raw_df.iloc[:, 0]):
+            rename = {0: "country_iso3", 1: "population"}
+            if raw_df.shape[1] >= 3:
+                rename[2] = "year"
+            if raw_df.shape[1] >= 4:
+                rename[3] = "source"
+
+            totals_df = raw_df.rename(columns=rename)
+            country_col = "country_iso3"
+            pop_col = "population"
+            year_col = "year" if "year" in totals_df.columns else None
+            print("[POP] country_population_totals.csv loaded as headerless format.")
+        else:
+            print("[POP] country_population_totals.csv missing required columns; ignoring official totals.")
+            return {}
 
     land_isos = set(str(v).upper() for v in land["country"].dropna().unique()) if "country" in land.columns else set()
     name_to_iso: Dict[str, str] = {}
@@ -428,10 +471,119 @@ def allocate_country_total(province_ids: List[int], weights: Dict[int, float], t
     return allocations
 
 
+def _region_similarity(a: str, b: str) -> float:
+    """Combined lexical similarity for cross-language region labels."""
+    if not a or not b:
+        return 0.0
+    ratio = difflib.SequenceMatcher(None, a, b).ratio()
+    ta = set(a.split())
+    tb = set(b.split())
+    token_overlap = (len(ta & tb) / max(len(ta), len(tb))) if ta and tb else 0.0
+    return max(ratio, token_overlap)
+
+
+def _land_region_candidates(row: pd.Series) -> List[str]:
+    vals: List[str] = []
+    for col in ["region", "geonunit", "region_sub", "gn_region"]:
+        n = normalize(row.get(col, ""))
+        if n and n not in vals:
+            vals.append(n)
+    return vals
+
+
+def build_region_guided_baseline(
+    iso3: str,
+    pids: List[int],
+    land: gpd.GeoDataFrame,
+    pop_df: Optional[pd.DataFrame],
+    weights: Dict[int, float],
+) -> Tuple[Dict[int, float], Dict[int, str], int]:
+    """
+    For coarse-source countries, use country-region totals (e.g. FRA regions,
+    ESP autonomous communities, GBR geonunit) and split them to provinces.
+    """
+    if pop_df is None or pop_df.empty or not pids:
+        return {}, {}, 0
+
+    country_names = {
+        normalize(land.loc[pid].get("admin", ""))
+        for pid in pids
+    }
+    country_names = {c for c in country_names if c}
+    if not country_names:
+        return {}, {}, 0
+
+    region_rows = pop_df[
+        pop_df["norm_country"].isin(country_names)
+        & pd.notna(pop_df["population"])
+        & (pop_df["population"] > 0)
+        & (pop_df["norm_region"] != "")
+    ].copy()
+    if region_rows.empty:
+        return {}, {}, 0
+
+    region_rows = region_rows.sort_values("populationDate")
+    region_totals: Dict[str, float] = {}
+    for _, row in region_rows.iterrows():
+        region_totals[row["norm_region"]] = float(row["population"])
+
+    available_regions = list(region_totals.keys())
+    if not available_regions:
+        return {}, {}, 0
+
+    region_to_pids: Dict[str, List[int]] = {}
+    for pid in pids:
+        row = land.loc[pid]
+        candidates = _land_region_candidates(row)
+        if not candidates:
+            continue
+
+        key = next((c for c in candidates if c in region_totals), None)
+        if key is None:
+            best_key = None
+            best_score = 0.0
+            for c in candidates:
+                for reg in available_regions:
+                    score = _region_similarity(c, reg)
+                    if score > best_score:
+                        best_score = score
+                        best_key = reg
+            if best_key is not None and best_score >= REGION_MATCH_MIN_SCORE:
+                key = best_key
+
+        if key is not None:
+            region_to_pids.setdefault(key, []).append(pid)
+
+    used_regions = [rk for rk in region_to_pids if rk in region_totals]
+    covered = sum(len(region_to_pids[rk]) for rk in used_regions)
+
+    # Require minimum coverage so we don't overfit on sparse accidental matches.
+    if len(used_regions) < 2 or covered < max(2, int(0.2 * len(pids))):
+        return {}, {}, 0
+
+    baseline: Dict[int, float] = {}
+    baseline_source: Dict[int, str] = {}
+
+    split_weights = {
+        pid: max(weights.get(pid, 1.0), 1.0) ** FORCE_WEIGHT_EXPONENT
+        for pid in pids
+    }
+
+    for region_key in used_regions:
+        region_pids = region_to_pids[region_key]
+        alloc = allocate_country_total(region_pids, split_weights, region_totals[region_key])
+        for pid, val in alloc.items():
+            baseline[pid] = float(val)
+            baseline_source[pid] = "region_seed_distribution"
+
+    return baseline, baseline_source, len(used_regions)
+
+
 def build_consistent_population(
     land: gpd.GeoDataFrame,
     matched: Dict[int, Tuple[pd.Series, str, int]],
     target_year: int,
+    pop_df: Optional[pd.DataFrame] = None,
 ) -> Tuple[Dict[int, float], Dict[int, str]]:
     """
     Option 3 (province-first):
@@ -479,6 +631,63 @@ def build_consistent_population(
     source_by_pid: Dict[int, str] = {}
 
     for iso3, pids in country_to_pids.items():
+        force_seed_only = (
+            iso3 in FORCE_SEED_ONLY_COUNTRIES
+            and official_totals.get(iso3, 0.0) > 0
+        )
+
+        if force_seed_only:
+            baseline, baseline_source, used_regions = build_region_guided_baseline(
+                iso3=iso3,
+                pids=pids,
+                land=land,
+                pop_df=pop_df,
+                weights=weights,
+            )
+
+            split_weights = {
+                pid: max(weights.get(pid, 1.0), 1.0) ** FORCE_WEIGHT_EXPONENT
+                for pid in pids
+            }
+
+            if baseline:
+                print(
+                    f"[POP] {iso3}: using region-guided baseline ({used_regions} matched regions)."
+                )
+                remaining = [pid for pid in pids if pid not in baseline]
+                if remaining:
+                    used_weight = sum(split_weights[pid] for pid in baseline)
+                    used_pop = sum(baseline.values())
+                    fill_density = (used_pop / used_weight) if used_weight > 0 else global_density
+                    for pid in remaining:
+                        baseline[pid] = max(split_weights[pid] * fill_density, 1.0)
+                        baseline_source[pid] = "region_imputed_density"
+            else:
+                print(
+                    f"[POP] {iso3}: region guide unavailable, using seed baseline with exponent."
+                )
+                for pid in pids:
+                    baseline[pid] = max(split_weights[pid], 1.0)
+                    baseline_source[pid] = "seed_area_distribution"
+
+            if iso3 in official_totals and official_totals[iso3] > 0:
+                allocations = allocate_country_total(pids, baseline, official_totals[iso3])
+                for pid, val in allocations.items():
+                    pop_values[pid] = float(val)
+                    source_label = baseline_source.get(pid, "")
+                    if source_label.startswith("region_"):
+                        source_by_pid[pid] = "region_scaled_official"
+                    elif source_label == "seed_area_distribution":
+                        source_by_pid[pid] = "seed_area_scaled_official"
+                    else:
+                        source_by_pid[pid] = "imputed_scaled_official"
+                continue
+
+            for pid in pids:
+                pop_values[pid] = float(max(int(round(baseline.get(pid, 1.0))), 1))
+                source_by_pid[pid] = baseline_source.get(pid, "seed_area_distribution")
+            continue
+
         matched_pids = [pid for pid in pids if pid in matched_pop_by_pid]
         unmatched_pids = [pid for pid in pids if pid not in matched_pop_by_pid]
 
@@ -504,15 +713,22 @@ def build_consistent_population(
 
         for pid in unmatched_pids:
             seed_w = max(weights.get(pid, 1.0), 1.0)
-            baseline[pid] = max(seed_w * country_density, 1.0)
-            baseline_source[pid] = "imputed_country_density" if use_country_density else "imputed_global_density"
+            if force_seed_only:
+                baseline[pid] = seed_w
+                baseline_source[pid] = "seed_area_distribution"
+            else:
+                baseline[pid] = max(seed_w * country_density, 1.0)
+                baseline_source[pid] = "imputed_country_density" if use_country_density else "imputed_global_density"
 
         if iso3 in official_totals and official_totals[iso3] > 0:
             allocations = allocate_country_total(pids, baseline, official_totals[iso3])
             for pid, val in allocations.items():
                 pop_values[pid] = float(val)
-                if baseline_source.get(pid, "").startswith("matched"):
+                source_label = baseline_source.get(pid, "")
+                if source_label.startswith("matched"):
                     source_by_pid[pid] = "matched_scaled_official"
+                elif source_label == "seed_area_distribution":
+                    source_by_pid[pid] = "seed_area_scaled_official"
                 else:
                     source_by_pid[pid] = "imputed_scaled_official"
             continue
@@ -779,7 +995,12 @@ def generate_population_dataset(
     rows, debug_rows = build_output_rows(land, matched)
 
     if USE_CONSISTENT_DISTRIBUTION:
-        pop_values, source_by_pid = build_consistent_population(land, matched, target_year=TARGET_POP_YEAR)
+        pop_values, source_by_pid = build_consistent_population(
+            land,
+            matched,
+            target_year=TARGET_POP_YEAR,
+            pop_df=pop_df,
+        )
         for row in rows:
             pid = row["province_id"]
             row["population"] = int(pop_values.get(pid, 1.0))

@@ -2,6 +2,8 @@ import json
 import os
 import random
 import math
+import shutil
+import time
 from PIL import Image, ImageDraw
 
 from export_shared import EXPORT_SIZE, SEA_COLOR, OUTLINE_COLOR, OUT, draw_voronoi_outline
@@ -33,20 +35,31 @@ def export_mode_folder(mode_name, file_name, description):
 
     src = os.path.join(OUT, f"{file_name}.png")
     dst = os.path.join(mode_dir, f"{file_name}.png")
+    map_filename = f"{file_name}.png"
     if os.path.exists(src):
-        os.replace(src, dst)
+        try:
+            os.replace(src, dst)
+        except PermissionError:
+            # Destination may be locked by an external viewer; write a fallback file.
+            fallback_name = f"{file_name}_{int(time.time())}.png"
+            fallback_dst = os.path.join(mode_dir, fallback_name)
+            shutil.copy2(src, fallback_dst)
+            map_filename = fallback_name
+            print(
+                f"[WARN] {dst} is locked. Wrote fallback map '{fallback_name}' instead."
+            )
 
     manifest_path = os.path.join(mode_dir, "manifest.txt")
     with open(manifest_path, "w") as f:
         f.write(f"mode={mode_name}\n")
-        f.write(f"map={file_name}.png\n")
+        f.write(f"map={map_filename}\n")
 
     meta_path = os.path.join(mode_dir, "meta.json")
     meta = {
         "id": mode_name.lower(),
         "name": mode_name,
         "description": description,
-        "map_file": f"{file_name}.png",
+        "map_file": map_filename,
     }
 
     with open(meta_path, "w") as f:
@@ -136,7 +149,7 @@ def export_population_map(
 
                 for pid in range(max_pid + 1):
                     source = population_source.get(pid, "")
-                    if not source.startswith("imputed_"):
+                    if source.startswith("matched_"):
                         continue
 
                     pop = population.get(pid, 0) or 0
@@ -152,7 +165,19 @@ def export_population_map(
                     cspan = cmax - cmin
                     local_t = 0.5 if cspan <= 1e-12 else (math.log10(pop) - cmin) / cspan
                     base_t = metric_t.get(pid, 0.0)
-                    metric_t[pid] = max(0.0, min(1.0, 0.7 * base_t + 0.3 * local_t))
+
+                    # Keep region-guided countries closer to global scale to avoid over-contrast.
+                    if source.startswith("region_scaled_official"):
+                        base_weight = 0.9
+                    elif source.startswith("imputed_"):
+                        base_weight = 0.8
+                    else:
+                        base_weight = 0.75
+
+                    metric_t[pid] = max(
+                        0.0,
+                        min(1.0, base_weight * base_t + (1.0 - base_weight) * local_t),
+                    )
 
             def lerp(a, b, t):
                 return int(a + (b - a) * t)

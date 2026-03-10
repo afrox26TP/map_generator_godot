@@ -1,3 +1,4 @@
+import json
 import os
 import random
 import numpy as np
@@ -244,6 +245,51 @@ def write_population_txt(rows, debug_rows, path):
             )
 
 
+def export_population_lookup_json(land, province_colors, rows, path):
+    """
+    Export a Godot-ready lookup file:
+    - by_id: province id -> population + metadata
+    - by_color: "R,G,B" -> province id
+    """
+    rows_by_pid = {
+        int(r["province_id"]): r
+        for r in rows
+    }
+    pid_to_color = {pid: col for col, pid in province_colors.items()}
+
+    by_id = {}
+    by_color = {}
+
+    for pid, land_row in land.iterrows():
+        pid_i = int(pid)
+        pop_row = rows_by_pid.get(pid_i, {})
+        r, g, b = pid_to_color.get(pid_i, (0, 0, 0))
+
+        by_id[str(pid_i)] = {
+            "province_id": pid_i,
+            "province_name": str(land_row.get("name_en") or land_row.get("name") or ""),
+            "country_iso3": str(land_row.get("country") or ""),
+            "country_name": str(land_row.get("admin") or land_row.get("country") or ""),
+            "population": int(pop_row.get("population") or 0),
+            "population_source": str(pop_row.get("population_source") or ""),
+            "population_date": str(pop_row.get("population_date") or ""),
+            "color_rgb": [int(r), int(g), int(b)],
+            "color_hex": f"#{int(r):02X}{int(g):02X}{int(b):02X}",
+        }
+        by_color[f"{int(r)},{int(g)},{int(b)}"] = pid_i
+
+    payload = {
+        "version": 1,
+        "by_id": by_id,
+        "by_color": by_color,
+    }
+
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(payload, f, indent=2)
+
+    print(f"[EXPORT] ProvincePopulationLookup.json written ({len(by_id)} land provinces).")
+
+
 # --------------------------------------------------------
 # MAIN EXPORT
 # --------------------------------------------------------
@@ -274,6 +320,12 @@ def run_export(land, sea_regions):
         for name, country in unmatched[:5]:
             print(f" - {name} ({country})")
     write_population_txt(rows, debug_rows, os.path.join(OUT, "Population.txt"))
+    export_population_lookup_json(
+        land,
+        province_colors,
+        rows,
+        os.path.join(OUT, "ProvincePopulationLookup.json"),
+    )
 
     pop_source_by_pid = {
         r["province_id"]: r.get("population_source", "")

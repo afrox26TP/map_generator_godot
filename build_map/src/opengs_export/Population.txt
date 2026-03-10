@@ -1,928 +1,928 @@
 id;population;population_source;population_date;source_region;source_country;match_method
-0;109585;matched_province;2022-01-01;Dibër County;Albania;matched
-1;72768;matched_province;2022-01-01;Kukës County;Albania;matched
-2;197303;matched_province;2022-01-01;Korçë County;Albania;matched
-3;259112;matched_province;2022-01-01;Elbasan County;Albania;matched
-4;55278;matched_province;2022-01-01;Gjirokastër County;Albania;matched
-5;184955;matched_province;2022-01-01;Vlorë County;Albania;matched
-6;193009;matched_province;2022-01-01;Shkodër County;Albania;matched
-7;278413;matched_province;2022-01-01;Fier County;Albania;matched
-8;919511;matched_province;2022-01-01;Tirana County;Albania;matched
-9;117283;matched_province;2022-01-01;Lezhë County;Albania;matched
-10;115050;matched_province;2022-01-01;Berat County;Albania;matched
-11;1684287;matched_province;2020-01-01;Lower Austria;Austria;matched
-12;1490279;matched_province;2020-01-01;Upper Austria;Austria;matched
-13;294436;matched_province;2020-01-01;Burgenland;Austria;matched
-14;404963;matched_province;2022-06-30;Vorarlberg;Austria;matched
-15;757634;matched_province;2020-01-01;Tyrol;Austria;matched
-16;558410;matched_province;2020-01-01;Salzburg;Austria;matched
-17;561293;matched_province;2020-01-01;Carinthia;Austria;matched
-18;1246395;matched_province;2020-01-01;Styria;Austria;matched
-19;176421;imputed_global_density;2023-01-01;;;unmatched
-20;214025;imputed_global_density;2023-01-01;;;unmatched
-21;200076;imputed_global_density;2023-01-01;;;unmatched
-22;238502;imputed_global_density;2023-01-01;;;unmatched
-23;201464;imputed_global_density;2023-01-01;;;unmatched
-24;160154;imputed_global_density;2023-01-01;;;unmatched
-25;148851;imputed_global_density;2023-01-01;;;unmatched
-26;127112;imputed_global_density;2023-01-01;;;unmatched
-27;123009;imputed_global_density;2023-01-01;;;unmatched
-28;59118;imputed_global_density;2023-01-01;;;unmatched
-29;388919;matched_province;2024-12-31;Burgas;Bulgaria;matched
-30;105429;matched_province;2024-12-31;Yambol;Bulgaria;matched
-31;207356;matched_province;2024-12-31;Haskovo;Bulgaria;matched
-32;70542;matched_province;2024-12-31;Vidin;Bulgaria;matched
-33;109886;matched_province;2024-12-31;Pernik;Bulgaria;matched
-34;224701;matched_province;2024-12-31;Sofia Oblast;Bulgaria;matched
-35;112737;matched_province;2024-12-31;Montana Oblast;Bulgaria;matched
-36;106131;matched_province;2024-12-31;Kyustendil;Bulgaria;matched
-37;286333;matched_province;2024-12-31;Blagoevgrad;Bulgaria;matched
-38;93549;matched_province;2024-12-31;Silistra;Bulgaria;matched
-39;186093;matched_province;2024-12-31;Ruse;Bulgaria;matched
-40;145207;matched_province;2024-12-31;Dobrich;Bulgaria;matched
-41;146002;matched_province;2024-12-31;Vratsa;Bulgaria;matched
-42;215326;matched_province;2024-12-31;Pleven;Bulgaria;matched
-43;200413;matched_province;2024-12-31;Veliko Tarnovo;Bulgaria;matched
-44;149478;matched_province;2024-12-31;Kardzhali;Bulgaria;matched
-45;90534;matched_province;2024-12-31;Smolyan;Bulgaria;matched
-46;437521;matched_province;2024-12-31;Varna;Bulgaria;matched
-47;635630;matched_province;2024-12-31;Plovdiv;Bulgaria;matched
-48;288736;matched_province;2024-12-31;Stara Zagora;Bulgaria;matched
-49;169299;matched_province;2024-12-31;Sliven;Bulgaria;matched
-50;149279;matched_province;2024-12-31;Shumen;Bulgaria;matched
-51;99459;matched_province;2024-12-31;Razgrad;Bulgaria;matched
-52;94735;matched_province;2024-12-31;Targovishte;Bulgaria;matched
-53;93817;matched_province;2024-12-31;Gabrovo;Bulgaria;matched
-54;223494;matched_province;2024-12-31;Pazardzhik;Bulgaria;matched
-55;110823;matched_province;2024-12-31;Lovech;Bulgaria;matched
-56;57369;imputed_country_density;2023-01-01;;;unmatched
-57;3091633;imputed_country_density;2023-01-01;;;unmatched
-58;2072225;imputed_country_density;2023-01-01;;;unmatched
-59;2155788;imputed_country_density;2023-01-01;;;unmatched
-60;5759614;imputed_country_density;2023-01-01;;;unmatched
-61;3130965;imputed_country_density;2023-01-01;;;unmatched
-62;1509574;imputed_country_density;2023-01-01;;;unmatched
-63;1317351;imputed_country_density;2023-01-01;;;unmatched
-64;3409676;imputed_country_density;2023-01-01;;;unmatched
-65;977980;imputed_country_density;2023-01-01;;;unmatched
-66;1429326;imputed_country_density;2023-01-01;;;unmatched
-67;2214204;imputed_country_density;2023-01-01;;;unmatched
-68;2219220;matched_province;2013-01-01;Federation of Bosnia and Herzegovina;Bosnia and Herzegovina;matched
-69;1978451;imputed_country_density;2023-01-01;;;unmatched
-70;1405741;imputed_country_density;2023-01-01;;;unmatched
-71;912673;imputed_country_density;2023-01-01;;;unmatched
-72;1327973;matched_province;2025-01-01;Gomel Region;Belarus;matched
-73;1299912;matched_province;2025-01-01;Brest Region;Belarus;matched
-74;1072063;matched_province;2025-01-01;Vitebsk Region;Belarus;matched
-75;984880;matched_province;2025-01-01;Grodno Region;Belarus;matched
-76;971365;matched_province;2025-01-01;Mogilev region;Belarus;matched
-77;1456357;matched_province;2025-01-01;Minsk Region;Belarus;matched
-78;343955;matched_province;2018-12-31;Canton of Valais;Switzerland;fuzzy_contain
-79;353343;matched_province;2018-12-31;Canton of Ticino;Switzerland;fuzzy_contain
-80;198379;matched_province;2018-12-31;Canton of the Grisons;Switzerland;fuzzy_contain
-81;276472;matched_province;2018-12-31;Canton of Thurgau;Switzerland;fuzzy_contain
-82;1520968;matched_province;2018-12-31;Canton of Zürich;Switzerland;fuzzy_contain
-83;678207;matched_province;2018-12-31;Canton of Aargau;Switzerland;fuzzy_contain
-84;507697;matched_province;2018-12-31;Canton of St. Gallen;Switzerland;fuzzy_contain
-85;273194;matched_province;2018-12-31;Canton of Solothurn;Switzerland;fuzzy_contain
-86;799145;matched_province;2018-12-31;Canton of Vaud;Switzerland;fuzzy_contain
-87;318382;imputed_global_density;2023-01-01;;;unmatched
-88;409557;matched_province;2018-12-31;Canton of Lucerne;Switzerland;fuzzy_contain
-89;36433;matched_province;2018-12-31;Canton of Uri;Switzerland;fuzzy_contain
-90;318714;matched_province;2018-12-31;Canton of Fribourg;Switzerland;fuzzy_contain
-91;46629;matched_province;2011-01-01;Famagusta District;Cyprus;matched
-92;326980;matched_province;2011-01-01;Nicosia District;Cyprus;matched
-93;235330;matched_province;2011-01-01;Limassol District;Cyprus;matched
-94;88276;matched_province;2011-01-01;Paphos District;Cyprus;matched
-95;808356;matched_province;2025-01-01;Ústí nad Labem Region;Czech Republic;matched
-96;449494;matched_province;2025-01-01;Liberec Region;Czech Republic;matched
-97;293195;matched_province;2025-01-01;Karlovy Vary Region;Czech Republic;matched
-98;614640;matched_province;2025-01-01;Plzeň Region;Czech Republic;matched
-99;653227;matched_province;2025-01-01;South Bohemian Region;Czech Republic;matched
-100;555923;matched_province;2025-01-01;Hradec Králové Region;Czech Republic;matched
-101;631500;matched_province;2025-01-01;Olomouc Region;Czech Republic;matched
-102;530469;matched_province;2025-01-01;Pardubice Region;Czech Republic;matched
-103;1189204;matched_province;2024-01-01;Moravian-Silesian Region;Czech Republic;matched
-104;1229343;matched_province;2025-01-01;South Moravian Region;Czech Republic;matched
-105;578998;matched_province;2025-01-01;Zlín Region;Czech Republic;matched
-106;517647;matched_province;2025-01-01;Vysočina Region;Czech Republic;matched
-107;1455940;matched_province;2024-01-01;Central Bohemian Region;Czech Republic;matched
-108;4089467;matched_province;2023-12-31;Saxony;Germany;matched
-109;13124737;matched_province;2022-01-01;Bavaria;Germany;matched
-110;4094169;matched_province;2022-01-01;Rhineland-Palatinate;Germany;matched
-111;1017567;matched_province;2022-01-01;Saarland;Germany;matched
-112;2953270;matched_province;2022-12-31;Schleswig-Holstein;Germany;matched
-113;8003421;matched_province;2022-01-01;Lower Saxony;Germany;matched
-114;17932651;matched_province;2022-01-01;North Rhine-Westphalia;Germany;matched
-115;11104040;matched_province;2022-01-01;Baden-Württemberg;Germany;matched
-116;2534075;matched_province;2022-01-01;Brandenburg;Germany;matched
-117;1570817;matched_province;2022-01-01;Mecklenburg-Vorpommern;Germany;matched
-118;5507777;matched_province;2022-01-01;Hesse;Germany;matched
-119;2161000;matched_province;2022-01-01;Thuringia;Germany;matched
-120;2245470;matched_province;2022-01-01;Saxony-Anhalt;Germany;matched
-121;1223894;matched_province;2019-10-01;Southern Denmark;Denmark;matched
-122;1326913;matched_province;2019-10-01;Central Denmark;Denmark;matched
-123;832176;imputed_country_density;2023-01-01;;;unmatched
-124;837087;matched_province;2019-10-01;Region Zealand;Denmark;matched
-125;1848989;matched_province;2019-10-01;Capital Region of Denmark;Denmark;fuzzy_contain
-126;678338;matched_province;2024-01-01;Navarre;Spain;matched
-127;475360;imputed_country_density;2023-01-01;;;unmatched
-128;3756233;imputed_country_density;2023-01-01;;;unmatched
-129;2922312;imputed_country_density;2023-01-01;;;unmatched
-130;1420282;imputed_country_density;2023-01-01;;;unmatched
-131;5319248;imputed_country_density;2023-01-01;;;unmatched
-132;1807248;imputed_country_density;2023-01-01;;;unmatched
-133;1786624;imputed_country_density;2023-01-01;;;unmatched
-134;4865670;imputed_country_density;2023-01-01;;;unmatched
-135;3042686;imputed_country_density;2023-01-01;;;unmatched
-136;2577383;imputed_country_density;2023-01-01;;;unmatched
-137;1068378;imputed_country_density;2023-01-01;;;unmatched
-138;2451132;imputed_country_density;2023-01-01;;;unmatched
-139;1875370;imputed_country_density;2023-01-01;;;unmatched
-140;1515510;imputed_country_density;2023-01-01;;;unmatched
-141;1617807;imputed_country_density;2023-01-01;;;unmatched
-142;2605267;imputed_country_density;2023-01-01;;;unmatched
-143;1404951;imputed_country_density;2023-01-01;;;unmatched
-144;1571933;matched_province;2024-01-01;Region of Murcia;Spain;fuzzy_contain
-145;2121698;imputed_country_density;2023-01-01;;;unmatched
-146;3067627;imputed_country_density;2023-01-01;;;unmatched
-147;1777607;imputed_country_density;2023-01-01;;;unmatched
-148;3388079;imputed_country_density;2023-01-01;;;unmatched
-149;1919614;imputed_country_density;2023-01-01;;;unmatched
-150;2383757;imputed_country_density;2023-01-01;;;unmatched
-151;1008028;matched_province;2024-01-01;Asturias;Spain;matched
-152;591563;matched_province;2024-01-01;Cantabria;Spain;matched
-153;535236;imputed_country_density;2023-01-01;;;unmatched
-154;819155;imputed_country_density;2023-01-01;;;unmatched
-155;979368;imputed_country_density;2023-01-01;;;unmatched
-156;1176659;matched_province;2022-01-01;Balearic Islands;Spain;matched
-157;4188285;imputed_country_density;2023-01-01;;;unmatched
-158;324399;matched_province;2024-01-01;La Rioja;Spain;matched
-159;770029;imputed_country_density;2023-01-01;;;unmatched
-160;3609033;imputed_country_density;2023-01-01;;;unmatched
-161;3582251;imputed_country_density;2023-01-01;;;unmatched
-162;4151811;imputed_country_density;2023-01-01;;;unmatched
-163;3714750;imputed_country_density;2023-01-01;;;unmatched
-164;2388350;matched_province;2024-01-01;Castile and León;Spain;fuzzy_contain
-165;2483569;imputed_country_density;2023-01-01;;;unmatched
-166;3509453;imputed_country_density;2023-01-01;;;unmatched
-167;1958510;imputed_country_density;2023-01-01;;;unmatched
-168;1939938;imputed_country_density;2023-01-01;;;unmatched
-169;4772263;imputed_country_density;2023-01-01;;;unmatched
-170;3324342;imputed_country_density;2023-01-01;;;unmatched
-171;2960508;imputed_country_density;2023-01-01;;;unmatched
-172;3290115;imputed_country_density;2023-01-01;;;unmatched
-173;7001715;matched_province;2024-01-01;Community of Madrid;Spain;matched
-174;1668301;imputed_country_density;2023-01-01;;;unmatched
-175;1966817;imputed_country_density;2023-01-01;;;unmatched
-176;45637;matched_province;2023-01-01;Viljandi County;Estonia;matched
-177;87418;matched_province;2023-01-01;Pärnu County;Estonia;matched
-178;27924;matched_province;2024-01-01;Valga County;Estonia;matched
-179;34049;matched_province;2024-01-01;Võru County;Estonia;matched
-180;133358;matched_province;2023-01-01;Ida-Viru County;Estonia;matched
-181;24036;matched_province;2023-01-01;Põlva County;Estonia;matched
-182;162390;matched_province;2023-01-01;Tartu County;Estonia;matched
-183;27739;matched_province;2023-01-01;Jõgeva County;Estonia;matched
-184;20625;matched_province;2024-01-01;Lääne County;Estonia;matched
-185;646315;matched_province;2024-01-01;Harju County;Estonia;matched
-186;59608;matched_province;2023-01-01;Lääne-Viru County;Estonia;matched
-187;32021;matched_province;2024-01-01;Saare County;Estonia;matched
-188;8418;matched_province;2024-01-01;Hiiu County;Estonia;matched
-189;34038;matched_province;2023-01-01;Rapla County;Estonia;matched
-190;30072;matched_province;2023-01-01;Järva County;Estonia;matched
-191;176711;matched_province;2021-01-01;Lapland;Finland;matched
-192;626174;imputed_country_density;2023-01-01;;;unmatched
-193;71683;matched_province;2021-01-01;Kainuu;Finland;matched
-194;163570;matched_province;2021-01-01;North Karelia;Finland;matched
-195;126107;matched_province;2021-12-31;South Karelia;Finland;matched
-196;162840;matched_province;2021-01-01;Kymenlaakso;Finland;matched
-197;1704607;matched_province;2021-01-01;Uusimaa;Finland;matched
-198;165208;imputed_country_density;2023-01-01;;;unmatched
-199;215351;matched_province;2021-01-01;Satakunta;Finland;matched
-200;175821;matched_province;2021-01-01;Ostrobothnia;Finland;matched
-201;67976;matched_province;2021-01-01;Central Ostrobothnia;Finland;matched
-202;338985;imputed_country_density;2023-01-01;;;unmatched
-203;325898;imputed_country_density;2023-01-01;;;unmatched
-204;272548;matched_province;2021-01-01;Central Finland;Finland;matched
-205;237900;imputed_country_density;2023-01-01;;;unmatched
-206;523598;matched_province;2021-01-01;Pirkanmaa;Finland;matched
-207;100136;imputed_country_density;2023-01-01;;;unmatched
-208;205862;matched_province;2021-01-01;Päijät-Häme;Finland;matched
-209;4060741;matched_province;2013-01-01;Nord-Pas-de-Calais;France;fuzzy_contain
-210;5389792;imputed_country_density;2023-01-01;;;unmatched
-211;7751916;imputed_country_density;2023-01-01;;;unmatched
-212;6450228;imputed_country_density;2023-01-01;;;unmatched
-213;5423970;imputed_country_density;2023-01-01;;;unmatched
-214;6344102;imputed_country_density;2023-01-01;;;unmatched
-215;4318336;imputed_country_density;2023-01-01;;;unmatched
-216;7230237;imputed_country_density;2023-01-01;;;unmatched
-217;5752938;imputed_country_density;2023-01-01;;;unmatched
-218;6399927;matched_province;2013-01-01;Rhône-Alpes;France;matched
-219;4872250;imputed_country_density;2023-01-01;;;unmatched
-220;8256978;imputed_country_density;2023-01-01;;;unmatched
-221;6615335;imputed_country_density;2023-01-01;;;unmatched
-222;4714010;imputed_country_density;2023-01-01;;;unmatched
-223;5170735;imputed_country_density;2023-01-01;;;unmatched
-224;4409355;imputed_country_density;2023-01-01;;;unmatched
-225;4813363;imputed_country_density;2023-01-01;;;unmatched
-226;3540025;imputed_country_density;2023-01-01;;;unmatched
-227;6088595;imputed_country_density;2023-01-01;;;unmatched
-228;5882003;imputed_country_density;2023-01-01;;;unmatched
-229;5136026;imputed_country_density;2023-01-01;;;unmatched
-230;6250516;imputed_country_density;2023-01-01;;;unmatched
-231;5379216;imputed_country_density;2023-01-01;;;unmatched
-232;6098797;imputed_country_density;2023-01-01;;;unmatched
-233;6416070;imputed_country_density;2023-01-01;;;unmatched
-234;6601675;imputed_country_density;2023-01-01;;;unmatched
-235;9758542;imputed_country_density;2023-01-01;;;unmatched
-236;10540576;imputed_country_density;2023-01-01;;;unmatched
-237;7033368;imputed_country_density;2023-01-01;;;unmatched
-238;6819234;imputed_country_density;2023-01-01;;;unmatched
-239;7004162;imputed_country_density;2023-01-01;;;unmatched
-240;6990247;imputed_country_density;2023-01-01;;;unmatched
-241;7011599;imputed_country_density;2023-01-01;;;unmatched
-242;7387926;imputed_country_density;2023-01-01;;;unmatched
-243;6988656;imputed_country_density;2023-01-01;;;unmatched
-244;6269451;imputed_country_density;2023-01-01;;;unmatched
-245;5877111;imputed_country_density;2023-01-01;;;unmatched
-246;6275465;imputed_country_density;2023-01-01;;;unmatched
-247;6446302;imputed_country_density;2023-01-01;;;unmatched
-248;6474066;imputed_country_density;2023-01-01;;;unmatched
-249;7034946;imputed_country_density;2023-01-01;;;unmatched
-250;4871406;imputed_country_density;2023-01-01;;;unmatched
-251;4124306;imputed_country_density;2023-01-01;;;unmatched
-252;6532569;imputed_country_density;2023-01-01;;;unmatched
-253;5717868;imputed_country_density;2023-01-01;;;unmatched
-254;6135793;imputed_country_density;2023-01-01;;;unmatched
-255;3844267;imputed_country_density;2023-01-01;;;unmatched
-256;6064524;imputed_country_density;2023-01-01;;;unmatched
-257;8226728;imputed_country_density;2023-01-01;;;unmatched
-258;6907463;imputed_country_density;2023-01-01;;;unmatched
-259;9153300;imputed_country_density;2023-01-01;;;unmatched
-260;5300630;imputed_country_density;2023-01-01;;;unmatched
-261;6378546;imputed_country_density;2023-01-01;;;unmatched
-262;7213181;imputed_country_density;2023-01-01;;;unmatched
-263;6606720;imputed_country_density;2023-01-01;;;unmatched
-264;5807434;imputed_country_density;2023-01-01;;;unmatched
-265;5440713;imputed_country_density;2023-01-01;;;unmatched
-266;6491555;imputed_country_density;2023-01-01;;;unmatched
-267;3605344;imputed_country_density;2023-01-01;;;unmatched
-268;6578044;imputed_country_density;2023-01-01;;;unmatched
-269;8408567;imputed_country_density;2023-01-01;;;unmatched
-270;9638083;imputed_country_density;2023-01-01;;;unmatched
-271;8163884;matched_province;2022-01-01;Auvergne-Rhône-Alpes;France;fuzzy_contain
-272;6221500;imputed_country_density;2023-01-01;;;unmatched
-273;5877060;imputed_country_density;2023-01-01;;;unmatched
-274;2581597;matched_province;2022-01-01;Centre-Val de Loire;France;fuzzy_contain
-275;8237035;imputed_country_density;2023-01-01;;;unmatched
-276;7644916;imputed_country_density;2023-01-01;;;unmatched
-277;6967603;imputed_country_density;2023-01-01;;;unmatched
-278;7597756;imputed_country_density;2023-01-01;;;unmatched
-279;6389448;imputed_country_density;2023-01-01;;;unmatched
-280;1394693;imputed_country_density;2023-01-01;;;unmatched
-281;2347421;imputed_country_density;2023-01-01;;;unmatched
-282;6204143;imputed_country_density;2023-01-01;;;unmatched
-283;7598263;imputed_country_density;2023-01-01;;;unmatched
-284;6084223;imputed_country_density;2023-01-01;;;unmatched
-285;5196008;imputed_country_density;2023-01-01;;;unmatched
-286;6013985;imputed_country_density;2023-01-01;;;unmatched
-287;5583225;imputed_country_density;2023-01-01;;;unmatched
-288;5377358;imputed_country_density;2023-01-01;;;unmatched
-289;7144473;imputed_country_density;2023-01-01;;;unmatched
-290;9150349;imputed_country_density;2023-01-01;;;unmatched
-291;6181607;imputed_country_density;2023-01-01;;;unmatched
-292;6409683;imputed_country_density;2023-01-01;;;unmatched
-293;5504438;imputed_country_density;2023-01-01;;;unmatched
-294;9022331;imputed_country_density;2023-01-01;;;unmatched
-295;6339876;imputed_country_density;2023-01-01;;;unmatched
-296;7249381;imputed_country_density;2023-01-01;;;unmatched
-297;7775797;imputed_country_density;2023-01-01;;;unmatched
-298;1908397;imputed_country_density;2023-01-01;;;unmatched
-299;6915317;imputed_country_density;2023-01-01;;;unmatched
-300;476339;imputed_global_density;2023-01-01;;;unmatched
-301;227289;imputed_global_density;2023-01-01;;;unmatched
-302;104222;imputed_global_density;2023-01-01;;;unmatched
-303;356244;imputed_global_density;2023-01-01;;;unmatched
-304;273690;imputed_global_density;2023-01-01;;;unmatched
-305;304946;imputed_global_density;2023-01-01;;;unmatched
-306;202217;imputed_global_density;2023-01-01;;;unmatched
-307;462864;imputed_global_density;2023-01-01;;;unmatched
-308;274048;imputed_global_density;2023-01-01;;;unmatched
-309;367012;imputed_global_density;2023-01-01;;;unmatched
-310;344292;imputed_global_density;2023-01-01;;;unmatched
-311;142227;imputed_global_density;2023-01-01;;;unmatched
-312;192149;imputed_global_density;2023-01-01;;;unmatched
-313;572833;imputed_global_density;2023-01-01;;;unmatched
-314;134628;imputed_global_density;2023-01-01;;;unmatched
-315;125867;imputed_global_density;2023-01-01;;;unmatched
-316;358246;imputed_global_density;2023-01-01;;;unmatched
-317;291055;imputed_global_density;2023-01-01;;;unmatched
-318;202421;imputed_global_density;2023-01-01;;;unmatched
-319;241439;imputed_global_density;2023-01-01;;;unmatched
-320;232878;imputed_global_density;2023-01-01;;;unmatched
-321;94613;imputed_global_density;2023-01-01;;;unmatched
-322;105947;imputed_global_density;2023-01-01;;;unmatched
-323;289832;imputed_global_density;2023-01-01;;;unmatched
-324;141053;imputed_global_density;2023-01-01;;;unmatched
-325;363253;imputed_global_density;2023-01-01;;;unmatched
-326;189607;imputed_global_density;2023-01-01;;;unmatched
-327;210943;imputed_global_density;2023-01-01;;;unmatched
-328;127290;imputed_global_density;2023-01-01;;;unmatched
-329;83623;imputed_global_density;2023-01-01;;;unmatched
-330;100515;imputed_global_density;2023-01-01;;;unmatched
-331;177414;imputed_global_density;2023-01-01;;;unmatched
-332;60832;imputed_global_density;2023-01-01;;;unmatched
-333;164324;imputed_global_density;2023-01-01;;;unmatched
-334;67610;imputed_global_density;2023-01-01;;;unmatched
-335;408078;imputed_global_density;2023-01-01;;;unmatched
-336;1437741;imputed_global_density;2023-01-01;;;unmatched
-337;120154;imputed_global_density;2023-01-01;;;unmatched
-338;353088;imputed_global_density;2023-01-01;;;unmatched
-339;113756;imputed_global_density;2023-01-01;;;unmatched
-340;296580;imputed_global_density;2023-01-01;;;unmatched
-341;71138;imputed_global_density;2023-01-01;;;unmatched
-342;155432;imputed_global_density;2023-01-01;;;unmatched
-343;73215;imputed_global_density;2023-01-01;;;unmatched
-344;69040;imputed_global_density;2023-01-01;;;unmatched
-345;94114;imputed_global_density;2023-01-01;;;unmatched
-346;62484;imputed_global_density;2023-01-01;;;unmatched
-347;87794;imputed_global_density;2023-01-01;;;unmatched
-348;205503;imputed_global_density;2023-01-01;;;unmatched
-349;107973;imputed_global_density;2023-01-01;;;unmatched
-350;116274;imputed_global_density;2023-01-01;;;unmatched
-351;148428;imputed_global_density;2023-01-01;;;unmatched
-352;114014;imputed_global_density;2023-01-01;;;unmatched
-353;66119;imputed_global_density;2023-01-01;;;unmatched
-354;149345;imputed_global_density;2023-01-01;;;unmatched
-355;173725;imputed_global_density;2023-01-01;;;unmatched
-356;96010;imputed_global_density;2023-01-01;;;unmatched
-357;119364;imputed_global_density;2023-01-01;;;unmatched
-358;140689;imputed_global_density;2023-01-01;;;unmatched
-359;90474;imputed_global_density;2023-01-01;;;unmatched
-360;170860;imputed_global_density;2023-01-01;;;unmatched
-361;347489;imputed_country_density;2023-01-01;;;unmatched
-362;308405;matched_province;2021-01-01;Samegrelo-Zemo Svaneti;Georgia;matched
-363;254100;matched_province;2021-01-01;Shida Kartli;Georgia;matched
-364;32089;matched_province;2021-01-01;Racha-Lechkhumi and Kvemo Svaneti;Georgia;matched
-365;151100;matched_province;2021-01-01;Samtskhe–Javakheti;Georgia;matched
-366;118905;imputed_country_density;2023-01-01;;;unmatched
-367;107100;matched_province;2021-01-01;Guria;Georgia;matched
-368;481500;matched_province;2021-01-01;Imereti;Georgia;matched
-369;868823;imputed_country_density;2023-01-01;;;unmatched
-370;319991;matched_province;2021-01-01;Epirus Region;Greece;matched
-371;1795669;matched_province;2021-01-01;Central Macedonia Region;Greece;fuzzy_best
-372;562201;matched_province;2021-01-01;Eastern Macedonia and Thrace Region;Greece;fuzzy_best
-373;688255;matched_province;2021-01-01;Thessaly Region;Greece;matched
-374;508254;matched_province;2021-01-01;Central Greece Region;Greece;matched
-375;3814064;matched_province;2021-01-01;Attica Region;Greece;matched
-376;539535;matched_province;2021-01-01;Peloponnese Region;Greece;matched
-377;648220;matched_province;2021-01-01;West Greece Region;Greece;matched
-378;624408;matched_province;2021-01-01;Crete Region;Greece;matched
-379;327820;matched_province;2021-01-01;South Aegean Region;Greece;matched
-380;194943;matched_province;2021-01-01;North Aegean Region;Greece;matched
-381;204532;matched_province;2021-01-01;Ionian Islands Region;Greece;matched
-382;84836;matched_province;2011-01-01;Virovitica-Podravina County;Croatia;matched
-383;115584;matched_province;2011-01-01;Koprivnica-Križevci County;Croatia;matched
-384;305032;matched_province;2011-01-01;Osijek-Baranja County;Croatia;matched
-385;195237;matched_province;2021-08-31;Istria County;Croatia;matched
-386;115862;matched_province;2021-01-01;Dubrovnik-Neretva County;Croatia;matched
-387;185387;matched_province;2001-03-31;Sisak-Moslavina County;Croatia;matched
-388;158575;matched_province;2011-01-01;Brod-Posavina County;Croatia;matched
-389;128899;matched_province;2011-01-01;Karlovac County;Croatia;matched
-390;159766;matched_province;2021-08-31;Zadar County;Croatia;matched
-391;179521;matched_province;2011-01-01;Vukovar-Srijem County;Croatia;matched
-392;423407;matched_province;2021-08-31;Split-Dalmatia County;Croatia;matched
-393;175951;matched_province;2011-01-01;Varaždin County;Croatia;matched
-394;120702;matched_province;2021-08-31;Krapina-Zagorje County;Croatia;matched
-395;317642;matched_province;2011-01-01;Zagreb County;Croatia;matched
-396;265419;matched_province;2021-08-31;Primorje-Gorski Kotar County;Croatia;matched
-397;109375;matched_province;2011-01-01;Šibenik-Knin County;Croatia;matched
-398;42748;matched_province;2021-08-31;Lika-Senj County;Croatia;matched
-399;119764;matched_province;2011-01-01;Bjelovar-Bilogora County;Croatia;matched
-400;64084;matched_province;2021-08-31;Požega-Slavonia County;Croatia;matched
-401;529381;matched_province;2022-10-01;Szabolcs-Szatmár-Bereg County;Hungary;matched
-402;315222;matched_province;2022-10-01;Békés County;Hungary;matched
-403;519141;matched_province;2022-10-01;Hajdú-Bihar County;Hungary;matched
-404;391184;matched_province;2022-10-01;Csongrád-Csanád County;Hungary;matched
-405;465945;matched_province;2022-10-01;Győr-Moson-Sopron County;Hungary;matched
-406;249513;matched_province;2022-10-01;Vas County;Hungary;matched
-407;495318;matched_province;2022-10-01;Bács-Kiskun County;Hungary;matched
-408;260800;matched_province;2022-10-01;Zala County;Hungary;matched
-409;293470;matched_province;2022-10-01;Somogy County;Hungary;matched
-410;354022;matched_province;2022-10-01;Baranya County;Hungary;matched
-411;623024;matched_province;2022-10-01;Borsod-Abaúj-Zemplén County;Hungary;matched
-412;182459;matched_province;2022-10-01;Nógrád County;Hungary;matched
-413;300631;matched_province;2022-10-01;Komárom-Esztergom County;Hungary;matched
-414;1333533;matched_province;2022-10-01;Pest County;Hungary;matched
-415;355809;matched_province;2022-10-01;Jász-Nagykun-Szolnok County;Hungary;matched
-416;419656;matched_province;2022-10-01;Fejér County;Hungary;matched
-417;55118;matched_province;2025-01-01;Veszprém;Hungary;matched
-418;207931;matched_province;2022-10-01;Tolna County;Hungary;matched
-419;285892;matched_province;2022-10-01;Heves County;Hungary;matched
-420;135712;imputed_country_density;2023-01-01;;;unmatched
-421;45829;imputed_country_density;2023-01-01;;;unmatched
-422;53599;imputed_country_density;2023-01-01;;;unmatched
-423;58389;imputed_country_density;2023-01-01;;;unmatched
-424;81992;imputed_country_density;2023-01-01;;;unmatched
-425;91932;imputed_country_density;2023-01-01;;;unmatched
-426;59406;imputed_country_density;2023-01-01;;;unmatched
-427;48369;matched_province;2016-01-01;Waterford;Ireland;matched
-428;222333;matched_province;2022-01-01;Cork;Ireland;matched
-429;135935;imputed_country_density;2023-01-01;;;unmatched
-430;62702;matched_province;2022-04-03;Limerick;Ireland;matched
-431;91668;imputed_country_density;2023-01-01;;;unmatched
-432;172341;imputed_country_density;2023-01-01;;;unmatched
-433;157282;imputed_country_density;2023-01-01;;;unmatched
-434;51952;imputed_country_density;2023-01-01;;;unmatched
-435;66419;imputed_country_density;2023-01-01;;;unmatched
-436;48733;imputed_country_density;2023-01-01;;;unmatched
-437;48267;imputed_country_density;2023-01-01;;;unmatched
-438;57399;imputed_country_density;2023-01-01;;;unmatched
-439;52748;imputed_country_density;2023-01-01;;;unmatched
-440;31446;imputed_country_density;2023-01-01;;;unmatched
-441;70918;imputed_country_density;2023-01-01;;;unmatched
-442;61684;imputed_country_density;2023-01-01;;;unmatched
-443;60129;imputed_country_density;2023-01-01;;;unmatched
-444;24156;imputed_country_density;2023-01-01;;;unmatched
-445;28399;matched_province;2020-01-01;Southern Region;Iceland;matched
-446;17541;matched_province;2023-01-01;Western Region;Iceland;matched
-447;7379;matched_province;2023-01-01;Westfjords;Iceland;matched
-448;7322;matched_province;2020-01-01;Northwestern Region;Iceland;matched
-449;30600;matched_province;2020-01-01;Northeastern Region;Iceland;matched
-450;125666;matched_province;2019-01-01;Aosta Valley;Italy;fuzzy_contain
-451;643969;imputed_country_density;2023-01-01;;;unmatched
-452;318655;imputed_country_density;2023-01-01;;;unmatched
-453;719165;imputed_country_density;2023-01-01;;;unmatched
-454;918550;imputed_country_density;2023-01-01;;;unmatched
-455;1072276;matched_province;2019-01-01;Trentino-South Tyrol;Italy;matched
-456;349583;imputed_country_density;2023-01-01;;;unmatched
-457;1963085;imputed_country_density;2023-01-01;;;unmatched
-458;1977553;imputed_country_density;2023-01-01;;;unmatched
-459;981414;imputed_country_density;2023-01-01;;;unmatched
-460;1048027;imputed_country_density;2023-01-01;;;unmatched
-461;1462571;imputed_country_density;2023-01-01;;;unmatched
-462;603679;imputed_country_density;2023-01-01;;;unmatched
-463;587030;imputed_country_density;2023-01-01;;;unmatched
-464;510989;imputed_country_density;2023-01-01;;;unmatched
-465;760522;imputed_country_density;2023-01-01;;;unmatched
-466;527843;imputed_country_density;2023-01-01;;;unmatched
-467;668044;imputed_country_density;2023-01-01;;;unmatched
-468;570765;imputed_country_density;2023-01-01;;;unmatched
-469;787133;imputed_country_density;2023-01-01;;;unmatched
-470;589675;imputed_country_density;2023-01-01;;;unmatched
-471;564894;imputed_country_density;2023-01-01;;;unmatched
-472;347129;imputed_country_density;2023-01-01;;;unmatched
-473;732109;imputed_country_density;2023-01-01;;;unmatched
-474;843691;imputed_country_density;2023-01-01;;;unmatched
-475;1964786;imputed_country_density;2023-01-01;;;unmatched
-476;455099;imputed_country_density;2023-01-01;;;unmatched
-477;1101773;imputed_country_density;2023-01-01;;;unmatched
-478;525657;imputed_country_density;2023-01-01;;;unmatched
-479;787656;imputed_country_density;2023-01-01;;;unmatched
-480;682715;imputed_country_density;2023-01-01;;;unmatched
-481;974432;imputed_country_density;2023-01-01;;;unmatched
-482;1904540;imputed_country_density;2023-01-01;;;unmatched
-483;492908;imputed_country_density;2023-01-01;;;unmatched
-484;670512;imputed_country_density;2023-01-01;;;unmatched
-485;892940;imputed_country_density;2023-01-01;;;unmatched
-486;328040;imputed_country_density;2023-01-01;;;unmatched
-487;1882773;imputed_country_density;2023-01-01;;;unmatched
-488;1382871;imputed_country_density;2023-01-01;;;unmatched
-489;325725;imputed_country_density;2023-01-01;;;unmatched
-490;754183;imputed_country_density;2023-01-01;;;unmatched
-491;620757;imputed_country_density;2023-01-01;;;unmatched
-492;1519128;imputed_country_density;2023-01-01;;;unmatched
-493;1029251;imputed_country_density;2023-01-01;;;unmatched
-494;1273026;imputed_country_density;2023-01-01;;;unmatched
-495;345456;imputed_country_density;2023-01-01;;;unmatched
-496;690124;imputed_country_density;2023-01-01;;;unmatched
-497;871823;imputed_country_density;2023-01-01;;;unmatched
-498;567759;imputed_country_density;2023-01-01;;;unmatched
-499;1550640;matched_province;2019-01-01;Liguria;Italy;matched
-500;446842;imputed_country_density;2023-01-01;;;unmatched
-501;704716;imputed_country_density;2023-01-01;;;unmatched
-502;934709;imputed_country_density;2023-01-01;;;unmatched
-503;1445645;imputed_country_density;2023-01-01;;;unmatched
-504;854354;imputed_country_density;2023-01-01;;;unmatched
-505;600384;imputed_country_density;2023-01-01;;;unmatched
-506;457807;imputed_country_density;2023-01-01;;;unmatched
-507;613922;imputed_country_density;2023-01-01;;;unmatched
-508;1009968;imputed_country_density;2023-01-01;;;unmatched
-509;423775;imputed_country_density;2023-01-01;;;unmatched
-510;1225296;imputed_country_density;2023-01-01;;;unmatched
-511;1116865;imputed_country_density;2023-01-01;;;unmatched
-512;960784;imputed_country_density;2023-01-01;;;unmatched
-513;865127;imputed_country_density;2023-01-01;;;unmatched
-514;435896;imputed_country_density;2023-01-01;;;unmatched
-515;1281336;imputed_country_density;2023-01-01;;;unmatched
-516;530677;imputed_country_density;2023-01-01;;;unmatched
-517;725258;imputed_country_density;2023-01-01;;;unmatched
-518;591440;imputed_country_density;2023-01-01;;;unmatched
-519;433035;imputed_country_density;2023-01-01;;;unmatched
-520;775794;imputed_country_density;2023-01-01;;;unmatched
-521;1381652;imputed_country_density;2023-01-01;;;unmatched
-522;504372;imputed_country_density;2023-01-01;;;unmatched
-523;656055;imputed_country_density;2023-01-01;;;unmatched
-524;438999;imputed_country_density;2023-01-01;;;unmatched
-525;1078037;imputed_country_density;2023-01-01;;;unmatched
-526;916958;imputed_country_density;2023-01-01;;;unmatched
-527;1004675;imputed_country_density;2023-01-01;;;unmatched
-528;590497;imputed_country_density;2023-01-01;;;unmatched
-529;861600;imputed_country_density;2023-01-01;;;unmatched
-530;758872;imputed_country_density;2023-01-01;;;unmatched
-531;375993;imputed_country_density;2023-01-01;;;unmatched
-532;991059;imputed_country_density;2023-01-01;;;unmatched
-533;1737332;imputed_country_density;2023-01-01;;;unmatched
-534;778646;imputed_country_density;2023-01-01;;;unmatched
-535;875397;imputed_country_density;2023-01-01;;;unmatched
-536;712438;imputed_country_density;2023-01-01;;;unmatched
-537;965029;imputed_country_density;2023-01-01;;;unmatched
-538;988580;imputed_country_density;2023-01-01;;;unmatched
-539;655968;imputed_country_density;2023-01-01;;;unmatched
-540;760816;imputed_country_density;2023-01-01;;;unmatched
-541;1043243;imputed_country_density;2023-01-01;;;unmatched
-542;601201;imputed_country_density;2023-01-01;;;unmatched
-543;1809683;imputed_country_density;2023-01-01;;;unmatched
-544;905210;imputed_country_density;2023-01-01;;;unmatched
-545;781729;imputed_country_density;2023-01-01;;;unmatched
-546;1445282;imputed_country_density;2023-01-01;;;unmatched
-547;619801;imputed_country_density;2023-01-01;;;unmatched
-548;439835;imputed_country_density;2023-01-01;;;unmatched
-549;331670;matched_province;2023-01-01;Prizren District;Kosovo;matched
-550;67872;imputed_country_density;2023-01-01;;;unmatched
-551;160308;imputed_country_density;2023-01-01;;;unmatched
-552;63405;imputed_country_density;2023-01-01;;;unmatched
-553;37555;matched_province;2023-01-01;Utena District Municipality;Lithuania;matched
-554;101943;matched_province;2023-01-01;Vilnius District Municipality;Lithuania;matched
-555;25356;matched_province;2023-01-01;Alytus District Municipality;Lithuania;matched
-556;35225;matched_province;2023-01-01;Panevėžys District Municipality;Lithuania;matched
-557;39141;matched_province;2023-01-01;Telšiai District Municipality;Lithuania;matched
-558;63862;matched_province;2023-01-01;Klaipėda District Municipality;Lithuania;matched
-559;40638;matched_province;2023-01-01;Šiauliai District Municipality;Lithuania;matched
-560;54710;matched_province;2023-01-01;Marijampolė Municipality;Lithuania;matched
-561;37582;matched_province;2023-01-01;Tauragė District Municipality;Lithuania;matched
-562;99265;matched_province;2023-01-01;Kaunas District Municipality;Lithuania;matched
-563;85439;matched_province;2015-01-01;Diekirch District;Luxembourg;matched
-564;4520;matched_province;2021-01-01;Aloja Municipality;Latvia;matched
-565;7645;matched_province;2025-01-01;Valka Municipality;Latvia;matched
-566;13154;matched_province;2025-01-01;Alūksne Municipality;Latvia;matched
-567;5127;matched_province;2021-01-01;Kārsava Municipality;Latvia;matched
-568;7795;matched_province;2021-01-01;Vecumnieki Municipality;Latvia;matched
-569;26631;matched_province;2025-01-01;Saldus Municipality;Latvia;matched
-570;2216;matched_province;2021-01-01;Vaiņode Municipality;Latvia;matched
-571;32009;matched_province;2025-01-01;Jelgava Municipality;Latvia;matched
-572;78126;matched_province;2025-01-01;Daugavpils;Latvia;matched
-573;19505;matched_province;2025-01-01;Krāslava Municipality;Latvia;matched
-574;10295;matched_province;2025-01-01;Ventspils Municipality;Latvia;matched
-575;34801;matched_province;2025-01-01;Talsi Municipality;Latvia;matched
-576;595053;matched_province;2025-01-01;Riga;Latvia;matched
-577;27613;matched_province;2025-01-01;Limbaži Municipality;Latvia;matched
-578;27709;matched_province;2025-01-01;Rēzekne Municipality;Latvia;matched
-579;18497;matched_province;2025-01-01;Gulbene Municipality;Latvia;matched
-580;29898;matched_province;2025-07-01;Madona Municipality;Latvia;matched
-581;57668;matched_province;2025-01-01;Ogre Municipality;Latvia;matched
-582;26666;matched_province;2025-01-01;Kuldīga Municipality;Latvia;matched
-583;43439;matched_province;2025-01-01;Tukums Municipality;Latvia;matched
-584;50429;matched_province;2024-04-08;Edineț District;Moldova;matched
-585;43652;matched_province;2024-04-08;Rîșcani District;Moldova;matched
-586;56039;matched_province;2024-04-08;Fălești District;Moldova;matched
-587;75804;matched_province;2024-04-08;Ungheni District;Moldova;matched
-588;69462;matched_province;2024-04-08;Hîncești District;Moldova;matched
-589;33181;matched_province;2024-04-08;Cantemir District;Moldova;matched
-590;72775;matched_province;2024-04-08;Cahul District;Moldova;matched
-591;42285;matched_province;2024-04-08;Ștefan Vodă District;Moldova;matched
-592;57261;matched_province;2024-04-08;Căușeni District;Moldova;matched
-593;30986;matched_province;2024-04-08;Cimișlia District;Moldova;matched
-594;26435;matched_province;2024-04-08;Taraclia District;Moldova;matched
-595;19947;matched_province;2024-04-08;Comrat;Moldova;matched
-596;79242;matched_province;2024-04-08;Orhei District;Moldova;matched
-597;708593;imputed_global_density;2023-01-01;;;unmatched
-598;96329;imputed_global_density;2023-01-01;;;unmatched
-599;68010;imputed_global_density;2023-01-01;;;unmatched
-600;77448;imputed_global_density;2023-01-01;;;unmatched
-601;62784;imputed_global_density;2023-01-01;;;unmatched
-602;80092;imputed_global_density;2023-01-01;;;unmatched
-603;124069;imputed_global_density;2023-01-01;;;unmatched
-604;79714;imputed_global_density;2023-01-01;;;unmatched
-605;67606;imputed_global_density;2023-01-01;;;unmatched
-606;27256;matched_province;2017-01-01;Berane Municipality;Montenegro;matched
-607;28124;matched_province;2017-01-01;Pljevlja Municipality;Montenegro;matched
-608;72443;matched_province;2011-01-01;Nikšić Municipality;Montenegro;matched
-609;150977;matched_province;2011-01-01;Podgorica;Montenegro;matched
-610;582728;matched_province;2013-12-31;Groningen;Netherlands;matched
-611;491792;matched_province;2017-01-01;Drenthe;Netherlands;matched
-612;1142360;matched_province;2015-08-01;Overijssel;Netherlands;matched
-613;2019692;matched_province;2013-12-31;Gelderland;Netherlands;matched
-614;1120006;matched_province;2013-12-31;Limburg;Netherlands;matched
-615;386707;matched_province;2022-01-01;Zeeland;Netherlands;matched
-616;2256848;matched_province;2015-01-01;North Brabant;Netherlands;matched
-617;3577032;matched_province;2013-12-31;South Holland;Netherlands;matched
-618;2813466;matched_province;2017-01-01;North Holland;Netherlands;matched
-619;649944;matched_province;2021-01-01;Friesland;Netherlands;matched
-620;399893;matched_province;2013-12-31;Flevoland;Netherlands;matched
-621;1253672;matched_province;2013-12-31;Utrecht;Netherlands;matched
-622;167207;matched_province;2019-01-01;Troms;Norway;matched
-623;243385;matched_province;2019-01-01;Nordland;Norway;matched
-624;136399;matched_province;2016-01-01;Nord-Trøndelag;Norway;matched
-625;318359;matched_province;2017-06-30;Sør-Trøndelag;Norway;matched
-626;197406;matched_province;2019-01-01;Hedmark;Norway;matched
-627;716020;matched_province;2023-01-01;Akershus;Norway;matched
-628;297520;matched_province;2019-01-01;Østfold;Norway;matched
-629;75758;matched_province;2016-01-01;Finnmark;Norway;matched
-630;270543;matched_province;2024-08-01;Buskerud;Norway;matched
-631;251078;matched_province;2019-01-01;Vestfold;Norway;matched
-632;173318;matched_province;2019-01-01;Telemark;Norway;matched
-633;117655;matched_province;2019-01-01;Aust-Agder;Norway;matched
-634;187589;matched_province;2019-01-01;Vest-Agder;Norway;matched
-635;499417;matched_province;2024-01-01;Rogaland;Norway;matched
-636;524495;matched_province;2019-01-01;Hordaland;Norway;matched
-637;109774;matched_province;2019-01-01;Sogn og Fjordane;Norway;matched
-638;265392;matched_province;2019-01-01;Møre og Romsdal;Norway;matched
-639;2668;matched_province;2023-01-01;Svalbard;Norway;matched
-640;189545;matched_province;2019-01-01;Oppland;Norway;matched
-641;4617000;matched_province;2023-01-01;Silesian Voivodeship;Poland;matched
-642;3360581;matched_province;2013-01-01;Lesser Poland Voivodeship;Poland;matched
-643;2121229;matched_province;2020-01-01;Subcarpathian Voivodeship;Poland;matched
-644;2915245;matched_province;2012-12-31;Lower Silesian Voivodeship;Poland;matched
-645;1010203;matched_province;2017-01-01;Opole Voivodeship;Poland;matched
-646;1193348;matched_province;2014-06-30;Podlaskie Voivodeship;Poland;matched
-647;1437812;matched_province;2016-06-30;Warmian-Masurian Voivodeship;Poland;matched
-648;1020767;matched_province;2014-01-01;Lubusz Voivodeship;Poland;matched
-649;1622760;matched_province;2024-12-31;West Pomeranian Voivodeship;Poland;matched
-650;2151836;matched_province;2014-01-01;Lublin Voivodeship;Poland;matched
-651;2300000;matched_province;2019-01-01;Pomeranian Voivodeship;Poland;matched
-652;5492000;matched_province;2011-03-31;Masovian Voivodeship;Poland;matched
-653;2508464;matched_province;2014-01-01;Łódź Voivodeship;Poland;matched
-654;2090836;matched_province;2014-01-01;Kuyavian-Pomeranian Voivodeship;Poland;matched
-655;3495470;matched_province;2019-01-01;Greater Poland Voivodeship;Poland;matched
-656;1241546;matched_province;2018-01-01;Świętokrzyskie Voivodeship;Poland;matched
-657;52454;matched_province;2018-01-01;Évora;Portugal;matched
-658;22359;matched_province;2018-01-01;Portalegre;Portugal;matched
-659;84636;matched_province;2018-01-01;Viana do Castelo;Portugal;matched
-660;52192;matched_province;2018-01-01;Castelo Branco;Portugal;matched
-661;39103;matched_province;2018-01-01;Guarda;Portugal;matched
-662;33586;matched_province;2018-01-01;Bragança;Portugal;matched
-663;49868;matched_province;2018-01-01;Vila Real;Portugal;matched
-664;181919;matched_province;2018-01-01;Braga;Portugal;matched
-665;60974;matched_province;2018-01-01;Faro;Portugal;matched
-666;763957;imputed_country_density;2023-01-01;;;unmatched
-667;788459;matched_province;2018-01-01;Setúbal;Portugal;matched
-668;2135992;matched_province;2023-01-01;Lisbon;Portugal;matched
-669;57398;matched_province;2018-01-01;Santarém;Portugal;matched
-670;124857;matched_province;2018-01-01;Leiria;Portugal;matched
-671;133724;matched_province;2018-01-01;Coimbra;Portugal;matched
-672;77916;matched_province;2018-01-01;Aveiro;Portugal;matched
-673;1817172;matched_province;2023-01-01;Porto;Portugal;matched
-674;236440;matched_province;2021-01-01;Azores;Portugal;matched
-675;96991;matched_province;2018-01-01;Viseu;Portugal;matched
-676;330668;matched_province;2021-12-01;Satu Mare County;Romania;matched
-677;410143;matched_province;2021-12-01;Arad County;Romania;matched
-678;551297;matched_province;2021-12-01;Bihor County;Romania;matched
-679;650533;matched_province;2021-12-01;Timiș County;Romania;matched
-680;234339;matched_province;2021-12-01;Mehedinți County;Romania;matched
-681;599442;matched_province;2021-12-01;Dolj County;Romania;matched
-682;283458;matched_province;2021-12-01;Călărași County;Romania;matched
-683;323544;matched_province;2021-12-01;Teleorman County;Romania;matched
-684;262066;matched_province;2021-12-01;Giurgiu County;Romania;matched
-685;655997;matched_province;2021-12-01;Constanța County;Romania;matched
-686;383280;matched_province;2021-12-01;Olt County;Romania;matched
-687;246588;matched_province;2021-12-01;Caraș-Severin County;Romania;matched
-688;392821;matched_province;2021-12-01;Botoșani County;Romania;matched
-689;760774;matched_province;2021-12-01;Iași County;Romania;matched
-690;374700;matched_province;2021-12-01;Vaslui County;Romania;matched
-691;496892;matched_province;2021-12-01;Galați County;Romania;matched
-692;642551;matched_province;2021-12-01;Suceava County;Romania;matched
-693;452475;matched_province;2021-12-01;Maramureș County;Romania;matched
-694;193355;matched_province;2021-12-01;Tulcea County;Romania;matched
-695;679141;matched_province;2021-12-01;Cluj County;Romania;matched
-696;295988;matched_province;2021-12-01;Bistrița-Năsăud County;Romania;matched
-697;212224;matched_province;2021-12-01;Sălaj County;Romania;matched
-698;479404;matched_province;2021-12-01;Dâmbovița County;Romania;matched
-699;542704;matched_province;2021-12-01;Ilfov County;Romania;matched
-700;569932;matched_province;2021-12-01;Argeș County;Romania;matched
-701;314685;matched_province;2021-12-01;Gorj County;Romania;matched
-702;361657;matched_province;2021-12-01;Hunedoara County;Romania;matched
-703;341861;matched_province;2021-12-01;Vâlcea County;Romania;matched
-704;695119;matched_province;2021-12-01;Prahova County;Romania;matched
-705;200042;matched_province;2021-12-01;Covasna County;Romania;matched
-706;335312;matched_province;2021-12-01;Vrancea County;Romania;matched
-707;404979;matched_province;2021-12-01;Buzău County;Romania;matched
-708;546615;matched_province;2021-12-01;Brașov County;Romania;matched
-709;388326;matched_province;2021-12-01;Sibiu County;Romania;matched
-710;518193;matched_province;2021-12-01;Mureș County;Romania;matched
-711;291950;matched_province;2021-12-01;Harghita County;Romania;matched
-712;454203;matched_province;2021-12-01;Neamț County;Romania;matched
-713;601387;matched_province;2021-12-01;Bacău County;Romania;matched
-714;325941;matched_province;2021-12-01;Alba County;Romania;matched
-715;281452;matched_province;2021-12-01;Brăila County;Romania;matched
-716;250816;matched_province;2021-12-01;Ialomița County;Romania;matched
-717;574480;matched_province;2025-01-01;Pskov Oblast;Russia;matched
-718;5842238;matched_province;2025-01-01;Krasnodar Krai;Russia;matched
-719;468322;matched_province;2024-01-01;Karachay-Cherkessia;Russia;fuzzy_best
-720;905464;matched_province;2024-01-01;Kabardino-Balkaria;Russia;matched
-721;678879;matched_province;2024-01-01;North Ossetia–Alania;Russia;fuzzy_contain
-722;656438;matched_province;2024-01-01;Murmansk Oblast;Russia;matched
-723;518950;matched_province;2025-01-01;Karelia;Russia;matched
-724;2035762;matched_province;2024-01-01;Leningrad Oblast;Russia;matched
-725;994599;matched_province;2023-01-01;Kaliningrad Oblast;Russia;matched
-726;863987;matched_province;2024-01-01;Smolensk Oblast;Russia;matched
-727;1132795;matched_province;2025-01-01;Bryansk Oblast;Russia;matched
-728;1049783;matched_province;2025-01-01;Kursk Oblast;Russia;matched
-729;1482025;matched_province;2025-01-01;Belgorod Oblast;Russia;matched
-730;2260045;matched_province;2025-01-01;Voronezh Oblast;Russia;matched
-731;4137335;matched_province;2025-01-01;Rostov Oblast;Russia;matched
-732;1828655;matched_province;2024-01-01;Orenburg Oblast;Russia;matched
-733;2369405;matched_province;2025-01-01;Saratov Oblast;Russia;matched
-734;946429;matched_province;2024-01-01;Astrakhan Oblast;Russia;matched
-735;2434046;matched_province;2025-01-01;Volgograd Oblast;Russia;matched
-736;1896393;matched_province;2022-01-01;Republic of Crimea;Russia;matched
-737;42224;matched_province;2024-01-01;Nenets Autonomous Okrug;Russia;matched
-738;5652922;matched_province;2025-01-01;Saint Petersburg;Russia;matched
-739;989434;matched_province;2025-01-01;Arkhangelsk Oblast;Russia;matched
-740;267588;matched_province;2025-01-01;Kalmykia;Russia;fuzzy_best
-741;4042377;matched_province;2025-01-01;Bashkortostan;Russia;matched
-742;4221452;matched_province;2025-01-01;Sverdlovsk Oblast;Russia;matched
-743;1125921;matched_province;2023-01-01;Lipetsk Oblast;Russia;matched
-744;956292;matched_province;2024-01-01;Tambov Oblast;Russia;matched
-745;4003016;matched_province;2024-01-01;Tatarstan;Russia;matched
-746;1172782;matched_province;2024-01-01;Ulyanovsk Oblast;Russia;matched
-747;1213113;matched_province;2024-01-01;Penza Oblast;Russia;matched
-748;692486;matched_province;2024-01-01;Oryol Oblast;Russia;matched
-749;778965;matched_province;2021-01-01;Mordovia;Russia;matched
-750;1000980;matched_province;2021-01-01;Kaluga Oblast;Russia;matched
-751;566266;matched_province;2024-01-01;Kostroma Oblast;Russia;matched
-752;1187558;matched_province;2024-01-01;Yaroslavl Oblast;Russia;matched
-753;1309942;matched_province;2024-01-01;Vladimir Oblast;Russia;matched
-754;1043231;matched_province;2024-01-01;Ryazan Oblast;Russia;matched
-755;905900;matched_province;2024-01-01;Ivanovo Oblast;Russia;matched
-756;3039421;matched_province;2025-01-01;Nizhny Novgorod Oblast;Russia;matched
-757;1471140;matched_province;2024-01-01;Tula Oblast;Russia;matched
-758;507020;imputed_country_density;2023-01-01;;;unmatched
-759;1160445;matched_province;2021-01-01;Vologda Oblast;Russia;matched
-760;566960;matched_province;2025-01-01;Novgorod Oblast;Russia;matched
-761;1190574;matched_province;2025-01-01;Tver Oblast;Russia;matched
-762;13274285;matched_province;2025-01-01;Moscow;Russia;matched
-763;78717;imputed_country_density;2023-01-01;;;unmatched
-764;669854;matched_province;2024-01-01;Mari El;Russia;matched
-765;1129935;matched_province;2024-01-01;Kirov Oblast;Russia;matched
-766;1157747;imputed_country_density;2023-01-01;;;unmatched
-767;714785;matched_province;2025-01-01;Komi Republic;Russia;matched
-768;2483633;matched_province;2025-01-01;Perm Krai;Russia;matched
-769;3112566;matched_province;2025-01-01;Samara Oblast;Soviet Union;matched
-770;2884363;matched_province;2025-01-01;Stavropol Krai;Russia;matched
-771;500731;matched_province;2025-01-01;Adygea;Russia;fuzzy_best
-772;89307;imputed_global_density;2023-01-01;;;unmatched
-773;126673;imputed_global_density;2023-01-01;;;unmatched
-774;121148;imputed_global_density;2023-01-01;;;unmatched
-775;185717;imputed_global_density;2023-01-01;;;unmatched
-776;202081;imputed_global_density;2023-01-01;;;unmatched
-777;189407;imputed_global_density;2023-01-01;;;unmatched
-778;143544;imputed_global_density;2023-01-01;;;unmatched
-779;148707;imputed_global_density;2023-01-01;;;unmatched
-780;202082;imputed_global_density;2023-01-01;;;unmatched
-781;142105;imputed_global_density;2023-01-01;;;unmatched
-782;123624;imputed_global_density;2023-01-01;;;unmatched
-783;329674;imputed_global_density;2023-01-01;;;unmatched
-784;184224;imputed_global_density;2023-01-01;;;unmatched
-785;173134;imputed_global_density;2023-01-01;;;unmatched
-786;229345;imputed_global_density;2023-01-01;;;unmatched
-787;167604;imputed_global_density;2023-01-01;;;unmatched
-788;218418;imputed_global_density;2023-01-01;;;unmatched
-789;225552;imputed_global_density;2023-01-01;;;unmatched
-790;180545;imputed_global_density;2023-01-01;;;unmatched
-791;74903;imputed_global_density;2023-01-01;;;unmatched
-792;147346;imputed_global_density;2023-01-01;;;unmatched
-793;139737;imputed_global_density;2023-01-01;;;unmatched
-794;128554;imputed_global_density;2023-01-01;;;unmatched
-795;164106;imputed_global_density;2023-01-01;;;unmatched
-796;135585;imputed_global_density;2023-01-01;;;unmatched
-797;686063;matched_province;2024-12-31;Žilina region;Slovakia;matched
-798;810008;matched_province;2024-12-31;Prešov Region;Slovakia;matched
-799;778799;matched_province;2024-12-31;Košice Region;Slovakia;matched
-800;736385;matched_province;2024-12-31;Bratislava Region;Slovakia;matched
-801;565900;matched_province;2024-12-31;Trnava Region;Slovakia;matched
-802;565572;matched_province;2024-12-31;Trenčín Region;Slovakia;matched
-803;611124;matched_province;2024-12-31;Banská Bystrica Region;Slovakia;matched
-804;665600;matched_province;2024-12-31;Nitra Region;Slovakia;matched
-805;10997;matched_province;2020-07-01;Municipality of Tolmin;Slovenia;fuzzy_contain
-806;2354;matched_province;2020-07-01;Municipality of Podvelka;Slovenia;fuzzy_contain
-807;248876;matched_province;2025-09-30;Norrbotten County;Sweden;matched
-808;279571;matched_province;2025-09-30;Västerbotten County;Sweden;matched
-809;132636;matched_province;2025-09-30;Jämtland County;Sweden;matched
-810;286143;matched_province;2025-09-30;Dalarna County;Sweden;matched
-811;283336;matched_province;2025-09-30;Värmland County;Sweden;matched
-812;1778031;matched_province;2025-09-30;Västra Götaland County;Sweden;matched
-813;241143;matched_province;2025-09-30;Västernorrland County;Sweden;matched
-814;283862;matched_province;2025-09-30;Gävleborg County;Sweden;matched
-815;410601;matched_province;2025-09-30;Uppsala County;Sweden;matched
-816;2485275;matched_province;2025-09-30;Stockholm County;Sweden;matched
-817;300990;matched_province;2025-09-30;Södermanland County;Sweden;matched
-818;472755;matched_province;2025-09-30;Östergötland County;Sweden;matched
-819;245753;matched_province;2025-09-30;Kalmar County;Sweden;matched
-820;156880;matched_province;2025-09-30;Blekinge County;Sweden;matched
-821;1433573;matched_province;2025-09-30;Skåne County;Sweden;matched
-822;346065;matched_province;2025-09-30;Halland County;Sweden;matched
-823;61032;matched_province;2025-09-30;Gotland County;Sweden;matched
-824;280998;matched_province;2025-09-30;Västmanland County;Sweden;matched
-825;369998;matched_province;2025-09-30;Jönköping County;Sweden;matched
-826;308519;matched_province;2025-09-30;Örebro County;Sweden;matched
-827;203425;matched_province;2025-09-30;Kronoberg County;Sweden;matched
-828;276029;imputed_global_density;2023-01-01;;;unmatched
-829;421100;imputed_global_density;2023-01-01;;;unmatched
-830;370328;imputed_global_density;2023-01-01;;;unmatched
-831;288690;imputed_global_density;2023-01-01;;;unmatched
-832;565031;imputed_global_density;2023-01-01;;;unmatched
-833;542689;imputed_global_density;2023-01-01;;;unmatched
-834;1071613;imputed_global_density;2023-01-01;;;unmatched
-835;72692;imputed_global_density;2023-01-01;;;unmatched
-836;393569;imputed_global_density;2023-01-01;;;unmatched
-837;299980;imputed_global_density;2023-01-01;;;unmatched
-838;258464;imputed_global_density;2023-01-01;;;unmatched
-839;375975;imputed_global_density;2023-01-01;;;unmatched
-840;515421;imputed_global_density;2023-01-01;;;unmatched
-841;203097;imputed_global_density;2023-01-01;;;unmatched
-842;269130;imputed_global_density;2023-01-01;;;unmatched
-843;363604;imputed_global_density;2023-01-01;;;unmatched
-844;315404;imputed_global_density;2023-01-01;;;unmatched
-845;509004;imputed_global_density;2023-01-01;;;unmatched
-846;334629;imputed_global_density;2023-01-01;;;unmatched
-847;705869;imputed_global_density;2023-01-01;;;unmatched
-848;113182;imputed_global_density;2023-01-01;;;unmatched
-849;175484;imputed_global_density;2023-01-01;;;unmatched
-850;138238;imputed_global_density;2023-01-01;;;unmatched
-851;228831;imputed_global_density;2023-01-01;;;unmatched
-852;251425;imputed_global_density;2023-01-01;;;unmatched
-853;586314;imputed_global_density;2023-01-01;;;unmatched
-854;781764;imputed_global_density;2023-01-01;;;unmatched
-855;693360;imputed_global_density;2023-01-01;;;unmatched
-856;427080;imputed_global_density;2023-01-01;;;unmatched
-857;691149;imputed_global_density;2023-01-01;;;unmatched
-858;1139589;imputed_global_density;2023-01-01;;;unmatched
-859;822058;imputed_global_density;2023-01-01;;;unmatched
-860;825293;imputed_global_density;2023-01-01;;;unmatched
-861;460988;imputed_global_density;2023-01-01;;;unmatched
-862;1380812;imputed_global_density;2023-01-01;;;unmatched
-863;284294;imputed_global_density;2023-01-01;;;unmatched
-864;737953;imputed_global_density;2023-01-01;;;unmatched
-865;412887;imputed_global_density;2023-01-01;;;unmatched
-866;213169;imputed_global_density;2023-01-01;;;unmatched
-867;506020;imputed_global_density;2023-01-01;;;unmatched
-868;1511487;imputed_global_density;2023-01-01;;;unmatched
-869;672963;imputed_global_density;2023-01-01;;;unmatched
-870;334733;imputed_global_density;2023-01-01;;;unmatched
-871;648445;imputed_global_density;2023-01-01;;;unmatched
-872;2164353;imputed_global_density;2023-01-01;;;unmatched
-873;483167;imputed_global_density;2023-01-01;;;unmatched
-874;357866;imputed_global_density;2023-01-01;;;unmatched
-875;942987;imputed_global_density;2023-01-01;;;unmatched
-876;471614;imputed_global_density;2023-01-01;;;unmatched
-877;695219;imputed_global_density;2023-01-01;;;unmatched
-878;597398;imputed_global_density;2023-01-01;;;unmatched
-879;388927;imputed_global_density;2023-01-01;;;unmatched
-880;416973;imputed_global_density;2023-01-01;;;unmatched
-881;284731;imputed_global_density;2023-01-01;;;unmatched
-882;739951;imputed_global_density;2023-01-01;;;unmatched
-883;342538;imputed_global_density;2023-01-01;;;unmatched
-884;239103;imputed_global_density;2023-01-01;;;unmatched
-885;608202;imputed_global_density;2023-01-01;;;unmatched
-886;424824;imputed_global_density;2023-01-01;;;unmatched
-887;793377;imputed_global_density;2023-01-01;;;unmatched
-888;250786;imputed_global_density;2023-01-01;;;unmatched
-889;776233;imputed_global_density;2023-01-01;;;unmatched
-890;416695;imputed_global_density;2023-01-01;;;unmatched
-891;1279675;imputed_global_density;2023-01-01;;;unmatched
-892;636023;imputed_global_density;2023-01-01;;;unmatched
-893;500162;imputed_global_density;2023-01-01;;;unmatched
-894;483059;imputed_global_density;2023-01-01;;;unmatched
-895;452950;imputed_global_density;2023-01-01;;;unmatched
-896;156470;imputed_global_density;2023-01-01;;;unmatched
-897;385489;imputed_global_density;2023-01-01;;;unmatched
-898;811561;imputed_global_density;2023-01-01;;;unmatched
-899;221303;imputed_global_density;2023-01-01;;;unmatched
-900;190379;imputed_global_density;2023-01-01;;;unmatched
-901;339695;imputed_global_density;2023-01-01;;;unmatched
-902;959315;matched_province;2022-01-01;Chernihiv Oblast;Ukraine;matched
-903;1021356;matched_province;2022-01-01;Volyn Oblast;Ukraine;matched
-904;1141784;matched_province;2022-01-01;Rivne Oblast;Ukraine;matched
-905;1179032;matched_province;2022-01-01;Zhytomyr Oblast;Ukraine;matched
-906;1795079;matched_province;2022-01-01;Kyiv Oblast;Ukraine;matched
-907;1244476;matched_province;2022-01-01;Zakarpattia Oblast;Ukraine;matched
-908;890457;matched_province;2022-01-01;Chernivtsi Oblast;Ukraine;matched
-909;1351822;matched_province;2022-01-01;Ivano-Frankivsk Oblast;Ukraine;matched
-910;2351392;matched_province;2022-01-01;Odesa Oblast;Ukraine;fuzzy_best
-911;1509515;matched_province;2022-01-01;Vinnytsia Oblast;Ukraine;matched
-912;2478133;matched_province;2022-01-01;Lviv Oblast;Ukraine;matched
-913;1035772;matched_province;2022-01-01;Sumy Oblast;Ukraine;matched
-914;2598961;matched_province;2022-01-01;Kharkiv Oblast;Ukraine;matched
-915;2167802;matched_province;2018-01-01;Luhansk Oblast;Ukraine;matched
-916;4200461;matched_province;2018-01-01;Donetsk Oblast;Ukraine;matched
-917;1001598;matched_province;2022-01-01;Kherson Oblast;Ukraine;matched
-918;1638462;matched_province;2022-01-01;Zaporizhzhia Oblast;Ukraine;matched
-919;1091821;matched_province;2022-01-01;Mykolaiv Oblast;Ukraine;matched
-920;1352283;matched_province;2022-01-01;Poltava Oblast;Ukraine;matched
-921;1228829;matched_province;2022-01-01;Khmelnytskyi Oblast;Ukraine;matched
-922;1021713;matched_province;2022-01-01;Ternopil Oblast;Ukraine;matched
-923;3096485;matched_province;2022-01-01;Dnipropetrovsk Oblast;Ukraine;matched
-924;1160744;matched_province;2022-01-01;Cherkasy Oblast;Ukraine;matched
-925;903712;matched_province;2022-01-01;Kirovohrad Oblast;Ukraine;matched
-926;109915;imputed_country_density;2023-01-01;;;unmatched
+0;122187;matched_scaled_official;2022-01-01;Dibër County;Albania;matched
+1;81136;matched_scaled_official;2022-01-01;Kukës County;Albania;matched
+2;219991;matched_scaled_official;2022-01-01;Korçë County;Albania;matched
+3;288907;matched_scaled_official;2022-01-01;Elbasan County;Albania;matched
+4;61635;matched_scaled_official;2022-01-01;Gjirokastër County;Albania;matched
+5;206223;matched_scaled_official;2022-01-01;Vlorë County;Albania;matched
+6;215203;matched_scaled_official;2022-01-01;Shkodër County;Albania;matched
+7;310427;matched_scaled_official;2022-01-01;Fier County;Albania;matched
+8;1025241;matched_scaled_official;2022-01-01;Tirana County;Albania;matched
+9;130770;matched_scaled_official;2022-01-01;Lezhë County;Albania;matched
+10;128280;matched_scaled_official;2022-01-01;Berat County;Albania;matched
+11;2202328;matched_scaled_official;2020-01-01;Lower Austria;Austria;matched
+12;1948648;matched_scaled_official;2020-01-01;Upper Austria;Austria;matched
+13;384997;matched_scaled_official;2020-01-01;Burgenland;Austria;matched
+14;529519;matched_scaled_official;2022-06-30;Vorarlberg;Austria;matched
+15;990662;matched_scaled_official;2020-01-01;Tyrol;Austria;matched
+16;730162;matched_scaled_official;2020-01-01;Salzburg;Austria;matched
+17;733932;matched_scaled_official;2020-01-01;Carinthia;Austria;matched
+18;1629752;matched_scaled_official;2020-01-01;Styria;Austria;matched
+19;1264786;imputed_scaled_official;2023-01-01;;;unmatched
+20;1534374;imputed_scaled_official;2023-01-01;;;unmatched
+21;1434371;imputed_scaled_official;2023-01-01;;;unmatched
+22;1709854;imputed_scaled_official;2023-01-01;;;unmatched
+23;1444328;imputed_scaled_official;2023-01-01;;;unmatched
+24;1148168;imputed_scaled_official;2023-01-01;;;unmatched
+25;1067136;imputed_scaled_official;2023-01-01;;;unmatched
+26;911287;imputed_scaled_official;2023-01-01;;;unmatched
+27;881870;imputed_scaled_official;2023-01-01;;;unmatched
+28;423826;imputed_scaled_official;2023-01-01;;;unmatched
+29;481772;matched_scaled_official;2024-12-31;Burgas;Bulgaria;matched
+30;130600;matched_scaled_official;2024-12-31;Yambol;Bulgaria;matched
+31;256862;matched_scaled_official;2024-12-31;Haskovo;Bulgaria;matched
+32;87384;matched_scaled_official;2024-12-31;Vidin;Bulgaria;matched
+33;136121;matched_scaled_official;2024-12-31;Pernik;Bulgaria;matched
+34;278348;matched_scaled_official;2024-12-31;Sofia Oblast;Bulgaria;matched
+35;139653;matched_scaled_official;2024-12-31;Montana Oblast;Bulgaria;matched
+36;131470;matched_scaled_official;2024-12-31;Kyustendil;Bulgaria;matched
+37;354694;matched_scaled_official;2024-12-31;Blagoevgrad;Bulgaria;matched
+38;115884;matched_scaled_official;2024-12-31;Silistra;Bulgaria;matched
+39;230522;matched_scaled_official;2024-12-31;Ruse;Bulgaria;matched
+40;179875;matched_scaled_official;2024-12-31;Dobrich;Bulgaria;matched
+41;180860;matched_scaled_official;2024-12-31;Vratsa;Bulgaria;matched
+42;266734;matched_scaled_official;2024-12-31;Pleven;Bulgaria;matched
+43;248261;matched_scaled_official;2024-12-31;Veliko Tarnovo;Bulgaria;matched
+44;185166;matched_scaled_official;2024-12-31;Kardzhali;Bulgaria;matched
+45;112149;matched_scaled_official;2024-12-31;Smolyan;Bulgaria;matched
+46;541977;matched_scaled_official;2024-12-31;Varna;Bulgaria;matched
+47;787383;matched_scaled_official;2024-12-31;Plovdiv;Bulgaria;matched
+48;357671;matched_scaled_official;2024-12-31;Stara Zagora;Bulgaria;matched
+49;209719;matched_scaled_official;2024-12-31;Sliven;Bulgaria;matched
+50;184919;matched_scaled_official;2024-12-31;Shumen;Bulgaria;matched
+51;123205;matched_scaled_official;2024-12-31;Razgrad;Bulgaria;matched
+52;117353;matched_scaled_official;2024-12-31;Targovishte;Bulgaria;matched
+53;116216;matched_scaled_official;2024-12-31;Gabrovo;Bulgaria;matched
+54;276853;matched_scaled_official;2024-12-31;Pazardzhik;Bulgaria;matched
+55;137282;matched_scaled_official;2024-12-31;Lovech;Bulgaria;matched
+56;71067;imputed_scaled_official;2023-01-01;;;unmatched
+57;295498;imputed_scaled_official;2023-01-01;;;unmatched
+58;198063;imputed_scaled_official;2023-01-01;;;unmatched
+59;206050;imputed_scaled_official;2023-01-01;;;unmatched
+60;550503;imputed_scaled_official;2023-01-01;;;unmatched
+61;299257;imputed_scaled_official;2023-01-01;;;unmatched
+62;144286;imputed_scaled_official;2023-01-01;;;unmatched
+63;125913;imputed_scaled_official;2023-01-01;;;unmatched
+64;325896;imputed_scaled_official;2023-01-01;;;unmatched
+65;93476;imputed_scaled_official;2023-01-01;;;unmatched
+66;136615;imputed_scaled_official;2023-01-01;;;unmatched
+67;211634;imputed_scaled_official;2023-01-01;;;unmatched
+68;212113;matched_scaled_official;2013-01-01;Federation of Bosnia and Herzegovina;Bosnia and Herzegovina;matched
+69;189101;imputed_scaled_official;2023-01-01;;;unmatched
+70;134361;imputed_scaled_official;2023-01-01;;;unmatched
+71;87234;imputed_scaled_official;2023-01-01;;;unmatched
+72;1708382;matched_scaled_official;2025-01-01;Gomel Region;Belarus;matched
+73;1672283;matched_scaled_official;2025-01-01;Brest Region;Belarus;matched
+74;1379165;matched_scaled_official;2025-01-01;Vitebsk Region;Belarus;matched
+75;1267007;matched_scaled_official;2025-01-01;Grodno Region;Belarus;matched
+76;1249621;matched_scaled_official;2025-01-01;Mogilev region;Belarus;matched
+77;1873542;matched_scaled_official;2025-01-01;Minsk Region;Belarus;matched
+78;510708;matched_scaled_official;2018-12-31;Canton of Valais;Switzerland;fuzzy_contain
+79;524647;matched_scaled_official;2018-12-31;Canton of Ticino;Switzerland;fuzzy_contain
+80;294555;matched_scaled_official;2018-12-31;Canton of the Grisons;Switzerland;fuzzy_contain
+81;410509;matched_scaled_official;2018-12-31;Canton of Thurgau;Switzerland;fuzzy_contain
+82;2258345;matched_scaled_official;2018-12-31;Canton of Zürich;Switzerland;fuzzy_contain
+83;1007007;matched_scaled_official;2018-12-31;Canton of Aargau;Switzerland;fuzzy_contain
+84;753833;matched_scaled_official;2018-12-31;Canton of St. Gallen;Switzerland;fuzzy_contain
+85;405641;matched_scaled_official;2018-12-31;Canton of Solothurn;Switzerland;fuzzy_contain
+86;1186577;matched_scaled_official;2018-12-31;Canton of Vaud;Switzerland;fuzzy_contain
+87;472737;imputed_scaled_official;2023-01-01;;;unmatched
+88;608114;matched_scaled_official;2018-12-31;Canton of Lucerne;Switzerland;fuzzy_contain
+89;54097;matched_scaled_official;2018-12-31;Canton of Uri;Switzerland;fuzzy_contain
+90;473230;matched_scaled_official;2018-12-31;Canton of Fribourg;Switzerland;fuzzy_contain
+91;84268;matched_scaled_official;2011-01-01;Famagusta District;Cyprus;matched
+92;590914;matched_scaled_official;2011-01-01;Nicosia District;Cyprus;matched
+93;425286;matched_scaled_official;2011-01-01;Limassol District;Cyprus;matched
+94;159532;matched_scaled_official;2011-01-01;Paphos District;Cyprus;matched
+95;926708;matched_scaled_official;2025-01-01;Ústí nad Labem Region;Czech Republic;matched
+96;515305;matched_scaled_official;2025-01-01;Liberec Region;Czech Republic;matched
+97;336122;matched_scaled_official;2025-01-01;Karlovy Vary Region;Czech Republic;matched
+98;704630;matched_scaled_official;2025-01-01;Plzeň Region;Czech Republic;matched
+99;748867;matched_scaled_official;2025-01-01;South Bohemian Region;Czech Republic;matched
+100;637316;matched_scaled_official;2025-01-01;Hradec Králové Region;Czech Republic;matched
+101;723959;matched_scaled_official;2025-01-01;Olomouc Region;Czech Republic;matched
+102;608136;matched_scaled_official;2025-01-01;Pardubice Region;Czech Republic;matched
+103;1363316;matched_scaled_official;2024-01-01;Moravian-Silesian Region;Czech Republic;matched
+104;1409331;matched_scaled_official;2025-01-01;South Moravian Region;Czech Republic;matched
+105;663770;matched_scaled_official;2025-01-01;Zlín Region;Czech Republic;matched
+106;593436;matched_scaled_official;2025-01-01;Vysočina Region;Czech Republic;matched
+107;1669104;matched_scaled_official;2024-01-01;Central Bohemian Region;Czech Republic;matched
+108;4532040;matched_scaled_official;2023-12-31;Saxony;Germany;matched
+109;14545128;matched_scaled_official;2022-01-01;Bavaria;Germany;matched
+110;4537251;matched_scaled_official;2022-01-01;Rhineland-Palatinate;Germany;matched
+111;1127691;matched_scaled_official;2022-01-01;Saarland;Germany;matched
+112;3272881;matched_scaled_official;2022-12-31;Schleswig-Holstein;Germany;matched
+113;8869571;matched_scaled_official;2022-01-01;Lower Saxony;Germany;matched
+114;19873365;matched_scaled_official;2022-01-01;North Rhine-Westphalia;Germany;matched
+115;12305746;matched_scaled_official;2022-01-01;Baden-Württemberg;Germany;matched
+116;2808320;matched_scaled_official;2022-01-01;Brandenburg;Germany;matched
+117;1740815;matched_scaled_official;2022-01-01;Mecklenburg-Vorpommern;Germany;matched
+118;6103842;matched_scaled_official;2022-01-01;Hesse;Germany;matched
+119;2394869;matched_scaled_official;2022-01-01;Thuringia;Germany;matched
+120;2488481;matched_scaled_official;2022-01-01;Saxony-Anhalt;Germany;matched
+121;1201901;matched_scaled_official;2019-10-01;Southern Denmark;Denmark;matched
+122;1303069;matched_scaled_official;2019-10-01;Central Denmark;Denmark;matched
+123;817222;imputed_scaled_official;2023-01-01;;;unmatched
+124;822045;matched_scaled_official;2019-10-01;Region Zealand;Denmark;matched
+125;1815763;matched_scaled_official;2019-10-01;Capital Region of Denmark;Denmark;fuzzy_contain
+126;982185;region_scaled_official;2024-01-01;Navarre;Spain;matched
+127;244427;region_scaled_official;2023-01-01;;;unmatched
+128;546971;region_scaled_official;2023-01-01;;;unmatched
+129;3560749;region_scaled_official;2023-01-01;;;unmatched
+130;1928378;region_scaled_official;2023-01-01;;;unmatched
+131;677857;region_scaled_official;2023-01-01;;;unmatched
+132;968338;region_scaled_official;2023-01-01;;;unmatched
+133;841369;region_scaled_official;2023-01-01;;;unmatched
+134;628400;region_scaled_official;2023-01-01;;;unmatched
+135;1184262;region_scaled_official;2023-01-01;;;unmatched
+136;1028446;region_scaled_official;2023-01-01;;;unmatched
+137;543469;region_scaled_official;2023-01-01;;;unmatched
+138;1254652;region_scaled_official;2023-01-01;;;unmatched
+139;2442293;region_scaled_official;2023-01-01;;;unmatched
+140;2037740;region_scaled_official;2023-01-01;;;unmatched
+141;692257;region_scaled_official;2023-01-01;;;unmatched
+142;1037896;region_scaled_official;2023-01-01;;;unmatched
+143;614033;region_scaled_official;2023-01-01;;;unmatched
+144;1081898;region_scaled_official;2024-01-01;Region of Murcia;Spain;fuzzy_contain
+145;1109795;region_scaled_official;2023-01-01;;;unmatched
+146;1518251;region_scaled_official;2023-01-01;;;unmatched
+147;954822;region_scaled_official;2023-01-01;;;unmatched
+148;1652045;region_scaled_official;2023-01-01;;;unmatched
+149;894313;region_scaled_official;2023-01-01;;;unmatched
+150;1075054;region_scaled_official;2023-01-01;;;unmatched
+151;1250718;region_scaled_official;2024-01-01;Asturias;Spain;matched
+152;733986;region_scaled_official;2024-01-01;Cantabria;Spain;matched
+153;270361;region_scaled_official;2023-01-01;;;unmatched
+154;388187;region_scaled_official;2023-01-01;;;unmatched
+155;451839;region_scaled_official;2023-01-01;;;unmatched
+156;551321;region_scaled_official;2022-01-01;Balearic Islands;Spain;matched
+157;600005;region_scaled_official;2023-01-01;;;unmatched
+158;402501;region_scaled_official;2024-01-01;La Rioja;Spain;matched
+159;368308;region_scaled_official;2023-01-01;;;unmatched
+160;494676;region_scaled_official;2023-01-01;;;unmatched
+161;525361;region_scaled_official;2023-01-01;;;unmatched
+162;557237;region_scaled_official;2023-01-01;;;unmatched
+163;506965;region_scaled_official;2023-01-01;;;unmatched
+164;1426667;region_scaled_official;2024-01-01;Castile and León;Spain;fuzzy_contain
+165;996539;region_scaled_official;2023-01-01;;;unmatched
+166;1337004;region_scaled_official;2023-01-01;;;unmatched
+167;814360;region_scaled_official;2023-01-01;;;unmatched
+168;807792;region_scaled_official;2023-01-01;;;unmatched
+169;627269;region_scaled_official;2023-01-01;;;unmatched
+170;1625591;region_scaled_official;2023-01-01;;;unmatched
+171;418023;region_scaled_official;2023-01-01;;;unmatched
+172;1611353;region_scaled_official;2023-01-01;;;unmatched
+173;806162;region_scaled_official;2024-01-01;Community of Madrid;Spain;matched
+174;710580;region_scaled_official;2023-01-01;;;unmatched
+175;817295;region_scaled_official;2023-01-01;;;unmatched
+176;45516;matched_scaled_official;2023-01-01;Viljandi County;Estonia;matched
+177;87186;matched_scaled_official;2023-01-01;Pärnu County;Estonia;matched
+178;27851;matched_scaled_official;2024-01-01;Valga County;Estonia;matched
+179;33959;matched_scaled_official;2024-01-01;Võru County;Estonia;matched
+180;133003;matched_scaled_official;2023-01-01;Ida-Viru County;Estonia;matched
+181;23973;matched_scaled_official;2023-01-01;Põlva County;Estonia;matched
+182;161958;matched_scaled_official;2023-01-01;Tartu County;Estonia;matched
+183;27666;matched_scaled_official;2023-01-01;Jõgeva County;Estonia;matched
+184;20571;matched_scaled_official;2024-01-01;Lääne County;Estonia;matched
+185;644592;matched_scaled_official;2024-01-01;Harju County;Estonia;matched
+186;59450;matched_scaled_official;2023-01-01;Lääne-Viru County;Estonia;matched
+187;31937;matched_scaled_official;2024-01-01;Saare County;Estonia;matched
+188;8397;matched_scaled_official;2024-01-01;Hiiu County;Estonia;matched
+189;33948;matched_scaled_official;2023-01-01;Rapla County;Estonia;matched
+190;29993;matched_scaled_official;2023-01-01;Järva County;Estonia;matched
+191;175120;matched_scaled_official;2021-01-01;Lapland;Finland;matched
+192;620535;imputed_scaled_official;2023-01-01;;;unmatched
+193;71038;matched_scaled_official;2021-01-01;Kainuu;Finland;matched
+194;162098;matched_scaled_official;2021-01-01;North Karelia;Finland;matched
+195;124972;matched_scaled_official;2021-12-31;South Karelia;Finland;matched
+196;161374;matched_scaled_official;2021-01-01;Kymenlaakso;Finland;matched
+197;1689253;matched_scaled_official;2021-01-01;Uusimaa;Finland;matched
+198;163721;imputed_scaled_official;2023-01-01;;;unmatched
+199;213412;matched_scaled_official;2021-01-01;Satakunta;Finland;matched
+200;174238;matched_scaled_official;2021-01-01;Ostrobothnia;Finland;matched
+201;67365;matched_scaled_official;2021-01-01;Central Ostrobothnia;Finland;matched
+202;335932;imputed_scaled_official;2023-01-01;;;unmatched
+203;322963;imputed_scaled_official;2023-01-01;;;unmatched
+204;270094;matched_scaled_official;2021-01-01;Central Finland;Finland;matched
+205;235758;imputed_scaled_official;2023-01-01;;;unmatched
+206;518883;matched_scaled_official;2021-01-01;Pirkanmaa;Finland;matched
+207;99235;imputed_scaled_official;2023-01-01;;;unmatched
+208;204009;matched_scaled_official;2021-01-01;Päijät-Häme;Finland;matched
+209;1097489;region_scaled_official;2013-01-01;Nord-Pas-de-Calais;France;fuzzy_contain
+210;527214;region_scaled_official;2023-01-01;;;unmatched
+211;1408984;region_scaled_official;2023-01-01;;;unmatched
+212;614171;region_scaled_official;2023-01-01;;;unmatched
+213;530054;region_scaled_official;2023-01-01;;;unmatched
+214;605571;region_scaled_official;2023-01-01;;;unmatched
+215;733268;region_scaled_official;2023-01-01;;;unmatched
+216;1136378;region_scaled_official;2023-01-01;;;unmatched
+217;935729;region_scaled_official;2023-01-01;;;unmatched
+218;727392;region_scaled_official;2013-01-01;Rhône-Alpes;France;matched
+219;576886;region_scaled_official;2023-01-01;;;unmatched
+220;580435;region_scaled_official;2023-01-01;;;unmatched
+221;534618;region_scaled_official;2023-01-01;;;unmatched
+222;400828;region_scaled_official;2023-01-01;;;unmatched
+223;433606;region_scaled_official;2023-01-01;;;unmatched
+224;378699;region_scaled_official;2023-01-01;;;unmatched
+225;478885;region_scaled_official;2023-01-01;;;unmatched
+226;368813;region_scaled_official;2023-01-01;;;unmatched
+227;362128;region_scaled_official;2023-01-01;;;unmatched
+228;677042;region_scaled_official;2023-01-01;;;unmatched
+229;313369;region_scaled_official;2023-01-01;;;unmatched
+230;1004088;region_scaled_official;2023-01-01;;;unmatched
+231;883801;region_scaled_official;2023-01-01;;;unmatched
+232;498922;region_scaled_official;2023-01-01;;;unmatched
+233;520899;region_scaled_official;2023-01-01;;;unmatched
+234;533680;region_scaled_official;2023-01-01;;;unmatched
+235;669011;region_scaled_official;2023-01-01;;;unmatched
+236;714317;region_scaled_official;2023-01-01;;;unmatched
+237;506460;region_scaled_official;2023-01-01;;;unmatched
+238;814346;region_scaled_official;2023-01-01;;;unmatched
+239;833079;region_scaled_official;2023-01-01;;;unmatched
+240;830190;region_scaled_official;2023-01-01;;;unmatched
+241;832345;region_scaled_official;2023-01-01;;;unmatched
+242;870168;region_scaled_official;2023-01-01;;;unmatched
+243;830029;region_scaled_official;2023-01-01;;;unmatched
+244;688781;region_scaled_official;2023-01-01;;;unmatched
+245;651967;region_scaled_official;2023-01-01;;;unmatched
+246;689343;region_scaled_official;2023-01-01;;;unmatched
+247;705261;region_scaled_official;2023-01-01;;;unmatched
+248;1208952;region_scaled_official;2023-01-01;;;unmatched
+249;1297418;region_scaled_official;2023-01-01;;;unmatched
+250;610752;region_scaled_official;2023-01-01;;;unmatched
+251;530160;region_scaled_official;2023-01-01;;;unmatched
+252;528928;region_scaled_official;2023-01-01;;;unmatched
+253;424723;region_scaled_official;2023-01-01;;;unmatched
+254;450969;region_scaled_official;2023-01-01;;;unmatched
+255;337030;region_scaled_official;2023-01-01;;;unmatched
+256;496538;region_scaled_official;2023-01-01;;;unmatched
+257;900456;region_scaled_official;2023-01-01;;;unmatched
+258;776141;region_scaled_official;2023-01-01;;;unmatched
+259;704556;region_scaled_official;2023-01-01;;;unmatched
+260;442847;region_scaled_official;2023-01-01;;;unmatched
+261;419193;region_scaled_official;2023-01-01;;;unmatched
+262;465381;region_scaled_official;2023-01-01;;;unmatched
+263;431906;region_scaled_official;2023-01-01;;;unmatched
+264;430371;region_scaled_official;2023-01-01;;;unmatched
+265;672112;region_scaled_official;2023-01-01;;;unmatched
+266;780962;region_scaled_official;2023-01-01;;;unmatched
+267;628997;region_scaled_official;2023-01-01;;;unmatched
+268;624500;region_scaled_official;2023-01-01;;;unmatched
+269;769420;region_scaled_official;2023-01-01;;;unmatched
+270;661985;region_scaled_official;2023-01-01;;;unmatched
+271;425041;region_scaled_official;2022-01-01;Auvergne-Rhône-Alpes;France;fuzzy_contain
+272;595609;region_scaled_official;2023-01-01;;;unmatched
+273;676559;region_scaled_official;2023-01-01;;;unmatched
+274;597606;region_scaled_official;2022-01-01;Centre-Val de Loire;France;fuzzy_contain
+275;901414;region_scaled_official;2023-01-01;;;unmatched
+276;846031;region_scaled_official;2023-01-01;;;unmatched
+277;451878;region_scaled_official;2023-01-01;;;unmatched
+278;892722;region_scaled_official;2023-01-01;;;unmatched
+279;609248;region_scaled_official;2023-01-01;;;unmatched
+280;1641984;region_scaled_official;2023-01-01;;;unmatched
+281;2556020;region_scaled_official;2023-01-01;;;unmatched
+282;455235;region_scaled_official;2023-01-01;;;unmatched
+283;486416;region_scaled_official;2023-01-01;;;unmatched
+284;402694;region_scaled_official;2023-01-01;;;unmatched
+285;609311;region_scaled_official;2023-01-01;;;unmatched
+286;689933;region_scaled_official;2023-01-01;;;unmatched
+287;416207;region_scaled_official;2023-01-01;;;unmatched
+288;448290;region_scaled_official;2023-01-01;;;unmatched
+289;414855;region_scaled_official;2023-01-01;;;unmatched
+290;511969;region_scaled_official;2023-01-01;;;unmatched
+291;1162371;region_scaled_official;2023-01-01;;;unmatched
+292;701855;region_scaled_official;2023-01-01;;;unmatched
+293;332375;region_scaled_official;2023-01-01;;;unmatched
+294;505874;region_scaled_official;2023-01-01;;;unmatched
+295;463687;region_scaled_official;2023-01-01;;;unmatched
+296;519651;region_scaled_official;2023-01-01;;;unmatched
+297;445815;region_scaled_official;2023-01-01;;;unmatched
+298;2143534;region_scaled_official;2023-01-01;;;unmatched
+299;6403273;region_scaled_official;2023-01-01;;;unmatched
+300;1124706;region_scaled_official;2023-01-01;;;unmatched
+301;599656;region_scaled_official;2023-01-01;;;unmatched
+302;374274;region_scaled_official;2023-01-01;;;unmatched
+303;2661860;region_scaled_official;2023-01-01;;;unmatched
+304;850336;region_scaled_official;2023-01-01;;;unmatched
+305;2332323;region_scaled_official;2023-01-01;;;unmatched
+306;1644919;region_scaled_official;2023-01-01;;;unmatched
+307;592533;region_scaled_official;2023-01-01;;;unmatched
+308;2129868;region_scaled_official;2023-01-01;;;unmatched
+309;2730091;region_scaled_official;2023-01-01;;;unmatched
+310;460750;region_scaled_official;2023-01-01;;;unmatched
+311;217328;region_scaled_official;2023-01-01;;;unmatched
+312;1575043;region_scaled_official;2023-01-01;;;unmatched
+313;3985869;region_scaled_official;2023-01-01;;;unmatched
+314;1164031;region_scaled_official;2023-01-01;;;unmatched
+315;1099324;region_scaled_official;2023-01-01;;;unmatched
+316;2674567;region_scaled_official;2023-01-01;;;unmatched
+317;2241701;region_scaled_official;2023-01-01;;;unmatched
+318;1646333;region_scaled_official;2023-01-01;;;unmatched
+319;1912428;region_scaled_official;2023-01-01;;;unmatched
+320;1854633;region_scaled_official;2023-01-01;;;unmatched
+321;862502;region_scaled_official;2023-01-01;;;unmatched
+322;949564;region_scaled_official;2023-01-01;;;unmatched
+323;2233696;region_scaled_official;2023-01-01;;;unmatched
+324;1211086;region_scaled_official;2023-01-01;;;unmatched
+325;2706305;region_scaled_official;2023-01-01;;;unmatched
+326;1557312;region_scaled_official;2023-01-01;;;unmatched
+327;1705060;region_scaled_official;2023-01-01;;;unmatched
+328;443605;region_scaled_official;2023-01-01;;;unmatched
+329;310385;region_scaled_official;2023-01-01;;;unmatched
+330;362927;region_scaled_official;2023-01-01;;;unmatched
+331;588248;region_scaled_official;2023-01-01;;;unmatched
+332;236831;region_scaled_official;2023-01-01;;;unmatched
+333;1378937;region_scaled_official;2023-01-01;;;unmatched
+334;115503;region_scaled_official;2023-01-01;;;unmatched
+335;532365;region_scaled_official;2023-01-01;;;unmatched
+336;1552763;region_scaled_official;2023-01-01;;;unmatched
+337;188303;region_scaled_official;2023-01-01;;;unmatched
+338;470737;region_scaled_official;2023-01-01;;;unmatched
+339;179745;region_scaled_official;2023-01-01;;;unmatched
+340;405882;region_scaled_official;2023-01-01;;;unmatched
+341;120606;region_scaled_official;2023-01-01;;;unmatched
+342;234362;region_scaled_official;2023-01-01;;;unmatched
+343;123592;region_scaled_official;2023-01-01;;;unmatched
+344;117577;region_scaled_official;2023-01-01;;;unmatched
+345;152999;region_scaled_official;2023-01-01;;;unmatched
+346;200086;region_scaled_official;2023-01-01;;;unmatched
+347;809363;region_scaled_official;2023-01-01;;;unmatched
+348;1667613;region_scaled_official;2023-01-01;;;unmatched
+349;964977;region_scaled_official;2023-01-01;;;unmatched
+350;1027688;region_scaled_official;2023-01-01;;;unmatched
+351;1264704;region_scaled_official;2023-01-01;;;unmatched
+352;1010679;region_scaled_official;2023-01-01;;;unmatched
+353;636030;region_scaled_official;2023-01-01;;;unmatched
+354;1271341;region_scaled_official;2023-01-01;;;unmatched
+355;1445716;region_scaled_official;2023-01-01;;;unmatched
+356;873312;region_scaled_official;2023-01-01;;;unmatched
+357;1050853;region_scaled_official;2023-01-01;;;unmatched
+358;1208431;region_scaled_official;2023-01-01;;;unmatched
+359;830321;region_scaled_official;2023-01-01;;;unmatched
+360;1425421;region_scaled_official;2023-01-01;;;unmatched
+361;719799;imputed_scaled_official;2023-01-01;;;unmatched
+362;638839;matched_scaled_official;2021-01-01;Samegrelo-Zemo Svaneti;Georgia;matched
+363;526350;matched_scaled_official;2021-01-01;Shida Kartli;Georgia;matched
+364;66471;matched_scaled_official;2021-01-01;Racha-Lechkhumi and Kvemo Svaneti;Georgia;matched
+365;312994;matched_scaled_official;2021-01-01;Samtskhe–Javakheti;Georgia;matched
+366;246303;imputed_scaled_official;2023-01-01;;;unmatched
+367;221851;matched_scaled_official;2021-01-01;Guria;Georgia;matched
+368;997393;matched_scaled_official;2021-01-01;Imereti;Georgia;matched
+369;814274;imputed_scaled_official;2023-01-01;;;unmatched
+370;299901;matched_scaled_official;2021-01-01;Epirus Region;Greece;matched
+371;1682926;matched_scaled_official;2021-01-01;Central Macedonia Region;Greece;fuzzy_best
+372;526903;matched_scaled_official;2021-01-01;Eastern Macedonia and Thrace Region;Greece;fuzzy_best
+373;645043;matched_scaled_official;2021-01-01;Thessaly Region;Greece;matched
+374;476343;matched_scaled_official;2021-01-01;Central Greece Region;Greece;matched
+375;3574592;matched_scaled_official;2021-01-01;Attica Region;Greece;matched
+376;505660;matched_scaled_official;2021-01-01;Peloponnese Region;Greece;matched
+377;607521;matched_scaled_official;2021-01-01;West Greece Region;Greece;matched
+378;585204;matched_scaled_official;2021-01-01;Crete Region;Greece;matched
+379;307238;matched_scaled_official;2021-01-01;South Aegean Region;Greece;matched
+380;182704;matched_scaled_official;2021-01-01;North Aegean Region;Greece;matched
+381;191691;matched_scaled_official;2021-01-01;Ionian Islands Region;Greece;matched
+382;99951;matched_scaled_official;2011-01-01;Virovitica-Podravina County;Croatia;matched
+383;136178;matched_scaled_official;2011-01-01;Koprivnica-Križevci County;Croatia;matched
+384;359378;matched_scaled_official;2011-01-01;Osijek-Baranja County;Croatia;matched
+385;230021;matched_scaled_official;2021-08-31;Istria County;Croatia;matched
+386;136505;matched_scaled_official;2021-01-01;Dubrovnik-Neretva County;Croatia;matched
+387;218417;matched_scaled_official;2001-03-31;Sisak-Moslavina County;Croatia;matched
+388;186828;matched_scaled_official;2011-01-01;Brod-Posavina County;Croatia;matched
+389;151865;matched_scaled_official;2011-01-01;Karlovac County;Croatia;matched
+390;188231;matched_scaled_official;2021-08-31;Zadar County;Croatia;matched
+391;211506;matched_scaled_official;2011-01-01;Vukovar-Srijem County;Croatia;matched
+392;498842;matched_scaled_official;2021-08-31;Split-Dalmatia County;Croatia;matched
+393;207299;matched_scaled_official;2011-01-01;Varaždin County;Croatia;matched
+394;142207;matched_scaled_official;2021-08-31;Krapina-Zagorje County;Croatia;matched
+395;374234;matched_scaled_official;2011-01-01;Zagreb County;Croatia;matched
+396;312707;matched_scaled_official;2021-08-31;Primorje-Gorski Kotar County;Croatia;matched
+397;128862;matched_scaled_official;2011-01-01;Šibenik-Knin County;Croatia;matched
+398;50365;matched_scaled_official;2021-08-31;Lika-Senj County;Croatia;matched
+399;141102;matched_scaled_official;2011-01-01;Bjelovar-Bilogora County;Croatia;matched
+400;75502;matched_scaled_official;2021-08-31;Požega-Slavonia County;Croatia;matched
+401;663974;matched_scaled_official;2022-10-01;Szabolcs-Szatmár-Bereg County;Hungary;matched
+402;395367;matched_scaled_official;2022-10-01;Békés County;Hungary;matched
+403;651131;matched_scaled_official;2022-10-01;Hajdú-Bihar County;Hungary;matched
+404;490641;matched_scaled_official;2022-10-01;Csongrád-Csanád County;Hungary;matched
+405;584410;matched_scaled_official;2022-10-01;Győr-Moson-Sopron County;Hungary;matched
+406;312951;matched_scaled_official;2022-10-01;Vas County;Hungary;matched
+407;621251;matched_scaled_official;2022-10-01;Bács-Kiskun County;Hungary;matched
+408;327108;matched_scaled_official;2022-10-01;Zala County;Hungary;matched
+409;368084;matched_scaled_official;2022-10-01;Somogy County;Hungary;matched
+410;444031;matched_scaled_official;2022-10-01;Baranya County;Hungary;matched
+411;781425;matched_scaled_official;2022-10-01;Borsod-Abaúj-Zemplén County;Hungary;matched
+412;228849;matched_scaled_official;2022-10-01;Nógrád County;Hungary;matched
+413;377066;matched_scaled_official;2022-10-01;Komárom-Esztergom County;Hungary;matched
+414;1672577;matched_scaled_official;2022-10-01;Pest County;Hungary;matched
+415;446273;matched_scaled_official;2022-10-01;Jász-Nagykun-Szolnok County;Hungary;matched
+416;526352;matched_scaled_official;2022-10-01;Fejér County;Hungary;matched
+417;69133;matched_scaled_official;2025-01-01;Veszprém;Hungary;matched
+418;260797;matched_scaled_official;2022-10-01;Tolna County;Hungary;matched
+419;358580;matched_scaled_official;2022-10-01;Heves County;Hungary;matched
+420;368396;imputed_scaled_official;2023-01-01;;;unmatched
+421;124404;imputed_scaled_official;2023-01-01;;;unmatched
+422;145497;imputed_scaled_official;2023-01-01;;;unmatched
+423;158500;imputed_scaled_official;2023-01-01;;;unmatched
+424;222571;imputed_scaled_official;2023-01-01;;;unmatched
+425;249554;imputed_scaled_official;2023-01-01;;;unmatched
+426;161259;imputed_scaled_official;2023-01-01;;;unmatched
+427;131300;matched_scaled_official;2016-01-01;Waterford;Ireland;matched
+428;603530;matched_scaled_official;2022-01-01;Cork;Ireland;matched
+429;369001;imputed_scaled_official;2023-01-01;;;unmatched
+430;170207;matched_scaled_official;2022-04-03;Limerick;Ireland;matched
+431;248837;imputed_scaled_official;2023-01-01;;;unmatched
+432;467827;imputed_scaled_official;2023-01-01;;;unmatched
+433;426947;imputed_scaled_official;2023-01-01;;;unmatched
+434;141025;imputed_scaled_official;2023-01-01;;;unmatched
+435;180297;imputed_scaled_official;2023-01-01;;;unmatched
+436;132289;imputed_scaled_official;2023-01-01;;;unmatched
+437;131022;imputed_scaled_official;2023-01-01;;;unmatched
+438;155812;imputed_scaled_official;2023-01-01;;;unmatched
+439;143186;imputed_scaled_official;2023-01-01;;;unmatched
+440;85362;imputed_scaled_official;2023-01-01;;;unmatched
+441;192510;imputed_scaled_official;2023-01-01;;;unmatched
+442;167445;imputed_scaled_official;2023-01-01;;;unmatched
+443;163222;imputed_scaled_official;2023-01-01;;;unmatched
+444;79545;imputed_scaled_official;2023-01-01;;;unmatched
+445;93517;matched_scaled_official;2020-01-01;Southern Region;Iceland;matched
+446;57762;matched_scaled_official;2023-01-01;Western Region;Iceland;matched
+447;24299;matched_scaled_official;2023-01-01;Westfjords;Iceland;matched
+448;24112;matched_scaled_official;2020-01-01;Northwestern Region;Iceland;matched
+449;100765;matched_scaled_official;2020-01-01;Northeastern Region;Iceland;matched
+450;87719;matched_scaled_official;2019-01-01;Aosta Valley;Italy;fuzzy_contain
+451;449505;imputed_scaled_official;2023-01-01;;;unmatched
+452;222429;imputed_scaled_official;2023-01-01;;;unmatched
+453;501994;imputed_scaled_official;2023-01-01;;;unmatched
+454;641169;imputed_scaled_official;2023-01-01;;;unmatched
+455;748473;matched_scaled_official;2019-01-01;Trentino-South Tyrol;Italy;matched
+456;244017;imputed_scaled_official;2023-01-01;;;unmatched
+457;1370277;imputed_scaled_official;2023-01-01;;;unmatched
+458;1380376;imputed_scaled_official;2023-01-01;;;unmatched
+459;685049;imputed_scaled_official;2023-01-01;;;unmatched
+460;731547;imputed_scaled_official;2023-01-01;;;unmatched
+461;1020907;imputed_scaled_official;2023-01-01;;;unmatched
+462;421382;imputed_scaled_official;2023-01-01;;;unmatched
+463;409761;imputed_scaled_official;2023-01-01;;;unmatched
+464;356682;imputed_scaled_official;2023-01-01;;;unmatched
+465;530862;imputed_scaled_official;2023-01-01;;;unmatched
+466;368447;imputed_scaled_official;2023-01-01;;;unmatched
+467;466310;imputed_scaled_official;2023-01-01;;;unmatched
+468;398407;imputed_scaled_official;2023-01-01;;;unmatched
+469;549437;imputed_scaled_official;2023-01-01;;;unmatched
+470;411607;imputed_scaled_official;2023-01-01;;;unmatched
+471;394309;imputed_scaled_official;2023-01-01;;;unmatched
+472;242304;imputed_scaled_official;2023-01-01;;;unmatched
+473;511029;imputed_scaled_official;2023-01-01;;;unmatched
+474;588916;imputed_scaled_official;2023-01-01;;;unmatched
+475;1371465;imputed_scaled_official;2023-01-01;;;unmatched
+476;317670;imputed_scaled_official;2023-01-01;;;unmatched
+477;769062;imputed_scaled_official;2023-01-01;;;unmatched
+478;366921;imputed_scaled_official;2023-01-01;;;unmatched
+479;549802;imputed_scaled_official;2023-01-01;;;unmatched
+480;476551;imputed_scaled_official;2023-01-01;;;unmatched
+481;680176;imputed_scaled_official;2023-01-01;;;unmatched
+482;1329411;imputed_scaled_official;2023-01-01;;;unmatched
+483;344062;imputed_scaled_official;2023-01-01;;;unmatched
+484;468033;imputed_scaled_official;2023-01-01;;;unmatched
+485;623293;imputed_scaled_official;2023-01-01;;;unmatched
+486;228980;imputed_scaled_official;2023-01-01;;;unmatched
+487;1314218;imputed_scaled_official;2023-01-01;;;unmatched
+488;965275;imputed_scaled_official;2023-01-01;;;unmatched
+489;227364;imputed_scaled_official;2023-01-01;;;unmatched
+490;526437;imputed_scaled_official;2023-01-01;;;unmatched
+491;433303;imputed_scaled_official;2023-01-01;;;unmatched
+492;1060385;imputed_scaled_official;2023-01-01;;;unmatched
+493;718441;imputed_scaled_official;2023-01-01;;;unmatched
+494;888601;imputed_scaled_official;2023-01-01;;;unmatched
+495;241137;imputed_scaled_official;2023-01-01;;;unmatched
+496;481722;imputed_scaled_official;2023-01-01;;;unmatched
+497;608553;imputed_scaled_official;2023-01-01;;;unmatched
+498;396309;imputed_scaled_official;2023-01-01;;;unmatched
+499;1082382;matched_scaled_official;2019-01-01;Liguria;Italy;matched
+500;311907;imputed_scaled_official;2023-01-01;;;unmatched
+501;491908;imputed_scaled_official;2023-01-01;;;unmatched
+502;652448;imputed_scaled_official;2023-01-01;;;unmatched
+503;1009092;imputed_scaled_official;2023-01-01;;;unmatched
+504;596359;imputed_scaled_official;2023-01-01;;;unmatched
+505;419082;imputed_scaled_official;2023-01-01;;;unmatched
+506;319561;imputed_scaled_official;2023-01-01;;;unmatched
+507;428532;imputed_scaled_official;2023-01-01;;;unmatched
+508;704981;imputed_scaled_official;2023-01-01;;;unmatched
+509;295805;imputed_scaled_official;2023-01-01;;;unmatched
+510;855284;imputed_scaled_official;2023-01-01;;;unmatched
+511;779597;imputed_scaled_official;2023-01-01;;;unmatched
+512;670649;imputed_scaled_official;2023-01-01;;;unmatched
+513;603879;imputed_scaled_official;2023-01-01;;;unmatched
+514;304266;imputed_scaled_official;2023-01-01;;;unmatched
+515;894401;imputed_scaled_official;2023-01-01;;;unmatched
+516;370425;imputed_scaled_official;2023-01-01;;;unmatched
+517;506247;imputed_scaled_official;2023-01-01;;;unmatched
+518;412839;imputed_scaled_official;2023-01-01;;;unmatched
+519;302269;imputed_scaled_official;2023-01-01;;;unmatched
+520;541522;imputed_scaled_official;2023-01-01;;;unmatched
+521;964424;imputed_scaled_official;2023-01-01;;;unmatched
+522;352064;imputed_scaled_official;2023-01-01;;;unmatched
+523;457942;imputed_scaled_official;2023-01-01;;;unmatched
+524;306432;imputed_scaled_official;2023-01-01;;;unmatched
+525;752495;imputed_scaled_official;2023-01-01;;;unmatched
+526;640058;imputed_scaled_official;2023-01-01;;;unmatched
+527;701286;imputed_scaled_official;2023-01-01;;;unmatched
+528;412181;imputed_scaled_official;2023-01-01;;;unmatched
+529;601417;imputed_scaled_official;2023-01-01;;;unmatched
+530;529710;imputed_scaled_official;2023-01-01;;;unmatched
+531;262453;imputed_scaled_official;2023-01-01;;;unmatched
+532;691782;imputed_scaled_official;2023-01-01;;;unmatched
+533;1212697;imputed_scaled_official;2023-01-01;;;unmatched
+534;543513;imputed_scaled_official;2023-01-01;;;unmatched
+535;611047;imputed_scaled_official;2023-01-01;;;unmatched
+536;497298;imputed_scaled_official;2023-01-01;;;unmatched
+537;673612;imputed_scaled_official;2023-01-01;;;unmatched
+538;690051;imputed_scaled_official;2023-01-01;;;unmatched
+539;457881;imputed_scaled_official;2023-01-01;;;unmatched
+540;531067;imputed_scaled_official;2023-01-01;;;unmatched
+541;728207;imputed_scaled_official;2023-01-01;;;unmatched
+542;419652;imputed_scaled_official;2023-01-01;;;unmatched
+543;1263199;imputed_scaled_official;2023-01-01;;;unmatched
+544;631857;imputed_scaled_official;2023-01-01;;;unmatched
+545;545665;imputed_scaled_official;2023-01-01;;;unmatched
+546;1008839;imputed_scaled_official;2023-01-01;;;unmatched
+547;432635;imputed_scaled_official;2023-01-01;;;unmatched
+548;307015;imputed_scaled_official;2023-01-01;;;unmatched
+549;936596;matched_scaled_official;2023-01-01;Prizren District;Kosovo;matched
+550;191665;imputed_scaled_official;2023-01-01;;;unmatched
+551;452691;imputed_scaled_official;2023-01-01;;;unmatched
+552;179048;imputed_scaled_official;2023-01-01;;;unmatched
+553;202061;matched_scaled_official;2023-01-01;Utena District Municipality;Lithuania;matched
+554;548492;matched_scaled_official;2023-01-01;Vilnius District Municipality;Lithuania;matched
+555;136426;matched_scaled_official;2023-01-01;Alytus District Municipality;Lithuania;matched
+556;189525;matched_scaled_official;2023-01-01;Panevėžys District Municipality;Lithuania;matched
+557;210594;matched_scaled_official;2023-01-01;Telšiai District Municipality;Lithuania;matched
+558;343602;matched_scaled_official;2023-01-01;Klaipėda District Municipality;Lithuania;matched
+559;218649;matched_scaled_official;2023-01-01;Šiauliai District Municipality;Lithuania;matched
+560;294361;matched_scaled_official;2023-01-01;Marijampolė Municipality;Lithuania;matched
+561;202206;matched_scaled_official;2023-01-01;Tauragė District Municipality;Lithuania;matched
+562;534084;matched_scaled_official;2023-01-01;Kaunas District Municipality;Lithuania;matched
+563;670000;matched_scaled_official;2015-01-01;Diekirch District;Luxembourg;matched
+564;7912;matched_scaled_official;2021-01-01;Aloja Municipality;Latvia;matched
+565;13382;matched_scaled_official;2025-01-01;Valka Municipality;Latvia;matched
+566;23025;matched_scaled_official;2025-01-01;Alūksne Municipality;Latvia;matched
+567;8975;matched_scaled_official;2021-01-01;Kārsava Municipality;Latvia;matched
+568;13645;matched_scaled_official;2021-01-01;Vecumnieki Municipality;Latvia;matched
+569;46614;matched_scaled_official;2025-01-01;Saldus Municipality;Latvia;matched
+570;3880;matched_scaled_official;2021-01-01;Vaiņode Municipality;Latvia;matched
+571;56027;matched_scaled_official;2025-01-01;Jelgava Municipality;Latvia;matched
+572;136746;matched_scaled_official;2025-01-01;Daugavpils;Latvia;matched
+573;34141;matched_scaled_official;2025-01-01;Krāslava Municipality;Latvia;matched
+574;18020;matched_scaled_official;2025-01-01;Ventspils Municipality;Latvia;matched
+575;60914;matched_scaled_official;2025-01-01;Talsi Municipality;Latvia;matched
+576;1041532;matched_scaled_official;2025-01-01;Riga;Latvia;matched
+577;48332;matched_scaled_official;2025-01-01;Limbaži Municipality;Latvia;matched
+578;48500;matched_scaled_official;2025-01-01;Rēzekne Municipality;Latvia;matched
+579;32377;matched_scaled_official;2025-01-01;Gulbene Municipality;Latvia;matched
+580;52332;matched_scaled_official;2025-07-01;Madona Municipality;Latvia;matched
+581;100938;matched_scaled_official;2025-01-01;Ogre Municipality;Latvia;matched
+582;46675;matched_scaled_official;2025-01-01;Kuldīga Municipality;Latvia;matched
+583;76033;matched_scaled_official;2025-01-01;Tukums Municipality;Latvia;matched
+584;185610;matched_scaled_official;2024-04-08;Edineț District;Moldova;matched
+585;160666;matched_scaled_official;2024-04-08;Rîșcani District;Moldova;matched
+586;206258;matched_scaled_official;2024-04-08;Fălești District;Moldova;matched
+587;279005;matched_scaled_official;2024-04-08;Ungheni District;Moldova;matched
+588;255663;matched_scaled_official;2024-04-08;Hîncești District;Moldova;matched
+589;122127;matched_scaled_official;2024-04-08;Cantemir District;Moldova;matched
+590;267857;matched_scaled_official;2024-04-08;Cahul District;Moldova;matched
+591;155635;matched_scaled_official;2024-04-08;Ștefan Vodă District;Moldova;matched
+592;210756;matched_scaled_official;2024-04-08;Căușeni District;Moldova;matched
+593;114048;matched_scaled_official;2024-04-08;Cimișlia District;Moldova;matched
+594;97298;matched_scaled_official;2024-04-08;Taraclia District;Moldova;matched
+595;73418;matched_scaled_official;2024-04-08;Comrat;Moldova;matched
+596;291659;matched_scaled_official;2024-04-08;Orhei District;Moldova;matched
+597;950225;imputed_scaled_official;2023-01-01;;;unmatched
+598;129178;imputed_scaled_official;2023-01-01;;;unmatched
+599;91203;imputed_scaled_official;2023-01-01;;;unmatched
+600;103858;imputed_scaled_official;2023-01-01;;;unmatched
+601;84194;imputed_scaled_official;2023-01-01;;;unmatched
+602;107405;imputed_scaled_official;2023-01-01;;;unmatched
+603;166378;imputed_scaled_official;2023-01-01;;;unmatched
+604;106898;imputed_scaled_official;2023-01-01;;;unmatched
+605;90661;imputed_scaled_official;2023-01-01;;;unmatched
+606;60222;matched_scaled_official;2017-01-01;Berane Municipality;Montenegro;matched
+607;62140;matched_scaled_official;2017-01-01;Pljevlja Municipality;Montenegro;matched
+608;160060;matched_scaled_official;2011-01-01;Nikšić Municipality;Montenegro;matched
+609;333578;matched_scaled_official;2011-01-01;Podgorica;Montenegro;matched
+610;624820;matched_scaled_official;2013-12-31;Groningen;Netherlands;matched
+611;527316;matched_scaled_official;2017-01-01;Drenthe;Netherlands;matched
+612;1224876;matched_scaled_official;2015-08-01;Overijssel;Netherlands;matched
+613;2165579;matched_scaled_official;2013-12-31;Gelderland;Netherlands;matched
+614;1200907;matched_scaled_official;2013-12-31;Limburg;Netherlands;matched
+615;414641;matched_scaled_official;2022-01-01;Zeeland;Netherlands;matched
+616;2419865;matched_scaled_official;2015-01-01;North Brabant;Netherlands;matched
+617;3835408;matched_scaled_official;2013-12-31;South Holland;Netherlands;matched
+618;3016689;matched_scaled_official;2017-01-01;North Holland;Netherlands;matched
+619;696892;matched_scaled_official;2021-01-01;Friesland;Netherlands;matched
+620;428779;matched_scaled_official;2013-12-31;Flevoland;Netherlands;matched
+621;1344228;matched_scaled_official;2013-12-31;Utrecht;Netherlands;matched
+622;195635;matched_scaled_official;2019-01-01;Troms;Norway;matched
+623;284764;matched_scaled_official;2019-01-01;Nordland;Norway;matched
+624;159589;matched_scaled_official;2016-01-01;Nord-Trøndelag;Norway;matched
+625;372485;matched_scaled_official;2017-06-30;Sør-Trøndelag;Norway;matched
+626;230968;matched_scaled_official;2019-01-01;Hedmark;Norway;matched
+627;837752;matched_scaled_official;2023-01-01;Akershus;Norway;matched
+628;348103;matched_scaled_official;2019-01-01;Østfold;Norway;matched
+629;88639;matched_scaled_official;2016-01-01;Finnmark;Norway;matched
+630;316539;matched_scaled_official;2024-08-01;Buskerud;Norway;matched
+631;293765;matched_scaled_official;2019-01-01;Vestfold;Norway;matched
+632;202785;matched_scaled_official;2019-01-01;Telemark;Norway;matched
+633;137659;matched_scaled_official;2019-01-01;Aust-Agder;Norway;matched
+634;219482;matched_scaled_official;2019-01-01;Vest-Agder;Norway;matched
+635;584324;matched_scaled_official;2024-01-01;Rogaland;Norway;matched
+636;613666;matched_scaled_official;2019-01-01;Hordaland;Norway;matched
+637;128438;matched_scaled_official;2019-01-01;Sogn og Fjordane;Norway;matched
+638;310513;matched_scaled_official;2019-01-01;Møre og Romsdal;Norway;matched
+639;3123;matched_scaled_official;2023-01-01;Svalbard;Norway;matched
+640;221771;matched_scaled_official;2019-01-01;Oppland;Norway;matched
+641;4380148;matched_scaled_official;2023-01-01;Silesian Voivodeship;Poland;matched
+642;3188184;matched_scaled_official;2013-01-01;Lesser Poland Voivodeship;Poland;matched
+643;2012411;matched_scaled_official;2020-01-01;Subcarpathian Voivodeship;Poland;matched
+644;2765694;matched_scaled_official;2012-12-31;Lower Silesian Voivodeship;Poland;matched
+645;958380;matched_scaled_official;2017-01-01;Opole Voivodeship;Poland;matched
+646;1132130;matched_scaled_official;2014-06-30;Podlaskie Voivodeship;Poland;matched
+647;1364053;matched_scaled_official;2016-06-30;Warmian-Masurian Voivodeship;Poland;matched
+648;968402;matched_scaled_official;2014-01-01;Lubusz Voivodeship;Poland;matched
+649;1539513;matched_scaled_official;2024-12-31;West Pomeranian Voivodeship;Poland;matched
+650;2041447;matched_scaled_official;2014-01-01;Lublin Voivodeship;Poland;matched
+651;2182011;matched_scaled_official;2019-01-01;Pomeranian Voivodeship;Poland;matched
+652;5210261;matched_scaled_official;2011-03-31;Masovian Voivodeship;Poland;matched
+653;2379780;matched_scaled_official;2014-01-01;Łódź Voivodeship;Poland;matched
+654;1983577;matched_scaled_official;2014-01-01;Kuyavian-Pomeranian Voivodeship;Poland;matched
+655;3316153;matched_scaled_official;2019-01-01;Greater Poland Voivodeship;Poland;matched
+656;1177856;matched_scaled_official;2018-01-01;Świętokrzyskie Voivodeship;Poland;matched
+657;81647;matched_scaled_official;2018-01-01;Évora;Portugal;matched
+658;34803;matched_scaled_official;2018-01-01;Portalegre;Portugal;matched
+659;131740;matched_scaled_official;2018-01-01;Viana do Castelo;Portugal;matched
+660;81240;matched_scaled_official;2018-01-01;Castelo Branco;Portugal;matched
+661;60866;matched_scaled_official;2018-01-01;Guarda;Portugal;matched
+662;52279;matched_scaled_official;2018-01-01;Bragança;Portugal;matched
+663;77622;matched_scaled_official;2018-01-01;Vila Real;Portugal;matched
+664;283164;matched_scaled_official;2018-01-01;Braga;Portugal;matched
+665;94909;matched_scaled_official;2018-01-01;Faro;Portugal;matched
+666;1189124;imputed_scaled_official;2023-01-01;;;unmatched
+667;1227263;matched_scaled_official;2018-01-01;Setúbal;Portugal;matched
+668;3324742;matched_scaled_official;2023-01-01;Lisbon;Portugal;matched
+669;89343;matched_scaled_official;2018-01-01;Santarém;Portugal;matched
+670;194345;matched_scaled_official;2018-01-01;Leiria;Portugal;matched
+671;208147;matched_scaled_official;2018-01-01;Coimbra;Portugal;matched
+672;121280;matched_scaled_official;2018-01-01;Aveiro;Portugal;matched
+673;2828488;matched_scaled_official;2023-01-01;Porto;Portugal;matched
+674;368027;matched_scaled_official;2021-01-01;Azores;Portugal;matched
+675;150971;matched_scaled_official;2018-01-01;Viseu;Portugal;matched
+676;362390;matched_scaled_official;2021-12-01;Satu Mare County;Romania;matched
+677;449489;matched_scaled_official;2021-12-01;Arad County;Romania;matched
+678;604183;matched_scaled_official;2021-12-01;Bihor County;Romania;matched
+679;712939;matched_scaled_official;2021-12-01;Timiș County;Romania;matched
+680;256820;matched_scaled_official;2021-12-01;Mehedinți County;Romania;matched
+681;656947;matched_scaled_official;2021-12-01;Dolj County;Romania;matched
+682;310651;matched_scaled_official;2021-12-01;Călărași County;Romania;matched
+683;354582;matched_scaled_official;2021-12-01;Teleorman County;Romania;matched
+684;287207;matched_scaled_official;2021-12-01;Giurgiu County;Romania;matched
+685;718927;matched_scaled_official;2021-12-01;Constanța County;Romania;matched
+686;420049;matched_scaled_official;2021-12-01;Olt County;Romania;matched
+687;270244;matched_scaled_official;2021-12-01;Caraș-Severin County;Romania;matched
+688;430505;matched_scaled_official;2021-12-01;Botoșani County;Romania;matched
+689;833755;matched_scaled_official;2021-12-01;Iași County;Romania;matched
+690;410646;matched_scaled_official;2021-12-01;Vaslui County;Romania;matched
+691;544559;matched_scaled_official;2021-12-01;Galați County;Romania;matched
+692;704191;matched_scaled_official;2021-12-01;Suceava County;Romania;matched
+693;495881;matched_scaled_official;2021-12-01;Maramureș County;Romania;matched
+694;211904;matched_scaled_official;2021-12-01;Tulcea County;Romania;matched
+695;744291;matched_scaled_official;2021-12-01;Cluj County;Romania;matched
+696;324383;matched_scaled_official;2021-12-01;Bistrița-Năsăud County;Romania;matched
+697;232583;matched_scaled_official;2021-12-01;Sălaj County;Romania;matched
+698;525394;matched_scaled_official;2021-12-01;Dâmbovița County;Romania;matched
+699;594766;matched_scaled_official;2021-12-01;Ilfov County;Romania;matched
+700;624606;matched_scaled_official;2021-12-01;Argeș County;Romania;matched
+701;344873;matched_scaled_official;2021-12-01;Gorj County;Romania;matched
+702;396351;matched_scaled_official;2021-12-01;Hunedoara County;Romania;matched
+703;374656;matched_scaled_official;2021-12-01;Vâlcea County;Romania;matched
+704;761802;matched_scaled_official;2021-12-01;Prahova County;Romania;matched
+705;219233;matched_scaled_official;2021-12-01;Covasna County;Romania;matched
+706;367479;matched_scaled_official;2021-12-01;Vrancea County;Romania;matched
+707;443829;matched_scaled_official;2021-12-01;Buzău County;Romania;matched
+708;599052;matched_scaled_official;2021-12-01;Brașov County;Romania;matched
+709;425579;matched_scaled_official;2021-12-01;Sibiu County;Romania;matched
+710;567904;matched_scaled_official;2021-12-01;Mureș County;Romania;matched
+711;319958;matched_scaled_official;2021-12-01;Harghita County;Romania;matched
+712;497775;matched_scaled_official;2021-12-01;Neamț County;Romania;matched
+713;659078;matched_scaled_official;2021-12-01;Bacău County;Romania;matched
+714;357209;matched_scaled_official;2021-12-01;Alba County;Romania;matched
+715;308452;matched_scaled_official;2021-12-01;Brăila County;Romania;matched
+716;274878;matched_scaled_official;2021-12-01;Ialomița County;Romania;matched
+717;842496;matched_scaled_official;2025-01-01;Pskov Oblast;Russia;matched
+718;8567842;matched_scaled_official;2025-01-01;Krasnodar Krai;Russia;matched
+719;686811;matched_scaled_official;2024-01-01;Karachay-Cherkessia;Russia;fuzzy_best
+720;1327895;matched_scaled_official;2024-01-01;Kabardino-Balkaria;Russia;matched
+721;995600;matched_scaled_official;2024-01-01;North Ossetia–Alania;Russia;fuzzy_contain
+722;962690;matched_scaled_official;2024-01-01;Murmansk Oblast;Russia;matched
+723;761059;matched_scaled_official;2025-01-01;Karelia;Russia;matched
+724;2985515;matched_scaled_official;2024-01-01;Leningrad Oblast;Russia;matched
+725;1458614;matched_scaled_official;2023-01-01;Kaliningrad Oblast;Russia;matched
+726;1267067;matched_scaled_official;2024-01-01;Smolensk Oblast;Russia;matched
+727;1661284;matched_scaled_official;2025-01-01;Bryansk Oblast;Russia;matched
+728;1539544;matched_scaled_official;2025-01-01;Kursk Oblast;Russia;matched
+729;2173441;matched_scaled_official;2025-01-01;Belgorod Oblast;Russia;matched
+730;3314434;matched_scaled_official;2025-01-01;Voronezh Oblast;Russia;matched
+731;6067544;matched_scaled_official;2025-01-01;Rostov Oblast;Russia;matched
+732;2681786;matched_scaled_official;2024-01-01;Orenburg Oblast;Russia;matched
+733;3474814;matched_scaled_official;2025-01-01;Saratov Oblast;Russia;matched
+734;1387971;matched_scaled_official;2024-01-01;Astrakhan Oblast;Russia;matched
+735;3569612;matched_scaled_official;2025-01-01;Volgograd Oblast;Russia;matched
+736;2781126;matched_scaled_official;2022-01-01;Republic of Crimea;Russia;matched
+737;61924;matched_scaled_official;2024-01-01;Nenets Autonomous Okrug;Russia;matched
+738;8290204;matched_scaled_official;2025-01-01;Saint Petersburg;Russia;matched
+739;1451040;matched_scaled_official;2025-01-01;Arkhangelsk Oblast;Russia;matched
+740;392428;matched_scaled_official;2025-01-01;Kalmykia;Russia;fuzzy_best
+741;5928285;matched_scaled_official;2025-01-01;Bashkortostan;Russia;matched
+742;6190904;matched_scaled_official;2025-01-01;Sverdlovsk Oblast;Russia;matched
+743;1651203;matched_scaled_official;2023-01-01;Lipetsk Oblast;Russia;matched
+744;1402436;matched_scaled_official;2024-01-01;Tambov Oblast;Russia;matched
+745;5870560;matched_scaled_official;2024-01-01;Tatarstan;Russia;matched
+746;1719926;matched_scaled_official;2024-01-01;Ulyanovsk Oblast;Russia;matched
+747;1779073;matched_scaled_official;2024-01-01;Penza Oblast;Russia;matched
+748;1015555;matched_scaled_official;2024-01-01;Oryol Oblast;Russia;matched
+749;1142380;matched_scaled_official;2021-01-01;Mordovia;Russia;matched
+750;1467972;matched_scaled_official;2021-01-01;Kaluga Oblast;Russia;matched
+751;830449;matched_scaled_official;2024-01-01;Kostroma Oblast;Russia;matched
+752;1741595;matched_scaled_official;2024-01-01;Yaroslavl Oblast;Russia;matched
+753;1921076;matched_scaled_official;2024-01-01;Vladimir Oblast;Russia;matched
+754;1529935;matched_scaled_official;2024-01-01;Ryazan Oblast;Russia;matched
+755;1328534;matched_scaled_official;2024-01-01;Ivanovo Oblast;Russia;matched
+756;4457416;matched_scaled_official;2025-01-01;Nizhny Novgorod Oblast;Russia;matched
+757;2157478;matched_scaled_official;2024-01-01;Tula Oblast;Russia;matched
+758;743564;imputed_scaled_official;2023-01-01;;;unmatched
+759;1701833;matched_scaled_official;2021-01-01;Vologda Oblast;Russia;matched
+760;831467;matched_scaled_official;2025-01-01;Novgorod Oblast;Russia;matched
+761;1746018;matched_scaled_official;2025-01-01;Tver Oblast;Russia;matched
+762;19467193;matched_scaled_official;2025-01-01;Moscow;Russia;matched
+763;115442;imputed_scaled_official;2023-01-01;;;unmatched
+764;982365;matched_scaled_official;2024-01-01;Mari El;Russia;matched
+765;1657089;matched_scaled_official;2024-01-01;Kirov Oblast;Russia;matched
+766;1697876;imputed_scaled_official;2023-01-01;;;unmatched
+767;1048258;matched_scaled_official;2025-01-01;Komi Republic;Russia;matched
+768;3642334;matched_scaled_official;2025-01-01;Perm Krai;Russia;matched
+769;4564685;matched_scaled_official;2025-01-01;Samara Oblast;Soviet Union;matched
+770;4230018;matched_scaled_official;2025-01-01;Stavropol Krai;Russia;matched
+771;734340;matched_scaled_official;2025-01-01;Adygea;Russia;fuzzy_best
+772;141244;imputed_scaled_official;2023-01-01;;;unmatched
+773;200341;imputed_scaled_official;2023-01-01;;;unmatched
+774;191602;imputed_scaled_official;2023-01-01;;;unmatched
+775;293721;imputed_scaled_official;2023-01-01;;;unmatched
+776;319600;imputed_scaled_official;2023-01-01;;;unmatched
+777;299556;imputed_scaled_official;2023-01-01;;;unmatched
+778;227021;imputed_scaled_official;2023-01-01;;;unmatched
+779;235188;imputed_scaled_official;2023-01-01;;;unmatched
+780;319602;imputed_scaled_official;2023-01-01;;;unmatched
+781;224747;imputed_scaled_official;2023-01-01;;;unmatched
+782;195517;imputed_scaled_official;2023-01-01;;;unmatched
+783;521396;imputed_scaled_official;2023-01-01;;;unmatched
+784;291359;imputed_scaled_official;2023-01-01;;;unmatched
+785;273820;imputed_scaled_official;2023-01-01;;;unmatched
+786;362720;imputed_scaled_official;2023-01-01;;;unmatched
+787;265074;imputed_scaled_official;2023-01-01;;;unmatched
+788;345439;imputed_scaled_official;2023-01-01;;;unmatched
+789;356722;imputed_scaled_official;2023-01-01;;;unmatched
+790;285540;imputed_scaled_official;2023-01-01;;;unmatched
+791;118463;imputed_scaled_official;2023-01-01;;;unmatched
+792;233035;imputed_scaled_official;2023-01-01;;;unmatched
+793;221001;imputed_scaled_official;2023-01-01;;;unmatched
+794;203315;imputed_scaled_official;2023-01-01;;;unmatched
+795;259542;imputed_scaled_official;2023-01-01;;;unmatched
+796;214435;imputed_scaled_official;2023-01-01;;;unmatched
+797;687398;matched_scaled_official;2024-12-31;Žilina region;Slovakia;matched
+798;811584;matched_scaled_official;2024-12-31;Prešov Region;Slovakia;matched
+799;780315;matched_scaled_official;2024-12-31;Košice Region;Slovakia;matched
+800;737818;matched_scaled_official;2024-12-31;Bratislava Region;Slovakia;matched
+801;567002;matched_scaled_official;2024-12-31;Trnava Region;Slovakia;matched
+802;566673;matched_scaled_official;2024-12-31;Trenčín Region;Slovakia;matched
+803;612314;matched_scaled_official;2024-12-31;Banská Bystrica Region;Slovakia;matched
+804;666896;matched_scaled_official;2024-12-31;Nitra Region;Slovakia;matched
+805;1746209;matched_scaled_official;2020-07-01;Municipality of Tolmin;Slovenia;fuzzy_contain
+806;373791;matched_scaled_official;2020-07-01;Municipality of Podvelka;Slovenia;fuzzy_contain
+807;247482;matched_scaled_official;2025-09-30;Norrbotten County;Sweden;matched
+808;278005;matched_scaled_official;2025-09-30;Västerbotten County;Sweden;matched
+809;131893;matched_scaled_official;2025-09-30;Jämtland County;Sweden;matched
+810;284540;matched_scaled_official;2025-09-30;Dalarna County;Sweden;matched
+811;281748;matched_scaled_official;2025-09-30;Värmland County;Sweden;matched
+812;1768063;matched_scaled_official;2025-09-30;Västra Götaland County;Sweden;matched
+813;239792;matched_scaled_official;2025-09-30;Västernorrland County;Sweden;matched
+814;282272;matched_scaled_official;2025-09-30;Gävleborg County;Sweden;matched
+815;408300;matched_scaled_official;2025-09-30;Uppsala County;Sweden;matched
+816;2471342;matched_scaled_official;2025-09-30;Stockholm County;Sweden;matched
+817;299303;matched_scaled_official;2025-09-30;Södermanland County;Sweden;matched
+818;470105;matched_scaled_official;2025-09-30;Östergötland County;Sweden;matched
+819;244376;matched_scaled_official;2025-09-30;Kalmar County;Sweden;matched
+820;156001;matched_scaled_official;2025-09-30;Blekinge County;Sweden;matched
+821;1425537;matched_scaled_official;2025-09-30;Skåne County;Sweden;matched
+822;344126;matched_scaled_official;2025-09-30;Halland County;Sweden;matched
+823;60691;matched_scaled_official;2025-09-30;Gotland County;Sweden;matched
+824;279424;matched_scaled_official;2025-09-30;Västmanland County;Sweden;matched
+825;367925;matched_scaled_official;2025-09-30;Jönköping County;Sweden;matched
+826;306790;matched_scaled_official;2025-09-30;Örebro County;Sweden;matched
+827;202285;matched_scaled_official;2025-09-30;Kronoberg County;Sweden;matched
+828;603083;imputed_scaled_official;2023-01-01;;;unmatched
+829;920042;imputed_scaled_official;2023-01-01;;;unmatched
+830;809113;imputed_scaled_official;2023-01-01;;;unmatched
+831;630746;imputed_scaled_official;2023-01-01;;;unmatched
+832;1234509;imputed_scaled_official;2023-01-01;;;unmatched
+833;1185694;imputed_scaled_official;2023-01-01;;;unmatched
+834;2341316;imputed_scaled_official;2023-01-01;;;unmatched
+835;158823;imputed_scaled_official;2023-01-01;;;unmatched
+836;859890;imputed_scaled_official;2023-01-01;;;unmatched
+837;655413;imputed_scaled_official;2023-01-01;;;unmatched
+838;564706;imputed_scaled_official;2023-01-01;;;unmatched
+839;821449;imputed_scaled_official;2023-01-01;;;unmatched
+840;1126119;imputed_scaled_official;2023-01-01;;;unmatched
+841;443737;imputed_scaled_official;2023-01-01;;;unmatched
+842;588010;imputed_scaled_official;2023-01-01;;;unmatched
+843;794421;imputed_scaled_official;2023-01-01;;;unmatched
+844;689112;imputed_scaled_official;2023-01-01;;;unmatched
+845;1112098;imputed_scaled_official;2023-01-01;;;unmatched
+846;731114;imputed_scaled_official;2023-01-01;;;unmatched
+847;1542219;imputed_scaled_official;2023-01-01;;;unmatched
+848;247286;imputed_scaled_official;2023-01-01;;;unmatched
+849;383407;imputed_scaled_official;2023-01-01;;;unmatched
+850;302031;imputed_scaled_official;2023-01-01;;;unmatched
+851;499962;imputed_scaled_official;2023-01-01;;;unmatched
+852;549327;imputed_scaled_official;2023-01-01;;;unmatched
+853;1281009;imputed_scaled_official;2023-01-01;;;unmatched
+854;1708039;imputed_scaled_official;2023-01-01;;;unmatched
+855;1514888;imputed_scaled_official;2023-01-01;;;unmatched
+856;933106;imputed_scaled_official;2023-01-01;;;unmatched
+857;1510057;imputed_scaled_official;2023-01-01;;;unmatched
+858;2489831;imputed_scaled_official;2023-01-01;;;unmatched
+859;1796076;imputed_scaled_official;2023-01-01;;;unmatched
+860;1803142;imputed_scaled_official;2023-01-01;;;unmatched
+861;1007192;imputed_scaled_official;2023-01-01;;;unmatched
+862;3016868;imputed_scaled_official;2023-01-01;;;unmatched
+863;621141;imputed_scaled_official;2023-01-01;;;unmatched
+864;1612319;imputed_scaled_official;2023-01-01;;;unmatched
+865;902098;imputed_scaled_official;2023-01-01;;;unmatched
+866;465743;imputed_scaled_official;2023-01-01;;;unmatched
+867;1105579;imputed_scaled_official;2023-01-01;;;unmatched
+868;3302373;imputed_scaled_official;2023-01-01;;;unmatched
+869;1470325;imputed_scaled_official;2023-01-01;;;unmatched
+870;731343;imputed_scaled_official;2023-01-01;;;unmatched
+871;1416755;imputed_scaled_official;2023-01-01;;;unmatched
+872;4728789;imputed_scaled_official;2023-01-01;;;unmatched
+873;1055649;imputed_scaled_official;2023-01-01;;;unmatched
+874;781885;imputed_scaled_official;2023-01-01;;;unmatched
+875;2060287;imputed_scaled_official;2023-01-01;;;unmatched
+876;1030407;imputed_scaled_official;2023-01-01;;;unmatched
+877;1518951;imputed_scaled_official;2023-01-01;;;unmatched
+878;1305225;imputed_scaled_official;2023-01-01;;;unmatched
+879;849749;imputed_scaled_official;2023-01-01;;;unmatched
+880;911023;imputed_scaled_official;2023-01-01;;;unmatched
+881;622096;imputed_scaled_official;2023-01-01;;;unmatched
+882;1616684;imputed_scaled_official;2023-01-01;;;unmatched
+883;748394;imputed_scaled_official;2023-01-01;;;unmatched
+884;522406;imputed_scaled_official;2023-01-01;;;unmatched
+885;1328831;imputed_scaled_official;2023-01-01;;;unmatched
+886;928178;imputed_scaled_official;2023-01-01;;;unmatched
+887;1733410;imputed_scaled_official;2023-01-01;;;unmatched
+888;547930;imputed_scaled_official;2023-01-01;;;unmatched
+889;1695953;imputed_scaled_official;2023-01-01;;;unmatched
+890;910417;imputed_scaled_official;2023-01-01;;;unmatched
+891;2795898;imputed_scaled_official;2023-01-01;;;unmatched
+892;1389617;imputed_scaled_official;2023-01-01;;;unmatched
+893;1092780;imputed_scaled_official;2023-01-01;;;unmatched
+894;1055413;imputed_scaled_official;2023-01-01;;;unmatched
+895;989629;imputed_scaled_official;2023-01-01;;;unmatched
+896;341865;imputed_scaled_official;2023-01-01;;;unmatched
+897;842236;imputed_scaled_official;2023-01-01;;;unmatched
+898;1773140;imputed_scaled_official;2023-01-01;;;unmatched
+899;483514;imputed_scaled_official;2023-01-01;;;unmatched
+900;415950;imputed_scaled_official;2023-01-01;;;unmatched
+901;742183;imputed_scaled_official;2023-01-01;;;unmatched
+902;921200;matched_scaled_official;2022-01-01;Chernihiv Oblast;Ukraine;matched
+903;980775;matched_scaled_official;2022-01-01;Volyn Oblast;Ukraine;matched
+904;1096419;matched_scaled_official;2022-01-01;Rivne Oblast;Ukraine;matched
+905;1132187;matched_scaled_official;2022-01-01;Zhytomyr Oblast;Ukraine;matched
+906;1723756;matched_scaled_official;2022-01-01;Kyiv Oblast;Ukraine;matched
+907;1195030;matched_scaled_official;2022-01-01;Zakarpattia Oblast;Ukraine;matched
+908;855077;matched_scaled_official;2022-01-01;Chernivtsi Oblast;Ukraine;matched
+909;1298111;matched_scaled_official;2022-01-01;Ivano-Frankivsk Oblast;Ukraine;matched
+910;2257965;matched_scaled_official;2022-01-01;Odesa Oblast;Ukraine;fuzzy_best
+911;1449539;matched_scaled_official;2022-01-01;Vinnytsia Oblast;Ukraine;matched
+912;2379671;matched_scaled_official;2022-01-01;Lviv Oblast;Ukraine;matched
+913;994619;matched_scaled_official;2022-01-01;Sumy Oblast;Ukraine;matched
+914;2495698;matched_scaled_official;2022-01-01;Kharkiv Oblast;Ukraine;matched
+915;2081670;matched_scaled_official;2018-01-01;Luhansk Oblast;Ukraine;matched
+916;4033566;matched_scaled_official;2018-01-01;Donetsk Oblast;Ukraine;matched
+917;961803;matched_scaled_official;2022-01-01;Kherson Oblast;Ukraine;matched
+918;1573362;matched_scaled_official;2022-01-01;Zaporizhzhia Oblast;Ukraine;matched
+919;1048441;matched_scaled_official;2022-01-01;Mykolaiv Oblast;Ukraine;matched
+920;1298554;matched_scaled_official;2022-01-01;Poltava Oblast;Ukraine;matched
+921;1180005;matched_scaled_official;2022-01-01;Khmelnytskyi Oblast;Ukraine;matched
+922;981118;matched_scaled_official;2022-01-01;Ternopil Oblast;Ukraine;matched
+923;2973454;matched_scaled_official;2022-01-01;Dnipropetrovsk Oblast;Ukraine;matched
+924;1114625;matched_scaled_official;2022-01-01;Cherkasy Oblast;Ukraine;matched
+925;867806;matched_scaled_official;2022-01-01;Kirovohrad Oblast;Ukraine;matched
+926;105549;imputed_scaled_official;2023-01-01;;;unmatched
