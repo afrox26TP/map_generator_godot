@@ -68,13 +68,49 @@ def export_mode_folder(mode_name, file_name, description):
     print(f"[EXPORT] Mode folder '{mode_name}' created.")
 
 
-def export_gdp_map(id_map, sea_regions, bounds, max_pid=None):
+def export_gdp_map(id_map, sea_regions, bounds, gdp=None, max_pid=None):
     max_pid = max_pid if max_pid is not None else int(id_map.max())
-    gdp_values = {
-        pid: (random.randint(120, 255), 50, 50)
-        for pid in range(max_pid + 1)
-    }
-    export_theme_map(id_map, bounds, sea_regions, "GDPMap.png", gdp_values)
+
+    gdp_colors = None
+    if gdp:
+        metric = {
+            pid: max(float(gdp.get(pid, 0.0) or 0.0), 0.0)
+            for pid in range(max_pid + 1)
+        }
+        vals = [v for v in metric.values() if v > 0]
+
+        if vals:
+            log_min = min(math.log10(v) for v in vals)
+            log_max = max(math.log10(v) for v in vals)
+            span = log_max - log_min or 1.0
+
+            def lerp(a, b, t):
+                return int(a + (b - a) * t)
+
+            low = (245, 233, 184)   # light sand
+            high = (155, 22, 22)    # deep red
+
+            gdp_colors = {}
+            for pid in range(max_pid + 1):
+                v = metric.get(pid, 0.0)
+                if v <= 0:
+                    gdp_colors[pid] = (120, 120, 120)
+                    continue
+
+                t = (math.log10(v) - log_min) / span
+                gdp_colors[pid] = (
+                    lerp(low[0], high[0], t),
+                    lerp(low[1], high[1], t),
+                    lerp(low[2], high[2], t),
+                )
+
+    if gdp_colors is None:
+        gdp_colors = {
+            pid: (random.randint(120, 255), 50, 50)
+            for pid in range(max_pid + 1)
+        }
+
+    export_theme_map(id_map, bounds, sea_regions, "GDPMap.png", gdp_colors)
     export_mode_folder("GDP", "GDPMap", "Gross Domestic Product heatmap")
 
 

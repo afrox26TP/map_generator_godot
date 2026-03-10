@@ -1,2 +1,2 @@
 mode=Population
-map=PopulationMap_1773183353.png
+map=PopulationMap.png

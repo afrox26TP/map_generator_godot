@@ -1,2 +1,2 @@
 mode=Ideology
-map=IdeologyMap_1773183356.png
+map=IdeologyMap.png

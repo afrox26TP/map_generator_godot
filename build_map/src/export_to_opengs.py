@@ -12,6 +12,7 @@ from export_theme_map import (
     export_ideology_map,
 )
 from import_population import generate_population_dataset
+from import_gdp import generate_gdp_dataset
 
 
 # --------------------------------------------------------
@@ -245,6 +246,18 @@ def write_population_txt(rows, debug_rows, path):
             )
 
 
+def write_gdp_txt(rows, path):
+    with open(path, "w", encoding="utf-8") as f:
+        f.write("id;gdp;gdp_per_capita;gdp_source;gdp_year\n")
+        for r in rows:
+            pid = int(r.get("province_id") or 0)
+            gdp_val = float(r.get("gdp") or 0.0)
+            gdp_pc = float(r.get("gdp_per_capita") or 0.0)
+            source = str(r.get("gdp_source") or "")
+            year = r.get("gdp_year") or ""
+            f.write(f"{pid};{gdp_val:.2f};{gdp_pc:.6f};{source};{year}\n")
+
+
 def export_population_lookup_json(land, province_colors, rows, path):
     """
     Export a Godot-ready lookup file:
@@ -342,8 +355,18 @@ def run_export(land, sea_regions):
         if land.loc[pid].geometry.area > 0
     }
 
+    print("[EXPORT] GDP CSV + map colors...")
+    gdp_values, gdp_rows, gdp_missing = generate_gdp_dataset(
+        land,
+        population=pop_values,
+        out_path=os.path.join(OUT, "GDP.csv"),
+    )
+    write_gdp_txt(gdp_rows, os.path.join(OUT, "GDP.txt"))
+    if gdp_missing:
+        print(f"[WARN] GDP missing for {len(gdp_missing)} countries (GDP set to 0 there).")
+
     print("[EXPORT] GDP Map...")
-    export_gdp_map(id_map, sea_regions, bounds, max_pid=max_pid)
+    export_gdp_map(id_map, sea_regions, bounds, gdp=gdp_values, max_pid=max_pid)
 
     print("[EXPORT] Population Map...")
     export_population_map(
