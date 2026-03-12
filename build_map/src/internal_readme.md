@@ -8,7 +8,9 @@ Projekt map_generator_godot je Python nástroj, který generuje veškeré mapov�
 
 ProvinceMap.png – každá provincie má unikátní RGB, beze ztráty.
 
-ProvinceMask.png – mapování pixelů → province ID.
+ProvinceIDMask.png – mapování pixelů -> province ID (RGB = zakodovane ID).
+
+ProvinceMask.png – kompatibilni alias stejne ID masky pro starsi loadery.
 
 PoliticalMap.png – barevná mapa států.
 
@@ -102,13 +104,15 @@ Vytvoří se 3D LUT (256×256×256) mapující RGB → province ID.
 
 Výstup:
 
-ProvinceMask.png – každý pixel obsahuje ID provincie zakódované jako:
+ProvinceIDMask.png (a kompatibilní ProvinceMask.png) – každý pixel obsahuje ID provincie zakódované jako:
 
-R = ID % 256
+R = ID & 255
 
-G = ID // 256
+G = (ID >> 8) & 255
 
-B = 0
+B = (ID >> 16) & 255
+
+Pozn.: morske pixely zustavaji barvou SEA_COLOR, aby se nepletly s validnimi pevninskymi ID.
 
 id_map – numpy 2D array (H×W) s ID.
 
@@ -222,6 +226,7 @@ ne_10m_admin_1_states_provinces.shp	hlavní zdroj administrativních provincií
 📌 4. Výstupní struktura projektu
 opengs_export/
    ProvinceMap.png
+   ProvinceIDMask.png
    ProvinceMask.png
    PoliticalMap.png
    Provinces.txt
@@ -247,7 +252,7 @@ Vše je 100% kompatibilní s Godot loaderem, který využívá:
 
 ProvinceMap → identifikace kliků
 
-ProvinceMask → rychlé lookupy
+ProvinceIDMask / ProvinceMask → rychlé lookupy
 
 PoliticalMap → UI
 

@@ -98,6 +98,20 @@ def export_province_map(land, sea_regions):
 # --------------------------------------------------------
 # EXPORT ID MAP
 # --------------------------------------------------------
+def encode_province_id_rgb(pid):
+    pid_i = int(pid)
+    if pid_i < 0:
+        raise ValueError("Province ID must be non-negative.")
+    if pid_i > 0xFFFFFF:
+        raise ValueError("Province ID exceeds 24-bit RGB encoding limit (16777215).")
+
+    return (
+        pid_i & 0xFF,
+        (pid_i >> 8) & 0xFF,
+        (pid_i >> 16) & 0xFF,
+    )
+
+
 def export_id_map(province_colors):
 
     img = Image.open(os.path.join(OUT, "ProvinceMap.png")).convert("RGB")
@@ -117,9 +131,15 @@ def export_id_map(province_colors):
             r, g, b = arr[y, x]
             id_map[y, x] = lut[r, g, b]
 
-    # Mask output
-    mask = Image.new("RGB", (w, h))
-    px = mask.load()
+    max_pid = int(id_map.max())
+    if max_pid > 0xFFFFFF:
+        raise ValueError(
+            f"Province ID {max_pid} cannot be represented in 24-bit RGB mask."
+        )
+
+    # ID mask output (RGB encodes province ID directly).
+    id_mask = Image.new("RGB", (w, h))
+    px = id_mask.load()
 
     for y in range(h):
         for x in range(w):
@@ -127,9 +147,11 @@ def export_id_map(province_colors):
             if pid < 0:
                 px[x, y] = SEA_COLOR
             else:
-                px[x, y] = (pid % 256, pid // 256, 0)
+                px[x, y] = encode_province_id_rgb(pid)
 
-    mask.save(os.path.join(OUT, "ProvinceMask.png"))
+    id_mask.save(os.path.join(OUT, "ProvinceIDMask.png"))
+    # Backward-compatible alias used by existing runtime tools.
+    id_mask.save(os.path.join(OUT, "ProvinceMask.png"))
     return id_map
 
 
@@ -357,7 +379,7 @@ def run_export(land, sea_regions):
     print("[EXPORT] ProvinceMap...")
     province_colors, bounds = export_province_map(land, sea_regions)
 
-    print("[EXPORT] ProvinceMask...")
+    print("[EXPORT] ProvinceIDMask...")
     id_map = export_id_map(province_colors)
 
     print("[EXPORT] PoliticalMap...")
