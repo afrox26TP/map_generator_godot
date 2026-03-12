@@ -1,8 +1,8 @@
-✅ INTERNAL README — map_generator_godot
+ INTERNAL README — map_generator_godot
 
 (TENTO README JE URČENÝ PRO x Slouží jako technický popis celého projektu, pipeline a datových struktur.)
 
-📌 1. Co projekt dělá
+ 1. Co projekt dělá
 
 Projekt map_generator_godot je Python nástroj, který generuje veškeré mapové podklady pro Godot grand-strategy hru:
 
@@ -22,7 +22,7 @@ Modes/ pro jednotlivé typy map (GDP, Ideology, Population).
 
 Projekt používá Natural Earth admin 1 provinces, reprojekci do EPSG 3035, a kombinuje je s vlastním řezem Ruska, přidáním ostrovů a generovanými mořskými regiony (Voronoi).
 
-📌 2. Celý pipeline (krok za krokem)
+ 2. Celý pipeline (krok za krokem)
 STEP 1 — Load + filter Europe
 
 File: build_map.py
@@ -128,7 +128,7 @@ Výstup: PoliticalMap.png
 
 Generuje nejdůležitější výstup:
 
-id;R;G;B;type;state;owner;controller;x;y
+id;R;G;B;type;state;owner;controller;x;y;province_name;country_name;population;gdp;gdp_per_capita
 
 
 Kde:
@@ -140,6 +140,16 @@ R,G,B = unikátní barva z ProvinceMap
 type = land/sea
 
 x,y = centroid provincie v pixelových souřadnicích
+
+Za původními sloupci jsou přidaná runtime data pro Godot:
+
+province_name = název provincie
+
+country_name = čitelný název státu
+
+population = populace provincie
+
+gdp + gdp_per_capita = ekonomická data provincie pro gameplay/UI
 
 Výstup: Provinces.txt
 

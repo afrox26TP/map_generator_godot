@@ -174,12 +174,41 @@ def export_state_files(land):
 # --------------------------------------------------------
 # EXPORT PROVINCES.TXT
 # --------------------------------------------------------
-def export_provinces_txt(province_colors, id_map, land):
+def _sanitize_txt_field(value):
+    text = "" if value is None else str(value)
+    return text.replace(";", ",").replace("\r", " ").replace("\n", " ").strip()
+
+
+def _build_population_export_lookup(rows):
+    lookup = {}
+    for row in rows or []:
+        pid = int(row.get("province_id") or 0)
+        lookup[pid] = {
+            "country_name": _sanitize_txt_field(row.get("country") or row.get("country_name") or ""),
+            "population": int(row.get("population") or 0),
+        }
+    return lookup
+
+
+def _build_gdp_export_lookup(rows):
+    lookup = {}
+    for row in rows or []:
+        pid = int(row.get("province_id") or 0)
+        lookup[pid] = {
+            "gdp": float(row.get("gdp") or 0.0),
+            "gdp_per_capita": float(row.get("gdp_per_capita") or 0.0),
+        }
+    return lookup
+
+
+def export_provinces_txt(province_colors, id_map, land, population_rows=None, gdp_rows=None):
 
     out_path = os.path.join(OUT, "Provinces.txt")
     h, w = id_map.shape
 
     pid_to_color = {pid: col for col, pid in province_colors.items()}
+    population_by_pid = _build_population_export_lookup(population_rows)
+    gdp_by_pid = _build_gdp_export_lookup(gdp_rows)
     rows = []
 
     max_pid = int(id_map.max())
@@ -187,12 +216,21 @@ def export_provinces_txt(province_colors, id_map, land):
     for pid in range(max_pid + 1):
         if pid in pid_to_color:
             r, g, b = pid_to_color[pid]
-            st = land.loc[pid]["country"]
+            land_row = land.loc[pid]
+            st = land_row["country"]
             typ = "land"
             owner = st
             controller = st
         else:
             continue
+
+        province_name = _sanitize_txt_field(land_row.get("name_en") or land_row.get("name") or "")
+        population_entry = population_by_pid.get(pid, {})
+        gdp_entry = gdp_by_pid.get(pid, {})
+        country_name = population_entry.get("country_name") or _sanitize_txt_field(land_row.get("admin") or st)
+        population = int(population_entry.get("population") or 0)
+        gdp_value = float(gdp_entry.get("gdp") or 0.0)
+        gdp_per_capita = float(gdp_entry.get("gdp_per_capita") or 0.0)
 
         ys, xs = np.where(id_map == pid)
         if len(xs) == 0:
@@ -201,7 +239,10 @@ def export_provinces_txt(province_colors, id_map, land):
             cx = int(xs.mean())
             cy = int(ys.mean())
 
-        rows.append(f"{pid};{r};{g};{b};{typ};{st};{owner};{controller};{cx};{cy}")
+        rows.append(
+            f"{pid};{r};{g};{b};{typ};{st};{owner};{controller};{cx};{cy};"
+            f"{province_name};{country_name};{population};{gdp_value:.2f};{gdp_per_capita:.6f}"
+        )
 
     # SEA detection
     used_colors = set(pid_to_color.values())
@@ -220,10 +261,16 @@ def export_provinces_txt(province_colors, id_map, land):
     for idx, (col, _) in enumerate(sea_seen.items()):
         r, g, b = col
         sea_id = base_sea_id + idx
-        rows.append(f"{sea_id};{r};{g};{b};sea;SEA;SEA;SEA;0;0")
+        rows.append(
+            f"{sea_id};{r};{g};{b};sea;SEA;SEA;SEA;0;0;"
+            f";SEA;0;0.00;0.000000"
+        )
 
-    with open(out_path, "w") as f:
-        f.write("id;R;G;B;type;state;owner;controller;x;y\n")
+    with open(out_path, "w", encoding="utf-8") as f:
+        f.write(
+            "id;R;G;B;type;state;owner;controller;x;y;"
+            "province_name;country_name;population;gdp;gdp_per_capita\n"
+        )
         for r in rows:
             f.write(r + "\n")
 
@@ -316,9 +363,6 @@ def run_export(land, sea_regions):
     print("[EXPORT] PoliticalMap...")
     export_political_map(id_map, land, sea_regions, bounds)
 
-    print("[EXPORT] Provinces.txt...")
-    export_provinces_txt(province_colors, id_map, land)
-
     max_pid = int(id_map.max())
     print(f"[DEBUG] MAX PID DETECTED = {max_pid}")
 
@@ -364,6 +408,15 @@ def run_export(land, sea_regions):
     write_gdp_txt(gdp_rows, os.path.join(OUT, "GDP.txt"))
     if gdp_missing:
         print(f"[WARN] GDP missing for {len(gdp_missing)} countries (GDP set to 0 there).")
+
+    print("[EXPORT] Provinces.txt...")
+    export_provinces_txt(
+        province_colors,
+        id_map,
+        land,
+        population_rows=rows,
+        gdp_rows=gdp_rows,
+    )
 
     print("[EXPORT] GDP Map...")
     export_gdp_map(id_map, sea_regions, bounds, gdp=gdp_values, max_pid=max_pid)
