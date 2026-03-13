@@ -112,7 +112,8 @@ G = (ID >> 8) & 255
 
 B = (ID >> 16) & 255
 
-Pozn.: morske pixely zustavaji barvou SEA_COLOR, aby se nepletly s validnimi pevninskymi ID.
+Pozn.: morske pixely uz jsou take indexovane (dostanou vlastni sea ID),
+a v ProvinceIDMask/ProvinceMask se ukladaji stejnym 24-bit RGB kodovanim jako pevnina.
 
 id_map – numpy 2D array (H×W) s ID.
 

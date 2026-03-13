@@ -124,17 +124,35 @@ def export_id_map(province_colors):
         r, g, b = col
         lut[r, g, b] = pid
 
-    id_map = np.zeros((h, w), dtype=np.int32)
+    id_map = np.full((h, w), -1, dtype=np.int32)
+    sea_colors_in_order = []
+    sea_seen = set()
 
     for y in range(h):
         for x in range(w):
             r, g, b = arr[y, x]
-            id_map[y, x] = lut[r, g, b]
+            pid = lut[r, g, b]
+            id_map[y, x] = pid
+            if pid < 0:
+                col = (int(r), int(g), int(b))
+                if col not in sea_seen:
+                    sea_seen.add(col)
+                    sea_colors_in_order.append(col)
 
     max_pid = int(id_map.max())
-    if max_pid > 0xFFFFFF:
+    base_sea_id = max_pid + 1
+    sea_color_to_id = {
+        col: base_sea_id + idx
+        for idx, col in enumerate(sea_colors_in_order)
+    }
+
+    max_encoded_id = max(
+        max_pid,
+        max(sea_color_to_id.values()) if sea_color_to_id else -1,
+    )
+    if max_encoded_id > 0xFFFFFF:
         raise ValueError(
-            f"Province ID {max_pid} cannot be represented in 24-bit RGB mask."
+            f"Province ID {max_encoded_id} cannot be represented in 24-bit RGB mask."
         )
 
     # ID mask output (RGB encodes province ID directly).
@@ -145,14 +163,15 @@ def export_id_map(province_colors):
         for x in range(w):
             pid = id_map[y, x]
             if pid < 0:
-                px[x, y] = SEA_COLOR
+                col = tuple(int(v) for v in arr[y, x])
+                px[x, y] = encode_province_id_rgb(sea_color_to_id[col])
             else:
                 px[x, y] = encode_province_id_rgb(pid)
 
     id_mask.save(os.path.join(OUT, "ProvinceIDMask.png"))
     # Backward-compatible alias used by existing runtime tools.
     id_mask.save(os.path.join(OUT, "ProvinceMask.png"))
-    return id_map
+    return id_map, sea_color_to_id
 
 
 # --------------------------------------------------------
@@ -223,7 +242,14 @@ def _build_gdp_export_lookup(rows):
     return lookup
 
 
-def export_provinces_txt(province_colors, id_map, land, population_rows=None, gdp_rows=None):
+def export_provinces_txt(
+    province_colors,
+    id_map,
+    land,
+    population_rows=None,
+    gdp_rows=None,
+    sea_color_to_id=None,
+):
 
     out_path = os.path.join(OUT, "Provinces.txt")
     h, w = id_map.shape
@@ -271,18 +297,24 @@ def export_provinces_txt(province_colors, id_map, land, population_rows=None, gd
     img = Image.open(os.path.join(OUT, "ProvinceMap.png")).convert("RGB")
     arr = np.array(img)
 
-    sea_seen = {}
-    for y in range(arr.shape[0]):
-        for x in range(arr.shape[1]):
-            col = tuple(arr[y, x])
-            if col not in used_colors:
-                if col not in sea_seen:
+    if sea_color_to_id is None:
+        sea_seen = {}
+        for y in range(arr.shape[0]):
+            for x in range(arr.shape[1]):
+                col = tuple(int(v) for v in arr[y, x])
+                if col not in used_colors and col not in sea_seen:
                     sea_seen[col] = len(sea_seen)
 
-    base_sea_id = max_pid + 1
-    for idx, (col, _) in enumerate(sea_seen.items()):
+        base_sea_id = max_pid + 1
+        sea_items = [
+            (col, base_sea_id + idx)
+            for idx, col in enumerate(sea_seen.keys())
+        ]
+    else:
+        sea_items = sorted(sea_color_to_id.items(), key=lambda item: item[1])
+
+    for col, sea_id in sea_items:
         r, g, b = col
-        sea_id = base_sea_id + idx
         rows.append(
             f"{sea_id};{r};{g};{b};sea;SEA;SEA;SEA;0;0;"
             f";SEA;0;0.00;0.000000"
@@ -380,7 +412,7 @@ def run_export(land, sea_regions):
     province_colors, bounds = export_province_map(land, sea_regions)
 
     print("[EXPORT] ProvinceIDMask...")
-    id_map = export_id_map(province_colors)
+    id_map, sea_color_to_id = export_id_map(province_colors)
 
     print("[EXPORT] PoliticalMap...")
     export_political_map(id_map, land, sea_regions, bounds)
@@ -438,6 +470,7 @@ def run_export(land, sea_regions):
         land,
         population_rows=rows,
         gdp_rows=gdp_rows,
+        sea_color_to_id=sea_color_to_id,
     )
 
     print("[EXPORT] GDP Map...")
