@@ -220,6 +220,41 @@ def _sanitize_txt_field(value):
     return text.replace(";", ",").replace("\r", " ").replace("\n", " ").strip()
 
 
+def _normalize_flag(value):
+    if value is None:
+        return 0
+    if isinstance(value, (bool, np.bool_)):
+        return int(value)
+    if isinstance(value, (int, np.integer)):
+        return 1 if int(value) != 0 else 0
+    if isinstance(value, (float, np.floating)):
+        return 1 if float(value) > 0 else 0
+
+    text = str(value).strip().lower()
+    if text in {"", "none", "nan", "-99", "0", "false", "no"}:
+        return 0
+    if text in {"1", "true", "yes"}:
+        return 1
+
+    try:
+        return 1 if float(text) > 0 else 0
+    except ValueError:
+        return 0
+
+
+def _row_is_capital(land_row):
+    explicit_flag = _normalize_flag(land_row.get("is_capital_province", 0))
+    if explicit_flag:
+        return 1
+
+    for key in ("type_en", "type"):
+        text = str(land_row.get(key) or "")
+        if "capital" in text.lower():
+            return 1
+
+    return 0
+
+
 def _build_population_export_lookup(rows):
     lookup = {}
     for row in rows or []:
@@ -279,6 +314,7 @@ def export_provinces_txt(
         population = int(population_entry.get("population") or 0)
         gdp_value = float(gdp_entry.get("gdp") or 0.0)
         gdp_per_capita = float(gdp_entry.get("gdp_per_capita") or 0.0)
+        is_capital = _row_is_capital(land_row)
 
         ys, xs = np.where(id_map == pid)
         if len(xs) == 0:
@@ -289,7 +325,7 @@ def export_provinces_txt(
 
         rows.append(
             f"{pid};{r};{g};{b};{typ};{st};{owner};{controller};{cx};{cy};"
-            f"{province_name};{country_name};{population};{gdp_value:.2f};{gdp_per_capita:.6f}"
+            f"{province_name};{country_name};{population};{gdp_value:.2f};{gdp_per_capita:.6f};{is_capital}"
         )
 
     # SEA detection
@@ -317,13 +353,13 @@ def export_provinces_txt(
         r, g, b = col
         rows.append(
             f"{sea_id};{r};{g};{b};sea;SEA;SEA;SEA;0;0;"
-            f";SEA;0;0.00;0.000000"
+            f";SEA;0;0.00;0.000000;0"
         )
 
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(
             "id;R;G;B;type;state;owner;controller;x;y;"
-            "province_name;country_name;population;gdp;gdp_per_capita\n"
+            "province_name;country_name;population;gdp;gdp_per_capita;is_capital\n"
         )
         for r in rows:
             f.write(r + "\n")

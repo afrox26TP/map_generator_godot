@@ -58,7 +58,23 @@ EUROPE_COUNTRIES = [
 admin["country"] = admin["adm0_a3"]
 admin = admin[admin["country"].isin(EUROPE_COUNTRIES)].reset_index(drop=True)
 
+
+def mark_capital_provinces(gdf):
+    gdf = gdf.copy()
+    type_en = gdf.get("type_en", pd.Series("", index=gdf.index)).fillna("").astype(str)
+    type_raw = gdf.get("type", pd.Series("", index=gdf.index)).fillna("").astype(str)
+    capital_mask = (
+        type_en.str.contains("capital", case=False, regex=False)
+        | type_raw.str.contains("capital", case=False, regex=False)
+    )
+    gdf["is_capital_province"] = capital_mask.astype(int)
+    return gdf
+
+
+admin = mark_capital_provinces(admin)
+
 debug(f"Regions loaded after country filter: {len(admin)}")
+debug(f"Capital provinces tagged: {int(admin['is_capital_province'].sum())}")
 
 # -----------------------------
 # FIX: Cut RUSSIA to EUROPE part
@@ -125,6 +141,8 @@ MIN_AREA_ABS = 1_000_000_000   # cokoliv menší než 10M m² se sloučí
 
 def merge_small_absolute(gdf):
     gdf = gdf.copy()
+    if "is_capital_province" not in gdf.columns:
+        gdf["is_capital_province"] = 0
     gdf["area"] = gdf.geometry.area
 
     merged = []
@@ -150,8 +168,13 @@ def merge_small_absolute(gdf):
             # merge with nearest polygon
             nearest_idx = candidates.distance(target.geometry).sort_values().index[0]
             merged_geom = target.geometry.union(group.loc[nearest_idx].geometry)
+            merged_capital_flag = int(
+                bool(group.loc[nearest_idx, "is_capital_province"])
+                or bool(target.get("is_capital_province", 0))
+            )
 
             group.loc[nearest_idx, "geometry"] = merged_geom
+            group.loc[nearest_idx, "is_capital_province"] = merged_capital_flag
             group = group.drop(idx)
             group["area"] = group.geometry.area
 

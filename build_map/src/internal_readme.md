@@ -133,7 +133,7 @@ Výstup: PoliticalMap.png
 
 Generuje nejdůležitější výstup:
 
-id;R;G;B;type;state;owner;controller;x;y;province_name;country_name;population;gdp;gdp_per_capita
+id;R;G;B;type;state;owner;controller;x;y;province_name;country_name;population;gdp;gdp_per_capita;is_capital
 
 
 Kde:
@@ -155,6 +155,8 @@ country_name = čitelný název státu
 population = populace provincie
 
 gdp + gdp_per_capita = ekonomická data provincie pro gameplay/UI
+
+is_capital = 1 pokud provincie obsahuje (nebo po merge zdědila) hlavní město, jinak 0
 
 Výstup: Provinces.txt
 
