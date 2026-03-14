@@ -242,6 +242,22 @@ def _normalize_flag(value):
         return 0
 
 
+def _clean_optional_text(value):
+    if value is None:
+        return ""
+    text = str(value).strip()
+    if text.lower() in {"", "none", "nan"}:
+        return ""
+    return text
+
+
+def _city_from_woe_label(value):
+    text = _clean_optional_text(value)
+    if not text:
+        return ""
+    return text.split(",", 1)[0].strip()
+
+
 def _row_is_capital(land_row):
     explicit_flag = _normalize_flag(land_row.get("is_capital_province", 0))
     if explicit_flag:
@@ -253,6 +269,63 @@ def _row_is_capital(land_row):
             return 1
 
     return 0
+
+
+def _build_country_capital_lookup(land):
+    lookup = {}
+
+    for _, row in land.iterrows():
+        type_en = str(row.get("type_en") or "")
+        type_raw = str(row.get("type") or "")
+        if "capital" not in type_en.lower() and "capital" not in type_raw.lower():
+            continue
+
+        country = _clean_optional_text(row.get("country"))
+        if not country or country in lookup:
+            continue
+
+        for key in ("capital_city_name", "woe_name"):
+            city = _clean_optional_text(row.get(key))
+            if city:
+                lookup[country] = city
+                break
+
+        if country in lookup:
+            continue
+
+        city = _city_from_woe_label(row.get("woe_label"))
+        if city:
+            lookup[country] = city
+
+    return lookup
+
+
+def _row_capital_city_name(land_row, country_capitals):
+    city = _clean_optional_text(land_row.get("capital_city_name"))
+    if city:
+        return city
+
+    country = _clean_optional_text(land_row.get("country"))
+    if country:
+        city = _clean_optional_text(country_capitals.get(country))
+        if city:
+            return city
+
+    for key in ("woe_name",):
+        city = _clean_optional_text(land_row.get(key))
+        if city:
+            return city
+
+    city = _city_from_woe_label(land_row.get("woe_label"))
+    if city:
+        return city
+
+    for key in ("name_en", "name"):
+        city = _clean_optional_text(land_row.get(key))
+        if city:
+            return city
+
+    return ""
 
 
 def _build_population_export_lookup(rows):
@@ -277,6 +350,88 @@ def _build_gdp_export_lookup(rows):
     return lookup
 
 
+def _rgb_tuple_to_key(color):
+    r, g, b = color
+    return int(r) | (int(g) << 8) | (int(b) << 16)
+
+
+def _build_full_id_map_with_sea(id_map, province_rgb_map, sea_color_to_id):
+    """Return an ID map where sea pixels are replaced by stable sea IDs."""
+    full_map = id_map.astype(np.int32, copy=True)
+    if not sea_color_to_id:
+        return full_map
+
+    sea_mask = full_map < 0
+    if not np.any(sea_mask):
+        return full_map
+
+    key_to_id = {
+        _rgb_tuple_to_key(color): int(sea_id)
+        for color, sea_id in sea_color_to_id.items()
+    }
+    if not key_to_id:
+        return full_map
+
+    map_keys = np.array(sorted(key_to_id.keys()), dtype=np.int64)
+    map_vals = np.array([key_to_id[k] for k in map_keys], dtype=np.int32)
+
+    flat_full = full_map.reshape(-1)
+    flat_sea_mask = sea_mask.reshape(-1)
+    sea_indices = np.flatnonzero(flat_sea_mask)
+    if sea_indices.size == 0:
+        return full_map
+
+    color_keys = (
+        province_rgb_map[..., 0].astype(np.int64)
+        | (province_rgb_map[..., 1].astype(np.int64) << 8)
+        | (province_rgb_map[..., 2].astype(np.int64) << 16)
+    )
+    sea_keys = color_keys.reshape(-1)[sea_indices]
+
+    idx = np.searchsorted(map_keys, sea_keys)
+    in_range = idx < map_keys.size
+    if np.any(in_range):
+        in_range_idx = idx[in_range]
+        matched = map_keys[in_range_idx] == sea_keys[in_range]
+        if np.any(matched):
+            target_indices = sea_indices[in_range][matched]
+            flat_full[target_indices] = map_vals[in_range_idx[matched]]
+
+    return full_map
+
+
+def _build_neighbor_lookup(full_id_map):
+    """Build undirected province adjacency from a full ID map."""
+    neighbors = {}
+
+    def register_pairs(a, b):
+        diff = a != b
+        if not np.any(diff):
+            return
+
+        left = a[diff].astype(np.int64)
+        right = b[diff].astype(np.int64)
+        valid = (left >= 0) & (right >= 0)
+        if not np.any(valid):
+            return
+
+        left = left[valid]
+        right = right[valid]
+        p_min = np.minimum(left, right)
+        p_max = np.maximum(left, right)
+        pairs = np.unique(np.column_stack((p_min, p_max)), axis=0)
+
+        for p1, p2 in pairs:
+            i1 = int(p1)
+            i2 = int(p2)
+            neighbors.setdefault(i1, set()).add(i2)
+            neighbors.setdefault(i2, set()).add(i1)
+
+    register_pairs(full_id_map[:, :-1], full_id_map[:, 1:])
+    register_pairs(full_id_map[:-1, :], full_id_map[1:, :])
+    return {pid: sorted(ids) for pid, ids in neighbors.items()}
+
+
 def export_provinces_txt(
     province_colors,
     id_map,
@@ -293,40 +448,9 @@ def export_provinces_txt(
     population_by_pid = _build_population_export_lookup(population_rows)
     gdp_by_pid = _build_gdp_export_lookup(gdp_rows)
     rows = []
+    country_capitals = _build_country_capital_lookup(land)
 
     max_pid = int(id_map.max())
-
-    for pid in range(max_pid + 1):
-        if pid in pid_to_color:
-            r, g, b = pid_to_color[pid]
-            land_row = land.loc[pid]
-            st = land_row["country"]
-            typ = "land"
-            owner = st
-            controller = st
-        else:
-            continue
-
-        province_name = _sanitize_txt_field(land_row.get("name_en") or land_row.get("name") or "")
-        population_entry = population_by_pid.get(pid, {})
-        gdp_entry = gdp_by_pid.get(pid, {})
-        country_name = population_entry.get("country_name") or _sanitize_txt_field(land_row.get("admin") or st)
-        population = int(population_entry.get("population") or 0)
-        gdp_value = float(gdp_entry.get("gdp") or 0.0)
-        gdp_per_capita = float(gdp_entry.get("gdp_per_capita") or 0.0)
-        is_capital = _row_is_capital(land_row)
-
-        ys, xs = np.where(id_map == pid)
-        if len(xs) == 0:
-            cx, cy = 0, 0
-        else:
-            cx = int(xs.mean())
-            cy = int(ys.mean())
-
-        rows.append(
-            f"{pid};{r};{g};{b};{typ};{st};{owner};{controller};{cx};{cy};"
-            f"{province_name};{country_name};{population};{gdp_value:.2f};{gdp_per_capita:.6f};{is_capital}"
-        )
 
     # SEA detection
     used_colors = set(pid_to_color.values())
@@ -349,17 +473,63 @@ def export_provinces_txt(
     else:
         sea_items = sorted(sea_color_to_id.items(), key=lambda item: item[1])
 
+    resolved_sea_color_to_id = {
+        tuple(int(v) for v in col): int(sea_id)
+        for col, sea_id in sea_items
+    }
+    full_id_map = _build_full_id_map_with_sea(id_map, arr, resolved_sea_color_to_id)
+    neighbors_by_pid = _build_neighbor_lookup(full_id_map)
+
+    for pid in range(max_pid + 1):
+        if pid in pid_to_color:
+            r, g, b = pid_to_color[pid]
+            land_row = land.loc[pid]
+            st = land_row["country"]
+            typ = "land"
+            owner = st
+            controller = st
+        else:
+            continue
+
+        province_name = _sanitize_txt_field(land_row.get("name_en") or land_row.get("name") or "")
+        population_entry = population_by_pid.get(pid, {})
+        gdp_entry = gdp_by_pid.get(pid, {})
+        country_name = population_entry.get("country_name") or _sanitize_txt_field(land_row.get("admin") or st)
+        population = int(population_entry.get("population") or 0)
+        gdp_value = float(gdp_entry.get("gdp") or 0.0)
+        gdp_per_capita = float(gdp_entry.get("gdp_per_capita") or 0.0)
+        is_capital = _row_is_capital(land_row)
+        capital_city = ""
+        if is_capital:
+            capital_city = _sanitize_txt_field(_row_capital_city_name(land_row, country_capitals))
+        neighbor_ids = ",".join(str(n) for n in neighbors_by_pid.get(int(pid), []))
+
+        ys, xs = np.where(id_map == pid)
+        if len(xs) == 0:
+            cx, cy = 0, 0
+        else:
+            cx = int(xs.mean())
+            cy = int(ys.mean())
+
+        rows.append(
+            f"{pid};{r};{g};{b};{typ};{st};{owner};{controller};{cx};{cy};"
+            f"{province_name};{country_name};{population};{gdp_value:.2f};{gdp_per_capita:.6f};"
+            f"{is_capital};{capital_city};{neighbor_ids}"
+        )
+
     for col, sea_id in sea_items:
         r, g, b = col
+        neighbor_ids = ",".join(str(n) for n in neighbors_by_pid.get(int(sea_id), []))
         rows.append(
             f"{sea_id};{r};{g};{b};sea;SEA;SEA;SEA;0;0;"
-            f";SEA;0;0.00;0.000000;0"
+            f";SEA;0;0.00;0.000000;0;;{neighbor_ids}"
         )
 
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(
             "id;R;G;B;type;state;owner;controller;x;y;"
-            "province_name;country_name;population;gdp;gdp_per_capita;is_capital\n"
+            "province_name;country_name;population;gdp;gdp_per_capita;"
+            "is_capital;capital_city;neighbors\n"
         )
         for r in rows:
             f.write(r + "\n")

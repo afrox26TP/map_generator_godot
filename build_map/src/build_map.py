@@ -59,6 +59,28 @@ admin["country"] = admin["adm0_a3"]
 admin = admin[admin["country"].isin(EUROPE_COUNTRIES)].reset_index(drop=True)
 
 
+def _clean_optional_text(value):
+    if value is None:
+        return ""
+    text = str(value).strip()
+    if text.lower() in {"", "nan", "none"}:
+        return ""
+    return text
+
+
+def _extract_capital_city_name(row):
+    for key in ("capital_city_name", "woe_name", "name_en", "name"):
+        text = _clean_optional_text(row.get(key))
+        if text:
+            return text
+
+    label = _clean_optional_text(row.get("woe_label"))
+    if label:
+        return label.split(",", 1)[0].strip()
+
+    return ""
+
+
 def mark_capital_provinces(gdf):
     gdf = gdf.copy()
     type_en = gdf.get("type_en", pd.Series("", index=gdf.index)).fillna("").astype(str)
@@ -68,6 +90,12 @@ def mark_capital_provinces(gdf):
         | type_raw.str.contains("capital", case=False, regex=False)
     )
     gdf["is_capital_province"] = capital_mask.astype(int)
+    gdf["capital_city_name"] = ""
+    if capital_mask.any():
+        gdf.loc[capital_mask, "capital_city_name"] = gdf.loc[capital_mask].apply(
+            _extract_capital_city_name,
+            axis=1,
+        )
     return gdf
 
 
@@ -143,6 +171,8 @@ def merge_small_absolute(gdf):
     gdf = gdf.copy()
     if "is_capital_province" not in gdf.columns:
         gdf["is_capital_province"] = 0
+    if "capital_city_name" not in gdf.columns:
+        gdf["capital_city_name"] = ""
     gdf["area"] = gdf.geometry.area
 
     merged = []
@@ -172,9 +202,15 @@ def merge_small_absolute(gdf):
                 bool(group.loc[nearest_idx, "is_capital_province"])
                 or bool(target.get("is_capital_province", 0))
             )
+            existing_capital_city = _clean_optional_text(
+                group.loc[nearest_idx].get("capital_city_name", "")
+            )
+            target_capital_city = _clean_optional_text(target.get("capital_city_name", ""))
+            merged_capital_city = existing_capital_city or target_capital_city
 
             group.loc[nearest_idx, "geometry"] = merged_geom
             group.loc[nearest_idx, "is_capital_province"] = merged_capital_flag
+            group.loc[nearest_idx, "capital_city_name"] = merged_capital_city
             group = group.drop(idx)
             group["area"] = group.geometry.area
 
