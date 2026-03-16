@@ -4,6 +4,8 @@ import random
 import math
 import shutil
 import time
+import re
+import unicodedata
 from PIL import Image, ImageDraw
 
 from export_shared import EXPORT_SIZE, SEA_COLOR, OUTLINE_COLOR, OUT, draw_voronoi_outline
@@ -244,11 +246,61 @@ def export_population_map(
     export_mode_folder("Population", "PopulationMap", "Population map")
 
 
-def export_ideology_map(id_map, sea_regions, bounds, max_pid=None):
+IDEOLOGY_COLORS = {
+    "demokracie": (64, 122, 205),
+    "kralovstvi": (212, 175, 55),
+    "autokracie": (186, 62, 62),
+    "unknown": (120, 120, 120),
+}
+
+
+def _normalize_ideology_label(value):
+    if value is None:
+        return "unknown"
+
+    text = str(value).strip().lower()
+    if not text:
+        return "unknown"
+
+    text = unicodedata.normalize("NFKD", text)
+    text = "".join(ch for ch in text if not unicodedata.combining(ch))
+    text = re.sub(r"[^a-z0-9]+", " ", text).strip()
+
+    if not text:
+        return "unknown"
+    if text in {"demokracie", "democracy", "democratic"}:
+        return "demokracie"
+    if text in {"kralovstvi", "monarchy", "kingdom", "constitutional monarchy"}:
+        return "kralovstvi"
+    if text in {"autokracie", "autocracy", "autocratic", "dictatorship"}:
+        return "autokracie"
+
+    if "democr" in text or "demokra" in text:
+        return "demokracie"
+    if "kralov" in text or "monarch" in text or "kingdom" in text:
+        return "kralovstvi"
+    if "autocr" in text or "diktat" in text or "dictat" in text:
+        return "autokracie"
+
+    return "unknown"
+
+
+def export_ideology_map(id_map, sea_regions, bounds, ideology_by_pid=None, max_pid=None):
     max_pid = max_pid if max_pid is not None else int(id_map.max())
-    ideo_values = {
-        pid: (50, 50, random.randint(120, 255))
-        for pid in range(max_pid + 1)
-    }
+
+    if ideology_by_pid:
+        ideo_values = {}
+        for pid in range(max_pid + 1):
+            ideology_key = _normalize_ideology_label(ideology_by_pid.get(pid))
+            ideo_values[pid] = IDEOLOGY_COLORS.get(
+                ideology_key,
+                IDEOLOGY_COLORS["unknown"],
+            )
+    else:
+        ideo_values = {
+            pid: (50, 50, random.randint(120, 255))
+            for pid in range(max_pid + 1)
+        }
+
     export_theme_map(id_map, bounds, sea_regions, "IdeologyMap.png", ideo_values)
-    export_mode_folder("Ideology", "IdeologyMap", "Ideological spectrum map")
+    export_mode_folder("Ideology", "IdeologyMap", "Government type map")

@@ -55,8 +55,65 @@ EUROPE_COUNTRIES = [
     "TUR"
 ]
 
+
+# Country capital fallback points (lon, lat in EPSG:4326).
+# Used when admin1 metadata does not explicitly mark a capital province.
+COUNTRY_CAPITAL_POINTS = {
+    "ALB": ("Tirana", 19.8187, 41.3275),
+    "AND": ("Andorra la Vella", 1.5218, 42.5063),
+    "ARM": ("Yerevan", 44.5152, 40.1872),
+    "AUT": ("Vienna", 16.3738, 48.2082),
+    "AZE": ("Baku", 49.8671, 40.4093),
+    "BEL": ("Brussels", 4.3517, 50.8503),
+    "BGR": ("Sofia", 23.3219, 42.6977),
+    "BIH": ("Sarajevo", 18.4131, 43.8563),
+    "BLR": ("Minsk", 27.5615, 53.9045),
+    "CHE": ("Bern", 7.4474, 46.9480),
+    "CYP": ("Nicosia", 33.3823, 35.1856),
+    "CZE": ("Prague", 14.4378, 50.0755),
+    "DEU": ("Berlin", 13.4050, 52.5200),
+    "DNK": ("Copenhagen", 12.5683, 55.6761),
+    "ESP": ("Madrid", -3.7038, 40.4168),
+    "EST": ("Tallinn", 24.7536, 59.4370),
+    "FIN": ("Helsinki", 24.9384, 60.1699),
+    "FRA": ("Paris", 2.3522, 48.8566),
+    "GBR": ("London", -0.1276, 51.5072),
+    "GEO": ("Tbilisi", 44.8271, 41.7151),
+    "GRC": ("Athens", 23.7275, 37.9838),
+    "HRV": ("Zagreb", 15.9819, 45.8150),
+    "HUN": ("Budapest", 19.0402, 47.4979),
+    "IRL": ("Dublin", -6.2603, 53.3498),
+    "ISL": ("Reykjavik", -21.9426, 64.1466),
+    "ITA": ("Rome", 12.4964, 41.9028),
+    "KOS": ("Pristina", 21.1655, 42.6629),
+    "LIE": ("Vaduz", 9.5215, 47.1410),
+    "LTU": ("Vilnius", 25.2797, 54.6872),
+    "LUX": ("Luxembourg", 6.1319, 49.6116),
+    "LVA": ("Riga", 24.1052, 56.9496),
+    "MDA": ("Chisinau", 28.8638, 47.0105),
+    "MKD": ("Skopje", 21.4316, 41.9973),
+    "MLT": ("Valletta", 14.5146, 35.8989),
+    "MNE": ("Podgorica", 19.2622, 42.4304),
+    "NLD": ("Amsterdam", 4.9041, 52.3676),
+    "NOR": ("Oslo", 10.7522, 59.9139),
+    "POL": ("Warsaw", 21.0122, 52.2297),
+    "PRT": ("Lisbon", -9.1393, 38.7223),
+    "ROU": ("Bucharest", 26.1025, 44.4268),
+    "RUS": ("Moscow", 37.6173, 55.7558),
+    "SMR": ("San Marino", 12.4578, 43.9424),
+    "SRB": ("Belgrade", 20.4573, 44.7872),
+    "SVK": ("Bratislava", 17.1077, 48.1486),
+    "SVN": ("Ljubljana", 14.5058, 46.0569),
+    "SWE": ("Stockholm", 18.0686, 59.3293),
+    "TUR": ("Ankara", 32.8597, 39.9334),
+    "UKR": ("Kyiv", 30.5234, 50.4501),
+}
+
+CAPITAL_POINT_FALLBACK_MAX_DISTANCE_M = 150_000
+
 admin["country"] = admin["adm0_a3"]
 admin = admin[admin["country"].isin(EUROPE_COUNTRIES)].reset_index(drop=True)
+debug(f"Regions loaded after country filter: {len(admin)}")
 
 
 def _clean_optional_text(value):
@@ -96,13 +153,38 @@ def mark_capital_provinces(gdf):
             _extract_capital_city_name,
             axis=1,
         )
+
+    unresolved = []
+    for country, (capital_name, lon, lat) in COUNTRY_CAPITAL_POINTS.items():
+        country_mask = gdf["country"] == country
+        if not country_mask.any():
+            continue
+        if int(gdf.loc[country_mask, "is_capital_province"].sum()) > 0:
+            continue
+
+        group = gdf.loc[country_mask]
+        capital_point = gpd.GeoSeries([Point(lon, lat)], crs=4326).to_crs(gdf.crs).iloc[0]
+
+        contains = group.geometry.contains(capital_point) | group.geometry.touches(capital_point)
+        if contains.any():
+            matches = group[contains]
+            target_idx = matches.geometry.area.idxmin()
+        else:
+            distances = group.geometry.distance(capital_point)
+            target_idx = distances.idxmin()
+            if float(distances.loc[target_idx]) > CAPITAL_POINT_FALLBACK_MAX_DISTANCE_M:
+                unresolved.append(country)
+                continue
+
+        gdf.loc[target_idx, "is_capital_province"] = 1
+        if not _clean_optional_text(gdf.loc[target_idx, "capital_city_name"]):
+            gdf.loc[target_idx, "capital_city_name"] = capital_name
+
+    if unresolved:
+        debug(f"Capital fallback unresolved countries: {', '.join(sorted(unresolved))}")
+
     return gdf
 
-
-admin = mark_capital_provinces(admin)
-
-debug(f"Regions loaded after country filter: {len(admin)}")
-debug(f"Capital provinces tagged: {int(admin['is_capital_province'].sum())}")
 
 # -----------------------------
 # FIX: Cut RUSSIA to EUROPE part
@@ -126,6 +208,10 @@ admin = pd.concat([admin, rus], ignore_index=True)
 # This bounding box keeps Med islands, Cyprus, Iceland, Caucasus
 minx, miny, maxx, maxy = 900000, 1000000, 7000000, 6500000
 admin = admin.cx[minx:maxx, miny:maxy]
+
+# Tag capitals after geographic clipping so exported countries retain a capital row.
+admin = mark_capital_provinces(admin)
+debug(f"Capital provinces tagged: {int(admin['is_capital_province'].sum())}")
 
 debug(f"Final part-1 regions: {len(admin)}")
 debug("PART 1 DONE")

@@ -1,0 +1,928 @@
+province_id;province_name;country_iso3;country_name;ideology;ideology_raw;ideology_source;ideology_year
+0;Dibër;ALB;Albania;demokracie;demokracie;manual_dataset;2024
+1;Kukës;ALB;Albania;demokracie;demokracie;manual_dataset;2024
+2;Korçë;ALB;Albania;demokracie;demokracie;manual_dataset;2024
+3;Elbasan;ALB;Albania;demokracie;demokracie;manual_dataset;2024
+4;Gjirokastër;ALB;Albania;demokracie;demokracie;manual_dataset;2024
+5;Vlorë;ALB;Albania;demokracie;demokracie;manual_dataset;2024
+6;Shkodër;ALB;Albania;demokracie;demokracie;manual_dataset;2024
+7;Fier;ALB;Albania;demokracie;demokracie;manual_dataset;2024
+8;Tirana;ALB;Albania;demokracie;demokracie;manual_dataset;2024
+9;Lezhë;ALB;Albania;demokracie;demokracie;manual_dataset;2024
+10;Berat;ALB;Albania;demokracie;demokracie;manual_dataset;2024
+11;Lower Austria;AUT;Austria;demokracie;demokracie;manual_dataset;2024
+12;Upper Austria;AUT;Austria;demokracie;demokracie;manual_dataset;2024
+13;Burgenland;AUT;Austria;demokracie;demokracie;manual_dataset;2024
+14;Vorarlberg;AUT;Austria;demokracie;demokracie;manual_dataset;2024
+15;Tyrol;AUT;Austria;demokracie;demokracie;manual_dataset;2024
+16;Salzburg;AUT;Austria;demokracie;demokracie;manual_dataset;2024
+17;Carinthia;AUT;Austria;demokracie;demokracie;manual_dataset;2024
+18;Styria;AUT;Austria;demokracie;demokracie;manual_dataset;2024
+19;West Flanders;BEL;Belgium;kralovstvi;kralovstvi;manual_dataset;2024
+20;Hainaut;BEL;Belgium;kralovstvi;kralovstvi;manual_dataset;2024
+21;Namur;BEL;Belgium;kralovstvi;kralovstvi;manual_dataset;2024
+22;Luxembourg;BEL;Belgium;kralovstvi;kralovstvi;manual_dataset;2024
+23;Liège;BEL;Belgium;kralovstvi;kralovstvi;manual_dataset;2024
+24;East Flanders;BEL;Belgium;kralovstvi;kralovstvi;manual_dataset;2024
+25;Antwerp;BEL;Belgium;kralovstvi;kralovstvi;manual_dataset;2024
+26;Limburg;BEL;Belgium;kralovstvi;kralovstvi;manual_dataset;2024
+27;Flemish Brabant;BEL;Belgium;kralovstvi;kralovstvi;manual_dataset;2024
+28;Walloon Brabant;BEL;Belgium;kralovstvi;kralovstvi;manual_dataset;2024
+29;Burgas;BGR;Bulgaria;demokracie;demokracie;manual_dataset;2024
+30;Yambol;BGR;Bulgaria;demokracie;demokracie;manual_dataset;2024
+31;Haskovo;BGR;Bulgaria;demokracie;demokracie;manual_dataset;2024
+32;Vidin;BGR;Bulgaria;demokracie;demokracie;manual_dataset;2024
+33;Pernik;BGR;Bulgaria;demokracie;demokracie;manual_dataset;2024
+34;Sofia;BGR;Bulgaria;demokracie;demokracie;manual_dataset;2024
+35;Montana;BGR;Bulgaria;demokracie;demokracie;manual_dataset;2024
+36;Kyustendil;BGR;Bulgaria;demokracie;demokracie;manual_dataset;2024
+37;Blagoevgrad;BGR;Bulgaria;demokracie;demokracie;manual_dataset;2024
+38;Silistra;BGR;Bulgaria;demokracie;demokracie;manual_dataset;2024
+39;Ruse;BGR;Bulgaria;demokracie;demokracie;manual_dataset;2024
+40;Dobrich;BGR;Bulgaria;demokracie;demokracie;manual_dataset;2024
+41;Vratsa;BGR;Bulgaria;demokracie;demokracie;manual_dataset;2024
+42;Pleven;BGR;Bulgaria;demokracie;demokracie;manual_dataset;2024
+43;Veliko Tarnovo;BGR;Bulgaria;demokracie;demokracie;manual_dataset;2024
+44;Kardzhali;BGR;Bulgaria;demokracie;demokracie;manual_dataset;2024
+45;Smolyan;BGR;Bulgaria;demokracie;demokracie;manual_dataset;2024
+46;Varna;BGR;Bulgaria;demokracie;demokracie;manual_dataset;2024
+47;Plovdiv;BGR;Bulgaria;demokracie;demokracie;manual_dataset;2024
+48;Stara Zagora;BGR;Bulgaria;demokracie;demokracie;manual_dataset;2024
+49;Sliven;BGR;Bulgaria;demokracie;demokracie;manual_dataset;2024
+50;Shumen;BGR;Bulgaria;demokracie;demokracie;manual_dataset;2024
+51;Razgrad;BGR;Bulgaria;demokracie;demokracie;manual_dataset;2024
+52;Targovishte;BGR;Bulgaria;demokracie;demokracie;manual_dataset;2024
+53;Gabrovo;BGR;Bulgaria;demokracie;demokracie;manual_dataset;2024
+54;Pazardzhik;BGR;Bulgaria;demokracie;demokracie;manual_dataset;2024
+55;Lovech;BGR;Bulgaria;demokracie;demokracie;manual_dataset;2024
+56;Sofia;BGR;Bulgaria;demokracie;demokracie;manual_dataset;2024
+57;Herzegovina-Neretva Canton;BIH;Bosnia and Herzegovina;demokracie;demokracie;manual_dataset;2024
+58;Trebinje;BIH;Bosnia and Herzegovina;demokracie;demokracie;manual_dataset;2024
+59;Foča;BIH;Bosnia and Herzegovina;demokracie;demokracie;manual_dataset;2024
+60;Banja Luka;BIH;Bosnia and Herzegovina;demokracie;demokracie;manual_dataset;2024
+61;Una-Sana Canton;BIH;Bosnia and Herzegovina;demokracie;demokracie;manual_dataset;2024
+62;Doboj;BIH;Bosnia and Herzegovina;demokracie;demokracie;manual_dataset;2024
+63;Bijeljina;BIH;Bosnia and Herzegovina;demokracie;demokracie;manual_dataset;2024
+64;Livno;BIH;Bosnia and Herzegovina;demokracie;demokracie;manual_dataset;2024
+65;West Herzegovina Canton;BIH;Bosnia and Herzegovina;demokracie;demokracie;manual_dataset;2024
+66;Vlasenica;BIH;Bosnia and Herzegovina;demokracie;demokracie;manual_dataset;2024
+67;Central Bosnia Canton;BIH;Bosnia and Herzegovina;demokracie;demokracie;manual_dataset;2024
+68;Zenica-Doboj Canton;BIH;Bosnia and Herzegovina;demokracie;demokracie;manual_dataset;2024
+69;Tuzla Canton;BIH;Bosnia and Herzegovina;demokracie;demokracie;manual_dataset;2024
+70;Sarajevo-Romanija;BIH;Bosnia and Herzegovina;demokracie;demokracie;manual_dataset;2024
+71;Sarajevo Canton;BIH;Bosnia and Herzegovina;demokracie;demokracie;manual_dataset;2024
+72;Gomel;BLR;Belarus;autokracie;autokracie;manual_dataset;2024
+73;Brest;BLR;Belarus;autokracie;autokracie;manual_dataset;2024
+74;Vitebsk;BLR;Belarus;autokracie;autokracie;manual_dataset;2024
+75;Grodno;BLR;Belarus;autokracie;autokracie;manual_dataset;2024
+76;Mahilioŭ;BLR;Belarus;autokracie;autokracie;manual_dataset;2024
+77;Minsk;BLR;Belarus;autokracie;autokracie;manual_dataset;2024
+78;Valais;CHE;Switzerland;demokracie;demokracie;manual_dataset;2024
+79;Ticino;CHE;Switzerland;demokracie;demokracie;manual_dataset;2024
+80;Grisons;CHE;Switzerland;demokracie;demokracie;manual_dataset;2024
+81;Thurgau;CHE;Switzerland;demokracie;demokracie;manual_dataset;2024
+82;Zürich;CHE;Switzerland;demokracie;demokracie;manual_dataset;2024
+83;Aargau;CHE;Switzerland;demokracie;demokracie;manual_dataset;2024
+84;St. Gallen;CHE;Switzerland;demokracie;demokracie;manual_dataset;2024
+85;Solothurn;CHE;Switzerland;demokracie;demokracie;manual_dataset;2024
+86;Vaud;CHE;Switzerland;demokracie;demokracie;manual_dataset;2024
+87;Bern;CHE;Switzerland;demokracie;demokracie;manual_dataset;2024
+88;Lucerne;CHE;Switzerland;demokracie;demokracie;manual_dataset;2024
+89;Uri;CHE;Switzerland;demokracie;demokracie;manual_dataset;2024
+90;Fribourg;CHE;Switzerland;demokracie;demokracie;manual_dataset;2024
+91;Famagusta;CYP;Cyprus;demokracie;demokracie;manual_dataset;2024
+92;Nicosia;CYP;Cyprus;demokracie;demokracie;manual_dataset;2024
+93;Limassol;CYP;Cyprus;demokracie;demokracie;manual_dataset;2024
+94;Paphos;CYP;Cyprus;demokracie;demokracie;manual_dataset;2024
+95;Ústí nad Labem;CZE;Czech Republic;demokracie;demokracie;manual_dataset;2024
+96;Liberec;CZE;Czech Republic;demokracie;demokracie;manual_dataset;2024
+97;Karlovy Vary;CZE;Czech Republic;demokracie;demokracie;manual_dataset;2024
+98;Plzeň-;CZE;Czech Republic;demokracie;demokracie;manual_dataset;2024
+99;South Bohemian;CZE;Czech Republic;demokracie;demokracie;manual_dataset;2024
+100;Hradec Králové;CZE;Czech Republic;demokracie;demokracie;manual_dataset;2024
+101;Olomouc;CZE;Czech Republic;demokracie;demokracie;manual_dataset;2024
+102;Pardubice;CZE;Czech Republic;demokracie;demokracie;manual_dataset;2024
+103;Moravian-Silesian;CZE;Czech Republic;demokracie;demokracie;manual_dataset;2024
+104;South Moravian;CZE;Czech Republic;demokracie;demokracie;manual_dataset;2024
+105;Zlín;CZE;Czech Republic;demokracie;demokracie;manual_dataset;2024
+106;Vysočina;CZE;Czech Republic;demokracie;demokracie;manual_dataset;2024
+107;Central Bohemian;CZE;Czech Republic;demokracie;demokracie;manual_dataset;2024
+108;Saxony;DEU;Germany;demokracie;demokracie;manual_dataset;2024
+109;Bavaria;DEU;Germany;demokracie;demokracie;manual_dataset;2024
+110;Rhineland-Palatinate;DEU;Germany;demokracie;demokracie;manual_dataset;2024
+111;Saarland;DEU;Germany;demokracie;demokracie;manual_dataset;2024
+112;Schleswig-Holstein;DEU;Germany;demokracie;demokracie;manual_dataset;2024
+113;Lower Saxony;DEU;Germany;demokracie;demokracie;manual_dataset;2024
+114;North Rhine-Westphalia;DEU;Germany;demokracie;demokracie;manual_dataset;2024
+115;Baden-Württemberg;DEU;Germany;demokracie;demokracie;manual_dataset;2024
+116;Brandenburg;DEU;Germany;demokracie;demokracie;manual_dataset;2024
+117;Mecklenburg-Western Pomerania;DEU;Germany;demokracie;demokracie;manual_dataset;2024
+118;Hesse;DEU;Germany;demokracie;demokracie;manual_dataset;2024
+119;Thuringia;DEU;Germany;demokracie;demokracie;manual_dataset;2024
+120;Saxony-Anhalt;DEU;Germany;demokracie;demokracie;manual_dataset;2024
+121;Southern Denmark;DNK;Denmark;kralovstvi;kralovstvi;manual_dataset;2024
+122;Central Denmark;DNK;Denmark;kralovstvi;kralovstvi;manual_dataset;2024
+123;North Denmark;DNK;Denmark;kralovstvi;kralovstvi;manual_dataset;2024
+124;Zealand;DNK;Denmark;kralovstvi;kralovstvi;manual_dataset;2024
+125;Denmark;DNK;Denmark;kralovstvi;kralovstvi;manual_dataset;2024
+126;Navarre;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+127;Gipuzkoa;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+128;Huesca;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+129;Lleida;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+130;Girona;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+131;Badajoz;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+132;Cádiz;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+133;Ourense;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+134;Cáceres;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+135;Salamanca;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+136;Zamora;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+137;Pontevedra;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+138;Huelva;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+139;Barcelona;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+140;Tarragona;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+141;Castellón;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+142;Valencia;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+143;Alicante;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+144;Murcia;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+145;Almería;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+146;Granada;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+147;Málaga;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+148;Seville;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+149;A Coruña;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+150;Lugo;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+151;Asturias;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+152;Cantabria;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+153;Biscay;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+154;Santa Cruz de Tenerife;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+155;Las Palmas;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+156;Balearic Islands;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+157;Zaragoza;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+158;La Rioja;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+159;Araba / Álava;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+160;Albacete;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+161;Teruel;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+162;Cuenca;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+163;Toledo;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+164;León;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+165;Soria;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+166;Burgos;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+167;Ávila;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+168;Palencia;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+169;Ciudad Real;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+170;Córdoba;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+171;Guadalajara;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+172;Jaén;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+173;Community of Madrid;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+174;Segovia;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+175;Valladolid;ESP;Spain;kralovstvi;kralovstvi;manual_dataset;2024
+176;Viljandi;EST;Estonia;demokracie;demokracie;manual_dataset;2024
+177;Pärnu;EST;Estonia;demokracie;demokracie;manual_dataset;2024
+178;Valga;EST;Estonia;demokracie;demokracie;manual_dataset;2024
+179;Võru;EST;Estonia;demokracie;demokracie;manual_dataset;2024
+180;Ida-Viru;EST;Estonia;demokracie;demokracie;manual_dataset;2024
+181;Põlva;EST;Estonia;demokracie;demokracie;manual_dataset;2024
+182;Tartu;EST;Estonia;demokracie;demokracie;manual_dataset;2024
+183;Jõgeva;EST;Estonia;demokracie;demokracie;manual_dataset;2024
+184;Lääne;EST;Estonia;demokracie;demokracie;manual_dataset;2024
+185;Harju;EST;Estonia;demokracie;demokracie;manual_dataset;2024
+186;Lääne-Viru;EST;Estonia;demokracie;demokracie;manual_dataset;2024
+187;Saare;EST;Estonia;demokracie;demokracie;manual_dataset;2024
+188;Hiiu;EST;Estonia;demokracie;demokracie;manual_dataset;2024
+189;Rapla;EST;Estonia;demokracie;demokracie;manual_dataset;2024
+190;Järva;EST;Estonia;demokracie;demokracie;manual_dataset;2024
+191;Lapland;FIN;Finland;demokracie;demokracie;manual_dataset;2024
+192;Northern Ostrobothnia;FIN;Finland;demokracie;demokracie;manual_dataset;2024
+193;Kainuu;FIN;Finland;demokracie;demokracie;manual_dataset;2024
+194;North Karelia;FIN;Finland;demokracie;demokracie;manual_dataset;2024
+195;South Karelia;FIN;Finland;demokracie;demokracie;manual_dataset;2024
+196;Kymenlaakso;FIN;Finland;demokracie;demokracie;manual_dataset;2024
+197;Uusimaa;FIN;Finland;demokracie;demokracie;manual_dataset;2024
+198;Finland Proper;FIN;Finland;demokracie;demokracie;manual_dataset;2024
+199;Satakunta;FIN;Finland;demokracie;demokracie;manual_dataset;2024
+200;Ostrobothnia;FIN;Finland;demokracie;demokracie;manual_dataset;2024
+201;Central Ostrobothnia;FIN;Finland;demokracie;demokracie;manual_dataset;2024
+202;Northern Savonia;FIN;Finland;demokracie;demokracie;manual_dataset;2024
+203;Southern Savonia;FIN;Finland;demokracie;demokracie;manual_dataset;2024
+204;Central Finland;FIN;Finland;demokracie;demokracie;manual_dataset;2024
+205;Southern Ostrobothnia;FIN;Finland;demokracie;demokracie;manual_dataset;2024
+206;Pirkanmaa;FIN;Finland;demokracie;demokracie;manual_dataset;2024
+207;Tavastia Proper;FIN;Finland;demokracie;demokracie;manual_dataset;2024
+208;Päijänne Tavastia;FIN;Finland;demokracie;demokracie;manual_dataset;2024
+209;Nord;FRA;France;demokracie;demokracie;manual_dataset;2024
+210;Ardennes;FRA;France;demokracie;demokracie;manual_dataset;2024
+211;Aisne;FRA;France;demokracie;demokracie;manual_dataset;2024
+212;Meuse;FRA;France;demokracie;demokracie;manual_dataset;2024
+213;Meurthe-et-Moselle;FRA;France;demokracie;demokracie;manual_dataset;2024
+214;Moselle;FRA;France;demokracie;demokracie;manual_dataset;2024
+215;Alpes-Maritimes;FRA;France;demokracie;demokracie;manual_dataset;2024
+216;Alpes-de-Haute-Provence;FRA;France;demokracie;demokracie;manual_dataset;2024
+217;Hautes-Alpes;FRA;France;demokracie;demokracie;manual_dataset;2024
+218;Savoie;FRA;France;demokracie;demokracie;manual_dataset;2024
+219;Haute-Savoie;FRA;France;demokracie;demokracie;manual_dataset;2024
+220;Pyrenees-Atlantics;FRA;France;demokracie;demokracie;manual_dataset;2024
+221;Haute-Garonne;FRA;France;demokracie;demokracie;manual_dataset;2024
+222;Hautes-Pyrénées;FRA;France;demokracie;demokracie;manual_dataset;2024
+223;Ariège;FRA;France;demokracie;demokracie;manual_dataset;2024
+224;Pyrénées-Orientales;FRA;France;demokracie;demokracie;manual_dataset;2024
+225;Bas-Rhin;FRA;France;demokracie;demokracie;manual_dataset;2024
+226;Haut-Rhin;FRA;France;demokracie;demokracie;manual_dataset;2024
+227;Doubs;FRA;France;demokracie;demokracie;manual_dataset;2024
+228;Ain;FRA;France;demokracie;demokracie;manual_dataset;2024
+229;Jura;FRA;France;demokracie;demokracie;manual_dataset;2024
+230;Var;FRA;France;demokracie;demokracie;manual_dataset;2024
+231;Bouches-du-Rhône;FRA;France;demokracie;demokracie;manual_dataset;2024
+232;Gard;FRA;France;demokracie;demokracie;manual_dataset;2024
+233;Hérault;FRA;France;demokracie;demokracie;manual_dataset;2024
+234;Aude;FRA;France;demokracie;demokracie;manual_dataset;2024
+235;Landes;FRA;France;demokracie;demokracie;manual_dataset;2024
+236;Gironde;FRA;France;demokracie;demokracie;manual_dataset;2024
+237;Charente-Maritime;FRA;France;demokracie;demokracie;manual_dataset;2024
+238;Vendée;FRA;France;demokracie;demokracie;manual_dataset;2024
+239;Loire-Atlantique;FRA;France;demokracie;demokracie;manual_dataset;2024
+240;Morbihan;FRA;France;demokracie;demokracie;manual_dataset;2024
+241;Finistère;FRA;France;demokracie;demokracie;manual_dataset;2024
+242;Côtes-d'Armor;FRA;France;demokracie;demokracie;manual_dataset;2024
+243;Ille-et-Vilaine;FRA;France;demokracie;demokracie;manual_dataset;2024
+244;Manche;FRA;France;demokracie;demokracie;manual_dataset;2024
+245;Calvados;FRA;France;demokracie;demokracie;manual_dataset;2024
+246;Eure;FRA;France;demokracie;demokracie;manual_dataset;2024
+247;Seine-Maritime;FRA;France;demokracie;demokracie;manual_dataset;2024
+248;Somme;FRA;France;demokracie;demokracie;manual_dataset;2024
+249;Pas-de-Calais;FRA;France;demokracie;demokracie;manual_dataset;2024
+250;Haute-Corse;FRA;France;demokracie;demokracie;manual_dataset;2024
+251;Corse-du-Sud;FRA;France;demokracie;demokracie;manual_dataset;2024
+252;Gers;FRA;France;demokracie;demokracie;manual_dataset;2024
+253;Haute-Vienne;FRA;France;demokracie;demokracie;manual_dataset;2024
+254;Corrèze;FRA;France;demokracie;demokracie;manual_dataset;2024
+255;Tarn-et-Garonne;FRA;France;demokracie;demokracie;manual_dataset;2024
+256;Tarn;FRA;France;demokracie;demokracie;manual_dataset;2024
+257;Isère;FRA;France;demokracie;demokracie;manual_dataset;2024
+258;Drôme;FRA;France;demokracie;demokracie;manual_dataset;2024
+259;Aveyron;FRA;France;demokracie;demokracie;manual_dataset;2024
+260;Lot;FRA;France;demokracie;demokracie;manual_dataset;2024
+261;Indre-et-Loire;FRA;France;demokracie;demokracie;manual_dataset;2024
+262;Indre;FRA;France;demokracie;demokracie;manual_dataset;2024
+263;Loir-et-Cher;FRA;France;demokracie;demokracie;manual_dataset;2024
+264;Creuse;FRA;France;demokracie;demokracie;manual_dataset;2024
+265;Mayenne;FRA;France;demokracie;demokracie;manual_dataset;2024
+266;Sarthe;FRA;France;demokracie;demokracie;manual_dataset;2024
+267;Vaucluse;FRA;France;demokracie;demokracie;manual_dataset;2024
+268;Haute-Marne;FRA;France;demokracie;demokracie;manual_dataset;2024
+269;Marne;FRA;France;demokracie;demokracie;manual_dataset;2024
+270;Dordogne;FRA;France;demokracie;demokracie;manual_dataset;2024
+271;Rhône;FRA;France;demokracie;demokracie;manual_dataset;2024
+272;Vosges;FRA;France;demokracie;demokracie;manual_dataset;2024
+273;Ardèche;FRA;France;demokracie;demokracie;manual_dataset;2024
+274;Loire;FRA;France;demokracie;demokracie;manual_dataset;2024
+275;Puy-de-Dôme;FRA;France;demokracie;demokracie;manual_dataset;2024
+276;Allier;FRA;France;demokracie;demokracie;manual_dataset;2024
+277;Loiret;FRA;France;demokracie;demokracie;manual_dataset;2024
+278;Maine-et-Loire;FRA;France;demokracie;demokracie;manual_dataset;2024
+279;Aube;FRA;France;demokracie;demokracie;manual_dataset;2024
+280;Val-d'Oise;FRA;France;demokracie;demokracie;manual_dataset;2024
+281;Yvelines;FRA;France;demokracie;demokracie;manual_dataset;2024
+282;Charente;FRA;France;demokracie;demokracie;manual_dataset;2024
+283;Cher;FRA;France;demokracie;demokracie;manual_dataset;2024
+284;Eure-et-Loir;FRA;France;demokracie;demokracie;manual_dataset;2024
+285;Haute-Loire;FRA;France;demokracie;demokracie;manual_dataset;2024
+286;Cantal;FRA;France;demokracie;demokracie;manual_dataset;2024
+287;Lot-et-Garonne;FRA;France;demokracie;demokracie;manual_dataset;2024
+288;Lozère;FRA;France;demokracie;demokracie;manual_dataset;2024
+289;Nièvre;FRA;France;demokracie;demokracie;manual_dataset;2024
+290;Côte-d’Or;FRA;France;demokracie;demokracie;manual_dataset;2024
+291;Oise;FRA;France;demokracie;demokracie;manual_dataset;2024
+292;Orne;FRA;France;demokracie;demokracie;manual_dataset;2024
+293;Haute-Saône;FRA;France;demokracie;demokracie;manual_dataset;2024
+294;Saône-et-Loire;FRA;France;demokracie;demokracie;manual_dataset;2024
+295;Deux-Sèvres;FRA;France;demokracie;demokracie;manual_dataset;2024
+296;Vienne;FRA;France;demokracie;demokracie;manual_dataset;2024
+297;Yonne;FRA;France;demokracie;demokracie;manual_dataset;2024
+298;Essonne;FRA;France;demokracie;demokracie;manual_dataset;2024
+299;Seine-et-Marne;FRA;France;demokracie;demokracie;manual_dataset;2024
+300;Strabane;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+301;Fermanagh;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+302;Wrexham;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+303;Shropshire;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+304;Powys;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+305;Herefordshire;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+306;Gloucestershire;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+307;Scottish Borders;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+308;Northumberland;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+309;Cumbria;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+310;Dumfries and Galloway;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+311;Stirling;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+312;Durham;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+313;North Yorkshire;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+314;East Riding of Yorkshire;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+315;North East Lincolnshire;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+316;Lincolnshire;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+317;Norfolk;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+318;Suffolk;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+319;Essex;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+320;Kent;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+321;East Sussex;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+322;West Sussex;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+323;Hampshire;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+324;Dorset;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+325;Devon;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+326;Cornwall;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+327;Somerset;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+328;Carmarthenshire;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+329;Pembrokeshire;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+330;Ceredigion;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+331;Gwynedd;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+332;Conwy;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+333;Lancashire;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+334;South Ayrshire;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+335;Argyll and Bute;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+336;Highland;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+337;Moray;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+338;Aberdeenshire;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+339;Angus;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+340;Perth and Kinross;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+341;Fife;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+342;Outer Hebrides;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+343;Shetland Islands;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+344;East Ayrshire;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+345;South Lanarkshire;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+346;Omagh;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+347;Hertfordshire;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+348;Cambridgeshire;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+349;Buckinghamshire;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+350;Nottinghamshire;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+351;Northamptonshire;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+352;Leicestershire;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+353;Cheshire East;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+354;Derbyshire;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+355;Staffordshire;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+356;Worcestershire;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+357;Warwickshire;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+358;Oxfordshire;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+359;Surrey;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+360;Wiltshire;GBR;United Kingdom;kralovstvi;kralovstvi;manual_dataset;2024
+361;Abkhazia;GEO;Georgia;demokracie;demokracie;manual_dataset;2024
+362;Samegrelo-Zemo Svaneti;GEO;Georgia;demokracie;demokracie;manual_dataset;2024
+363;Shida Kartli;GEO;Georgia;demokracie;demokracie;manual_dataset;2024
+364;Racha-Lechkhumi and Kvemo Svaneti;GEO;Georgia;demokracie;demokracie;manual_dataset;2024
+365;Samtskhe–Javakheti;GEO;Georgia;demokracie;demokracie;manual_dataset;2024
+366;Adjara;GEO;Georgia;demokracie;demokracie;manual_dataset;2024
+367;Guria;GEO;Georgia;demokracie;demokracie;manual_dataset;2024
+368;Imereti;GEO;Georgia;demokracie;demokracie;manual_dataset;2024
+369;West Macedonia;GRC;Greece;demokracie;demokracie;manual_dataset;2024
+370;Epirus;GRC;Greece;demokracie;demokracie;manual_dataset;2024
+371;Centre Macedonia;GRC;Greece;demokracie;demokracie;manual_dataset;2024
+372;East Macedonia and Thrace;GRC;Greece;demokracie;demokracie;manual_dataset;2024
+373;Thessalia;GRC;Greece;demokracie;demokracie;manual_dataset;2024
+374;Central Greece;GRC;Greece;demokracie;demokracie;manual_dataset;2024
+375;Attica;GRC;Greece;demokracie;demokracie;manual_dataset;2024
+376;Peloponnese;GRC;Greece;demokracie;demokracie;manual_dataset;2024
+377;West Greece;GRC;Greece;demokracie;demokracie;manual_dataset;2024
+378;Crete;GRC;Greece;demokracie;demokracie;manual_dataset;2024
+379;South Aegean;GRC;Greece;demokracie;demokracie;manual_dataset;2024
+380;North Aegean;GRC;Greece;demokracie;demokracie;manual_dataset;2024
+381;Ionian Islands;GRC;Greece;demokracie;demokracie;manual_dataset;2024
+382;Virovitica-Podravina;HRV;Croatia;demokracie;demokracie;manual_dataset;2024
+383;Koprivnica-Križevci;HRV;Croatia;demokracie;demokracie;manual_dataset;2024
+384;Osijek-Baranja;HRV;Croatia;demokracie;demokracie;manual_dataset;2024
+385;Istria;HRV;Croatia;demokracie;demokracie;manual_dataset;2024
+386;Dubrovnik-Neretva;HRV;Croatia;demokracie;demokracie;manual_dataset;2024
+387;Sisak-Moslavina;HRV;Croatia;demokracie;demokracie;manual_dataset;2024
+388;Brod-Posavina;HRV;Croatia;demokracie;demokracie;manual_dataset;2024
+389;Karlovac;HRV;Croatia;demokracie;demokracie;manual_dataset;2024
+390;Zadar;HRV;Croatia;demokracie;demokracie;manual_dataset;2024
+391;Vukovar-Syrmia;HRV;Croatia;demokracie;demokracie;manual_dataset;2024
+392;Split-Dalmatia;HRV;Croatia;demokracie;demokracie;manual_dataset;2024
+393;Varaždin;HRV;Croatia;demokracie;demokracie;manual_dataset;2024
+394;Krapina-Zagorje;HRV;Croatia;demokracie;demokracie;manual_dataset;2024
+395;Zagreb;HRV;Croatia;demokracie;demokracie;manual_dataset;2024
+396;Primorje-Gorski;HRV;Croatia;demokracie;demokracie;manual_dataset;2024
+397;Šibenik-Knin;HRV;Croatia;demokracie;demokracie;manual_dataset;2024
+398;Lika-Senj;HRV;Croatia;demokracie;demokracie;manual_dataset;2024
+399;Bjelovar-Bilogora;HRV;Croatia;demokracie;demokracie;manual_dataset;2024
+400;Požega-Slavonia;HRV;Croatia;demokracie;demokracie;manual_dataset;2024
+401;Szabolcs-Szatmár-Bereg;HUN;Hungary;demokracie;demokracie;manual_dataset;2024
+402;Békés;HUN;Hungary;demokracie;demokracie;manual_dataset;2024
+403;Hajdú-Bihar;HUN;Hungary;demokracie;demokracie;manual_dataset;2024
+404;Csongrád-Csanád;HUN;Hungary;demokracie;demokracie;manual_dataset;2024
+405;Győr-Moson-Sopron;HUN;Hungary;demokracie;demokracie;manual_dataset;2024
+406;Vas;HUN;Hungary;demokracie;demokracie;manual_dataset;2024
+407;Bács-Kiskun;HUN;Hungary;demokracie;demokracie;manual_dataset;2024
+408;Zala;HUN;Hungary;demokracie;demokracie;manual_dataset;2024
+409;Somogy;HUN;Hungary;demokracie;demokracie;manual_dataset;2024
+410;Baranya;HUN;Hungary;demokracie;demokracie;manual_dataset;2024
+411;Borsod-Abaúj-Zemplén;HUN;Hungary;demokracie;demokracie;manual_dataset;2024
+412;Nógrád;HUN;Hungary;demokracie;demokracie;manual_dataset;2024
+413;Komárom-Esztergom;HUN;Hungary;demokracie;demokracie;manual_dataset;2024
+414;Pest;HUN;Hungary;demokracie;demokracie;manual_dataset;2024
+415;Jász-Nagykun-Szolnok;HUN;Hungary;demokracie;demokracie;manual_dataset;2024
+416;Fejér;HUN;Hungary;demokracie;demokracie;manual_dataset;2024
+417;Veszprém;HUN;Hungary;demokracie;demokracie;manual_dataset;2024
+418;Tolna;HUN;Hungary;demokracie;demokracie;manual_dataset;2024
+419;Heves;HUN;Hungary;demokracie;demokracie;manual_dataset;2024
+420;Donegal;IRL;Ireland;demokracie;demokracie;manual_dataset;2024
+421;Leitrim;IRL;Ireland;demokracie;demokracie;manual_dataset;2024
+422;Cavan;IRL;Ireland;demokracie;demokracie;manual_dataset;2024
+423;Monaghan;IRL;Ireland;demokracie;demokracie;manual_dataset;2024
+424;Wicklow;IRL;Ireland;demokracie;demokracie;manual_dataset;2024
+425;Wexford;IRL;Ireland;demokracie;demokracie;manual_dataset;2024
+426;Kilkenny;IRL;Ireland;demokracie;demokracie;manual_dataset;2024
+427;Waterford;IRL;Ireland;demokracie;demokracie;manual_dataset;2024
+428;Cork;IRL;Ireland;demokracie;demokracie;manual_dataset;2024
+429;Kerry;IRL;Ireland;demokracie;demokracie;manual_dataset;2024
+430;Limerick;IRL;Ireland;demokracie;demokracie;manual_dataset;2024
+431;Clare;IRL;Ireland;demokracie;demokracie;manual_dataset;2024
+432;Galway;IRL;Ireland;demokracie;demokracie;manual_dataset;2024
+433;Mayo;IRL;Ireland;demokracie;demokracie;manual_dataset;2024
+434;Sligo;IRL;Ireland;demokracie;demokracie;manual_dataset;2024
+435;Meath;IRL;Ireland;demokracie;demokracie;manual_dataset;2024
+436;Kildare;IRL;Ireland;demokracie;demokracie;manual_dataset;2024
+437;Laois;IRL;Ireland;demokracie;demokracie;manual_dataset;2024
+438;Offaly;IRL;Ireland;demokracie;demokracie;manual_dataset;2024
+439;Westmeath;IRL;Ireland;demokracie;demokracie;manual_dataset;2024
+440;Longford;IRL;Ireland;demokracie;demokracie;manual_dataset;2024
+441;Roscommon;IRL;Ireland;demokracie;demokracie;manual_dataset;2024
+442;Tipperary;IRL;Ireland;demokracie;demokracie;manual_dataset;2024
+443;Tipperary;IRL;Ireland;demokracie;demokracie;manual_dataset;2024
+444;Austurland;ISL;Iceland;demokracie;demokracie;manual_dataset;2024
+445;Southern;ISL;Iceland;demokracie;demokracie;manual_dataset;2024
+446;Western;ISL;Iceland;demokracie;demokracie;manual_dataset;2024
+447;Westfjords;ISL;Iceland;demokracie;demokracie;manual_dataset;2024
+448;Northwestern;ISL;Iceland;demokracie;demokracie;manual_dataset;2024
+449;Northeastern;ISL;Iceland;demokracie;demokracie;manual_dataset;2024
+450;Aosta;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+451;Verbano-Cusio-Ossola;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+452;Varese;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+453;Como;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+454;Sondrio;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+455;Trentino-South Tyrol;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+456;Imperia;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+457;Cuneo;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+458;Turin;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+459;Pesaro and Urbino;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+460;Belluno;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+461;Udine;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+462;Venice;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+463;Padua;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+464;Rovigo;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+465;Ferrara;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+466;Ravenna;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+467;Forlì-Cesena;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+468;Ancona;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+469;Macerata;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+470;Ascoli Piceno;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+471;Teramo;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+472;Pescara;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+473;Chieti;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+474;Campobasso;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+475;Foggia;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+476;Barletta-Andria-Trani;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+477;Bari;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+478;Brindisi;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+479;Lecce;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+480;Taranto;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+481;Matera;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+482;Cosenza;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+483;Crotone;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+484;Catanzaro;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+485;Reggio Calabria;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+486;Vibo Valentia;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+487;Potenza;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+488;Salerno;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+489;Naples;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+490;Caserta;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+491;Latina;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+492;Rome;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+493;Viterbo;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+494;Grosseto;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+495;Livorno;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+496;Pisa;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+497;Lucca;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+498;Massa-Carrara;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+499;Liguria;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+500;Savona;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+501;Trapani;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+502;Messina;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+503;Palermo;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+504;Agrigento;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+505;Caltanissetta;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+506;Ragusa;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+507;Syracuse;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+508;Catania;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+509;Carbonia-Iglesias;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+510;Sassari;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+511;Nuoro;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+512;Olbia-Tempio;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+513;Oristano;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+514;Medio Campidano;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+515;Cagliari;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+516;Ogliastra;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+517;Enna;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+518;Benevento;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+519;Asti;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+520;Bergamo;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+521;Brescia;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+522;Cremona;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+523;Mantua;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+524;Milan;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+525;Siena;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+526;Arezzo;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+527;Florence;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+528;Vercelli;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+529;Pavia;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+530;Rieti;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+531;Novara;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+532;Alessandria;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+533;Trentino;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+534;Vicenza;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+535;Verona;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+536;Treviso;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+537;Piacenza;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+538;Parma;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+539;Reggio Emilia;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+540;Modena;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+541;Bologna;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+542;Terni;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+543;Perugia;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+544;Frosinone;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+545;Avellino;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+546;L'Aquila;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+547;Pordenone;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+548;Isernia;ITA;Italy;demokracie;demokracie;manual_dataset;2024
+549;Plužine;KOS;Kosovo;demokracie;demokracie;manual_dataset;2024
+550;Kačanik;KOS;Kosovo;demokracie;demokracie;manual_dataset;2024
+551;Podujevo/Podujeva;KOS;Kosovo;demokracie;demokracie;manual_dataset;2024
+552;Kosovo-Pomoravlje;KOS;Kosovo;demokracie;demokracie;manual_dataset;2024
+553;Utena;LTU;Lithuania;demokracie;demokracie;manual_dataset;2024
+554;Vilnius;LTU;Lithuania;demokracie;demokracie;manual_dataset;2024
+555;Alytus;LTU;Lithuania;demokracie;demokracie;manual_dataset;2024
+556;Panevėžys;LTU;Lithuania;demokracie;demokracie;manual_dataset;2024
+557;Telšiai;LTU;Lithuania;demokracie;demokracie;manual_dataset;2024
+558;Klaipėda;LTU;Lithuania;demokracie;demokracie;manual_dataset;2024
+559;Šiauliai;LTU;Lithuania;demokracie;demokracie;manual_dataset;2024
+560;Marijampolė;LTU;Lithuania;demokracie;demokracie;manual_dataset;2024
+561;Tauragė;LTU;Lithuania;demokracie;demokracie;manual_dataset;2024
+562;Kaunas;LTU;Lithuania;demokracie;demokracie;manual_dataset;2024
+563;Diekirch;LUX;Luxembourg;kralovstvi;kralovstvi;manual_dataset;2024
+564;Aloja;LVA;Latvia;demokracie;demokracie;manual_dataset;2024
+565;Valka;LVA;Latvia;demokracie;demokracie;manual_dataset;2024
+566;Alūksne;LVA;Latvia;demokracie;demokracie;manual_dataset;2024
+567;Kārsava;LVA;Latvia;demokracie;demokracie;manual_dataset;2024
+568;Vecumnieki;LVA;Latvia;demokracie;demokracie;manual_dataset;2024
+569;Saldus;LVA;Latvia;demokracie;demokracie;manual_dataset;2024
+570;Vaiņode;LVA;Latvia;demokracie;demokracie;manual_dataset;2024
+571;Jelgava;LVA;Latvia;demokracie;demokracie;manual_dataset;2024
+572;Daugavpils;LVA;Latvia;demokracie;demokracie;manual_dataset;2024
+573;Krāslava;LVA;Latvia;demokracie;demokracie;manual_dataset;2024
+574;Ventspils;LVA;Latvia;demokracie;demokracie;manual_dataset;2024
+575;Talsi;LVA;Latvia;demokracie;demokracie;manual_dataset;2024
+576;Riga;LVA;Latvia;demokracie;demokracie;manual_dataset;2024
+577;Limbaži;LVA;Latvia;demokracie;demokracie;manual_dataset;2024
+578;Rēzekne;LVA;Latvia;demokracie;demokracie;manual_dataset;2024
+579;Gulbene;LVA;Latvia;demokracie;demokracie;manual_dataset;2024
+580;Madona;LVA;Latvia;demokracie;demokracie;manual_dataset;2024
+581;Ogre;LVA;Latvia;demokracie;demokracie;manual_dataset;2024
+582;Kuldīga;LVA;Latvia;demokracie;demokracie;manual_dataset;2024
+583;Tukums;LVA;Latvia;demokracie;demokracie;manual_dataset;2024
+584;Edineț;MDA;Moldova;demokracie;demokracie;manual_dataset;2024
+585;Rîșcani;MDA;Moldova;demokracie;demokracie;manual_dataset;2024
+586;Fălești;MDA;Moldova;demokracie;demokracie;manual_dataset;2024
+587;Ungheni;MDA;Moldova;demokracie;demokracie;manual_dataset;2024
+588;Hîncești;MDA;Moldova;demokracie;demokracie;manual_dataset;2024
+589;Cantemir;MDA;Moldova;demokracie;demokracie;manual_dataset;2024
+590;Cahul;MDA;Moldova;demokracie;demokracie;manual_dataset;2024
+591;Ștefan Vodă;MDA;Moldova;demokracie;demokracie;manual_dataset;2024
+592;Căușeni;MDA;Moldova;demokracie;demokracie;manual_dataset;2024
+593;Cimișlia;MDA;Moldova;demokracie;demokracie;manual_dataset;2024
+594;Taraclia;MDA;Moldova;demokracie;demokracie;manual_dataset;2024
+595;Comrat;MDA;Moldova;demokracie;demokracie;manual_dataset;2024
+596;Orhei;MDA;Moldova;demokracie;demokracie;manual_dataset;2024
+597;Mavrovo and Rostuša;MKD;Macedonia;demokracie;demokracie;manual_dataset;2024
+598;Debarca;MKD;Macedonia;demokracie;demokracie;manual_dataset;2024
+599;Bogdanci;MKD;Macedonia;demokracie;demokracie;manual_dataset;2024
+600;Kavadarci;MKD;Macedonia;demokracie;demokracie;manual_dataset;2024
+601;Prilep;MKD;Macedonia;demokracie;demokracie;manual_dataset;2024
+602;Bitola;MKD;Macedonia;demokracie;demokracie;manual_dataset;2024
+603;Tearce;MKD;Macedonia;demokracie;demokracie;manual_dataset;2024
+604;Staro Nagoričane;MKD;Macedonia;demokracie;demokracie;manual_dataset;2024
+605;Berovo;MKD;Macedonia;demokracie;demokracie;manual_dataset;2024
+606;Berane;MNE;Montenegro;demokracie;demokracie;manual_dataset;2024
+607;Pljevlja;MNE;Montenegro;demokracie;demokracie;manual_dataset;2024
+608;Nikšić;MNE;Montenegro;demokracie;demokracie;manual_dataset;2024
+609;Podgorica;MNE;Montenegro;demokracie;demokracie;manual_dataset;2024
+610;Groningen;NLD;Netherlands;kralovstvi;kralovstvi;manual_dataset;2024
+611;Drenthe;NLD;Netherlands;kralovstvi;kralovstvi;manual_dataset;2024
+612;Overijssel;NLD;Netherlands;kralovstvi;kralovstvi;manual_dataset;2024
+613;Gelderland;NLD;Netherlands;kralovstvi;kralovstvi;manual_dataset;2024
+614;Limburg;NLD;Netherlands;kralovstvi;kralovstvi;manual_dataset;2024
+615;Zeeland;NLD;Netherlands;kralovstvi;kralovstvi;manual_dataset;2024
+616;North Brabant;NLD;Netherlands;kralovstvi;kralovstvi;manual_dataset;2024
+617;South Holland;NLD;Netherlands;kralovstvi;kralovstvi;manual_dataset;2024
+618;North Holland;NLD;Netherlands;kralovstvi;kralovstvi;manual_dataset;2024
+619;Friesland;NLD;Netherlands;kralovstvi;kralovstvi;manual_dataset;2024
+620;Flevoland;NLD;Netherlands;kralovstvi;kralovstvi;manual_dataset;2024
+621;Utrecht;NLD;Netherlands;kralovstvi;kralovstvi;manual_dataset;2024
+622;Troms;NOR;Norway;kralovstvi;kralovstvi;manual_dataset;2024
+623;Nordland;NOR;Norway;kralovstvi;kralovstvi;manual_dataset;2024
+624;Nord-Trøndelag;NOR;Norway;kralovstvi;kralovstvi;manual_dataset;2024
+625;Sør-Trøndelag;NOR;Norway;kralovstvi;kralovstvi;manual_dataset;2024
+626;Hedmark;NOR;Norway;kralovstvi;kralovstvi;manual_dataset;2024
+627;Akershus;NOR;Norway;kralovstvi;kralovstvi;manual_dataset;2024
+628;Østfold;NOR;Norway;kralovstvi;kralovstvi;manual_dataset;2024
+629;Finnmark;NOR;Norway;kralovstvi;kralovstvi;manual_dataset;2024
+630;Buskerud;NOR;Norway;kralovstvi;kralovstvi;manual_dataset;2024
+631;Vestfold;NOR;Norway;kralovstvi;kralovstvi;manual_dataset;2024
+632;Telemark;NOR;Norway;kralovstvi;kralovstvi;manual_dataset;2024
+633;Aust-Agder;NOR;Norway;kralovstvi;kralovstvi;manual_dataset;2024
+634;Vest-Agder;NOR;Norway;kralovstvi;kralovstvi;manual_dataset;2024
+635;Rogaland;NOR;Norway;kralovstvi;kralovstvi;manual_dataset;2024
+636;Hordaland;NOR;Norway;kralovstvi;kralovstvi;manual_dataset;2024
+637;Sogn og Fjordane;NOR;Norway;kralovstvi;kralovstvi;manual_dataset;2024
+638;Møre og Romsdal;NOR;Norway;kralovstvi;kralovstvi;manual_dataset;2024
+639;Svalbard;NOR;Norway;kralovstvi;kralovstvi;manual_dataset;2024
+640;Oppland;NOR;Norway;kralovstvi;kralovstvi;manual_dataset;2024
+641;Silesian Voivodeship;POL;Poland;demokracie;demokracie;manual_dataset;2024
+642;Lesser Poland Voivodeship;POL;Poland;demokracie;demokracie;manual_dataset;2024
+643;Podkarpackie Voivodeship;POL;Poland;demokracie;demokracie;manual_dataset;2024
+644;Lower Silesian Voivodeship;POL;Poland;demokracie;demokracie;manual_dataset;2024
+645;Opole Voivodeship;POL;Poland;demokracie;demokracie;manual_dataset;2024
+646;Podlaskie Voivodeship;POL;Poland;demokracie;demokracie;manual_dataset;2024
+647;Warmian-Masurian Voivodeship;POL;Poland;demokracie;demokracie;manual_dataset;2024
+648;Lubusz Voivodeship;POL;Poland;demokracie;demokracie;manual_dataset;2024
+649;West Pomeranian Voivodeship;POL;Poland;demokracie;demokracie;manual_dataset;2024
+650;Lublin Voivodeship;POL;Poland;demokracie;demokracie;manual_dataset;2024
+651;Pomeranian Voivodeship;POL;Poland;demokracie;demokracie;manual_dataset;2024
+652;Masovian Voivodeship;POL;Poland;demokracie;demokracie;manual_dataset;2024
+653;Łódź Voivodeship;POL;Poland;demokracie;demokracie;manual_dataset;2024
+654;Kuyavian-Pomeranian Voivodeship;POL;Poland;demokracie;demokracie;manual_dataset;2024
+655;Greater Poland Voivodeship;POL;Poland;demokracie;demokracie;manual_dataset;2024
+656;Świętokrzyskie Voivodeship;POL;Poland;demokracie;demokracie;manual_dataset;2024
+657;Évora;PRT;Portugal;demokracie;demokracie;manual_dataset;2024
+658;Portalegre;PRT;Portugal;demokracie;demokracie;manual_dataset;2024
+659;Viana do Castelo;PRT;Portugal;demokracie;demokracie;manual_dataset;2024
+660;Castelo Branco;PRT;Portugal;demokracie;demokracie;manual_dataset;2024
+661;Guarda;PRT;Portugal;demokracie;demokracie;manual_dataset;2024
+662;Bragança;PRT;Portugal;demokracie;demokracie;manual_dataset;2024
+663;Vila Real;PRT;Portugal;demokracie;demokracie;manual_dataset;2024
+664;Braga;PRT;Portugal;demokracie;demokracie;manual_dataset;2024
+665;Faro;PRT;Portugal;demokracie;demokracie;manual_dataset;2024
+666;Beja;PRT;Portugal;demokracie;demokracie;manual_dataset;2024
+667;Setúbal;PRT;Portugal;demokracie;demokracie;manual_dataset;2024
+668;Lisbon;PRT;Portugal;demokracie;demokracie;manual_dataset;2024
+669;Santarém;PRT;Portugal;demokracie;demokracie;manual_dataset;2024
+670;Leiria;PRT;Portugal;demokracie;demokracie;manual_dataset;2024
+671;Coimbra;PRT;Portugal;demokracie;demokracie;manual_dataset;2024
+672;Aveiro;PRT;Portugal;demokracie;demokracie;manual_dataset;2024
+673;Porto;PRT;Portugal;demokracie;demokracie;manual_dataset;2024
+674;Azores;PRT;Portugal;demokracie;demokracie;manual_dataset;2024
+675;Viseu;PRT;Portugal;demokracie;demokracie;manual_dataset;2024
+676;Satu Mare;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+677;Arad;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+678;Bihor;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+679;Timiș;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+680;Mehedinți;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+681;Dolj;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+682;Călărași;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+683;Teleorman;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+684;Giurgiu;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+685;Constanța;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+686;Olt;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+687;Caraș-Severin;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+688;Botoșani;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+689;Iași;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+690;Vaslui;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+691;Galați;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+692;Suceava;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+693;Maramureș;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+694;Tulcea;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+695;Cluj;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+696;Bistrița-Năsăud;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+697;Sălaj;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+698;Dâmbovița;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+699;Ilfov;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+700;Argeș;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+701;Gorj;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+702;Hunedoara;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+703;Vâlcea;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+704;Prahova;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+705;Covasna;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+706;Vrancea;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+707;Buzău;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+708;Brașov;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+709;Sibiu;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+710;Mureș;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+711;Harghita;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+712;Neamț;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+713;Bacău;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+714;Alba;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+715;Brăila;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+716;Ialomița;ROU;Romania;demokracie;demokracie;manual_dataset;2024
+717;Pskov;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+718;Krasnodar Krai;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+719;Karachay-Cherkess Republic;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+720;Kabardino-Balkaria;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+721;Republic of North Ossetia-Alania;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+722;Murmansk;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+723;Karelia;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+724;Leningrad;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+725;Kaliningrad;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+726;Smolensk;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+727;Bryansk;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+728;Kursk;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+729;Belgorod;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+730;Voronezh;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+731;Rostov;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+732;Orenburg;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+733;Saratov;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+734;Astrakhan;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+735;Volgograd;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+736;Autonomous Republic of Crimea;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+737;Nenets Autonomous Okrug;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+738;Saint Petersburg;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+739;Arkhangelsk;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+740;Republic of Kalmykia;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+741;Bashkortostan;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+742;Sverdlovsk;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+743;Lipetsk;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+744;Tambov;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+745;Republic of Tatarstan;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+746;Ulyanovsk;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+747;Penza;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+748;Oryol;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+749;Republic of Mordovia;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+750;Kaluga;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+751;Kostroma;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+752;Yaroslavl;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+753;Vladimir;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+754;Ryazan;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+755;Ivanovo;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+756;Nizhny Novgorod;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+757;Tula;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+758;Chuvash Republic;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+759;Vologda;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+760;Novgorod;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+761;Tver;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+762;Moscow;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+763;Moscow;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+764;Mari El Republic;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+765;Kirov;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+766;Udmurt Republic;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+767;Komi Republic;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+768;Perm Krai;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+769;Samara;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+770;Stavropol Krai;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+771;Republic of Adygea;RUS;Russia;autokracie;autokracie;manual_dataset;2024
+772;North Bačka;SRB;Republic of Serbia;demokracie;demokracie;manual_dataset;2024
+773;West Bačka;SRB;Republic of Serbia;demokracie;demokracie;manual_dataset;2024
+774;North Banat;SRB;Republic of Serbia;demokracie;demokracie;manual_dataset;2024
+775;Pčinja;SRB;Republic of Serbia;demokracie;demokracie;manual_dataset;2024
+776;Bor;SRB;Republic of Serbia;demokracie;demokracie;manual_dataset;2024
+777;Zaječar;SRB;Republic of Serbia;demokracie;demokracie;manual_dataset;2024
+778;Pirot;SRB;Republic of Serbia;demokracie;demokracie;manual_dataset;2024
+779;Jablanica;SRB;Republic of Serbia;demokracie;demokracie;manual_dataset;2024
+780;Raška;SRB;Republic of Serbia;demokracie;demokracie;manual_dataset;2024
+781;Rasina;SRB;Republic of Serbia;demokracie;demokracie;manual_dataset;2024
+782;Toplica;SRB;Republic of Serbia;demokracie;demokracie;manual_dataset;2024
+783;Zlatibor;SRB;Republic of Serbia;demokracie;demokracie;manual_dataset;2024
+784;Srem;SRB;Republic of Serbia;demokracie;demokracie;manual_dataset;2024
+785;Mačva;SRB;Republic of Serbia;demokracie;demokracie;manual_dataset;2024
+786;South Bačka;SRB;Republic of Serbia;demokracie;demokracie;manual_dataset;2024
+787;Central Banat;SRB;Republic of Serbia;demokracie;demokracie;manual_dataset;2024
+788;South Banat;SRB;Republic of Serbia;demokracie;demokracie;manual_dataset;2024
+789;Braničevo;SRB;Republic of Serbia;demokracie;demokracie;manual_dataset;2024
+790;Belgrade;SRB;Republic of Serbia;demokracie;demokracie;manual_dataset;2024
+791;Podunavlje;SRB;Republic of Serbia;demokracie;demokracie;manual_dataset;2024
+792;Nišava;SRB;Republic of Serbia;demokracie;demokracie;manual_dataset;2024
+793;Pomoravski;SRB;Republic of Serbia;demokracie;demokracie;manual_dataset;2024
+794;Šumadija;SRB;Republic of Serbia;demokracie;demokracie;manual_dataset;2024
+795;Moravica;SRB;Republic of Serbia;demokracie;demokracie;manual_dataset;2024
+796;Kolubara;SRB;Republic of Serbia;demokracie;demokracie;manual_dataset;2024
+797;Žilina;SVK;Slovakia;demokracie;demokracie;manual_dataset;2024
+798;Prešov;SVK;Slovakia;demokracie;demokracie;manual_dataset;2024
+799;Košice;SVK;Slovakia;demokracie;demokracie;manual_dataset;2024
+800;Bratislava;SVK;Slovakia;demokracie;demokracie;manual_dataset;2024
+801;Trnava;SVK;Slovakia;demokracie;demokracie;manual_dataset;2024
+802;Trenčín;SVK;Slovakia;demokracie;demokracie;manual_dataset;2024
+803;Banská Bystrica;SVK;Slovakia;demokracie;demokracie;manual_dataset;2024
+804;Nitra;SVK;Slovakia;demokracie;demokracie;manual_dataset;2024
+805;Tolmin;SVN;Slovenia;demokracie;demokracie;manual_dataset;2024
+806;Podvelka;SVN;Slovenia;demokracie;demokracie;manual_dataset;2024
+807;Norrbotten;SWE;Sweden;kralovstvi;kralovstvi;manual_dataset;2024
+808;Västerbotten;SWE;Sweden;kralovstvi;kralovstvi;manual_dataset;2024
+809;Jämtland;SWE;Sweden;kralovstvi;kralovstvi;manual_dataset;2024
+810;Dalarna;SWE;Sweden;kralovstvi;kralovstvi;manual_dataset;2024
+811;Värmland;SWE;Sweden;kralovstvi;kralovstvi;manual_dataset;2024
+812;Västra Götaland;SWE;Sweden;kralovstvi;kralovstvi;manual_dataset;2024
+813;Västernorrland;SWE;Sweden;kralovstvi;kralovstvi;manual_dataset;2024
+814;Gävleborg;SWE;Sweden;kralovstvi;kralovstvi;manual_dataset;2024
+815;Uppsala;SWE;Sweden;kralovstvi;kralovstvi;manual_dataset;2024
+816;Stockholm;SWE;Sweden;kralovstvi;kralovstvi;manual_dataset;2024
+817;Södermanland;SWE;Sweden;kralovstvi;kralovstvi;manual_dataset;2024
+818;Östergötland;SWE;Sweden;kralovstvi;kralovstvi;manual_dataset;2024
+819;Kalmar;SWE;Sweden;kralovstvi;kralovstvi;manual_dataset;2024
+820;Blekinge;SWE;Sweden;kralovstvi;kralovstvi;manual_dataset;2024
+821;Skåne;SWE;Sweden;kralovstvi;kralovstvi;manual_dataset;2024
+822;Halland;SWE;Sweden;kralovstvi;kralovstvi;manual_dataset;2024
+823;Gotland;SWE;Sweden;kralovstvi;kralovstvi;manual_dataset;2024
+824;Västmanland;SWE;Sweden;kralovstvi;kralovstvi;manual_dataset;2024
+825;Jönköping;SWE;Sweden;kralovstvi;kralovstvi;manual_dataset;2024
+826;Örebro;SWE;Sweden;kralovstvi;kralovstvi;manual_dataset;2024
+827;Kronoberg;SWE;Sweden;kralovstvi;kralovstvi;manual_dataset;2024
+828;Ardahan;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+829;Artvin;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+830;Kırklareli;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+831;Edirne;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+832;Kars;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+833;Mardin;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+834;Şanlıurfa;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+835;Kilis;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+836;Gaziantep;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+837;Hatay;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+838;Istanbul;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+839;Tekirdağ;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+840;Çanakkale;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+841;Rize;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+842;Trabzon;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+843;Giresun;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+844;Ordu;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+845;Samsun;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+846;Sinop;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+847;Kastamonu;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+848;Bartın;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+849;Zonguldak;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+850;Düzce;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+851;Sakarya;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+852;Kocaeli;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+853;Bursa;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+854;Balıkesir;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+855;İzmir;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+856;Aydın;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+857;Muğla;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+858;Antalya;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+859;Mersin;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+860;Adana;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+861;Bolu;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+862;Ankara;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+863;Bilecik;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+864;Eskişehir;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+865;Çankırı;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+866;Karabük;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+867;Tokat;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+868;Sivas;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+869;Çorum;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+870;Amasya;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+871;Kütahya;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+872;Konya;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+873;Karaman;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+874;Niğde;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+875;Kayseri;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+876;Isparta;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+877;Manisa;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+878;Denizli;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+879;Burdur;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+880;Aksaray;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+881;Nevşehir;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+882;Yozgat;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+883;Kırşehir;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+884;Uşak;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+885;Erzincan;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+886;Tunceli;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+887;Afyonkarahisar;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+888;Kırıkkale;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+889;Kahramanmaraş;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+890;Muş;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+891;Erzurum;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+892;Malatya;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+893;Elazığ;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+894;Bitlis;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+895;Bingöl;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+896;Osmaniye;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+897;Adıyaman;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+898;Diyarbakır;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+899;Batman;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+900;Bayburt;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+901;Gümüşhane;TUR;Turkey;autokracie;autokracie;manual_dataset;2024
+902;Chernihiv;UKR;Ukraine;demokracie;demokracie;manual_dataset;2024
+903;Volyn;UKR;Ukraine;demokracie;demokracie;manual_dataset;2024
+904;Rivne;UKR;Ukraine;demokracie;demokracie;manual_dataset;2024
+905;Zhytomyr;UKR;Ukraine;demokracie;demokracie;manual_dataset;2024
+906;Kyiv;UKR;Ukraine;demokracie;demokracie;manual_dataset;2024
+907;Zakarpattia;UKR;Ukraine;demokracie;demokracie;manual_dataset;2024
+908;Chernivtsi;UKR;Ukraine;demokracie;demokracie;manual_dataset;2024
+909;Ivano-Frankivsk;UKR;Ukraine;demokracie;demokracie;manual_dataset;2024
+910;Odessa;UKR;Ukraine;demokracie;demokracie;manual_dataset;2024
+911;Vinnytsia;UKR;Ukraine;demokracie;demokracie;manual_dataset;2024
+912;Lviv;UKR;Ukraine;demokracie;demokracie;manual_dataset;2024
+913;Sumy;UKR;Ukraine;demokracie;demokracie;manual_dataset;2024
+914;Kharkiv;UKR;Ukraine;demokracie;demokracie;manual_dataset;2024
+915;Luhansk;UKR;Ukraine;demokracie;demokracie;manual_dataset;2024
+916;Donetsk;UKR;Ukraine;demokracie;demokracie;manual_dataset;2024
+917;Kherson;UKR;Ukraine;demokracie;demokracie;manual_dataset;2024
+918;Zaporizhzhia;UKR;Ukraine;demokracie;demokracie;manual_dataset;2024
+919;Mykolaiv;UKR;Ukraine;demokracie;demokracie;manual_dataset;2024
+920;Poltava;UKR;Ukraine;demokracie;demokracie;manual_dataset;2024
+921;Khmelnytskyi;UKR;Ukraine;demokracie;demokracie;manual_dataset;2024
+922;Ternopil;UKR;Ukraine;demokracie;demokracie;manual_dataset;2024
+923;Dnipropetrovsk;UKR;Ukraine;demokracie;demokracie;manual_dataset;2024
+924;Cherkasy;UKR;Ukraine;demokracie;demokracie;manual_dataset;2024
+925;Kirovohrad;UKR;Ukraine;demokracie;demokracie;manual_dataset;2024
+926;Kyiv;UKR;Ukraine;demokracie;demokracie;manual_dataset;2024

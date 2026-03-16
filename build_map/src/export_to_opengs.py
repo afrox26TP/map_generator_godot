@@ -13,6 +13,7 @@ from export_theme_map import (
 )
 from import_population import generate_population_dataset
 from import_gdp import generate_gdp_dataset
+from import_ideology import generate_ideology_dataset
 
 
 # --------------------------------------------------------
@@ -565,6 +566,17 @@ def write_gdp_txt(rows, path):
             f.write(f"{pid};{gdp_val:.2f};{gdp_pc:.6f};{source};{year}\n")
 
 
+def write_ideology_txt(rows, path):
+    with open(path, "w", encoding="utf-8") as f:
+        f.write("id;ideology;ideology_source;ideology_year\n")
+        for r in rows:
+            pid = int(r.get("province_id") or 0)
+            ideology = str(r.get("ideology") or "unknown")
+            source = str(r.get("ideology_source") or "")
+            year = r.get("ideology_year") or ""
+            f.write(f"{pid};{ideology};{source};{year}\n")
+
+
 def export_population_lookup_json(land, province_colors, rows, path):
     """
     Export a Godot-ready lookup file:
@@ -669,6 +681,18 @@ def run_export(land, sea_regions):
     if gdp_missing:
         print(f"[WARN] GDP missing for {len(gdp_missing)} countries (GDP set to 0 there).")
 
+    print("[EXPORT] Ideology CSV + map colors...")
+    ideology_values, ideology_rows, ideology_missing = generate_ideology_dataset(
+        land,
+        out_path=os.path.join(OUT, "Ideology.csv"),
+    )
+    write_ideology_txt(ideology_rows, os.path.join(OUT, "Ideology.txt"))
+    if ideology_missing:
+        print(
+            f"[WARN] Ideology missing for {len(ideology_missing)} countries "
+            "(set to unknown there)."
+        )
+
     print("[EXPORT] Provinces.txt...")
     export_provinces_txt(
         province_colors,
@@ -695,7 +719,13 @@ def run_export(land, sea_regions):
     )
 
     print("[EXPORT] Ideology Map...")
-    export_ideology_map(id_map, sea_regions, bounds, max_pid=max_pid)
+    export_ideology_map(
+        id_map,
+        sea_regions,
+        bounds,
+        ideology_by_pid=ideology_values,
+        max_pid=max_pid,
+    )
 
     export_states(land)
     export_state_files(land)
