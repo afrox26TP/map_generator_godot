@@ -440,6 +440,7 @@ def export_provinces_txt(
     population_rows=None,
     gdp_rows=None,
     sea_color_to_id=None,
+    ideology_rows=None,
 ):
 
     out_path = os.path.join(OUT, "Provinces.txt")
@@ -448,6 +449,10 @@ def export_provinces_txt(
     pid_to_color = {pid: col for col, pid in province_colors.items()}
     population_by_pid = _build_population_export_lookup(population_rows)
     gdp_by_pid = _build_gdp_export_lookup(gdp_rows)
+    ideology_by_pid = {
+        int(r["province_id"]): str(r.get("ideology") or "unknown")
+        for r in (ideology_rows or [])
+    }
     rows = []
     country_capitals = _build_country_capital_lookup(land)
 
@@ -504,6 +509,7 @@ def export_provinces_txt(
         if is_capital:
             capital_city = _sanitize_txt_field(_row_capital_city_name(land_row, country_capitals))
         neighbor_ids = ",".join(str(n) for n in neighbors_by_pid.get(int(pid), []))
+        ideology = ideology_by_pid.get(int(pid), "unknown")
 
         ys, xs = np.where(id_map == pid)
         if len(xs) == 0:
@@ -515,7 +521,7 @@ def export_provinces_txt(
         rows.append(
             f"{pid};{r};{g};{b};{typ};{st};{owner};{controller};{cx};{cy};"
             f"{province_name};{country_name};{population};{gdp_value:.2f};{gdp_per_capita:.6f};"
-            f"{is_capital};{capital_city};{neighbor_ids}"
+            f"{is_capital};{capital_city};{neighbor_ids};{ideology}"
         )
 
     for col, sea_id in sea_items:
@@ -523,14 +529,14 @@ def export_provinces_txt(
         neighbor_ids = ",".join(str(n) for n in neighbors_by_pid.get(int(sea_id), []))
         rows.append(
             f"{sea_id};{r};{g};{b};sea;SEA;SEA;SEA;0;0;"
-            f";SEA;0;0.00;0.000000;0;;{neighbor_ids}"
+            f";SEA;0;0.00;0.000000;0;;{neighbor_ids};unknown"
         )
 
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(
             "id;R;G;B;type;state;owner;controller;x;y;"
             "province_name;country_name;population;gdp;gdp_per_capita;"
-            "is_capital;capital_city;neighbors\n"
+            "is_capital;capital_city;neighbors;ideology\n"
         )
         for r in rows:
             f.write(r + "\n")
@@ -647,7 +653,9 @@ def run_export(land, sea_regions):
     if unmatched:
         print(f"[WARN] Population unmatched regions: {len(unmatched)} (showing up to 5)")
         for name, country in unmatched[:5]:
-            print(f" - {name} ({country})")
+            safe_name = str(name).encode("ascii", "replace").decode("ascii")
+            safe_country = str(country).encode("ascii", "replace").decode("ascii")
+            print(f" - {safe_name} ({safe_country})")
     write_population_txt(rows, debug_rows, os.path.join(OUT, "Population.txt"))
     export_population_lookup_json(
         land,
@@ -701,6 +709,7 @@ def run_export(land, sea_regions):
         population_rows=rows,
         gdp_rows=gdp_rows,
         sea_color_to_id=sea_color_to_id,
+        ideology_rows=ideology_rows,
     )
 
     print("[EXPORT] GDP Map...")
