@@ -47,6 +47,24 @@ def export_province_map(land, sea_regions):
     used_colors = set()   # stores all used RGB colors
 
     # -------------------------
+    # SEA REGIONS (unique too)
+    # Draw sea first so later land fills restore islands even when
+    # the rasterized sea polygon ignores interior holes.
+    # -------------------------
+    sea_color_count = 0
+
+    for region in sea_regions:
+        color = unique_color(used_colors)
+        sea_color_count += 1
+
+        polys = [region] if region.geom_type == "Polygon" else region.geoms
+        for poly in polys:
+            coords = geom_to_pixel_coords(poly, bounds, EXPORT_SIZE)
+            draw.polygon(coords, fill=color)
+
+    print("[DEBUG] Sea regions:", sea_color_count)
+
+    # -------------------------
     # LAND PROVINCES
     # -------------------------
     for pid, row in land.iterrows():
@@ -64,22 +82,6 @@ def export_province_map(land, sea_regions):
 
     print("[DEBUG] Land provinces:", len(land))
     print("[DEBUG] Unique land colors:", len(province_colors))
-
-    # -------------------------
-    # SEA REGIONS (unique too)
-    # -------------------------
-    sea_color_count = 0
-
-    for region in sea_regions:
-        color = unique_color(used_colors)
-        sea_color_count += 1
-
-        polys = [region] if region.geom_type == "Polygon" else region.geoms
-        for poly in polys:
-            coords = geom_to_pixel_coords(poly, bounds, EXPORT_SIZE)
-            draw.polygon(coords, fill=color)
-
-    print("[DEBUG] Sea regions:", sea_color_count)
     print("[DEBUG] Total unique colors:", len(used_colors))
 
     # -------------------------

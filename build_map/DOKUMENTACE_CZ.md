@@ -631,3 +631,4 @@ Jinymi slovy:
 
 ---
 Dokumentace je psana podle aktualni implementace ve slozce `build_map/src` k datu 2026-03-16.
+Formulovani textu pomahalo AI.
