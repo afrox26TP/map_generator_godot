@@ -246,6 +246,68 @@ def export_population_map(
     export_mode_folder("Population", "PopulationMap", "Population map")
 
 
+def export_recruitable_population_map(
+    id_map,
+    sea_regions,
+    bounds,
+    recruitable_population=None,
+    max_pid=None,
+):
+    max_pid = max_pid if max_pid is not None else int(id_map.max())
+
+    recruit_values = None
+    if recruitable_population:
+        metric = {
+            pid: max(float(recruitable_population.get(pid, 0) or 0.0), 0.0)
+            for pid in range(max_pid + 1)
+        }
+        vals = [v for v in metric.values() if v > 0]
+
+        if vals:
+            log_min = min(math.log10(v) for v in vals)
+            log_max = max(math.log10(v) for v in vals)
+            span = log_max - log_min or 1.0
+
+            def lerp(a, b, t):
+                return int(a + (b - a) * t)
+
+            low = (252, 234, 206)   # light amber
+            high = (168, 45, 0)     # burnt orange
+
+            recruit_values = {}
+            for pid in range(max_pid + 1):
+                v = metric.get(pid, 0.0)
+                if v <= 0:
+                    recruit_values[pid] = (120, 120, 120)
+                    continue
+
+                t = (math.log10(v) - log_min) / span
+                recruit_values[pid] = (
+                    lerp(low[0], high[0], t),
+                    lerp(low[1], high[1], t),
+                    lerp(low[2], high[2], t),
+                )
+
+    if recruit_values is None:
+        recruit_values = {
+            pid: (random.randint(170, 255), random.randint(90, 170), 30)
+            for pid in range(max_pid + 1)
+        }
+
+    export_theme_map(
+        id_map,
+        bounds,
+        sea_regions,
+        "RecruitablePopulationMap.png",
+        recruit_values,
+    )
+    export_mode_folder(
+        "RecruitablePopulation",
+        "RecruitablePopulationMap",
+        "Recruitable population map",
+    )
+
+
 IDEOLOGY_COLORS = {
     "demokracie": (64, 122, 205),
     "kralovstvi": (212, 175, 55),
@@ -270,14 +332,14 @@ def _normalize_ideology_label(value):
         return "unknown"
     if text in {"demokracie", "democracy", "democratic"}:
         return "demokracie"
-    if text in {"kralovstvi", "monarchy", "kingdom", "constitutional monarchy"}:
+    if text in {"kralovstvi", "kralostvi", "monarchy", "kingdom", "constitutional monarchy"}:
         return "kralovstvi"
     if text in {"autokracie", "autocracy", "autocratic", "dictatorship"}:
         return "autokracie"
 
     if "democr" in text or "demokra" in text:
         return "demokracie"
-    if "kralov" in text or "monarch" in text or "kingdom" in text:
+    if "kralov" in text or "kralost" in text or "monarch" in text or "kingdom" in text:
         return "kralovstvi"
     if "autocr" in text or "diktat" in text or "dictat" in text:
         return "autokracie"

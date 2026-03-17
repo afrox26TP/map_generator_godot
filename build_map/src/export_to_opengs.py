@@ -9,11 +9,21 @@ from export_political_map import export_political_map
 from export_theme_map import (
     export_gdp_map,
     export_population_map,
+    export_recruitable_population_map,
     export_ideology_map,
 )
 from import_population import generate_population_dataset
 from import_gdp import generate_gdp_dataset
-from import_ideology import generate_ideology_dataset
+from import_ideology import canonical_ideology, generate_ideology_dataset
+
+
+RECRUITABLE_SHARE_BY_IDEOLOGY = {
+    "demokracie": 0.05,
+    "kralovstvi": 0.10,
+    "autokracie": 0.15,
+}
+DEFAULT_RECRUITABLE_SHARE = RECRUITABLE_SHARE_BY_IDEOLOGY["demokracie"]
+CAPITAL_RECRUITABLE_MULTIPLIER = 3.0
 
 
 # --------------------------------------------------------
@@ -353,6 +363,43 @@ def _build_gdp_export_lookup(rows):
     return lookup
 
 
+def _normalize_recruitable_ideology(value):
+    ideology = canonical_ideology(value)
+    if ideology == "kralostvi":
+        return "kralovstvi"
+    return ideology
+
+
+def _compute_recruitable_population_value(population, ideology, is_capital):
+    pop_value = max(int(population or 0), 0)
+    ideology_key = _normalize_recruitable_ideology(ideology)
+    share = RECRUITABLE_SHARE_BY_IDEOLOGY.get(ideology_key, DEFAULT_RECRUITABLE_SHARE)
+    multiplier = CAPITAL_RECRUITABLE_MULTIPLIER if int(is_capital) else 1.0
+    return int(round(pop_value * share * multiplier))
+
+
+def _build_recruitable_population_lookup(
+    land,
+    population_rows=None,
+    ideology_rows=None,
+):
+    population_by_pid = _build_population_export_lookup(population_rows)
+    ideology_by_pid = {
+        int(r["province_id"]): str(r.get("ideology") or "unknown")
+        for r in (ideology_rows or [])
+    }
+
+    lookup = {}
+    for pid, land_row in land.iterrows():
+        pid_i = int(pid)
+        pop = int(population_by_pid.get(pid_i, {}).get("population") or 0)
+        ideology = ideology_by_pid.get(pid_i, "unknown")
+        is_capital = _row_is_capital(land_row)
+        lookup[pid_i] = _compute_recruitable_population_value(pop, ideology, is_capital)
+
+    return lookup
+
+
 def _rgb_tuple_to_key(color):
     r, g, b = color
     return int(r) | (int(g) << 8) | (int(b) << 16)
@@ -443,6 +490,7 @@ def export_provinces_txt(
     gdp_rows=None,
     sea_color_to_id=None,
     ideology_rows=None,
+    recruitable_by_pid=None,
 ):
 
     out_path = os.path.join(OUT, "Provinces.txt")
@@ -455,6 +503,18 @@ def export_provinces_txt(
         int(r["province_id"]): str(r.get("ideology") or "unknown")
         for r in (ideology_rows or [])
     }
+    if recruitable_by_pid is None:
+        recruitable_by_pid = _build_recruitable_population_lookup(
+            land,
+            population_rows=population_rows,
+            ideology_rows=ideology_rows,
+        )
+    else:
+        recruitable_by_pid = {
+            int(pid): max(int(value or 0), 0)
+            for pid, value in recruitable_by_pid.items()
+        }
+
     rows = []
     country_capitals = _build_country_capital_lookup(land)
 
@@ -512,6 +572,7 @@ def export_provinces_txt(
             capital_city = _sanitize_txt_field(_row_capital_city_name(land_row, country_capitals))
         neighbor_ids = ",".join(str(n) for n in neighbors_by_pid.get(int(pid), []))
         ideology = ideology_by_pid.get(int(pid), "unknown")
+        recruitable_population = int(recruitable_by_pid.get(int(pid), 0) or 0)
 
         ys, xs = np.where(id_map == pid)
         if len(xs) == 0:
@@ -523,7 +584,7 @@ def export_provinces_txt(
         rows.append(
             f"{pid};{r};{g};{b};{typ};{st};{owner};{controller};{cx};{cy};"
             f"{province_name};{country_name};{population};{gdp_value:.2f};{gdp_per_capita:.6f};"
-            f"{is_capital};{capital_city};{neighbor_ids};{ideology}"
+            f"{is_capital};{capital_city};{neighbor_ids};{ideology};{recruitable_population}"
         )
 
     for col, sea_id in sea_items:
@@ -531,14 +592,14 @@ def export_provinces_txt(
         neighbor_ids = ",".join(str(n) for n in neighbors_by_pid.get(int(sea_id), []))
         rows.append(
             f"{sea_id};{r};{g};{b};sea;SEA;SEA;SEA;0;0;"
-            f";SEA;0;0.00;0.000000;0;;{neighbor_ids};unknown"
+            f";SEA;0;0.00;0.000000;0;;{neighbor_ids};unknown;0"
         )
 
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(
             "id;R;G;B;type;state;owner;controller;x;y;"
             "province_name;country_name;population;gdp;gdp_per_capita;"
-            "is_capital;capital_city;neighbors;ideology\n"
+            "is_capital;capital_city;neighbors;ideology;recruitable_population\n"
         )
         for r in rows:
             f.write(r + "\n")
@@ -703,6 +764,12 @@ def run_export(land, sea_regions):
             "(set to unknown there)."
         )
 
+    recruitable_values = _build_recruitable_population_lookup(
+        land,
+        population_rows=rows,
+        ideology_rows=ideology_rows,
+    )
+
     print("[EXPORT] Provinces.txt...")
     export_provinces_txt(
         province_colors,
@@ -712,6 +779,7 @@ def run_export(land, sea_regions):
         gdp_rows=gdp_rows,
         sea_color_to_id=sea_color_to_id,
         ideology_rows=ideology_rows,
+        recruitable_by_pid=recruitable_values,
     )
 
     print("[EXPORT] GDP Map...")
@@ -735,6 +803,15 @@ def run_export(land, sea_regions):
         sea_regions,
         bounds,
         ideology_by_pid=ideology_values,
+        max_pid=max_pid,
+    )
+
+    print("[EXPORT] Recruitable Population Map...")
+    export_recruitable_population_map(
+        id_map,
+        sea_regions,
+        bounds,
+        recruitable_population=recruitable_values,
         max_pid=max_pid,
     )
 

@@ -2,6 +2,9 @@ state={
     id=5
     name="STATE_BIH"
     provinces={
+        54
+        55
+        56
         57
         58
         59
@@ -14,8 +17,5 @@ state={
         66
         67
         68
-        69
-        70
-        71
     }
 }

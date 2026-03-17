@@ -2,6 +2,7 @@ state={
     id=4
     name="STATE_BGR"
     provinces={
+        28
         29
         30
         31
@@ -27,8 +28,5 @@ state={
         51
         52
         53
-        54
-        55
-        56
     }
 }

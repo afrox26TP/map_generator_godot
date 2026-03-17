@@ -6,6 +6,8 @@ import geopandas as gpd
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import re
+import unicodedata
 
 from shapely.geometry import box, Point, MultiPoint, Polygon, MultiPolygon
 from shapely.ops import unary_union, voronoi_diagram
@@ -306,8 +308,221 @@ def merge_small_absolute(gdf):
     return merged.drop(columns="area")
 
 
+def _province_display_name(row):
+    for key in ("name_en", "name"):
+        text = _clean_optional_text(row.get(key))
+        if text:
+            return text
+    return ""
+
+
+def _normalize_merge_name(value):
+    text = _clean_optional_text(value)
+    if not text:
+        return ""
+
+    text = unicodedata.normalize("NFKD", text)
+    text = "".join(ch for ch in text if not unicodedata.combining(ch))
+    text = re.sub(r"[^a-z0-9]+", " ", text.lower())
+    return text.strip()
+
+
+def _first_non_empty(series):
+    for value in series:
+        text = _clean_optional_text(value)
+        if text:
+            return text
+    return ""
+
+
+def merge_same_name_provinces(gdf):
+    gdf = gdf.copy()
+    if "is_capital_province" not in gdf.columns:
+        gdf["is_capital_province"] = 0
+    if "capital_city_name" not in gdf.columns:
+        gdf["capital_city_name"] = ""
+
+    gdf["_merge_name_raw"] = gdf.apply(_province_display_name, axis=1)
+    gdf["_merge_name_key"] = gdf["_merge_name_raw"].apply(_normalize_merge_name)
+    gdf["_merge_area"] = gdf.geometry.area
+
+    merged_rows = []
+    merged_groups = 0
+    removed_rows = 0
+
+    for _, country_group in gdf.groupby("country", sort=False):
+        for _, same_name in country_group.groupby("_merge_name_key", sort=False):
+            key = same_name.iloc[0]["_merge_name_key"]
+            if not key or len(same_name) == 1:
+                for _, row in same_name.iterrows():
+                    merged_rows.append(row.copy())
+                continue
+
+            merged_groups += 1
+            removed_rows += len(same_name) - 1
+
+            rep_idx = same_name["_merge_area"].idxmax()
+            merged_row = same_name.loc[rep_idx].copy()
+            merged_row["geometry"] = unary_union(list(same_name.geometry))
+            merged_row["is_capital_province"] = int(
+                same_name["is_capital_province"].fillna(0).astype(int).max()
+            )
+
+            cap_rows = same_name[same_name["is_capital_province"].fillna(0).astype(int) > 0]
+            capital_city = _first_non_empty(cap_rows.get("capital_city_name", pd.Series(dtype=str)))
+            if not capital_city:
+                capital_city = _first_non_empty(same_name.get("capital_city_name", pd.Series(dtype=str)))
+            merged_row["capital_city_name"] = capital_city
+
+            for key_name in ("name_en", "name"):
+                if key_name not in same_name.columns:
+                    continue
+                if _clean_optional_text(merged_row.get(key_name)):
+                    continue
+                merged_row[key_name] = _first_non_empty(same_name[key_name])
+
+            merged_rows.append(merged_row)
+
+    merged_df = gpd.GeoDataFrame(pd.DataFrame(merged_rows), geometry="geometry", crs=gdf.crs)
+    merged_df = merged_df.drop(columns=["_merge_name_raw", "_merge_name_key", "_merge_area"], errors="ignore")
+    merged_df = merged_df.reset_index(drop=True)
+
+    debug(
+        "Duplicate-name merge groups: "
+        f"{merged_groups}, provinces merged away: {removed_rows}"
+    )
+    return merged_df
+
+
+def _build_country_neighbor_map(country_group):
+    idx_list = list(country_group.index)
+    neighbors = {idx: set() for idx in idx_list}
+
+    for i, left_idx in enumerate(idx_list):
+        left_geom = country_group.loc[left_idx, "geometry"]
+        if left_geom.is_empty:
+            continue
+
+        left_boundary = left_geom.boundary
+
+        for right_idx in idx_list[i + 1:]:
+            right_geom = country_group.loc[right_idx, "geometry"]
+            if right_geom.is_empty:
+                continue
+
+            shared_boundary = left_boundary.intersection(right_geom.boundary)
+            if shared_boundary.is_empty:
+                continue
+            if float(shared_boundary.length) <= 0.0:
+                continue
+
+            neighbors[left_idx].add(right_idx)
+            neighbors[right_idx].add(left_idx)
+
+    return neighbors
+
+
+def merge_single_neighbor_provinces(gdf):
+    gdf = gdf.copy()
+    if "is_capital_province" not in gdf.columns:
+        gdf["is_capital_province"] = 0
+    if "capital_city_name" not in gdf.columns:
+        gdf["capital_city_name"] = ""
+
+    gdf["_merge_area"] = gdf.geometry.area
+    merged_groups = []
+    merged_count = 0
+
+    for _, country_group in gdf.groupby("country", sort=False):
+        group = country_group.copy()
+
+        while True:
+            neighbor_map = _build_country_neighbor_map(group)
+            leaves = [idx for idx, nbrs in neighbor_map.items() if len(nbrs) == 1]
+            if not leaves:
+                break
+
+            leaves_sorted = sorted(
+                leaves,
+                key=lambda idx: (float(group.loc[idx, "_merge_area"]), int(idx)),
+            )
+
+            merged_this_round = False
+            for idx in leaves_sorted:
+                if idx not in group.index:
+                    continue
+
+                neighbors = [n for n in neighbor_map.get(idx, set()) if n in group.index]
+                if len(neighbors) != 1:
+                    continue
+
+                neighbor_idx = neighbors[0]
+                if neighbor_idx == idx:
+                    continue
+
+                current = group.loc[idx]
+                neighbor = group.loc[neighbor_idx]
+
+                merged_geom = current.geometry.union(neighbor.geometry)
+                merged_capital_flag = int(
+                    bool(current.get("is_capital_province", 0))
+                    or bool(neighbor.get("is_capital_province", 0))
+                )
+                current_capital_city = _clean_optional_text(current.get("capital_city_name", ""))
+                neighbor_capital_city = _clean_optional_text(neighbor.get("capital_city_name", ""))
+                merged_capital_city = current_capital_city or neighbor_capital_city
+
+                group.loc[idx, "geometry"] = merged_geom
+                group.loc[idx, "is_capital_province"] = merged_capital_flag
+                group.loc[idx, "capital_city_name"] = merged_capital_city
+
+                for key_name in ("name_en", "name"):
+                    if key_name not in group.columns:
+                        continue
+                    if _clean_optional_text(group.loc[idx].get(key_name)):
+                        continue
+                    group.loc[idx, key_name] = _clean_optional_text(neighbor.get(key_name))
+
+                group.loc[idx, "_merge_area"] = merged_geom.area
+                group = group.drop(neighbor_idx)
+                merged_count += 1
+                merged_this_round = True
+                break
+
+            if not merged_this_round:
+                break
+
+        merged_groups.append(group)
+
+    merged_df = gpd.GeoDataFrame(
+        pd.concat(merged_groups, ignore_index=True),
+        geometry="geometry",
+        crs=gdf.crs,
+    )
+    merged_df = merged_df.drop(columns=["_merge_area"], errors="ignore")
+    merged_df = merged_df.reset_index(drop=True)
+    debug(f"Single-neighbor merges applied: {merged_count}")
+    return merged_df
+
+
 # Apply merge
 land = merge_small_absolute(land)
+
+debug("PART 2.6 START — merging same-name provinces...")
+before_same_name_merge = len(land)
+land = merge_same_name_provinces(land)
+debug(
+    "PART 2.6 DONE — duplicate-name merged provinces removed: "
+    f"{before_same_name_merge - len(land)}"
+)
+
+debug("PART 2.7 START — merging one-neighbor provinces...")
+before_single_neighbor_merge = len(land)
+land = merge_single_neighbor_provinces(land)
+debug(
+    "PART 2.7 DONE — one-neighbor merged provinces removed: "
+    f"{before_single_neighbor_merge - len(land)}"
+)
 
 debug(f"PART 2.5 DONE ")
 

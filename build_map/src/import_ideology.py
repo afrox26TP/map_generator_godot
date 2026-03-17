@@ -64,6 +64,7 @@ def canonical_ideology(value: Optional[str]) -> str:
         "autocratic": "autokracie",
         "dictatorship": "autokracie",
         "kralovstvi": "kralovstvi",
+        "kralostvi": "kralovstvi",
         "monarchy": "kralovstvi",
         "kingdom": "kralovstvi",
         "constitutional monarchy": "kralovstvi",
@@ -80,7 +81,7 @@ def canonical_ideology(value: Optional[str]) -> str:
         return "demokracie"
     if "autocr" in norm or "diktat" in norm or "dictat" in norm:
         return "autokracie"
-    if "kralov" in norm or "monarch" in norm or "kingdom" in norm:
+    if "kralov" in norm or "kralost" in norm or "monarch" in norm or "kingdom" in norm:
         return "kralovstvi"
 
     return norm.replace(" ", "_")

@@ -10,919 +10,886 @@ province_id;province_name;country_iso3;country_name;population;gdp;gdp_per_capit
 8;Tirana;ALB;Albania;1025241;11.91;1.2e-05;country_total_population_share;2024
 9;Lezhë;ALB;Albania;130770;1.52;1.2e-05;country_total_population_share;2024
 10;Berat;ALB;Albania;128280;1.49;1.2e-05;country_total_population_share;2024
-11;Lower Austria;AUT;Austria;2202328;145.43;6.6e-05;country_total_population_share;2024
-12;Upper Austria;AUT;Austria;1948648;128.67;6.6e-05;country_total_population_share;2024
-13;Burgenland;AUT;Austria;384997;25.42;6.6e-05;country_total_population_share;2024
-14;Vorarlberg;AUT;Austria;529519;34.97;6.6e-05;country_total_population_share;2024
-15;Tyrol;AUT;Austria;990662;65.42;6.6e-05;country_total_population_share;2024
-16;Salzburg;AUT;Austria;730162;48.21;6.6e-05;country_total_population_share;2024
-17;Carinthia;AUT;Austria;733932;48.46;6.6e-05;country_total_population_share;2024
-18;Styria;AUT;Austria;1629752;107.62;6.6e-05;country_total_population_share;2024
-19;West Flanders;BEL;Belgium;1264786;81.45;6.4e-05;country_total_population_share;2024
-20;Hainaut;BEL;Belgium;1534374;98.81;6.4e-05;country_total_population_share;2024
-21;Namur;BEL;Belgium;1434371;92.37;6.4e-05;country_total_population_share;2024
-22;Luxembourg;BEL;Belgium;1709854;110.11;6.4e-05;country_total_population_share;2024
-23;Liège;BEL;Belgium;1444328;93.01;6.4e-05;country_total_population_share;2024
-24;East Flanders;BEL;Belgium;1148168;73.94;6.4e-05;country_total_population_share;2024
-25;Antwerp;BEL;Belgium;1067136;68.72;6.4e-05;country_total_population_share;2024
-26;Limburg;BEL;Belgium;911287;58.68;6.4e-05;country_total_population_share;2024
-27;Flemish Brabant;BEL;Belgium;881870;56.79;6.4e-05;country_total_population_share;2024
-28;Walloon Brabant;BEL;Belgium;423826;27.29;6.4e-05;country_total_population_share;2024
-29;Burgas;BGR;Bulgaria;481772;10.64;2.2e-05;country_total_population_share;2024
-30;Yambol;BGR;Bulgaria;130600;2.88;2.2e-05;country_total_population_share;2024
-31;Haskovo;BGR;Bulgaria;256862;5.67;2.2e-05;country_total_population_share;2024
-32;Vidin;BGR;Bulgaria;87384;1.93;2.2e-05;country_total_population_share;2024
-33;Pernik;BGR;Bulgaria;136121;3.01;2.2e-05;country_total_population_share;2024
-34;Sofia;BGR;Bulgaria;278348;6.15;2.2e-05;country_total_population_share;2024
-35;Montana;BGR;Bulgaria;139653;3.08;2.2e-05;country_total_population_share;2024
-36;Kyustendil;BGR;Bulgaria;131470;2.9;2.2e-05;country_total_population_share;2024
-37;Blagoevgrad;BGR;Bulgaria;354694;7.83;2.2e-05;country_total_population_share;2024
-38;Silistra;BGR;Bulgaria;115884;2.56;2.2e-05;country_total_population_share;2024
-39;Ruse;BGR;Bulgaria;230522;5.09;2.2e-05;country_total_population_share;2024
-40;Dobrich;BGR;Bulgaria;179875;3.97;2.2e-05;country_total_population_share;2024
-41;Vratsa;BGR;Bulgaria;180860;3.99;2.2e-05;country_total_population_share;2024
-42;Pleven;BGR;Bulgaria;266734;5.89;2.2e-05;country_total_population_share;2024
-43;Veliko Tarnovo;BGR;Bulgaria;248261;5.48;2.2e-05;country_total_population_share;2024
-44;Kardzhali;BGR;Bulgaria;185166;4.09;2.2e-05;country_total_population_share;2024
-45;Smolyan;BGR;Bulgaria;112149;2.48;2.2e-05;country_total_population_share;2024
-46;Varna;BGR;Bulgaria;541977;11.97;2.2e-05;country_total_population_share;2024
-47;Plovdiv;BGR;Bulgaria;787383;17.39;2.2e-05;country_total_population_share;2024
-48;Stara Zagora;BGR;Bulgaria;357671;7.9;2.2e-05;country_total_population_share;2024
-49;Sliven;BGR;Bulgaria;209719;4.63;2.2e-05;country_total_population_share;2024
-50;Shumen;BGR;Bulgaria;184919;4.08;2.2e-05;country_total_population_share;2024
-51;Razgrad;BGR;Bulgaria;123205;2.72;2.2e-05;country_total_population_share;2024
-52;Targovishte;BGR;Bulgaria;117353;2.59;2.2e-05;country_total_population_share;2024
-53;Gabrovo;BGR;Bulgaria;116216;2.57;2.2e-05;country_total_population_share;2024
-54;Pazardzhik;BGR;Bulgaria;276853;6.11;2.2e-05;country_total_population_share;2024
-55;Lovech;BGR;Bulgaria;137282;3.03;2.2e-05;country_total_population_share;2024
-56;Sofia;BGR;Bulgaria;71067;1.57;2.2e-05;country_total_population_share;2024
-57;Herzegovina-Neretva Canton;BIH;Bosnia and Herzegovina;295498;3.34;1.1e-05;country_total_population_share;2024
-58;Trebinje;BIH;Bosnia and Herzegovina;198063;2.24;1.1e-05;country_total_population_share;2024
-59;Foča;BIH;Bosnia and Herzegovina;206050;2.33;1.1e-05;country_total_population_share;2024
-60;Banja Luka;BIH;Bosnia and Herzegovina;550503;6.22;1.1e-05;country_total_population_share;2024
-61;Una-Sana Canton;BIH;Bosnia and Herzegovina;299257;3.38;1.1e-05;country_total_population_share;2024
-62;Doboj;BIH;Bosnia and Herzegovina;144286;1.63;1.1e-05;country_total_population_share;2024
-63;Bijeljina;BIH;Bosnia and Herzegovina;125913;1.42;1.1e-05;country_total_population_share;2024
-64;Livno;BIH;Bosnia and Herzegovina;325896;3.68;1.1e-05;country_total_population_share;2024
-65;West Herzegovina Canton;BIH;Bosnia and Herzegovina;93476;1.06;1.1e-05;country_total_population_share;2024
-66;Vlasenica;BIH;Bosnia and Herzegovina;136615;1.54;1.1e-05;country_total_population_share;2024
-67;Central Bosnia Canton;BIH;Bosnia and Herzegovina;211634;2.39;1.1e-05;country_total_population_share;2024
-68;Zenica-Doboj Canton;BIH;Bosnia and Herzegovina;212113;2.39;1.1e-05;country_total_population_share;2024
-69;Tuzla Canton;BIH;Bosnia and Herzegovina;189101;2.13;1.1e-05;country_total_population_share;2024
-70;Sarajevo-Romanija;BIH;Bosnia and Herzegovina;134361;1.52;1.1e-05;country_total_population_share;2024
-71;Sarajevo Canton;BIH;Bosnia and Herzegovina;87234;0.98;1.1e-05;country_total_population_share;2024
-72;Gomel;BLR;Belarus;1708382;16.91;1e-05;country_total_population_share;2024
-73;Brest;BLR;Belarus;1672283;16.55;1e-05;country_total_population_share;2024
-74;Vitebsk;BLR;Belarus;1379165;13.65;1e-05;country_total_population_share;2024
-75;Grodno;BLR;Belarus;1267007;12.54;1e-05;country_total_population_share;2024
-76;Mahilioŭ;BLR;Belarus;1249621;12.37;1e-05;country_total_population_share;2024
-77;Minsk;BLR;Belarus;1873542;18.54;1e-05;country_total_population_share;2024
-78;Valais;CHE;Switzerland;510708;61.25;0.00012;country_total_population_share;2024
-79;Ticino;CHE;Switzerland;524647;62.92;0.00012;country_total_population_share;2024
-80;Grisons;CHE;Switzerland;294555;35.33;0.00012;country_total_population_share;2024
-81;Thurgau;CHE;Switzerland;410509;49.23;0.00012;country_total_population_share;2024
-82;Zürich;CHE;Switzerland;2258345;270.85;0.00012;country_total_population_share;2024
-83;Aargau;CHE;Switzerland;1007007;120.77;0.00012;country_total_population_share;2024
-84;St. Gallen;CHE;Switzerland;753833;90.41;0.00012;country_total_population_share;2024
-85;Solothurn;CHE;Switzerland;405641;48.65;0.00012;country_total_population_share;2024
-86;Vaud;CHE;Switzerland;1186577;142.31;0.00012;country_total_population_share;2024
-87;Bern;CHE;Switzerland;472737;56.7;0.00012;country_total_population_share;2024
-88;Lucerne;CHE;Switzerland;608114;72.93;0.00012;country_total_population_share;2024
-89;Uri;CHE;Switzerland;54097;6.49;0.00012;country_total_population_share;2024
-90;Fribourg;CHE;Switzerland;473230;56.76;0.00012;country_total_population_share;2024
-91;Famagusta;CYP;Cyprus;84268;2.89;3.4e-05;country_total_population_share;2024
-92;Nicosia;CYP;Cyprus;590914;20.24;3.4e-05;country_total_population_share;2024
-93;Limassol;CYP;Cyprus;425286;14.57;3.4e-05;country_total_population_share;2024
-94;Paphos;CYP;Cyprus;159532;5.46;3.4e-05;country_total_population_share;2024
-95;Ústí nad Labem;CZE;Czech Republic;926708;35.46;3.8e-05;country_total_population_share;2024
-96;Liberec;CZE;Czech Republic;515305;19.72;3.8e-05;country_total_population_share;2024
-97;Karlovy Vary;CZE;Czech Republic;336122;12.86;3.8e-05;country_total_population_share;2024
-98;Plzeň-;CZE;Czech Republic;704630;26.97;3.8e-05;country_total_population_share;2024
-99;South Bohemian;CZE;Czech Republic;748867;28.66;3.8e-05;country_total_population_share;2024
-100;Hradec Králové;CZE;Czech Republic;637316;24.39;3.8e-05;country_total_population_share;2024
-101;Olomouc;CZE;Czech Republic;723959;27.71;3.8e-05;country_total_population_share;2024
-102;Pardubice;CZE;Czech Republic;608136;23.27;3.8e-05;country_total_population_share;2024
-103;Moravian-Silesian;CZE;Czech Republic;1363316;52.17;3.8e-05;country_total_population_share;2024
-104;South Moravian;CZE;Czech Republic;1409331;53.93;3.8e-05;country_total_population_share;2024
-105;Zlín;CZE;Czech Republic;663770;25.4;3.8e-05;country_total_population_share;2024
-106;Vysočina;CZE;Czech Republic;593436;22.71;3.8e-05;country_total_population_share;2024
-107;Central Bohemian;CZE;Czech Republic;1669104;63.87;3.8e-05;country_total_population_share;2024
-108;Saxony;DEU;Germany;4532040;285.43;6.3e-05;country_total_population_share;2024
-109;Bavaria;DEU;Germany;14545128;916.06;6.3e-05;country_total_population_share;2024
-110;Rhineland-Palatinate;DEU;Germany;4537251;285.76;6.3e-05;country_total_population_share;2024
-111;Saarland;DEU;Germany;1127691;71.02;6.3e-05;country_total_population_share;2024
-112;Schleswig-Holstein;DEU;Germany;3272881;206.13;6.3e-05;country_total_population_share;2024
-113;Lower Saxony;DEU;Germany;8869571;558.61;6.3e-05;country_total_population_share;2024
-114;North Rhine-Westphalia;DEU;Germany;19873365;1251.64;6.3e-05;country_total_population_share;2024
-115;Baden-Württemberg;DEU;Germany;12305746;775.03;6.3e-05;country_total_population_share;2024
-116;Brandenburg;DEU;Germany;2808320;176.87;6.3e-05;country_total_population_share;2024
-117;Mecklenburg-Western Pomerania;DEU;Germany;1740815;109.64;6.3e-05;country_total_population_share;2024
-118;Hesse;DEU;Germany;6103842;384.43;6.3e-05;country_total_population_share;2024
-119;Thuringia;DEU;Germany;2394869;150.83;6.3e-05;country_total_population_share;2024
-120;Saxony-Anhalt;DEU;Germany;2488481;156.73;6.3e-05;country_total_population_share;2024
-121;Southern Denmark;DNK;Denmark;1201901;100.84;8.4e-05;country_total_population_share;2024
-122;Central Denmark;DNK;Denmark;1303069;109.33;8.4e-05;country_total_population_share;2024
-123;North Denmark;DNK;Denmark;817222;68.57;8.4e-05;country_total_population_share;2024
-124;Zealand;DNK;Denmark;822045;68.97;8.4e-05;country_total_population_share;2024
-125;Denmark;DNK;Denmark;1815763;152.34;8.4e-05;country_total_population_share;2024
-126;Navarre;ESP;Spain;982185;41.26;4.2e-05;country_total_population_share;2024
-127;Gipuzkoa;ESP;Spain;244427;10.27;4.2e-05;country_total_population_share;2024
-128;Huesca;ESP;Spain;546971;22.98;4.2e-05;country_total_population_share;2024
-129;Lleida;ESP;Spain;3560749;149.6;4.2e-05;country_total_population_share;2024
-130;Girona;ESP;Spain;1928378;81.02;4.2e-05;country_total_population_share;2024
-131;Badajoz;ESP;Spain;677857;28.48;4.2e-05;country_total_population_share;2024
-132;Cádiz;ESP;Spain;968338;40.68;4.2e-05;country_total_population_share;2024
-133;Ourense;ESP;Spain;841369;35.35;4.2e-05;country_total_population_share;2024
-134;Cáceres;ESP;Spain;628400;26.4;4.2e-05;country_total_population_share;2024
-135;Salamanca;ESP;Spain;1184262;49.75;4.2e-05;country_total_population_share;2024
-136;Zamora;ESP;Spain;1028446;43.21;4.2e-05;country_total_population_share;2024
-137;Pontevedra;ESP;Spain;543469;22.83;4.2e-05;country_total_population_share;2024
-138;Huelva;ESP;Spain;1254652;52.71;4.2e-05;country_total_population_share;2024
-139;Barcelona;ESP;Spain;2442293;102.61;4.2e-05;country_total_population_share;2024
-140;Tarragona;ESP;Spain;2037740;85.61;4.2e-05;country_total_population_share;2024
-141;Castellón;ESP;Spain;692257;29.08;4.2e-05;country_total_population_share;2024
-142;Valencia;ESP;Spain;1037896;43.61;4.2e-05;country_total_population_share;2024
-143;Alicante;ESP;Spain;614033;25.8;4.2e-05;country_total_population_share;2024
-144;Murcia;ESP;Spain;1081898;45.45;4.2e-05;country_total_population_share;2024
-145;Almería;ESP;Spain;1109795;46.63;4.2e-05;country_total_population_share;2024
-146;Granada;ESP;Spain;1518251;63.79;4.2e-05;country_total_population_share;2024
-147;Málaga;ESP;Spain;954822;40.11;4.2e-05;country_total_population_share;2024
-148;Seville;ESP;Spain;1652045;69.41;4.2e-05;country_total_population_share;2024
-149;A Coruña;ESP;Spain;894313;37.57;4.2e-05;country_total_population_share;2024
-150;Lugo;ESP;Spain;1075054;45.17;4.2e-05;country_total_population_share;2024
-151;Asturias;ESP;Spain;1250718;52.55;4.2e-05;country_total_population_share;2024
-152;Cantabria;ESP;Spain;733986;30.84;4.2e-05;country_total_population_share;2024
-153;Biscay;ESP;Spain;270361;11.36;4.2e-05;country_total_population_share;2024
-154;Santa Cruz de Tenerife;ESP;Spain;388187;16.31;4.2e-05;country_total_population_share;2024
-155;Las Palmas;ESP;Spain;451839;18.98;4.2e-05;country_total_population_share;2024
-156;Balearic Islands;ESP;Spain;551321;23.16;4.2e-05;country_total_population_share;2024
-157;Zaragoza;ESP;Spain;600005;25.21;4.2e-05;country_total_population_share;2024
-158;La Rioja;ESP;Spain;402501;16.91;4.2e-05;country_total_population_share;2024
-159;Araba / Álava;ESP;Spain;368308;15.47;4.2e-05;country_total_population_share;2024
-160;Albacete;ESP;Spain;494676;20.78;4.2e-05;country_total_population_share;2024
-161;Teruel;ESP;Spain;525361;22.07;4.2e-05;country_total_population_share;2024
-162;Cuenca;ESP;Spain;557237;23.41;4.2e-05;country_total_population_share;2024
-163;Toledo;ESP;Spain;506965;21.3;4.2e-05;country_total_population_share;2024
-164;León;ESP;Spain;1426667;59.94;4.2e-05;country_total_population_share;2024
-165;Soria;ESP;Spain;996539;41.87;4.2e-05;country_total_population_share;2024
-166;Burgos;ESP;Spain;1337004;56.17;4.2e-05;country_total_population_share;2024
-167;Ávila;ESP;Spain;814360;34.21;4.2e-05;country_total_population_share;2024
-168;Palencia;ESP;Spain;807792;33.94;4.2e-05;country_total_population_share;2024
-169;Ciudad Real;ESP;Spain;627269;26.35;4.2e-05;country_total_population_share;2024
-170;Córdoba;ESP;Spain;1625591;68.3;4.2e-05;country_total_population_share;2024
-171;Guadalajara;ESP;Spain;418023;17.56;4.2e-05;country_total_population_share;2024
-172;Jaén;ESP;Spain;1611353;67.7;4.2e-05;country_total_population_share;2024
-173;Community of Madrid;ESP;Spain;806162;33.87;4.2e-05;country_total_population_share;2024
-174;Segovia;ESP;Spain;710580;29.85;4.2e-05;country_total_population_share;2024
-175;Valladolid;ESP;Spain;817295;34.34;4.2e-05;country_total_population_share;2024
-176;Viljandi;EST;Estonia;45516;1.7;3.7e-05;country_total_population_share;2024
-177;Pärnu;EST;Estonia;87186;3.25;3.7e-05;country_total_population_share;2024
-178;Valga;EST;Estonia;27851;1.04;3.7e-05;country_total_population_share;2024
-179;Võru;EST;Estonia;33959;1.27;3.7e-05;country_total_population_share;2024
-180;Ida-Viru;EST;Estonia;133003;4.96;3.7e-05;country_total_population_share;2024
-181;Põlva;EST;Estonia;23973;0.89;3.7e-05;country_total_population_share;2024
-182;Tartu;EST;Estonia;161958;6.03;3.7e-05;country_total_population_share;2024
-183;Jõgeva;EST;Estonia;27666;1.03;3.7e-05;country_total_population_share;2024
-184;Lääne;EST;Estonia;20571;0.77;3.7e-05;country_total_population_share;2024
-185;Harju;EST;Estonia;644592;24.01;3.7e-05;country_total_population_share;2024
-186;Lääne-Viru;EST;Estonia;59450;2.21;3.7e-05;country_total_population_share;2024
-187;Saare;EST;Estonia;31937;1.19;3.7e-05;country_total_population_share;2024
-188;Hiiu;EST;Estonia;8397;0.31;3.7e-05;country_total_population_share;2024
-189;Rapla;EST;Estonia;33948;1.26;3.7e-05;country_total_population_share;2024
-190;Järva;EST;Estonia;29993;1.12;3.7e-05;country_total_population_share;2024
-191;Lapland;FIN;Finland;175120;10.47;6e-05;country_total_population_share;2024
-192;Northern Ostrobothnia;FIN;Finland;620535;37.11;6e-05;country_total_population_share;2024
-193;Kainuu;FIN;Finland;71038;4.25;6e-05;country_total_population_share;2024
-194;North Karelia;FIN;Finland;162098;9.69;6e-05;country_total_population_share;2024
-195;South Karelia;FIN;Finland;124972;7.47;6e-05;country_total_population_share;2024
-196;Kymenlaakso;FIN;Finland;161374;9.65;6e-05;country_total_population_share;2024
-197;Uusimaa;FIN;Finland;1689253;101.03;6e-05;country_total_population_share;2024
-198;Finland Proper;FIN;Finland;163721;9.79;6e-05;country_total_population_share;2024
-199;Satakunta;FIN;Finland;213412;12.76;6e-05;country_total_population_share;2024
-200;Ostrobothnia;FIN;Finland;174238;10.42;6e-05;country_total_population_share;2024
-201;Central Ostrobothnia;FIN;Finland;67365;4.03;6e-05;country_total_population_share;2024
-202;Northern Savonia;FIN;Finland;335932;20.09;6e-05;country_total_population_share;2024
-203;Southern Savonia;FIN;Finland;322963;19.32;6e-05;country_total_population_share;2024
-204;Central Finland;FIN;Finland;270094;16.15;6e-05;country_total_population_share;2024
-205;Southern Ostrobothnia;FIN;Finland;235758;14.1;6e-05;country_total_population_share;2024
-206;Pirkanmaa;FIN;Finland;518883;31.03;6e-05;country_total_population_share;2024
-207;Tavastia Proper;FIN;Finland;99235;5.94;6e-05;country_total_population_share;2024
-208;Päijänne Tavastia;FIN;Finland;204009;12.2;6e-05;country_total_population_share;2024
-209;Nord;FRA;France;1097489;57.1;5.2e-05;country_total_population_share;2024
-210;Ardennes;FRA;France;527214;27.43;5.2e-05;country_total_population_share;2024
-211;Aisne;FRA;France;1408984;73.3;5.2e-05;country_total_population_share;2024
-212;Meuse;FRA;France;614171;31.95;5.2e-05;country_total_population_share;2024
-213;Meurthe-et-Moselle;FRA;France;530054;27.58;5.2e-05;country_total_population_share;2024
-214;Moselle;FRA;France;605571;31.51;5.2e-05;country_total_population_share;2024
-215;Alpes-Maritimes;FRA;France;733268;38.15;5.2e-05;country_total_population_share;2024
-216;Alpes-de-Haute-Provence;FRA;France;1136378;59.12;5.2e-05;country_total_population_share;2024
-217;Hautes-Alpes;FRA;France;935729;48.68;5.2e-05;country_total_population_share;2024
-218;Savoie;FRA;France;727392;37.84;5.2e-05;country_total_population_share;2024
-219;Haute-Savoie;FRA;France;576886;30.01;5.2e-05;country_total_population_share;2024
-220;Pyrenees-Atlantics;FRA;France;580435;30.2;5.2e-05;country_total_population_share;2024
-221;Haute-Garonne;FRA;France;534618;27.81;5.2e-05;country_total_population_share;2024
-222;Hautes-Pyrénées;FRA;France;400828;20.85;5.2e-05;country_total_population_share;2024
-223;Ariège;FRA;France;433606;22.56;5.2e-05;country_total_population_share;2024
-224;Pyrénées-Orientales;FRA;France;378699;19.7;5.2e-05;country_total_population_share;2024
-225;Bas-Rhin;FRA;France;478885;24.91;5.2e-05;country_total_population_share;2024
-226;Haut-Rhin;FRA;France;368813;19.19;5.2e-05;country_total_population_share;2024
-227;Doubs;FRA;France;362128;18.84;5.2e-05;country_total_population_share;2024
-228;Ain;FRA;France;677042;35.22;5.2e-05;country_total_population_share;2024
-229;Jura;FRA;France;313369;16.3;5.2e-05;country_total_population_share;2024
-230;Var;FRA;France;1004088;52.24;5.2e-05;country_total_population_share;2024
-231;Bouches-du-Rhône;FRA;France;883801;45.98;5.2e-05;country_total_population_share;2024
-232;Gard;FRA;France;498922;25.96;5.2e-05;country_total_population_share;2024
-233;Hérault;FRA;France;520899;27.1;5.2e-05;country_total_population_share;2024
-234;Aude;FRA;France;533680;27.77;5.2e-05;country_total_population_share;2024
-235;Landes;FRA;France;669011;34.81;5.2e-05;country_total_population_share;2024
-236;Gironde;FRA;France;714317;37.16;5.2e-05;country_total_population_share;2024
-237;Charente-Maritime;FRA;France;506460;26.35;5.2e-05;country_total_population_share;2024
-238;Vendée;FRA;France;814346;42.37;5.2e-05;country_total_population_share;2024
-239;Loire-Atlantique;FRA;France;833079;43.34;5.2e-05;country_total_population_share;2024
-240;Morbihan;FRA;France;830190;43.19;5.2e-05;country_total_population_share;2024
-241;Finistère;FRA;France;832345;43.3;5.2e-05;country_total_population_share;2024
-242;Côtes-d'Armor;FRA;France;870168;45.27;5.2e-05;country_total_population_share;2024
-243;Ille-et-Vilaine;FRA;France;830029;43.18;5.2e-05;country_total_population_share;2024
-244;Manche;FRA;France;688781;35.83;5.2e-05;country_total_population_share;2024
-245;Calvados;FRA;France;651967;33.92;5.2e-05;country_total_population_share;2024
-246;Eure;FRA;France;689343;35.86;5.2e-05;country_total_population_share;2024
-247;Seine-Maritime;FRA;France;705261;36.69;5.2e-05;country_total_population_share;2024
-248;Somme;FRA;France;1208952;62.9;5.2e-05;country_total_population_share;2024
-249;Pas-de-Calais;FRA;France;1297418;67.5;5.2e-05;country_total_population_share;2024
-250;Haute-Corse;FRA;France;610752;31.77;5.2e-05;country_total_population_share;2024
-251;Corse-du-Sud;FRA;France;530160;27.58;5.2e-05;country_total_population_share;2024
-252;Gers;FRA;France;528928;27.52;5.2e-05;country_total_population_share;2024
-253;Haute-Vienne;FRA;France;424723;22.1;5.2e-05;country_total_population_share;2024
-254;Corrèze;FRA;France;450969;23.46;5.2e-05;country_total_population_share;2024
-255;Tarn-et-Garonne;FRA;France;337030;17.53;5.2e-05;country_total_population_share;2024
-256;Tarn;FRA;France;496538;25.83;5.2e-05;country_total_population_share;2024
-257;Isère;FRA;France;900456;46.85;5.2e-05;country_total_population_share;2024
-258;Drôme;FRA;France;776141;40.38;5.2e-05;country_total_population_share;2024
-259;Aveyron;FRA;France;704556;36.66;5.2e-05;country_total_population_share;2024
-260;Lot;FRA;France;442847;23.04;5.2e-05;country_total_population_share;2024
-261;Indre-et-Loire;FRA;France;419193;21.81;5.2e-05;country_total_population_share;2024
-262;Indre;FRA;France;465381;24.21;5.2e-05;country_total_population_share;2024
-263;Loir-et-Cher;FRA;France;431906;22.47;5.2e-05;country_total_population_share;2024
-264;Creuse;FRA;France;430371;22.39;5.2e-05;country_total_population_share;2024
-265;Mayenne;FRA;France;672112;34.97;5.2e-05;country_total_population_share;2024
-266;Sarthe;FRA;France;780962;40.63;5.2e-05;country_total_population_share;2024
-267;Vaucluse;FRA;France;628997;32.72;5.2e-05;country_total_population_share;2024
-268;Haute-Marne;FRA;France;624500;32.49;5.2e-05;country_total_population_share;2024
-269;Marne;FRA;France;769420;40.03;5.2e-05;country_total_population_share;2024
-270;Dordogne;FRA;France;661985;34.44;5.2e-05;country_total_population_share;2024
-271;Rhône;FRA;France;425041;22.11;5.2e-05;country_total_population_share;2024
-272;Vosges;FRA;France;595609;30.99;5.2e-05;country_total_population_share;2024
-273;Ardèche;FRA;France;676559;35.2;5.2e-05;country_total_population_share;2024
-274;Loire;FRA;France;597606;31.09;5.2e-05;country_total_population_share;2024
-275;Puy-de-Dôme;FRA;France;901414;46.9;5.2e-05;country_total_population_share;2024
-276;Allier;FRA;France;846031;44.02;5.2e-05;country_total_population_share;2024
-277;Loiret;FRA;France;451878;23.51;5.2e-05;country_total_population_share;2024
-278;Maine-et-Loire;FRA;France;892722;46.44;5.2e-05;country_total_population_share;2024
-279;Aube;FRA;France;609248;31.7;5.2e-05;country_total_population_share;2024
-280;Val-d'Oise;FRA;France;1641984;85.43;5.2e-05;country_total_population_share;2024
-281;Yvelines;FRA;France;2556020;132.98;5.2e-05;country_total_population_share;2024
-282;Charente;FRA;France;455235;23.68;5.2e-05;country_total_population_share;2024
-283;Cher;FRA;France;486416;25.31;5.2e-05;country_total_population_share;2024
-284;Eure-et-Loir;FRA;France;402694;20.95;5.2e-05;country_total_population_share;2024
-285;Haute-Loire;FRA;France;609311;31.7;5.2e-05;country_total_population_share;2024
-286;Cantal;FRA;France;689933;35.89;5.2e-05;country_total_population_share;2024
-287;Lot-et-Garonne;FRA;France;416207;21.65;5.2e-05;country_total_population_share;2024
-288;Lozère;FRA;France;448290;23.32;5.2e-05;country_total_population_share;2024
-289;Nièvre;FRA;France;414855;21.58;5.2e-05;country_total_population_share;2024
-290;Côte-d’Or;FRA;France;511969;26.64;5.2e-05;country_total_population_share;2024
-291;Oise;FRA;France;1162371;60.47;5.2e-05;country_total_population_share;2024
-292;Orne;FRA;France;701855;36.51;5.2e-05;country_total_population_share;2024
-293;Haute-Saône;FRA;France;332375;17.29;5.2e-05;country_total_population_share;2024
-294;Saône-et-Loire;FRA;France;505874;26.32;5.2e-05;country_total_population_share;2024
-295;Deux-Sèvres;FRA;France;463687;24.12;5.2e-05;country_total_population_share;2024
-296;Vienne;FRA;France;519651;27.04;5.2e-05;country_total_population_share;2024
-297;Yonne;FRA;France;445815;23.19;5.2e-05;country_total_population_share;2024
-298;Essonne;FRA;France;2143534;111.52;5.2e-05;country_total_population_share;2024
-299;Seine-et-Marne;FRA;France;6403273;333.13;5.2e-05;country_total_population_share;2024
-300;Strabane;GBR;United Kingdom;1124706;69.58;6.2e-05;country_total_population_share;2024
-301;Fermanagh;GBR;United Kingdom;599656;37.1;6.2e-05;country_total_population_share;2024
-302;Wrexham;GBR;United Kingdom;374274;23.16;6.2e-05;country_total_population_share;2024
-303;Shropshire;GBR;United Kingdom;2661860;164.69;6.2e-05;country_total_population_share;2024
-304;Powys;GBR;United Kingdom;850336;52.61;6.2e-05;country_total_population_share;2024
-305;Herefordshire;GBR;United Kingdom;2332323;144.3;6.2e-05;country_total_population_share;2024
-306;Gloucestershire;GBR;United Kingdom;1644919;101.77;6.2e-05;country_total_population_share;2024
-307;Scottish Borders;GBR;United Kingdom;592533;36.66;6.2e-05;country_total_population_share;2024
-308;Northumberland;GBR;United Kingdom;2129868;131.77;6.2e-05;country_total_population_share;2024
-309;Cumbria;GBR;United Kingdom;2730091;168.91;6.2e-05;country_total_population_share;2024
-310;Dumfries and Galloway;GBR;United Kingdom;460750;28.51;6.2e-05;country_total_population_share;2024
-311;Stirling;GBR;United Kingdom;217328;13.45;6.2e-05;country_total_population_share;2024
-312;Durham;GBR;United Kingdom;1575043;97.45;6.2e-05;country_total_population_share;2024
-313;North Yorkshire;GBR;United Kingdom;3985869;246.6;6.2e-05;country_total_population_share;2024
-314;East Riding of Yorkshire;GBR;United Kingdom;1164031;72.02;6.2e-05;country_total_population_share;2024
-315;North East Lincolnshire;GBR;United Kingdom;1099324;68.01;6.2e-05;country_total_population_share;2024
-316;Lincolnshire;GBR;United Kingdom;2674567;165.47;6.2e-05;country_total_population_share;2024
-317;Norfolk;GBR;United Kingdom;2241701;138.69;6.2e-05;country_total_population_share;2024
-318;Suffolk;GBR;United Kingdom;1646333;101.86;6.2e-05;country_total_population_share;2024
-319;Essex;GBR;United Kingdom;1912428;118.32;6.2e-05;country_total_population_share;2024
-320;Kent;GBR;United Kingdom;1854633;114.74;6.2e-05;country_total_population_share;2024
-321;East Sussex;GBR;United Kingdom;862502;53.36;6.2e-05;country_total_population_share;2024
-322;West Sussex;GBR;United Kingdom;949564;58.75;6.2e-05;country_total_population_share;2024
-323;Hampshire;GBR;United Kingdom;2233696;138.2;6.2e-05;country_total_population_share;2024
-324;Dorset;GBR;United Kingdom;1211086;74.93;6.2e-05;country_total_population_share;2024
-325;Devon;GBR;United Kingdom;2706305;167.44;6.2e-05;country_total_population_share;2024
-326;Cornwall;GBR;United Kingdom;1557312;96.35;6.2e-05;country_total_population_share;2024
-327;Somerset;GBR;United Kingdom;1705060;105.49;6.2e-05;country_total_population_share;2024
-328;Carmarthenshire;GBR;United Kingdom;443605;27.45;6.2e-05;country_total_population_share;2024
-329;Pembrokeshire;GBR;United Kingdom;310385;19.2;6.2e-05;country_total_population_share;2024
-330;Ceredigion;GBR;United Kingdom;362927;22.45;6.2e-05;country_total_population_share;2024
-331;Gwynedd;GBR;United Kingdom;588248;36.39;6.2e-05;country_total_population_share;2024
-332;Conwy;GBR;United Kingdom;236831;14.65;6.2e-05;country_total_population_share;2024
-333;Lancashire;GBR;United Kingdom;1378937;85.31;6.2e-05;country_total_population_share;2024
-334;South Ayrshire;GBR;United Kingdom;115503;7.15;6.2e-05;country_total_population_share;2024
-335;Argyll and Bute;GBR;United Kingdom;532365;32.94;6.2e-05;country_total_population_share;2024
-336;Highland;GBR;United Kingdom;1552763;96.07;6.2e-05;country_total_population_share;2024
-337;Moray;GBR;United Kingdom;188303;11.65;6.2e-05;country_total_population_share;2024
-338;Aberdeenshire;GBR;United Kingdom;470737;29.12;6.2e-05;country_total_population_share;2024
-339;Angus;GBR;United Kingdom;179745;11.12;6.2e-05;country_total_population_share;2024
-340;Perth and Kinross;GBR;United Kingdom;405882;25.11;6.2e-05;country_total_population_share;2024
-341;Fife;GBR;United Kingdom;120606;7.46;6.2e-05;country_total_population_share;2024
-342;Outer Hebrides;GBR;United Kingdom;234362;14.5;6.2e-05;country_total_population_share;2024
-343;Shetland Islands;GBR;United Kingdom;123592;7.65;6.2e-05;country_total_population_share;2024
-344;East Ayrshire;GBR;United Kingdom;117577;7.27;6.2e-05;country_total_population_share;2024
-345;South Lanarkshire;GBR;United Kingdom;152999;9.47;6.2e-05;country_total_population_share;2024
-346;Omagh;GBR;United Kingdom;200086;12.38;6.2e-05;country_total_population_share;2024
-347;Hertfordshire;GBR;United Kingdom;809363;50.07;6.2e-05;country_total_population_share;2024
-348;Cambridgeshire;GBR;United Kingdom;1667613;103.17;6.2e-05;country_total_population_share;2024
-349;Buckinghamshire;GBR;United Kingdom;964977;59.7;6.2e-05;country_total_population_share;2024
-350;Nottinghamshire;GBR;United Kingdom;1027688;63.58;6.2e-05;country_total_population_share;2024
-351;Northamptonshire;GBR;United Kingdom;1264704;78.25;6.2e-05;country_total_population_share;2024
-352;Leicestershire;GBR;United Kingdom;1010679;62.53;6.2e-05;country_total_population_share;2024
-353;Cheshire East;GBR;United Kingdom;636030;39.35;6.2e-05;country_total_population_share;2024
-354;Derbyshire;GBR;United Kingdom;1271341;78.66;6.2e-05;country_total_population_share;2024
-355;Staffordshire;GBR;United Kingdom;1445716;89.44;6.2e-05;country_total_population_share;2024
-356;Worcestershire;GBR;United Kingdom;873312;54.03;6.2e-05;country_total_population_share;2024
-357;Warwickshire;GBR;United Kingdom;1050853;65.02;6.2e-05;country_total_population_share;2024
-358;Oxfordshire;GBR;United Kingdom;1208431;74.76;6.2e-05;country_total_population_share;2024
-359;Surrey;GBR;United Kingdom;830321;51.37;6.2e-05;country_total_population_share;2024
-360;Wiltshire;GBR;United Kingdom;1425421;88.19;6.2e-05;country_total_population_share;2024
-361;Abkhazia;GEO;Georgia;719799;7.75;1.1e-05;country_total_population_share;2024
-362;Samegrelo-Zemo Svaneti;GEO;Georgia;638839;6.88;1.1e-05;country_total_population_share;2024
-363;Shida Kartli;GEO;Georgia;526350;5.67;1.1e-05;country_total_population_share;2024
-364;Racha-Lechkhumi and Kvemo Svaneti;GEO;Georgia;66471;0.72;1.1e-05;country_total_population_share;2024
-365;Samtskhe–Javakheti;GEO;Georgia;312994;3.37;1.1e-05;country_total_population_share;2024
-366;Adjara;GEO;Georgia;246303;2.65;1.1e-05;country_total_population_share;2024
-367;Guria;GEO;Georgia;221851;2.39;1.1e-05;country_total_population_share;2024
-368;Imereti;GEO;Georgia;997393;10.74;1.1e-05;country_total_population_share;2024
-369;West Macedonia;GRC;Greece;814274;23.87;2.9e-05;country_total_population_share;2024
-370;Epirus;GRC;Greece;299901;8.79;2.9e-05;country_total_population_share;2024
-371;Centre Macedonia;GRC;Greece;1682926;49.33;2.9e-05;country_total_population_share;2024
-372;East Macedonia and Thrace;GRC;Greece;526903;15.44;2.9e-05;country_total_population_share;2024
-373;Thessalia;GRC;Greece;645043;18.91;2.9e-05;country_total_population_share;2024
-374;Central Greece;GRC;Greece;476343;13.96;2.9e-05;country_total_population_share;2024
-375;Attica;GRC;Greece;3574592;104.78;2.9e-05;country_total_population_share;2024
-376;Peloponnese;GRC;Greece;505660;14.82;2.9e-05;country_total_population_share;2024
-377;West Greece;GRC;Greece;607521;17.81;2.9e-05;country_total_population_share;2024
-378;Crete;GRC;Greece;585204;17.15;2.9e-05;country_total_population_share;2024
-379;South Aegean;GRC;Greece;307238;9.01;2.9e-05;country_total_population_share;2024
-380;North Aegean;GRC;Greece;182704;5.36;2.9e-05;country_total_population_share;2024
-381;Ionian Islands;GRC;Greece;191691;5.62;2.9e-05;country_total_population_share;2024
-382;Virovitica-Podravina;HRV;Croatia;99951;2.94;2.9e-05;country_total_population_share;2024
-383;Koprivnica-Križevci;HRV;Croatia;136178;4.0;2.9e-05;country_total_population_share;2024
-384;Osijek-Baranja;HRV;Croatia;359378;10.56;2.9e-05;country_total_population_share;2024
-385;Istria;HRV;Croatia;230021;6.76;2.9e-05;country_total_population_share;2024
-386;Dubrovnik-Neretva;HRV;Croatia;136505;4.01;2.9e-05;country_total_population_share;2024
-387;Sisak-Moslavina;HRV;Croatia;218417;6.42;2.9e-05;country_total_population_share;2024
-388;Brod-Posavina;HRV;Croatia;186828;5.49;2.9e-05;country_total_population_share;2024
-389;Karlovac;HRV;Croatia;151865;4.46;2.9e-05;country_total_population_share;2024
-390;Zadar;HRV;Croatia;188231;5.53;2.9e-05;country_total_population_share;2024
-391;Vukovar-Syrmia;HRV;Croatia;211506;6.21;2.9e-05;country_total_population_share;2024
-392;Split-Dalmatia;HRV;Croatia;498842;14.66;2.9e-05;country_total_population_share;2024
-393;Varaždin;HRV;Croatia;207299;6.09;2.9e-05;country_total_population_share;2024
-394;Krapina-Zagorje;HRV;Croatia;142207;4.18;2.9e-05;country_total_population_share;2024
-395;Zagreb;HRV;Croatia;374234;11.0;2.9e-05;country_total_population_share;2024
-396;Primorje-Gorski;HRV;Croatia;312707;9.19;2.9e-05;country_total_population_share;2024
-397;Šibenik-Knin;HRV;Croatia;128862;3.79;2.9e-05;country_total_population_share;2024
-398;Lika-Senj;HRV;Croatia;50365;1.48;2.9e-05;country_total_population_share;2024
-399;Bjelovar-Bilogora;HRV;Croatia;141102;4.15;2.9e-05;country_total_population_share;2024
-400;Požega-Slavonia;HRV;Croatia;75502;2.22;2.9e-05;country_total_population_share;2024
-401;Szabolcs-Szatmár-Bereg;HUN;Hungary;663974;18.71;2.8e-05;country_total_population_share;2024
-402;Békés;HUN;Hungary;395367;11.14;2.8e-05;country_total_population_share;2024
-403;Hajdú-Bihar;HUN;Hungary;651131;18.35;2.8e-05;country_total_population_share;2024
-404;Csongrád-Csanád;HUN;Hungary;490641;13.82;2.8e-05;country_total_population_share;2024
-405;Győr-Moson-Sopron;HUN;Hungary;584410;16.47;2.8e-05;country_total_population_share;2024
-406;Vas;HUN;Hungary;312951;8.82;2.8e-05;country_total_population_share;2024
-407;Bács-Kiskun;HUN;Hungary;621251;17.5;2.8e-05;country_total_population_share;2024
-408;Zala;HUN;Hungary;327108;9.22;2.8e-05;country_total_population_share;2024
-409;Somogy;HUN;Hungary;368084;10.37;2.8e-05;country_total_population_share;2024
-410;Baranya;HUN;Hungary;444031;12.51;2.8e-05;country_total_population_share;2024
-411;Borsod-Abaúj-Zemplén;HUN;Hungary;781425;22.02;2.8e-05;country_total_population_share;2024
-412;Nógrád;HUN;Hungary;228849;6.45;2.8e-05;country_total_population_share;2024
-413;Komárom-Esztergom;HUN;Hungary;377066;10.62;2.8e-05;country_total_population_share;2024
-414;Pest;HUN;Hungary;1672577;47.13;2.8e-05;country_total_population_share;2024
-415;Jász-Nagykun-Szolnok;HUN;Hungary;446273;12.57;2.8e-05;country_total_population_share;2024
-416;Fejér;HUN;Hungary;526352;14.83;2.8e-05;country_total_population_share;2024
-417;Veszprém;HUN;Hungary;69133;1.95;2.8e-05;country_total_population_share;2024
-418;Tolna;HUN;Hungary;260797;7.35;2.8e-05;country_total_population_share;2024
-419;Heves;HUN;Hungary;358580;10.1;2.8e-05;country_total_population_share;2024
-420;Donegal;IRL;Ireland;368396;51.75;0.00014;country_total_population_share;2024
-421;Leitrim;IRL;Ireland;124404;17.48;0.00014;country_total_population_share;2024
-422;Cavan;IRL;Ireland;145497;20.44;0.00014;country_total_population_share;2024
-423;Monaghan;IRL;Ireland;158500;22.26;0.00014;country_total_population_share;2024
-424;Wicklow;IRL;Ireland;222571;31.26;0.00014;country_total_population_share;2024
-425;Wexford;IRL;Ireland;249554;35.05;0.00014;country_total_population_share;2024
-426;Kilkenny;IRL;Ireland;161259;22.65;0.00014;country_total_population_share;2024
-427;Waterford;IRL;Ireland;131300;18.44;0.00014;country_total_population_share;2024
-428;Cork;IRL;Ireland;603530;84.78;0.00014;country_total_population_share;2024
-429;Kerry;IRL;Ireland;369001;51.83;0.00014;country_total_population_share;2024
-430;Limerick;IRL;Ireland;170207;23.91;0.00014;country_total_population_share;2024
-431;Clare;IRL;Ireland;248837;34.95;0.00014;country_total_population_share;2024
-432;Galway;IRL;Ireland;467827;65.72;0.00014;country_total_population_share;2024
-433;Mayo;IRL;Ireland;426947;59.97;0.00014;country_total_population_share;2024
-434;Sligo;IRL;Ireland;141025;19.81;0.00014;country_total_population_share;2024
-435;Meath;IRL;Ireland;180297;25.33;0.00014;country_total_population_share;2024
-436;Kildare;IRL;Ireland;132289;18.58;0.00014;country_total_population_share;2024
-437;Laois;IRL;Ireland;131022;18.4;0.00014;country_total_population_share;2024
-438;Offaly;IRL;Ireland;155812;21.89;0.00014;country_total_population_share;2024
-439;Westmeath;IRL;Ireland;143186;20.11;0.00014;country_total_population_share;2024
-440;Longford;IRL;Ireland;85362;11.99;0.00014;country_total_population_share;2024
-441;Roscommon;IRL;Ireland;192510;27.04;0.00014;country_total_population_share;2024
-442;Tipperary;IRL;Ireland;167445;23.52;0.00014;country_total_population_share;2024
-443;Tipperary;IRL;Ireland;163222;22.93;0.00014;country_total_population_share;2024
-444;Austurland;ISL;Iceland;79545;9.08;0.000114;country_total_population_share;2024
-445;Southern;ISL;Iceland;93517;10.68;0.000114;country_total_population_share;2024
-446;Western;ISL;Iceland;57762;6.6;0.000114;country_total_population_share;2024
-447;Westfjords;ISL;Iceland;24299;2.78;0.000114;country_total_population_share;2024
-448;Northwestern;ISL;Iceland;24112;2.75;0.000114;country_total_population_share;2024
-449;Northeastern;ISL;Iceland;100765;11.51;0.000114;country_total_population_share;2024
-450;Aosta;ITA;Italy;87719;4.02;4.6e-05;country_total_population_share;2024
-451;Verbano-Cusio-Ossola;ITA;Italy;449505;20.62;4.6e-05;country_total_population_share;2024
-452;Varese;ITA;Italy;222429;10.2;4.6e-05;country_total_population_share;2024
-453;Como;ITA;Italy;501994;23.02;4.6e-05;country_total_population_share;2024
-454;Sondrio;ITA;Italy;641169;29.41;4.6e-05;country_total_population_share;2024
-455;Trentino-South Tyrol;ITA;Italy;748473;34.33;4.6e-05;country_total_population_share;2024
-456;Imperia;ITA;Italy;244017;11.19;4.6e-05;country_total_population_share;2024
-457;Cuneo;ITA;Italy;1370277;62.85;4.6e-05;country_total_population_share;2024
-458;Turin;ITA;Italy;1380376;63.31;4.6e-05;country_total_population_share;2024
-459;Pesaro and Urbino;ITA;Italy;685049;31.42;4.6e-05;country_total_population_share;2024
-460;Belluno;ITA;Italy;731547;33.55;4.6e-05;country_total_population_share;2024
-461;Udine;ITA;Italy;1020907;46.83;4.6e-05;country_total_population_share;2024
-462;Venice;ITA;Italy;421382;19.33;4.6e-05;country_total_population_share;2024
-463;Padua;ITA;Italy;409761;18.79;4.6e-05;country_total_population_share;2024
-464;Rovigo;ITA;Italy;356682;16.36;4.6e-05;country_total_population_share;2024
-465;Ferrara;ITA;Italy;530862;24.35;4.6e-05;country_total_population_share;2024
-466;Ravenna;ITA;Italy;368447;16.9;4.6e-05;country_total_population_share;2024
-467;Forlì-Cesena;ITA;Italy;466310;21.39;4.6e-05;country_total_population_share;2024
-468;Ancona;ITA;Italy;398407;18.27;4.6e-05;country_total_population_share;2024
-469;Macerata;ITA;Italy;549437;25.2;4.6e-05;country_total_population_share;2024
-470;Ascoli Piceno;ITA;Italy;411607;18.88;4.6e-05;country_total_population_share;2024
-471;Teramo;ITA;Italy;394309;18.09;4.6e-05;country_total_population_share;2024
-472;Pescara;ITA;Italy;242304;11.11;4.6e-05;country_total_population_share;2024
-473;Chieti;ITA;Italy;511029;23.44;4.6e-05;country_total_population_share;2024
-474;Campobasso;ITA;Italy;588916;27.01;4.6e-05;country_total_population_share;2024
-475;Foggia;ITA;Italy;1371465;62.9;4.6e-05;country_total_population_share;2024
-476;Barletta-Andria-Trani;ITA;Italy;317670;14.57;4.6e-05;country_total_population_share;2024
-477;Bari;ITA;Italy;769062;35.27;4.6e-05;country_total_population_share;2024
-478;Brindisi;ITA;Italy;366921;16.83;4.6e-05;country_total_population_share;2024
-479;Lecce;ITA;Italy;549802;25.22;4.6e-05;country_total_population_share;2024
-480;Taranto;ITA;Italy;476551;21.86;4.6e-05;country_total_population_share;2024
-481;Matera;ITA;Italy;680176;31.2;4.6e-05;country_total_population_share;2024
-482;Cosenza;ITA;Italy;1329411;60.98;4.6e-05;country_total_population_share;2024
-483;Crotone;ITA;Italy;344062;15.78;4.6e-05;country_total_population_share;2024
-484;Catanzaro;ITA;Italy;468033;21.47;4.6e-05;country_total_population_share;2024
-485;Reggio Calabria;ITA;Italy;623293;28.59;4.6e-05;country_total_population_share;2024
-486;Vibo Valentia;ITA;Italy;228980;10.5;4.6e-05;country_total_population_share;2024
-487;Potenza;ITA;Italy;1314218;60.28;4.6e-05;country_total_population_share;2024
-488;Salerno;ITA;Italy;965275;44.27;4.6e-05;country_total_population_share;2024
-489;Naples;ITA;Italy;227364;10.43;4.6e-05;country_total_population_share;2024
-490;Caserta;ITA;Italy;526437;24.15;4.6e-05;country_total_population_share;2024
-491;Latina;ITA;Italy;433303;19.87;4.6e-05;country_total_population_share;2024
-492;Rome;ITA;Italy;1060385;48.64;4.6e-05;country_total_population_share;2024
-493;Viterbo;ITA;Italy;718441;32.95;4.6e-05;country_total_population_share;2024
-494;Grosseto;ITA;Italy;888601;40.76;4.6e-05;country_total_population_share;2024
-495;Livorno;ITA;Italy;241137;11.06;4.6e-05;country_total_population_share;2024
-496;Pisa;ITA;Italy;481722;22.09;4.6e-05;country_total_population_share;2024
-497;Lucca;ITA;Italy;608553;27.91;4.6e-05;country_total_population_share;2024
-498;Massa-Carrara;ITA;Italy;396309;18.18;4.6e-05;country_total_population_share;2024
-499;Liguria;ITA;Italy;1082382;49.65;4.6e-05;country_total_population_share;2024
-500;Savona;ITA;Italy;311907;14.31;4.6e-05;country_total_population_share;2024
-501;Trapani;ITA;Italy;491908;22.56;4.6e-05;country_total_population_share;2024
-502;Messina;ITA;Italy;652448;29.93;4.6e-05;country_total_population_share;2024
-503;Palermo;ITA;Italy;1009092;46.28;4.6e-05;country_total_population_share;2024
-504;Agrigento;ITA;Italy;596359;27.35;4.6e-05;country_total_population_share;2024
-505;Caltanissetta;ITA;Italy;419082;19.22;4.6e-05;country_total_population_share;2024
-506;Ragusa;ITA;Italy;319561;14.66;4.6e-05;country_total_population_share;2024
-507;Syracuse;ITA;Italy;428532;19.66;4.6e-05;country_total_population_share;2024
-508;Catania;ITA;Italy;704981;32.34;4.6e-05;country_total_population_share;2024
-509;Carbonia-Iglesias;ITA;Italy;295805;13.57;4.6e-05;country_total_population_share;2024
-510;Sassari;ITA;Italy;855284;39.23;4.6e-05;country_total_population_share;2024
-511;Nuoro;ITA;Italy;779597;35.76;4.6e-05;country_total_population_share;2024
-512;Olbia-Tempio;ITA;Italy;670649;30.76;4.6e-05;country_total_population_share;2024
-513;Oristano;ITA;Italy;603879;27.7;4.6e-05;country_total_population_share;2024
-514;Medio Campidano;ITA;Italy;304266;13.96;4.6e-05;country_total_population_share;2024
-515;Cagliari;ITA;Italy;894401;41.02;4.6e-05;country_total_population_share;2024
-516;Ogliastra;ITA;Italy;370425;16.99;4.6e-05;country_total_population_share;2024
-517;Enna;ITA;Italy;506247;23.22;4.6e-05;country_total_population_share;2024
-518;Benevento;ITA;Italy;412839;18.94;4.6e-05;country_total_population_share;2024
-519;Asti;ITA;Italy;302269;13.86;4.6e-05;country_total_population_share;2024
-520;Bergamo;ITA;Italy;541522;24.84;4.6e-05;country_total_population_share;2024
-521;Brescia;ITA;Italy;964424;44.23;4.6e-05;country_total_population_share;2024
-522;Cremona;ITA;Italy;352064;16.15;4.6e-05;country_total_population_share;2024
-523;Mantua;ITA;Italy;457942;21.0;4.6e-05;country_total_population_share;2024
-524;Milan;ITA;Italy;306432;14.05;4.6e-05;country_total_population_share;2024
-525;Siena;ITA;Italy;752495;34.51;4.6e-05;country_total_population_share;2024
-526;Arezzo;ITA;Italy;640058;29.36;4.6e-05;country_total_population_share;2024
-527;Florence;ITA;Italy;701286;32.17;4.6e-05;country_total_population_share;2024
-528;Vercelli;ITA;Italy;412181;18.91;4.6e-05;country_total_population_share;2024
-529;Pavia;ITA;Italy;601417;27.58;4.6e-05;country_total_population_share;2024
-530;Rieti;ITA;Italy;529710;24.3;4.6e-05;country_total_population_share;2024
-531;Novara;ITA;Italy;262453;12.04;4.6e-05;country_total_population_share;2024
-532;Alessandria;ITA;Italy;691782;31.73;4.6e-05;country_total_population_share;2024
-533;Trentino;ITA;Italy;1212697;55.62;4.6e-05;country_total_population_share;2024
-534;Vicenza;ITA;Italy;543513;24.93;4.6e-05;country_total_population_share;2024
-535;Verona;ITA;Italy;611047;28.03;4.6e-05;country_total_population_share;2024
-536;Treviso;ITA;Italy;497298;22.81;4.6e-05;country_total_population_share;2024
-537;Piacenza;ITA;Italy;673612;30.9;4.6e-05;country_total_population_share;2024
-538;Parma;ITA;Italy;690051;31.65;4.6e-05;country_total_population_share;2024
-539;Reggio Emilia;ITA;Italy;457881;21.0;4.6e-05;country_total_population_share;2024
-540;Modena;ITA;Italy;531067;24.36;4.6e-05;country_total_population_share;2024
-541;Bologna;ITA;Italy;728207;33.4;4.6e-05;country_total_population_share;2024
-542;Terni;ITA;Italy;419652;19.25;4.6e-05;country_total_population_share;2024
-543;Perugia;ITA;Italy;1263199;57.94;4.6e-05;country_total_population_share;2024
-544;Frosinone;ITA;Italy;631857;28.98;4.6e-05;country_total_population_share;2024
-545;Avellino;ITA;Italy;545665;25.03;4.6e-05;country_total_population_share;2024
-546;L'Aquila;ITA;Italy;1008839;46.27;4.6e-05;country_total_population_share;2024
-547;Pordenone;ITA;Italy;432635;19.84;4.6e-05;country_total_population_share;2024
-548;Isernia;ITA;Italy;307015;14.08;4.6e-05;country_total_population_share;2024
-549;Plužine;KOS;Kosovo;936596;5.56;6e-06;country_total_population_share;2024
-550;Kačanik;KOS;Kosovo;191665;1.14;6e-06;country_total_population_share;2024
-551;Podujevo/Podujeva;KOS;Kosovo;452691;2.69;6e-06;country_total_population_share;2024
-552;Kosovo-Pomoravlje;KOS;Kosovo;179048;1.06;6e-06;country_total_population_share;2024
-553;Utena;LTU;Lithuania;202061;7.34;3.6e-05;country_total_population_share;2024
-554;Vilnius;LTU;Lithuania;548492;19.93;3.6e-05;country_total_population_share;2024
-555;Alytus;LTU;Lithuania;136426;4.96;3.6e-05;country_total_population_share;2024
-556;Panevėžys;LTU;Lithuania;189525;6.89;3.6e-05;country_total_population_share;2024
-557;Telšiai;LTU;Lithuania;210594;7.65;3.6e-05;country_total_population_share;2024
-558;Klaipėda;LTU;Lithuania;343602;12.49;3.6e-05;country_total_population_share;2024
-559;Šiauliai;LTU;Lithuania;218649;7.95;3.6e-05;country_total_population_share;2024
-560;Marijampolė;LTU;Lithuania;294361;10.7;3.6e-05;country_total_population_share;2024
-561;Tauragė;LTU;Lithuania;202206;7.35;3.6e-05;country_total_population_share;2024
-562;Kaunas;LTU;Lithuania;534084;19.41;3.6e-05;country_total_population_share;2024
-563;Diekirch;LUX;Luxembourg;670000;107.76;0.000161;country_total_population_share;2024
-564;Aloja;LVA;Latvia;7912;0.22;2.8e-05;country_total_population_share;2024
-565;Valka;LVA;Latvia;13382;0.37;2.8e-05;country_total_population_share;2024
-566;Alūksne;LVA;Latvia;23025;0.64;2.8e-05;country_total_population_share;2024
-567;Kārsava;LVA;Latvia;8975;0.25;2.8e-05;country_total_population_share;2024
-568;Vecumnieki;LVA;Latvia;13645;0.38;2.8e-05;country_total_population_share;2024
-569;Saldus;LVA;Latvia;46614;1.3;2.8e-05;country_total_population_share;2024
-570;Vaiņode;LVA;Latvia;3880;0.11;2.8e-05;country_total_population_share;2024
-571;Jelgava;LVA;Latvia;56027;1.57;2.8e-05;country_total_population_share;2024
-572;Daugavpils;LVA;Latvia;136746;3.82;2.8e-05;country_total_population_share;2024
-573;Krāslava;LVA;Latvia;34141;0.95;2.8e-05;country_total_population_share;2024
-574;Ventspils;LVA;Latvia;18020;0.5;2.8e-05;country_total_population_share;2024
-575;Talsi;LVA;Latvia;60914;1.7;2.8e-05;country_total_population_share;2024
-576;Riga;LVA;Latvia;1041532;29.1;2.8e-05;country_total_population_share;2024
-577;Limbaži;LVA;Latvia;48332;1.35;2.8e-05;country_total_population_share;2024
-578;Rēzekne;LVA;Latvia;48500;1.36;2.8e-05;country_total_population_share;2024
-579;Gulbene;LVA;Latvia;32377;0.9;2.8e-05;country_total_population_share;2024
-580;Madona;LVA;Latvia;52332;1.46;2.8e-05;country_total_population_share;2024
-581;Ogre;LVA;Latvia;100938;2.82;2.8e-05;country_total_population_share;2024
-582;Kuldīga;LVA;Latvia;46675;1.3;2.8e-05;country_total_population_share;2024
-583;Tukums;LVA;Latvia;76033;2.12;2.8e-05;country_total_population_share;2024
-584;Edineț;MDA;Moldova;185610;1.41;8e-06;country_total_population_share;2024
-585;Rîșcani;MDA;Moldova;160666;1.22;8e-06;country_total_population_share;2024
-586;Fălești;MDA;Moldova;206258;1.56;8e-06;country_total_population_share;2024
-587;Ungheni;MDA;Moldova;279005;2.11;8e-06;country_total_population_share;2024
-588;Hîncești;MDA;Moldova;255663;1.94;8e-06;country_total_population_share;2024
-589;Cantemir;MDA;Moldova;122127;0.93;8e-06;country_total_population_share;2024
-590;Cahul;MDA;Moldova;267857;2.03;8e-06;country_total_population_share;2024
-591;Ștefan Vodă;MDA;Moldova;155635;1.18;8e-06;country_total_population_share;2024
-592;Căușeni;MDA;Moldova;210756;1.6;8e-06;country_total_population_share;2024
-593;Cimișlia;MDA;Moldova;114048;0.86;8e-06;country_total_population_share;2024
-594;Taraclia;MDA;Moldova;97298;0.74;8e-06;country_total_population_share;2024
-595;Comrat;MDA;Moldova;73418;0.56;8e-06;country_total_population_share;2024
-596;Orhei;MDA;Moldova;291659;2.21;8e-06;country_total_population_share;2024
-597;Mavrovo and Rostuša;MKD;Macedonia;950225;8.04;8e-06;country_total_population_share;2024
-598;Debarca;MKD;Macedonia;129178;1.09;8e-06;country_total_population_share;2024
-599;Bogdanci;MKD;Macedonia;91203;0.77;8e-06;country_total_population_share;2024
-600;Kavadarci;MKD;Macedonia;103858;0.88;8e-06;country_total_population_share;2024
-601;Prilep;MKD;Macedonia;84194;0.71;8e-06;country_total_population_share;2024
-602;Bitola;MKD;Macedonia;107405;0.91;8e-06;country_total_population_share;2024
-603;Tearce;MKD;Macedonia;166378;1.41;8e-06;country_total_population_share;2024
-604;Staro Nagoričane;MKD;Macedonia;106898;0.9;8e-06;country_total_population_share;2024
-605;Berovo;MKD;Macedonia;90661;0.77;8e-06;country_total_population_share;2024
-606;Berane;MNE;Montenegro;60222;0.78;1.3e-05;country_total_population_share;2024
-607;Pljevlja;MNE;Montenegro;62140;0.81;1.3e-05;country_total_population_share;2024
-608;Nikšić;MNE;Montenegro;160060;2.08;1.3e-05;country_total_population_share;2024
-609;Podgorica;MNE;Montenegro;333578;4.34;1.3e-05;country_total_population_share;2024
-610;Groningen;NLD;Netherlands;624820;49.33;7.9e-05;country_total_population_share;2024
-611;Drenthe;NLD;Netherlands;527316;41.63;7.9e-05;country_total_population_share;2024
-612;Overijssel;NLD;Netherlands;1224876;96.7;7.9e-05;country_total_population_share;2024
-613;Gelderland;NLD;Netherlands;2165579;170.96;7.9e-05;country_total_population_share;2024
-614;Limburg;NLD;Netherlands;1200907;94.8;7.9e-05;country_total_population_share;2024
-615;Zeeland;NLD;Netherlands;414641;32.73;7.9e-05;country_total_population_share;2024
-616;North Brabant;NLD;Netherlands;2419865;191.03;7.9e-05;country_total_population_share;2024
-617;South Holland;NLD;Netherlands;3835408;302.78;7.9e-05;country_total_population_share;2024
-618;North Holland;NLD;Netherlands;3016689;238.15;7.9e-05;country_total_population_share;2024
-619;Friesland;NLD;Netherlands;696892;55.01;7.9e-05;country_total_population_share;2024
-620;Flevoland;NLD;Netherlands;428779;33.85;7.9e-05;country_total_population_share;2024
-621;Utrecht;NLD;Netherlands;1344228;106.12;7.9e-05;country_total_population_share;2024
-622;Troms;NOR;Norway;195635;19.31;9.9e-05;country_total_population_share;2024
-623;Nordland;NOR;Norway;284764;28.1;9.9e-05;country_total_population_share;2024
-624;Nord-Trøndelag;NOR;Norway;159589;15.75;9.9e-05;country_total_population_share;2024
-625;Sør-Trøndelag;NOR;Norway;372485;36.76;9.9e-05;country_total_population_share;2024
-626;Hedmark;NOR;Norway;230968;22.79;9.9e-05;country_total_population_share;2024
-627;Akershus;NOR;Norway;837752;82.67;9.9e-05;country_total_population_share;2024
-628;Østfold;NOR;Norway;348103;34.35;9.9e-05;country_total_population_share;2024
-629;Finnmark;NOR;Norway;88639;8.75;9.9e-05;country_total_population_share;2024
-630;Buskerud;NOR;Norway;316539;31.24;9.9e-05;country_total_population_share;2024
-631;Vestfold;NOR;Norway;293765;28.99;9.9e-05;country_total_population_share;2024
-632;Telemark;NOR;Norway;202785;20.01;9.9e-05;country_total_population_share;2024
-633;Aust-Agder;NOR;Norway;137659;13.58;9.9e-05;country_total_population_share;2024
-634;Vest-Agder;NOR;Norway;219482;21.66;9.9e-05;country_total_population_share;2024
-635;Rogaland;NOR;Norway;584324;57.66;9.9e-05;country_total_population_share;2024
-636;Hordaland;NOR;Norway;613666;60.56;9.9e-05;country_total_population_share;2024
-637;Sogn og Fjordane;NOR;Norway;128438;12.67;9.9e-05;country_total_population_share;2024
-638;Møre og Romsdal;NOR;Norway;310513;30.64;9.9e-05;country_total_population_share;2024
-639;Svalbard;NOR;Norway;3123;0.31;9.9e-05;country_total_population_share;2024
-640;Oppland;NOR;Norway;221771;21.89;9.9e-05;country_total_population_share;2024
-641;Silesian Voivodeship;POL;Poland;4380148;132.84;3e-05;country_total_population_share;2024
-642;Lesser Poland Voivodeship;POL;Poland;3188184;96.69;3e-05;country_total_population_share;2024
-643;Podkarpackie Voivodeship;POL;Poland;2012411;61.03;3e-05;country_total_population_share;2024
-644;Lower Silesian Voivodeship;POL;Poland;2765694;83.87;3e-05;country_total_population_share;2024
-645;Opole Voivodeship;POL;Poland;958380;29.06;3e-05;country_total_population_share;2024
-646;Podlaskie Voivodeship;POL;Poland;1132130;34.33;3e-05;country_total_population_share;2024
-647;Warmian-Masurian Voivodeship;POL;Poland;1364053;41.37;3e-05;country_total_population_share;2024
-648;Lubusz Voivodeship;POL;Poland;968402;29.37;3e-05;country_total_population_share;2024
-649;West Pomeranian Voivodeship;POL;Poland;1539513;46.69;3e-05;country_total_population_share;2024
-650;Lublin Voivodeship;POL;Poland;2041447;61.91;3e-05;country_total_population_share;2024
-651;Pomeranian Voivodeship;POL;Poland;2182011;66.17;3e-05;country_total_population_share;2024
-652;Masovian Voivodeship;POL;Poland;5210261;158.01;3e-05;country_total_population_share;2024
-653;Łódź Voivodeship;POL;Poland;2379780;72.17;3e-05;country_total_population_share;2024
-654;Kuyavian-Pomeranian Voivodeship;POL;Poland;1983577;60.16;3e-05;country_total_population_share;2024
-655;Greater Poland Voivodeship;POL;Poland;3316153;100.57;3e-05;country_total_population_share;2024
-656;Świętokrzyskie Voivodeship;POL;Poland;1177856;35.72;3e-05;country_total_population_share;2024
-657;Évora;PRT;Portugal;81647;2.81;3.4e-05;country_total_population_share;2024
-658;Portalegre;PRT;Portugal;34803;1.2;3.4e-05;country_total_population_share;2024
-659;Viana do Castelo;PRT;Portugal;131740;4.53;3.4e-05;country_total_population_share;2024
-660;Castelo Branco;PRT;Portugal;81240;2.79;3.4e-05;country_total_population_share;2024
-661;Guarda;PRT;Portugal;60866;2.09;3.4e-05;country_total_population_share;2024
-662;Bragança;PRT;Portugal;52279;1.8;3.4e-05;country_total_population_share;2024
-663;Vila Real;PRT;Portugal;77622;2.67;3.4e-05;country_total_population_share;2024
-664;Braga;PRT;Portugal;283164;9.74;3.4e-05;country_total_population_share;2024
-665;Faro;PRT;Portugal;94909;3.26;3.4e-05;country_total_population_share;2024
-666;Beja;PRT;Portugal;1189124;40.89;3.4e-05;country_total_population_share;2024
-667;Setúbal;PRT;Portugal;1227263;42.21;3.4e-05;country_total_population_share;2024
-668;Lisbon;PRT;Portugal;3324742;114.34;3.4e-05;country_total_population_share;2024
-669;Santarém;PRT;Portugal;89343;3.07;3.4e-05;country_total_population_share;2024
-670;Leiria;PRT;Portugal;194345;6.68;3.4e-05;country_total_population_share;2024
-671;Coimbra;PRT;Portugal;208147;7.16;3.4e-05;country_total_population_share;2024
-672;Aveiro;PRT;Portugal;121280;4.17;3.4e-05;country_total_population_share;2024
-673;Porto;PRT;Portugal;2828488;97.27;3.4e-05;country_total_population_share;2024
-674;Azores;PRT;Portugal;368027;12.66;3.4e-05;country_total_population_share;2024
-675;Viseu;PRT;Portugal;150971;5.19;3.4e-05;country_total_population_share;2024
-676;Satu Mare;ROU;Romania;362390;8.48;2.3e-05;country_total_population_share;2024
-677;Arad;ROU;Romania;449489;10.52;2.3e-05;country_total_population_share;2024
-678;Bihor;ROU;Romania;604183;14.14;2.3e-05;country_total_population_share;2024
-679;Timiș;ROU;Romania;712939;16.69;2.3e-05;country_total_population_share;2024
-680;Mehedinți;ROU;Romania;256820;6.01;2.3e-05;country_total_population_share;2024
-681;Dolj;ROU;Romania;656947;15.38;2.3e-05;country_total_population_share;2024
-682;Călărași;ROU;Romania;310651;7.27;2.3e-05;country_total_population_share;2024
-683;Teleorman;ROU;Romania;354582;8.3;2.3e-05;country_total_population_share;2024
-684;Giurgiu;ROU;Romania;287207;6.72;2.3e-05;country_total_population_share;2024
-685;Constanța;ROU;Romania;718927;16.83;2.3e-05;country_total_population_share;2024
-686;Olt;ROU;Romania;420049;9.83;2.3e-05;country_total_population_share;2024
-687;Caraș-Severin;ROU;Romania;270244;6.33;2.3e-05;country_total_population_share;2024
-688;Botoșani;ROU;Romania;430505;10.08;2.3e-05;country_total_population_share;2024
-689;Iași;ROU;Romania;833755;19.52;2.3e-05;country_total_population_share;2024
-690;Vaslui;ROU;Romania;410646;9.61;2.3e-05;country_total_population_share;2024
-691;Galați;ROU;Romania;544559;12.75;2.3e-05;country_total_population_share;2024
-692;Suceava;ROU;Romania;704191;16.49;2.3e-05;country_total_population_share;2024
-693;Maramureș;ROU;Romania;495881;11.61;2.3e-05;country_total_population_share;2024
-694;Tulcea;ROU;Romania;211904;4.96;2.3e-05;country_total_population_share;2024
-695;Cluj;ROU;Romania;744291;17.42;2.3e-05;country_total_population_share;2024
-696;Bistrița-Năsăud;ROU;Romania;324383;7.59;2.3e-05;country_total_population_share;2024
-697;Sălaj;ROU;Romania;232583;5.45;2.3e-05;country_total_population_share;2024
-698;Dâmbovița;ROU;Romania;525394;12.3;2.3e-05;country_total_population_share;2024
-699;Ilfov;ROU;Romania;594766;13.92;2.3e-05;country_total_population_share;2024
-700;Argeș;ROU;Romania;624606;14.62;2.3e-05;country_total_population_share;2024
-701;Gorj;ROU;Romania;344873;8.07;2.3e-05;country_total_population_share;2024
-702;Hunedoara;ROU;Romania;396351;9.28;2.3e-05;country_total_population_share;2024
-703;Vâlcea;ROU;Romania;374656;8.77;2.3e-05;country_total_population_share;2024
-704;Prahova;ROU;Romania;761802;17.83;2.3e-05;country_total_population_share;2024
-705;Covasna;ROU;Romania;219233;5.13;2.3e-05;country_total_population_share;2024
-706;Vrancea;ROU;Romania;367479;8.6;2.3e-05;country_total_population_share;2024
-707;Buzău;ROU;Romania;443829;10.39;2.3e-05;country_total_population_share;2024
-708;Brașov;ROU;Romania;599052;14.02;2.3e-05;country_total_population_share;2024
-709;Sibiu;ROU;Romania;425579;9.96;2.3e-05;country_total_population_share;2024
-710;Mureș;ROU;Romania;567904;13.3;2.3e-05;country_total_population_share;2024
-711;Harghita;ROU;Romania;319958;7.49;2.3e-05;country_total_population_share;2024
-712;Neamț;ROU;Romania;497775;11.65;2.3e-05;country_total_population_share;2024
-713;Bacău;ROU;Romania;659078;15.43;2.3e-05;country_total_population_share;2024
-714;Alba;ROU;Romania;357209;8.36;2.3e-05;country_total_population_share;2024
-715;Brăila;ROU;Romania;308452;7.22;2.3e-05;country_total_population_share;2024
-716;Ialomița;ROU;Romania;274878;6.44;2.3e-05;country_total_population_share;2024
-717;Pskov;RUS;Russia;842496;14.68;1.7e-05;country_total_population_share;2024
-718;Krasnodar Krai;RUS;Russia;8567842;149.31;1.7e-05;country_total_population_share;2024
-719;Karachay-Cherkess Republic;RUS;Russia;686811;11.97;1.7e-05;country_total_population_share;2024
-720;Kabardino-Balkaria;RUS;Russia;1327895;23.14;1.7e-05;country_total_population_share;2024
-721;Republic of North Ossetia-Alania;RUS;Russia;995600;17.35;1.7e-05;country_total_population_share;2024
-722;Murmansk;RUS;Russia;962690;16.78;1.7e-05;country_total_population_share;2024
-723;Karelia;RUS;Russia;761059;13.26;1.7e-05;country_total_population_share;2024
-724;Leningrad;RUS;Russia;2985515;52.03;1.7e-05;country_total_population_share;2024
-725;Kaliningrad;RUS;Russia;1458614;25.42;1.7e-05;country_total_population_share;2024
-726;Smolensk;RUS;Russia;1267067;22.08;1.7e-05;country_total_population_share;2024
-727;Bryansk;RUS;Russia;1661284;28.95;1.7e-05;country_total_population_share;2024
-728;Kursk;RUS;Russia;1539544;26.83;1.7e-05;country_total_population_share;2024
-729;Belgorod;RUS;Russia;2173441;37.88;1.7e-05;country_total_population_share;2024
-730;Voronezh;RUS;Russia;3314434;57.76;1.7e-05;country_total_population_share;2024
-731;Rostov;RUS;Russia;6067544;105.74;1.7e-05;country_total_population_share;2024
-732;Orenburg;RUS;Russia;2681786;46.73;1.7e-05;country_total_population_share;2024
-733;Saratov;RUS;Russia;3474814;60.55;1.7e-05;country_total_population_share;2024
-734;Astrakhan;RUS;Russia;1387971;24.19;1.7e-05;country_total_population_share;2024
-735;Volgograd;RUS;Russia;3569612;62.21;1.7e-05;country_total_population_share;2024
-736;Autonomous Republic of Crimea;RUS;Russia;2781126;48.47;1.7e-05;country_total_population_share;2024
-737;Nenets Autonomous Okrug;RUS;Russia;61924;1.08;1.7e-05;country_total_population_share;2024
-738;Saint Petersburg;RUS;Russia;8290204;144.47;1.7e-05;country_total_population_share;2024
-739;Arkhangelsk;RUS;Russia;1451040;25.29;1.7e-05;country_total_population_share;2024
-740;Republic of Kalmykia;RUS;Russia;392428;6.84;1.7e-05;country_total_population_share;2024
-741;Bashkortostan;RUS;Russia;5928285;103.31;1.7e-05;country_total_population_share;2024
-742;Sverdlovsk;RUS;Russia;6190904;107.89;1.7e-05;country_total_population_share;2024
-743;Lipetsk;RUS;Russia;1651203;28.77;1.7e-05;country_total_population_share;2024
-744;Tambov;RUS;Russia;1402436;24.44;1.7e-05;country_total_population_share;2024
-745;Republic of Tatarstan;RUS;Russia;5870560;102.3;1.7e-05;country_total_population_share;2024
-746;Ulyanovsk;RUS;Russia;1719926;29.97;1.7e-05;country_total_population_share;2024
-747;Penza;RUS;Russia;1779073;31.0;1.7e-05;country_total_population_share;2024
-748;Oryol;RUS;Russia;1015555;17.7;1.7e-05;country_total_population_share;2024
-749;Republic of Mordovia;RUS;Russia;1142380;19.91;1.7e-05;country_total_population_share;2024
-750;Kaluga;RUS;Russia;1467972;25.58;1.7e-05;country_total_population_share;2024
-751;Kostroma;RUS;Russia;830449;14.47;1.7e-05;country_total_population_share;2024
-752;Yaroslavl;RUS;Russia;1741595;30.35;1.7e-05;country_total_population_share;2024
-753;Vladimir;RUS;Russia;1921076;33.48;1.7e-05;country_total_population_share;2024
-754;Ryazan;RUS;Russia;1529935;26.66;1.7e-05;country_total_population_share;2024
-755;Ivanovo;RUS;Russia;1328534;23.15;1.7e-05;country_total_population_share;2024
-756;Nizhny Novgorod;RUS;Russia;4457416;77.68;1.7e-05;country_total_population_share;2024
-757;Tula;RUS;Russia;2157478;37.6;1.7e-05;country_total_population_share;2024
-758;Chuvash Republic;RUS;Russia;743564;12.96;1.7e-05;country_total_population_share;2024
-759;Vologda;RUS;Russia;1701833;29.66;1.7e-05;country_total_population_share;2024
-760;Novgorod;RUS;Russia;831467;14.49;1.7e-05;country_total_population_share;2024
-761;Tver;RUS;Russia;1746018;30.43;1.7e-05;country_total_population_share;2024
-762;Moscow;RUS;Russia;19467193;339.25;1.7e-05;country_total_population_share;2024
-763;Moscow;RUS;Russia;115442;2.01;1.7e-05;country_total_population_share;2024
-764;Mari El Republic;RUS;Russia;982365;17.12;1.7e-05;country_total_population_share;2024
-765;Kirov;RUS;Russia;1657089;28.88;1.7e-05;country_total_population_share;2024
-766;Udmurt Republic;RUS;Russia;1697876;29.59;1.7e-05;country_total_population_share;2024
-767;Komi Republic;RUS;Russia;1048258;18.27;1.7e-05;country_total_population_share;2024
-768;Perm Krai;RUS;Russia;3642334;63.47;1.7e-05;country_total_population_share;2024
-769;Samara;RUS;Russia;4564685;79.55;1.7e-05;country_total_population_share;2024
-770;Stavropol Krai;RUS;Russia;4230018;73.71;1.7e-05;country_total_population_share;2024
-771;Republic of Adygea;RUS;Russia;734340;12.8;1.7e-05;country_total_population_share;2024
-772;North Bačka;SRB;Republic of Serbia;141244;2.4;1.7e-05;country_total_population_share;2024
-773;West Bačka;SRB;Republic of Serbia;200341;3.4;1.7e-05;country_total_population_share;2024
-774;North Banat;SRB;Republic of Serbia;191602;3.25;1.7e-05;country_total_population_share;2024
-775;Pčinja;SRB;Republic of Serbia;293721;4.99;1.7e-05;country_total_population_share;2024
-776;Bor;SRB;Republic of Serbia;319600;5.43;1.7e-05;country_total_population_share;2024
-777;Zaječar;SRB;Republic of Serbia;299556;5.09;1.7e-05;country_total_population_share;2024
-778;Pirot;SRB;Republic of Serbia;227021;3.86;1.7e-05;country_total_population_share;2024
-779;Jablanica;SRB;Republic of Serbia;235188;3.99;1.7e-05;country_total_population_share;2024
-780;Raška;SRB;Republic of Serbia;319602;5.43;1.7e-05;country_total_population_share;2024
-781;Rasina;SRB;Republic of Serbia;224747;3.82;1.7e-05;country_total_population_share;2024
-782;Toplica;SRB;Republic of Serbia;195517;3.32;1.7e-05;country_total_population_share;2024
-783;Zlatibor;SRB;Republic of Serbia;521396;8.86;1.7e-05;country_total_population_share;2024
-784;Srem;SRB;Republic of Serbia;291359;4.95;1.7e-05;country_total_population_share;2024
-785;Mačva;SRB;Republic of Serbia;273820;4.65;1.7e-05;country_total_population_share;2024
-786;South Bačka;SRB;Republic of Serbia;362720;6.16;1.7e-05;country_total_population_share;2024
-787;Central Banat;SRB;Republic of Serbia;265074;4.5;1.7e-05;country_total_population_share;2024
-788;South Banat;SRB;Republic of Serbia;345439;5.87;1.7e-05;country_total_population_share;2024
-789;Braničevo;SRB;Republic of Serbia;356722;6.06;1.7e-05;country_total_population_share;2024
-790;Belgrade;SRB;Republic of Serbia;285540;4.85;1.7e-05;country_total_population_share;2024
-791;Podunavlje;SRB;Republic of Serbia;118463;2.01;1.7e-05;country_total_population_share;2024
-792;Nišava;SRB;Republic of Serbia;233035;3.96;1.7e-05;country_total_population_share;2024
-793;Pomoravski;SRB;Republic of Serbia;221001;3.75;1.7e-05;country_total_population_share;2024
-794;Šumadija;SRB;Republic of Serbia;203315;3.45;1.7e-05;country_total_population_share;2024
-795;Moravica;SRB;Republic of Serbia;259542;4.41;1.7e-05;country_total_population_share;2024
-796;Kolubara;SRB;Republic of Serbia;214435;3.64;1.7e-05;country_total_population_share;2024
-797;Žilina;SVK;Slovakia;687398;21.23;3.1e-05;country_total_population_share;2024
-798;Prešov;SVK;Slovakia;811584;25.07;3.1e-05;country_total_population_share;2024
-799;Košice;SVK;Slovakia;780315;24.1;3.1e-05;country_total_population_share;2024
-800;Bratislava;SVK;Slovakia;737818;22.79;3.1e-05;country_total_population_share;2024
-801;Trnava;SVK;Slovakia;567002;17.51;3.1e-05;country_total_population_share;2024
-802;Trenčín;SVK;Slovakia;566673;17.5;3.1e-05;country_total_population_share;2024
-803;Banská Bystrica;SVK;Slovakia;612314;18.91;3.1e-05;country_total_population_share;2024
-804;Nitra;SVK;Slovakia;666896;20.6;3.1e-05;country_total_population_share;2024
-805;Tolmin;SVN;Slovenia;1746209;70.62;4e-05;country_total_population_share;2024
-806;Podvelka;SVN;Slovenia;373791;15.12;4e-05;country_total_population_share;2024
-807;Norrbotten;SWE;Sweden;247482;16.69;6.7e-05;country_total_population_share;2024
-808;Västerbotten;SWE;Sweden;278005;18.75;6.7e-05;country_total_population_share;2024
-809;Jämtland;SWE;Sweden;131893;8.89;6.7e-05;country_total_population_share;2024
-810;Dalarna;SWE;Sweden;284540;19.19;6.7e-05;country_total_population_share;2024
-811;Värmland;SWE;Sweden;281748;19.0;6.7e-05;country_total_population_share;2024
-812;Västra Götaland;SWE;Sweden;1768063;119.24;6.7e-05;country_total_population_share;2024
-813;Västernorrland;SWE;Sweden;239792;16.17;6.7e-05;country_total_population_share;2024
-814;Gävleborg;SWE;Sweden;282272;19.04;6.7e-05;country_total_population_share;2024
-815;Uppsala;SWE;Sweden;408300;27.54;6.7e-05;country_total_population_share;2024
-816;Stockholm;SWE;Sweden;2471342;166.67;6.7e-05;country_total_population_share;2024
-817;Södermanland;SWE;Sweden;299303;20.19;6.7e-05;country_total_population_share;2024
-818;Östergötland;SWE;Sweden;470105;31.7;6.7e-05;country_total_population_share;2024
-819;Kalmar;SWE;Sweden;244376;16.48;6.7e-05;country_total_population_share;2024
-820;Blekinge;SWE;Sweden;156001;10.52;6.7e-05;country_total_population_share;2024
-821;Skåne;SWE;Sweden;1425537;96.14;6.7e-05;country_total_population_share;2024
-822;Halland;SWE;Sweden;344126;23.21;6.7e-05;country_total_population_share;2024
-823;Gotland;SWE;Sweden;60691;4.09;6.7e-05;country_total_population_share;2024
-824;Västmanland;SWE;Sweden;279424;18.84;6.7e-05;country_total_population_share;2024
-825;Jönköping;SWE;Sweden;367925;24.81;6.7e-05;country_total_population_share;2024
-826;Örebro;SWE;Sweden;306790;20.69;6.7e-05;country_total_population_share;2024
-827;Kronoberg;SWE;Sweden;202285;13.64;6.7e-05;country_total_population_share;2024
-828;Ardahan;TUR;Turkey;603083;11.14;1.8e-05;country_total_population_share;2024
-829;Artvin;TUR;Turkey;920042;17.0;1.8e-05;country_total_population_share;2024
-830;Kırklareli;TUR;Turkey;809113;14.95;1.8e-05;country_total_population_share;2024
-831;Edirne;TUR;Turkey;630746;11.65;1.8e-05;country_total_population_share;2024
-832;Kars;TUR;Turkey;1234509;22.81;1.8e-05;country_total_population_share;2024
-833;Mardin;TUR;Turkey;1185694;21.91;1.8e-05;country_total_population_share;2024
-834;Şanlıurfa;TUR;Turkey;2341316;43.26;1.8e-05;country_total_population_share;2024
-835;Kilis;TUR;Turkey;158823;2.93;1.8e-05;country_total_population_share;2024
-836;Gaziantep;TUR;Turkey;859890;15.89;1.8e-05;country_total_population_share;2024
-837;Hatay;TUR;Turkey;655413;12.11;1.8e-05;country_total_population_share;2024
-838;Istanbul;TUR;Turkey;564706;10.43;1.8e-05;country_total_population_share;2024
-839;Tekirdağ;TUR;Turkey;821449;15.18;1.8e-05;country_total_population_share;2024
-840;Çanakkale;TUR;Turkey;1126119;20.81;1.8e-05;country_total_population_share;2024
-841;Rize;TUR;Turkey;443737;8.2;1.8e-05;country_total_population_share;2024
-842;Trabzon;TUR;Turkey;588010;10.86;1.8e-05;country_total_population_share;2024
-843;Giresun;TUR;Turkey;794421;14.68;1.8e-05;country_total_population_share;2024
-844;Ordu;TUR;Turkey;689112;12.73;1.8e-05;country_total_population_share;2024
-845;Samsun;TUR;Turkey;1112098;20.55;1.8e-05;country_total_population_share;2024
-846;Sinop;TUR;Turkey;731114;13.51;1.8e-05;country_total_population_share;2024
-847;Kastamonu;TUR;Turkey;1542219;28.5;1.8e-05;country_total_population_share;2024
-848;Bartın;TUR;Turkey;247286;4.57;1.8e-05;country_total_population_share;2024
-849;Zonguldak;TUR;Turkey;383407;7.08;1.8e-05;country_total_population_share;2024
-850;Düzce;TUR;Turkey;302031;5.58;1.8e-05;country_total_population_share;2024
-851;Sakarya;TUR;Turkey;499962;9.24;1.8e-05;country_total_population_share;2024
-852;Kocaeli;TUR;Turkey;549327;10.15;1.8e-05;country_total_population_share;2024
-853;Bursa;TUR;Turkey;1281009;23.67;1.8e-05;country_total_population_share;2024
-854;Balıkesir;TUR;Turkey;1708039;31.56;1.8e-05;country_total_population_share;2024
-855;İzmir;TUR;Turkey;1514888;27.99;1.8e-05;country_total_population_share;2024
-856;Aydın;TUR;Turkey;933106;17.24;1.8e-05;country_total_population_share;2024
-857;Muğla;TUR;Turkey;1510057;27.9;1.8e-05;country_total_population_share;2024
-858;Antalya;TUR;Turkey;2489831;46.01;1.8e-05;country_total_population_share;2024
-859;Mersin;TUR;Turkey;1796076;33.19;1.8e-05;country_total_population_share;2024
-860;Adana;TUR;Turkey;1803142;33.32;1.8e-05;country_total_population_share;2024
-861;Bolu;TUR;Turkey;1007192;18.61;1.8e-05;country_total_population_share;2024
-862;Ankara;TUR;Turkey;3016868;55.74;1.8e-05;country_total_population_share;2024
-863;Bilecik;TUR;Turkey;621141;11.48;1.8e-05;country_total_population_share;2024
-864;Eskişehir;TUR;Turkey;1612319;29.79;1.8e-05;country_total_population_share;2024
-865;Çankırı;TUR;Turkey;902098;16.67;1.8e-05;country_total_population_share;2024
-866;Karabük;TUR;Turkey;465743;8.61;1.8e-05;country_total_population_share;2024
-867;Tokat;TUR;Turkey;1105579;20.43;1.8e-05;country_total_population_share;2024
-868;Sivas;TUR;Turkey;3302373;61.02;1.8e-05;country_total_population_share;2024
-869;Çorum;TUR;Turkey;1470325;27.17;1.8e-05;country_total_population_share;2024
-870;Amasya;TUR;Turkey;731343;13.51;1.8e-05;country_total_population_share;2024
-871;Kütahya;TUR;Turkey;1416755;26.18;1.8e-05;country_total_population_share;2024
-872;Konya;TUR;Turkey;4728789;87.38;1.8e-05;country_total_population_share;2024
-873;Karaman;TUR;Turkey;1055649;19.51;1.8e-05;country_total_population_share;2024
-874;Niğde;TUR;Turkey;781885;14.45;1.8e-05;country_total_population_share;2024
-875;Kayseri;TUR;Turkey;2060287;38.07;1.8e-05;country_total_population_share;2024
-876;Isparta;TUR;Turkey;1030407;19.04;1.8e-05;country_total_population_share;2024
-877;Manisa;TUR;Turkey;1518951;28.07;1.8e-05;country_total_population_share;2024
-878;Denizli;TUR;Turkey;1305225;24.12;1.8e-05;country_total_population_share;2024
-879;Burdur;TUR;Turkey;849749;15.7;1.8e-05;country_total_population_share;2024
-880;Aksaray;TUR;Turkey;911023;16.83;1.8e-05;country_total_population_share;2024
-881;Nevşehir;TUR;Turkey;622096;11.49;1.8e-05;country_total_population_share;2024
-882;Yozgat;TUR;Turkey;1616684;29.87;1.8e-05;country_total_population_share;2024
-883;Kırşehir;TUR;Turkey;748394;13.83;1.8e-05;country_total_population_share;2024
-884;Uşak;TUR;Turkey;522406;9.65;1.8e-05;country_total_population_share;2024
-885;Erzincan;TUR;Turkey;1328831;24.55;1.8e-05;country_total_population_share;2024
-886;Tunceli;TUR;Turkey;928178;17.15;1.8e-05;country_total_population_share;2024
-887;Afyonkarahisar;TUR;Turkey;1733410;32.03;1.8e-05;country_total_population_share;2024
-888;Kırıkkale;TUR;Turkey;547930;10.12;1.8e-05;country_total_population_share;2024
-889;Kahramanmaraş;TUR;Turkey;1695953;31.34;1.8e-05;country_total_population_share;2024
-890;Muş;TUR;Turkey;910417;16.82;1.8e-05;country_total_population_share;2024
-891;Erzurum;TUR;Turkey;2795898;51.66;1.8e-05;country_total_population_share;2024
-892;Malatya;TUR;Turkey;1389617;25.68;1.8e-05;country_total_population_share;2024
-893;Elazığ;TUR;Turkey;1092780;20.19;1.8e-05;country_total_population_share;2024
-894;Bitlis;TUR;Turkey;1055413;19.5;1.8e-05;country_total_population_share;2024
-895;Bingöl;TUR;Turkey;989629;18.29;1.8e-05;country_total_population_share;2024
-896;Osmaniye;TUR;Turkey;341865;6.32;1.8e-05;country_total_population_share;2024
-897;Adıyaman;TUR;Turkey;842236;15.56;1.8e-05;country_total_population_share;2024
-898;Diyarbakır;TUR;Turkey;1773140;32.76;1.8e-05;country_total_population_share;2024
-899;Batman;TUR;Turkey;483514;8.93;1.8e-05;country_total_population_share;2024
-900;Bayburt;TUR;Turkey;415950;7.69;1.8e-05;country_total_population_share;2024
-901;Gümüşhane;TUR;Turkey;742183;13.71;1.8e-05;country_total_population_share;2024
-902;Chernihiv;UKR;Ukraine;921200;5.58;6e-06;country_total_population_share;2024
-903;Volyn;UKR;Ukraine;980775;5.94;6e-06;country_total_population_share;2024
-904;Rivne;UKR;Ukraine;1096419;6.65;6e-06;country_total_population_share;2024
-905;Zhytomyr;UKR;Ukraine;1132187;6.86;6e-06;country_total_population_share;2024
-906;Kyiv;UKR;Ukraine;1723756;10.45;6e-06;country_total_population_share;2024
-907;Zakarpattia;UKR;Ukraine;1195030;7.24;6e-06;country_total_population_share;2024
-908;Chernivtsi;UKR;Ukraine;855077;5.18;6e-06;country_total_population_share;2024
-909;Ivano-Frankivsk;UKR;Ukraine;1298111;7.87;6e-06;country_total_population_share;2024
-910;Odessa;UKR;Ukraine;2257965;13.69;6e-06;country_total_population_share;2024
-911;Vinnytsia;UKR;Ukraine;1449539;8.79;6e-06;country_total_population_share;2024
-912;Lviv;UKR;Ukraine;2379671;14.42;6e-06;country_total_population_share;2024
-913;Sumy;UKR;Ukraine;994619;6.03;6e-06;country_total_population_share;2024
-914;Kharkiv;UKR;Ukraine;2495698;15.13;6e-06;country_total_population_share;2024
-915;Luhansk;UKR;Ukraine;2081670;12.62;6e-06;country_total_population_share;2024
-916;Donetsk;UKR;Ukraine;4033566;24.45;6e-06;country_total_population_share;2024
-917;Kherson;UKR;Ukraine;961803;5.83;6e-06;country_total_population_share;2024
-918;Zaporizhzhia;UKR;Ukraine;1573362;9.54;6e-06;country_total_population_share;2024
-919;Mykolaiv;UKR;Ukraine;1048441;6.35;6e-06;country_total_population_share;2024
-920;Poltava;UKR;Ukraine;1298554;7.87;6e-06;country_total_population_share;2024
-921;Khmelnytskyi;UKR;Ukraine;1180005;7.15;6e-06;country_total_population_share;2024
-922;Ternopil;UKR;Ukraine;981118;5.95;6e-06;country_total_population_share;2024
-923;Dnipropetrovsk;UKR;Ukraine;2973454;18.02;6e-06;country_total_population_share;2024
-924;Cherkasy;UKR;Ukraine;1114625;6.76;6e-06;country_total_population_share;2024
-925;Kirovohrad;UKR;Ukraine;867806;5.26;6e-06;country_total_population_share;2024
-926;Kyiv;UKR;Ukraine;105549;0.64;6e-06;country_total_population_share;2024
+11;Lower Austria;AUT;Austria;2469722;163.08;6.6e-05;country_total_population_share;2024
+12;Upper Austria;AUT;Austria;2185242;144.3;6.6e-05;country_total_population_share;2024
+13;Burgenland;AUT;Austria;431741;28.51;6.6e-05;country_total_population_share;2024
+14;Vorarlberg;AUT;Austria;593811;39.21;6.6e-05;country_total_population_share;2024
+15;Salzburg;AUT;Austria;818814;54.07;6.6e-05;country_total_population_share;2024
+16;Carinthia;AUT;Austria;823042;54.35;6.6e-05;country_total_population_share;2024
+17;Styria;AUT;Austria;1827628;120.68;6.6e-05;country_total_population_share;2024
+18;West Flanders;BEL;Belgium;4223390;271.97;6.4e-05;country_total_population_share;2024
+19;Hainaut;BEL;Belgium;843097;54.29;6.4e-05;country_total_population_share;2024
+20;Namur;BEL;Belgium;1022803;65.87;6.4e-05;country_total_population_share;2024
+21;Luxembourg;BEL;Belgium;956142;61.57;6.4e-05;country_total_population_share;2024
+22;Liège;BEL;Belgium;1139777;73.4;6.4e-05;country_total_population_share;2024
+23;East Flanders;BEL;Belgium;962779;62.0;6.4e-05;country_total_population_share;2024
+24;Antwerp;BEL;Belgium;765361;49.29;6.4e-05;country_total_population_share;2024
+25;Limburg;BEL;Belgium;711346;45.81;6.4e-05;country_total_population_share;2024
+26;Flemish Brabant;BEL;Belgium;607457;39.12;6.4e-05;country_total_population_share;2024
+27;Walloon Brabant;BEL;Belgium;587848;37.86;6.4e-05;country_total_population_share;2024
+28;Burgas;BGR;Bulgaria;498069;11.0;2.2e-05;country_total_population_share;2024
+29;Yambol;BGR;Bulgaria;135018;2.98;2.2e-05;country_total_population_share;2024
+30;Haskovo;BGR;Bulgaria;265551;5.86;2.2e-05;country_total_population_share;2024
+31;Vidin;BGR;Bulgaria;90340;1.99;2.2e-05;country_total_population_share;2024
+32;Pernik;BGR;Bulgaria;140726;3.11;2.2e-05;country_total_population_share;2024
+33;Sofia;BGR;Bulgaria;287763;6.35;2.2e-05;country_total_population_share;2024
+34;Kyustendil;BGR;Bulgaria;135917;3.0;2.2e-05;country_total_population_share;2024
+35;Blagoevgrad;BGR;Bulgaria;366692;8.1;2.2e-05;country_total_population_share;2024
+36;Silistra;BGR;Bulgaria;119804;2.65;2.2e-05;country_total_population_share;2024
+37;Ruse;BGR;Bulgaria;238320;5.26;2.2e-05;country_total_population_share;2024
+38;Dobrich;BGR;Bulgaria;185960;4.11;2.2e-05;country_total_population_share;2024
+39;Vratsa;BGR;Bulgaria;186978;4.13;2.2e-05;country_total_population_share;2024
+40;Pleven;BGR;Bulgaria;275757;6.09;2.2e-05;country_total_population_share;2024
+41;Veliko Tarnovo;BGR;Bulgaria;256659;5.67;2.2e-05;country_total_population_share;2024
+42;Kardzhali;BGR;Bulgaria;191429;4.23;2.2e-05;country_total_population_share;2024
+43;Smolyan;BGR;Bulgaria;115943;2.56;2.2e-05;country_total_population_share;2024
+44;Varna;BGR;Bulgaria;560311;12.37;2.2e-05;country_total_population_share;2024
+45;Plovdiv;BGR;Bulgaria;814018;17.97;2.2e-05;country_total_population_share;2024
+46;Stara Zagora;BGR;Bulgaria;369770;8.16;2.2e-05;country_total_population_share;2024
+47;Sliven;BGR;Bulgaria;216813;4.79;2.2e-05;country_total_population_share;2024
+48;Shumen;BGR;Bulgaria;191175;4.22;2.2e-05;country_total_population_share;2024
+49;Razgrad;BGR;Bulgaria;127373;2.81;2.2e-05;country_total_population_share;2024
+50;Targovishte;BGR;Bulgaria;121323;2.68;2.2e-05;country_total_population_share;2024
+51;Gabrovo;BGR;Bulgaria;120147;2.65;2.2e-05;country_total_population_share;2024
+52;Pazardzhik;BGR;Bulgaria;286218;6.32;2.2e-05;country_total_population_share;2024
+53;Lovech;BGR;Bulgaria;141926;3.13;2.2e-05;country_total_population_share;2024
+54;Herzegovina-Neretva Canton;BIH;Bosnia and Herzegovina;252142;2.85;1.1e-05;country_total_population_share;2024
+55;Trebinje;BIH;Bosnia and Herzegovina;241800;2.73;1.1e-05;country_total_population_share;2024
+56;Foča;BIH;Bosnia and Herzegovina;72775;0.82;1.1e-05;country_total_population_share;2024
+57;Banja Luka;BIH;Bosnia and Herzegovina;279028;3.15;1.1e-05;country_total_population_share;2024
+58;Una-Sana Canton;BIH;Bosnia and Herzegovina;187024;2.11;1.1e-05;country_total_population_share;2024
+59;Doboj;BIH;Bosnia and Herzegovina;194566;2.2;1.1e-05;country_total_population_share;2024
+60;Bijeljina;BIH;Bosnia and Herzegovina;519820;5.87;1.1e-05;country_total_population_share;2024
+61;Livno;BIH;Bosnia and Herzegovina;282578;3.19;1.1e-05;country_total_population_share;2024
+62;West Herzegovina Canton;BIH;Bosnia and Herzegovina;136244;1.54;1.1e-05;country_total_population_share;2024
+63;Vlasenica;BIH;Bosnia and Herzegovina;118895;1.34;1.1e-05;country_total_population_share;2024
+64;Central Bosnia Canton;BIH;Bosnia and Herzegovina;307732;3.47;1.1e-05;country_total_population_share;2024
+65;Zenica-Doboj Canton;BIH;Bosnia and Herzegovina;88266;1.0;1.1e-05;country_total_population_share;2024
+66;Tuzla Canton;BIH;Bosnia and Herzegovina;129001;1.46;1.1e-05;country_total_population_share;2024
+67;Sarajevo-Romanija;BIH;Bosnia and Herzegovina;199838;2.26;1.1e-05;country_total_population_share;2024
+68;Sarajevo Canton;BIH;Bosnia and Herzegovina;200291;2.26;1.1e-05;country_total_population_share;2024
+69;Gomel;BLR;Belarus;1708382;16.91;1e-05;country_total_population_share;2024
+70;Brest;BLR;Belarus;1672283;16.55;1e-05;country_total_population_share;2024
+71;Vitebsk;BLR;Belarus;1379165;13.65;1e-05;country_total_population_share;2024
+72;Grodno;BLR;Belarus;1267007;12.54;1e-05;country_total_population_share;2024
+73;Mahilioŭ;BLR;Belarus;1249621;12.37;1e-05;country_total_population_share;2024
+74;Minsk;BLR;Belarus;1873542;18.54;1e-05;country_total_population_share;2024
+75;Valais;CHE;Switzerland;520954;62.48;0.00012;country_total_population_share;2024
+76;Ticino;CHE;Switzerland;535173;64.18;0.00012;country_total_population_share;2024
+77;Grisons;CHE;Switzerland;300465;36.04;0.00012;country_total_population_share;2024
+78;Thurgau;CHE;Switzerland;418745;50.22;0.00012;country_total_population_share;2024
+79;Zürich;CHE;Switzerland;2303654;276.28;0.00012;country_total_population_share;2024
+80;Aargau;CHE;Switzerland;1027211;123.2;0.00012;country_total_population_share;2024
+81;St. Gallen;CHE;Switzerland;768957;92.22;0.00012;country_total_population_share;2024
+82;Solothurn;CHE;Switzerland;413780;49.63;0.00012;country_total_population_share;2024
+83;Vaud;CHE;Switzerland;1210383;145.16;0.00012;country_total_population_share;2024
+84;Bern;CHE;Switzerland;302457;36.27;0.00012;country_total_population_share;2024
+85;Lucerne;CHE;Switzerland;620315;74.4;0.00012;country_total_population_share;2024
+86;Uri;CHE;Switzerland;55182;6.62;0.00012;country_total_population_share;2024
+87;Fribourg;CHE;Switzerland;482724;57.89;0.00012;country_total_population_share;2024
+88;Famagusta;CYP;Cyprus;84268;2.89;3.4e-05;country_total_population_share;2024
+89;Nicosia;CYP;Cyprus;590914;20.24;3.4e-05;country_total_population_share;2024
+90;Limassol;CYP;Cyprus;425286;14.57;3.4e-05;country_total_population_share;2024
+91;Paphos;CYP;Cyprus;159532;5.46;3.4e-05;country_total_population_share;2024
+92;Ústí nad Labem;CZE;Czech Republic;926708;35.46;3.8e-05;country_total_population_share;2024
+93;Liberec;CZE;Czech Republic;515305;19.72;3.8e-05;country_total_population_share;2024
+94;Karlovy Vary;CZE;Czech Republic;336122;12.86;3.8e-05;country_total_population_share;2024
+95;Plzeň-;CZE;Czech Republic;704630;26.97;3.8e-05;country_total_population_share;2024
+96;South Bohemian;CZE;Czech Republic;748867;28.66;3.8e-05;country_total_population_share;2024
+97;Hradec Králové;CZE;Czech Republic;637316;24.39;3.8e-05;country_total_population_share;2024
+98;Olomouc;CZE;Czech Republic;723959;27.71;3.8e-05;country_total_population_share;2024
+99;Pardubice;CZE;Czech Republic;608136;23.27;3.8e-05;country_total_population_share;2024
+100;Moravian-Silesian;CZE;Czech Republic;1363316;52.17;3.8e-05;country_total_population_share;2024
+101;South Moravian;CZE;Czech Republic;1409331;53.93;3.8e-05;country_total_population_share;2024
+102;Zlín;CZE;Czech Republic;663770;25.4;3.8e-05;country_total_population_share;2024
+103;Vysočina;CZE;Czech Republic;593436;22.71;3.8e-05;country_total_population_share;2024
+104;Central Bohemian;CZE;Czech Republic;1669104;63.87;3.8e-05;country_total_population_share;2024
+105;Saxony;DEU;Germany;4788876;301.61;6.3e-05;country_total_population_share;2024
+106;Bavaria;DEU;Germany;15369417;967.98;6.3e-05;country_total_population_share;2024
+107;Saarland;DEU;Germany;1191599;75.05;6.3e-05;country_total_population_share;2024
+108;Schleswig-Holstein;DEU;Germany;3458359;217.81;6.3e-05;country_total_population_share;2024
+109;Lower Saxony;DEU;Germany;9372220;590.27;6.3e-05;country_total_population_share;2024
+110;North Rhine-Westphalia;DEU;Germany;20999612;1322.57;6.3e-05;country_total_population_share;2024
+111;Baden-Württemberg;DEU;Germany;13003127;818.95;6.3e-05;country_total_population_share;2024
+112;Brandenburg;DEU;Germany;2967470;186.89;6.3e-05;country_total_population_share;2024
+113;Mecklenburg-Western Pomerania;DEU;Germany;1839470;115.85;6.3e-05;country_total_population_share;2024
+114;Hesse;DEU;Germany;6449754;406.21;6.3e-05;country_total_population_share;2024
+115;Thuringia;DEU;Germany;2530590;159.38;6.3e-05;country_total_population_share;2024
+116;Saxony-Anhalt;DEU;Germany;2629506;165.61;6.3e-05;country_total_population_share;2024
+117;Southern Denmark;DNK;Denmark;2373800;199.16;8.4e-05;country_total_population_share;2024
+118;Denmark;DNK;Denmark;3586200;300.89;8.4e-05;country_total_population_share;2024
+119;Navarre;ESP;Spain;1467500;61.65;4.2e-05;country_total_population_share;2024
+120;Gipuzkoa;ESP;Spain;1817464;76.36;4.2e-05;country_total_population_share;2024
+121;Huesca;ESP;Spain;603597;25.36;4.2e-05;country_total_population_share;2024
+122;Lleida;ESP;Spain;2749189;115.5;4.2e-05;country_total_population_share;2024
+123;Girona;ESP;Spain;1782041;74.87;4.2e-05;country_total_population_share;2024
+124;Badajoz;ESP;Spain;777407;32.66;4.2e-05;country_total_population_share;2024
+125;Cádiz;ESP;Spain;332678;13.98;4.2e-05;country_total_population_share;2024
+126;Ourense;ESP;Spain;802968;33.74;4.2e-05;country_total_population_share;2024
+127;Cáceres;ESP;Spain;258545;10.86;4.2e-05;country_total_population_share;2024
+128;Salamanca;ESP;Spain;1425517;59.89;4.2e-05;country_total_population_share;2024
+129;Zamora;ESP;Spain;1151597;48.38;4.2e-05;country_total_population_share;2024
+130;Pontevedra;ESP;Spain;506645;21.29;4.2e-05;country_total_population_share;2024
+131;Huelva;ESP;Spain;2090688;87.84;4.2e-05;country_total_population_share;2024
+132;Barcelona;ESP;Spain;1695732;71.24;4.2e-05;country_total_population_share;2024
+133;Tarragona;ESP;Spain;1679270;70.55;4.2e-05;country_total_population_share;2024
+134;Castellón;ESP;Spain;1776250;74.63;4.2e-05;country_total_population_share;2024
+135;Valencia;ESP;Spain;1191795;50.07;4.2e-05;country_total_population_share;2024
+136;Alicante;ESP;Spain;1034987;43.48;4.2e-05;country_total_population_share;2024
+137;Murcia;ESP;Spain;489609;20.57;4.2e-05;country_total_population_share;2024
+138;Almería;ESP;Spain;1082128;45.46;4.2e-05;country_total_population_share;2024
+139;Granada;ESP;Spain;861868;36.21;4.2e-05;country_total_population_share;2024
+140;Málaga;ESP;Spain;719105;30.21;4.2e-05;country_total_population_share;2024
+141;Seville;ESP;Spain;760160;31.94;4.2e-05;country_total_population_share;2024
+142;A Coruña;ESP;Spain;848513;35.65;4.2e-05;country_total_population_share;2024
+143;Lugo;ESP;Spain;501992;21.09;4.2e-05;country_total_population_share;2024
+144;Asturias;ESP;Spain;991906;41.67;4.2e-05;country_total_population_share;2024
+145;Cantabria;ESP;Spain;582102;24.46;4.2e-05;country_total_population_share;2024
+146;Biscay;ESP;Spain;1200094;50.42;4.2e-05;country_total_population_share;2024
+147;Santa Cruz de Tenerife;ESP;Spain;754733;31.71;4.2e-05;country_total_population_share;2024
+148;Las Palmas;ESP;Spain;1305850;54.86;4.2e-05;country_total_population_share;2024
+149;Balearic Islands;ESP;Spain;805684;33.85;4.2e-05;country_total_population_share;2024
+150;Zaragoza;ESP;Spain;514966;21.64;4.2e-05;country_total_population_share;2024
+151;La Rioja;ESP;Spain;319211;13.41;4.2e-05;country_total_population_share;2024
+152;Araba / Álava;ESP;Spain;576040;24.2;4.2e-05;country_total_population_share;2024
+153;Albacete;ESP;Spain;131614;5.53;4.2e-05;country_total_population_share;2024
+154;Teruel;ESP;Spain;207716;8.73;4.2e-05;country_total_population_share;2024
+155;Cuenca;ESP;Spain;219959;9.24;4.2e-05;country_total_population_share;2024
+156;Toledo;ESP;Spain;268386;11.28;4.2e-05;country_total_population_share;2024
+157;León;ESP;Spain;1563737;65.7;4.2e-05;country_total_population_share;2024
+158;Soria;ESP;Spain;574585;24.14;4.2e-05;country_total_population_share;2024
+159;Burgos;ESP;Spain;370651;15.57;4.2e-05;country_total_population_share;2024
+160;Ávila;ESP;Spain;1377892;57.89;4.2e-05;country_total_population_share;2024
+161;Palencia;ESP;Spain;1369196;57.52;4.2e-05;country_total_population_share;2024
+162;Ciudad Real;ESP;Spain;750821;31.54;4.2e-05;country_total_population_share;2024
+163;Córdoba;ESP;Spain;1540838;64.74;4.2e-05;country_total_population_share;2024
+164;Guadalajara;ESP;Spain;694508;29.18;4.2e-05;country_total_population_share;2024
+165;Jaén;ESP;Spain;1094289;45.97;4.2e-05;country_total_population_share;2024
+166;Community of Madrid;ESP;Spain;1345508;56.53;4.2e-05;country_total_population_share;2024
+167;Segovia;ESP;Spain;819540;34.43;4.2e-05;country_total_population_share;2024
+168;Valladolid;ESP;Spain;812929;34.15;4.2e-05;country_total_population_share;2024
+169;Viljandi;EST;Estonia;45516;1.7;3.7e-05;country_total_population_share;2024
+170;Pärnu;EST;Estonia;87186;3.25;3.7e-05;country_total_population_share;2024
+171;Valga;EST;Estonia;27851;1.04;3.7e-05;country_total_population_share;2024
+172;Võru;EST;Estonia;33959;1.27;3.7e-05;country_total_population_share;2024
+173;Ida-Viru;EST;Estonia;133003;4.96;3.7e-05;country_total_population_share;2024
+174;Põlva;EST;Estonia;23973;0.89;3.7e-05;country_total_population_share;2024
+175;Tartu;EST;Estonia;161958;6.03;3.7e-05;country_total_population_share;2024
+176;Jõgeva;EST;Estonia;27666;1.03;3.7e-05;country_total_population_share;2024
+177;Lääne;EST;Estonia;20571;0.77;3.7e-05;country_total_population_share;2024
+178;Harju;EST;Estonia;644592;24.01;3.7e-05;country_total_population_share;2024
+179;Lääne-Viru;EST;Estonia;59450;2.21;3.7e-05;country_total_population_share;2024
+180;Saare;EST;Estonia;31937;1.19;3.7e-05;country_total_population_share;2024
+181;Hiiu;EST;Estonia;8397;0.31;3.7e-05;country_total_population_share;2024
+182;Rapla;EST;Estonia;33948;1.26;3.7e-05;country_total_population_share;2024
+183;Järva;EST;Estonia;29993;1.12;3.7e-05;country_total_population_share;2024
+184;Lapland;FIN;Finland;206040;12.32;6e-05;country_total_population_share;2024
+185;Kainuu;FIN;Finland;83581;5.0;6e-05;country_total_population_share;2024
+186;North Karelia;FIN;Finland;190718;11.41;6e-05;country_total_population_share;2024
+187;South Karelia;FIN;Finland;147037;8.79;6e-05;country_total_population_share;2024
+188;Kymenlaakso;FIN;Finland;189867;11.36;6e-05;country_total_population_share;2024
+189;Uusimaa;FIN;Finland;1987512;118.87;6e-05;country_total_population_share;2024
+190;Finland Proper;FIN;Finland;58679;3.51;6e-05;country_total_population_share;2024
+191;Satakunta;FIN;Finland;251093;15.02;6e-05;country_total_population_share;2024
+192;Ostrobothnia;FIN;Finland;205002;12.26;6e-05;country_total_population_share;2024
+193;Central Ostrobothnia;FIN;Finland;79259;4.74;6e-05;country_total_population_share;2024
+194;Northern Savonia;FIN;Finland;483472;28.92;6e-05;country_total_population_share;2024
+195;Southern Savonia;FIN;Finland;165212;9.88;6e-05;country_total_population_share;2024
+196;Central Finland;FIN;Finland;317782;19.01;6e-05;country_total_population_share;2024
+197;Southern Ostrobothnia;FIN;Finland;204256;12.22;6e-05;country_total_population_share;2024
+198;Pirkanmaa;FIN;Finland;610498;36.51;6e-05;country_total_population_share;2024
+199;Tavastia Proper;FIN;Finland;189963;11.36;6e-05;country_total_population_share;2024
+200;Päijänne Tavastia;FIN;Finland;240029;14.36;6e-05;country_total_population_share;2024
+201;Nord;FRA;France;828116;43.08;5.2e-05;country_total_population_share;2024
+202;Ardennes;FRA;France;973747;50.66;5.2e-05;country_total_population_share;2024
+203;Aisne;FRA;France;2459069;127.93;5.2e-05;country_total_population_share;2024
+204;Meuse;FRA;France;950883;49.47;5.2e-05;country_total_population_share;2024
+205;Meurthe-et-Moselle;FRA;France;720657;37.49;5.2e-05;country_total_population_share;2024
+206;Moselle;FRA;France;766536;39.88;5.2e-05;country_total_population_share;2024
+207;Alpes-Maritimes;FRA;France;932717;48.53;5.2e-05;country_total_population_share;2024
+208;Alpes-de-Haute-Provence;FRA;France;951770;49.52;5.2e-05;country_total_population_share;2024
+209;Hautes-Alpes;FRA;France;888761;46.24;5.2e-05;country_total_population_share;2024
+210;Savoie;FRA;France;602926;31.37;5.2e-05;country_total_population_share;2024
+211;Haute-Savoie;FRA;France;821154;42.72;5.2e-05;country_total_population_share;2024
+212;Pyrenees-Atlantics;FRA;France;569577;29.63;5.2e-05;country_total_population_share;2024
+213;Haute-Garonne;FRA;France;482834;25.12;5.2e-05;country_total_population_share;2024
+214;Hautes-Pyrénées;FRA;France;551623;28.7;5.2e-05;country_total_population_share;2024
+215;Ariège;FRA;France;397784;20.7;5.2e-05;country_total_population_share;2024
+216;Pyrénées-Orientales;FRA;France;616464;32.07;5.2e-05;country_total_population_share;2024
+217;Bas-Rhin;FRA;France;327903;17.06;5.2e-05;country_total_population_share;2024
+218;Haut-Rhin;FRA;France;358995;18.68;5.2e-05;country_total_population_share;2024
+219;Doubs;FRA;France;445405;23.17;5.2e-05;country_total_population_share;2024
+220;Ain;FRA;France;866413;45.08;5.2e-05;country_total_population_share;2024
+221;Jura;FRA;France;577635;30.05;5.2e-05;country_total_population_share;2024
+222;Var;FRA;France;747611;38.9;5.2e-05;country_total_population_share;2024
+223;Bouches-du-Rhône;FRA;France;808748;42.08;5.2e-05;country_total_population_share;2024
+224;Gard;FRA;France;404899;21.07;5.2e-05;country_total_population_share;2024
+225;Hérault;FRA;France;436223;22.69;5.2e-05;country_total_population_share;2024
+226;Aude;FRA;France;335958;17.48;5.2e-05;country_total_population_share;2024
+227;Landes;FRA;France;542316;28.21;5.2e-05;country_total_population_share;2024
+228;Gironde;FRA;France;526635;27.4;5.2e-05;country_total_population_share;2024
+229;Charente-Maritime;FRA;France;469296;24.42;5.2e-05;country_total_population_share;2024
+230;Vendée;FRA;France;744659;38.74;5.2e-05;country_total_population_share;2024
+231;Loire-Atlantique;FRA;France;655451;34.1;5.2e-05;country_total_population_share;2024
+232;Morbihan;FRA;France;692112;36.01;5.2e-05;country_total_population_share;2024
+233;Finistère;FRA;France;722600;37.59;5.2e-05;country_total_population_share;2024
+234;Côtes-d'Armor;FRA;France;740329;38.52;5.2e-05;country_total_population_share;2024
+235;Ille-et-Vilaine;FRA;France;1032039;53.69;5.2e-05;country_total_population_share;2024
+236;Manche;FRA;France;896701;46.65;5.2e-05;country_total_population_share;2024
+237;Calvados;FRA;France;635773;33.08;5.2e-05;country_total_population_share;2024
+238;Eure;FRA;France;619281;32.22;5.2e-05;country_total_population_share;2024
+239;Seine-Maritime;FRA;France;633528;32.96;5.2e-05;country_total_population_share;2024
+240;Somme;FRA;France;1010451;52.57;5.2e-05;country_total_population_share;2024
+241;Pas-de-Calais;FRA;France;1013074;52.71;5.2e-05;country_total_population_share;2024
+242;Corse-du-Sud;FRA;France;814635;42.38;5.2e-05;country_total_population_share;2024
+243;Gers;FRA;France;598911;31.16;5.2e-05;country_total_population_share;2024
+244;Haute-Vienne;FRA;France;555979;28.93;5.2e-05;country_total_population_share;2024
+245;Corrèze;FRA;France;526264;27.38;5.2e-05;country_total_population_share;2024
+246;Tarn-et-Garonne;FRA;France;546546;28.43;5.2e-05;country_total_population_share;2024
+247;Tarn;FRA;France;559167;29.09;5.2e-05;country_total_population_share;2024
+248;Isère;FRA;France;704575;36.66;5.2e-05;country_total_population_share;2024
+249;Drôme;FRA;France;756134;39.34;5.2e-05;country_total_population_share;2024
+250;Aveyron;FRA;France;440691;22.93;5.2e-05;country_total_population_share;2024
+251;Lot;FRA;France;382539;19.9;5.2e-05;country_total_population_share;2024
+252;Indre-et-Loire;FRA;France;456107;23.73;5.2e-05;country_total_population_share;2024
+253;Indre;FRA;France;407281;21.19;5.2e-05;country_total_population_share;2024
+254;Loir-et-Cher;FRA;France;432449;22.5;5.2e-05;country_total_population_share;2024
+255;Creuse;FRA;France;366865;19.09;5.2e-05;country_total_population_share;2024
+256;Mayenne;FRA;France;725782;37.76;5.2e-05;country_total_population_share;2024
+257;Sarthe;FRA;France;940528;48.93;5.2e-05;country_total_population_share;2024
+258;Vaucluse;FRA;France;1034462;53.82;5.2e-05;country_total_population_share;2024
+259;Haute-Marne;FRA;France;486608;25.32;5.2e-05;country_total_population_share;2024
+260;Marne;FRA;France;305856;15.91;5.2e-05;country_total_population_share;2024
+261;Dordogne;FRA;France;564192;29.35;5.2e-05;country_total_population_share;2024
+262;Rhône;FRA;France;772387;40.18;5.2e-05;country_total_population_share;2024
+263;Vosges;FRA;France;368830;19.19;5.2e-05;country_total_population_share;2024
+264;Ardèche;FRA;France;642412;33.42;5.2e-05;country_total_population_share;2024
+265;Loire;FRA;France;607763;31.62;5.2e-05;country_total_population_share;2024
+266;Puy-de-Dôme;FRA;France;706193;36.74;5.2e-05;country_total_population_share;2024
+267;Allier;FRA;France;428383;22.29;5.2e-05;country_total_population_share;2024
+268;Loiret;FRA;France;458804;23.87;5.2e-05;country_total_population_share;2024
+269;Maine-et-Loire;FRA;France;958169;49.85;5.2e-05;country_total_population_share;2024
+270;Aube;FRA;France;508429;26.45;5.2e-05;country_total_population_share;2024
+271;Val-d'Oise;FRA;France;1870009;97.29;5.2e-05;country_total_population_share;2024
+272;Yvelines;FRA;France;3124230;162.54;5.2e-05;country_total_population_share;2024
+273;Charente;FRA;France;526259;27.38;5.2e-05;country_total_population_share;2024
+274;Cher;FRA;France;368248;19.16;5.2e-05;country_total_population_share;2024
+275;Eure-et-Loir;FRA;France;555456;28.9;5.2e-05;country_total_population_share;2024
+276;Haute-Loire;FRA;France;811510;42.22;5.2e-05;country_total_population_share;2024
+277;Cantal;FRA;France;749977;39.02;5.2e-05;country_total_population_share;2024
+278;Lot-et-Garonne;FRA;France;654630;34.06;5.2e-05;country_total_population_share;2024
+279;Lozère;FRA;France;554973;28.87;5.2e-05;country_total_population_share;2024
+280;Nièvre;FRA;France;153814;8.0;5.2e-05;country_total_population_share;2024
+281;Côte-d’Or;FRA;France;239435;12.46;5.2e-05;country_total_population_share;2024
+282;Oise;FRA;France;913012;47.5;5.2e-05;country_total_population_share;2024
+283;Orne;FRA;France;678923;35.32;5.2e-05;country_total_population_share;2024
+284;Haute-Saône;FRA;France;537970;27.99;5.2e-05;country_total_population_share;2024
+285;Saône-et-Loire;FRA;France;470439;24.47;5.2e-05;country_total_population_share;2024
+286;Deux-Sèvres;FRA;France;536663;27.92;5.2e-05;country_total_population_share;2024
+287;Vienne;FRA;France;503810;26.21;5.2e-05;country_total_population_share;2024
+288;Yonne;FRA;France;484360;25.2;5.2e-05;country_total_population_share;2024
+289;Essonne;FRA;France;3514041;182.82;5.2e-05;country_total_population_share;2024
+290;Seine-et-Marne;FRA;France;4336647;225.62;5.2e-05;country_total_population_share;2024
+291;Strabane;GBR;United Kingdom;342656;21.2;6.2e-05;country_total_population_share;2024
+292;Fermanagh;GBR;United Kingdom;353373;21.86;6.2e-05;country_total_population_share;2024
+293;Wrexham;GBR;United Kingdom;585514;36.23;6.2e-05;country_total_population_share;2024
+294;Shropshire;GBR;United Kingdom;2881837;178.3;6.2e-05;country_total_population_share;2024
+295;Powys;GBR;United Kingdom;660236;40.85;6.2e-05;country_total_population_share;2024
+296;Herefordshire;GBR;United Kingdom;2392788;148.04;6.2e-05;country_total_population_share;2024
+297;Gloucestershire;GBR;United Kingdom;2539696;157.13;6.2e-05;country_total_population_share;2024
+298;Scottish Borders;GBR;United Kingdom;236300;14.62;6.2e-05;country_total_population_share;2024
+299;Northumberland;GBR;United Kingdom;2298735;142.22;6.2e-05;country_total_population_share;2024
+300;Cumbria;GBR;United Kingdom;2929374;181.24;6.2e-05;country_total_population_share;2024
+301;Dumfries and Galloway;GBR;United Kingdom;479602;29.67;6.2e-05;country_total_population_share;2024
+302;Stirling;GBR;United Kingdom;247205;15.29;6.2e-05;country_total_population_share;2024
+303;Durham;GBR;United Kingdom;2288399;141.58;6.2e-05;country_total_population_share;2024
+304;North Yorkshire;GBR;United Kingdom;1829008;113.16;6.2e-05;country_total_population_share;2024
+305;East Riding of Yorkshire;GBR;United Kingdom;2005096;124.05;6.2e-05;country_total_population_share;2024
+306;North East Lincolnshire;GBR;United Kingdom;1414135;87.49;6.2e-05;country_total_population_share;2024
+307;Lincolnshire;GBR;United Kingdom;2858783;176.87;6.2e-05;country_total_population_share;2024
+308;Norfolk;GBR;United Kingdom;1831046;113.28;6.2e-05;country_total_population_share;2024
+309;Suffolk;GBR;United Kingdom;2347058;145.21;6.2e-05;country_total_population_share;2024
+310;Essex;GBR;United Kingdom;2222970;137.53;6.2e-05;country_total_population_share;2024
+311;Kent;GBR;United Kingdom;1048532;64.87;6.2e-05;country_total_population_share;2024
+312;East Sussex;GBR;United Kingdom;1354064;83.77;6.2e-05;country_total_population_share;2024
+313;West Sussex;GBR;United Kingdom;3426649;212.0;6.2e-05;country_total_population_share;2024
+314;Hampshire;GBR;United Kingdom;1000717;61.91;6.2e-05;country_total_population_share;2024
+315;Dorset;GBR;United Kingdom;945088;58.47;6.2e-05;country_total_population_share;2024
+316;Cornwall;GBR;United Kingdom;2299324;142.26;6.2e-05;country_total_population_share;2024
+317;Somerset;GBR;United Kingdom;1927189;119.23;6.2e-05;country_total_population_share;2024
+318;Carmarthenshire;GBR;United Kingdom;437670;27.08;6.2e-05;country_total_population_share;2024
+319;Pembrokeshire;GBR;United Kingdom;508410;31.45;6.2e-05;country_total_population_share;2024
+320;Ceredigion;GBR;United Kingdom;493045;30.5;6.2e-05;country_total_population_share;2024
+321;Gwynedd;GBR;United Kingdom;229293;14.19;6.2e-05;country_total_population_share;2024
+322;Conwy;GBR;United Kingdom;252438;15.62;6.2e-05;country_total_population_share;2024
+323;Lancashire;GBR;United Kingdom;1920306;118.81;6.2e-05;country_total_population_share;2024
+324;South Ayrshire;GBR;United Kingdom;319718;19.78;6.2e-05;country_total_population_share;2024
+325;Argyll and Bute;GBR;United Kingdom;714441;44.2;6.2e-05;country_total_population_share;2024
+326;Highland;GBR;United Kingdom;411118;25.44;6.2e-05;country_total_population_share;2024
+327;Moray;GBR;United Kingdom;450121;27.85;6.2e-05;country_total_population_share;2024
+328;Aberdeenshire;GBR;United Kingdom;292999;18.13;6.2e-05;country_total_population_share;2024
+329;Angus;GBR;United Kingdom;205007;12.68;6.2e-05;country_total_population_share;2024
+330;Perth and Kinross;GBR;United Kingdom;239711;14.83;6.2e-05;country_total_population_share;2024
+331;Fife;GBR;United Kingdom;388534;24.04;6.2e-05;country_total_population_share;2024
+332;Outer Hebrides;GBR;United Kingdom;156426;9.68;6.2e-05;country_total_population_share;2024
+333;Shetland Islands;GBR;United Kingdom;364029;22.52;6.2e-05;country_total_population_share;2024
+334;East Ayrshire;GBR;United Kingdom;171121;10.59;6.2e-05;country_total_population_share;2024
+335;South Lanarkshire;GBR;United Kingdom;788716;48.8;6.2e-05;country_total_population_share;2024
+336;Omagh;GBR;United Kingdom;1228419;76.0;6.2e-05;country_total_population_share;2024
+337;Hertfordshire;GBR;United Kingdom;908497;56.21;6.2e-05;country_total_population_share;2024
+338;Cambridgeshire;GBR;United Kingdom;2271151;140.51;6.2e-05;country_total_population_share;2024
+339;Buckinghamshire;GBR;United Kingdom;867210;53.65;6.2e-05;country_total_population_share;2024
+340;Nottinghamshire;GBR;United Kingdom;1958245;121.15;6.2e-05;country_total_population_share;2024
+341;Northamptonshire;GBR;United Kingdom;581882;36.0;6.2e-05;country_total_population_share;2024
+342;Leicestershire;GBR;United Kingdom;1130720;69.96;6.2e-05;country_total_population_share;2024
+343;Cheshire East;GBR;United Kingdom;596289;36.89;6.2e-05;country_total_population_share;2024
+344;Derbyshire;GBR;United Kingdom;567263;35.1;6.2e-05;country_total_population_share;2024
+345;Staffordshire;GBR;United Kingdom;738165;45.67;6.2e-05;country_total_population_share;2024
+346;Worcestershire;GBR;United Kingdom;521134;32.24;6.2e-05;country_total_population_share;2024
+347;Warwickshire;GBR;United Kingdom;695809;43.05;6.2e-05;country_total_population_share;2024
+348;Oxfordshire;GBR;United Kingdom;1433646;88.7;6.2e-05;country_total_population_share;2024
+349;Surrey;GBR;United Kingdom;829590;51.33;6.2e-05;country_total_population_share;2024
+350;Wiltshire;GBR;United Kingdom;883503;54.66;6.2e-05;country_total_population_share;2024
+351;Abkhazia;GEO;Georgia;638563;6.88;1.1e-05;country_total_population_share;2024
+352;Shida Kartli;GEO;Georgia;580590;6.25;1.1e-05;country_total_population_share;2024
+353;Racha-Lechkhumi and Kvemo Svaneti;GEO;Georgia;73321;0.79;1.1e-05;country_total_population_share;2024
+354;Samtskhe–Javakheti;GEO;Georgia;345247;3.72;1.1e-05;country_total_population_share;2024
+355;Adjara;GEO;Georgia;747394;8.05;1.1e-05;country_total_population_share;2024
+356;Guria;GEO;Georgia;244712;2.64;1.1e-05;country_total_population_share;2024
+357;Imereti;GEO;Georgia;1100173;11.85;1.1e-05;country_total_population_share;2024
+358;West Macedonia;GRC;Greece;433497;12.71;2.9e-05;country_total_population_share;2024
+359;Epirus;GRC;Greece;378215;11.09;2.9e-05;country_total_population_share;2024
+360;East Macedonia and Thrace;GRC;Greece;664496;19.48;2.9e-05;country_total_population_share;2024
+361;Thessalia;GRC;Greece;813486;23.84;2.9e-05;country_total_population_share;2024
+362;Central Greece;GRC;Greece;600733;17.61;2.9e-05;country_total_population_share;2024
+363;Attica;GRC;Greece;4508046;132.14;2.9e-05;country_total_population_share;2024
+364;Peloponnese;GRC;Greece;637706;18.69;2.9e-05;country_total_population_share;2024
+365;West Greece;GRC;Greece;766167;22.46;2.9e-05;country_total_population_share;2024
+366;Crete;GRC;Greece;738022;21.63;2.9e-05;country_total_population_share;2024
+367;South Aegean;GRC;Greece;387469;11.36;2.9e-05;country_total_population_share;2024
+368;North Aegean;GRC;Greece;230415;6.75;2.9e-05;country_total_population_share;2024
+369;Ionian Islands;GRC;Greece;241748;7.09;2.9e-05;country_total_population_share;2024
+370;Virovitica-Podravina;HRV;Croatia;126648;3.72;2.9e-05;country_total_population_share;2024
+371;Koprivnica-Križevci;HRV;Croatia;172549;5.07;2.9e-05;country_total_population_share;2024
+372;Osijek-Baranja;HRV;Croatia;455365;13.38;2.9e-05;country_total_population_share;2024
+373;Istria;HRV;Croatia;291459;8.56;2.9e-05;country_total_population_share;2024
+374;Dubrovnik-Neretva;HRV;Croatia;172964;5.08;2.9e-05;country_total_population_share;2024
+375;Sisak-Moslavina;HRV;Croatia;276754;8.13;2.9e-05;country_total_population_share;2024
+376;Brod-Posavina;HRV;Croatia;236728;6.96;2.9e-05;country_total_population_share;2024
+377;Karlovac;HRV;Croatia;192427;5.65;2.9e-05;country_total_population_share;2024
+378;Zadar;HRV;Croatia;238506;7.01;2.9e-05;country_total_population_share;2024
+379;Vukovar-Syrmia;HRV;Croatia;267997;7.87;2.9e-05;country_total_population_share;2024
+380;Varaždin;HRV;Croatia;262668;7.72;2.9e-05;country_total_population_share;2024
+381;Krapina-Zagorje;HRV;Croatia;180190;5.29;2.9e-05;country_total_population_share;2024
+382;Zagreb;HRV;Croatia;474190;13.93;2.9e-05;country_total_population_share;2024
+383;Šibenik-Knin;HRV;Croatia;163280;4.8;2.9e-05;country_total_population_share;2024
+384;Lika-Senj;HRV;Croatia;63817;1.88;2.9e-05;country_total_population_share;2024
+385;Bjelovar-Bilogora;HRV;Croatia;178790;5.25;2.9e-05;country_total_population_share;2024
+386;Požega-Slavonia;HRV;Croatia;95668;2.81;2.9e-05;country_total_population_share;2024
+387;Szabolcs-Szatmár-Bereg;HUN;Hungary;663974;18.71;2.8e-05;country_total_population_share;2024
+388;Békés;HUN;Hungary;395367;11.14;2.8e-05;country_total_population_share;2024
+389;Hajdú-Bihar;HUN;Hungary;651131;18.35;2.8e-05;country_total_population_share;2024
+390;Csongrád-Csanád;HUN;Hungary;490641;13.82;2.8e-05;country_total_population_share;2024
+391;Győr-Moson-Sopron;HUN;Hungary;584410;16.47;2.8e-05;country_total_population_share;2024
+392;Vas;HUN;Hungary;312951;8.82;2.8e-05;country_total_population_share;2024
+393;Bács-Kiskun;HUN;Hungary;621251;17.5;2.8e-05;country_total_population_share;2024
+394;Zala;HUN;Hungary;327108;9.22;2.8e-05;country_total_population_share;2024
+395;Somogy;HUN;Hungary;368084;10.37;2.8e-05;country_total_population_share;2024
+396;Baranya;HUN;Hungary;444031;12.51;2.8e-05;country_total_population_share;2024
+397;Borsod-Abaúj-Zemplén;HUN;Hungary;781425;22.02;2.8e-05;country_total_population_share;2024
+398;Nógrád;HUN;Hungary;228849;6.45;2.8e-05;country_total_population_share;2024
+399;Komárom-Esztergom;HUN;Hungary;377066;10.62;2.8e-05;country_total_population_share;2024
+400;Pest;HUN;Hungary;1672577;47.13;2.8e-05;country_total_population_share;2024
+401;Jász-Nagykun-Szolnok;HUN;Hungary;446273;12.57;2.8e-05;country_total_population_share;2024
+402;Fejér;HUN;Hungary;526352;14.83;2.8e-05;country_total_population_share;2024
+403;Veszprém;HUN;Hungary;69133;1.95;2.8e-05;country_total_population_share;2024
+404;Tolna;HUN;Hungary;260797;7.35;2.8e-05;country_total_population_share;2024
+405;Heves;HUN;Hungary;358580;10.1;2.8e-05;country_total_population_share;2024
+406;Donegal;IRL;Ireland;210911;29.63;0.00014;country_total_population_share;2024
+407;Cavan;IRL;Ireland;520924;73.17;0.00014;country_total_population_share;2024
+408;Monaghan;IRL;Ireland;204903;28.78;0.00014;country_total_population_share;2024
+409;Wicklow;IRL;Ireland;369137;51.85;0.00014;country_total_population_share;2024
+410;Wexford;IRL;Ireland;279494;39.26;0.00014;country_total_population_share;2024
+411;Kilkenny;IRL;Ireland;451764;63.46;0.00014;country_total_population_share;2024
+412;Waterford;IRL;Ireland;89601;12.59;0.00014;country_total_population_share;2024
+413;Cork;IRL;Ireland;411857;57.85;0.00014;country_total_population_share;2024
+414;Kerry;IRL;Ireland;444349;62.42;0.00014;country_total_population_share;2024
+415;Limerick;IRL;Ireland;116152;16.32;0.00014;country_total_population_share;2024
+416;Clare;IRL;Ireland;259601;36.47;0.00014;country_total_population_share;2024
+417;Galway;IRL;Ireland;306899;43.11;0.00014;country_total_population_share;2024
+418;Mayo;IRL;Ireland;222676;31.28;0.00014;country_total_population_share;2024
+419;Sligo;IRL;Ireland;204714;28.76;0.00014;country_total_population_share;2024
+420;Meath;IRL;Ireland;292955;41.15;0.00014;country_total_population_share;2024
+421;Kildare;IRL;Ireland;98928;13.9;0.00014;country_total_population_share;2024
+422;Laois;IRL;Ireland;115702;16.25;0.00014;country_total_population_share;2024
+423;Offaly;IRL;Ireland;126042;17.71;0.00014;country_total_population_share;2024
+424;Westmeath;IRL;Ireland;176992;24.86;0.00014;country_total_population_share;2024
+425;Longford;IRL;Ireland;198450;27.88;0.00014;country_total_population_share;2024
+426;Roscommon;IRL;Ireland;128236;18.01;0.00014;country_total_population_share;2024
+427;Tipperary;IRL;Ireland;109713;15.41;0.00014;country_total_population_share;2024
+428;Austurland;ISL;Iceland;93031;10.63;0.000114;country_total_population_share;2024
+429;Southern;ISL;Iceland;89319;10.2;0.000114;country_total_population_share;2024
+430;Western;ISL;Iceland;55169;6.3;0.000114;country_total_population_share;2024
+431;Westfjords;ISL;Iceland;23209;2.65;0.000114;country_total_population_share;2024
+432;Northwestern;ISL;Iceland;23030;2.63;0.000114;country_total_population_share;2024
+433;Northeastern;ISL;Iceland;96242;10.99;0.000114;country_total_population_share;2024
+434;Aosta;ITA;Italy;27599;1.27;4.6e-05;country_total_population_share;2024
+435;Verbano-Cusio-Ossola;ITA;Italy;375183;17.21;4.6e-05;country_total_population_share;2024
+436;Varese;ITA;Italy;275281;12.63;4.6e-05;country_total_population_share;2024
+437;Como;ITA;Italy;272645;12.51;4.6e-05;country_total_population_share;2024
+438;Sondrio;ITA;Italy;324231;14.87;4.6e-05;country_total_population_share;2024
+439;Trentino-South Tyrol;ITA;Italy;235484;10.8;4.6e-05;country_total_population_share;2024
+440;Imperia;ITA;Italy;177631;8.15;4.6e-05;country_total_population_share;2024
+441;Cuneo;ITA;Italy;400597;18.37;4.6e-05;country_total_population_share;2024
+442;Turin;ITA;Italy;348438;15.98;4.6e-05;country_total_population_share;2024
+443;Pesaro and Urbino;ITA;Italy;339651;15.58;4.6e-05;country_total_population_share;2024
+444;Belluno;ITA;Italy;3429601;157.3;4.6e-05;country_total_population_share;2024
+445;Udine;ITA;Italy;4291548;196.84;4.6e-05;country_total_population_share;2024
+446;Venice;ITA;Italy;1535754;70.44;4.6e-05;country_total_population_share;2024
+447;Padua;ITA;Italy;1535937;70.45;4.6e-05;country_total_population_share;2024
+448;Rovigo;ITA;Italy;2016029;92.47;4.6e-05;country_total_population_share;2024
+449;Ferrara;ITA;Italy;3574816;163.96;4.6e-05;country_total_population_share;2024
+450;Ravenna;ITA;Italy;675807;31.0;4.6e-05;country_total_population_share;2024
+451;Forlì-Cesena;ITA;Italy;363282;16.66;4.6e-05;country_total_population_share;2024
+452;Ancona;ITA;Italy;179763;8.25;4.6e-05;country_total_population_share;2024
+453;Macerata;ITA;Italy;405703;18.61;4.6e-05;country_total_population_share;2024
+454;Ascoli Piceno;ITA;Italy;518181;23.77;4.6e-05;country_total_population_share;2024
+455;Teramo;ITA;Italy;1182868;54.25;4.6e-05;country_total_population_share;2024
+456;Pescara;ITA;Italy;197211;9.05;4.6e-05;country_total_population_share;2024
+457;Chieti;ITA;Italy;1107433;50.79;4.6e-05;country_total_population_share;2024
+458;Campobasso;ITA;Italy;1115595;51.17;4.6e-05;country_total_population_share;2024
+459;Foggia;ITA;Italy;553645;25.39;4.6e-05;country_total_population_share;2024
+460;Barletta-Andria-Trani;ITA;Italy;591223;27.12;4.6e-05;country_total_population_share;2024
+461;Bari;ITA;Italy;825079;37.84;4.6e-05;country_total_population_share;2024
+462;Brindisi;ITA;Italy;340554;15.62;4.6e-05;country_total_population_share;2024
+463;Lecce;ITA;Italy;331162;15.19;4.6e-05;country_total_population_share;2024
+464;Taranto;ITA;Italy;288264;13.22;4.6e-05;country_total_population_share;2024
+465;Matera;ITA;Italy;429033;19.68;4.6e-05;country_total_population_share;2024
+466;Cosenza;ITA;Italy;297772;13.66;4.6e-05;country_total_population_share;2024
+467;Crotone;ITA;Italy;376864;17.29;4.6e-05;country_total_population_share;2024
+468;Catanzaro;ITA;Italy;321986;14.77;4.6e-05;country_total_population_share;2024
+469;Reggio Calabria;ITA;Italy;444045;20.37;4.6e-05;country_total_population_share;2024
+470;Vibo Valentia;ITA;Italy;332654;15.26;4.6e-05;country_total_population_share;2024
+471;Potenza;ITA;Italy;318674;14.62;4.6e-05;country_total_population_share;2024
+472;Salerno;ITA;Italy;195826;8.98;4.6e-05;country_total_population_share;2024
+473;Naples;ITA;Italy;413005;18.94;4.6e-05;country_total_population_share;2024
+474;Caserta;ITA;Italy;475951;21.83;4.6e-05;country_total_population_share;2024
+475;Latina;ITA;Italy;1108393;50.84;4.6e-05;country_total_population_share;2024
+476;Rome;ITA;Italy;256735;11.78;4.6e-05;country_total_population_share;2024
+477;Viterbo;ITA;Italy;621542;28.51;4.6e-05;country_total_population_share;2024
+478;Grosseto;ITA;Italy;296539;13.6;4.6e-05;country_total_population_share;2024
+479;Livorno;ITA;Italy;444340;20.38;4.6e-05;country_total_population_share;2024
+480;Pisa;ITA;Italy;385140;17.67;4.6e-05;country_total_population_share;2024
+481;Lucca;ITA;Italy;549706;25.21;4.6e-05;country_total_population_share;2024
+482;Massa-Carrara;ITA;Italy;1074406;49.28;4.6e-05;country_total_population_share;2024
+483;Liguria;ITA;Italy;340538;15.62;4.6e-05;country_total_population_share;2024
+484;Savona;ITA;Italy;378256;17.35;4.6e-05;country_total_population_share;2024
+485;Trapani;ITA;Italy;503734;23.1;4.6e-05;country_total_population_share;2024
+486;Messina;ITA;Italy;185058;8.49;4.6e-05;country_total_population_share;2024
+487;Palermo;ITA;Italy;1062127;48.72;4.6e-05;country_total_population_share;2024
+488;Agrigento;ITA;Italy;780118;35.78;4.6e-05;country_total_population_share;2024
+489;Caltanissetta;ITA;Italy;183752;8.43;4.6e-05;country_total_population_share;2024
+490;Ragusa;ITA;Italy;425457;19.51;4.6e-05;country_total_population_share;2024
+491;Syracuse;ITA;Italy;350188;16.06;4.6e-05;country_total_population_share;2024
+492;Catania;ITA;Italy;856985;39.31;4.6e-05;country_total_population_share;2024
+493;Carbonia-Iglesias;ITA;Italy;580631;26.63;4.6e-05;country_total_population_share;2024
+494;Sassari;ITA;Italy;718151;32.94;4.6e-05;country_total_population_share;2024
+495;Nuoro;ITA;Italy;194883;8.94;4.6e-05;country_total_population_share;2024
+496;Olbia-Tempio;ITA;Italy;389320;17.86;4.6e-05;country_total_population_share;2024
+497;Oristano;ITA;Italy;491821;22.56;4.6e-05;country_total_population_share;2024
+498;Medio Campidano;ITA;Italy;320290;14.69;4.6e-05;country_total_population_share;2024
+499;Cagliari;ITA;Italy;296796;13.61;4.6e-05;country_total_population_share;2024
+500;Ogliastra;ITA;Italy;252077;11.56;4.6e-05;country_total_population_share;2024
+501;Enna;ITA;Italy;397551;18.23;4.6e-05;country_total_population_share;2024
+502;Benevento;ITA;Italy;527297;24.19;4.6e-05;country_total_population_share;2024
+503;Asti;ITA;Italy;815530;37.41;4.6e-05;country_total_population_share;2024
+504;Bergamo;ITA;Italy;481966;22.11;4.6e-05;country_total_population_share;2024
+505;Brescia;ITA;Italy;338695;15.53;4.6e-05;country_total_population_share;2024
+506;Cremona;ITA;Italy;258263;11.85;4.6e-05;country_total_population_share;2024
+507;Mantua;ITA;Italy;346332;15.89;4.6e-05;country_total_population_share;2024
+508;Milan;ITA;Italy;569753;26.13;4.6e-05;country_total_population_share;2024
+509;Siena;ITA;Italy;239065;10.97;4.6e-05;country_total_population_share;2024
+510;Arezzo;ITA;Italy;691225;31.7;4.6e-05;country_total_population_share;2024
+511;Florence;ITA;Italy;630057;28.9;4.6e-05;country_total_population_share;2024
+512;Vercelli;ITA;Italy;542007;24.86;4.6e-05;country_total_population_share;2024
+513;Pavia;ITA;Italy;488044;22.38;4.6e-05;country_total_population_share;2024
+514;Rieti;ITA;Italy;245902;11.28;4.6e-05;country_total_population_share;2024
+515;Novara;ITA;Italy;722839;33.15;4.6e-05;country_total_population_share;2024
+516;Alessandria;ITA;Italy;299371;13.73;4.6e-05;country_total_population_share;2024
+517;Trentino;ITA;Italy;409140;18.77;4.6e-05;country_total_population_share;2024
+518;Vicenza;ITA;Italy;333649;15.3;4.6e-05;country_total_population_share;2024
+519;Verona;ITA;Italy;244289;11.2;4.6e-05;country_total_population_share;2024
+520;Treviso;ITA;Italy;437648;20.07;4.6e-05;country_total_population_share;2024
+521;Piacenza;ITA;Italy;779430;35.75;4.6e-05;country_total_population_share;2024
+522;Parma;ITA;Italy;284532;13.05;4.6e-05;country_total_population_share;2024
+523;Reggio Emilia;ITA;Italy;370101;16.98;4.6e-05;country_total_population_share;2024
+524;Modena;ITA;Italy;247653;11.36;4.6e-05;country_total_population_share;2024
+525;Bologna;ITA;Italy;608153;27.89;4.6e-05;country_total_population_share;2024
+526;Terni;ITA;Italy;517283;23.73;4.6e-05;country_total_population_share;2024
+527;Perugia;ITA;Italy;566767;26.0;4.6e-05;country_total_population_share;2024
+528;Frosinone;ITA;Italy;333117;15.28;4.6e-05;country_total_population_share;2024
+529;Avellino;ITA;Italy;486054;22.29;4.6e-05;country_total_population_share;2024
+530;L'Aquila;ITA;Italy;428103;19.64;4.6e-05;country_total_population_share;2024
+531;Pordenone;ITA;Italy;212110;9.73;4.6e-05;country_total_population_share;2024
+532;Isernia;ITA;Italy;559086;25.64;4.6e-05;country_total_population_share;2024
+533;Plužine;KOS;Kosovo;745088;4.42;6e-06;country_total_population_share;2024
+534;Kačanik;KOS;Kosovo;333938;1.98;6e-06;country_total_population_share;2024
+535;Podujevo/Podujeva;KOS;Kosovo;375431;2.23;6e-06;country_total_population_share;2024
+536;Kosovo-Pomoravlje;KOS;Kosovo;305543;1.81;6e-06;country_total_population_share;2024
+537;Utena;LTU;Lithuania;202061;7.34;3.6e-05;country_total_population_share;2024
+538;Vilnius;LTU;Lithuania;548492;19.93;3.6e-05;country_total_population_share;2024
+539;Alytus;LTU;Lithuania;136426;4.96;3.6e-05;country_total_population_share;2024
+540;Panevėžys;LTU;Lithuania;189525;6.89;3.6e-05;country_total_population_share;2024
+541;Telšiai;LTU;Lithuania;210594;7.65;3.6e-05;country_total_population_share;2024
+542;Klaipėda;LTU;Lithuania;343602;12.49;3.6e-05;country_total_population_share;2024
+543;Šiauliai;LTU;Lithuania;218649;7.95;3.6e-05;country_total_population_share;2024
+544;Marijampolė;LTU;Lithuania;294361;10.7;3.6e-05;country_total_population_share;2024
+545;Tauragė;LTU;Lithuania;202206;7.35;3.6e-05;country_total_population_share;2024
+546;Kaunas;LTU;Lithuania;534084;19.41;3.6e-05;country_total_population_share;2024
+547;Diekirch;LUX;Luxembourg;670000;107.76;0.000161;country_total_population_share;2024
+548;Valka;LVA;Latvia;13439;0.38;2.8e-05;country_total_population_share;2024
+549;Alūksne;LVA;Latvia;23122;0.65;2.8e-05;country_total_population_share;2024
+550;Kārsava;LVA;Latvia;9013;0.25;2.8e-05;country_total_population_share;2024
+551;Vecumnieki;LVA;Latvia;13703;0.38;2.8e-05;country_total_population_share;2024
+552;Saldus;LVA;Latvia;46812;1.31;2.8e-05;country_total_population_share;2024
+553;Vaiņode;LVA;Latvia;3896;0.11;2.8e-05;country_total_population_share;2024
+554;Jelgava;LVA;Latvia;56265;1.57;2.8e-05;country_total_population_share;2024
+555;Daugavpils;LVA;Latvia;137327;3.84;2.8e-05;country_total_population_share;2024
+556;Krāslava;LVA;Latvia;34286;0.96;2.8e-05;country_total_population_share;2024
+557;Ventspils;LVA;Latvia;18097;0.51;2.8e-05;country_total_population_share;2024
+558;Talsi;LVA;Latvia;61173;1.71;2.8e-05;country_total_population_share;2024
+559;Riga;LVA;Latvia;1045958;29.23;2.8e-05;country_total_population_share;2024
+560;Limbaži;LVA;Latvia;48538;1.36;2.8e-05;country_total_population_share;2024
+561;Rēzekne;LVA;Latvia;48707;1.36;2.8e-05;country_total_population_share;2024
+562;Gulbene;LVA;Latvia;32514;0.91;2.8e-05;country_total_population_share;2024
+563;Madona;LVA;Latvia;52554;1.47;2.8e-05;country_total_population_share;2024
+564;Ogre;LVA;Latvia;101367;2.83;2.8e-05;country_total_population_share;2024
+565;Kuldīga;LVA;Latvia;46873;1.31;2.8e-05;country_total_population_share;2024
+566;Tukums;LVA;Latvia;76356;2.13;2.8e-05;country_total_population_share;2024
+567;Edineț;MDA;Moldova;185610;1.41;8e-06;country_total_population_share;2024
+568;Rîșcani;MDA;Moldova;160666;1.22;8e-06;country_total_population_share;2024
+569;Fălești;MDA;Moldova;206258;1.56;8e-06;country_total_population_share;2024
+570;Ungheni;MDA;Moldova;279005;2.11;8e-06;country_total_population_share;2024
+571;Hîncești;MDA;Moldova;255663;1.94;8e-06;country_total_population_share;2024
+572;Cantemir;MDA;Moldova;122127;0.93;8e-06;country_total_population_share;2024
+573;Cahul;MDA;Moldova;267857;2.03;8e-06;country_total_population_share;2024
+574;Ștefan Vodă;MDA;Moldova;155635;1.18;8e-06;country_total_population_share;2024
+575;Căușeni;MDA;Moldova;210756;1.6;8e-06;country_total_population_share;2024
+576;Cimișlia;MDA;Moldova;114048;0.86;8e-06;country_total_population_share;2024
+577;Taraclia;MDA;Moldova;97298;0.74;8e-06;country_total_population_share;2024
+578;Comrat;MDA;Moldova;73418;0.56;8e-06;country_total_population_share;2024
+579;Orhei;MDA;Moldova;291659;2.21;8e-06;country_total_population_share;2024
+580;Mavrovo and Rostuša;MKD;Macedonia;137089;1.16;8e-06;country_total_population_share;2024
+581;Debarca;MKD;Macedonia;64986;0.55;8e-06;country_total_population_share;2024
+582;Bogdanci;MKD;Macedonia;112622;0.95;8e-06;country_total_population_share;2024
+583;Kavadarci;MKD;Macedonia;74937;0.63;8e-06;country_total_population_share;2024
+584;Prilep;MKD;Macedonia;988999;8.37;8e-06;country_total_population_share;2024
+585;Bitola;MKD;Macedonia;118687;1.0;8e-06;country_total_population_share;2024
+586;Tearce;MKD;Macedonia;72811;0.62;8e-06;country_total_population_share;2024
+587;Staro Nagoričane;MKD;Macedonia;179259;1.52;8e-06;country_total_population_share;2024
+588;Berovo;MKD;Macedonia;80610;0.68;8e-06;country_total_population_share;2024
+589;Berane;MNE;Montenegro;60222;0.78;1.3e-05;country_total_population_share;2024
+590;Pljevlja;MNE;Montenegro;62140;0.81;1.3e-05;country_total_population_share;2024
+591;Nikšić;MNE;Montenegro;160060;2.08;1.3e-05;country_total_population_share;2024
+592;Podgorica;MNE;Montenegro;333578;4.34;1.3e-05;country_total_population_share;2024
+593;Groningen;NLD;Netherlands;624820;49.33;7.9e-05;country_total_population_share;2024
+594;Drenthe;NLD;Netherlands;527316;41.63;7.9e-05;country_total_population_share;2024
+595;Overijssel;NLD;Netherlands;1224876;96.7;7.9e-05;country_total_population_share;2024
+596;Gelderland;NLD;Netherlands;2165579;170.96;7.9e-05;country_total_population_share;2024
+597;Limburg;NLD;Netherlands;1200907;94.8;7.9e-05;country_total_population_share;2024
+598;Zeeland;NLD;Netherlands;414641;32.73;7.9e-05;country_total_population_share;2024
+599;North Brabant;NLD;Netherlands;2419865;191.03;7.9e-05;country_total_population_share;2024
+600;South Holland;NLD;Netherlands;3835408;302.78;7.9e-05;country_total_population_share;2024
+601;North Holland;NLD;Netherlands;3016689;238.15;7.9e-05;country_total_population_share;2024
+602;Friesland;NLD;Netherlands;696892;55.01;7.9e-05;country_total_population_share;2024
+603;Flevoland;NLD;Netherlands;428779;33.85;7.9e-05;country_total_population_share;2024
+604;Utrecht;NLD;Netherlands;1344228;106.12;7.9e-05;country_total_population_share;2024
+605;Hedmark;NOR;Norway;346473;34.19;9.9e-05;country_total_population_share;2024
+606;Østfold;NOR;Norway;522186;51.53;9.9e-05;country_total_population_share;2024
+607;Finnmark;NOR;Norway;132966;13.12;9.9e-05;country_total_population_share;2024
+608;Buskerud;NOR;Norway;474838;46.86;9.9e-05;country_total_population_share;2024
+609;Vestfold;NOR;Norway;440675;43.49;9.9e-05;country_total_population_share;2024
+610;Telemark;NOR;Norway;304196;30.02;9.9e-05;country_total_population_share;2024
+611;Aust-Agder;NOR;Norway;206500;20.38;9.9e-05;country_total_population_share;2024
+612;Vest-Agder;NOR;Norway;329243;32.49;9.9e-05;country_total_population_share;2024
+613;Rogaland;NOR;Norway;876541;86.5;9.9e-05;country_total_population_share;2024
+614;Hordaland;NOR;Norway;920556;90.84;9.9e-05;country_total_population_share;2024
+615;Sogn og Fjordane;NOR;Norway;192668;19.01;9.9e-05;country_total_population_share;2024
+616;Møre og Romsdal;NOR;Norway;465798;45.97;9.9e-05;country_total_population_share;2024
+617;Svalbard;NOR;Norway;4684;0.46;9.9e-05;country_total_population_share;2024
+618;Oppland;NOR;Norway;332676;32.83;9.9e-05;country_total_population_share;2024
+619;Silesian Voivodeship;POL;Poland;4380148;132.84;3e-05;country_total_population_share;2024
+620;Lesser Poland Voivodeship;POL;Poland;3188184;96.69;3e-05;country_total_population_share;2024
+621;Podkarpackie Voivodeship;POL;Poland;2012411;61.03;3e-05;country_total_population_share;2024
+622;Lower Silesian Voivodeship;POL;Poland;2765694;83.87;3e-05;country_total_population_share;2024
+623;Opole Voivodeship;POL;Poland;958380;29.06;3e-05;country_total_population_share;2024
+624;Podlaskie Voivodeship;POL;Poland;1132130;34.33;3e-05;country_total_population_share;2024
+625;Warmian-Masurian Voivodeship;POL;Poland;1364053;41.37;3e-05;country_total_population_share;2024
+626;Lubusz Voivodeship;POL;Poland;968402;29.37;3e-05;country_total_population_share;2024
+627;West Pomeranian Voivodeship;POL;Poland;1539513;46.69;3e-05;country_total_population_share;2024
+628;Lublin Voivodeship;POL;Poland;2041447;61.91;3e-05;country_total_population_share;2024
+629;Pomeranian Voivodeship;POL;Poland;2182011;66.17;3e-05;country_total_population_share;2024
+630;Masovian Voivodeship;POL;Poland;5210261;158.01;3e-05;country_total_population_share;2024
+631;Łódź Voivodeship;POL;Poland;2379780;72.17;3e-05;country_total_population_share;2024
+632;Kuyavian-Pomeranian Voivodeship;POL;Poland;1983577;60.16;3e-05;country_total_population_share;2024
+633;Greater Poland Voivodeship;POL;Poland;3316153;100.57;3e-05;country_total_population_share;2024
+634;Świętokrzyskie Voivodeship;POL;Poland;1177856;35.72;3e-05;country_total_population_share;2024
+635;Évora;PRT;Portugal;94817;3.26;3.4e-05;country_total_population_share;2024
+636;Portalegre;PRT;Portugal;40417;1.39;3.4e-05;country_total_population_share;2024
+637;Viana do Castelo;PRT;Portugal;152989;5.26;3.4e-05;country_total_population_share;2024
+638;Castelo Branco;PRT;Portugal;94343;3.24;3.4e-05;country_total_population_share;2024
+639;Guarda;PRT;Portugal;70684;2.43;3.4e-05;country_total_population_share;2024
+640;Bragança;PRT;Portugal;60711;2.09;3.4e-05;country_total_population_share;2024
+641;Vila Real;PRT;Portugal;90142;3.1;3.4e-05;country_total_population_share;2024
+642;Faro;PRT;Portugal;110218;3.79;3.4e-05;country_total_population_share;2024
+643;Setúbal;PRT;Portugal;1425219;49.01;3.4e-05;country_total_population_share;2024
+644;Lisbon;PRT;Portugal;3861019;132.78;3.4e-05;country_total_population_share;2024
+645;Santarém;PRT;Portugal;103754;3.57;3.4e-05;country_total_population_share;2024
+646;Leiria;PRT;Portugal;225693;7.76;3.4e-05;country_total_population_share;2024
+647;Coimbra;PRT;Portugal;241720;8.31;3.4e-05;country_total_population_share;2024
+648;Aveiro;PRT;Portugal;140842;4.84;3.4e-05;country_total_population_share;2024
+649;Porto;PRT;Portugal;3284720;112.96;3.4e-05;country_total_population_share;2024
+650;Azores;PRT;Portugal;427390;14.7;3.4e-05;country_total_population_share;2024
+651;Viseu;PRT;Portugal;175322;6.03;3.4e-05;country_total_population_share;2024
+652;Satu Mare;ROU;Romania;362390;8.48;2.3e-05;country_total_population_share;2024
+653;Arad;ROU;Romania;449489;10.52;2.3e-05;country_total_population_share;2024
+654;Bihor;ROU;Romania;604183;14.14;2.3e-05;country_total_population_share;2024
+655;Timiș;ROU;Romania;712939;16.69;2.3e-05;country_total_population_share;2024
+656;Mehedinți;ROU;Romania;256820;6.01;2.3e-05;country_total_population_share;2024
+657;Dolj;ROU;Romania;656947;15.38;2.3e-05;country_total_population_share;2024
+658;Călărași;ROU;Romania;310651;7.27;2.3e-05;country_total_population_share;2024
+659;Teleorman;ROU;Romania;354582;8.3;2.3e-05;country_total_population_share;2024
+660;Giurgiu;ROU;Romania;287207;6.72;2.3e-05;country_total_population_share;2024
+661;Constanța;ROU;Romania;718927;16.83;2.3e-05;country_total_population_share;2024
+662;Olt;ROU;Romania;420049;9.83;2.3e-05;country_total_population_share;2024
+663;Caraș-Severin;ROU;Romania;270244;6.33;2.3e-05;country_total_population_share;2024
+664;Botoșani;ROU;Romania;430505;10.08;2.3e-05;country_total_population_share;2024
+665;Iași;ROU;Romania;833755;19.52;2.3e-05;country_total_population_share;2024
+666;Vaslui;ROU;Romania;410646;9.61;2.3e-05;country_total_population_share;2024
+667;Galați;ROU;Romania;544559;12.75;2.3e-05;country_total_population_share;2024
+668;Suceava;ROU;Romania;704191;16.49;2.3e-05;country_total_population_share;2024
+669;Maramureș;ROU;Romania;495881;11.61;2.3e-05;country_total_population_share;2024
+670;Tulcea;ROU;Romania;211904;4.96;2.3e-05;country_total_population_share;2024
+671;Cluj;ROU;Romania;744291;17.42;2.3e-05;country_total_population_share;2024
+672;Bistrița-Năsăud;ROU;Romania;324383;7.59;2.3e-05;country_total_population_share;2024
+673;Sălaj;ROU;Romania;232583;5.45;2.3e-05;country_total_population_share;2024
+674;Dâmbovița;ROU;Romania;525394;12.3;2.3e-05;country_total_population_share;2024
+675;Ilfov;ROU;Romania;594766;13.92;2.3e-05;country_total_population_share;2024
+676;Argeș;ROU;Romania;624606;14.62;2.3e-05;country_total_population_share;2024
+677;Gorj;ROU;Romania;344873;8.07;2.3e-05;country_total_population_share;2024
+678;Hunedoara;ROU;Romania;396351;9.28;2.3e-05;country_total_population_share;2024
+679;Vâlcea;ROU;Romania;374656;8.77;2.3e-05;country_total_population_share;2024
+680;Prahova;ROU;Romania;761802;17.83;2.3e-05;country_total_population_share;2024
+681;Covasna;ROU;Romania;219233;5.13;2.3e-05;country_total_population_share;2024
+682;Vrancea;ROU;Romania;367479;8.6;2.3e-05;country_total_population_share;2024
+683;Buzău;ROU;Romania;443829;10.39;2.3e-05;country_total_population_share;2024
+684;Brașov;ROU;Romania;599052;14.02;2.3e-05;country_total_population_share;2024
+685;Sibiu;ROU;Romania;425579;9.96;2.3e-05;country_total_population_share;2024
+686;Mureș;ROU;Romania;567904;13.3;2.3e-05;country_total_population_share;2024
+687;Harghita;ROU;Romania;319958;7.49;2.3e-05;country_total_population_share;2024
+688;Neamț;ROU;Romania;497775;11.65;2.3e-05;country_total_population_share;2024
+689;Bacău;ROU;Romania;659078;15.43;2.3e-05;country_total_population_share;2024
+690;Alba;ROU;Romania;357209;8.36;2.3e-05;country_total_population_share;2024
+691;Brăila;ROU;Romania;308452;7.22;2.3e-05;country_total_population_share;2024
+692;Ialomița;ROU;Romania;274878;6.44;2.3e-05;country_total_population_share;2024
+693;Pskov;RUS;Russia;690005;12.02;1.7e-05;country_total_population_share;2024
+694;Krasnodar Krai;RUS;Russia;7017073;122.28;1.7e-05;country_total_population_share;2024
+695;Karachay-Cherkess Republic;RUS;Russia;562499;9.8;1.7e-05;country_total_population_share;2024
+696;Kabardino-Balkaria;RUS;Russia;1087548;18.95;1.7e-05;country_total_population_share;2024
+697;Republic of North Ossetia-Alania;RUS;Russia;815398;14.21;1.7e-05;country_total_population_share;2024
+698;Murmansk;RUS;Russia;788444;13.74;1.7e-05;country_total_population_share;2024
+699;Kaliningrad;RUS;Russia;1194607;20.82;1.7e-05;country_total_population_share;2024
+700;Smolensk;RUS;Russia;1037730;18.08;1.7e-05;country_total_population_share;2024
+701;Bryansk;RUS;Russia;1360593;23.71;1.7e-05;country_total_population_share;2024
+702;Kursk;RUS;Russia;1260888;21.97;1.7e-05;country_total_population_share;2024
+703;Belgorod;RUS;Russia;1780051;31.02;1.7e-05;country_total_population_share;2024
+704;Voronezh;RUS;Russia;2714526;47.3;1.7e-05;country_total_population_share;2024
+705;Rostov;RUS;Russia;4969326;86.6;1.7e-05;country_total_population_share;2024
+706;Orenburg;RUS;Russia;2196386;38.28;1.7e-05;country_total_population_share;2024
+707;Saratov;RUS;Russia;2845877;49.59;1.7e-05;country_total_population_share;2024
+708;Astrakhan;RUS;Russia;1136750;19.81;1.7e-05;country_total_population_share;2024
+709;Volgograd;RUS;Russia;2923517;50.95;1.7e-05;country_total_population_share;2024
+710;Autonomous Republic of Crimea;RUS;Russia;2277746;39.69;1.7e-05;country_total_population_share;2024
+711;Nenets Autonomous Okrug;RUS;Russia;50716;0.88;1.7e-05;country_total_population_share;2024
+712;Saint Petersburg;RUS;Russia;6789687;118.32;1.7e-05;country_total_population_share;2024
+713;Arkhangelsk;RUS;Russia;1188404;20.71;1.7e-05;country_total_population_share;2024
+714;Republic of Kalmykia;RUS;Russia;321399;5.6;1.7e-05;country_total_population_share;2024
+715;Bashkortostan;RUS;Russia;4855273;84.61;1.7e-05;country_total_population_share;2024
+716;Sverdlovsk;RUS;Russia;5070358;88.36;1.7e-05;country_total_population_share;2024
+717;Lipetsk;RUS;Russia;1352337;23.57;1.7e-05;country_total_population_share;2024
+718;Tambov;RUS;Russia;1148597;20.02;1.7e-05;country_total_population_share;2024
+719;Republic of Tatarstan;RUS;Russia;4807996;83.79;1.7e-05;country_total_population_share;2024
+720;Ulyanovsk;RUS;Russia;1408622;24.55;1.7e-05;country_total_population_share;2024
+721;Penza;RUS;Russia;1457063;25.39;1.7e-05;country_total_population_share;2024
+722;Oryol;RUS;Russia;831741;14.49;1.7e-05;country_total_population_share;2024
+723;Republic of Mordovia;RUS;Russia;935611;16.3;1.7e-05;country_total_population_share;2024
+724;Kaluga;RUS;Russia;1202271;20.95;1.7e-05;country_total_population_share;2024
+725;Kostroma;RUS;Russia;680139;11.85;1.7e-05;country_total_population_share;2024
+726;Yaroslavl;RUS;Russia;1426369;24.86;1.7e-05;country_total_population_share;2024
+727;Vladimir;RUS;Russia;1573363;27.42;1.7e-05;country_total_population_share;2024
+728;Ryazan;RUS;Russia;1253019;21.84;1.7e-05;country_total_population_share;2024
+729;Ivanovo;RUS;Russia;1088071;18.96;1.7e-05;country_total_population_share;2024
+730;Nizhny Novgorod;RUS;Russia;3650629;63.62;1.7e-05;country_total_population_share;2024
+731;Tula;RUS;Russia;1766977;30.79;1.7e-05;country_total_population_share;2024
+732;Chuvash Republic;RUS;Russia;6323459;110.2;1.7e-05;country_total_population_share;2024
+733;Vologda;RUS;Russia;1393804;24.29;1.7e-05;country_total_population_share;2024
+734;Novgorod;RUS;Russia;680973;11.87;1.7e-05;country_total_population_share;2024
+735;Tver;RUS;Russia;1429991;24.92;1.7e-05;country_total_population_share;2024
+736;Moscow;RUS;Russia;15943654;277.84;1.7e-05;country_total_population_share;2024
+737;Mari El Republic;RUS;Russia;804558;14.02;1.7e-05;country_total_population_share;2024
+738;Kirov;RUS;Russia;1357158;23.65;1.7e-05;country_total_population_share;2024
+739;Udmurt Republic;RUS;Russia;24902898;433.97;1.7e-05;country_total_population_share;2024
+740;Komi Republic;RUS;Russia;858524;14.96;1.7e-05;country_total_population_share;2024
+741;Perm Krai;RUS;Russia;2983076;51.98;1.7e-05;country_total_population_share;2024
+742;Samara;RUS;Russia;3738483;65.15;1.7e-05;country_total_population_share;2024
+743;Stavropol Krai;RUS;Russia;3464390;60.37;1.7e-05;country_total_population_share;2024
+744;Republic of Adygea;RUS;Russia;601426;10.48;1.7e-05;country_total_population_share;2024
+745;North Bačka;SRB;Republic of Serbia;301281;5.12;1.7e-05;country_total_population_share;2024
+746;West Bačka;SRB;Republic of Serbia;165243;2.81;1.7e-05;country_total_population_share;2024
+747;North Banat;SRB;Republic of Serbia;192479;3.27;1.7e-05;country_total_population_share;2024
+748;Pčinja;SRB;Republic of Serbia;109723;1.86;1.7e-05;country_total_population_share;2024
+749;Bor;SRB;Republic of Serbia;115035;1.95;1.7e-05;country_total_population_share;2024
+750;Zaječar;SRB;Republic of Serbia;130416;2.22;1.7e-05;country_total_population_share;2024
+751;Pirot;SRB;Republic of Serbia;267044;4.54;1.7e-05;country_total_population_share;2024
+752;Raška;SRB;Republic of Serbia;159395;2.71;1.7e-05;country_total_population_share;2024
+753;Rasina;SRB;Republic of Serbia;130708;2.22;1.7e-05;country_total_population_share;2024
+754;Toplica;SRB;Republic of Serbia;175617;2.98;1.7e-05;country_total_population_share;2024
+755;Zlatibor;SRB;Republic of Serbia;104975;1.78;1.7e-05;country_total_population_share;2024
+756;Srem;SRB;Republic of Serbia;332979;5.66;1.7e-05;country_total_population_share;2024
+757;Mačva;SRB;Republic of Serbia;113194;1.92;1.7e-05;country_total_population_share;2024
+758;South Bačka;SRB;Republic of Serbia;81542;1.39;1.7e-05;country_total_population_share;2024
+759;Central Banat;SRB;Republic of Serbia;647149;10.99;1.7e-05;country_total_population_share;2024
+760;South Banat;SRB;Republic of Serbia;244654;4.16;1.7e-05;country_total_population_share;2024
+761;Braničevo;SRB;Republic of Serbia;375619;6.38;1.7e-05;country_total_population_share;2024
+762;Belgrade;SRB;Republic of Serbia;195696;3.32;1.7e-05;country_total_population_share;2024
+763;Podunavlje;SRB;Republic of Serbia;12661;0.22;1.7e-05;country_total_population_share;2024
+764;Nišava;SRB;Republic of Serbia;103871;1.76;1.7e-05;country_total_population_share;2024
+765;Pomoravski;SRB;Republic of Serbia;533487;9.06;1.7e-05;country_total_population_share;2024
+766;Šumadija;SRB;Republic of Serbia;186195;3.16;1.7e-05;country_total_population_share;2024
+767;Moravica;SRB;Republic of Serbia;1386298;23.55;1.7e-05;country_total_population_share;2024
+768;Kolubara;SRB;Republic of Serbia;534739;9.08;1.7e-05;country_total_population_share;2024
+769;Žilina;SVK;Slovakia;767546;23.71;3.1e-05;country_total_population_share;2024
+770;Prešov;SVK;Slovakia;906211;27.99;3.1e-05;country_total_population_share;2024
+771;Košice;SVK;Slovakia;871296;26.91;3.1e-05;country_total_population_share;2024
+772;Bratislava;SVK;Slovakia;823844;25.45;3.1e-05;country_total_population_share;2024
+773;Trenčín;SVK;Slovakia;632744;19.55;3.1e-05;country_total_population_share;2024
+774;Banská Bystrica;SVK;Slovakia;683707;21.12;3.1e-05;country_total_population_share;2024
+775;Nitra;SVK;Slovakia;744652;23.0;3.1e-05;country_total_population_share;2024
+776;Podvelka;SVN;Slovenia;2120000;85.74;4e-05;country_total_population_share;2024
+777;Norrbotten;SWE;Sweden;254180;17.14;6.7e-05;country_total_population_share;2024
+778;Jämtland;SWE;Sweden;135463;9.14;6.7e-05;country_total_population_share;2024
+779;Dalarna;SWE;Sweden;292241;19.71;6.7e-05;country_total_population_share;2024
+780;Värmland;SWE;Sweden;289374;19.52;6.7e-05;country_total_population_share;2024
+781;Västra Götaland;SWE;Sweden;1815915;122.47;6.7e-05;country_total_population_share;2024
+782;Västernorrland;SWE;Sweden;246282;16.61;6.7e-05;country_total_population_share;2024
+783;Gävleborg;SWE;Sweden;289911;19.55;6.7e-05;country_total_population_share;2024
+784;Uppsala;SWE;Sweden;419350;28.28;6.7e-05;country_total_population_share;2024
+785;Stockholm;SWE;Sweden;2538227;171.18;6.7e-05;country_total_population_share;2024
+786;Södermanland;SWE;Sweden;307404;20.73;6.7e-05;country_total_population_share;2024
+787;Östergötland;SWE;Sweden;482829;32.56;6.7e-05;country_total_population_share;2024
+788;Kalmar;SWE;Sweden;250990;16.93;6.7e-05;country_total_population_share;2024
+789;Blekinge;SWE;Sweden;160223;10.81;6.7e-05;country_total_population_share;2024
+790;Skåne;SWE;Sweden;1464118;98.74;6.7e-05;country_total_population_share;2024
+791;Halland;SWE;Sweden;353439;23.84;6.7e-05;country_total_population_share;2024
+792;Gotland;SWE;Sweden;62333;4.2;6.7e-05;country_total_population_share;2024
+793;Västmanland;SWE;Sweden;286986;19.35;6.7e-05;country_total_population_share;2024
+794;Jönköping;SWE;Sweden;377882;25.48;6.7e-05;country_total_population_share;2024
+795;Örebro;SWE;Sweden;315093;21.25;6.7e-05;country_total_population_share;2024
+796;Kronoberg;SWE;Sweden;207760;14.01;6.7e-05;country_total_population_share;2024
+797;Ardahan;TUR;Turkey;622351;11.5;1.8e-05;country_total_population_share;2024
+798;Artvin;TUR;Turkey;815859;15.07;1.8e-05;country_total_population_share;2024
+799;Kırklareli;TUR;Turkey;639466;11.82;1.8e-05;country_total_population_share;2024
+800;Edirne;TUR;Turkey;196523;3.63;1.8e-05;country_total_population_share;2024
+801;Kars;TUR;Turkey;384442;7.1;1.8e-05;country_total_population_share;2024
+802;Mardin;TUR;Turkey;423476;7.82;1.8e-05;country_total_population_share;2024
+803;Şanlıurfa;TUR;Turkey;884473;16.34;1.8e-05;country_total_population_share;2024
+804;Kilis;TUR;Turkey;578402;10.69;1.8e-05;country_total_population_share;2024
+805;Hatay;TUR;Turkey;1177547;21.76;1.8e-05;country_total_population_share;2024
+806;Istanbul;TUR;Turkey;728983;13.47;1.8e-05;country_total_population_share;2024
+807;Tekirdağ;TUR;Turkey;9834908;181.72;1.8e-05;country_total_population_share;2024
+808;Çanakkale;TUR;Turkey;5508711;101.79;1.8e-05;country_total_population_share;2024
+809;Rize;TUR;Turkey;5067117;93.63;1.8e-05;country_total_population_share;2024
+810;Trabzon;TUR;Turkey;2837457;52.43;1.8e-05;country_total_population_share;2024
+811;Giresun;TUR;Turkey;2084946;38.52;1.8e-05;country_total_population_share;2024
+812;Ordu;TUR;Turkey;2764466;51.08;1.8e-05;country_total_population_share;2024
+813;Samsun;TUR;Turkey;2145528;39.64;1.8e-05;country_total_population_share;2024
+814;Sinop;TUR;Turkey;1826874;33.76;1.8e-05;country_total_population_share;2024
+815;Kastamonu;TUR;Turkey;657145;12.14;1.8e-05;country_total_population_share;2024
+816;Bartın;TUR;Turkey;592625;10.95;1.8e-05;country_total_population_share;2024
+817;Zonguldak;TUR;Turkey;655696;12.12;1.8e-05;country_total_population_share;2024
+818;Düzce;TUR;Turkey;1120102;20.7;1.8e-05;country_total_population_share;2024
+819;Sakarya;TUR;Turkey;1034453;19.11;1.8e-05;country_total_population_share;2024
+820;Kocaeli;TUR;Turkey;283299;5.23;1.8e-05;country_total_population_share;2024
+821;Bursa;TUR;Turkey;1076948;19.9;1.8e-05;country_total_population_share;2024
+822;Balıkesir;TUR;Turkey;553969;10.24;1.8e-05;country_total_population_share;2024
+823;İzmir;TUR;Turkey;290856;5.37;1.8e-05;country_total_population_share;2024
+824;Aydın;TUR;Turkey;659633;12.19;1.8e-05;country_total_population_share;2024
+825;Muğla;TUR;Turkey;1050132;19.4;1.8e-05;country_total_population_share;2024
+826;Antalya;TUR;Turkey;923685;17.07;1.8e-05;country_total_population_share;2024
+827;Mersin;TUR;Turkey;879782;16.26;1.8e-05;country_total_population_share;2024
+828;Adana;TUR;Turkey;481600;8.9;1.8e-05;country_total_population_share;2024
+829;Bolu;TUR;Turkey;734711;13.58;1.8e-05;country_total_population_share;2024
+830;Ankara;TUR;Turkey;646128;11.94;1.8e-05;country_total_population_share;2024
+831;Bilecik;TUR;Turkey;503690;9.31;1.8e-05;country_total_population_share;2024
+832;Eskişehir;TUR;Turkey;985833;18.22;1.8e-05;country_total_population_share;2024
+833;Çankırı;TUR;Turkey;946851;17.5;1.8e-05;country_total_population_share;2024
+834;Karabük;TUR;Turkey;1869688;34.55;1.8e-05;country_total_population_share;2024
+835;Tokat;TUR;Turkey;126830;2.34;1.8e-05;country_total_population_share;2024
+836;Sivas;TUR;Turkey;686676;12.69;1.8e-05;country_total_population_share;2024
+837;Çorum;TUR;Turkey;523389;9.67;1.8e-05;country_total_population_share;2024
+838;Amasya;TUR;Turkey;450953;8.33;1.8e-05;country_total_population_share;2024
+839;Kütahya;TUR;Turkey;655979;12.12;1.8e-05;country_total_population_share;2024
+840;Konya;TUR;Turkey;899277;16.62;1.8e-05;country_total_population_share;2024
+841;Karaman;TUR;Turkey;354352;6.55;1.8e-05;country_total_population_share;2024
+842;Niğde;TUR;Turkey;469563;8.68;1.8e-05;country_total_population_share;2024
+843;Kayseri;TUR;Turkey;634395;11.72;1.8e-05;country_total_population_share;2024
+844;Isparta;TUR;Turkey;550299;10.17;1.8e-05;country_total_population_share;2024
+845;Manisa;TUR;Turkey;888080;16.41;1.8e-05;country_total_population_share;2024
+846;Denizli;TUR;Turkey;583841;10.79;1.8e-05;country_total_population_share;2024
+847;Burdur;TUR;Turkey;1231559;22.76;1.8e-05;country_total_population_share;2024
+848;Aksaray;TUR;Turkey;197473;3.65;1.8e-05;country_total_population_share;2024
+849;Nevşehir;TUR;Turkey;306175;5.66;1.8e-05;country_total_population_share;2024
+850;Yozgat;TUR;Turkey;241191;4.46;1.8e-05;country_total_population_share;2024
+851;Kırşehir;TUR;Turkey;399252;7.38;1.8e-05;country_total_population_share;2024
+852;Uşak;TUR;Turkey;438673;8.11;1.8e-05;country_total_population_share;2024
+853;Erzincan;TUR;Turkey;1022966;18.9;1.8e-05;country_total_population_share;2024
+854;Tunceli;TUR;Turkey;1363977;25.2;1.8e-05;country_total_population_share;2024
+855;Afyonkarahisar;TUR;Turkey;1209734;22.35;1.8e-05;country_total_population_share;2024
+856;Kırıkkale;TUR;Turkey;745144;13.77;1.8e-05;country_total_population_share;2024
+857;Kahramanmaraş;TUR;Turkey;1205876;22.28;1.8e-05;country_total_population_share;2024
+858;Muş;TUR;Turkey;1988287;36.74;1.8e-05;country_total_population_share;2024
+859;Erzurum;TUR;Turkey;1434279;26.5;1.8e-05;country_total_population_share;2024
+860;Malatya;TUR;Turkey;1439922;26.61;1.8e-05;country_total_population_share;2024
+861;Elazığ;TUR;Turkey;804306;14.86;1.8e-05;country_total_population_share;2024
+862;Bitlis;TUR;Turkey;2409159;44.51;1.8e-05;country_total_population_share;2024
+863;Bingöl;TUR;Turkey;496020;9.17;1.8e-05;country_total_population_share;2024
+864;Osmaniye;TUR;Turkey;1287538;23.79;1.8e-05;country_total_population_share;2024
+865;Adıyaman;TUR;Turkey;720382;13.31;1.8e-05;country_total_population_share;2024
+866;Diyarbakır;TUR;Turkey;371925;6.87;1.8e-05;country_total_population_share;2024
+867;Batman;TUR;Turkey;882874;16.31;1.8e-05;country_total_population_share;2024
+868;Bayburt;TUR;Turkey;2637152;48.73;1.8e-05;country_total_population_share;2024
+869;Gümüşhane;TUR;Turkey;1174147;21.7;1.8e-05;country_total_population_share;2024
+870;Chernihiv;UKR;Ukraine;923835;5.6;6e-06;country_total_population_share;2024
+871;Volyn;UKR;Ukraine;983581;5.96;6e-06;country_total_population_share;2024
+872;Rivne;UKR;Ukraine;1099555;6.66;6e-06;country_total_population_share;2024
+873;Zhytomyr;UKR;Ukraine;1135426;6.88;6e-06;country_total_population_share;2024
+874;Kyiv;UKR;Ukraine;1728688;10.48;6e-06;country_total_population_share;2024
+875;Zakarpattia;UKR;Ukraine;1198449;7.26;6e-06;country_total_population_share;2024
+876;Chernivtsi;UKR;Ukraine;857524;5.2;6e-06;country_total_population_share;2024
+877;Ivano-Frankivsk;UKR;Ukraine;1301825;7.89;6e-06;country_total_population_share;2024
+878;Odessa;UKR;Ukraine;2264425;13.72;6e-06;country_total_population_share;2024
+879;Vinnytsia;UKR;Ukraine;1453686;8.81;6e-06;country_total_population_share;2024
+880;Lviv;UKR;Ukraine;2386479;14.46;6e-06;country_total_population_share;2024
+881;Sumy;UKR;Ukraine;997464;6.05;6e-06;country_total_population_share;2024
+882;Kharkiv;UKR;Ukraine;2502838;15.17;6e-06;country_total_population_share;2024
+883;Luhansk;UKR;Ukraine;2087625;12.65;6e-06;country_total_population_share;2024
+884;Donetsk;UKR;Ukraine;4045105;24.52;6e-06;country_total_population_share;2024
+885;Kherson;UKR;Ukraine;964554;5.85;6e-06;country_total_population_share;2024
+886;Zaporizhzhia;UKR;Ukraine;1577863;9.56;6e-06;country_total_population_share;2024
+887;Mykolaiv;UKR;Ukraine;1051440;6.37;6e-06;country_total_population_share;2024
+888;Poltava;UKR;Ukraine;1302269;7.89;6e-06;country_total_population_share;2024
+889;Khmelnytskyi;UKR;Ukraine;1183381;7.17;6e-06;country_total_population_share;2024
+890;Ternopil;UKR;Ukraine;983925;5.96;6e-06;country_total_population_share;2024
+891;Dnipropetrovsk;UKR;Ukraine;2981960;18.07;6e-06;country_total_population_share;2024
+892;Cherkasy;UKR;Ukraine;1117814;6.78;6e-06;country_total_population_share;2024
+893;Kirovohrad;UKR;Ukraine;870289;5.27;6e-06;country_total_population_share;2024
