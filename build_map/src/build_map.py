@@ -411,10 +411,40 @@ def _build_country_neighbor_map(country_group):
                 continue
 
             shared_boundary = left_boundary.intersection(right_geom.boundary)
-            if shared_boundary.is_empty:
+            if shared_boundary.is_empty or float(shared_boundary.length) <= 0.0:
+                # Hole removal can turn enclave boundaries into overlaps.
+                # Treat positive-area overlap as adjacency for merge logic.
+                overlap_area = float(left_geom.intersection(right_geom).area)
+                if overlap_area <= 0.0:
+                    continue
+
+            neighbors[left_idx].add(right_idx)
+            neighbors[right_idx].add(left_idx)
+
+    return neighbors
+
+
+def _build_all_neighbors_map(gdf):
+    idx_list = list(gdf.index)
+    neighbors = {idx: set() for idx in idx_list}
+
+    for i, left_idx in enumerate(idx_list):
+        left_geom = gdf.loc[left_idx, "geometry"]
+        if left_geom.is_empty:
+            continue
+
+        left_boundary = left_geom.boundary
+
+        for right_idx in idx_list[i + 1:]:
+            right_geom = gdf.loc[right_idx, "geometry"]
+            if right_geom.is_empty:
                 continue
-            if float(shared_boundary.length) <= 0.0:
-                continue
+
+            shared_boundary = left_boundary.intersection(right_geom.boundary)
+            if shared_boundary.is_empty or float(shared_boundary.length) <= 0.0:
+                overlap_area = float(left_geom.intersection(right_geom).area)
+                if overlap_area <= 0.0:
+                    continue
 
             neighbors[left_idx].add(right_idx)
             neighbors[right_idx].add(left_idx)
@@ -430,10 +460,14 @@ def merge_single_neighbor_provinces(gdf):
         gdf["capital_city_name"] = ""
 
     gdf["_merge_area"] = gdf.geometry.area
+    global_neighbor_map = _build_all_neighbors_map(gdf)
+    country_by_idx = gdf["country"].to_dict()
+
     merged_groups = []
     merged_count = 0
+    skipped_border_count = 0
 
-    for _, country_group in gdf.groupby("country", sort=False):
+    for country, country_group in gdf.groupby("country", sort=False):
         group = country_group.copy()
 
         while True:
@@ -458,6 +492,18 @@ def merge_single_neighbor_provinces(gdf):
 
                 neighbor_idx = neighbors[0]
                 if neighbor_idx == idx:
+                    continue
+
+                if idx not in global_neighbor_map or neighbor_idx not in global_neighbor_map:
+                    continue
+
+                foreign_neighbors = [
+                    n
+                    for n in global_neighbor_map.get(idx, set())
+                    if n in global_neighbor_map and country_by_idx.get(n) != country
+                ]
+                if foreign_neighbors:
+                    skipped_border_count += 1
                     continue
 
                 current = group.loc[idx]
@@ -485,6 +531,20 @@ def merge_single_neighbor_provinces(gdf):
 
                 group.loc[idx, "_merge_area"] = merged_geom.area
                 group = group.drop(neighbor_idx)
+
+                idx_neighbors = set(global_neighbor_map.get(idx, set()))
+                removed_neighbors = set(global_neighbor_map.get(neighbor_idx, set()))
+                combined_neighbors = (idx_neighbors | removed_neighbors) - {idx, neighbor_idx}
+
+                for other_idx in combined_neighbors:
+                    if other_idx not in global_neighbor_map:
+                        continue
+                    global_neighbor_map[other_idx].discard(neighbor_idx)
+                    global_neighbor_map[other_idx].add(idx)
+
+                global_neighbor_map[idx] = combined_neighbors
+                del global_neighbor_map[neighbor_idx]
+
                 merged_count += 1
                 merged_this_round = True
                 break
@@ -501,7 +561,10 @@ def merge_single_neighbor_provinces(gdf):
     )
     merged_df = merged_df.drop(columns=["_merge_area"], errors="ignore")
     merged_df = merged_df.reset_index(drop=True)
-    debug(f"Single-neighbor merges applied: {merged_count}")
+    debug(
+        "Single-neighbor merges applied: "
+        f"{merged_count}, skipped border candidates: {skipped_border_count}"
+    )
     return merged_df
 
 

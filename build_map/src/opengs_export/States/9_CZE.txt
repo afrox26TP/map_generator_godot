@@ -2,8 +2,6 @@ state={
     id=9
     name="STATE_CZE"
     provinces={
-        92
-        93
         94
         95
         96
@@ -15,5 +13,7 @@ state={
         102
         103
         104
+        105
+        106
     }
 }

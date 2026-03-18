@@ -2,7 +2,7 @@ state={
     id=11
     name="STATE_DNK"
     provinces={
-        117
-        118
+        120
+        121
     }
 }
