@@ -14,6 +14,11 @@ from shapely.ops import unary_union, voronoi_diagram
 import os, random
 
 DEBUG = True
+
+# PART 2.65 is experimental and may introduce visual artifacts in raster output.
+# Keep it disabled by default until fully tuned.
+ENABLE_INLAND_DISCONNECTED_MERGE = False
+
 def debug(msg):
     if DEBUG:
         print(f"[DEBUG] {msg}")
@@ -452,6 +457,161 @@ def _build_all_neighbors_map(gdf):
     return neighbors
 
 
+def _has_sea_neighbor(geom, land_union_boundary):
+    if geom.is_empty:
+        return False
+
+    shared_with_sea = geom.boundary.intersection(land_union_boundary)
+    if shared_with_sea.is_empty:
+        return False
+    return float(shared_with_sea.length) > 0.0
+
+
+def _pick_best_merge_target(candidates, part_geom, require_touching=False):
+    """Pick best target: touching first, then strongest shared boundary/overlap, then nearest."""
+    best_idx = None
+    best_key = None
+
+    for cand_idx, cand_geom in candidates.items():
+        if cand_geom.is_empty:
+            continue
+
+        shared_boundary = part_geom.boundary.intersection(cand_geom.boundary)
+        shared_len = float(shared_boundary.length) if not shared_boundary.is_empty else 0.0
+        overlap_area = float(part_geom.intersection(cand_geom).area)
+        distance = float(part_geom.distance(cand_geom))
+
+        touches = shared_len > 0.0 or overlap_area > 0.0
+        if require_touching and not touches:
+            continue
+
+        key = (1 if touches else 0, shared_len, overlap_area, -distance)
+
+        if best_key is None or key > best_key:
+            best_key = key
+            best_idx = cand_idx
+
+    return best_idx
+
+
+def merge_inland_disconnected_parts(gdf):
+    """
+    Merge inland disconnected fragments of a province into neighboring provinces
+    of the same country. Sea-separated components (islands/coastal parts) are kept.
+
+    Implementation note:
+    Use a single pass over a snapshot of province indices to avoid oscillating
+    re-merges (A -> B -> A) that can stall the pipeline.
+    """
+    gdf = gdf.copy()
+    if "is_capital_province" not in gdf.columns:
+        gdf["is_capital_province"] = 0
+    if "capital_city_name" not in gdf.columns:
+        gdf["capital_city_name"] = ""
+
+    land_union_boundary = unary_union(gdf.geometry).boundary
+
+    merged_groups = []
+    moved_parts_count = 0
+    dropped_provinces = 0
+    skipped_no_touch_target = 0
+
+    for _, country_group in gdf.groupby("country", sort=False):
+        group = country_group.copy()
+
+        # Snapshot only indices; geometry stays live so received parts are preserved.
+        source_indices = list(group.index)
+        for idx in source_indices:
+            if idx not in group.index:
+                continue
+
+            geom = group.loc[idx, "geometry"]
+            if geom.is_empty or geom.geom_type != "MultiPolygon":
+                continue
+
+            parts = [p for p in geom.geoms if not p.is_empty and float(p.area) > 0.0]
+            if len(parts) <= 1:
+                continue
+
+            part_sea_flags = [(p, _has_sea_neighbor(p, land_union_boundary)) for p in parts]
+            sea_parts = [p for p, is_sea in part_sea_flags if is_sea]
+            inland_parts = [p for p, is_sea in part_sea_flags if not is_sea]
+
+            if not inland_parts:
+                continue
+
+            keep_parts = list(sea_parts)
+            move_parts = list(inland_parts)
+
+            # If all parts are inland, keep the largest and merge the rest.
+            if not keep_parts:
+                main_part = max(parts, key=lambda p: float(p.area))
+                keep_parts = [main_part]
+                move_parts = [p for p in parts if p is not main_part]
+                if not move_parts:
+                    continue
+
+            moved_any_part = False
+            unmoved_parts = []
+            for part in sorted(move_parts, key=lambda p: float(p.area), reverse=True):
+                candidates = group.geometry.drop(idx, errors="ignore")
+                if candidates.empty:
+                    unmoved_parts.append(part)
+                    break
+
+                target_idx = _pick_best_merge_target(candidates, part, require_touching=True)
+                if target_idx is None or target_idx not in group.index:
+                    skipped_no_touch_target += 1
+                    unmoved_parts.append(part)
+                    continue
+
+                target_geom = group.loc[target_idx, "geometry"]
+                group.loc[target_idx, "geometry"] = target_geom.union(part).buffer(0)
+
+                moved_parts_count += 1
+                moved_any_part = True
+
+            if not moved_any_part:
+                continue
+
+            # Keep any inland fragments that could not be reassigned safely.
+            remaining_parts = keep_parts + unmoved_parts
+            new_geom = unary_union(remaining_parts).buffer(0) if remaining_parts else Polygon()
+            if new_geom.is_empty or float(new_geom.area) <= 0.0:
+                if bool(group.loc[idx].get("is_capital_province", 0)):
+                    recipients = group.geometry.drop(idx, errors="ignore")
+                    if not recipients.empty:
+                        receiver_idx = _pick_best_merge_target(recipients, geom)
+                        if receiver_idx is None:
+                            receiver_idx = recipients.index[0]
+                        group.loc[receiver_idx, "is_capital_province"] = 1
+                        if not _clean_optional_text(group.loc[receiver_idx].get("capital_city_name", "")):
+                            group.loc[receiver_idx, "capital_city_name"] = _clean_optional_text(
+                                group.loc[idx].get("capital_city_name", "")
+                            )
+
+                group = group.drop(idx)
+                dropped_provinces += 1
+            else:
+                group.loc[idx, "geometry"] = new_geom
+
+        merged_groups.append(group)
+
+    merged_df = gpd.GeoDataFrame(
+        pd.concat(merged_groups, ignore_index=True),
+        geometry="geometry",
+        crs=gdf.crs,
+    )
+    merged_df = merged_df.reset_index(drop=True)
+
+    debug(
+        "Inland disconnected-part merges applied: "
+        f"{moved_parts_count}, provinces dropped: {dropped_provinces}, "
+        f"skipped no-touch fragments: {skipped_no_touch_target}"
+    )
+    return merged_df
+
+
 def merge_single_neighbor_provinces(gdf):
     gdf = gdf.copy()
     if "is_capital_province" not in gdf.columns:
@@ -460,12 +620,14 @@ def merge_single_neighbor_provinces(gdf):
         gdf["capital_city_name"] = ""
 
     gdf["_merge_area"] = gdf.geometry.area
+    land_union_boundary = unary_union(gdf.geometry).boundary
     global_neighbor_map = _build_all_neighbors_map(gdf)
     country_by_idx = gdf["country"].to_dict()
 
     merged_groups = []
     merged_count = 0
     skipped_border_count = 0
+    skipped_sea_count = 0
 
     for country, country_group in gdf.groupby("country", sort=False):
         group = country_group.copy()
@@ -492,6 +654,12 @@ def merge_single_neighbor_provinces(gdf):
 
                 neighbor_idx = neighbors[0]
                 if neighbor_idx == idx:
+                    continue
+
+                # Sea counts as a neighbor for this rule, so coastal provinces
+                # are not eligible for one-neighbor merge.
+                if _has_sea_neighbor(group.loc[idx, "geometry"], land_union_boundary):
+                    skipped_sea_count += 1
                     continue
 
                 if idx not in global_neighbor_map or neighbor_idx not in global_neighbor_map:
@@ -563,7 +731,8 @@ def merge_single_neighbor_provinces(gdf):
     merged_df = merged_df.reset_index(drop=True)
     debug(
         "Single-neighbor merges applied: "
-        f"{merged_count}, skipped border candidates: {skipped_border_count}"
+        f"{merged_count}, skipped border candidates: {skipped_border_count}, "
+        f"skipped sea candidates: {skipped_sea_count}"
     )
     return merged_df
 
@@ -578,6 +747,17 @@ debug(
     "PART 2.6 DONE — duplicate-name merged provinces removed: "
     f"{before_same_name_merge - len(land)}"
 )
+
+if ENABLE_INLAND_DISCONNECTED_MERGE:
+    debug("PART 2.65 START — merging inland disconnected parts...")
+    before_disconnected_merge = len(land)
+    land = merge_inland_disconnected_parts(land)
+    debug(
+        "PART 2.65 DONE — disconnected-part merged provinces removed: "
+        f"{before_disconnected_merge - len(land)}"
+    )
+else:
+    debug("PART 2.65 SKIPPED — inland disconnected merge disabled")
 
 debug("PART 2.7 START — merging one-neighbor provinces...")
 before_single_neighbor_merge = len(land)

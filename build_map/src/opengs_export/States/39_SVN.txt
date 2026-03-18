@@ -2,7 +2,7 @@ state={
     id=39
     name="STATE_SVN"
     provinces={
-        794
-        795
+        800
+        801
     }
 }

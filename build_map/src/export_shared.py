@@ -13,15 +13,45 @@ os.makedirs(os.path.join(OUT, "States"), exist_ok=True)
 
 
 def geom_to_pixel_coords(geom, bounds, size):
+    return ring_to_pixel_coords(geom.exterior, bounds, size)
+
+
+def ring_to_pixel_coords(ring, bounds, size):
     minx, miny, maxx, maxy = bounds
     w = size
     h = size
 
+    dx = maxx - minx
+    dy = maxy - miny
+    if dx == 0 or dy == 0:
+        return []
+
     coords = []
-    for x, y in geom.exterior.coords:
-        px = int((x - minx) / (maxx - minx) * w)
-        py = int((1 - (y - miny) / (maxy - miny)) * h)
-        coords.append((px, py))
+    for x, y in ring.coords:
+        # Round to nearest pixel center to reduce directional bias on borders.
+        px_f = (x - minx) / dx * (w - 1)
+        py_f = (1 - (y - miny) / dy) * (h - 1)
+
+        px = int(round(px_f))
+        py = int(round(py_f))
+
+        if px < 0:
+            px = 0
+        elif px >= w:
+            px = w - 1
+
+        if py < 0:
+            py = 0
+        elif py >= h:
+            py = h - 1
+
+        point = (px, py)
+        if not coords or coords[-1] != point:
+            coords.append(point)
+
+    # Keep ring closed for robust polygon filling.
+    if len(coords) >= 2 and coords[0] != coords[-1]:
+        coords.append(coords[0])
 
     return coords
 

@@ -3,8 +3,9 @@ import os
 import random
 import numpy as np
 from PIL import Image, ImageDraw
+from scipy import ndimage as ndi
 
-from export_shared import EXPORT_SIZE, SEA_COLOR, OUT, geom_to_pixel_coords
+from export_shared import EXPORT_SIZE, SEA_COLOR, OUT, geom_to_pixel_coords, ring_to_pixel_coords
 from export_political_map import export_political_map
 from export_theme_map import (
     export_gdp_map,
@@ -24,6 +25,8 @@ RECRUITABLE_SHARE_BY_IDEOLOGY = {
 }
 DEFAULT_RECRUITABLE_SHARE = RECRUITABLE_SHARE_BY_IDEOLOGY["demokracie"]
 CAPITAL_RECRUITABLE_MULTIPLIER = 3.0
+PROVINCE_RENDER_SUPERSAMPLE = 2
+THIN_BRIDGE_MAX_WIDTH_PX = 4
 
 
 # --------------------------------------------------------
@@ -45,16 +48,427 @@ def unique_color(used, step=16):
 # --------------------------------------------------------
 # EXPORT PROVINCE MAP (colors must NOT repeat)
 # --------------------------------------------------------
+def _draw_filled_coords(draw, coords, color):
+    if not coords:
+        return
+    if len(coords) == 1:
+        draw.point(coords[0], fill=color)
+        return
+    if len(coords) == 2:
+        draw.line(coords, fill=color, width=1)
+        return
+
+    draw.polygon(coords, fill=color)
+
+
+def _draw_polygon_with_holes(draw, poly, bounds, size, fill_color, hole_color=None):
+    exterior_coords = geom_to_pixel_coords(poly, bounds, size)
+    _draw_filled_coords(draw, exterior_coords, fill_color)
+
+    if hole_color is None:
+        return
+
+    # Respect polygon interiors to prevent later-drawn containers from
+    # swallowing already-drawn enclave/inner regions.
+    for interior in poly.interiors:
+        hole_coords = ring_to_pixel_coords(interior, bounds, size)
+        _draw_filled_coords(draw, hole_coords, hole_color)
+
+
+def _downsample_by_majority(img, factor=2, chunk_rows=512):
+    if factor <= 1:
+        return img
+
+    arr = np.array(img, copy=False)
+    h, w, _ = arr.shape
+    h2 = (h // factor) * factor
+    w2 = (w // factor) * factor
+    if h2 == 0 or w2 == 0:
+        return img
+
+    arr = arr[:h2, :w2]
+    out_h = h2 // factor
+    out_w = w2 // factor
+    out_keys = np.empty((out_h, out_w), dtype=np.int32)
+
+    if factor != 2:
+        # Safe fallback for non-2x: top-left pick per block.
+        keys = (
+            arr[:, :, 0].astype(np.int32)
+            | (arr[:, :, 1].astype(np.int32) << 8)
+            | (arr[:, :, 2].astype(np.int32) << 16)
+        )
+        out_keys[:, :] = keys[::factor, ::factor][:out_h, :out_w]
+    else:
+        for y0 in range(0, out_h, chunk_rows):
+            y1 = min(out_h, y0 + chunk_rows)
+            sub = arr[y0 * 2:y1 * 2, :, :]
+
+            keys = (
+                sub[:, :, 0].astype(np.int32)
+                | (sub[:, :, 1].astype(np.int32) << 8)
+                | (sub[:, :, 2].astype(np.int32) << 16)
+            )
+            blocks = (
+                keys.reshape(y1 - y0, 2, out_w, 2)
+                .transpose(0, 2, 1, 3)
+                .reshape(y1 - y0, out_w, 4)
+            )
+
+            vals = blocks
+            c0 = 1 + (vals[:, :, 0] == vals[:, :, 1]) + (vals[:, :, 0] == vals[:, :, 2]) + (vals[:, :, 0] == vals[:, :, 3])
+            c1 = 1 + (vals[:, :, 1] == vals[:, :, 0]) + (vals[:, :, 1] == vals[:, :, 2]) + (vals[:, :, 1] == vals[:, :, 3])
+            c2 = 1 + (vals[:, :, 2] == vals[:, :, 0]) + (vals[:, :, 2] == vals[:, :, 1]) + (vals[:, :, 2] == vals[:, :, 3])
+            c3 = 1 + (vals[:, :, 3] == vals[:, :, 0]) + (vals[:, :, 3] == vals[:, :, 1]) + (vals[:, :, 3] == vals[:, :, 2])
+
+            counts = np.stack((c0, c1, c2, c3), axis=2)
+            pick = np.argmax(counts, axis=2)
+            out_keys[y0:y1, :] = np.take_along_axis(vals, pick[:, :, None], axis=2)[:, :, 0]
+
+    out = np.empty((out_h, out_w, 3), dtype=np.uint8)
+    out[:, :, 0] = (out_keys & 255).astype(np.uint8)
+    out[:, :, 1] = ((out_keys >> 8) & 255).astype(np.uint8)
+    out[:, :, 2] = ((out_keys >> 16) & 255).astype(np.uint8)
+    return Image.fromarray(out, mode="RGB")
+
+
+def _remove_one_pixel_land_bridges(img, province_colors, pid_to_country, max_width_px=1):
+    """
+    Break visually fake narrow land bridges inside a province and
+    reassign seam pixels to neighboring provinces.
+    """
+    max_width_px = max(1, int(max_width_px))
+    open_iters = max(1, int(np.ceil(max_width_px / 2.0)))
+
+    arr = np.array(img, copy=True)
+
+    lut = np.full((256, 256, 256), -1, dtype=np.int32)
+    pid_to_color = {}
+    for color, pid in province_colors.items():
+        r, g, b = color
+        pid_i = int(pid)
+        lut[r, g, b] = pid_i
+        pid_to_color[pid_i] = np.array([r, g, b], dtype=np.uint8)
+
+    pid_map = lut[arr[:, :, 0], arr[:, :, 1], arr[:, :, 2]]
+    original_pid_map = pid_map.copy()
+
+    # 8-neighborhood opening with width-aware iterations removes narrow necks.
+    kernel = np.ones((3, 3), dtype=np.uint8)
+    moved_pixels = 0
+    affected_provinces = 0
+
+    for pid in np.unique(pid_map[pid_map >= 0]):
+        pid_i = int(pid)
+        source_country = pid_to_country.get(pid_i)
+        if not source_country:
+            continue
+
+        mask = pid_map == pid
+        if int(np.sum(mask)) < 16:
+            continue
+
+        opened = ndi.binary_opening(mask, structure=kernel, iterations=open_iters)
+        if not np.any(opened):
+            continue
+
+        core_labels, n_cores = ndi.label(opened, structure=kernel)
+        if n_cores <= 1:
+            continue
+
+        # Partition original province pixels by nearest opened core.
+        _, nearest_idx = ndi.distance_transform_edt(core_labels == 0, return_indices=True)
+        assigned = core_labels[nearest_idx[0], nearest_idx[1]]
+        assigned = assigned * mask
+
+        up = np.zeros_like(assigned)
+        down = np.zeros_like(assigned)
+        left = np.zeros_like(assigned)
+        right = np.zeros_like(assigned)
+        up[1:, :] = assigned[:-1, :]
+        down[:-1, :] = assigned[1:, :]
+        left[:, 1:] = assigned[:, :-1]
+        right[:, :-1] = assigned[:, 1:]
+
+        seam = np.zeros_like(mask, dtype=bool)
+        for nb in (up, down, left, right):
+            seam |= (assigned > 0) & (nb > 0) & (assigned != nb)
+
+        seam &= mask
+        if not np.any(seam):
+            continue
+
+        province_changed = False
+        ys, xs = np.where(seam)
+        for y, x in zip(ys, xs):
+            y0 = max(0, y - 1)
+            y1 = min(pid_map.shape[0], y + 2)
+            x0 = max(0, x - 1)
+            x1 = min(pid_map.shape[1], x + 2)
+
+            patch = pid_map[y0:y1, x0:x1].reshape(-1)
+            candidates = patch[(patch >= 0) & (patch != pid)]
+            if candidates.size == 0:
+                continue
+
+            same_country = np.array(
+                [
+                    int(c)
+                    for c in candidates
+                    if pid_to_country.get(int(c)) == source_country
+                ],
+                dtype=np.int32,
+            )
+            if same_country.size == 0:
+                continue
+
+            vals, cnts = np.unique(same_country, return_counts=True)
+            target_pid = int(vals[np.argmax(cnts)])
+            pid_map[y, x] = target_pid
+            moved_pixels += 1
+            province_changed = True
+
+        if province_changed:
+            affected_provinces += 1
+
+    if moved_pixels <= 0:
+        return Image.fromarray(arr, mode="RGB")
+
+    changed = pid_map != original_pid_map
+    changed_pids = np.unique(pid_map[changed])
+    for pid in changed_pids:
+        pid_i = int(pid)
+        color = pid_to_color.get(pid_i)
+        if color is None:
+            continue
+        arr[changed & (pid_map == pid_i)] = color
+
+    print(
+        f"[DEBUG] Thin-bridge cleanup ({max_width_px}px) moved pixels: "
+        f"{moved_pixels} across provinces: {affected_provinces}"
+    )
+
+    return Image.fromarray(arr, mode="RGB")
+
+
+def _despeckle_land_components(img, province_colors, pid_to_country, min_pixels=3):
+    """Remove tiny isolated land-color components caused by raster artifacts."""
+    arr = np.array(img, copy=True)
+    h, w, _ = arr.shape
+    structure = np.ones((3, 3), dtype=np.uint8)
+    changed_pixels = 0
+
+    lut = np.full((256, 256, 256), -1, dtype=np.int32)
+    pid_to_color = {}
+    for color, pid in province_colors.items():
+        r, g, b = color
+        pid_i = int(pid)
+        lut[r, g, b] = pid_i
+        pid_to_color[pid_i] = np.array([r, g, b], dtype=np.uint8)
+
+    pid_map = lut[arr[:, :, 0], arr[:, :, 1], arr[:, :, 2]]
+    original_pid_map = pid_map.copy()
+
+    for color, pid in province_colors.items():
+        pid_i = int(pid)
+        source_country = pid_to_country.get(pid_i)
+        if not source_country:
+            continue
+
+        mask = pid_map == pid_i
+        if not mask.any():
+            continue
+
+        labels, n = ndi.label(mask, structure=structure)
+        if n <= 1:
+            continue
+
+        counts = np.bincount(labels.ravel())
+        small_labels = [lbl for lbl in range(1, len(counts)) if 0 < counts[lbl] < min_pixels]
+        if not small_labels:
+            continue
+
+        for lbl in small_labels:
+            ys, xs = np.where(labels == lbl)
+            for y, x in zip(ys, xs):
+                y0 = max(0, y - 1)
+                y1 = min(h, y + 2)
+                x0 = max(0, x - 1)
+                x1 = min(w, x + 2)
+
+                neighborhood = pid_map[y0:y1, x0:x1].reshape(-1)
+                candidates = neighborhood[(neighborhood >= 0) & (neighborhood != pid_i)]
+                if candidates.size == 0:
+                    continue
+
+                same_country = np.array(
+                    [
+                        int(c)
+                        for c in candidates
+                        if pid_to_country.get(int(c)) == source_country
+                    ],
+                    dtype=np.int32,
+                )
+                if same_country.size == 0:
+                    continue
+
+                vals, cnts = np.unique(same_country, return_counts=True)
+                target_pid = int(vals[np.argmax(cnts)])
+                pid_map[y, x] = target_pid
+                changed_pixels += 1
+
+    if changed_pixels > 0:
+        changed = pid_map != original_pid_map
+        changed_pids = np.unique(pid_map[changed])
+        for pid in changed_pids:
+            pid_i = int(pid)
+            color = pid_to_color.get(pid_i)
+            if color is None:
+                continue
+            arr[changed & (pid_map == pid_i)] = color
+
+    if changed_pixels > 0:
+        print(f"[DEBUG] Land despeckle changed pixels: {changed_pixels}")
+
+    return Image.fromarray(arr, mode="RGB")
+
+
+def _enforce_single_component_per_landmass(img, province_colors, pid_to_country, max_passes=3):
+    """
+    Ensure each province has at most one connected component per landmass.
+
+    This keeps true islands untouched (different landmasses), while fixing
+    split inland/mainland fragments of the same province color.
+    """
+    arr = np.array(img, copy=True)
+
+    lut = np.full((256, 256, 256), -1, dtype=np.int32)
+    pid_to_color = {}
+    for color, pid in province_colors.items():
+        r, g, b = color
+        pid_i = int(pid)
+        lut[r, g, b] = pid_i
+        pid_to_color[pid_i] = np.array([r, g, b], dtype=np.uint8)
+
+    pid_map = lut[arr[:, :, 0], arr[:, :, 1], arr[:, :, 2]]
+    original_pid_map = pid_map.copy()
+
+    structure = np.ones((3, 3), dtype=np.uint8)
+    landmass_labels, _ = ndi.label(pid_map >= 0, structure=structure)
+
+    moved_components = 0
+    moved_pixels = 0
+
+    for _ in range(max_passes):
+        pass_components = 0
+        pass_pixels = 0
+
+        for pid in np.unique(pid_map[pid_map >= 0]):
+            pid_i = int(pid)
+            source_country = pid_to_country.get(pid_i)
+            if not source_country:
+                continue
+
+            mask = pid_map == pid
+            if not np.any(mask):
+                continue
+
+            labels, n = ndi.label(mask, structure=structure)
+            if n <= 1:
+                continue
+
+            counts = np.bincount(labels.ravel())
+            by_landmass = {}
+
+            for lbl in range(1, n + 1):
+                size = int(counts[lbl])
+                if size <= 0:
+                    continue
+
+                ys, xs = np.where(labels == lbl)
+                landmass_id = int(landmass_labels[ys[0], xs[0]])
+                by_landmass.setdefault(landmass_id, []).append((lbl, size))
+
+            labels_to_move = []
+            for components in by_landmass.values():
+                if len(components) <= 1:
+                    continue
+
+                components.sort(key=lambda t: t[1], reverse=True)
+                for lbl, _size in components[1:]:
+                    labels_to_move.append(lbl)
+
+            if not labels_to_move:
+                continue
+
+            for lbl in labels_to_move:
+                comp = labels == lbl
+                dilated = ndi.binary_dilation(comp, structure=structure)
+                border = dilated & (~comp)
+
+                neighbor_ids = pid_map[border]
+                neighbor_ids = neighbor_ids[(neighbor_ids >= 0) & (neighbor_ids != pid)]
+                if neighbor_ids.size == 0:
+                    continue
+
+                same_country = np.array(
+                    [
+                        int(nid)
+                        for nid in neighbor_ids
+                        if pid_to_country.get(int(nid)) == source_country
+                    ],
+                    dtype=np.int32,
+                )
+                if same_country.size == 0:
+                    continue
+
+                vals, cnts = np.unique(same_country, return_counts=True)
+                target_pid = int(vals[np.argmax(cnts)])
+
+                pixels = int(np.sum(comp))
+                pid_map[comp] = target_pid
+                pass_components += 1
+                pass_pixels += pixels
+
+        moved_components += pass_components
+        moved_pixels += pass_pixels
+
+        if pass_components == 0:
+            break
+
+    if moved_pixels <= 0:
+        return Image.fromarray(arr, mode="RGB")
+
+    changed = pid_map != original_pid_map
+    changed_pids = np.unique(pid_map[changed])
+    for pid in changed_pids:
+        pid_i = int(pid)
+        color = pid_to_color.get(pid_i)
+        if color is None:
+            continue
+        arr[changed & (pid_map == pid_i)] = color
+
+    print(
+        "[DEBUG] Inland connectivity fix moved components: "
+        f"{moved_components}, pixels: {moved_pixels}"
+    )
+
+    return Image.fromarray(arr, mode="RGB")
+
+
 def export_province_map(land, sea_regions):
 
     minx, miny, maxx, maxy = land.total_bounds
     bounds = (minx, miny, maxx, maxy)
 
-    img = Image.new("RGB", (EXPORT_SIZE, EXPORT_SIZE), SEA_COLOR)
+    render_size = EXPORT_SIZE * max(int(PROVINCE_RENDER_SUPERSAMPLE), 1)
+
+    img = Image.new("RGB", (render_size, render_size), SEA_COLOR)
     draw = ImageDraw.Draw(img)
 
     province_colors = {}
     used_colors = set()   # stores all used RGB colors
+    pid_to_country = {int(pid): str(country) for pid, country in land["country"].items()}
 
     # -------------------------
     # SEA REGIONS (unique too)
@@ -69,15 +483,23 @@ def export_province_map(land, sea_regions):
 
         polys = [region] if region.geom_type == "Polygon" else region.geoms
         for poly in polys:
-            coords = geom_to_pixel_coords(poly, bounds, EXPORT_SIZE)
-            draw.polygon(coords, fill=color)
+            _draw_polygon_with_holes(draw, poly, bounds, render_size, color, hole_color=None)
 
     print("[DEBUG] Sea regions:", sea_color_count)
 
     # -------------------------
     # LAND PROVINCES
     # -------------------------
-    for pid, row in land.iterrows():
+    # Draw large provinces first and smaller/enclave provinces later.
+    # This minimizes order-dependent overwrites along complex borders.
+    land_order = sorted(
+        land.index,
+        key=lambda pid: float(land.loc[pid, "geometry"].area),
+        reverse=True,
+    )
+
+    for pid in land_order:
+        row = land.loc[pid]
         geom = row.geometry
         if geom.is_empty:
             continue
@@ -87,12 +509,39 @@ def export_province_map(land, sea_regions):
 
         polys = [geom] if geom.geom_type == "Polygon" else geom.geoms
         for poly in polys:
-            coords = geom_to_pixel_coords(poly, bounds, EXPORT_SIZE)
-            draw.polygon(coords, fill=color)
+            _draw_polygon_with_holes(draw, poly, bounds, render_size, color, hole_color=SEA_COLOR)
 
     print("[DEBUG] Land provinces:", len(land))
     print("[DEBUG] Unique land colors:", len(province_colors))
     print("[DEBUG] Total unique colors:", len(used_colors))
+
+    # Render at higher resolution then collapse by majority vote for cleaner borders.
+    if render_size != EXPORT_SIZE:
+        img = _downsample_by_majority(img, factor=render_size // EXPORT_SIZE)
+
+    # Remove 1-pixel internal bridges that make borders look hand-drawn/fake.
+    img = _remove_one_pixel_land_bridges(
+        img,
+        province_colors,
+        pid_to_country,
+        max_width_px=THIN_BRIDGE_MAX_WIDTH_PX,
+    )
+
+    # Force one connected province piece per landmass (islands stay valid).
+    img = _enforce_single_component_per_landmass(
+        img,
+        province_colors,
+        pid_to_country,
+        max_passes=3,
+    )
+
+    # Post-process tiny isolated land artifacts (single/few-pixel specks).
+    img = _despeckle_land_components(
+        img,
+        province_colors,
+        pid_to_country,
+        min_pixels=3,
+    )
 
     # -------------------------
     # SAVE UNCOMPRESSED PNG

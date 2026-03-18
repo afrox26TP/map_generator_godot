@@ -2,9 +2,9 @@ state={
     id=30
     name="STATE_MNE"
     provinces={
-        598
-        599
-        600
-        601
+        603
+        604
+        605
+        606
     }
 }
