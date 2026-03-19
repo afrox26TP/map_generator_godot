@@ -34,3 +34,57 @@ New outputs in `build_map/src/opengs_export/`:
 - `GDP.txt` (runtime-friendly GDP table)
 - `GDPMap.png` (thematic map using computed GDP values)
 - `Provinces.txt` now appends province runtime fields after the original columns: `province_name`, `country_name`, `population`, `gdp`, `gdp_per_capita`, `is_capital`, `capital_city`, `neighbors`, `ideology`, `recruitable_population`
+
+## Country flags download (ISO3-compatible)
+
+To download one flag per country using the same ISO3 codes used by this project (`CZE`, `DEU`, etc.), run:
+
+```bash
+cd build_map/src
+python import_flags.py
+```
+
+Output:
+
+- `build_map/src/opengs_export/Flags/ISO3.ext` (for example `CZE.svg`, `DEU.svg`)
+- `build_map/src/opengs_export/country_flags.csv` (manifest with file name, source URL, status)
+
+Notes:
+
+- If `opengs_export/States.txt` exists, the script uses country codes from that file.
+- Otherwise it falls back to `EUROPE_COUNTRIES` from `build_map.py`.
+- You can force re-download with `python import_flags.py --force`.
+
+## Ideology alternative flags (all states)
+
+To generate ideology-specific variants for all target countries/states, run:
+
+```bash
+cd build_map/src
+python import_flags.py --ideology-variants
+```
+
+Default ideology variants:
+
+- `demokracie`
+- `autokracie`
+- `kralovstvi`
+- `fasismus`
+- `nacismus`
+
+Output:
+
+- `build_map/src/opengs_export/FlagsIdeology/ISO3__ideology.ext`
+- `build_map/src/opengs_export/country_flags_ideology.csv`
+
+Behavior:
+
+- Every `ISO3 + ideology` combination is generated for full coverage.
+- If no historical ideology override exists, the script falls back to the base country flag.
+- Included historical overrides: `DEU` (`autokracie`, `nacismus`), `ITA` (`autokracie`, `fasismus`, `kralovstvi`), `CZE` (`kralovstvi`).
+
+Optional custom list:
+
+```bash
+python import_flags.py --ideology-variants --ideologies "demokracie autokracie kralovstvi fasismus nacismus"
+```
