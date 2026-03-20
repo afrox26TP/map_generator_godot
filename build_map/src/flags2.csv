@@ -1,0 +1,42 @@
+iso3,country,countryLabel,currentFlag
+ALB,http://www.wikidata.org/entity/Q222,Albania,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Albania.svg
+AUT,http://www.wikidata.org/entity/Q40,Austria,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Austria.svg
+BEL,http://www.wikidata.org/entity/Q31,Belgium,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Belgium.svg
+BGR,http://www.wikidata.org/entity/Q219,Bulgaria,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Bulgaria.svg
+BIH,http://www.wikidata.org/entity/Q225,Bosnia and Herzegovina,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Bosnia%20and%20Herzegovina.svg
+BLR,http://www.wikidata.org/entity/Q184,Belarus,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Belarus.svg
+CHE,http://www.wikidata.org/entity/Q39,Switzerland,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Switzerland.svg
+CYP,http://www.wikidata.org/entity/Q229,Cyprus,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Cyprus.svg
+CZE,http://www.wikidata.org/entity/Q213,Czech Republic,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20the%20Czech%20Republic.svg
+DEU,http://www.wikidata.org/entity/Q183,Germany,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Germany.svg
+DNK,http://www.wikidata.org/entity/Q35,Denmark,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Denmark.svg
+ESP,http://www.wikidata.org/entity/Q29,Spain,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Spain.svg
+EST,http://www.wikidata.org/entity/Q191,Estonia,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Estonia.svg
+FIN,http://www.wikidata.org/entity/Q33,Finland,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Finland.svg
+FRA,http://www.wikidata.org/entity/Q142,France,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20France.svg
+GBR,http://www.wikidata.org/entity/Q145,United Kingdom,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20the%20United%20Kingdom%20%283-5%29.svg
+GEO,http://www.wikidata.org/entity/Q230,Georgia,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Georgia.svg
+GRC,http://www.wikidata.org/entity/Q41,Greece,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Greece.svg
+HRV,http://www.wikidata.org/entity/Q224,Croatia,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Croatia.svg
+HUN,http://www.wikidata.org/entity/Q28,Hungary,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Hungary.svg
+IRL,http://www.wikidata.org/entity/Q27,Ireland,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Ireland.svg
+ISL,http://www.wikidata.org/entity/Q189,Iceland,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Iceland.svg
+ITA,http://www.wikidata.org/entity/Q38,Italy,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Italy.svg
+LTU,http://www.wikidata.org/entity/Q37,Lithuania,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Lithuania.svg
+LUX,http://www.wikidata.org/entity/Q32,Luxembourg,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Luxembourg.svg
+LVA,http://www.wikidata.org/entity/Q211,Latvia,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Latvia.svg
+MDA,http://www.wikidata.org/entity/Q217,Moldova,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Moldova.svg
+MKD,http://www.wikidata.org/entity/Q221,North Macedonia,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20North%20Macedonia.svg
+MNE,http://www.wikidata.org/entity/Q236,Montenegro,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Montenegro.svg
+NLD,http://www.wikidata.org/entity/Q29999,Kingdom of the Netherlands,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20the%20Netherlands.svg
+NOR,http://www.wikidata.org/entity/Q20,Norway,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Norway.svg
+POL,http://www.wikidata.org/entity/Q36,Poland,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Poland.svg
+PRT,http://www.wikidata.org/entity/Q45,Portugal,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Portugal%20%28official%29.svg
+ROU,http://www.wikidata.org/entity/Q218,Romania,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Romania.svg
+RUS,http://www.wikidata.org/entity/Q159,Russia,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Russia.svg
+SRB,http://www.wikidata.org/entity/Q403,Serbia,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Serbia.svg
+SVK,http://www.wikidata.org/entity/Q214,Slovakia,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Slovakia.svg
+SVN,http://www.wikidata.org/entity/Q215,Slovenia,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Slovenia.svg
+SWE,http://www.wikidata.org/entity/Q34,Sweden,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Sweden.svg
+TUR,http://www.wikidata.org/entity/Q43,Turkey,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Turkey.svg
+UKR,http://www.wikidata.org/entity/Q212,Ukraine,http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Ukraine.svg
