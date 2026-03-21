@@ -77,6 +77,33 @@ Output:
 - `build_map/src/opengs_export/FlagsIdeology/ISO3__ideology.ext`
 - `build_map/src/opengs_export/country_flags_ideology.csv`
 
+## Army icons (all states)
+
+To generate one army icon per country ISO3 code, run:
+
+```bash
+cd build_map/src
+python generate_army_icons.py
+```
+
+Output:
+
+- `build_map/src/opengs_export/ArmyIcons/ISO3.svg`
+- `build_map/src/opengs_export/country_army_icons.csv`
+- `build_map/src/opengs_export/ArmyIcons/ArmyIconTemplate.svg` (single colorable template for Godot)
+
+Notes:
+
+- If `opengs_export/States.txt` exists, the script uses country codes from that file.
+- Otherwise it falls back to `EUROPE_COUNTRIES` from `build_map.py`.
+- You can force regeneration with `python generate_army_icons.py --force`.
+- In Godot, use `ArmyIconTemplate.svg` and set `modulate`/`self_modulate` to change icon color at runtime.
+- To generate only the template file, run: `python generate_army_icons.py --template-only`.
+- To generate ideology templates, run: `python generate_army_icons.py --template-only --ideology-templates`.
+- Ideology templates are written to `build_map/src/opengs_export/ArmyIconsIdeologyTemplates/ArmyIconTemplate__ideology.svg`.
+- To generate value-based ideology templates, run: `python generate_army_icons.py --template-only --ideology-templates --ideology-value-templates --ideology-values "20,50,80"`.
+- Value templates are written as `ArmyIconTemplate__ideology__vXXX.svg` (for example `ArmyIconTemplate__demokracie__v080.svg`).
+
 Behavior:
 
 - Every `ISO3 + ideology` combination is generated for full coverage.
