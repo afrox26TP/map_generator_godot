@@ -158,7 +158,11 @@ def _remove_one_pixel_land_bridges(img, province_colors, pid_to_country, max_wid
     moved_pixels = 0
     affected_provinces = 0
 
-    for pid in np.unique(pid_map[pid_map >= 0]):
+    pids = np.unique(pid_map[pid_map >= 0])
+    total_pids = int(len(pids))
+    for idx, pid in enumerate(pids, start=1):
+        if idx == 1 or idx % 100 == 0 or idx == total_pids:
+            print(f"[DEBUG] Thin-bridge cleanup progress: {idx}/{total_pids}")
         pid_i = int(pid)
         source_country = pid_to_country.get(pid_i)
         if not source_country:
@@ -269,7 +273,11 @@ def _despeckle_land_components(img, province_colors, pid_to_country, min_pixels=
     pid_map = lut[arr[:, :, 0], arr[:, :, 1], arr[:, :, 2]]
     original_pid_map = pid_map.copy()
 
-    for color, pid in province_colors.items():
+    items = list(province_colors.items())
+    total_items = int(len(items))
+    for idx, (color, pid) in enumerate(items, start=1):
+        if idx == 1 or idx % 100 == 0 or idx == total_items:
+            print(f"[DEBUG] Land despeckle progress: {idx}/{total_items}")
         pid_i = int(pid)
         source_country = pid_to_country.get(pid_i)
         if not source_country:
@@ -359,11 +367,17 @@ def _enforce_single_component_per_landmass(img, province_colors, pid_to_country,
     moved_components = 0
     moved_pixels = 0
 
-    for _ in range(max_passes):
+    pids = np.unique(pid_map[pid_map >= 0])
+
+    for pass_num in range(1, max_passes + 1):
+        print(f"[DEBUG] Inland connectivity fix pass: {pass_num}/{max_passes}")
         pass_components = 0
         pass_pixels = 0
 
-        for pid in np.unique(pid_map[pid_map >= 0]):
+        total_pids = int(len(pids))
+        for idx, pid in enumerate(pids, start=1):
+            if idx == 1 or idx % 100 == 0 or idx == total_pids:
+                print(f"[DEBUG] Inland connectivity progress: {idx}/{total_pids}")
             pid_i = int(pid)
             source_country = pid_to_country.get(pid_i)
             if not source_country:
@@ -435,6 +449,9 @@ def _enforce_single_component_per_landmass(img, province_colors, pid_to_country,
 
         if pass_components == 0:
             break
+
+        # Province map changed after this pass, refresh pid list for next pass.
+        pids = np.unique(pid_map[pid_map >= 0])
 
     if moved_pixels <= 0:
         return Image.fromarray(arr, mode="RGB")
@@ -517,9 +534,13 @@ def export_province_map(land, sea_regions):
 
     # Render at higher resolution then collapse by majority vote for cleaner borders.
     if render_size != EXPORT_SIZE:
+        print(
+            f"[DEBUG] Downsampling supersampled map: {render_size} -> {EXPORT_SIZE}"
+        )
         img = _downsample_by_majority(img, factor=render_size // EXPORT_SIZE)
 
     # Remove 1-pixel internal bridges that make borders look hand-drawn/fake.
+    print("[DEBUG] Starting thin-bridge cleanup...")
     img = _remove_one_pixel_land_bridges(
         img,
         province_colors,
@@ -528,6 +549,7 @@ def export_province_map(land, sea_regions):
     )
 
     # Force one connected province piece per landmass (islands stay valid).
+    print("[DEBUG] Starting inland connectivity fix...")
     img = _enforce_single_component_per_landmass(
         img,
         province_colors,
@@ -536,6 +558,7 @@ def export_province_map(land, sea_regions):
     )
 
     # Post-process tiny isolated land artifacts (single/few-pixel specks).
+    print("[DEBUG] Starting land despeckle...")
     img = _despeckle_land_components(
         img,
         province_colors,

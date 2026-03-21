@@ -5,6 +5,7 @@ import glob
 import json
 import os
 import re
+import shutil
 import time
 import unicodedata
 from html import escape
@@ -12,6 +13,11 @@ from typing import Dict, List, Sequence, Set, Tuple
 from urllib.parse import quote, unquote, urlencode, urlparse
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
+
+try:
+    from PIL import Image
+except Exception:
+    Image = None
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_OUT_DIR = os.path.join(BASE, "opengs_export", "Flags")
@@ -22,6 +28,10 @@ STATES_PATH = os.path.join(BASE, "opengs_export", "States.txt")
 BUILD_MAP_PATH = os.path.join(BASE, "build_map.py")
 LOCAL_FLAG_HISTORY_PATH = os.path.join(BASE, "flags.csv")
 LOCAL_FLAG_CURRENT_PATH = os.path.join(BASE, "flags2.csv")
+LOCAL_FLAG_SOURCE_DIRS = (
+    os.path.join(BASE, "HOI4 Flags"),
+    os.path.join(BASE, "VIC2 Flags"),
+)
 
 WDQS_URL = "https://query.wikidata.org/sparql"
 COMMONS_API_URL = "https://commons.wikimedia.org/w/api.php"
@@ -30,6 +40,39 @@ DEFAULT_TIMEOUT = 30
 USER_AGENT = "map_generator_godot-flag-importer/1.0"
 
 VALID_EXTENSIONS = {".svg", ".png", ".jpg", ".jpeg", ".webp", ".gif"}
+LOCAL_MIN_RASTER_WIDTH = 320
+LOCAL_MIN_RASTER_HEIGHT = 200
+LOWRES_LOCAL_CACHE: Dict[str, bool] = {}
+
+# ISO3 -> known game tag aliases used in bundled HOI4/VIC2 folders.
+ISO3_GAME_TAG_ALIASES: Dict[str, Tuple[str, ...]] = {
+    "AUT": ("AUS",),
+    "DEU": ("GER",),
+    "DNK": ("DEN",),
+    "ESP": ("SPA",),
+    "GBR": ("ENG",),
+    "GRC": ("GRE",),
+    "HRV": ("CRO",),
+    "IRL": ("IRE",),
+    "ISL": ("ICE", "ICL"),
+    "LTU": ("LIT",),
+    "LVA": ("LAT",),
+    "MNE": ("MNT",),
+    "NLD": ("HOL",),
+    "PRT": ("POR",),
+    "ROU": ("ROM",),
+    "SRB": ("SER",),
+    "SVN": ("SLV",),
+}
+
+IDEOLOGY_GAME_SUFFIXES: Dict[str, Tuple[str, ...]] = {
+    "demokracie": ("democratic", "democracy", "republic"),
+    "autokracie": ("neutrality", "monarchy"),
+    "kralovstvi": ("neutrality", "monarchy"),
+    "fasismus": ("fascism", "fascist"),
+    "nacismus": ("fascism", "fascist"),
+    "komunismus": ("communism", "communist"),
+}
 # Some codes in Natural Earth differ from ISO-3166-1 alpha-3 used by Wikidata.
 REQUEST_ISO_OVERRIDES = {
     "KOS": "XKX",
@@ -529,6 +572,113 @@ def load_local_flag_history(path: str) -> Dict[str, List[Dict[str, int | str]]]:
     return out
 
 
+def list_game_tag_candidates(iso3: str) -> List[str]:
+    iso = normalize_iso3(iso3)
+    candidates = [iso]
+    candidates.extend(ISO3_GAME_TAG_ALIASES.get(iso, ()))
+    return unique_keep_order([c for c in candidates if c])
+
+
+def build_local_flag_index(source_dirs: Sequence[str]) -> Dict[str, Dict[str, object]]:
+    index: Dict[str, Dict[str, object]] = {}
+    for source_dir in source_dirs:
+        if not os.path.isdir(source_dir):
+            continue
+
+        folder_name = os.path.basename(source_dir)
+        for name in sorted(os.listdir(source_dir)):
+            path = os.path.join(source_dir, name)
+            if not os.path.isfile(path):
+                continue
+
+            stem, ext = os.path.splitext(name)
+            if ext.lower() not in VALID_EXTENSIONS:
+                continue
+
+            tag = ""
+            suffix = ""
+            if "_" in stem:
+                tag, suffix = stem.split("_", 1)
+            else:
+                tag = stem
+
+            tag = normalize_iso3(tag)
+            suffix = str(suffix or "").strip().lower()
+            if not re.fullmatch(r"[A-Z0-9]{3}", tag):
+                continue
+
+            entry = index.setdefault(
+                tag,
+                {
+                    "base": "",
+                    "base_source": "",
+                    "variants": {},
+                },
+            )
+
+            if suffix:
+                variants = entry.get("variants")
+                if isinstance(variants, dict) and suffix not in variants:
+                    variants[suffix] = {
+                        "path": path,
+                        "source": folder_name,
+                    }
+                continue
+
+            # Keep first-found base image to preserve source directory priority.
+            if not entry.get("base"):
+                entry["base"] = path
+                entry["base_source"] = folder_name
+
+    return index
+
+
+def resolve_local_flag_source(
+    iso3: str,
+    ideology: str,
+    local_index: Dict[str, Dict[str, object]],
+) -> Dict[str, str]:
+    ideology_key = normalize_ideology(ideology)
+    suffixes = IDEOLOGY_GAME_SUFFIXES.get(ideology_key, ())
+
+    for tag in list_game_tag_candidates(iso3):
+        entry = local_index.get(tag)
+        if not entry:
+            continue
+
+        variants = entry.get("variants")
+        if isinstance(variants, dict):
+            for suffix in suffixes:
+                item = variants.get(suffix)
+                if isinstance(item, dict):
+                    path = str(item.get("path", "") or "")
+                    source = str(item.get("source", "") or "")
+                    if path:
+                        return {
+                            "path": path,
+                            "source": source,
+                            "tag": tag,
+                            "variant": suffix,
+                        }
+
+        base_path = str(entry.get("base", "") or "")
+        base_source = str(entry.get("base_source", "") or "")
+        if base_path:
+            return {
+                "path": base_path,
+                "source": base_source,
+                "tag": tag,
+                "variant": "",
+            }
+
+    return {
+        "path": "",
+        "source": "",
+        "tag": "",
+        "variant": "",
+    }
+
+
 def merge_history_rows(
     primary_rows: Sequence[Dict[str, int | str]],
     fallback_rows: Sequence[Dict[str, int | str]],
@@ -644,6 +794,40 @@ def normalize_source_identity(url: str) -> str:
         return f"file|{file_name}"
     path_norm = path.replace("_", " ").strip().lower()
     return f"{parsed.netloc.lower()}|{path_norm}"
+
+
+def is_low_quality_local_raster(path: str) -> bool:
+    local_path = str(path or "").strip()
+    if not local_path:
+        return False
+
+    cached = LOWRES_LOCAL_CACHE.get(local_path)
+    if cached is not None:
+        return cached
+
+    ext = os.path.splitext(local_path)[1].lower()
+    if ext == ".svg":
+        LOWRES_LOCAL_CACHE[local_path] = False
+        return False
+    if ext not in VALID_EXTENSIONS:
+        LOWRES_LOCAL_CACHE[local_path] = False
+        return False
+    if Image is None:
+        LOWRES_LOCAL_CACHE[local_path] = False
+        return False
+    if not os.path.isfile(local_path):
+        LOWRES_LOCAL_CACHE[local_path] = False
+        return False
+
+    try:
+        with Image.open(local_path) as im:
+            width, height = im.size
+        lowres = width < LOCAL_MIN_RASTER_WIDTH or height < LOCAL_MIN_RASTER_HEIGHT
+    except Exception:
+        lowres = False
+
+    LOWRES_LOCAL_CACHE[local_path] = lowres
+    return lowres
 
 
 def commons_filepath_url(file_title: str) -> str:
@@ -966,7 +1150,41 @@ def existing_flag_files(stem_path: str) -> List[str]:
     return sorted(files)
 
 
+def pick_preferred_flag_file(paths: Sequence[str]) -> str:
+    if not paths:
+        return ""
+    ext_rank = {
+        ".svg": 0,
+        ".png": 1,
+        ".jpg": 2,
+        ".jpeg": 3,
+        ".webp": 4,
+        ".gif": 5,
+    }
+    return sorted(paths, key=lambda p: (ext_rank.get(os.path.splitext(p)[1].lower(), 99), p))[0]
+
+
+def get_base_flag_file_for_iso(iso: str) -> str:
+    stem = os.path.join(DEFAULT_OUT_DIR, iso)
+    candidates = existing_flag_files(stem)
+    return pick_preferred_flag_file(candidates)
+
+
 def download_flag(url: str, stem_path: str, timeout: int, retries: int = 3) -> Dict[str, str]:
+    local_candidate = str(url or "").strip()
+    if local_candidate and os.path.isfile(local_candidate):
+        ext = os.path.splitext(local_candidate)[1].lower()
+        if ext not in VALID_EXTENSIONS:
+            ext = ".png"
+        out_path = stem_path + ext
+        tmp_path = out_path + ".tmp"
+        shutil.copyfile(local_candidate, tmp_path)
+        os.replace(tmp_path, out_path)
+        return {
+            "path": out_path,
+            "source_url": local_candidate,
+        }
+
     last_error = None
     for attempt in range(retries):
         try:
@@ -1166,6 +1384,7 @@ def join_notes(*parts: str) -> str:
 
 
 def resolve_flag_sources(iso_codes: Sequence[str], timeout: int) -> Dict[str, Dict[str, str]]:
+    local_index = build_local_flag_index(LOCAL_FLAG_SOURCE_DIRS)
     local_current_by_iso = load_local_current_flags(LOCAL_FLAG_CURRENT_PATH)
     local_history_by_iso = load_local_flag_history(LOCAL_FLAG_HISTORY_PATH)
 
@@ -1174,9 +1393,10 @@ def resolve_flag_sources(iso_codes: Sequence[str], timeout: int) -> Dict[str, Di
 
     for iso in iso_codes:
         source_key = REQUEST_ISO_OVERRIDES.get(iso, iso)
+        local_folder_base = resolve_local_flag_source(iso, "demokracie", local_index)
         local_current = local_current_by_iso.get(iso) or local_current_by_iso.get(source_key)
         local_history = local_history_by_iso.get(iso) or local_history_by_iso.get(source_key) or []
-        if not local_current:
+        if not local_current and not local_folder_base.get("path"):
             need_url_codes.append(source_key)
         if not local_history:
             need_history_codes.append(source_key)
@@ -1187,16 +1407,23 @@ def resolve_flag_sources(iso_codes: Sequence[str], timeout: int) -> Dict[str, Di
     out: Dict[str, Dict[str, str]] = {}
     for iso in iso_codes:
         source_key = REQUEST_ISO_OVERRIDES.get(iso, iso)
-        source_url = local_current_by_iso.get(iso) or local_current_by_iso.get(source_key) or ""
+        local_folder_base = resolve_local_flag_source(iso, "demokracie", local_index)
+        source_url = str(local_folder_base.get("path", "") or "")
         note = ""
         local_history = list(local_history_by_iso.get(iso) or local_history_by_iso.get(source_key) or [])
         remote_history = list(history_by_iso.get(source_key, []))
         history = merge_history_rows(local_history, remote_history)
 
         if source_url:
-            note = "local_csv_current"
+            note = f"local_folder_current:{local_folder_base.get('source', '')}"
+            if local_folder_base.get("tag") and local_folder_base.get("tag") != iso:
+                note = join_notes(note, f"tag_alias:{iso}->{local_folder_base.get('tag')}")
         else:
-            source_url = iso_to_url.get(source_key, "")
+            source_url = local_current_by_iso.get(iso) or local_current_by_iso.get(source_key) or ""
+            if source_url:
+                note = "local_csv_current"
+            else:
+                source_url = iso_to_url.get(source_key, "")
 
         if source_url and source_key != iso:
             note = join_notes(note, f"iso_alias:{iso}->{source_key}")
@@ -1208,10 +1435,27 @@ def resolve_flag_sources(iso_codes: Sequence[str], timeout: int) -> Dict[str, Di
         if local_history:
             note = join_notes(note, "local_csv_history")
 
+        local_variants: Dict[str, str] = {}
+        local_variant_notes: Dict[str, str] = {}
+        for ideology in DEFAULT_VARIANT_IDEOLOGIES:
+            local_variant = resolve_local_flag_source(iso, ideology, local_index)
+            variant_path = str(local_variant.get("path", "") or "")
+            if not variant_path:
+                continue
+            local_variants[ideology] = variant_path
+            variant_note = f"local_folder_variant:{local_variant.get('source', '')}"
+            if local_variant.get("variant"):
+                variant_note = join_notes(variant_note, f"variant:{local_variant.get('variant')}")
+            if local_variant.get("tag") and local_variant.get("tag") != iso:
+                variant_note = join_notes(variant_note, f"tag_alias:{iso}->{local_variant.get('tag')}")
+            local_variant_notes[ideology] = variant_note
+
         out[iso] = {
             "source_url": source_url,
             "note": note,
             "history": history,
+            "local_variants": local_variants,
+            "local_variant_notes": local_variant_notes,
         }
 
     return out
@@ -1227,6 +1471,36 @@ def choose_ideology_source_url(
     foreign_tokens: Set[str],
     use_commons_search: bool,
 ) -> Tuple[str, str]:
+    local_variants = base_source.get("local_variants", {})
+    local_variant_notes = base_source.get("local_variant_notes", {})
+    lowres_local_variant_url = ""
+    lowres_local_variant_note = ""
+    if isinstance(local_variants, dict):
+        local_variant_url = str(local_variants.get(ideology, "") or "").strip()
+        if local_variant_url:
+            local_note = ""
+            if isinstance(local_variant_notes, dict):
+                local_note = str(local_variant_notes.get(ideology, "") or "").strip()
+
+            # For non-democracy ideologies, semantic correctness has priority.
+            # Use local HOI4/VIC2 ideology variants first even if low-res.
+            if ideology != "demokracie":
+                local_identity = normalize_source_identity(local_variant_url)
+                if local_identity in blocked_identities:
+                    return local_variant_url, join_notes(local_note, "local_duplicate_ok")
+                return local_variant_url, join_notes(local_note, "local_variant_primary")
+
+            # Very small local rasters (e.g. HOI4 82x52) are kept only as last-resort fallback.
+            if is_low_quality_local_raster(local_variant_url):
+                lowres_local_variant_url = local_variant_url
+                lowres_local_variant_note = join_notes(local_note, "local_lowres_deferred")
+            else:
+                # Local curated files are preferred even when repeated across ideologies.
+                local_identity = normalize_source_identity(local_variant_url)
+                if local_identity in blocked_identities:
+                    return local_variant_url, join_notes(local_note, "local_duplicate_ok")
+                return local_variant_url, join_notes(local_note)
+
     override_url = IDEOLOGY_FLAG_OVERRIDES.get((iso, ideology), "")
     override_identity = normalize_source_identity(override_url)
     if override_url and override_identity not in blocked_identities:
@@ -1235,10 +1509,21 @@ def choose_ideology_source_url(
     base_url = str(base_source.get("source_url", "") or "").strip()
     base_note = str(base_source.get("note", "") or "").strip()
     base_identity = normalize_source_identity(base_url)
+    base_parsed = urlparse(base_url)
+    base_is_local_file = bool(base_url) and base_parsed.scheme.lower() not in ("http", "https")
+    base_is_lowres_local = base_is_local_file and is_low_quality_local_raster(base_url)
 
     # Current/default regime should always use the current country flag.
     if ideology == "demokracie" and base_url and base_identity not in blocked_identities:
-        return base_url, join_notes("fallback_base_flag", base_note)
+        if not base_is_lowres_local:
+            return base_url, join_notes("fallback_base_flag", base_note)
+
+    # When a country has only a local base file (no ideology variants), keep local-first behavior.
+    if ideology != "demokracie" and base_is_local_file and base_url:
+        if not base_is_lowres_local:
+            if base_identity in blocked_identities:
+                return base_url, join_notes("fallback_base_local_duplicate_ok", base_note)
+            return base_url, join_notes("fallback_base_local", base_note)
 
     history_rows = base_source.get("history", [])
     if isinstance(history_rows, list):
@@ -1272,7 +1557,15 @@ def choose_ideology_source_url(
             return candidate_url, candidate_note
 
     if base_url and base_identity not in blocked_identities:
-        return base_url, join_notes("fallback_base_flag", base_note)
+        if not base_is_lowres_local:
+            return base_url, join_notes("fallback_base_flag", base_note)
+
+    # Before giving up, allow deferred low-resolution local variant.
+    if lowres_local_variant_url:
+        local_identity = normalize_source_identity(lowres_local_variant_url)
+        if local_identity in blocked_identities:
+            return lowres_local_variant_url, join_notes(lowres_local_variant_note, "local_duplicate_ok")
+        return lowres_local_variant_url, join_notes(lowres_local_variant_note, "fallback_lowres_local")
 
     # Step 5: if nothing else exists, allow historical duplicates as a last resort.
     if isinstance(history_rows, list):
@@ -1287,6 +1580,8 @@ def choose_ideology_source_url(
             return relaxed_duplicate_url, join_notes(relaxed_duplicate_note, "fallback_relaxed_duplicate")
 
     if base_url:
+        if base_is_lowres_local:
+            return base_url, join_notes("fallback_base_duplicate_ok", base_note, "fallback_lowres_local")
         return base_url, join_notes("fallback_base_duplicate_ok", base_note)
 
     # For non-democratic variants, prefer fictional generation over forced duplicate reuse.
@@ -1428,6 +1723,7 @@ def run_import_ideology_variants(
 
     for iso in iso_codes:
         base_source = source_by_iso.get(iso, {})
+        base_set_file = get_base_flag_file_for_iso(iso)
         country_label = country_label_by_iso.get(iso, "")
         current_tokens = set(tokenize_country_label(country_label))
         foreign_tokens: Set[str] = set()
@@ -1438,10 +1734,47 @@ def run_import_ideology_variants(
                 if tok not in current_tokens:
                     foreign_tokens.add(tok)
         used_identities: Set[str] = set()
+        downloaded_for_iso: List[str] = []
         for ideology in ideologies:
             step += 1
             stem = os.path.join(out_dir, f"{iso}__{ideology}")
             existing = existing_flag_files(stem)
+
+            # Democracy variant is anchored to the base flag set, not ideology search/history.
+            if ideology == "demokracie" and base_set_file and os.path.isfile(base_set_file):
+                try:
+                    copy_result = download_flag(base_set_file, stem, timeout=timeout)
+                    out_path = copy_result["path"]
+                    final_url = copy_result["source_url"]
+
+                    for old_path in existing_flag_files(stem):
+                        if old_path != out_path:
+                            try:
+                                os.remove(old_path)
+                            except OSError:
+                                pass
+
+                    downloaded += 1
+                    downloaded_for_iso.append(out_path)
+                    final_identity = normalize_source_identity(final_url)
+                    if final_identity:
+                        used_identities.add(final_identity)
+                    manifest_rows.append(
+                        {
+                            "country_iso3": iso,
+                            "ideology": ideology,
+                            "flag_file": os.path.basename(out_path),
+                            "source_url": final_url,
+                            "status": "downloaded",
+                            "note": "democracy_from_base_set",
+                        }
+                    )
+                    print(f"[FLAGS] {step}/{total} {iso} {ideology}: {os.path.basename(out_path)} (base set)")
+                    time.sleep(0.1)
+                    continue
+                except Exception as exc:
+                    # If base-set copy fails, continue into standard ideology flow.
+                    print(f"[FLAGS] {step}/{total} {iso} {ideology}: base-set copy failed ({exc}), trying standard flow")
 
             if existing and not force:
                 reused += 1
@@ -1536,6 +1869,7 @@ def run_import_ideology_variants(
                             pass
 
                 downloaded += 1
+                downloaded_for_iso.append(out_path)
                 final_identity = normalize_source_identity(final_url)
                 if final_identity:
                     used_identities.add(final_identity)
@@ -1551,6 +1885,90 @@ def run_import_ideology_variants(
                 )
                 print(f"[FLAGS] {step}/{total} {iso} {ideology}: {os.path.basename(out_path)}")
             except Exception as exc:
+                local_direct_fallback = ""
+                local_variants_map = base_source.get("local_variants", {})
+                if isinstance(local_variants_map, dict):
+                    local_direct_fallback = str(local_variants_map.get(ideology, "") or "").strip()
+
+                if not local_direct_fallback:
+                    base_local_candidate = str(base_source.get("source_url", "") or "").strip()
+                    parsed_base = urlparse(base_local_candidate)
+                    if base_local_candidate and parsed_base.scheme.lower() not in ("http", "https"):
+                        local_direct_fallback = base_local_candidate
+
+                if local_direct_fallback and os.path.isfile(local_direct_fallback):
+                    try:
+                        fallback_result = download_flag(local_direct_fallback, stem, timeout=timeout)
+                        out_path = fallback_result["path"]
+                        final_url = fallback_result["source_url"]
+
+                        for old_path in existing_flag_files(stem):
+                            if old_path != out_path:
+                                try:
+                                    os.remove(old_path)
+                                except OSError:
+                                    pass
+
+                        downloaded += 1
+                        downloaded_for_iso.append(out_path)
+                        final_identity = normalize_source_identity(final_url)
+                        if final_identity:
+                            used_identities.add(final_identity)
+                        manifest_rows.append(
+                            {
+                                "country_iso3": iso,
+                                "ideology": ideology,
+                                "flag_file": os.path.basename(out_path),
+                                "source_url": final_url,
+                                "status": "downloaded",
+                                "note": join_notes(source_note, "fallback_local_after_error", f"download_error:{exc}"),
+                            }
+                        )
+                        print(f"[FLAGS] {step}/{total} {iso} {ideology}: {os.path.basename(out_path)} (local fallback)")
+                        time.sleep(0.1)
+                        continue
+                    except Exception:
+                        pass
+
+                if downloaded_for_iso:
+                    try:
+                        fallback_src = downloaded_for_iso[-1]
+                        fallback_ext = os.path.splitext(fallback_src)[1].lower()
+                        if fallback_ext not in VALID_EXTENSIONS:
+                            fallback_ext = ".png"
+                        fallback_out = stem + fallback_ext
+                        fallback_tmp = fallback_out + ".tmp"
+                        shutil.copyfile(fallback_src, fallback_tmp)
+                        os.replace(fallback_tmp, fallback_out)
+
+                        for old_path in existing_flag_files(stem):
+                            if old_path != fallback_out:
+                                try:
+                                    os.remove(old_path)
+                                except OSError:
+                                    pass
+
+                        downloaded += 1
+                        downloaded_for_iso.append(fallback_out)
+                        fallback_identity = normalize_source_identity(fallback_out)
+                        if fallback_identity:
+                            used_identities.add(fallback_identity)
+                        manifest_rows.append(
+                            {
+                                "country_iso3": iso,
+                                "ideology": ideology,
+                                "flag_file": os.path.basename(fallback_out),
+                                "source_url": fallback_src,
+                                "status": "downloaded",
+                                "note": join_notes(source_note, f"fallback_local_copy:{os.path.basename(fallback_src)}", f"download_error:{exc}"),
+                            }
+                        )
+                        print(f"[FLAGS] {step}/{total} {iso} {ideology}: {os.path.basename(fallback_out)} (fallback copy)")
+                        time.sleep(0.1)
+                        continue
+                    except Exception:
+                        pass
+
                 if allow_fictional:
                     try:
                         out_path = write_fictional_flag_svg(stem, iso, ideology)
