@@ -920,3 +920,4 @@ id;ideology;ideology_source;ideology_year
 918;demokracie;manual_dataset;2024
 919;demokracie;manual_dataset;2024
 920;demokracie;manual_dataset;2024
+921;unknown;missing_country_ideology;

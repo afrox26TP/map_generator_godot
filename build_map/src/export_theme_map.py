@@ -366,3 +366,5 @@ def export_ideology_map(id_map, sea_regions, bounds, ideology_by_pid=None, max_p
 
     export_theme_map(id_map, bounds, sea_regions, "IdeologyMap.png", ideo_values)
     export_mode_folder("Ideology", "IdeologyMap", "Government type map")
+
+

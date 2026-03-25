@@ -920,3 +920,4 @@ id;gdp;gdp_per_capita;gdp_source;gdp_year
 918;18.07;0.000006;country_total_population_share;2024
 919;6.78;0.000006;country_total_population_share;2024
 920;5.27;0.000006;country_total_population_share;2024
+921;0.00;0.000000;missing_country_gdp;

@@ -920,3 +920,4 @@ province_id;province_name;country_iso3;country_name;population;gdp;gdp_per_capit
 918;Dnipropetrovsk;UKR;Ukraine;2981960;18.07;6e-06;country_total_population_share;2024
 919;Cherkasy;UKR;Ukraine;1117814;6.78;6e-06;country_total_population_share;2024
 920;Kirovohrad;UKR;Ukraine;870289;5.27;6e-06;country_total_population_share;2024
+921;Adam Epstein Ostrov;AEO;Adam Epstein Ostrov;1222302;0.0;0.0;missing_country_gdp;

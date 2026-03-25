@@ -35,6 +35,34 @@ New outputs in `build_map/src/opengs_export/`:
 - `GDPMap.png` (thematic map using computed GDP values)
 - `Provinces.txt` now appends province runtime fields after the original columns: `province_name`, `country_name`, `population`, `gdp`, `gdp_per_capita`, `is_capital`, `capital_city`, `neighbors`, `ideology`, `recruitable_population`
 
+## Country relationships input (data pipeline / Godot template)
+
+To override generated diplomatic relationships between state pairs, add
+`build_map/src/country_relationships_totals.csv`.
+
+You can start from `build_map/src/country_relationships_totals_starter.csv`.
+
+Supported columns:
+
+- `country_a` (preferred), or `iso3_a`, or `state_a`, or `country1`
+- `country_b` (preferred), or `iso3_b`, or `state_b`, or `country2`
+- `relationship_score` (range `-100..100`), or `score`
+- `year` (optional)
+- `source` (optional)
+
+Rules used by the exporter:
+
+- If a pair exists in the CSV, that score is used directly.
+- Missing pairs are generated from a heuristic combining shared borders, ideology compatibility, and GDP-per-capita gap.
+- A country relationship index is derived from neighboring countries for runtime/gameplay usage.
+
+New outputs in `build_map/src/opengs_export/`:
+
+- `Relationships.csv` (country pair relationship dataset)
+- `CountryRelationships.csv` (per-country relationship index)
+- `Relationships.txt` (runtime-friendly table)
+- `RelationshipsTemplate.json` (full state x state matrix template for Godot)
+
 ## Country flags download (ISO3-compatible)
 
 To download one flag per country using the same ISO3 codes used by this project (`CZE`, `DEU`, etc.), run:

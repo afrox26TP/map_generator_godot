@@ -18,6 +18,11 @@ DEBUG = True
 # PART 2.65 is experimental and may introduce visual artifacts in raster output.
 # Keep it disabled by default until fully tuned.
 ENABLE_INLAND_DISCONNECTED_MERGE = False
+CUSTOM_ISLAND_NAME = "Adam Epstein Ostrov"
+CUSTOM_ISLAND_ISO3 = "AEO"
+CUSTOM_ISLAND_LON = 18.0
+CUSTOM_ISLAND_LAT = 33.0
+CUSTOM_ISLAND_RADIUS_M = 28_000
 
 def debug(msg):
     if DEBUG:
@@ -191,6 +196,35 @@ def mark_capital_provinces(gdf):
         debug(f"Capital fallback unresolved countries: {', '.join(sorted(unresolved))}")
 
     return gdf
+
+
+def add_custom_island(gdf):
+    """Append a custom standalone island province to the final land dataset."""
+    gdf = gdf.copy()
+
+    island_geom = (
+        gpd.GeoSeries([Point(CUSTOM_ISLAND_LON, CUSTOM_ISLAND_LAT)], crs=4326)
+        .to_crs(gdf.crs)
+        .iloc[0]
+        .buffer(float(CUSTOM_ISLAND_RADIUS_M))
+    )
+
+    row = {col: None for col in gdf.columns}
+    row["geometry"] = island_geom
+
+    # Runtime/export pipeline fields.
+    row["country"] = CUSTOM_ISLAND_ISO3
+    row["admin"] = CUSTOM_ISLAND_NAME
+    row["name"] = CUSTOM_ISLAND_NAME
+    row["name_en"] = CUSTOM_ISLAND_NAME
+    row["type"] = "custom_island"
+    row["type_en"] = "custom island"
+    row["is_capital_province"] = 1
+    row["capital_city_name"] = CUSTOM_ISLAND_NAME
+
+    merged = pd.concat([gdf, gpd.GeoDataFrame([row], crs=gdf.crs)], ignore_index=True)
+    debug(f"Custom island added: {CUSTOM_ISLAND_NAME} ({CUSTOM_ISLAND_ISO3})")
+    return gpd.GeoDataFrame(merged, geometry="geometry", crs=gdf.crs)
 
 
 # -----------------------------
@@ -766,6 +800,9 @@ debug(
     "PART 2.7 DONE — one-neighbor merged provinces removed: "
     f"{before_single_neighbor_merge - len(land)}"
 )
+
+land = add_custom_island(land)
+land_union = unary_union(land.geometry)
 
 debug(f"PART 2.5 DONE ")
 

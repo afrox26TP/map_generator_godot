@@ -920,3 +920,4 @@ province_id;province_name;country_iso3;country_name;ideology;ideology_raw;ideolo
 918;Dnipropetrovsk;UKR;Ukraine;demokracie;demokracie;manual_dataset;2024
 919;Cherkasy;UKR;Ukraine;demokracie;demokracie;manual_dataset;2024
 920;Kirovohrad;UKR;Ukraine;demokracie;demokracie;manual_dataset;2024
+921;Adam Epstein Ostrov;AEO;Adam Epstein Ostrov;unknown;;missing_country_ideology;

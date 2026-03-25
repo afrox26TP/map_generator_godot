@@ -920,3 +920,4 @@ province_id;province_name;country;population;population_date;wikidata_uri;popula
 918;Dnipropetrovsk;Ukraine;2981960;2022-01-01;http://www.wikidata.org/entity/Q170672;matched_scaled_official
 919;Cherkasy;Ukraine;1117814;2022-01-01;http://www.wikidata.org/entity/Q161808;matched_scaled_official
 920;Kirovohrad;Ukraine;870289;2022-01-01;http://www.wikidata.org/entity/Q180981;matched_scaled_official
+921;Adam Epstein Ostrov;Adam Epstein Ostrov;1222302;2023-01-01;;imputed_global_density

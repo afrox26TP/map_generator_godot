@@ -16,6 +16,7 @@ from export_theme_map import (
 from import_population import generate_population_dataset
 from import_gdp import generate_gdp_dataset
 from import_ideology import canonical_ideology, generate_ideology_dataset
+from import_relationships import generate_relationship_dataset
 
 
 RECRUITABLE_SHARE_BY_IDEOLOGY = {
@@ -1118,6 +1119,27 @@ def write_ideology_txt(rows, path):
             f.write(f"{pid};{ideology};{source};{year}\n")
 
 
+def write_relationships_txt(rows, path):
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(
+            "country_a;country_b;relationship_score;is_border;"
+            "same_ideology;gdp_pc_ratio;relationship_source;relationship_year\n"
+        )
+        for r in rows:
+            a = str(r.get("country_a") or "")
+            b = str(r.get("country_b") or "")
+            score = float(r.get("relationship_score") or 0.0)
+            is_border = int(r.get("is_border") or 0)
+            same_ideology = int(r.get("same_ideology") or 0)
+            gdp_ratio = float(r.get("gdp_pc_ratio") or 0.0)
+            source = str(r.get("relationship_source") or "")
+            year = r.get("relationship_year") or ""
+            f.write(
+                f"{a};{b};{score:.2f};{is_border};{same_ideology};"
+                f"{gdp_ratio:.6f};{source};{year}\n"
+            )
+
+
 def export_population_lookup_json(land, province_colors, rows, path):
     """
     Export a Godot-ready lookup file:
@@ -1235,6 +1257,16 @@ def run_export(land, sea_regions):
             f"[WARN] Ideology missing for {len(ideology_missing)} countries "
             "(set to unknown there)."
         )
+
+    print("[EXPORT] Relationship CSV + map colors...")
+    _country_relationship_index, _relationship_pairs, relationship_rows = generate_relationship_dataset(
+        land,
+        ideology_rows=ideology_rows,
+        gdp_rows=gdp_rows,
+        out_path=os.path.join(OUT, "Relationships.csv"),
+        out_country_path=os.path.join(OUT, "CountryRelationships.csv"),
+    )
+    write_relationships_txt(relationship_rows, os.path.join(OUT, "Relationships.txt"))
 
     recruitable_values = _build_recruitable_population_lookup(
         land,
