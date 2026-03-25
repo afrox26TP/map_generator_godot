@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import re
 import unicodedata
 
-from shapely.geometry import box, Point, MultiPoint, Polygon, MultiPolygon
+from shapely.geometry import box, Point, MultiPoint, Polygon, MultiPolygon, LineString
 from shapely.ops import unary_union, voronoi_diagram
 import os, random
 
@@ -202,12 +202,89 @@ def add_custom_island(gdf):
     """Append a custom standalone island province to the final land dataset."""
     gdf = gdf.copy()
 
-    island_geom = (
+    center = (
         gpd.GeoSeries([Point(CUSTOM_ISLAND_LON, CUSTOM_ISLAND_LAT)], crs=4326)
         .to_crs(gdf.crs)
         .iloc[0]
-        .buffer(float(CUSTOM_ISLAND_RADIUS_M))
     )
+    cx = float(center.x)
+    cy = float(center.y)
+    scale = float(CUSTOM_ISLAND_RADIUS_M)
+
+    # EPSTEJN-shaped archipelago: disconnected letter islands, one province ID.
+    char_w = scale * 0.55
+    char_h = scale * 1.35
+    gap = scale * 0.20
+    stroke_w = scale * 0.12
+
+    def seg(origin_x, points):
+        px = [
+            (origin_x + (x * char_w), cy + (y * (char_h * 0.5)))
+            for x, y in points
+        ]
+        return LineString(px).buffer(stroke_w, cap_style=2, join_style=2)
+
+    total_width = (7 * char_w) + (6 * gap)
+    start_x = cx - (total_width * 0.5)
+
+    components = []
+
+    # E
+    ox = start_x + 0 * (char_w + gap)
+    components.append(unary_union([
+        seg(ox, [(0.0, 1.0), (0.0, -1.0)]),
+        seg(ox, [(0.0, 1.0), (1.0, 1.0)]),
+        seg(ox, [(0.0, 0.0), (0.72, 0.0)]),
+        seg(ox, [(0.0, -1.0), (1.0, -1.0)]),
+    ]).buffer(0))
+
+    # P
+    ox = start_x + 1 * (char_w + gap)
+    components.append(unary_union([
+        seg(ox, [(0.0, -1.0), (0.0, 1.0)]),
+        seg(ox, [(0.0, 1.0), (1.0, 1.0)]),
+        seg(ox, [(1.0, 1.0), (1.0, 0.0)]),
+        seg(ox, [(0.0, 0.0), (1.0, 0.0)]),
+    ]).buffer(0))
+
+    # S
+    ox = start_x + 2 * (char_w + gap)
+    components.append(seg(ox, [(1.0, 1.0), (0.0, 1.0), (0.0, 0.0), (1.0, 0.0), (1.0, -1.0), (0.0, -1.0)]).buffer(0))
+
+    # T
+    ox = start_x + 3 * (char_w + gap)
+    components.append(unary_union([
+        seg(ox, [(0.0, 1.0), (1.0, 1.0)]),
+        seg(ox, [(0.5, 1.0), (0.5, -1.0)]),
+    ]).buffer(0))
+
+    # E
+    ox = start_x + 4 * (char_w + gap)
+    components.append(unary_union([
+        seg(ox, [(0.0, 1.0), (0.0, -1.0)]),
+        seg(ox, [(0.0, 1.0), (1.0, 1.0)]),
+        seg(ox, [(0.0, 0.0), (0.72, 0.0)]),
+        seg(ox, [(0.0, -1.0), (1.0, -1.0)]),
+    ]).buffer(0))
+
+    # J
+    ox = start_x + 5 * (char_w + gap)
+    components.append(unary_union([
+        seg(ox, [(0.0, 1.0), (1.0, 1.0)]),
+        seg(ox, [(1.0, 1.0), (1.0, -0.65)]),
+        seg(ox, [(1.0, -1.0), (0.2, -1.0)]),
+        seg(ox, [(0.2, -1.0), (0.0, -0.7)]),
+    ]).buffer(0))
+
+    # N
+    ox = start_x + 6 * (char_w + gap)
+    components.append(unary_union([
+        seg(ox, [(0.0, -1.0), (0.0, 1.0)]),
+        seg(ox, [(0.0, 1.0), (1.0, -1.0)]),
+        seg(ox, [(1.0, -1.0), (1.0, 1.0)]),
+    ]).buffer(0))
+
+    island_geom = unary_union(components).buffer(0)
 
     row = {col: None for col in gdf.columns}
     row["geometry"] = island_geom

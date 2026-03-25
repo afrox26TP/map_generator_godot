@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600">
+  <rect width="900" height="600" fill="#f8f6ed"/>
+  <rect y="0" width="900" height="86" fill="#f8b5c6"/>
+  <rect y="86" width="900" height="86" fill="#ffffff"/>
+  <rect y="172" width="900" height="86" fill="#f2c76e"/>
+  <rect y="258" width="900" height="86" fill="#ffffff"/>
+  <rect y="344" width="900" height="86" fill="#7bc7df"/>
+  <rect y="430" width="900" height="86" fill="#5a3a2a"/>
+  <rect y="516" width="900" height="84" fill="#111111"/>
+  <g fill="#8a5a3c" opacity="0.95">
+    <ellipse cx="450" cy="328" rx="90" ry="78"/>
+    <ellipse cx="360" cy="256" rx="34" ry="42"/>
+    <ellipse cx="422" cy="226" rx="34" ry="42"/>
+    <ellipse cx="478" cy="226" rx="34" ry="42"/>
+    <ellipse cx="540" cy="256" rx="34" ry="42"/>
+  </g>
+  <text x="450" y="560" text-anchor="middle" font-family="Verdana" font-size="48" fill="#ffffff" font-weight="700">AEO</text>
+</svg>

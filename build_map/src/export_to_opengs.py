@@ -30,6 +30,20 @@ PROVINCE_RENDER_SUPERSAMPLE = 2
 THIN_BRIDGE_MAX_WIDTH_PX = 4
 
 
+def _write_custom_island_flag():
+    """Write a custom furry-themed flag for the AEO custom island."""
+    flags_dir = os.path.join(OUT, "Flags")
+    os.makedirs(flags_dir, exist_ok=True)
+
+    svg_path = os.path.join(flags_dir, "AEO.svg")
+    svg = """<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"900\" height=\"600\" viewBox=\"0 0 900 600\">\n  <rect width=\"900\" height=\"600\" fill=\"#f8f6ed\"/>\n  <rect y=\"0\" width=\"900\" height=\"86\" fill=\"#f8b5c6\"/>\n  <rect y=\"86\" width=\"900\" height=\"86\" fill=\"#ffffff\"/>\n  <rect y=\"172\" width=\"900\" height=\"86\" fill=\"#f2c76e\"/>\n  <rect y=\"258\" width=\"900\" height=\"86\" fill=\"#ffffff\"/>\n  <rect y=\"344\" width=\"900\" height=\"86\" fill=\"#7bc7df\"/>\n  <rect y=\"430\" width=\"900\" height=\"86\" fill=\"#5a3a2a\"/>\n  <rect y=\"516\" width=\"900\" height=\"84\" fill=\"#111111\"/>\n  <g fill=\"#8a5a3c\" opacity=\"0.95\">\n    <ellipse cx=\"450\" cy=\"328\" rx=\"90\" ry=\"78\"/>\n    <ellipse cx=\"360\" cy=\"256\" rx=\"34\" ry=\"42\"/>\n    <ellipse cx=\"422\" cy=\"226\" rx=\"34\" ry=\"42\"/>\n    <ellipse cx=\"478\" cy=\"226\" rx=\"34\" ry=\"42\"/>\n    <ellipse cx=\"540\" cy=\"256\" rx=\"34\" ry=\"42\"/>\n  </g>\n  <text x=\"450\" y=\"560\" text-anchor=\"middle\" font-family=\"Verdana\" font-size=\"48\" fill=\"#ffffff\" font-weight=\"700\">AEO</text>\n</svg>\n"""
+
+    with open(svg_path, "w", encoding="utf-8") as f:
+        f.write(svg)
+
+    print("[EXPORT] Custom flag written: Flags/AEO.svg")
+
+
 # --------------------------------------------------------
 # UNIQUE COLOR GENERATOR (no duplication possible)
 # --------------------------------------------------------
@@ -1321,5 +1335,6 @@ def run_export(land, sea_regions):
 
     export_states(land)
     export_state_files(land)
+    _write_custom_island_flag()
 
     print("[EXPORT] EXPORT COMPLETE")
