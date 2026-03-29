@@ -1,0 +1,6 @@
+{
+    "id": "resources",
+    "name": "Resources",
+    "description": "Province resource deposits map",
+    "map_file": "ResourcesMap.png"
+}

@@ -308,6 +308,132 @@ def export_recruitable_population_map(
     )
 
 
+def export_happiness_map(
+    id_map,
+    sea_regions,
+    bounds,
+    happiness=None,
+    max_pid=None,
+):
+    max_pid = max_pid if max_pid is not None else int(id_map.max())
+
+    happiness_values = None
+    if happiness:
+        metric = {
+            pid: max(0.0, min(100.0, float(happiness.get(pid, 0) or 0.0)))
+            for pid in range(max_pid + 1)
+        }
+
+        def lerp(a, b, t):
+            return int(a + (b - a) * t)
+
+        low = (184, 36, 44)    # unhappy red
+        mid = (247, 197, 72)   # neutral amber
+        high = (36, 148, 82)   # happy green
+
+        happiness_values = {}
+        for pid in range(max_pid + 1):
+            score = metric.get(pid, 0.0)
+            t = score / 100.0
+
+            if t <= 0.5:
+                t2 = t / 0.5
+                happiness_values[pid] = (
+                    lerp(low[0], mid[0], t2),
+                    lerp(low[1], mid[1], t2),
+                    lerp(low[2], mid[2], t2),
+                )
+            else:
+                t2 = (t - 0.5) / 0.5
+                happiness_values[pid] = (
+                    lerp(mid[0], high[0], t2),
+                    lerp(mid[1], high[1], t2),
+                    lerp(mid[2], high[2], t2),
+                )
+
+    if happiness_values is None:
+        happiness_values = {
+            pid: (
+                random.randint(120, 240),
+                random.randint(120, 220),
+                random.randint(60, 180),
+            )
+            for pid in range(max_pid + 1)
+        }
+
+    export_theme_map(id_map, bounds, sea_regions, "HappinessMap.png", happiness_values)
+    export_mode_folder("Happiness", "HappinessMap", "Population happiness map")
+
+
+TERRAIN_COLORS = {
+    "city": (130, 130, 130),
+    "plains": (199, 216, 133),
+    "forest": (57, 122, 66),
+    "hills": (157, 171, 105),
+    "mountains": (116, 102, 90),
+}
+
+
+def export_terrain_map(
+    id_map,
+    sea_regions,
+    bounds,
+    terrain_by_pid=None,
+    max_pid=None,
+):
+    max_pid = max_pid if max_pid is not None else int(id_map.max())
+
+    terrain_values = {}
+    for pid in range(max_pid + 1):
+        terrain = "plains"
+        if terrain_by_pid:
+            terrain = str(terrain_by_pid.get(pid, "plains") or "plains").strip().lower()
+        terrain_values[pid] = TERRAIN_COLORS.get(terrain, TERRAIN_COLORS["plains"])
+
+    export_theme_map(id_map, bounds, sea_regions, "TerrainMap.png", terrain_values)
+    export_mode_folder("Terrain", "TerrainMap", "Province terrain type map")
+
+
+RESOURCE_COLORS = {
+    "none": (120, 120, 120),
+    "grain": (214, 192, 108),
+    "timber": (63, 132, 74),
+    "iron": (121, 126, 139),
+    "coal": (72, 72, 78),
+    "oil": (32, 40, 52),
+    "gas": (106, 167, 201),
+    "gold": (214, 171, 52),
+    "uranium": (120, 196, 92),
+}
+
+
+def export_resources_map(
+    id_map,
+    sea_regions,
+    bounds,
+    resources_by_pid=None,
+    max_pid=None,
+):
+    max_pid = max_pid if max_pid is not None else int(id_map.max())
+
+    resource_values = {}
+    for pid in range(max_pid + 1):
+        record = (resources_by_pid or {}).get(pid, {})
+        resource_type = str(record.get("resource_type") or "none").strip().lower()
+        resource_amount = int(record.get("resource_amount") or 0)
+        base_color = RESOURCE_COLORS.get(resource_type, RESOURCE_COLORS["none"])
+
+        # Encode deposit strength by gentle brightness shift.
+        factor = 0.78 + (max(0, min(100, resource_amount)) / 100.0) * 0.32
+        resource_values[pid] = tuple(
+            max(0, min(255, int(channel * factor)))
+            for channel in base_color
+        )
+
+    export_theme_map(id_map, bounds, sea_regions, "ResourcesMap.png", resource_values)
+    export_mode_folder("Resources", "ResourcesMap", "Province resource deposits map")
+
+
 IDEOLOGY_COLORS = {
     "demokracie": (64, 122, 205),
     "kralovstvi": (212, 175, 55),

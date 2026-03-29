@@ -33,7 +33,7 @@ New outputs in `build_map/src/opengs_export/`:
 - `GDP.csv` (province GDP dataset)
 - `GDP.txt` (runtime-friendly GDP table)
 - `GDPMap.png` (thematic map using computed GDP values)
-- `Provinces.txt` now appends province runtime fields after the original columns: `province_name`, `country_name`, `population`, `gdp`, `gdp_per_capita`, `is_capital`, `capital_city`, `neighbors`, `ideology`, `recruitable_population`
+- `Provinces.txt` now appends province runtime fields after the original columns: `province_name`, `country_name`, `population`, `gdp`, `gdp_per_capita`, `is_capital`, `capital_city`, `neighbors`, `ideology`, `recruitable_population`, `happiness`, `terrain`, `terrain_index`, `resource_type`, `resource_index`, `resource_amount`
 
 ## Country relationships input (data pipeline / Godot template)
 

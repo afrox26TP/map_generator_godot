@@ -12,6 +12,9 @@ from export_theme_map import (
     export_population_map,
     export_recruitable_population_map,
     export_ideology_map,
+    export_happiness_map,
+    export_terrain_map,
+    export_resources_map,
 )
 from import_population import generate_population_dataset
 from import_gdp import generate_gdp_dataset
@@ -887,6 +890,253 @@ def _build_recruitable_population_lookup(
     return lookup
 
 
+def _normalize_happiness_ideology(value):
+    ideology = canonical_ideology(value)
+    if ideology == "kralostvi":
+        return "kralovstvi"
+    return ideology
+
+
+def _build_happiness_lookup(land, gdp_rows=None, ideology_rows=None):
+    """Build province happiness score (0..100), currently country-level and copied to provinces."""
+    country_gdp_pc = {}
+    for row in gdp_rows or []:
+        country = str(row.get("country_iso3") or "").strip().upper()
+        if not country:
+            continue
+
+        gdp_pc = float(row.get("gdp_per_capita") or 0.0)
+        if gdp_pc > 0:
+            country_gdp_pc[country] = gdp_pc
+
+    ideology_counts = {}
+    for row in ideology_rows or []:
+        country = str(row.get("country_iso3") or "").strip().upper()
+        if not country:
+            continue
+
+        ideology = _normalize_happiness_ideology(row.get("ideology"))
+        ideology_counts.setdefault(country, {})
+        ideology_counts[country][ideology] = ideology_counts[country].get(ideology, 0) + 1
+
+    country_ideology = {}
+    for country, counts in ideology_counts.items():
+        country_ideology[country] = max(counts.items(), key=lambda x: x[1])[0]
+
+    gdp_values = list(country_gdp_pc.values())
+    gdp_min = min(gdp_values) if gdp_values else 0.0
+    gdp_max = max(gdp_values) if gdp_values else 0.0
+    gdp_span = gdp_max - gdp_min
+
+    ideology_bonus = {
+        "demokracie": 20,
+        "kralovstvi": 10,
+        "autokracie": -10,
+        "unknown": 0,
+    }
+
+    country_happiness = {}
+    for country in set(list(country_gdp_pc.keys()) + list(country_ideology.keys())):
+        gdp_pc = country_gdp_pc.get(country, 0.0)
+        if gdp_span > 0 and gdp_pc > 0:
+            gdp_score = int(round(30.0 * ((gdp_pc - gdp_min) / gdp_span)))
+        else:
+            gdp_score = 15
+
+        ideology = country_ideology.get(country, "unknown")
+        score = 40 + ideology_bonus.get(ideology, 0) + gdp_score
+        country_happiness[country] = max(0, min(100, int(round(score))))
+
+    province_happiness = {}
+    for pid, row in land.iterrows():
+        pid_i = int(pid)
+        country = str(row.get("country") or "").strip().upper()
+        province_happiness[pid_i] = country_happiness.get(country, 50)
+
+    return province_happiness
+
+
+TERRAIN_INDEX = {
+    "sea": 0,
+    "city": 1,
+    "plains": 2,
+    "forest": 3,
+    "hills": 4,
+    "mountains": 5,
+}
+
+
+RESOURCE_INDEX = {
+    "none": 0,
+    "grain": 1,
+    "timber": 2,
+    "iron": 3,
+    "coal": 4,
+    "oil": 5,
+    "gas": 6,
+    "gold": 7,
+    "uranium": 8,
+}
+
+
+def _terrain_from_name(name_text):
+    text = str(name_text or "").lower()
+    mountain_markers = (
+        "alps",
+        "alpine",
+        "mount",
+        "mountain",
+        "berg",
+        "highland",
+        "pyren",
+        "carpath",
+        "tatra",
+        "sierra",
+        "dinar",
+        "jura",
+        "balkan",
+    )
+    forest_markers = (
+        "forest",
+        "wood",
+        "wald",
+        "taiga",
+        "boreal",
+    )
+
+    if any(marker in text for marker in mountain_markers):
+        return "mountains"
+    if any(marker in text for marker in forest_markers):
+        return "forest"
+    return ""
+
+
+def _build_terrain_lookup(land, population_rows=None):
+    """Build terrain category per province with deterministic heuristics."""
+    population_by_pid = _build_population_export_lookup(population_rows)
+    terrain_by_pid = {}
+
+    for pid, land_row in land.iterrows():
+        pid_i = int(pid)
+        population = int(population_by_pid.get(pid_i, {}).get("population") or 0)
+        area_km2 = float(land_row.geometry.area / 1_000_000) if land_row.geometry is not None else 0.0
+        density = (population / area_km2) if area_km2 > 0 else 0.0
+
+        province_name = str(land_row.get("name_en") or land_row.get("name") or "")
+        type_name = str(land_row.get("type_en") or land_row.get("type") or "")
+        from_name = _terrain_from_name(f"{province_name} {type_name}")
+
+        if _row_is_capital(land_row) or density >= 1200:
+            terrain = "city"
+        elif from_name:
+            terrain = from_name
+        elif density <= 35 and area_km2 >= 12000:
+            terrain = "forest"
+        elif density <= 120:
+            terrain = "hills"
+        else:
+            terrain = "plains"
+
+        terrain_by_pid[pid_i] = terrain
+
+    return terrain_by_pid
+
+
+def _build_resource_lookup(
+    land,
+    population_rows=None,
+    gdp_rows=None,
+    terrain_by_pid=None,
+):
+    """Build deterministic resource deposits per province."""
+    population_by_pid = _build_population_export_lookup(population_rows)
+    gdp_by_pid = _build_gdp_export_lookup(gdp_rows)
+    if terrain_by_pid is None:
+        terrain_by_pid = _build_terrain_lookup(land, population_rows=population_rows)
+
+    base_amount = {
+        "grain": 45,
+        "timber": 50,
+        "iron": 42,
+        "coal": 40,
+        "oil": 32,
+        "gas": 30,
+        "gold": 18,
+        "uranium": 12,
+        "none": 0,
+    }
+
+    resources_by_pid = {}
+
+    for pid, land_row in land.iterrows():
+        pid_i = int(pid)
+        terrain = str(terrain_by_pid.get(pid_i, "plains") or "plains").strip().lower()
+        pop = int(population_by_pid.get(pid_i, {}).get("population") or 0)
+        gdp_pc = float(gdp_by_pid.get(pid_i, {}).get("gdp_per_capita") or 0.0)
+
+        rng = random.Random((pid_i + 1) * 977)
+        roll = rng.random()
+
+        if terrain == "forest":
+            resource_type = "timber"
+        elif terrain == "mountains":
+            if roll < 0.45:
+                resource_type = "iron"
+            elif roll < 0.75:
+                resource_type = "coal"
+            elif roll < 0.92:
+                resource_type = "gold"
+            else:
+                resource_type = "uranium"
+        elif terrain == "hills":
+            if roll < 0.45:
+                resource_type = "iron"
+            elif roll < 0.75:
+                resource_type = "coal"
+            else:
+                resource_type = "grain"
+        elif terrain == "city":
+            if roll < 0.40:
+                resource_type = "coal"
+            elif roll < 0.70:
+                resource_type = "iron"
+            elif roll < 0.90:
+                resource_type = "gas"
+            else:
+                resource_type = "oil"
+        else:
+            if roll < 0.62:
+                resource_type = "grain"
+            elif roll < 0.80:
+                resource_type = "oil"
+            elif roll < 0.93:
+                resource_type = "gas"
+            else:
+                resource_type = "iron"
+
+        pop_bonus = min(20, int(round(np.log10(max(pop, 1)) * 3.0)))
+        gdp_bonus = min(15, int(round((gdp_pc * 1_000_000.0) / 6.0)))
+        terrain_bonus = {
+            "mountains": 8,
+            "hills": 4,
+            "forest": 5,
+            "plains": 2,
+            "city": 1,
+        }.get(terrain, 2)
+        jitter = rng.randint(-6, 6)
+
+        amount = base_amount.get(resource_type, 0) + pop_bonus + gdp_bonus + terrain_bonus + jitter
+        amount = max(1, min(100, int(amount)))
+
+        resources_by_pid[pid_i] = {
+            "resource_type": resource_type,
+            "resource_index": RESOURCE_INDEX.get(resource_type, 0),
+            "resource_amount": amount,
+        }
+
+    return resources_by_pid
+
+
 def _rgb_tuple_to_key(color):
     r, g, b = color
     return int(r) | (int(g) << 8) | (int(b) << 16)
@@ -978,6 +1228,9 @@ def export_provinces_txt(
     sea_color_to_id=None,
     ideology_rows=None,
     recruitable_by_pid=None,
+    happiness_by_pid=None,
+    terrain_by_pid=None,
+    resources_by_pid=None,
 ):
 
     out_path = os.path.join(OUT, "Provinces.txt")
@@ -1001,6 +1254,51 @@ def export_provinces_txt(
             int(pid): max(int(value or 0), 0)
             for pid, value in recruitable_by_pid.items()
         }
+
+    if happiness_by_pid is None:
+        happiness_by_pid = _build_happiness_lookup(
+            land,
+            gdp_rows=gdp_rows,
+            ideology_rows=ideology_rows,
+        )
+    else:
+        happiness_by_pid = {
+            int(pid): max(0, min(100, int(value or 0)))
+            for pid, value in happiness_by_pid.items()
+        }
+
+    if terrain_by_pid is None:
+        terrain_by_pid = _build_terrain_lookup(
+            land,
+            population_rows=population_rows,
+        )
+    else:
+        terrain_by_pid = {
+            int(pid): str(value or "plains").strip().lower()
+            for pid, value in terrain_by_pid.items()
+        }
+
+    if resources_by_pid is None:
+        resources_by_pid = _build_resource_lookup(
+            land,
+            population_rows=population_rows,
+            gdp_rows=gdp_rows,
+            terrain_by_pid=terrain_by_pid,
+        )
+    else:
+        norm_resources = {}
+        for pid, value in resources_by_pid.items():
+            pid_i = int(pid)
+            record = value or {}
+            resource_type = str(record.get("resource_type") or "none").strip().lower()
+            resource_index = RESOURCE_INDEX.get(resource_type, 0)
+            resource_amount = max(0, min(100, int(record.get("resource_amount") or 0)))
+            norm_resources[pid_i] = {
+                "resource_type": resource_type,
+                "resource_index": resource_index,
+                "resource_amount": resource_amount,
+            }
+        resources_by_pid = norm_resources
 
     rows = []
     country_capitals = _build_country_capital_lookup(land)
@@ -1060,6 +1358,13 @@ def export_provinces_txt(
         neighbor_ids = ",".join(str(n) for n in neighbors_by_pid.get(int(pid), []))
         ideology = ideology_by_pid.get(int(pid), "unknown")
         recruitable_population = int(recruitable_by_pid.get(int(pid), 0) or 0)
+        happiness = int(happiness_by_pid.get(int(pid), 50) or 50)
+        terrain = terrain_by_pid.get(int(pid), "plains")
+        terrain_index = TERRAIN_INDEX.get(terrain, TERRAIN_INDEX["plains"])
+        resource_entry = resources_by_pid.get(int(pid), {})
+        resource_type = str(resource_entry.get("resource_type") or "none")
+        resource_index = int(resource_entry.get("resource_index") or RESOURCE_INDEX["none"])
+        resource_amount = int(resource_entry.get("resource_amount") or 0)
 
         ys, xs = np.where(id_map == pid)
         if len(xs) == 0:
@@ -1071,7 +1376,8 @@ def export_provinces_txt(
         rows.append(
             f"{pid};{r};{g};{b};{typ};{st};{owner};{controller};{cx};{cy};"
             f"{province_name};{country_name};{population};{gdp_value:.2f};{gdp_per_capita:.6f};"
-            f"{is_capital};{capital_city};{neighbor_ids};{ideology};{recruitable_population}"
+            f"{is_capital};{capital_city};{neighbor_ids};{ideology};{recruitable_population};{happiness};"
+            f"{terrain};{terrain_index};{resource_type};{resource_index};{resource_amount}"
         )
 
     for col, sea_id in sea_items:
@@ -1079,14 +1385,15 @@ def export_provinces_txt(
         neighbor_ids = ",".join(str(n) for n in neighbors_by_pid.get(int(sea_id), []))
         rows.append(
             f"{sea_id};{r};{g};{b};sea;SEA;SEA;SEA;0;0;"
-            f";SEA;0;0.00;0.000000;0;;{neighbor_ids};unknown;0"
+            f";SEA;0;0.00;0.000000;0;;{neighbor_ids};unknown;0;0;sea;0;none;0;0"
         )
 
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(
             "id;R;G;B;type;state;owner;controller;x;y;"
             "province_name;country_name;population;gdp;gdp_per_capita;"
-            "is_capital;capital_city;neighbors;ideology;recruitable_population\n"
+            "is_capital;capital_city;neighbors;ideology;recruitable_population;happiness;"
+            "terrain;terrain_index;resource_type;resource_index;resource_amount\n"
         )
         for r in rows:
             f.write(r + "\n")
@@ -1152,6 +1459,17 @@ def write_relationships_txt(rows, path):
                 f"{a};{b};{score:.2f};{is_border};{same_ideology};"
                 f"{gdp_ratio:.6f};{source};{year}\n"
             )
+
+
+def write_resources_csv(resources_by_pid, path):
+    with open(path, "w", encoding="utf-8") as f:
+        f.write("province_id;resource_type;resource_index;resource_amount\n")
+        for pid in sorted(resources_by_pid.keys()):
+            record = resources_by_pid.get(pid, {})
+            resource_type = str(record.get("resource_type") or "none")
+            resource_index = int(record.get("resource_index") or 0)
+            resource_amount = int(record.get("resource_amount") or 0)
+            f.write(f"{int(pid)};{resource_type};{resource_index};{resource_amount}\n")
 
 
 def export_population_lookup_json(land, province_colors, rows, path):
@@ -1287,6 +1605,24 @@ def run_export(land, sea_regions):
         population_rows=rows,
         ideology_rows=ideology_rows,
     )
+    happiness_values = _build_happiness_lookup(
+        land,
+        gdp_rows=gdp_rows,
+        ideology_rows=ideology_rows,
+    )
+    terrain_values = _build_terrain_lookup(
+        land,
+        population_rows=rows,
+    )
+    resources_values = _build_resource_lookup(
+        land,
+        population_rows=rows,
+        gdp_rows=gdp_rows,
+        terrain_by_pid=terrain_values,
+    )
+
+    print("[EXPORT] Resources CSV...")
+    write_resources_csv(resources_values, os.path.join(OUT, "Resources.csv"))
 
     print("[EXPORT] Provinces.txt...")
     export_provinces_txt(
@@ -1298,6 +1634,9 @@ def run_export(land, sea_regions):
         sea_color_to_id=sea_color_to_id,
         ideology_rows=ideology_rows,
         recruitable_by_pid=recruitable_values,
+        happiness_by_pid=happiness_values,
+        terrain_by_pid=terrain_values,
+        resources_by_pid=resources_values,
     )
 
     print("[EXPORT] GDP Map...")
@@ -1330,6 +1669,33 @@ def run_export(land, sea_regions):
         sea_regions,
         bounds,
         recruitable_population=recruitable_values,
+        max_pid=max_pid,
+    )
+
+    print("[EXPORT] Happiness Map...")
+    export_happiness_map(
+        id_map,
+        sea_regions,
+        bounds,
+        happiness=happiness_values,
+        max_pid=max_pid,
+    )
+
+    print("[EXPORT] Terrain Map...")
+    export_terrain_map(
+        id_map,
+        sea_regions,
+        bounds,
+        terrain_by_pid=terrain_values,
+        max_pid=max_pid,
+    )
+
+    print("[EXPORT] Resources Map...")
+    export_resources_map(
+        id_map,
+        sea_regions,
+        bounds,
+        resources_by_pid=resources_values,
         max_pid=max_pid,
     )
 
