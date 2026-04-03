@@ -1,0 +1,248 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mediterranean Sea",
+        "id": 1
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-6, 30], [-4, 30], [0, 30.5], [5, 31], [10, 30], [15, 32], [20, 34], [25, 35],
+          [30, 34], [35, 32], [40, 31], [42, 32], [42, 36], [40, 37], [35, 38], [30, 39],
+          [25, 40], [20, 41], [15, 41], [10, 41], [5, 40], [0, 38], [-5, 36], [-6, 32], [-6, 30]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Aegean Sea",
+        "id": 2
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [20.8, 35.2], [28.5, 35.0], [28.3, 41.5], [20.5, 41.2], [20.8, 35.2]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ionian Sea",
+        "id": 3
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [16.5, 35.5], [20.5, 35.2], [20.3, 40.5], [16.3, 40.2], [16.5, 35.5]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tyrrhenian Sea",
+        "id": 4
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [10.8, 39.8], [15.8, 39.5], [15.5, 44.0], [10.5, 44.0], [10.8, 39.8]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ligurian Sea",
+        "id": 5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [6.5, 42.0], [10.5, 41.8], [10.3, 44.2], [6.3, 44.0], [6.5, 42.0]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "North Sea",
+        "id": 6
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-2.5, 50.0], [2.5, 50.2], [2.3, 56.8], [0.8, 57.5], [-0.5, 57.8], 
+          [-2.0, 57.2], [-2.5, 50.0]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Baltic Sea",
+        "id": 7
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [10.0, 54.0], [28.5, 54.2], [28.3, 66.0], [10.2, 65.8], [10.0, 54.0]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Atlantic Ocean - Southwest",
+        "id": 8
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-25.0, 30.0], [-6.0, 30.0], [-5.5, 36.0], [-15.0, 38.5], [-25.0, 35.0], 
+          [-25.0, 30.0]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Atlantic Ocean - West",
+        "id": 9
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-25.0, 36.0], [-6.0, 36.0], [-2.0, 50.0], [-15.0, 55.0], [-25.0, 50.0], 
+          [-25.0, 36.0]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Norwegian Sea",
+        "id": 10
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-0.8, 57.5], [0.5, 58.5], [10.0, 60.5], [10.2, 70.0], [4.0, 71.5], 
+          [-4.5, 69.0], [-2.0, 65.0], [-0.8, 57.5]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Greenland Sea",
+        "id": 11
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-18.0, 65.0], [-4.5, 69.0], [4.0, 71.5], [10.0, 75.0], [-5.0, 78.0], 
+          [-15.0, 75.0], [-18.0, 65.0]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Arctic Ocean",
+        "id": 12
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-25.0, 75.0], [10.0, 75.0], [40.0, 80.0], [50.0, 82.0], [30.0, 84.5], 
+          [0.0, 84.0], [-20.0, 80.0], [-25.0, 75.0]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Black Sea",
+        "id": 13
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [27.3, 40.5], [42.0, 40.3], [41.8, 46.8], [27.1, 46.5], [27.3, 40.5]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Adriatic Sea",
+        "id": 14
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [13.5, 40.5], [20.0, 40.3], [19.8, 45.8], [13.3, 45.5], [13.5, 40.5]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Azov Sea",
+        "id": 15
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [33.5, 45.0], [39.0, 44.8], [38.8, 47.5], [33.3, 47.2], [33.5, 45.0]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bay of Biscay",
+        "id": 16
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-6.5, 43.0], [-2.0, 42.5], [-1.5, 48.0], [-5.5, 48.5], [-6.5, 43.0]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Celtic Sea",
+        "id": 17
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-8.0, 48.5], [-2.5, 48.8], [-2.0, 50.5], [-7.0, 50.8], [-8.0, 48.5]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Atlantic Ocean - Northwest",
+        "id": 18
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-25.0, 50.0], [-15.0, 55.0], [-10.0, 60.0], [-20.0, 65.0], [-25.0, 60.0], 
+          [-25.0, 50.0]
+        ]]
+      }
+    }
+  ]
+}

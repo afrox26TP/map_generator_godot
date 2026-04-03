@@ -1331,7 +1331,18 @@ def export_provinces_txt(
         for col, sea_id in sea_items
     }
     full_id_map = _build_full_id_map_with_sea(id_map, arr, resolved_sea_color_to_id)
+    
+    # DEBUG: Check if there are any unmapped sea pixels (ID = -1)
+    unmapped_sea_pixels = np.sum(full_id_map < 0)
+    if unmapped_sea_pixels > 0:
+        print(f"[WARNING] {unmapped_sea_pixels} sea pixesl remained unmapped after sea ID assignment!")
+        print(f"[WARNING] This may cause provinces touching this unmapped sea to have missing neighbors.")
+    
     neighbors_by_pid = _build_neighbor_lookup(full_id_map)
+
+    # Build set of ALL valid province IDs (land + sea) for neighbor filtering
+    valid_sea_ids = {int(s_id) for _, s_id in sea_items}
+    all_valid_pids = set(pid_to_color.keys()) | valid_sea_ids
 
     for pid in range(max_pid + 1):
         if pid in pid_to_color:
@@ -1355,7 +1366,10 @@ def export_provinces_txt(
         capital_city = ""
         if is_capital:
             capital_city = _sanitize_txt_field(_row_capital_city_name(land_row, country_capitals))
-        neighbor_ids = ",".join(str(n) for n in neighbors_by_pid.get(int(pid), []))
+        # Filter neighbors to include both land (pid_to_color) and sea provinces (valid_sea_ids)
+        all_neighbors = neighbors_by_pid.get(int(pid), [])
+        valid_neighbors = [n for n in all_neighbors if n in all_valid_pids]
+        neighbor_ids = ",".join(str(n) for n in valid_neighbors)
         ideology = ideology_by_pid.get(int(pid), "unknown")
         recruitable_population = int(recruitable_by_pid.get(int(pid), 0) or 0)
         happiness = int(happiness_by_pid.get(int(pid), 50) or 50)
@@ -1382,7 +1396,10 @@ def export_provinces_txt(
 
     for col, sea_id in sea_items:
         r, g, b = col
-        neighbor_ids = ",".join(str(n) for n in neighbors_by_pid.get(int(sea_id), []))
+        # Filter neighbors to include only valid provinces (land + sea)
+        all_neighbors = neighbors_by_pid.get(int(sea_id), [])
+        valid_neighbors = [n for n in all_neighbors if n in all_valid_pids]
+        neighbor_ids = ",".join(str(n) for n in valid_neighbors)
         rows.append(
             f"{sea_id};{r};{g};{b};sea;SEA;SEA;SEA;0;0;"
             f";SEA;0;0.00;0.000000;0;;{neighbor_ids};unknown;0;0;sea;0;none;0;0"
@@ -1398,6 +1415,52 @@ def export_provinces_txt(
         for r in rows:
             f.write(r + "\n")
 
+    # Debug output: check for provinces with no neighbors or invalid neighbors
+    provinces_without_neighbors = []
+    provinces_with_invalid_neighbors = []
+    orphaned_provinces = []
+    
+    # Build set of all province IDs that were written to Provinces.txt
+    all_pids = set()
+    for r in rows:
+        fields = r.split(";")
+        pid = int(fields[0])
+        all_pids.add(pid)
+    
+    # Check for orphaned provinces (in neighbors_by_pid but not in rows)
+    for pid_in_neighbors in neighbors_by_pid.keys():
+        if pid_in_neighbors not in all_pids:
+            orphaned_provinces.append(pid_in_neighbors)
+    
+    for r in rows:
+        fields = r.split(";")
+        pid = int(fields[0])
+        ptype = fields[4]
+        neighbors_str = fields[17]
+        
+        if not neighbors_str.strip():
+            if ptype == "land":
+                provinces_without_neighbors.append(pid)
+        else:
+            neighbors = [int(n) for n in neighbors_str.split(",") if n.strip()]
+            invalid = [n for n in neighbors if n not in all_pids]
+            if invalid:
+                provinces_with_invalid_neighbors.append((pid, invalid))
+    
+    if orphaned_provinces:
+        print(f"[ERROR] {len(orphaned_provinces)} ORPHANED provinces in neighbors but NOT in Provinces.txt: {orphaned_provinces[:20]}...")
+    
+    if provinces_without_neighbors:
+        print(f"[WARNING] {len(provinces_without_neighbors)} land provinces with NO neighbors: {provinces_without_neighbors[:20]}...")
+    
+    if provinces_with_invalid_neighbors:
+        print(f"[WARNING] {len(provinces_with_invalid_neighbors)} provinces with invalid neighbor references:")
+        for pid, invalid in provinces_with_invalid_neighbors[:10]:
+            print(f"  Province {pid} references invalid neighbors: {invalid}")
+    
+    if not orphaned_provinces and not provinces_without_neighbors and not provinces_with_invalid_neighbors:
+        print(f"[OK] All neighbors are valid - no orphaned or invalid references detected.")
+    
     print(f"[EXPORT] Provinces.txt written ({len(rows)} entries).")
 
 

@@ -884,7 +884,7 @@ land_union = unary_union(land.geometry)
 debug(f"PART 2.5 DONE ")
 
 # =====================================================================
-# PART 3 — SEA REGIONS (unchanged)
+# PART 3 — SEA REGIONS
 # =====================================================================
 debug("After merge small: " + str(len(land)))
 
@@ -895,41 +895,48 @@ minx, miny, maxx, maxy = land.total_bounds
 outer = box(minx - 100000, miny - 100000, maxx + 100000, maxy + 100000)
 sea = outer.difference(land_union)
 
-# sample sea points
-points = []
-for _ in range(15000):
-    x = np.random.uniform(minx, maxx)
-    y = np.random.uniform(miny, maxy)
-    p = Point(x, y)
-    if sea.contains(p):
-        points.append([x, y])
+# Generate sea regions using Voronoi diagram
+# (Voronoi is reliable and produces good-looking results)
+final_regions = None
 
-points = np.array(points)
-debug(f"Sea points: {len(points)}")
+if True:  # Always use Voronoi
+    debug("Generating sea regions using Voronoi diagram...")
+    
+    # sample sea points
+    points = []
+    for _ in range(15000):
+        x = np.random.uniform(minx, maxx)
+        y = np.random.uniform(miny, maxy)
+        p = Point(x, y)
+        if sea.contains(p):
+            points.append([x, y])
 
-# clustering
-from sklearn.cluster import KMeans
-N_REGIONS = 60
+    points = np.array(points)
+    debug(f"Sea points: {len(points)}")
 
-kmeans = KMeans(n_clusters=N_REGIONS, n_init="auto")
-centers = kmeans.fit(points).cluster_centers_
+    # clustering
+    from sklearn.cluster import KMeans
+    N_REGIONS = 120  # Increased for better sea region details
 
-vor = voronoi_diagram(MultiPoint([Point(c[0], c[1]) for c in centers]))
+    kmeans = KMeans(n_clusters=N_REGIONS, n_init="auto")
+    centers = kmeans.fit(points).cluster_centers_
 
-final_regions = []
-for poly in vor.geoms:
-    clipped = poly.intersection(sea)
-    if clipped.is_empty:
-        continue
+    vor = voronoi_diagram(MultiPoint([Point(c[0], c[1]) for c in centers]))
 
-    # smooth edges
-    try:
-        clipped = clipped.buffer(15000).buffer(-15000)
-    except:
-        pass
+    final_regions = []
+    for poly in vor.geoms:
+        clipped = poly.intersection(sea)
+        if clipped.is_empty:
+            continue
 
-    if not clipped.is_empty:
-        final_regions.append(clipped)
+        # smooth edges
+        try:
+            clipped = clipped.buffer(15000).buffer(-15000)
+        except:
+            pass
+
+        if not clipped.is_empty:
+            final_regions.append(clipped)
 
 debug(f"Sea regions generated: {len(final_regions)}")
 debug("PART 3 DONE")
