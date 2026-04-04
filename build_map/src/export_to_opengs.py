@@ -1404,8 +1404,18 @@ def export_provinces_txt(
         all_neighbors = neighbors_by_pid.get(int(sea_id), [])
         valid_neighbors = [n for n in all_neighbors if n in all_valid_pids]
         neighbor_ids = ",".join(str(n) for n in valid_neighbors)
+
+        # Preserve usable navigation geometry for sea provinces as well.
+        # Some runtime pathfinders use x/y as heuristic input.
+        ys, xs = np.where(full_id_map == int(sea_id))
+        if len(xs) == 0:
+            cx, cy = 0, 0
+        else:
+            cx = int(xs.mean())
+            cy = int(ys.mean())
+
         rows.append(
-            f"{sea_id};{r};{g};{b};sea;SEA;SEA;SEA;0;0;"
+            f"{sea_id};{r};{g};{b};sea;SEA;SEA;SEA;{cx};{cy};"
             f";SEA;0;0.00;0.000000;0;;{neighbor_ids};unknown;0;0;sea;0;none;0;0"
         )
 
