@@ -1396,8 +1396,9 @@ def export_provinces_txt(
     neighbors_by_pid = _build_neighbor_lookup(full_id_map)
 
     # Build neighbor filters by type.
-    # Keep graph edges type-pure (land->land, sea->sea) so runtime loaders that
-    # symmetrize adjacency cannot accidentally reconnect land through sea nodes.
+    # NOTE: Land rows intentionally include adjacent sea IDs so runtime coastal
+    # checks (ports/shipyards) can detect "touches sea" from the land row itself.
+    # Sea rows stay sea-only to reduce cross-type graph leakage risk.
     valid_sea_ids = {int(s_id) for _, s_id in sea_items}
     valid_land_ids = set(pid_to_color.keys())
 
@@ -1423,9 +1424,13 @@ def export_provinces_txt(
         capital_city = ""
         if is_capital:
             capital_city = _sanitize_txt_field(_row_capital_city_name(land_row, country_capitals))
-        # Keep land adjacency land-only. Sea adjacency is exported on sea rows.
+        # Keep all direct neighbors for land rows (land + sea) so coastal
+        # gameplay checks can rely on this field.
         all_neighbors = neighbors_by_pid.get(int(pid), [])
-        valid_neighbors = [n for n in all_neighbors if n in valid_land_ids]
+        valid_neighbors = [
+            n for n in all_neighbors
+            if n in valid_land_ids or n in valid_sea_ids
+        ]
         neighbor_ids = ",".join(str(n) for n in valid_neighbors)
         ideology = ideology_by_pid.get(int(pid), "unknown")
         recruitable_population = int(recruitable_by_pid.get(int(pid), 0) or 0)
