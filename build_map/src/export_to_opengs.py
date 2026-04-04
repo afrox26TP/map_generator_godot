@@ -1339,14 +1339,16 @@ def export_provinces_txt(
     # DEBUG: Check if there are any unmapped sea pixels (ID = -1)
     unmapped_sea_pixels = np.sum(full_id_map < 0)
     if unmapped_sea_pixels > 0:
-        print(f"[WARNING] {unmapped_sea_pixels} sea pixesl remained unmapped after sea ID assignment!")
+        print(f"[WARNING] {unmapped_sea_pixels} sea pixels remained unmapped after sea ID assignment!")
         print(f"[WARNING] This may cause provinces touching this unmapped sea to have missing neighbors.")
     
     neighbors_by_pid = _build_neighbor_lookup(full_id_map)
 
-    # Build set of ALL valid province IDs (land + sea) for neighbor filtering
+    # Build neighbor filters by type.
+    # Keep graph edges type-pure (land->land, sea->sea) so runtime loaders that
+    # symmetrize adjacency cannot accidentally reconnect land through sea nodes.
     valid_sea_ids = {int(s_id) for _, s_id in sea_items}
-    all_valid_pids = set(pid_to_color.keys()) | valid_sea_ids
+    valid_land_ids = set(pid_to_color.keys())
 
     for pid in range(max_pid + 1):
         if pid in pid_to_color:
@@ -1370,9 +1372,9 @@ def export_provinces_txt(
         capital_city = ""
         if is_capital:
             capital_city = _sanitize_txt_field(_row_capital_city_name(land_row, country_capitals))
-        # Filter neighbors to include both land (pid_to_color) and sea provinces (valid_sea_ids)
+        # Keep land adjacency land-only. Sea adjacency is exported on sea rows.
         all_neighbors = neighbors_by_pid.get(int(pid), [])
-        valid_neighbors = [n for n in all_neighbors if n in all_valid_pids]
+        valid_neighbors = [n for n in all_neighbors if n in valid_land_ids]
         neighbor_ids = ",".join(str(n) for n in valid_neighbors)
         ideology = ideology_by_pid.get(int(pid), "unknown")
         recruitable_population = int(recruitable_by_pid.get(int(pid), 0) or 0)
@@ -1400,9 +1402,9 @@ def export_provinces_txt(
 
     for col, sea_id in sea_items:
         r, g, b = col
-        # Filter neighbors to include only valid provinces (land + sea)
+        # Keep sea adjacency sea-only to avoid cross-type graph leakage.
         all_neighbors = neighbors_by_pid.get(int(sea_id), [])
-        valid_neighbors = [n for n in all_neighbors if n in all_valid_pids]
+        valid_neighbors = [n for n in all_neighbors if n in valid_sea_ids]
         neighbor_ids = ",".join(str(n) for n in valid_neighbors)
 
         # Preserve usable navigation geometry for sea provinces as well.
