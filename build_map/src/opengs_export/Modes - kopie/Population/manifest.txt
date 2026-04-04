@@ -1,2 +1,0 @@
-mode=Population
-map=PopulationMap.png

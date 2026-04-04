@@ -1,2 +1,0 @@
-mode=Resources
-map=ResourcesMap.png

@@ -1,2 +1,0 @@
-mode=Terrain
-map=TerrainMap.png

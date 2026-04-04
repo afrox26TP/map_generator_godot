@@ -1,2 +1,0 @@
-mode=Happiness
-map=HappinessMap.png

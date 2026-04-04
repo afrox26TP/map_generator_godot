@@ -1,8 +1,0 @@
-state={
-    id=39
-    name="STATE_SVN"
-    provinces={
-        800
-        801
-    }
-}
