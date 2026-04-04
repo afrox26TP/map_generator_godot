@@ -31,6 +31,8 @@ DEFAULT_RECRUITABLE_SHARE = RECRUITABLE_SHARE_BY_IDEOLOGY["demokracie"]
 CAPITAL_RECRUITABLE_MULTIPLIER = 3.0
 PROVINCE_RENDER_SUPERSAMPLE = 2
 THIN_BRIDGE_MAX_WIDTH_PX = 4
+SEA_TO_SEA_MIN_SHARED_EDGES = 8
+INLAND_SEA_MAX_ARTIFACT_PIXELS = 5000
 
 
 # --------------------------------------------------------
@@ -576,6 +578,123 @@ def _erase_tiny_global_sea_artifacts(img, province_colors, max_pixels=2):
     return Image.fromarray(arr, mode="RGB")
 
 
+def _erase_inland_sea_components(img, province_colors):
+    """Remove sea components not touching the map edge by recolouring them with
+    the most common adjacent land province.
+
+    Only small enclosed components are removed, so legitimate enclosed seas
+    (for example the Black Sea) are preserved.
+
+    Uses a fully vectorised border scan (4-neighbour shifts) instead of
+    per-label dilation, so it runs in O(H*W).
+    """
+    arr = np.array(img, copy=True)
+
+    lut = np.full((256, 256, 256), -1, dtype=np.int32)
+    pid_to_color = {}
+    for color, pid in province_colors.items():
+        r, g, b = color
+        pid_i = int(pid)
+        lut[r, g, b] = pid_i
+        pid_to_color[pid_i] = np.array([r, g, b], dtype=np.uint8)
+
+    pid_map = lut[arr[:, :, 0], arr[:, :, 1], arr[:, :, 2]]
+    sea_mask = pid_map < 0
+
+    labels, n = ndi.label(sea_mask, structure=np.ones((3, 3), dtype=np.uint8))
+    if n <= 0:
+        return img
+
+    counts = np.bincount(labels.ravel())
+
+    # Which labels touch the map border? — O(border pixels only)
+    border_labels = set()
+    border_labels.update(labels[0, :].tolist())
+    border_labels.update(labels[-1, :].tolist())
+    border_labels.update(labels[:, 0].tolist())
+    border_labels.update(labels[:, -1].tolist())
+    border_labels.discard(0)
+
+    inland_labels = [
+        lbl
+        for lbl in range(1, n + 1)
+        if lbl not in border_labels and int(counts[lbl]) <= INLAND_SEA_MAX_ARTIFACT_PIXELS
+    ]
+    if not inland_labels:
+        return img
+
+    inland_label_set = set(inland_labels)
+
+    # Build adjacency: for every adjacent (sea, land) pair, accumulate the
+    # land pid keyed by sea label.  Done with 4 vectorised shift operations.
+    label_to_land_votes = {}  # lbl -> Counter of land pids
+
+    def _accumulate(sea_lbl_row, land_pid_row):
+        sea_inland = np.isin(sea_lbl_row, inland_labels)
+        if not sea_inland.any():
+            return
+        sl = sea_lbl_row[sea_inland]
+        lp = land_pid_row[sea_inland]
+        valid = lp >= 0
+        for lbl, lpid in zip(sl[valid], lp[valid]):
+            lbl_i = int(lbl)
+            lpid_i = int(lpid)
+            entry = label_to_land_votes.setdefault(lbl_i, {})
+            entry[lpid_i] = entry.get(lpid_i, 0) + 1
+
+    # Horizontal neighbours
+    _accumulate(labels[:, :-1].ravel(), pid_map[:, 1:].ravel())
+    _accumulate(labels[:, 1:].ravel(), pid_map[:, :-1].ravel())
+    # Vertical neighbours
+    _accumulate(labels[:-1, :].ravel(), pid_map[1:, :].ravel())
+    _accumulate(labels[1:, :].ravel(), pid_map[:-1, :].ravel())
+
+    # Apply recolour
+    removed_components = 0
+    removed_pixels = 0
+    skipped_large_enclosed_components = 0
+    skipped_large_enclosed_pixels = 0
+
+    for lbl in range(1, n + 1):
+        if lbl in border_labels:
+            continue
+        if lbl in inland_label_set:
+            continue
+        size = int(counts[lbl])
+        if size > INLAND_SEA_MAX_ARTIFACT_PIXELS:
+            skipped_large_enclosed_components += 1
+            skipped_large_enclosed_pixels += size
+
+    for lbl in inland_labels:
+        votes = label_to_land_votes.get(lbl)
+        if not votes:
+            continue
+        target_pid = max(votes, key=votes.get)
+        color = pid_to_color.get(int(target_pid))
+        if color is None:
+            continue
+        mask = labels == lbl
+        arr[mask] = color
+        removed_components += 1
+        removed_pixels += int(counts[lbl])
+
+    if removed_pixels > 0:
+        print(
+            "[DEBUG] Inland sea cleanup removed components: "
+            f"{removed_components}, pixels: {removed_pixels}"
+        )
+
+    if skipped_large_enclosed_components > 0:
+        print(
+            "[DEBUG] Inland sea cleanup preserved enclosed sea components: "
+            f"{skipped_large_enclosed_components}, "
+            f"pixels: {skipped_large_enclosed_pixels}, "
+            f"threshold: {INLAND_SEA_MAX_ARTIFACT_PIXELS}"
+        )
+
+    return Image.fromarray(arr, mode="RGB")
+
+
 def export_province_map(land, sea_regions):
 
     # Keep export bounds tied to base Europe, not decorative custom islands.
@@ -682,6 +801,7 @@ def export_province_map(land, sea_regions):
 
     img = _erase_tiny_global_land_artifacts(img, province_colors, max_pixels=2)
     img = _erase_tiny_global_sea_artifacts(img, province_colors, max_pixels=2)
+    img = _erase_inland_sea_components(img, province_colors)
 
     # -------------------------
     # SAVE UNCOMPRESSED PNG
@@ -1303,11 +1423,18 @@ def _build_full_id_map_with_sea(id_map, province_rgb_map, sea_color_to_id):
     return full_map
 
 
-def _build_neighbor_lookup(full_id_map):
+def _build_neighbor_lookup(
+    full_id_map,
+    sea_ids=None,
+    sea_to_sea_min_shared_edges=1,
+    return_pair_counts=False,
+):
     """Build undirected province adjacency from a full ID map."""
     neighbors = {}
+    pair_counts = {}
+    sea_ids = {int(pid) for pid in (sea_ids or set())}
 
-    def register_pairs(a, b):
+    def count_pairs(a, b):
         diff = a != b
         if not np.any(diff):
             return
@@ -1322,17 +1449,56 @@ def _build_neighbor_lookup(full_id_map):
         right = right[valid]
         p_min = np.minimum(left, right)
         p_max = np.maximum(left, right)
-        pairs = np.unique(np.column_stack((p_min, p_max)), axis=0)
+        pairs = np.column_stack((p_min, p_max))
 
-        for p1, p2 in pairs:
-            i1 = int(p1)
-            i2 = int(p2)
-            neighbors.setdefault(i1, set()).add(i2)
-            neighbors.setdefault(i2, set()).add(i1)
+        unique_pairs, counts = np.unique(pairs, axis=0, return_counts=True)
+        for (p1, p2), count in zip(unique_pairs, counts):
+            key = (int(p1), int(p2))
+            pair_counts[key] = pair_counts.get(key, 0) + int(count)
 
-    register_pairs(full_id_map[:, :-1], full_id_map[:, 1:])
-    register_pairs(full_id_map[:-1, :], full_id_map[1:, :])
-    return {pid: sorted(ids) for pid, ids in neighbors.items()}
+    count_pairs(full_id_map[:, :-1], full_id_map[:, 1:])
+    count_pairs(full_id_map[:-1, :], full_id_map[1:, :])
+
+    for (i1, i2), count in pair_counts.items():
+        if i1 in sea_ids and i2 in sea_ids and count < sea_to_sea_min_shared_edges:
+            continue
+        neighbors.setdefault(i1, set()).add(i2)
+        neighbors.setdefault(i2, set()).add(i1)
+
+    neighbor_lookup = {pid: sorted(ids) for pid, ids in neighbors.items()}
+    if return_pair_counts:
+        return neighbor_lookup, pair_counts
+    return neighbor_lookup
+
+
+def _compute_pid_anchor(full_id_map, pid):
+    ys, xs = np.where(full_id_map == int(pid))
+    if len(xs) == 0:
+        return 0, 0
+
+    cx = int(xs.mean())
+    cy = int(ys.mean())
+    if full_id_map[cy, cx] == int(pid):
+        return cx, cy
+
+    distances = (xs - cx) ** 2 + (ys - cy) ** 2
+    best_idx = int(np.argmin(distances))
+    return int(xs[best_idx]), int(ys[best_idx])
+
+
+def _sea_anchor_line_crosses_land(full_id_map, pid_a, pid_b, anchors_by_pid, max_land_pixels=8):
+    ax, ay = anchors_by_pid.get(int(pid_a), (0, 0))
+    bx, by = anchors_by_pid.get(int(pid_b), (0, 0))
+
+    steps = max(abs(bx - ax), abs(by - ay), 1) + 1
+    xs = np.rint(np.linspace(ax, bx, steps)).astype(np.int32)
+    ys = np.rint(np.linspace(ay, by, steps)).astype(np.int32)
+    xs = np.clip(xs, 0, full_id_map.shape[1] - 1)
+    ys = np.clip(ys, 0, full_id_map.shape[0] - 1)
+
+    vals = full_id_map[ys, xs]
+    land_hits = (vals >= 0) & (vals != int(pid_a)) & (vals != int(pid_b))
+    return int(np.count_nonzero(land_hits)) > int(max_land_pixels)
 
 
 def export_provinces_txt(
@@ -1454,13 +1620,129 @@ def export_provinces_txt(
         print(f"[WARNING] {unmapped_sea_pixels} sea pixels remained unmapped after sea ID assignment!")
         print(f"[WARNING] This may cause provinces touching this unmapped sea to have missing neighbors.")
     
-    neighbors_by_pid = _build_neighbor_lookup(full_id_map)
+    valid_sea_ids = {int(s_id) for _, s_id in sea_items}
+    valid_land_ids = set(pid_to_color.keys())
+    neighbors_by_pid, pair_counts = _build_neighbor_lookup(
+        full_id_map,
+        sea_ids=valid_sea_ids,
+        sea_to_sea_min_shared_edges=SEA_TO_SEA_MIN_SHARED_EDGES,
+        return_pair_counts=True,
+    )
 
     # Build neighbor lookup once from the full map and export direct neighbors
     # for both land and sea rows. Some runtimes evaluate coastal checks from
     # either side, so adjacency must remain bidirectional across land/sea.
-    valid_sea_ids = {int(s_id) for _, s_id in sea_items}
-    valid_land_ids = set(pid_to_color.keys())
+
+    # Landlocked countries should never have sea adjacency (sanity check post-fix).
+    LANDLOCKED_COUNTRIES = {"AUT", "HUN", "SVK", "CZE", "CHE", "LUX", "BLR", "MDA", "SRB", "MKD"}
+    landlocked_pids = set()
+    for pid, land_row in land.iterrows():
+        if isinstance(pid, int) and land_row.get("country") in LANDLOCKED_COUNTRIES:
+            landlocked_pids.add(pid)
+
+    # Remove sea adjacency from landlocked provinces.
+    for pid in landlocked_pids:
+        if pid in neighbors_by_pid:
+            neighbors_by_pid[pid] = [n for n in neighbors_by_pid[pid] if n not in valid_sea_ids]
+
+    # Sea movement is rendered using province anchor points. If a direct sea-to-sea
+    # edge would send the anchor-to-anchor segment across land, drop that edge.
+    sea_anchor_by_pid = {
+        int(sea_id): _compute_pid_anchor(full_id_map, int(sea_id))
+        for _, sea_id in sea_items
+    }
+    blocked_sea_edges = 0
+    for sea_id in list(valid_sea_ids):
+        sea_neighbors = list(neighbors_by_pid.get(sea_id, []))
+        for neighbor_id in sea_neighbors:
+            if neighbor_id <= sea_id or neighbor_id not in valid_sea_ids:
+                continue
+            if _sea_anchor_line_crosses_land(full_id_map, sea_id, neighbor_id, sea_anchor_by_pid):
+                neighbors_by_pid[sea_id] = [n for n in neighbors_by_pid.get(sea_id, []) if n != neighbor_id]
+                neighbors_by_pid[neighbor_id] = [n for n in neighbors_by_pid.get(neighbor_id, []) if n != sea_id]
+                blocked_sea_edges += 1
+
+    if blocked_sea_edges > 0:
+        print(f"[DEBUG] Blocked sea edges crossing land: {blocked_sea_edges}")
+
+    # Fallback: if a sea province ends up with zero sea neighbors after filtering,
+    # restore the strongest original sea contact (by shared-edge count) when safe.
+    restored_isolated_sea_edges = 0
+    restored_isolated_sea_edges_nearest = 0
+
+    def _add_bidirectional_sea_edge(pid_a, pid_b):
+        neighbors_by_pid.setdefault(pid_a, [])
+        neighbors_by_pid.setdefault(pid_b, [])
+        if pid_b not in neighbors_by_pid[pid_a]:
+            neighbors_by_pid[pid_a].append(pid_b)
+        if pid_a not in neighbors_by_pid[pid_b]:
+            neighbors_by_pid[pid_b].append(pid_a)
+        neighbors_by_pid[pid_a] = sorted(set(neighbors_by_pid[pid_a]))
+        neighbors_by_pid[pid_b] = sorted(set(neighbors_by_pid[pid_b]))
+
+    for sea_id in sorted(valid_sea_ids):
+        current_sea_neighbors = [
+            n for n in neighbors_by_pid.get(sea_id, []) if n in valid_sea_ids
+        ]
+        if current_sea_neighbors:
+            continue
+
+        # 1) Prefer restoring strongest original touching sea edge.
+        candidates = []
+        for (a, b), count in pair_counts.items():
+            if a == sea_id and b in valid_sea_ids:
+                candidates.append((b, int(count)))
+            elif b == sea_id and a in valid_sea_ids:
+                candidates.append((a, int(count)))
+
+        candidates.sort(key=lambda item: item[1], reverse=True)
+        restored = False
+        for candidate_id, _shared_edges in candidates:
+            if _sea_anchor_line_crosses_land(
+                full_id_map,
+                sea_id,
+                candidate_id,
+                sea_anchor_by_pid,
+            ):
+                continue
+            _add_bidirectional_sea_edge(sea_id, candidate_id)
+            restored_isolated_sea_edges += 1
+            restored = True
+            break
+
+        if restored:
+            continue
+
+        # 2) If no touching edge survives, connect to nearest legal sea province.
+        ax, ay = sea_anchor_by_pid.get(sea_id, (0, 0))
+        nearest_candidates = []
+        for other_id in valid_sea_ids:
+            if other_id == sea_id:
+                continue
+            bx, by = sea_anchor_by_pid.get(other_id, (0, 0))
+            dist2 = (ax - bx) * (ax - bx) + (ay - by) * (ay - by)
+            nearest_candidates.append((dist2, other_id))
+
+        nearest_candidates.sort(key=lambda item: item[0])
+        for _dist2, candidate_id in nearest_candidates:
+            if _sea_anchor_line_crosses_land(
+                full_id_map,
+                sea_id,
+                candidate_id,
+                sea_anchor_by_pid,
+                max_land_pixels=40,
+            ):
+                continue
+            _add_bidirectional_sea_edge(sea_id, candidate_id)
+            restored_isolated_sea_edges_nearest += 1
+            break
+
+    if restored_isolated_sea_edges > 0 or restored_isolated_sea_edges_nearest > 0:
+        print(
+            "[DEBUG] Restored isolated sea edges: "
+            f"touching={restored_isolated_sea_edges}, "
+            f"nearest={restored_isolated_sea_edges_nearest}"
+        )
 
     for pid in range(max_pid + 1):
         if pid in pid_to_color:

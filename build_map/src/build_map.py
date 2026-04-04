@@ -125,6 +125,13 @@ CUSTOM_ISLAND_CENTER_LON = -7.2
 CUSTOM_ISLAND_CENTER_LAT = 62.0
 CUSTOM_ISLAND_RADIUS_M = 35_000
 
+# Inland safety mask countries: these landlocked regions should never contain sea.
+# Helps eliminate occasional topology/raster leaks in central/eastern Europe.
+INLAND_NO_SEA_COUNTRIES = {
+    "AUT", "HUN", "SVK", "CZE", "CHE", "LUX", "BLR", "MDA", "SRB", "MKD"
+}
+INLAND_NO_SEA_BUFFER_M = 15_000
+
 admin["country"] = admin["adm0_a3"]
 admin = admin[admin["country"].isin(EUROPE_COUNTRIES)].reset_index(drop=True)
 debug(f"Regions loaded after country filter: {len(admin)}")
@@ -953,6 +960,14 @@ minx, miny, maxx, maxy = bounds_land.total_bounds
 
 outer = box(minx - 100000, miny - 100000, maxx + 100000, maxy + 100000)
 sea = outer.difference(land_union)
+
+# Remove accidental inland sea pockets in selected landlocked countries.
+if "country" in land.columns:
+    inland_mask = land[land["country"].isin(INLAND_NO_SEA_COUNTRIES)]
+    if len(inland_mask) > 0:
+        inland_union = unary_union(inland_mask.geometry)
+        if not inland_union.is_empty:
+            sea = sea.difference(inland_union.buffer(INLAND_NO_SEA_BUFFER_M))
 
 # Generate sea regions using Voronoi diagram per connected sea component.
 # This prevents one sea province from spanning disconnected basins
