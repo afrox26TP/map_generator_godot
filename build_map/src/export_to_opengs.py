@@ -33,20 +33,6 @@ PROVINCE_RENDER_SUPERSAMPLE = 2
 THIN_BRIDGE_MAX_WIDTH_PX = 4
 
 
-def _write_custom_island_flag():
-    """Write a custom furry-themed flag for the AEO custom island."""
-    flags_dir = os.path.join(OUT, "Flags")
-    os.makedirs(flags_dir, exist_ok=True)
-
-    svg_path = os.path.join(flags_dir, "AEO.svg")
-    svg = """<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"900\" height=\"600\" viewBox=\"0 0 900 600\">\n  <rect width=\"900\" height=\"600\" fill=\"#f8f6ed\"/>\n  <rect y=\"0\" width=\"900\" height=\"86\" fill=\"#f8b5c6\"/>\n  <rect y=\"86\" width=\"900\" height=\"86\" fill=\"#ffffff\"/>\n  <rect y=\"172\" width=\"900\" height=\"86\" fill=\"#f2c76e\"/>\n  <rect y=\"258\" width=\"900\" height=\"86\" fill=\"#ffffff\"/>\n  <rect y=\"344\" width=\"900\" height=\"86\" fill=\"#7bc7df\"/>\n  <rect y=\"430\" width=\"900\" height=\"86\" fill=\"#5a3a2a\"/>\n  <rect y=\"516\" width=\"900\" height=\"84\" fill=\"#111111\"/>\n  <g fill=\"#8a5a3c\" opacity=\"0.95\">\n    <ellipse cx=\"450\" cy=\"328\" rx=\"90\" ry=\"78\"/>\n    <ellipse cx=\"360\" cy=\"256\" rx=\"34\" ry=\"42\"/>\n    <ellipse cx=\"422\" cy=\"226\" rx=\"34\" ry=\"42\"/>\n    <ellipse cx=\"478\" cy=\"226\" rx=\"34\" ry=\"42\"/>\n    <ellipse cx=\"540\" cy=\"256\" rx=\"34\" ry=\"42\"/>\n  </g>\n  <text x=\"450\" y=\"560\" text-anchor=\"middle\" font-family=\"Verdana\" font-size=\"48\" fill=\"#ffffff\" font-weight=\"700\">AEO</text>\n</svg>\n"""
-
-    with open(svg_path, "w", encoding="utf-8") as f:
-        f.write(svg)
-
-    print("[EXPORT] Custom flag written: Flags/AEO.svg")
-
-
 # --------------------------------------------------------
 # UNIQUE COLOR GENERATOR (no duplication possible)
 # --------------------------------------------------------
@@ -273,7 +259,7 @@ def _remove_one_pixel_land_bridges(img, province_colors, pid_to_country, max_wid
     return Image.fromarray(arr, mode="RGB")
 
 
-def _despeckle_land_components(img, province_colors, pid_to_country, min_pixels=3):
+def _despeckle_land_components(img, province_colors, pid_to_country, min_pixels=8):
     """Remove tiny isolated land-color components caused by raster artifacts."""
     arr = np.array(img, copy=True)
     h, w, _ = arr.shape
@@ -324,22 +310,33 @@ def _despeckle_land_components(img, province_colors, pid_to_country, min_pixels=
 
                 neighborhood = pid_map[y0:y1, x0:x1].reshape(-1)
                 candidates = neighborhood[(neighborhood >= 0) & (neighborhood != pid_i)]
-                if candidates.size == 0:
-                    continue
+                target_pid = None
+                if candidates.size > 0:
+                    same_country = np.array(
+                        [
+                            int(c)
+                            for c in candidates
+                            if pid_to_country.get(int(c)) == source_country
+                        ],
+                        dtype=np.int32,
+                    )
+                    if same_country.size > 0:
+                        vals, cnts = np.unique(same_country, return_counts=True)
+                        target_pid = int(vals[np.argmax(cnts)])
 
-                same_country = np.array(
-                    [
-                        int(c)
-                        for c in candidates
-                        if pid_to_country.get(int(c)) == source_country
-                    ],
-                    dtype=np.int32,
-                )
-                if same_country.size == 0:
-                    continue
+                if target_pid is None:
+                    # If no same-country land is adjacent, this is a tiny detached
+                    # sliver/islet artifact. Let the surrounding majority absorb it,
+                    # including sea if needed.
+                    sea_candidates = neighborhood[neighborhood < 0]
+                    if sea_candidates.size > 0:
+                        target_pid = -1
+                    elif candidates.size > 0:
+                        vals, cnts = np.unique(candidates.astype(np.int32), return_counts=True)
+                        target_pid = int(vals[np.argmax(cnts)])
+                    else:
+                        continue
 
-                vals, cnts = np.unique(same_country, return_counts=True)
-                target_pid = int(vals[np.argmax(cnts)])
                 pid_map[y, x] = target_pid
                 changed_pixels += 1
 
@@ -491,6 +488,41 @@ def _enforce_single_component_per_landmass(img, province_colors, pid_to_country,
     return Image.fromarray(arr, mode="RGB")
 
 
+def _erase_tiny_global_land_artifacts(img, province_colors, max_pixels=2):
+    arr = np.array(img, copy=True)
+
+    lut = np.full((256, 256, 256), -1, dtype=np.int32)
+    for color, pid in province_colors.items():
+        r, g, b = color
+        lut[r, g, b] = int(pid)
+
+    pid_map = lut[arr[:, :, 0], arr[:, :, 1], arr[:, :, 2]]
+    land_mask = pid_map >= 0
+    labels, n = ndi.label(land_mask, structure=np.ones((3, 3), dtype=np.uint8))
+    if n <= 0:
+        return img
+
+    counts = np.bincount(labels.ravel())
+    removed_components = 0
+    removed_pixels = 0
+
+    for lbl in range(1, len(counts)):
+        size = int(counts[lbl])
+        if size <= 0 or size > max_pixels:
+            continue
+        arr[labels == lbl] = np.array(SEA_COLOR, dtype=np.uint8)
+        removed_components += 1
+        removed_pixels += size
+
+    if removed_pixels > 0:
+        print(
+            "[DEBUG] Global tiny land artifact cleanup removed components: "
+            f"{removed_components}, pixels: {removed_pixels}"
+        )
+
+    return Image.fromarray(arr, mode="RGB")
+
+
 def export_province_map(land, sea_regions):
 
     minx, miny, maxx, maxy = land.total_bounds
@@ -585,8 +617,10 @@ def export_province_map(land, sea_regions):
         img,
         province_colors,
         pid_to_country,
-        min_pixels=3,
+        min_pixels=8,
     )
+
+    img = _erase_tiny_global_land_artifacts(img, province_colors, max_pixels=2)
 
     # -------------------------
     # SAVE UNCOMPRESSED PNG
@@ -700,6 +734,16 @@ def export_states(land):
 # --------------------------------------------------------
 def export_state_files(land):
     folder = os.path.join(OUT, "States")
+    os.makedirs(folder, exist_ok=True)
+
+    # Remove stale state files so removed countries do not linger in exports.
+    for name in os.listdir(folder):
+        if not name.lower().endswith(".txt"):
+            continue
+        path = os.path.join(folder, name)
+        if os.path.isfile(path):
+            os.remove(path)
+
     states = sorted(land["country"].unique())
     sid = 1
 
@@ -717,6 +761,13 @@ def export_state_files(land):
             f.write("}\n")
 
         sid += 1
+
+
+def _remove_legacy_custom_flag_artifact():
+    legacy_flag = os.path.join(OUT, "Flags", "AEO.svg")
+    if os.path.isfile(legacy_flag):
+        os.remove(legacy_flag)
+        print("[EXPORT] Removed legacy flag artifact: Flags/AEO.svg")
 
 
 # --------------------------------------------------------
@@ -1780,6 +1831,6 @@ def run_export(land, sea_regions):
 
     export_states(land)
     export_state_files(land)
-    _write_custom_island_flag()
+    _remove_legacy_custom_flag_artifact()
 
     print("[EXPORT] EXPORT COMPLETE")

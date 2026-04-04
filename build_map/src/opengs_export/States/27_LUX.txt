@@ -1,7 +1,0 @@
-state={
-    id=27
-    name="STATE_LUX"
-    provinces={
-        561
-    }
-}

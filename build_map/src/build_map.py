@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import re
 import unicodedata
 
-from shapely.geometry import box, Point, MultiPoint, Polygon, MultiPolygon, LineString
+from shapely.geometry import box, Point, MultiPoint, Polygon, MultiPolygon
 from shapely.ops import unary_union, voronoi_diagram
 import os, random
 
@@ -18,11 +18,6 @@ DEBUG = True
 # PART 2.65 is experimental and may introduce visual artifacts in raster output.
 # Keep it disabled by default until fully tuned.
 ENABLE_INLAND_DISCONNECTED_MERGE = False
-CUSTOM_ISLAND_NAME = "Adam Epstein Ostrov"
-CUSTOM_ISLAND_ISO3 = "AEO"
-CUSTOM_ISLAND_LON = 18.0
-CUSTOM_ISLAND_LAT = 33.0
-CUSTOM_ISLAND_RADIUS_M = 28_000
 
 def debug(msg):
     if DEBUG:
@@ -198,112 +193,6 @@ def mark_capital_provinces(gdf):
     return gdf
 
 
-def add_custom_island(gdf):
-    """Append a custom standalone island province to the final land dataset."""
-    gdf = gdf.copy()
-
-    center = (
-        gpd.GeoSeries([Point(CUSTOM_ISLAND_LON, CUSTOM_ISLAND_LAT)], crs=4326)
-        .to_crs(gdf.crs)
-        .iloc[0]
-    )
-    cx = float(center.x)
-    cy = float(center.y)
-    scale = float(CUSTOM_ISLAND_RADIUS_M)
-
-    # EPSTEJN-shaped archipelago: disconnected letter islands, one province ID.
-    char_w = scale * 0.55
-    char_h = scale * 1.35
-    gap = scale * 0.20
-    stroke_w = scale * 0.12
-
-    def seg(origin_x, points):
-        px = [
-            (origin_x + (x * char_w), cy + (y * (char_h * 0.5)))
-            for x, y in points
-        ]
-        return LineString(px).buffer(stroke_w, cap_style=2, join_style=2)
-
-    total_width = (7 * char_w) + (6 * gap)
-    start_x = cx - (total_width * 0.5)
-
-    components = []
-
-    # E
-    ox = start_x + 0 * (char_w + gap)
-    components.append(unary_union([
-        seg(ox, [(0.0, 1.0), (0.0, -1.0)]),
-        seg(ox, [(0.0, 1.0), (1.0, 1.0)]),
-        seg(ox, [(0.0, 0.0), (0.72, 0.0)]),
-        seg(ox, [(0.0, -1.0), (1.0, -1.0)]),
-    ]).buffer(0))
-
-    # P
-    ox = start_x + 1 * (char_w + gap)
-    components.append(unary_union([
-        seg(ox, [(0.0, -1.0), (0.0, 1.0)]),
-        seg(ox, [(0.0, 1.0), (1.0, 1.0)]),
-        seg(ox, [(1.0, 1.0), (1.0, 0.0)]),
-        seg(ox, [(0.0, 0.0), (1.0, 0.0)]),
-    ]).buffer(0))
-
-    # S
-    ox = start_x + 2 * (char_w + gap)
-    components.append(seg(ox, [(1.0, 1.0), (0.0, 1.0), (0.0, 0.0), (1.0, 0.0), (1.0, -1.0), (0.0, -1.0)]).buffer(0))
-
-    # T
-    ox = start_x + 3 * (char_w + gap)
-    components.append(unary_union([
-        seg(ox, [(0.0, 1.0), (1.0, 1.0)]),
-        seg(ox, [(0.5, 1.0), (0.5, -1.0)]),
-    ]).buffer(0))
-
-    # E
-    ox = start_x + 4 * (char_w + gap)
-    components.append(unary_union([
-        seg(ox, [(0.0, 1.0), (0.0, -1.0)]),
-        seg(ox, [(0.0, 1.0), (1.0, 1.0)]),
-        seg(ox, [(0.0, 0.0), (0.72, 0.0)]),
-        seg(ox, [(0.0, -1.0), (1.0, -1.0)]),
-    ]).buffer(0))
-
-    # J
-    ox = start_x + 5 * (char_w + gap)
-    components.append(unary_union([
-        seg(ox, [(0.0, 1.0), (1.0, 1.0)]),
-        seg(ox, [(1.0, 1.0), (1.0, -0.65)]),
-        seg(ox, [(1.0, -1.0), (0.2, -1.0)]),
-        seg(ox, [(0.2, -1.0), (0.0, -0.7)]),
-    ]).buffer(0))
-
-    # N
-    ox = start_x + 6 * (char_w + gap)
-    components.append(unary_union([
-        seg(ox, [(0.0, -1.0), (0.0, 1.0)]),
-        seg(ox, [(0.0, 1.0), (1.0, -1.0)]),
-        seg(ox, [(1.0, -1.0), (1.0, 1.0)]),
-    ]).buffer(0))
-
-    island_geom = unary_union(components).buffer(0)
-
-    row = {col: None for col in gdf.columns}
-    row["geometry"] = island_geom
-
-    # Runtime/export pipeline fields.
-    row["country"] = CUSTOM_ISLAND_ISO3
-    row["admin"] = CUSTOM_ISLAND_NAME
-    row["name"] = CUSTOM_ISLAND_NAME
-    row["name_en"] = CUSTOM_ISLAND_NAME
-    row["type"] = "custom_island"
-    row["type_en"] = "custom island"
-    row["is_capital_province"] = 1
-    row["capital_city_name"] = CUSTOM_ISLAND_NAME
-
-    merged = pd.concat([gdf, gpd.GeoDataFrame([row], crs=gdf.crs)], ignore_index=True)
-    debug(f"Custom island added: {CUSTOM_ISLAND_NAME} ({CUSTOM_ISLAND_ISO3})")
-    return gpd.GeoDataFrame(merged, geometry="geometry", crs=gdf.crs)
-
-
 # -----------------------------
 # FIX: Cut RUSSIA to EUROPE part
 # -----------------------------
@@ -369,6 +258,8 @@ from shapely.geometry import Polygon, MultiPolygon
 # CONSTANT AREA MERGE THRESHOLD
 # --------------------------
 MIN_AREA_ABS = 1_000_000_000   # cokoliv menší než 10M m² se sloučí
+MIN_ISLET_COMPONENT_AREA_ABS = 50_000_000
+MIN_ISLET_COMPONENT_AREA_REL = 0.01
 
 
 def merge_small_absolute(gdf):
@@ -449,6 +340,53 @@ def _first_non_empty(series):
         if text:
             return text
     return ""
+
+
+def _prune_tiny_polygon_components(geom):
+    if geom.is_empty or geom.geom_type != "MultiPolygon":
+        return geom
+
+    parts = [p for p in geom.geoms if not p.is_empty and float(p.area) > 0.0]
+    if len(parts) <= 1:
+        return geom
+
+    largest_area = max(float(part.area) for part in parts)
+    keep_parts = [
+        part
+        for part in parts
+        if float(part.area) >= MIN_ISLET_COMPONENT_AREA_ABS
+        or float(part.area) >= (largest_area * MIN_ISLET_COMPONENT_AREA_REL)
+    ]
+
+    if not keep_parts:
+        keep_parts = [max(parts, key=lambda part: float(part.area))]
+
+    if len(keep_parts) == len(parts):
+        return geom
+
+    return unary_union(keep_parts).buffer(0)
+
+
+def prune_tiny_land_components(gdf):
+    gdf = gdf.copy()
+    removed_parts = 0
+
+    new_geometry = []
+    for geom in gdf.geometry:
+        if geom.is_empty or geom.geom_type != "MultiPolygon":
+            new_geometry.append(geom)
+            continue
+
+        parts_before = [p for p in geom.geoms if not p.is_empty and float(p.area) > 0.0]
+        pruned = _prune_tiny_polygon_components(geom)
+        parts_after = [p for p in getattr(pruned, "geoms", [pruned]) if not p.is_empty and float(p.area) > 0.0]
+        removed_parts += max(0, len(parts_before) - len(parts_after))
+        new_geometry.append(pruned)
+
+    gdf["geometry"] = new_geometry
+    gdf["geometry"] = gdf.geometry.buffer(0)
+    debug(f"Tiny land components pruned: {removed_parts}")
+    return gdf
 
 
 def merge_same_name_provinces(gdf):
@@ -878,7 +816,10 @@ debug(
     f"{before_single_neighbor_merge - len(land)}"
 )
 
-land = add_custom_island(land)
+debug("PART 2.8 START — pruning tiny disconnected land components...")
+land = prune_tiny_land_components(land)
+debug("PART 2.8 DONE")
+
 land_union = unary_union(land.geometry)
 
 debug(f"PART 2.5 DONE ")
