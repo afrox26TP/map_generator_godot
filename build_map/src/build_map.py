@@ -941,7 +941,15 @@ debug("After merge small: " + str(len(land)))
 
 debug("PART 3 START — generating sea regions")
 
-minx, miny, maxx, maxy = land.total_bounds
+# Keep map bounds anchored to the base Europe footprint.
+# The custom AEO province is decorative and should not expand sea extent.
+bounds_land = land
+if "country" in land.columns:
+    base_land = land[land["country"] != CUSTOM_ISLAND_COUNTRY]
+    if len(base_land) > 0:
+        bounds_land = base_land
+
+minx, miny, maxx, maxy = bounds_land.total_bounds
 
 outer = box(minx - 100000, miny - 100000, maxx + 100000, maxy + 100000)
 sea = outer.difference(land_union)

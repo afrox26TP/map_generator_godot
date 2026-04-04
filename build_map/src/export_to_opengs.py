@@ -578,7 +578,14 @@ def _erase_tiny_global_sea_artifacts(img, province_colors, max_pixels=2):
 
 def export_province_map(land, sea_regions):
 
-    minx, miny, maxx, maxy = land.total_bounds
+    # Keep export bounds tied to base Europe, not decorative custom islands.
+    bounds_land = land
+    if "country" in land.columns:
+        base_land = land[land["country"] != "AEO"]
+        if len(base_land) > 0:
+            bounds_land = base_land
+
+    minx, miny, maxx, maxy = bounds_land.total_bounds
     bounds = (minx, miny, maxx, maxy)
 
     render_size = EXPORT_SIZE * max(int(PROVINCE_RENDER_SUPERSAMPLE), 1)
