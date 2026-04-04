@@ -895,48 +895,114 @@ minx, miny, maxx, maxy = land.total_bounds
 outer = box(minx - 100000, miny - 100000, maxx + 100000, maxy + 100000)
 sea = outer.difference(land_union)
 
-# Generate sea regions using Voronoi diagram
-# (Voronoi is reliable and produces good-looking results)
-final_regions = None
+# Generate sea regions using Voronoi diagram per connected sea component.
+# This prevents one sea province from spanning disconnected basins
+# (which can create unrealistic neighbor lists).
+final_regions = []
 
-if True:  # Always use Voronoi
-    debug("Generating sea regions using Voronoi diagram...")
-    
-    # sample sea points
-    points = []
-    for _ in range(15000):
-        x = np.random.uniform(minx, maxx)
-        y = np.random.uniform(miny, maxy)
-        p = Point(x, y)
-        if sea.contains(p):
-            points.append([x, y])
+debug("Generating sea regions using component-aware Voronoi diagram...")
 
-    points = np.array(points)
-    debug(f"Sea points: {len(points)}")
+if sea.geom_type == "Polygon":
+    sea_components = [sea]
+elif sea.geom_type == "MultiPolygon":
+    sea_components = list(sea.geoms)
+else:
+    sea_components = [g for g in getattr(sea, "geoms", []) if g.geom_type == "Polygon"]
 
-    # clustering
-    from sklearn.cluster import KMeans
-    N_REGIONS = 120  # Increased for better sea region details
+sea_components = [p for p in sea_components if not p.is_empty and float(p.area) > 0.0]
 
-    kmeans = KMeans(n_clusters=N_REGIONS, n_init="auto")
-    centers = kmeans.fit(points).cluster_centers_
+from sklearn.cluster import KMeans
 
-    vor = voronoi_diagram(MultiPoint([Point(c[0], c[1]) for c in centers]))
+TARGET_SEA_REGIONS = 120
+component_count = len(sea_components)
+target_regions = max(TARGET_SEA_REGIONS, component_count)
 
-    final_regions = []
-    for poly in vor.geoms:
-        clipped = poly.intersection(sea)
-        if clipped.is_empty:
+if component_count == 0:
+    debug("No sea components found after clipping.")
+else:
+    areas = np.array([float(p.area) for p in sea_components], dtype=float)
+    area_sum = float(areas.sum())
+    if area_sum <= 0.0:
+        region_alloc = np.ones(component_count, dtype=int)
+    else:
+        # Ensure at least one region per connected sea component.
+        region_alloc = np.ones(component_count, dtype=int)
+        remaining = target_regions - component_count
+        if remaining > 0:
+            raw = (areas / area_sum) * remaining
+            extra = np.floor(raw).astype(int)
+            region_alloc += extra
+            leftover = int(remaining - int(extra.sum()))
+            if leftover > 0:
+                fractions = raw - extra
+                order = np.argsort(fractions)[::-1]
+                for idx in order[:leftover]:
+                    region_alloc[idx] += 1
+
+    total_points = 0
+
+    for comp_idx, (component, comp_regions) in enumerate(zip(sea_components, region_alloc), start=1):
+        comp_regions = max(1, int(comp_regions))
+
+        if comp_regions == 1:
+            clipped = component
+            try:
+                clipped = clipped.buffer(15000).buffer(-15000)
+            except Exception:
+                pass
+            if not clipped.is_empty and float(clipped.area) > 0.0:
+                final_regions.append(clipped)
             continue
 
-        # smooth edges
-        try:
-            clipped = clipped.buffer(15000).buffer(-15000)
-        except:
-            pass
+        cminx, cminy, cmaxx, cmaxy = component.bounds
+        target_points_for_component = max(400, comp_regions * 180)
+        max_attempts = target_points_for_component * 12
 
-        if not clipped.is_empty:
-            final_regions.append(clipped)
+        points = []
+        for _ in range(max_attempts):
+            if len(points) >= target_points_for_component:
+                break
+            x = np.random.uniform(cminx, cmaxx)
+            y = np.random.uniform(cminy, cmaxy)
+            p = Point(x, y)
+            if component.contains(p):
+                points.append([x, y])
+
+        if len(points) < comp_regions:
+            rp = component.representative_point()
+            while len(points) < comp_regions:
+                points.append([float(rp.x), float(rp.y)])
+
+        points = np.array(points, dtype=float)
+        n_clusters = min(comp_regions, len(points))
+        if n_clusters <= 0:
+            continue
+
+        total_points += int(len(points))
+
+        kmeans = KMeans(n_clusters=n_clusters, n_init="auto")
+        centers = kmeans.fit(points).cluster_centers_
+
+        vor = voronoi_diagram(MultiPoint([Point(c[0], c[1]) for c in centers]))
+
+        for poly in vor.geoms:
+            clipped = poly.intersection(component)
+            if clipped.is_empty:
+                continue
+
+            try:
+                clipped = clipped.buffer(15000).buffer(-15000)
+            except Exception:
+                pass
+
+            if not clipped.is_empty and float(clipped.area) > 0.0:
+                final_regions.append(clipped)
+
+    debug(
+        "Sea Voronoi components: "
+        f"{component_count}, sampled points: {total_points}, "
+        f"target regions: {target_regions}"
+    )
 
 debug(f"Sea regions generated: {len(final_regions)}")
 debug("PART 3 DONE")

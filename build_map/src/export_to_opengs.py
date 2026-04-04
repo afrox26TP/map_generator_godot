@@ -513,14 +513,18 @@ def export_province_map(land, sea_regions):
     sea_color_count = 0
 
     for region in sea_regions:
-        color = unique_color(used_colors)
-        sea_color_count += 1
-
         polys = [region] if region.geom_type == "Polygon" else region.geoms
         for poly in polys:
+            if poly.is_empty:
+                continue
+            # Assign one sea province color per connected polygon piece.
+            # Using one color for the whole MultiPolygon causes one sea ID to span
+            # disconnected basins and creates unrealistic neighbor relationships.
+            color = unique_color(used_colors)
+            sea_color_count += 1
             _draw_polygon_with_holes(draw, poly, bounds, render_size, color, hole_color=None)
 
-    print("[DEBUG] Sea regions:", sea_color_count)
+    print("[DEBUG] Sea provinces (connected pieces):", sea_color_count)
 
     # -------------------------
     # LAND PROVINCES
