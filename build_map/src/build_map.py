@@ -121,7 +121,7 @@ CUSTOM_ISLAND_COUNTRY = "AEO"
 CUSTOM_ISLAND_NAME = "Adam Epstein Ostrov"
 # Place AEO near Faroe Islands where there's less raster cleanup interference.
 # North Atlantic position ensures it stays visible without sea region overlap.
-CUSTOM_ISLAND_CENTER_LON = -12.0
+CUSTOM_ISLAND_CENTER_LON = -7.2
 CUSTOM_ISLAND_CENTER_LAT = 62.0
 CUSTOM_ISLAND_RADIUS_M = 35_000
 
@@ -260,9 +260,9 @@ def add_adam_epstein_island(gdf):
         crs=4326,
     ).to_crs(gdf.crs).iloc[0]
 
-    # Shape = letters "EPSTEIN" rendered as geographic geometry (~300 km wide)
+    # Shape = letters "EPSTEIN" rendered as geographic geometry (~190 km wide)
     island_geom = _text_to_shapely_geom(
-        "EPSTEIN", center.x, center.y, total_width_m=300_000
+        "EPSTEIN", center.x, center.y, total_width_m=190_000
     )
     if island_geom is None or island_geom.is_empty:
         island_geom = center.buffer(CUSTOM_ISLAND_RADIUS_M, resolution=24)
