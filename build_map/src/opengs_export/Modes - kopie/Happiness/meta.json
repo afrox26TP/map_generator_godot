@@ -1,0 +1,6 @@
+{
+    "id": "happiness",
+    "name": "Happiness",
+    "description": "Population happiness map",
+    "map_file": "HappinessMap.png"
+}

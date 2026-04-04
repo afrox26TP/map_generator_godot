@@ -1,0 +1,922 @@
+province_id;province_name;province_country;match_method;matched_population;matched_population_date;source_region;source_country;source_population;source_population_date;source_index
+0;Dibër;Albania;matched;109585;2022-01-01;Dibër County;Albania;109585.0;2022-01-01;16
+1;Kukës;Albania;matched;72768;2022-01-01;Kukës County;Albania;72768.0;2022-01-01;65
+2;Korçë;Albania;matched;197303;2022-01-01;Korçë County;Albania;197303.0;2022-01-01;58
+3;Elbasan;Albania;matched;259112;2022-01-01;Elbasan County;Albania;259112.0;2022-01-01;33
+4;Gjirokastër;Albania;matched;55278;2022-01-01;Gjirokastër County;Albania;55278.0;2022-01-01;49
+5;Vlorë;Albania;matched;184955;2022-01-01;Vlorë County;Albania;184955.0;2022-01-01;98
+6;Shkodër;Albania;matched;193009;2022-01-01;Shkodër County;Albania;193009.0;2022-01-01;80
+7;Fier;Albania;matched;278413;2022-01-01;Fier County;Albania;278413.0;2022-01-01;39
+8;Tirana;Albania;matched;919511;2022-01-01;Tirana County;Albania;919511.0;2022-01-01;93
+9;Lezhë;Albania;matched;117283;2022-01-01;Lezhë County;Albania;117283.0;2022-01-01;73
+10;Berat;Albania;matched;115050;2022-01-01;Berat County;Albania;115050.0;2022-01-01;7
+11;Lower Austria;Austria;matched;1684287;2020-01-01;Lower Austria;Austria;1684287.0;2020-01-01;205
+12;Upper Austria;Austria;matched;1490279;2020-01-01;Upper Austria;Austria;1490279.0;2020-01-01;213
+13;Burgenland;Austria;matched;294436;2020-01-01;Burgenland;Austria;294436.0;2020-01-01;201
+14;Vorarlberg;Austria;matched;404963;2022-06-30;Vorarlberg;Austria;404963.0;2022-06-30;273
+15;Tyrol;Austria;matched;757634;2020-01-01;Tyrol;Austria;757634.0;2020-01-01;211
+16;Salzburg;Austria;matched;558410;2020-01-01;Salzburg;Austria;558410.0;2020-01-01;207
+17;Carinthia;Austria;matched;561293;2020-01-01;Carinthia;Austria;561293.0;2020-01-01;203
+18;Styria;Austria;matched;1246395;2020-01-01;Styria;Austria;1246395.0;2020-01-01;209
+19;West Flanders;Belgium;unmatched;;;;;;;
+20;Hainaut;Belgium;unmatched;;;;;;;
+21;Namur;Belgium;unmatched;;;;;;;
+22;Luxembourg;Belgium;unmatched;;;;;;;
+23;Liège;Belgium;unmatched;;;;;;;
+24;East Flanders;Belgium;unmatched;;;;;;;
+25;Antwerp;Belgium;unmatched;;;;;;;
+26;Limburg;Belgium;unmatched;;;;;;;
+27;Flemish Brabant;Belgium;unmatched;;;;;;;
+28;Walloon Brabant;Belgium;unmatched;;;;;;;
+29;Burgas;Bulgaria;matched;388919;2024-12-31;Burgas;Bulgaria;388919.0;2024-12-31;1326
+30;Yambol;Bulgaria;matched;105429;2024-12-31;Yambol;Bulgaria;105429.0;2024-12-31;2635
+31;Haskovo;Bulgaria;matched;207356;2024-12-31;Haskovo;Bulgaria;207356.0;2024-12-31;1474
+32;Vidin;Bulgaria;matched;70542;2024-12-31;Vidin;Bulgaria;70542.0;2024-12-31;2520
+33;Pernik;Bulgaria;matched;109886;2024-12-31;Pernik;Bulgaria;109886.0;2024-12-31;1781
+34;Sofia;Bulgaria;matched;224701;2024-12-31;Sofia Oblast;Bulgaria;224701.0;2024-12-31;2276
+35;Montana;Bulgaria;matched;112737;2024-12-31;Montana Oblast;Bulgaria;112737.0;2024-12-31;1677
+36;Kyustendil;Bulgaria;matched;106131;2024-12-31;Kyustendil;Bulgaria;106131.0;2024-12-31;1580
+37;Blagoevgrad;Bulgaria;matched;286333;2024-12-31;Blagoevgrad;Bulgaria;286333.0;2024-12-31;1268
+38;Silistra;Bulgaria;matched;93549;2024-12-31;Silistra;Bulgaria;93549.0;2024-12-31;2073
+39;Ruse;Bulgaria;matched;186093;2024-12-31;Ruse;Bulgaria;186093.0;2024-12-31;1978
+40;Dobrich;Bulgaria;matched;145207;2024-12-31;Dobrich;Bulgaria;145207.0;2024-12-31;1376
+41;Vratsa;Bulgaria;matched;146002;2024-12-31;Vratsa;Bulgaria;146002.0;2024-12-31;2550
+42;Pleven;Bulgaria;matched;215326;2024-12-31;Pleven;Bulgaria;215326.0;2024-12-31;1838
+43;Veliko Tarnovo;Bulgaria;matched;200413;2024-12-31;Veliko Tarnovo;Bulgaria;200413.0;2024-12-31;2488
+44;Kardzhali;Bulgaria;matched;149478;2024-12-31;Kardzhali;Bulgaria;149478.0;2024-12-31;1528
+45;Smolyan;Bulgaria;matched;90534;2024-12-31;Smolyan;Bulgaria;90534.0;2024-12-31;2175
+46;Varna;Bulgaria;matched;437521;2024-12-31;Varna;Bulgaria;437521.0;2024-12-31;2429
+47;Plovdiv;Bulgaria;matched;635630;2024-12-31;Plovdiv;Bulgaria;635630.0;2024-12-31;1873
+48;Stara Zagora;Bulgaria;matched;288736;2024-12-31;Stara Zagora;Bulgaria;288736.0;2024-12-31;2300
+49;Sliven;Bulgaria;matched;169299;2024-12-31;Sliven;Bulgaria;169299.0;2024-12-31;2134
+50;Shumen;Bulgaria;matched;149279;2024-12-31;Shumen;Bulgaria;149279.0;2024-12-31;2018
+51;Razgrad;Bulgaria;matched;99459;2024-12-31;Razgrad;Bulgaria;99459.0;2024-12-31;1907
+52;Targovishte;Bulgaria;matched;94735;2024-12-31;Targovishte;Bulgaria;94735.0;2024-12-31;2369
+53;Gabrovo;Bulgaria;matched;93817;2024-12-31;Gabrovo;Bulgaria;93817.0;2024-12-31;1416
+54;Pazardzhik;Bulgaria;matched;223494;2024-12-31;Pazardzhik;Bulgaria;223494.0;2024-12-31;1719
+55;Lovech;Bulgaria;matched;110823;2024-12-31;Lovech;Bulgaria;110823.0;2024-12-31;1623
+56;Herzegovina-Neretva Canton;Bosnia and Herzegovina;unmatched;;;;;;;
+57;Trebinje;Bosnia and Herzegovina;unmatched;;;;;;;
+58;Foča;Bosnia and Herzegovina;unmatched;;;;;;;
+59;Banja Luka;Bosnia and Herzegovina;unmatched;;;;;;;
+60;Una-Sana Canton;Bosnia and Herzegovina;unmatched;;;;;;;
+61;Doboj;Bosnia and Herzegovina;unmatched;;;;;;;
+62;Bijeljina;Bosnia and Herzegovina;unmatched;;;;;;;
+63;Livno;Bosnia and Herzegovina;unmatched;;;;;;;
+64;West Herzegovina Canton;Bosnia and Herzegovina;unmatched;;;;;;;
+65;Vlasenica;Bosnia and Herzegovina;unmatched;;;;;;;
+66;Central Bosnia Canton;Bosnia and Herzegovina;unmatched;;;;;;;
+67;Zenica-Doboj Canton;Bosnia and Herzegovina;matched;2219220;2013-01-01;Federation of Bosnia and Herzegovina;Bosnia and Herzegovina;2219220.0;2013-01-01;1237
+68;Tuzla Canton;Bosnia and Herzegovina;unmatched;;;;;;;
+69;Sarajevo-Romanija;Bosnia and Herzegovina;unmatched;;;;;;;
+70;Sarajevo Canton;Bosnia and Herzegovina;unmatched;;;;;;;
+71;Gomel;Belarus;matched;1327973;2025-01-01;Gomel Region;Belarus;1327973.0;2025-01-01;314
+72;Brest;Belarus;matched;1299912;2025-01-01;Brest Region;Belarus;1299912.0;2025-01-01;295
+73;Vitebsk;Belarus;matched;1072063;2025-01-01;Vitebsk Region;Belarus;1072063.0;2025-01-01;427
+74;Grodno;Belarus;matched;984880;2025-01-01;Grodno Region;Belarus;984880.0;2025-01-01;324
+75;Mahilioŭ;Belarus;matched;971365;2025-01-01;Mogilev region;Belarus;971365.0;2025-01-01;406
+76;Minsk;Belarus;matched;1456357;2025-01-01;Minsk Region;Belarus;1456357.0;2025-01-01;383
+77;Valais;Switzerland;fuzzy_contain;343955;2018-12-31;Canton of Valais;Switzerland;343955.0;2018-12-31;56967
+78;Ticino;Switzerland;fuzzy_contain;353343;2018-12-31;Canton of Ticino;Switzerland;353343.0;2018-12-31;56963
+79;Grisons;Switzerland;fuzzy_contain;198379;2018-12-31;Canton of the Grisons;Switzerland;198379.0;2018-12-31;56975
+80;Thurgau;Switzerland;fuzzy_contain;276472;2018-12-31;Canton of Thurgau;Switzerland;276472.0;2018-12-31;56961
+81;Zürich;Switzerland;fuzzy_contain;1520968;2018-12-31;Canton of Zürich;Switzerland;1520968.0;2018-12-31;56973
+82;Aargau;Switzerland;fuzzy_contain;678207;2018-12-31;Canton of Aargau;Switzerland;678207.0;2018-12-31;56801
+83;St. Gallen;Switzerland;fuzzy_contain;507697;2018-12-31;Canton of St. Gallen;Switzerland;507697.0;2018-12-31;56959
+84;Solothurn;Switzerland;fuzzy_contain;273194;2018-12-31;Canton of Solothurn;Switzerland;273194.0;2018-12-31;56957
+85;Vaud;Switzerland;fuzzy_contain;799145;2018-12-31;Canton of Vaud;Switzerland;799145.0;2018-12-31;56969
+86;Bern;Switzerland;unmatched;;;;;;;
+87;Lucerne;Switzerland;fuzzy_contain;409557;2018-12-31;Canton of Lucerne;Switzerland;409557.0;2018-12-31;56945
+88;Uri;Switzerland;fuzzy_contain;36433;2018-12-31;Canton of Uri;Switzerland;36433.0;2018-12-31;56965
+89;Fribourg;Switzerland;fuzzy_contain;318714;2018-12-31;Canton of Fribourg;Switzerland;318714.0;2018-12-31;56929
+90;Famagusta;Cyprus;matched;46629;2011-01-01;Famagusta District;Cyprus;46629.0;2011-01-01;2730
+91;Nicosia;Cyprus;matched;326980;2011-01-01;Nicosia District;Cyprus;326980.0;2011-01-01;2841
+92;Limassol;Cyprus;matched;235330;2011-01-01;Limassol District;Cyprus;235330.0;2011-01-01;2808
+93;Paphos;Cyprus;matched;88276;2011-01-01;Paphos District;Cyprus;88276.0;2011-01-01;2863
+94;Ústí nad Labem;Czech Republic;matched;808356;2025-01-01;Ústí nad Labem Region;Czech Republic;808356.0;2025-01-01;3348
+95;Liberec;Czech Republic;matched;449494;2025-01-01;Liberec Region;Czech Republic;449494.0;2025-01-01;3001
+96;Karlovy Vary;Czech Republic;matched;293195;2025-01-01;Karlovy Vary Region;Czech Republic;293195.0;2025-01-01;2975
+97;Plzeň-;Czech Republic;matched;614640;2025-01-01;Plzeň Region;Czech Republic;614640.0;2025-01-01;3114
+98;South Bohemian;Czech Republic;matched;653227;2025-01-01;South Bohemian Region;Czech Republic;653227.0;2025-01-01;3223
+99;Hradec Králové;Czech Republic;matched;555923;2025-01-01;Hradec Králové Region;Czech Republic;555923.0;2025-01-01;2955
+100;Olomouc;Czech Republic;matched;631500;2025-01-01;Olomouc Region;Czech Republic;631500.0;2025-01-01;3077
+101;Pardubice;Czech Republic;matched;530469;2025-01-01;Pardubice Region;Czech Republic;530469.0;2025-01-01;3092
+102;Moravian-Silesian;Czech Republic;matched;1189204;2024-01-01;Moravian-Silesian Region;Czech Republic;1189204.0;2024-01-01;3018
+103;South Moravian;Czech Republic;matched;1229343;2025-01-01;South Moravian Region;Czech Republic;1229343.0;2025-01-01;3239
+104;Zlín;Czech Republic;matched;578998;2025-01-01;Zlín Region;Czech Republic;578998.0;2025-01-01;3323
+105;Vysočina;Czech Republic;matched;517647;2025-01-01;Vysočina Region;Czech Republic;517647.0;2025-01-01;3285
+106;Central Bohemian;Czech Republic;matched;1455940;2024-01-01;Central Bohemian Region;Czech Republic;1455940.0;2024-01-01;2902
+107;Saxony;Germany;matched;4089467;2023-12-31;Saxony;Germany;4089467.0;2023-12-31;9272
+108;Bavaria;Germany;matched;13124737;2022-01-01;Bavaria;Germany;13124737.0;2022-01-01;8591
+109;Rhineland-Palatinate;Germany;matched;4094169;2022-01-01;Rhineland-Palatinate;Germany;4094169.0;2022-01-01;9213
+110;Saarland;Germany;matched;1017567;2022-01-01;Saarland;Germany;1017567.0;2022-01-01;9246
+111;Schleswig-Holstein;Germany;matched;2953270;2022-12-31;Schleswig-Holstein;Germany;2953270.0;2022-12-31;9362
+112;Lower Saxony;Germany;matched;8003421;2022-01-01;Lower Saxony;Germany;8003421.0;2022-01-01;9157
+113;North Rhine-Westphalia;Germany;matched;17932651;2022-01-01;North Rhine-Westphalia;Germany;17932651.0;2022-01-01;9182
+114;Baden-Württemberg;Germany;matched;11104040;2022-01-01;Baden-Württemberg;Germany;11104040.0;2022-01-01;7804
+115;Brandenburg;Germany;matched;2534075;2022-01-01;Brandenburg;Germany;2534075.0;2022-01-01;8698
+116;Mecklenburg-Western Pomerania;Germany;matched;1570817;2022-01-01;Mecklenburg-Vorpommern;Germany;1570817.0;2022-01-01;9164
+117;Hesse;Germany;matched;5507777;2022-01-01;Hesse;Germany;5507777.0;2022-01-01;9028
+118;Thuringia;Germany;matched;2161000;2022-01-01;Thuringia;Germany;2161000.0;2022-01-01;9381
+119;Saxony-Anhalt;Germany;matched;2245470;2022-01-01;Saxony-Anhalt;Germany;2245470.0;2022-01-01;9292
+120;Southern Denmark;Denmark;matched;1223894;2019-10-01;Southern Denmark;Denmark;1223894.0;2019-10-01;3956
+121;Central Denmark;Denmark;matched;1326913;2019-10-01;Central Denmark;Denmark;1326913.0;2019-10-01;3938
+122;North Denmark;Denmark;unmatched;;;;;;;
+123;Zealand;Denmark;matched;837087;2019-10-01;Region Zealand;Denmark;837087.0;2019-10-01;3950
+124;Denmark;Denmark;fuzzy_contain;1848989;2019-10-01;Capital Region of Denmark;Denmark;1848989.0;2019-10-01;3933
+125;Navarre;Spain;matched;678338;2024-01-01;Navarre;Spain;678338.0;2024-01-01;55408
+126;Gipuzkoa;Spain;unmatched;;;;;;;
+127;Huesca;Spain;unmatched;;;;;;;
+128;Lleida;Spain;unmatched;;;;;;;
+129;Girona;Spain;unmatched;;;;;;;
+130;Badajoz;Spain;unmatched;;;;;;;
+131;Cádiz;Spain;unmatched;;;;;;;
+132;Ourense;Spain;unmatched;;;;;;;
+133;Cáceres;Spain;unmatched;;;;;;;
+134;Salamanca;Spain;unmatched;;;;;;;
+135;Zamora;Spain;unmatched;;;;;;;
+136;Pontevedra;Spain;unmatched;;;;;;;
+137;Huelva;Spain;unmatched;;;;;;;
+138;Barcelona;Spain;unmatched;;;;;;;
+139;Tarragona;Spain;unmatched;;;;;;;
+140;Castellón;Spain;unmatched;;;;;;;
+141;Valencia;Spain;unmatched;;;;;;;
+142;Alicante;Spain;unmatched;;;;;;;
+143;Murcia;Spain;fuzzy_contain;1571933;2024-01-01;Region of Murcia;Spain;1571933.0;2024-01-01;55414
+144;Almería;Spain;unmatched;;;;;;;
+145;Granada;Spain;unmatched;;;;;;;
+146;Málaga;Spain;unmatched;;;;;;;
+147;Seville;Spain;unmatched;;;;;;;
+148;A Coruña;Spain;unmatched;;;;;;;
+149;Lugo;Spain;unmatched;;;;;;;
+150;Asturias;Spain;matched;1008028;2024-01-01;Asturias;Spain;1008028.0;2024-01-01;55123
+151;Cantabria;Spain;matched;591563;2024-01-01;Cantabria;Spain;591563.0;2024-01-01;55187
+152;Biscay;Spain;unmatched;;;;;;;
+153;Santa Cruz de Tenerife;Spain;unmatched;;;;;;;
+154;Las Palmas;Spain;unmatched;;;;;;;
+155;Balearic Islands;Spain;matched;1176659;2022-01-01;Balearic Islands;Spain;1176659.0;2022-01-01;55131
+156;Zaragoza;Spain;unmatched;;;;;;;
+157;La Rioja;Spain;matched;324399;2024-01-01;La Rioja;Spain;324399.0;2024-01-01;55357
+158;Araba / Álava;Spain;unmatched;;;;;;;
+159;Albacete;Spain;unmatched;;;;;;;
+160;Teruel;Spain;unmatched;;;;;;;
+161;Cuenca;Spain;unmatched;;;;;;;
+162;Toledo;Spain;unmatched;;;;;;;
+163;León;Spain;fuzzy_contain;2388350;2024-01-01;Castile and León;Spain;2388350.0;2024-01-01;55194
+164;Soria;Spain;unmatched;;;;;;;
+165;Burgos;Spain;unmatched;;;;;;;
+166;Ávila;Spain;unmatched;;;;;;;
+167;Palencia;Spain;unmatched;;;;;;;
+168;Ciudad Real;Spain;unmatched;;;;;;;
+169;Córdoba;Spain;unmatched;;;;;;;
+170;Guadalajara;Spain;unmatched;;;;;;;
+171;Jaén;Spain;unmatched;;;;;;;
+172;Community of Madrid;Spain;matched;7001715;2024-01-01;Community of Madrid;Spain;7001715.0;2024-01-01;55291
+173;Segovia;Spain;unmatched;;;;;;;
+174;Valladolid;Spain;unmatched;;;;;;;
+175;Viljandi;Estonia;matched;45637;2023-01-01;Viljandi County;Estonia;45637.0;2023-01-01;4240
+176;Pärnu;Estonia;matched;87418;2023-01-01;Pärnu County;Estonia;87418.0;2023-01-01;4112
+177;Valga;Estonia;matched;27924;2024-01-01;Valga County;Estonia;27924.0;2024-01-01;4224
+178;Võru;Estonia;matched;34049;2024-01-01;Võru County;Estonia;34049.0;2024-01-01;4260
+179;Ida-Viru;Estonia;matched;133358;2023-01-01;Ida-Viru County;Estonia;133358.0;2023-01-01;4012
+180;Põlva;Estonia;matched;24036;2023-01-01;Põlva County;Estonia;24036.0;2023-01-01;4132
+181;Tartu;Estonia;matched;162390;2023-01-01;Tartu County;Estonia;162390.0;2023-01-01;4193
+182;Jõgeva;Estonia;matched;27739;2023-01-01;Jõgeva County;Estonia;27739.0;2023-01-01;4053
+183;Lääne;Estonia;matched;20625;2024-01-01;Lääne County;Estonia;20625.0;2024-01-01;4074
+184;Harju;Estonia;matched;646315;2024-01-01;Harju County;Estonia;646315.0;2024-01-01;3974
+185;Lääne-Viru;Estonia;matched;59608;2023-01-01;Lääne-Viru County;Estonia;59608.0;2023-01-01;4091
+186;Saare;Estonia;matched;32021;2024-01-01;Saare County;Estonia;32021.0;2024-01-01;4177
+187;Hiiu;Estonia;matched;8418;2024-01-01;Hiiu County;Estonia;8418.0;2024-01-01;3996
+188;Rapla;Estonia;matched;34038;2023-01-01;Rapla County;Estonia;34038.0;2023-01-01;4158
+189;Järva;Estonia;matched;30072;2023-01-01;Järva County;Estonia;30072.0;2023-01-01;4034
+190;Lapland;Finland;matched;176711;2021-01-01;Lapland;Finland;176711.0;2021-01-01;4736
+191;Northern Ostrobothnia;Finland;unmatched;;;;;;;
+192;Kainuu;Finland;matched;71683;2021-01-01;Kainuu;Finland;71683.0;2021-01-01;4727
+193;North Karelia;Finland;matched;163570;2021-01-01;North Karelia;Finland;163570.0;2021-01-01;4751
+194;South Karelia;Finland;matched;126107;2021-12-31;South Karelia;Finland;126107.0;2021-12-31;4806
+195;Kymenlaakso;Finland;matched;162840;2021-01-01;Kymenlaakso;Finland;162840.0;2021-01-01;4733
+196;Uusimaa;Finland;matched;1704607;2021-01-01;Uusimaa;Finland;1704607.0;2021-01-01;4823
+197;Finland Proper;Finland;unmatched;;;;;;;
+198;Satakunta;Finland;matched;215351;2021-01-01;Satakunta;Finland;215351.0;2021-01-01;4793
+199;Ostrobothnia;Finland;matched;175821;2021-01-01;Ostrobothnia;Finland;175821.0;2021-01-01;4760
+200;Central Ostrobothnia;Finland;matched;67976;2021-01-01;Central Ostrobothnia;Finland;67976.0;2021-01-01;4724
+201;Northern Savonia;Finland;unmatched;;;;;;;
+202;Southern Savonia;Finland;unmatched;;;;;;;
+203;Central Finland;Finland;matched;272548;2021-01-01;Central Finland;Finland;272548.0;2021-01-01;4721
+204;Southern Ostrobothnia;Finland;unmatched;;;;;;;
+205;Pirkanmaa;Finland;matched;523598;2021-01-01;Pirkanmaa;Finland;523598.0;2021-01-01;4763
+206;Tavastia Proper;Finland;unmatched;;;;;;;
+207;Päijänne Tavastia;Finland;matched;205862;2021-01-01;Päijät-Häme;Finland;205862.0;2021-01-01;4790
+208;Nord;France;fuzzy_contain;4060741;2013-01-01;Nord-Pas-de-Calais;France;4060741.0;2013-01-01;6333
+209;Ardennes;France;unmatched;;;;;;;
+210;Aisne;France;unmatched;;;;;;;
+211;Meuse;France;unmatched;;;;;;;
+212;Meurthe-et-Moselle;France;unmatched;;;;;;;
+213;Moselle;France;unmatched;;;;;;;
+214;Alpes-Maritimes;France;unmatched;;;;;;;
+215;Alpes-de-Haute-Provence;France;unmatched;;;;;;;
+216;Hautes-Alpes;France;unmatched;;;;;;;
+217;Savoie;France;matched;6399927;2013-01-01;Rhône-Alpes;France;6399927.0;2013-01-01;6753
+218;Haute-Savoie;France;unmatched;;;;;;;
+219;Pyrenees-Atlantics;France;unmatched;;;;;;;
+220;Haute-Garonne;France;unmatched;;;;;;;
+221;Hautes-Pyrénées;France;unmatched;;;;;;;
+222;Ariège;France;unmatched;;;;;;;
+223;Pyrénées-Orientales;France;unmatched;;;;;;;
+224;Bas-Rhin;France;unmatched;;;;;;;
+225;Haut-Rhin;France;unmatched;;;;;;;
+226;Doubs;France;unmatched;;;;;;;
+227;Ain;France;unmatched;;;;;;;
+228;Jura;France;unmatched;;;;;;;
+229;Var;France;unmatched;;;;;;;
+230;Bouches-du-Rhône;France;unmatched;;;;;;;
+231;Gard;France;unmatched;;;;;;;
+232;Hérault;France;unmatched;;;;;;;
+233;Aude;France;unmatched;;;;;;;
+234;Landes;France;unmatched;;;;;;;
+235;Gironde;France;unmatched;;;;;;;
+236;Charente-Maritime;France;unmatched;;;;;;;
+237;Vendée;France;unmatched;;;;;;;
+238;Loire-Atlantique;France;unmatched;;;;;;;
+239;Morbihan;France;unmatched;;;;;;;
+240;Finistère;France;unmatched;;;;;;;
+241;Côtes-d'Armor;France;unmatched;;;;;;;
+242;Ille-et-Vilaine;France;unmatched;;;;;;;
+243;Manche;France;unmatched;;;;;;;
+244;Calvados;France;unmatched;;;;;;;
+245;Eure;France;unmatched;;;;;;;
+246;Seine-Maritime;France;unmatched;;;;;;;
+247;Somme;France;unmatched;;;;;;;
+248;Pas-de-Calais;France;unmatched;;;;;;;
+249;Haute-Corse;France;unmatched;;;;;;;
+250;Corse-du-Sud;France;unmatched;;;;;;;
+251;Gers;France;unmatched;;;;;;;
+252;Haute-Vienne;France;unmatched;;;;;;;
+253;Corrèze;France;unmatched;;;;;;;
+254;Tarn-et-Garonne;France;unmatched;;;;;;;
+255;Tarn;France;unmatched;;;;;;;
+256;Isère;France;unmatched;;;;;;;
+257;Drôme;France;unmatched;;;;;;;
+258;Aveyron;France;unmatched;;;;;;;
+259;Lot;France;unmatched;;;;;;;
+260;Indre-et-Loire;France;unmatched;;;;;;;
+261;Indre;France;unmatched;;;;;;;
+262;Loir-et-Cher;France;unmatched;;;;;;;
+263;Creuse;France;unmatched;;;;;;;
+264;Mayenne;France;unmatched;;;;;;;
+265;Sarthe;France;unmatched;;;;;;;
+266;Vaucluse;France;unmatched;;;;;;;
+267;Haute-Marne;France;unmatched;;;;;;;
+268;Marne;France;unmatched;;;;;;;
+269;Dordogne;France;unmatched;;;;;;;
+270;Rhône;France;fuzzy_contain;8163884;2022-01-01;Auvergne-Rhône-Alpes;France;8163884.0;2022-01-01;4979
+271;Vosges;France;unmatched;;;;;;;
+272;Ardèche;France;unmatched;;;;;;;
+273;Loire;France;fuzzy_contain;2581597;2022-01-01;Centre-Val de Loire;France;2581597.0;2022-01-01;5111
+274;Puy-de-Dôme;France;unmatched;;;;;;;
+275;Allier;France;unmatched;;;;;;;
+276;Loiret;France;unmatched;;;;;;;
+277;Maine-et-Loire;France;unmatched;;;;;;;
+278;Aube;France;unmatched;;;;;;;
+279;Val-d'Oise;France;unmatched;;;;;;;
+280;Yvelines;France;unmatched;;;;;;;
+281;Charente;France;unmatched;;;;;;;
+282;Cher;France;unmatched;;;;;;;
+283;Eure-et-Loir;France;unmatched;;;;;;;
+284;Haute-Loire;France;unmatched;;;;;;;
+285;Cantal;France;unmatched;;;;;;;
+286;Lot-et-Garonne;France;unmatched;;;;;;;
+287;Lozère;France;unmatched;;;;;;;
+288;Nièvre;France;unmatched;;;;;;;
+289;Côte-d’Or;France;unmatched;;;;;;;
+290;Oise;France;unmatched;;;;;;;
+291;Orne;France;unmatched;;;;;;;
+292;Haute-Saône;France;unmatched;;;;;;;
+293;Saône-et-Loire;France;unmatched;;;;;;;
+294;Deux-Sèvres;France;unmatched;;;;;;;
+295;Vienne;France;unmatched;;;;;;;
+296;Yonne;France;unmatched;;;;;;;
+297;Essonne;France;unmatched;;;;;;;
+298;Seine-et-Marne;France;unmatched;;;;;;;
+299;Strabane;United Kingdom;unmatched;;;;;;;
+300;Fermanagh;United Kingdom;unmatched;;;;;;;
+301;Wrexham;United Kingdom;unmatched;;;;;;;
+302;Shropshire;United Kingdom;unmatched;;;;;;;
+303;Powys;United Kingdom;unmatched;;;;;;;
+304;Herefordshire;United Kingdom;unmatched;;;;;;;
+305;Gloucestershire;United Kingdom;unmatched;;;;;;;
+306;Scottish Borders;United Kingdom;unmatched;;;;;;;
+307;Northumberland;United Kingdom;unmatched;;;;;;;
+308;Cumbria;United Kingdom;unmatched;;;;;;;
+309;Dumfries and Galloway;United Kingdom;unmatched;;;;;;;
+310;Stirling;United Kingdom;unmatched;;;;;;;
+311;Durham;United Kingdom;unmatched;;;;;;;
+312;North Yorkshire;United Kingdom;unmatched;;;;;;;
+313;East Riding of Yorkshire;United Kingdom;unmatched;;;;;;;
+314;North East Lincolnshire;United Kingdom;unmatched;;;;;;;
+315;Lincolnshire;United Kingdom;unmatched;;;;;;;
+316;Norfolk;United Kingdom;unmatched;;;;;;;
+317;Suffolk;United Kingdom;unmatched;;;;;;;
+318;Essex;United Kingdom;unmatched;;;;;;;
+319;Kent;United Kingdom;unmatched;;;;;;;
+320;East Sussex;United Kingdom;unmatched;;;;;;;
+321;West Sussex;United Kingdom;unmatched;;;;;;;
+322;Hampshire;United Kingdom;unmatched;;;;;;;
+323;Dorset;United Kingdom;unmatched;;;;;;;
+324;Devon;United Kingdom;unmatched;;;;;;;
+325;Cornwall;United Kingdom;unmatched;;;;;;;
+326;Somerset;United Kingdom;unmatched;;;;;;;
+327;Carmarthenshire;United Kingdom;unmatched;;;;;;;
+328;Pembrokeshire;United Kingdom;unmatched;;;;;;;
+329;Ceredigion;United Kingdom;unmatched;;;;;;;
+330;Gwynedd;United Kingdom;unmatched;;;;;;;
+331;Conwy;United Kingdom;unmatched;;;;;;;
+332;Lancashire;United Kingdom;unmatched;;;;;;;
+333;South Ayrshire;United Kingdom;unmatched;;;;;;;
+334;Argyll and Bute;United Kingdom;unmatched;;;;;;;
+335;Highland;United Kingdom;unmatched;;;;;;;
+336;Moray;United Kingdom;unmatched;;;;;;;
+337;Aberdeenshire;United Kingdom;unmatched;;;;;;;
+338;Angus;United Kingdom;unmatched;;;;;;;
+339;Perth and Kinross;United Kingdom;unmatched;;;;;;;
+340;Fife;United Kingdom;unmatched;;;;;;;
+341;Outer Hebrides;United Kingdom;unmatched;;;;;;;
+342;Shetland Islands;United Kingdom;unmatched;;;;;;;
+343;East Ayrshire;United Kingdom;unmatched;;;;;;;
+344;South Lanarkshire;United Kingdom;unmatched;;;;;;;
+345;Omagh;United Kingdom;unmatched;;;;;;;
+346;Hertfordshire;United Kingdom;unmatched;;;;;;;
+347;Cambridgeshire;United Kingdom;unmatched;;;;;;;
+348;Buckinghamshire;United Kingdom;unmatched;;;;;;;
+349;Nottinghamshire;United Kingdom;unmatched;;;;;;;
+350;Northamptonshire;United Kingdom;unmatched;;;;;;;
+351;Leicestershire;United Kingdom;unmatched;;;;;;;
+352;Cheshire East;United Kingdom;unmatched;;;;;;;
+353;Derbyshire;United Kingdom;unmatched;;;;;;;
+354;Staffordshire;United Kingdom;unmatched;;;;;;;
+355;Worcestershire;United Kingdom;unmatched;;;;;;;
+356;Warwickshire;United Kingdom;unmatched;;;;;;;
+357;Oxfordshire;United Kingdom;unmatched;;;;;;;
+358;Surrey;United Kingdom;unmatched;;;;;;;
+359;Wiltshire;United Kingdom;unmatched;;;;;;;
+360;Abkhazia;Georgia;unmatched;;;;;;;
+361;Samegrelo-Zemo Svaneti;Georgia;matched;308405;2021-01-01;Samegrelo-Zemo Svaneti;Georgia;308405.0;2021-01-01;7472
+362;Shida Kartli;Georgia;matched;254100;2021-01-01;Shida Kartli;Georgia;254100.0;2021-01-01;7481
+363;Racha-Lechkhumi and Kvemo Svaneti;Georgia;matched;32089;2021-01-01;Racha-Lechkhumi and Kvemo Svaneti;Georgia;32089.0;2021-01-01;7468
+364;Samtskhe–Javakheti;Georgia;matched;151100;2021-01-01;Samtskhe–Javakheti;Georgia;151100.0;2021-01-01;7476
+365;Adjara;Georgia;unmatched;;;;;;;
+366;Guria;Georgia;matched;107100;2021-01-01;Guria;Georgia;107100.0;2021-01-01;7450
+367;Imereti;Georgia;matched;481500;2021-01-01;Imereti;Georgia;481500.0;2021-01-01;7454
+368;West Macedonia;Greece;unmatched;;;;;;;
+369;Epirus;Greece;matched;319991;2021-01-01;Epirus Region;Greece;319991.0;2021-01-01;9429
+370;Centre Macedonia;Greece;fuzzy_best;1795669;2021-01-01;Central Macedonia Region;Greece;1795669.0;2021-01-01;9394
+371;East Macedonia and Thrace;Greece;fuzzy_best;562201;2021-01-01;Eastern Macedonia and Thrace Region;Greece;562201.0;2021-01-01;9427
+372;Thessalia;Greece;matched;688255;2021-01-01;Thessaly Region;Greece;688255.0;2021-01-01;9449
+373;Central Greece;Greece;matched;508254;2021-01-01;Central Greece Region;Greece;508254.0;2021-01-01;9391
+374;Attica;Greece;matched;3814064;2021-01-01;Attica Region;Greece;3814064.0;2021-01-01;9385
+375;Peloponnese;Greece;matched;539535;2021-01-01;Peloponnese Region;Greece;539535.0;2021-01-01;9441
+376;West Greece;Greece;matched;648220;2021-01-01;West Greece Region;Greece;648220.0;2021-01-01;9453
+377;Crete;Greece;matched;624408;2021-01-01;Crete Region;Greece;624408.0;2021-01-01;9397
+378;South Aegean;Greece;matched;327820;2021-01-01;South Aegean Region;Greece;327820.0;2021-01-01;9444
+379;North Aegean;Greece;matched;194943;2021-01-01;North Aegean Region;Greece;194943.0;2021-01-01;9438
+380;Ionian Islands;Greece;matched;204532;2021-01-01;Ionian Islands Region;Greece;204532.0;2021-01-01;9434
+381;Virovitica-Podravina;Croatia;matched;84836;2011-01-01;Virovitica-Podravina County;Croatia;84836.0;2011-01-01;2695
+382;Koprivnica-Križevci;Croatia;matched;115584;2011-01-01;Koprivnica-Križevci County;Croatia;115584.0;2011-01-01;2665
+383;Osijek-Baranja;Croatia;matched;305032;2011-01-01;Osijek-Baranja County;Croatia;305032.0;2011-01-01;2677
+384;Istria;Croatia;matched;195237;2021-08-31;Istria County;Croatia;195237.0;2021-08-31;2656
+385;Dubrovnik-Neretva;Croatia;matched;115862;2021-01-01;Dubrovnik-Neretva County;Croatia;115862.0;2021-01-01;2653
+386;Sisak-Moslavina;Croatia;matched;185387;2001-03-31;Sisak-Moslavina County;Croatia;185387.0;2001-03-31;2686
+387;Brod-Posavina;Croatia;matched;158575;2011-01-01;Brod-Posavina County;Croatia;158575.0;2011-01-01;2647
+388;Karlovac;Croatia;matched;128899;2011-01-01;Karlovac County;Croatia;128899.0;2011-01-01;2659
+389;Zadar;Croatia;matched;159766;2021-08-31;Zadar County;Croatia;159766.0;2021-08-31;2701
+390;Vukovar-Syrmia;Croatia;matched;179521;2011-01-01;Vukovar-Srijem County;Croatia;179521.0;2011-01-01;2698
+391;Split-Dalmatia;Croatia;matched;423407;2021-08-31;Split-Dalmatia County;Croatia;423407.0;2021-08-31;2689
+392;Varaždin;Croatia;matched;175951;2011-01-01;Varaždin County;Croatia;175951.0;2011-01-01;2692
+393;Krapina-Zagorje;Croatia;matched;120702;2021-08-31;Krapina-Zagorje County;Croatia;120702.0;2021-08-31;2668
+394;Zagreb;Croatia;matched;317642;2011-01-01;Zagreb County;Croatia;317642.0;2011-01-01;2707
+395;Primorje-Gorski;Croatia;matched;265419;2021-08-31;Primorje-Gorski Kotar County;Croatia;265419.0;2021-08-31;2683
+396;Šibenik-Knin;Croatia;matched;109375;2011-01-01;Šibenik-Knin County;Croatia;109375.0;2011-01-01;2710
+397;Lika-Senj;Croatia;matched;42748;2021-08-31;Lika-Senj County;Croatia;42748.0;2021-08-31;2671
+398;Bjelovar-Bilogora;Croatia;matched;119764;2011-01-01;Bjelovar-Bilogora County;Croatia;119764.0;2011-01-01;2645
+399;Požega-Slavonia;Croatia;matched;64084;2021-08-31;Požega-Slavonia County;Croatia;64084.0;2021-08-31;2680
+400;Szabolcs-Szatmár-Bereg;Hungary;matched;529381;2022-10-01;Szabolcs-Szatmár-Bereg County;Hungary;529381.0;2022-10-01;10595
+401;Békés;Hungary;matched;315222;2022-10-01;Békés County;Hungary;315222.0;2022-10-01;10046
+402;Hajdú-Bihar;Hungary;matched;519141;2022-10-01;Hajdú-Bihar County;Hungary;519141.0;2022-10-01;10243
+403;Csongrád-Csanád;Hungary;matched;391184;2022-10-01;Csongrád-Csanád County;Hungary;391184.0;2022-10-01;10082
+404;Győr-Moson-Sopron;Hungary;matched;465945;2022-10-01;Győr-Moson-Sopron County;Hungary;465945.0;2022-10-01;10238
+405;Vas;Hungary;matched;249513;2022-10-01;Vas County;Hungary;249513.0;2022-10-01;10880
+406;Bács-Kiskun;Hungary;matched;495318;2022-10-01;Bács-Kiskun County;Hungary;495318.0;2022-10-01;10038
+407;Zala;Hungary;matched;260800;2022-10-01;Zala County;Hungary;260800.0;2022-10-01;10923
+408;Somogy;Hungary;matched;293470;2022-10-01;Somogy County;Hungary;293470.0;2022-10-01;10562
+409;Baranya;Hungary;matched;354022;2022-10-01;Baranya County;Hungary;354022.0;2022-10-01;10016
+410;Borsod-Abaúj-Zemplén;Hungary;matched;623024;2022-10-01;Borsod-Abaúj-Zemplén County;Hungary;623024.0;2022-10-01;10021
+411;Nógrád;Hungary;matched;182459;2022-10-01;Nógrád County;Hungary;182459.0;2022-10-01;10448
+412;Komárom-Esztergom;Hungary;matched;300631;2022-10-01;Komárom-Esztergom County;Hungary;300631.0;2022-10-01;10347
+413;Pest;Hungary;matched;1333533;2022-10-01;Pest County;Hungary;1333533.0;2022-10-01;10456
+414;Jász-Nagykun-Szolnok;Hungary;matched;355809;2022-10-01;Jász-Nagykun-Szolnok County;Hungary;355809.0;2022-10-01;10282
+415;Fejér;Hungary;matched;419656;2022-10-01;Fejér County;Hungary;419656.0;2022-10-01;10233
+416;Veszprém;Hungary;matched;55118;2025-01-01;Veszprém;Hungary;55118.0;2025-01-01;10908
+417;Tolna;Hungary;matched;207931;2022-10-01;Tolna County;Hungary;207931.0;2022-10-01;10870
+418;Heves;Hungary;matched;285892;2022-10-01;Heves County;Hungary;285892.0;2022-10-01;10248
+419;Donegal;Ireland;unmatched;;;;;;;
+420;Leitrim;Ireland;unmatched;;;;;;;
+421;Cavan;Ireland;unmatched;;;;;;;
+422;Monaghan;Ireland;unmatched;;;;;;;
+423;Wicklow;Ireland;unmatched;;;;;;;
+424;Wexford;Ireland;unmatched;;;;;;;
+425;Kilkenny;Ireland;unmatched;;;;;;;
+426;Waterford;Ireland;matched;48369;2016-01-01;Waterford;Ireland;48369.0;2016-01-01;11138
+427;Cork;Ireland;matched;222333;2022-01-01;Cork;Ireland;222333.0;2022-01-01;11097
+428;Kerry;Ireland;unmatched;;;;;;;
+429;Limerick;Ireland;matched;62702;2022-04-03;Limerick;Ireland;62702.0;2022-04-03;11120
+430;Clare;Ireland;unmatched;;;;;;;
+431;Galway;Ireland;unmatched;;;;;;;
+432;Mayo;Ireland;unmatched;;;;;;;
+433;Sligo;Ireland;unmatched;;;;;;;
+434;Meath;Ireland;unmatched;;;;;;;
+435;Kildare;Ireland;unmatched;;;;;;;
+436;Laois;Ireland;unmatched;;;;;;;
+437;Offaly;Ireland;unmatched;;;;;;;
+438;Westmeath;Ireland;unmatched;;;;;;;
+439;Longford;Ireland;unmatched;;;;;;;
+440;Roscommon;Ireland;unmatched;;;;;;;
+441;Tipperary;Ireland;unmatched;;;;;;;
+442;Austurland;Iceland;unmatched;;;;;;;
+443;Southern;Iceland;matched;28399;2020-01-01;Southern Region;Iceland;28399.0;2020-01-01;11024
+444;Western;Iceland;matched;17541;2023-01-01;Western Region;Iceland;17541.0;2023-01-01;11029
+445;Westfjords;Iceland;matched;7379;2023-01-01;Westfjords;Iceland;7379.0;2023-01-01;11052
+446;Northwestern;Iceland;matched;7322;2020-01-01;Northwestern Region;Iceland;7322.0;2020-01-01;11016
+447;Northeastern;Iceland;matched;30600;2020-01-01;Northeastern Region;Iceland;30600.0;2020-01-01;11013
+448;Aosta;Italy;fuzzy_contain;125666;2019-01-01;Aosta Valley;Italy;125666.0;2019-01-01;11150
+449;Verbano-Cusio-Ossola;Italy;unmatched;;;;;;;
+450;Varese;Italy;unmatched;;;;;;;
+451;Como;Italy;unmatched;;;;;;;
+452;Sondrio;Italy;unmatched;;;;;;;
+453;Trentino-South Tyrol;Italy;matched;1072276;2019-01-01;Trentino-South Tyrol;Italy;1072276.0;2019-01-01;11204
+454;Imperia;Italy;unmatched;;;;;;;
+455;Cuneo;Italy;unmatched;;;;;;;
+456;Turin;Italy;unmatched;;;;;;;
+457;Pesaro and Urbino;Italy;unmatched;;;;;;;
+458;Belluno;Italy;unmatched;;;;;;;
+459;Udine;Italy;unmatched;;;;;;;
+460;Venice;Italy;unmatched;;;;;;;
+461;Padua;Italy;unmatched;;;;;;;
+462;Rovigo;Italy;unmatched;;;;;;;
+463;Ferrara;Italy;unmatched;;;;;;;
+464;Ravenna;Italy;unmatched;;;;;;;
+465;Forlì-Cesena;Italy;unmatched;;;;;;;
+466;Ancona;Italy;unmatched;;;;;;;
+467;Macerata;Italy;unmatched;;;;;;;
+468;Ascoli Piceno;Italy;unmatched;;;;;;;
+469;Teramo;Italy;unmatched;;;;;;;
+470;Pescara;Italy;unmatched;;;;;;;
+471;Chieti;Italy;unmatched;;;;;;;
+472;Campobasso;Italy;unmatched;;;;;;;
+473;Foggia;Italy;unmatched;;;;;;;
+474;Barletta-Andria-Trani;Italy;unmatched;;;;;;;
+475;Bari;Italy;unmatched;;;;;;;
+476;Brindisi;Italy;unmatched;;;;;;;
+477;Lecce;Italy;unmatched;;;;;;;
+478;Taranto;Italy;unmatched;;;;;;;
+479;Matera;Italy;unmatched;;;;;;;
+480;Cosenza;Italy;unmatched;;;;;;;
+481;Crotone;Italy;unmatched;;;;;;;
+482;Catanzaro;Italy;unmatched;;;;;;;
+483;Reggio Calabria;Italy;unmatched;;;;;;;
+484;Vibo Valentia;Italy;unmatched;;;;;;;
+485;Potenza;Italy;unmatched;;;;;;;
+486;Salerno;Italy;unmatched;;;;;;;
+487;Naples;Italy;unmatched;;;;;;;
+488;Caserta;Italy;unmatched;;;;;;;
+489;Latina;Italy;unmatched;;;;;;;
+490;Rome;Italy;unmatched;;;;;;;
+491;Viterbo;Italy;unmatched;;;;;;;
+492;Grosseto;Italy;unmatched;;;;;;;
+493;Livorno;Italy;unmatched;;;;;;;
+494;Pisa;Italy;unmatched;;;;;;;
+495;Lucca;Italy;unmatched;;;;;;;
+496;Massa-Carrara;Italy;unmatched;;;;;;;
+497;Liguria;Italy;matched;1550640;2019-01-01;Liguria;Italy;1550640.0;2019-01-01;11184
+498;Savona;Italy;unmatched;;;;;;;
+499;Trapani;Italy;unmatched;;;;;;;
+500;Messina;Italy;unmatched;;;;;;;
+501;Palermo;Italy;unmatched;;;;;;;
+502;Agrigento;Italy;unmatched;;;;;;;
+503;Caltanissetta;Italy;unmatched;;;;;;;
+504;Ragusa;Italy;unmatched;;;;;;;
+505;Syracuse;Italy;unmatched;;;;;;;
+506;Catania;Italy;unmatched;;;;;;;
+507;Carbonia-Iglesias;Italy;unmatched;;;;;;;
+508;Sassari;Italy;unmatched;;;;;;;
+509;Nuoro;Italy;unmatched;;;;;;;
+510;Olbia-Tempio;Italy;unmatched;;;;;;;
+511;Oristano;Italy;unmatched;;;;;;;
+512;Medio Campidano;Italy;unmatched;;;;;;;
+513;Cagliari;Italy;unmatched;;;;;;;
+514;Ogliastra;Italy;unmatched;;;;;;;
+515;Enna;Italy;unmatched;;;;;;;
+516;Benevento;Italy;unmatched;;;;;;;
+517;Asti;Italy;unmatched;;;;;;;
+518;Bergamo;Italy;unmatched;;;;;;;
+519;Brescia;Italy;unmatched;;;;;;;
+520;Cremona;Italy;unmatched;;;;;;;
+521;Mantua;Italy;unmatched;;;;;;;
+522;Milan;Italy;unmatched;;;;;;;
+523;Siena;Italy;unmatched;;;;;;;
+524;Arezzo;Italy;unmatched;;;;;;;
+525;Florence;Italy;unmatched;;;;;;;
+526;Vercelli;Italy;unmatched;;;;;;;
+527;Pavia;Italy;unmatched;;;;;;;
+528;Rieti;Italy;unmatched;;;;;;;
+529;Novara;Italy;unmatched;;;;;;;
+530;Alessandria;Italy;unmatched;;;;;;;
+531;Trentino;Italy;unmatched;;;;;;;
+532;Vicenza;Italy;unmatched;;;;;;;
+533;Verona;Italy;unmatched;;;;;;;
+534;Treviso;Italy;unmatched;;;;;;;
+535;Piacenza;Italy;unmatched;;;;;;;
+536;Parma;Italy;unmatched;;;;;;;
+537;Reggio Emilia;Italy;unmatched;;;;;;;
+538;Modena;Italy;unmatched;;;;;;;
+539;Bologna;Italy;unmatched;;;;;;;
+540;Terni;Italy;unmatched;;;;;;;
+541;Perugia;Italy;unmatched;;;;;;;
+542;Frosinone;Italy;unmatched;;;;;;;
+543;Avellino;Italy;unmatched;;;;;;;
+544;L'Aquila;Italy;unmatched;;;;;;;
+545;Pordenone;Italy;unmatched;;;;;;;
+546;Isernia;Italy;unmatched;;;;;;;
+547;Plužine;Kosovo;matched;331670;;Prizren District;Kosovo;331670.0;;13086
+548;Kačanik;Kosovo;unmatched;;;;;;;
+549;Podujevo/Podujeva;Kosovo;unmatched;;;;;;;
+550;Kosovo-Pomoravlje;Kosovo;unmatched;;;;;;;
+551;Utena;Lithuania;matched;37555;2023-01-01;Utena District Municipality;Lithuania;37555.0;2023-01-01;18148
+552;Vilnius;Lithuania;matched;101943;2023-01-01;Vilnius District Municipality;Lithuania;101943.0;2023-01-01;18826
+553;Alytus;Lithuania;matched;25356;2023-01-01;Alytus District Municipality;Lithuania;25356.0;2023-01-01;15085
+554;Panevėžys;Lithuania;matched;35225;2023-01-01;Panevėžys District Municipality;Lithuania;35225.0;2023-01-01;16764
+555;Telšiai;Lithuania;matched;39141;2023-01-01;Telšiai District Municipality;Lithuania;39141.0;2023-01-01;17362
+556;Klaipėda;Lithuania;matched;63862;2023-01-01;Klaipėda District Municipality;Lithuania;63862.0;2023-01-01;16076
+557;Šiauliai;Lithuania;matched;40638;2023-01-01;Šiauliai District Municipality;Lithuania;40638.0;2023-01-01;19157
+558;Marijampolė;Lithuania;matched;54710;2023-01-01;Marijampolė Municipality;Lithuania;54710.0;2023-01-01;16349
+559;Tauragė;Lithuania;matched;37582;2023-01-01;Tauragė District Municipality;Lithuania;37582.0;2023-01-01;17310
+560;Kaunas;Lithuania;matched;99265;2023-01-01;Kaunas District Municipality;Lithuania;99265.0;2023-01-01;15857
+561;Diekirch;Luxembourg;matched;85439;2015-01-01;Diekirch District;Luxembourg;85439.0;2015-01-01;22146
+562;Valka;Latvia;matched;7645;2025-01-01;Valka Municipality;Latvia;7645.0;2025-01-01;14681
+563;Alūksne;Latvia;matched;13154;2025-01-01;Alūksne Municipality;Latvia;13154.0;2025-01-01;13160
+564;Kārsava;Latvia;matched;5127;2021-01-01;Kārsava Municipality;Latvia;5127.0;2021-01-01;13920
+565;Vecumnieki;Latvia;matched;7795;2021-01-01;Vecumnieki Municipality;Latvia;7795.0;2021-01-01;14764
+566;Saldus;Latvia;matched;26631;2025-01-01;Saldus Municipality;Latvia;26631.0;2025-01-01;14501
+567;Vaiņode;Latvia;matched;2216;2021-01-01;Vaiņode Municipality;Latvia;2216.0;2021-01-01;14662
+568;Jelgava;Latvia;matched;32009;2025-01-01;Jelgava Municipality;Latvia;32009.0;2025-01-01;13602
+569;Daugavpils;Latvia;matched;78126;2025-01-01;Daugavpils;Latvia;78126.0;2025-01-01;13414
+570;Krāslava;Latvia;matched;19505;2025-01-01;Krāslava Municipality;Latvia;19505.0;2025-01-01;13887
+571;Ventspils;Latvia;matched;10295;2025-01-01;Ventspils Municipality;Latvia;10295.0;2025-01-01;14828
+572;Talsi;Latvia;matched;34801;2025-01-01;Talsi Municipality;Latvia;34801.0;2025-01-01;14623
+573;Riga;Latvia;matched;595053;2025-01-01;Riga;Latvia;595053.0;2025-01-01;14343
+574;Limbaži;Latvia;matched;27613;2025-01-01;Limbaži Municipality;Latvia;27613.0;2025-01-01;14009
+575;Rēzekne;Latvia;matched;27709;2025-01-01;Rēzekne Municipality;Latvia;27709.0;2025-01-01;14443
+576;Gulbene;Latvia;matched;18497;2025-01-01;Gulbene Municipality;Latvia;18497.0;2025-01-01;13496
+577;Madona;Latvia;matched;29898;2025-07-01;Madona Municipality;Latvia;29898.0;2025-07-01;14083
+578;Ogre;Latvia;matched;57668;2025-01-01;Ogre Municipality;Latvia;57668.0;2025-01-01;14209
+579;Kuldīga;Latvia;matched;26666;2025-01-01;Kuldīga Municipality;Latvia;26666.0;2025-01-01;13905
+580;Tukums;Latvia;matched;43439;2025-01-01;Tukums Municipality;Latvia;43439.0;2025-01-01;14649
+581;Edineț;Moldova;matched;50429;2024-04-08;Edineț District;Moldova;50429.0;2024-04-08;23015
+582;Rîșcani;Moldova;matched;43652;2024-04-08;Rîșcani District;Moldova;43652.0;2024-04-08;23257
+583;Fălești;Moldova;matched;56039;2024-04-08;Fălești District;Moldova;56039.0;2024-04-08;23035
+584;Ungheni;Moldova;matched;75804;2024-04-08;Ungheni District;Moldova;75804.0;2024-04-08;24451
+585;Hîncești;Moldova;matched;69462;2024-04-08;Hîncești District;Moldova;69462.0;2024-04-08;23063
+586;Cantemir;Moldova;matched;33181;2024-04-08;Cantemir District;Moldova;33181.0;2024-04-08;22901
+587;Cahul;Moldova;matched;72775;2024-04-08;Cahul District;Moldova;72775.0;2024-04-08;22897
+588;Ștefan Vodă;Moldova;matched;42285;2024-04-08;Ștefan Vodă District;Moldova;42285.0;2024-04-08;24459
+589;Căușeni;Moldova;matched;57261;2024-04-08;Căușeni District;Moldova;57261.0;2024-04-08;23001
+590;Cimișlia;Moldova;matched;30986;2024-04-08;Cimișlia District;Moldova;30986.0;2024-04-08;22971
+591;Taraclia;Moldova;matched;26435;2024-04-08;Taraclia District;Moldova;26435.0;2024-04-08;23297
+592;Comrat;Moldova;matched;19947;2024-04-08;Comrat;Moldova;19947.0;2024-04-08;22989
+593;Orhei;Moldova;matched;79242;2024-04-08;Orhei District;Moldova;79242.0;2024-04-08;23249
+594;Mavrovo and Rostuša;Macedonia;unmatched;;;;;;;
+595;Debarca;Macedonia;unmatched;;;;;;;
+596;Bogdanci;Macedonia;unmatched;;;;;;;
+597;Kavadarci;Macedonia;unmatched;;;;;;;
+598;Prilep;Macedonia;unmatched;;;;;;;
+599;Bitola;Macedonia;unmatched;;;;;;;
+600;Tearce;Macedonia;unmatched;;;;;;;
+601;Staro Nagoričane;Macedonia;unmatched;;;;;;;
+602;Berovo;Macedonia;unmatched;;;;;;;
+603;Berane;Montenegro;matched;27256;2017-01-01;Berane Municipality;Montenegro;27256.0;2017-01-01;24467
+604;Pljevlja;Montenegro;matched;28124;2017-01-01;Pljevlja Municipality;Montenegro;28124.0;2017-01-01;24532
+605;Nikšić;Montenegro;matched;72443;2011-01-01;Nikšić Municipality;Montenegro;72443.0;2011-01-01;24511
+606;Podgorica;Montenegro;matched;150977;2011-01-01;Podgorica;Montenegro;150977.0;2011-01-01;24560
+607;Groningen;Netherlands;matched;582728;2013-12-31;Groningen;Netherlands;582728.0;2013-12-31;24615
+608;Drenthe;Netherlands;matched;491792;2017-01-01;Drenthe;Netherlands;491792.0;2017-01-01;24594
+609;Overijssel;Netherlands;matched;1142360;2015-08-01;Overijssel;Netherlands;1142360.0;2015-08-01;24635
+610;Gelderland;Netherlands;matched;2019692;2013-12-31;Gelderland;Netherlands;2019692.0;2013-12-31;24612
+611;Limburg;Netherlands;matched;1120006;2013-12-31;Limburg;Netherlands;1120006.0;2013-12-31;24618
+612;Zeeland;Netherlands;matched;386707;2022-01-01;Zeeland;Netherlands;386707.0;2022-01-01;24651
+613;North Brabant;Netherlands;matched;2256848;2015-01-01;North Brabant;Netherlands;2256848.0;2015-01-01;24624
+614;South Holland;Netherlands;matched;3577032;2013-12-31;South Holland;Netherlands;3577032.0;2013-12-31;24639
+615;North Holland;Netherlands;matched;2813466;2017-01-01;North Holland;Netherlands;2813466.0;2017-01-01;24630
+616;Friesland;Netherlands;matched;649944;2021-01-01;Friesland;Netherlands;649944.0;2021-01-01;24609
+617;Flevoland;Netherlands;matched;399893;2013-12-31;Flevoland;Netherlands;399893.0;2013-12-31;24597
+618;Utrecht;Netherlands;matched;1253672;2013-12-31;Utrecht;Netherlands;1253672.0;2013-12-31;24642
+619;Troms;Norway;matched;167207;2019-01-01;Troms;Norway;167207.0;2019-01-01;25397
+620;Nordland;Norway;matched;243385;2019-01-01;Nordland;Norway;243385.0;2019-01-01;25353
+621;Nord-Trøndelag;Norway;matched;136399;2016-01-01;Nord-Trøndelag;Norway;136399.0;2016-01-01;25349
+622;Sør-Trøndelag;Norway;matched;318359;2017-06-30;Sør-Trøndelag;Norway;318359.0;2017-06-30;25389
+623;Hedmark;Norway;matched;197406;2019-01-01;Hedmark;Norway;197406.0;2019-01-01;25336
+624;Akershus;Norway;matched;716020;2023-01-01;Akershus;Norway;716020.0;2023-01-01;25318
+625;Østfold;Norway;matched;297520;2019-01-01;Østfold;Norway;297520.0;2019-01-01;25425
+626;Finnmark;Norway;matched;75758;2016-01-01;Finnmark;Norway;75758.0;2016-01-01;25332
+627;Buskerud;Norway;matched;270543;2024-08-01;Buskerud;Norway;270543.0;2024-08-01;25328
+628;Vestfold;Norway;matched;251078;2019-01-01;Vestfold;Norway;251078.0;2019-01-01;25413
+629;Telemark;Norway;matched;173318;2019-01-01;Telemark;Norway;173318.0;2019-01-01;25393
+630;Aust-Agder;Norway;matched;117655;2019-01-01;Aust-Agder;Norway;117655.0;2019-01-01;25324
+631;Vest-Agder;Norway;matched;187589;2019-01-01;Vest-Agder;Norway;187589.0;2019-01-01;25407
+632;Rogaland;Norway;matched;499417;2024-01-01;Rogaland;Norway;499417.0;2024-01-01;25379
+633;Hordaland;Norway;matched;524495;2019-01-01;Hordaland;Norway;524495.0;2019-01-01;25340
+634;Sogn og Fjordane;Norway;matched;109774;2019-01-01;Sogn og Fjordane;Norway;109774.0;2019-01-01;25382
+635;Møre og Romsdal;Norway;matched;265392;2019-01-01;Møre og Romsdal;Norway;265392.0;2019-01-01;25347
+636;Svalbard;Norway;matched;2668;;Svalbard;Norway;2668.0;;25385
+637;Oppland;Norway;matched;189545;2019-01-01;Oppland;Norway;189545.0;2019-01-01;25357
+638;Silesian Voivodeship;Poland;matched;4617000;;Silesian Voivodeship;Poland;4617000.0;;25905
+639;Lesser Poland Voivodeship;Poland;matched;3360581;2013-01-01;Lesser Poland Voivodeship;Poland;3360581.0;2013-01-01;25882
+640;Podkarpackie Voivodeship;Poland;matched;2121229;2020-01-01;Subcarpathian Voivodeship;Poland;2121229.0;2020-01-01;25908
+641;Lower Silesian Voivodeship;Poland;matched;2915245;2012-12-31;Lower Silesian Voivodeship;Poland;2915245.0;2012-12-31;25884
+642;Opole Voivodeship;Poland;matched;1010203;2017-01-01;Opole Voivodeship;Poland;1010203.0;2017-01-01;25898
+643;Podlaskie Voivodeship;Poland;matched;1193348;2014-06-30;Podlaskie Voivodeship;Poland;1193348.0;2014-06-30;25900
+644;Warmian-Masurian Voivodeship;Poland;matched;1437812;2016-06-30;Warmian-Masurian Voivodeship;Poland;1437812.0;2016-06-30;25917
+645;Lubusz Voivodeship;Poland;matched;1020767;2014-01-01;Lubusz Voivodeship;Poland;1020767.0;2014-01-01;25888
+646;West Pomeranian Voivodeship;Poland;matched;1622760;2024-12-31;West Pomeranian Voivodeship;Poland;1622760.0;2024-12-31;25928
+647;Lublin Voivodeship;Poland;matched;2151836;2014-01-01;Lublin Voivodeship;Poland;2151836.0;2014-01-01;25886
+648;Pomeranian Voivodeship;Poland;matched;2300000;2019-01-01;Pomeranian Voivodeship;Poland;2300000.0;2019-01-01;25902
+649;Masovian Voivodeship;Poland;matched;5492000;2011-03-31;Masovian Voivodeship;Poland;5492000.0;2011-03-31;25890
+650;Łódź Voivodeship;Poland;matched;2508464;2014-01-01;Łódź Voivodeship;Poland;2508464.0;2014-01-01;25932
+651;Kuyavian-Pomeranian Voivodeship;Poland;matched;2090836;2014-01-01;Kuyavian-Pomeranian Voivodeship;Poland;2090836.0;2014-01-01;25880
+652;Greater Poland Voivodeship;Poland;matched;3495470;2019-01-01;Greater Poland Voivodeship;Poland;3495470.0;2019-01-01;25871
+653;Świętokrzyskie Voivodeship;Poland;matched;1241546;2018-01-01;Świętokrzyskie Voivodeship;Poland;1241546.0;2018-01-01;25934
+654;Évora;Portugal;matched;52454;2018-01-01;Évora;Portugal;52454.0;2018-01-01;26038
+655;Portalegre;Portugal;matched;22359;2018-01-01;Portalegre;Portugal;22359.0;2018-01-01;26014
+656;Viana do Castelo;Portugal;matched;84636;2018-01-01;Viana do Castelo;Portugal;84636.0;2018-01-01;26032
+657;Castelo Branco;Portugal;matched;52192;2018-01-01;Castelo Branco;Portugal;52192.0;2018-01-01;25970
+658;Guarda;Portugal;matched;39103;2018-01-01;Guarda;Portugal;39103.0;2018-01-01;25976
+659;Bragança;Portugal;matched;33586;2018-01-01;Bragança;Portugal;33586.0;2018-01-01;25968
+660;Vila Real;Portugal;matched;49868;2018-01-01;Vila Real;Portugal;49868.0;2018-01-01;26034
+661;Braga;Portugal;matched;181919;2018-01-01;Braga;Portugal;181919.0;2018-01-01;25966
+662;Faro;Portugal;matched;60974;2018-01-01;Faro;Portugal;60974.0;2018-01-01;25974
+663;Beja;Portugal;unmatched;;;;;;;
+664;Setúbal;Portugal;matched;788459;2018-01-01;Setúbal;Portugal;788459.0;2018-01-01;26022
+665;Lisbon;Portugal;matched;2135992;;Lisbon;Portugal;2135992.0;;25980
+666;Santarém;Portugal;matched;57398;2018-01-01;Santarém;Portugal;57398.0;2018-01-01;26018
+667;Leiria;Portugal;matched;124857;2018-01-01;Leiria;Portugal;124857.0;2018-01-01;25978
+668;Coimbra;Portugal;matched;133724;2018-01-01;Coimbra;Portugal;133724.0;2018-01-01;25972
+669;Aveiro;Portugal;matched;77916;2018-01-01;Aveiro;Portugal;77916.0;2018-01-01;25948
+670;Porto;Portugal;matched;1817172;;Porto;Portugal;1817172.0;;26016
+671;Azores;Portugal;matched;236440;2021-01-01;Azores;Portugal;236440.0;2021-01-01;25963
+672;Viseu;Portugal;matched;96991;2018-01-01;Viseu;Portugal;96991.0;2018-01-01;26036
+673;Satu Mare;Romania;matched;330668;2021-12-01;Satu Mare County;Romania;330668.0;2021-12-01;26851
+674;Arad;Romania;matched;410143;2021-12-01;Arad County;Romania;410143.0;2021-12-01;26093
+675;Bihor;Romania;matched;551297;2021-12-01;Bihor County;Romania;551297.0;2021-12-01;26309
+676;Timiș;Romania;matched;650533;2021-12-01;Timiș County;Romania;650533.0;2021-12-01;26948
+677;Mehedinți;Romania;matched;234339;2021-12-01;Mehedinți County;Romania;234339.0;2021-12-01;26764
+678;Dolj;Romania;matched;599442;2021-12-01;Dolj County;Romania;599442.0;2021-12-01;26564
+679;Călărași;Romania;matched;283458;2021-12-01;Călărași County;Romania;283458.0;2021-12-01;26559
+680;Teleorman;Romania;matched;323544;2021-12-01;Teleorman County;Romania;323544.0;2021-12-01;26903
+681;Giurgiu;Romania;matched;262066;2021-12-01;Giurgiu County;Romania;262066.0;2021-12-01;26633
+682;Constanța;Romania;matched;655997;2021-12-01;Constanța County;Romania;655997.0;2021-12-01;26524
+683;Olt;Romania;matched;383280;2021-12-01;Olt County;Romania;383280.0;2021-12-01;26828
+684;Caraș-Severin;Romania;matched;246588;2021-12-01;Caraș-Severin County;Romania;246588.0;2021-12-01;26450
+685;Botoșani;Romania;matched;392821;2021-12-01;Botoșani County;Romania;392821.0;2021-12-01;26341
+686;Iași;Romania;matched;760774;2021-12-01;Iași County;Romania;760774.0;2021-12-01;26719
+687;Vaslui;Romania;matched;374700;2021-12-01;Vaslui County;Romania;374700.0;2021-12-01;26968
+688;Galați;Romania;matched;496892;2021-12-01;Galați County;Romania;496892.0;2021-12-01;26612
+689;Suceava;Romania;matched;642551;2021-12-01;Suceava County;Romania;642551.0;2021-12-01;26880
+690;Maramureș;Romania;matched;452475;2021-12-01;Maramureș County;Romania;452475.0;2021-12-01;26753
+691;Tulcea;Romania;matched;193355;2021-12-01;Tulcea County;Romania;193355.0;2021-12-01;26951
+692;Cluj;Romania;matched;679141;2021-12-01;Cluj County;Romania;679141.0;2021-12-01;26500
+693;Bistrița-Năsăud;Romania;matched;295988;2021-12-01;Bistrița-Năsăud County;Romania;295988.0;2021-12-01;26330
+694;Sălaj;Romania;matched;212224;2021-12-01;Sălaj County;Romania;212224.0;2021-12-01;26892
+695;Dâmbovița;Romania;matched;479404;2021-12-01;Dâmbovița County;Romania;479404.0;2021-12-01;26593
+696;Ilfov;Romania;matched;542704;2021-12-01;Ilfov County;Romania;542704.0;2021-12-01;26739
+697;Argeș;Romania;matched;569932;2021-12-01;Argeș County;Romania;569932.0;2021-12-01;26108
+698;Gorj;Romania;matched;314685;2021-12-01;Gorj County;Romania;314685.0;2021-12-01;26648
+699;Hunedoara;Romania;matched;361657;2021-12-01;Hunedoara County;Romania;361657.0;2021-12-01;26682
+700;Vâlcea;Romania;matched;341861;2021-12-01;Vâlcea County;Romania;341861.0;2021-12-01;26991
+701;Prahova;Romania;matched;695119;2021-12-01;Prahova County;Romania;695119.0;2021-12-01;26845
+702;Covasna;Romania;matched;200042;2021-12-01;Covasna County;Romania;200042.0;2021-12-01;26538
+703;Vrancea;Romania;matched;335312;2021-12-01;Vrancea County;Romania;335312.0;2021-12-01;26973
+704;Buzău;Romania;matched;404979;2021-12-01;Buzău County;Romania;404979.0;2021-12-01;26429
+705;Brașov;Romania;matched;546615;2021-12-01;Brașov County;Romania;546615.0;2021-12-01;26359
+706;Sibiu;Romania;matched;388326;2021-12-01;Sibiu County;Romania;388326.0;2021-12-01;26862
+707;Mureș;Romania;matched;518193;2021-12-01;Mureș County;Romania;518193.0;2021-12-01;26788
+708;Harghita;Romania;matched;291950;2021-12-01;Harghita County;Romania;291950.0;2021-12-01;26669
+709;Neamț;Romania;matched;454203;2021-12-01;Neamț County;Romania;454203.0;2021-12-01;26812
+710;Bacău;Romania;matched;601387;2021-12-01;Bacău County;Romania;601387.0;2021-12-01;26284
+711;Alba;Romania;matched;325941;2021-12-01;Alba County;Romania;325941.0;2021-12-01;26072
+712;Brăila;Romania;matched;281452;2021-12-01;Brăila County;Romania;281452.0;2021-12-01;26382
+713;Ialomița;Romania;matched;250816;2021-12-01;Ialomița County;Romania;250816.0;2021-12-01;26705
+714;Pskov;Russia;matched;574480;2025-01-01;Pskov Oblast;Russia;574480.0;2025-01-01;31893
+715;Karachay-Cherkess Republic;Russia;fuzzy_best;468322;2024-01-01;Karachay-Cherkessia;Russia;468322.0;2024-01-01;30818
+716;Kabardino-Balkaria;Russia;matched;905464;2024-01-01;Kabardino-Balkaria;Russia;905464.0;2024-01-01;30731
+717;Republic of North Ossetia-Alania;Russia;fuzzy_contain;678879;2024-01-01;North Ossetia–Alania;Russia;678879.0;2024-01-01;31720
+718;Murmansk;Russia;matched;656438;2024-01-01;Murmansk Oblast;Russia;656438.0;2024-01-01;31645
+719;Karelia;Russia;matched;518950;2025-01-01;Karelia;Russia;518950.0;2025-01-01;30840
+720;Leningrad;Russia;matched;2035762;2024-01-01;Leningrad Oblast;Russia;2035762.0;2024-01-01;31124
+721;Kaliningrad;Russia;matched;994599;2023-01-01;Kaliningrad Oblast;Russia;994599.0;2023-01-01;30743
+722;Smolensk;Russia;matched;863987;2024-01-01;Smolensk Oblast;Russia;863987.0;2024-01-01;33370
+723;Bryansk;Russia;matched;1132795;2025-01-01;Bryansk Oblast;Russia;1132795.0;2025-01-01;27176
+724;Kursk;Russia;matched;1049783;2025-01-01;Kursk Oblast;Russia;1049783.0;2025-01-01;31106
+725;Belgorod;Russia;matched;1482025;2025-01-01;Belgorod Oblast;Russia;1482025.0;2025-01-01;27156
+726;Voronezh;Russia;matched;2260045;2025-01-01;Voronezh Oblast;Russia;2260045.0;2025-01-01;33722
+727;Rostov;Russia;matched;4137335;2025-01-01;Rostov Oblast;Russia;4137335.0;2025-01-01;31959
+728;Orenburg;Russia;matched;1828655;2024-01-01;Orenburg Oblast;Russia;1828655.0;2024-01-01;31806
+729;Saratov;Russia;matched;2369405;2025-01-01;Saratov Oblast;Russia;2369405.0;2025-01-01;32470
+730;Astrakhan;Russia;matched;946429;2024-01-01;Astrakhan Oblast;Russia;946429.0;2024-01-01;27115
+731;Volgograd;Russia;matched;2434046;2025-01-01;Volgograd Oblast;Russia;2434046.0;2025-01-01;33687
+732;Autonomous Republic of Crimea;Russia;matched;1896393;2022-01-01;Republic of Crimea;Russia;1896393.0;2022-01-01;31926
+733;Nenets Autonomous Okrug;Russia;matched;42224;2024-01-01;Nenets Autonomous Okrug;Russia;42224.0;2024-01-01;31672
+734;Saint Petersburg;Russia;matched;5652922;2025-01-01;Saint Petersburg;Russia;5652922.0;2025-01-01;32214
+735;Arkhangelsk;Russia;matched;989434;2025-01-01;Arkhangelsk Oblast;Russia;989434.0;2025-01-01;27094
+736;Republic of Kalmykia;Russia;fuzzy_best;267588;2025-01-01;Kalmykia;Russia;267588.0;2025-01-01;30760
+737;Bashkortostan;Russia;matched;4042377;2025-01-01;Bashkortostan;Russia;4042377.0;2025-01-01;27137
+738;Sverdlovsk;Russia;matched;4221452;2025-01-01;Sverdlovsk Oblast;Russia;4221452.0;2025-01-01;33422
+739;Lipetsk;Russia;matched;1125921;2023-01-01;Lipetsk Oblast;Russia;1125921.0;2023-01-01;31164
+740;Tambov;Russia;matched;956292;2024-01-01;Tambov Oblast;Russia;956292.0;2024-01-01;33477
+741;Republic of Tatarstan;Russia;matched;4003016;2024-01-01;Tatarstan;Russia;4003016.0;2024-01-01;33498
+742;Ulyanovsk;Russia;matched;1172782;2024-01-01;Ulyanovsk Oblast;Russia;1172782.0;2024-01-01;33651
+743;Penza;Russia;matched;1213113;2024-01-01;Penza Oblast;Russia;1213113.0;2024-01-01;31838
+744;Oryol;Russia;matched;692486;2024-01-01;Oryol Oblast;Russia;692486.0;2024-01-01;31819
+745;Republic of Mordovia;Russia;matched;778965;2021-01-01;Mordovia;Russia;778965.0;2021-01-01;31236
+746;Kaluga;Russia;matched;1000980;2021-01-01;Kaluga Oblast;Russia;1000980.0;2021-01-01;30779
+747;Kostroma;Russia;matched;566266;2024-01-01;Kostroma Oblast;Russia;566266.0;2024-01-01;30989
+748;Yaroslavl;Russia;matched;1187558;2024-01-01;Yaroslavl Oblast;Russia;1187558.0;2024-01-01;33772
+749;Vladimir;Russia;matched;1309942;2024-01-01;Vladimir Oblast;Russia;1309942.0;2024-01-01;33668
+750;Ryazan;Russia;matched;1043231;2024-01-01;Ryazan Oblast;Russia;1043231.0;2024-01-01;31982
+751;Ivanovo;Russia;matched;905900;2024-01-01;Ivanovo Oblast;Russia;905900.0;2024-01-01;30680
+752;Nizhny Novgorod;Russia;matched;3039421;2025-01-01;Nizhny Novgorod Oblast;Russia;3039421.0;2025-01-01;31701
+753;Tula;Russia;matched;1471140;2024-01-01;Tula Oblast;Russia;1471140.0;2024-01-01;33558
+754;Chuvash Republic;Russia;unmatched;;;;;;;
+755;Vologda;Russia;matched;1160445;2021-01-01;Vologda Oblast;Russia;1160445.0;2021-01-01;33702
+756;Novgorod;Russia;matched;566960;2025-01-01;Novgorod Oblast;Russia;566960.0;2025-01-01;31739
+757;Tver;Russia;matched;1190574;2025-01-01;Tver Oblast;Russia;1190574.0;2025-01-01;33600
+758;Moscow;Russia;matched;13274285;2025-01-01;Moscow;Russia;13274285.0;2025-01-01;31608
+759;Mari El Republic;Russia;matched;669854;2024-01-01;Mari El;Russia;669854.0;2024-01-01;31221
+760;Kirov;Russia;matched;1129935;2024-01-01;Kirov Oblast;Russia;1129935.0;2024-01-01;30954
+761;Udmurt Republic;Russia;unmatched;;;;;;;
+762;Komi Republic;Russia;matched;714785;2025-01-01;Komi Republic;Russia;714785.0;2025-01-01;30973
+763;Perm Krai;Russia;matched;2483633;2025-01-01;Perm Krai;Russia;2483633.0;2025-01-01;31852
+764;Samara;Russia;matched;3112566;2025-01-01;Samara Oblast;Soviet Union;3112566.0;2025-01-01;55087
+765;Stavropol Krai;Russia;matched;2884363;2025-01-01;Stavropol Krai;Russia;2884363.0;2025-01-01;33398
+766;Republic of Adygea;Russia;fuzzy_best;500731;2025-01-01;Adygea;Russia;500731.0;2025-01-01;27007
+767;North Bačka;Republic of Serbia;unmatched;;;;;;;
+768;West Bačka;Republic of Serbia;unmatched;;;;;;;
+769;North Banat;Republic of Serbia;unmatched;;;;;;;
+770;Pčinja;Republic of Serbia;unmatched;;;;;;;
+771;Bor;Republic of Serbia;unmatched;;;;;;;
+772;Zaječar;Republic of Serbia;unmatched;;;;;;;
+773;Pirot;Republic of Serbia;unmatched;;;;;;;
+774;Jablanica;Republic of Serbia;unmatched;;;;;;;
+775;Raška;Republic of Serbia;unmatched;;;;;;;
+776;Rasina;Republic of Serbia;unmatched;;;;;;;
+777;Toplica;Republic of Serbia;unmatched;;;;;;;
+778;Zlatibor;Republic of Serbia;unmatched;;;;;;;
+779;Srem;Republic of Serbia;unmatched;;;;;;;
+780;Mačva;Republic of Serbia;unmatched;;;;;;;
+781;South Bačka;Republic of Serbia;unmatched;;;;;;;
+782;Central Banat;Republic of Serbia;unmatched;;;;;;;
+783;South Banat;Republic of Serbia;unmatched;;;;;;;
+784;Braničevo;Republic of Serbia;unmatched;;;;;;;
+785;Belgrade;Republic of Serbia;unmatched;;;;;;;
+786;Podunavlje;Republic of Serbia;unmatched;;;;;;;
+787;Nišava;Republic of Serbia;unmatched;;;;;;;
+788;Pomoravski;Republic of Serbia;unmatched;;;;;;;
+789;Šumadija;Republic of Serbia;unmatched;;;;;;;
+790;Moravica;Republic of Serbia;unmatched;;;;;;;
+791;Kolubara;Republic of Serbia;unmatched;;;;;;;
+792;Žilina;Slovakia;matched;686063;2024-12-31;Žilina region;Slovakia;686063.0;2024-12-31;34088
+793;Prešov;Slovakia;matched;810008;2024-12-31;Prešov Region;Slovakia;810008.0;2024-12-31;34068
+794;Košice;Slovakia;matched;778799;2024-12-31;Košice Region;Slovakia;778799.0;2024-12-31;34056
+795;Bratislava;Slovakia;matched;736385;2024-12-31;Bratislava Region;Slovakia;736385.0;2024-12-31;34051
+796;Trnava;Slovakia;matched;565900;2024-12-31;Trnava Region;Slovakia;565900.0;2024-12-31;34081
+797;Trenčín;Slovakia;matched;565572;2024-12-31;Trenčín Region;Slovakia;565572.0;2024-12-31;34076
+798;Banská Bystrica;Slovakia;matched;611124;2024-12-31;Banská Bystrica Region;Slovakia;611124.0;2024-12-31;34044
+799;Nitra;Slovakia;matched;665600;2024-12-31;Nitra Region;Slovakia;665600.0;2024-12-31;34062
+800;Tolmin;Slovenia;fuzzy_contain;10997;2020-07-01;Municipality of Tolmin;Slovenia;10997.0;2020-07-01;42659
+801;Podvelka;Slovenia;fuzzy_contain;2354;2020-07-01;Municipality of Podvelka;Slovenia;2354.0;2020-07-01;40728
+802;Norrbotten;Sweden;matched;248876;2025-09-30;Norrbotten County;Sweden;248876.0;2025-09-30;56079
+803;Västerbotten;Sweden;matched;279571;2025-09-30;Västerbotten County;Sweden;279571.0;2025-09-30;56429
+804;Jämtland;Sweden;matched;132636;2025-09-30;Jämtland County;Sweden;132636.0;2025-09-30;55815
+805;Dalarna;Sweden;matched;286143;2025-09-30;Dalarna County;Sweden;286143.0;2025-09-30;55559
+806;Värmland;Sweden;matched;283336;2025-09-30;Värmland County;Sweden;283336.0;2025-09-30;56407
+807;Västra Götaland;Sweden;matched;1778031;2025-09-30;Västra Götaland County;Sweden;1778031.0;2025-09-30;56663
+808;Västernorrland;Sweden;matched;241143;2025-09-30;Västernorrland County;Sweden;241143.0;2025-09-30;56535
+809;Gävleborg;Sweden;matched;283862;2025-09-30;Gävleborg County;Sweden;283862.0;2025-09-30;55687
+810;Uppsala;Sweden;matched;410601;2025-09-30;Uppsala County;Sweden;410601.0;2025-09-30;56343
+811;Stockholm;Sweden;matched;2485275;2025-09-30;Stockholm County;Sweden;2485275.0;2025-09-30;56211
+812;Södermanland;Sweden;matched;300990;2025-09-30;Södermanland County;Sweden;300990.0;2025-09-30;56277
+813;Östergötland;Sweden;matched;472755;2025-09-30;Östergötland County;Sweden;472755.0;2025-09-30;56797
+814;Kalmar;Sweden;matched;245753;2025-09-30;Kalmar County;Sweden;245753.0;2025-09-30;55947
+815;Blekinge;Sweden;matched;156880;2025-09-30;Blekinge County;Sweden;156880.0;2025-09-30;55495
+816;Skåne;Sweden;matched;1433573;2025-09-30;Skåne County;Sweden;1433573.0;2025-09-30;56145
+817;Halland;Sweden;matched;346065;2025-09-30;Halland County;Sweden;346065.0;2025-09-30;55751
+818;Gotland;Sweden;matched;61032;2025-09-30;Gotland County;Sweden;61032.0;2025-09-30;55623
+819;Västmanland;Sweden;matched;280998;2025-09-30;Västmanland County;Sweden;280998.0;2025-09-30;56599
+820;Jönköping;Sweden;matched;369998;2025-09-30;Jönköping County;Sweden;369998.0;2025-09-30;55881
+821;Örebro;Sweden;matched;308519;2025-09-30;Örebro County;Sweden;308519.0;2025-09-30;56729
+822;Kronoberg;Sweden;matched;203425;2025-09-30;Kronoberg County;Sweden;203425.0;2025-09-30;56013
+823;Ardahan;Turkey;unmatched;;;;;;;
+824;Artvin;Turkey;unmatched;;;;;;;
+825;Kırklareli;Turkey;unmatched;;;;;;;
+826;Edirne;Turkey;unmatched;;;;;;;
+827;Kars;Turkey;unmatched;;;;;;;
+828;Mardin;Turkey;unmatched;;;;;;;
+829;Şanlıurfa;Turkey;unmatched;;;;;;;
+830;Kilis;Turkey;unmatched;;;;;;;
+831;Gaziantep;Turkey;unmatched;;;;;;;
+832;Hatay;Turkey;unmatched;;;;;;;
+833;Istanbul;Turkey;unmatched;;;;;;;
+834;Tekirdağ;Turkey;unmatched;;;;;;;
+835;Çanakkale;Turkey;unmatched;;;;;;;
+836;Rize;Turkey;unmatched;;;;;;;
+837;Trabzon;Turkey;unmatched;;;;;;;
+838;Giresun;Turkey;unmatched;;;;;;;
+839;Ordu;Turkey;unmatched;;;;;;;
+840;Samsun;Turkey;unmatched;;;;;;;
+841;Sinop;Turkey;unmatched;;;;;;;
+842;Kastamonu;Turkey;unmatched;;;;;;;
+843;Bartın;Turkey;unmatched;;;;;;;
+844;Zonguldak;Turkey;unmatched;;;;;;;
+845;Düzce;Turkey;unmatched;;;;;;;
+846;Sakarya;Turkey;unmatched;;;;;;;
+847;Kocaeli;Turkey;unmatched;;;;;;;
+848;Bursa;Turkey;unmatched;;;;;;;
+849;Balıkesir;Turkey;unmatched;;;;;;;
+850;İzmir;Turkey;unmatched;;;;;;;
+851;Aydın;Turkey;unmatched;;;;;;;
+852;Muğla;Turkey;unmatched;;;;;;;
+853;Antalya;Turkey;unmatched;;;;;;;
+854;Mersin;Turkey;unmatched;;;;;;;
+855;Adana;Turkey;unmatched;;;;;;;
+856;Bolu;Turkey;unmatched;;;;;;;
+857;Ankara;Turkey;unmatched;;;;;;;
+858;Bilecik;Turkey;unmatched;;;;;;;
+859;Eskişehir;Turkey;unmatched;;;;;;;
+860;Çankırı;Turkey;unmatched;;;;;;;
+861;Karabük;Turkey;unmatched;;;;;;;
+862;Tokat;Turkey;unmatched;;;;;;;
+863;Sivas;Turkey;unmatched;;;;;;;
+864;Çorum;Turkey;unmatched;;;;;;;
+865;Amasya;Turkey;unmatched;;;;;;;
+866;Kütahya;Turkey;unmatched;;;;;;;
+867;Konya;Turkey;unmatched;;;;;;;
+868;Karaman;Turkey;unmatched;;;;;;;
+869;Niğde;Turkey;unmatched;;;;;;;
+870;Kayseri;Turkey;unmatched;;;;;;;
+871;Isparta;Turkey;unmatched;;;;;;;
+872;Manisa;Turkey;unmatched;;;;;;;
+873;Denizli;Turkey;unmatched;;;;;;;
+874;Burdur;Turkey;unmatched;;;;;;;
+875;Aksaray;Turkey;unmatched;;;;;;;
+876;Nevşehir;Turkey;unmatched;;;;;;;
+877;Yozgat;Turkey;unmatched;;;;;;;
+878;Kırşehir;Turkey;unmatched;;;;;;;
+879;Uşak;Turkey;unmatched;;;;;;;
+880;Erzincan;Turkey;unmatched;;;;;;;
+881;Tunceli;Turkey;unmatched;;;;;;;
+882;Afyonkarahisar;Turkey;unmatched;;;;;;;
+883;Kırıkkale;Turkey;unmatched;;;;;;;
+884;Kahramanmaraş;Turkey;unmatched;;;;;;;
+885;Muş;Turkey;unmatched;;;;;;;
+886;Erzurum;Turkey;unmatched;;;;;;;
+887;Malatya;Turkey;unmatched;;;;;;;
+888;Elazığ;Turkey;unmatched;;;;;;;
+889;Bitlis;Turkey;unmatched;;;;;;;
+890;Bingöl;Turkey;unmatched;;;;;;;
+891;Osmaniye;Turkey;unmatched;;;;;;;
+892;Adıyaman;Turkey;unmatched;;;;;;;
+893;Diyarbakır;Turkey;unmatched;;;;;;;
+894;Batman;Turkey;unmatched;;;;;;;
+895;Bayburt;Turkey;unmatched;;;;;;;
+896;Gümüşhane;Turkey;unmatched;;;;;;;
+897;Chernihiv;Ukraine;matched;959315;2022-01-01;Chernihiv Oblast;Ukraine;959315.0;2022-01-01;57873
+898;Volyn;Ukraine;matched;1021356;2022-01-01;Volyn Oblast;Ukraine;1021356.0;2022-01-01;62567
+899;Rivne;Ukraine;matched;1141784;2022-01-01;Rivne Oblast;Ukraine;1141784.0;2022-01-01;61602
+900;Zhytomyr;Ukraine;matched;1179032;2022-01-01;Zhytomyr Oblast;Ukraine;1179032.0;2022-01-01;62624
+901;Kyiv;Ukraine;matched;1795079;2022-01-01;Kyiv Oblast;Ukraine;1795079.0;2022-01-01;61457
+902;Zakarpattia;Ukraine;matched;1244476;2022-01-01;Zakarpattia Oblast;Ukraine;1244476.0;2022-01-01;62582
+903;Chernivtsi;Ukraine;matched;890457;2022-01-01;Chernivtsi Oblast;Ukraine;890457.0;2022-01-01;57905
+904;Ivano-Frankivsk;Ukraine;matched;1351822;2022-01-01;Ivano-Frankivsk Oblast;Ukraine;1351822.0;2022-01-01;61337
+905;Odessa;Ukraine;fuzzy_best;2351392;2022-01-01;Odesa Oblast;Ukraine;2351392.0;2022-01-01;61557
+906;Vinnytsia;Ukraine;matched;1509515;2022-01-01;Vinnytsia Oblast;Ukraine;1509515.0;2022-01-01;62551
+907;Lviv;Ukraine;matched;2478133;2022-01-01;Lviv Oblast;Ukraine;2478133.0;2022-01-01;61491
+908;Sumy;Ukraine;matched;1035772;2022-01-01;Sumy Oblast;Ukraine;1035772.0;2022-01-01;62502
+909;Kharkiv;Ukraine;matched;2598961;2022-01-01;Kharkiv Oblast;Ukraine;2598961.0;2022-01-01;61351
+910;Luhansk;Ukraine;matched;2167802;2018-01-01;Luhansk Oblast;Ukraine;2167802.0;2018-01-01;61462
+911;Donetsk;Ukraine;matched;4200461;2018-01-01;Donetsk Oblast;Ukraine;4200461.0;2018-01-01;57990
+912;Kherson;Ukraine;matched;1001598;2022-01-01;Kherson Oblast;Ukraine;1001598.0;2022-01-01;61391
+913;Zaporizhzhia;Ukraine;matched;1638462;2022-01-01;Zaporizhzhia Oblast;Ukraine;1638462.0;2022-01-01;62596
+914;Mykolaiv;Ukraine;matched;1091821;2022-01-01;Mykolaiv Oblast;Ukraine;1091821.0;2022-01-01;61512
+915;Poltava;Ukraine;matched;1352283;2022-01-01;Poltava Oblast;Ukraine;1352283.0;2022-01-01;61589
+916;Khmelnytskyi;Ukraine;matched;1228829;2022-01-01;Khmelnytskyi Oblast;Ukraine;1228829.0;2022-01-01;61412
+917;Ternopil;Ukraine;matched;1021713;2022-01-01;Ternopil Oblast;Ukraine;1021713.0;2022-01-01;62525
+918;Dnipropetrovsk;Ukraine;matched;3096485;2022-01-01;Dnipropetrovsk Oblast;Ukraine;3096485.0;2022-01-01;57966
+919;Cherkasy;Ukraine;matched;1160744;2022-01-01;Cherkasy Oblast;Ukraine;1160744.0;2022-01-01;57838
+920;Kirovohrad;Ukraine;matched;903712;2022-01-01;Kirovohrad Oblast;Ukraine;903712.0;2022-01-01;61436

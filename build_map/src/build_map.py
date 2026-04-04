@@ -117,6 +117,13 @@ COUNTRY_CAPITAL_POINTS = {
 }
 
 CAPITAL_POINT_FALLBACK_MAX_DISTANCE_M = 150_000
+CUSTOM_ISLAND_COUNTRY = "AEO"
+CUSTOM_ISLAND_NAME = "Adam Epstein Ostrov"
+# Place AEO near Faroe Islands where there's less raster cleanup interference.
+# North Atlantic position ensures it stays visible without sea region overlap.
+CUSTOM_ISLAND_CENTER_LON = -12.0
+CUSTOM_ISLAND_CENTER_LAT = 62.0
+CUSTOM_ISLAND_RADIUS_M = 35_000
 
 admin["country"] = admin["adm0_a3"]
 admin = admin[admin["country"].isin(EUROPE_COUNTRIES)].reset_index(drop=True)
@@ -193,6 +200,106 @@ def mark_capital_provinces(gdf):
     return gdf
 
 
+def _text_to_shapely_geom(text, cx_m, cy_m, total_width_m, font_path=None):
+    """Render *text* as a Shapely geometry (union of buffered pixel dots) centred at (cx_m, cy_m)."""
+    from PIL import Image as _Im, ImageDraw as _IDraw, ImageFont as _IFont
+    from shapely.geometry import Point as _Pt
+    from shapely.ops import unary_union as _uu
+
+    IMG_W, IMG_H = 600, 150
+    img = _Im.new("L", (IMG_W, IMG_H), 0)
+    draw = _IDraw.Draw(img)
+
+    font = None
+    for path in ([font_path] if font_path else []) + [
+        "C:/Windows/Fonts/arialbd.ttf",
+        "C:/Windows/Fonts/Arial Bold.ttf",
+        "C:/Windows/Fonts/arial.ttf",
+    ]:
+        try:
+            font = _IFont.truetype(path, 110)
+            break
+        except Exception:
+            pass
+    if font is None:
+        font = _IFont.load_default()
+
+    bbox = draw.textbbox((0, 0), text, font=font)
+    tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
+    draw.text(((IMG_W - tw) // 2 - bbox[0], (IMG_H - th) // 2 - bbox[1]), text, fill=255, font=font)
+
+    arr = np.array(img)
+    ys, xs = np.where(arr > 128)
+    if len(xs) == 0:
+        return None
+
+    scale = total_width_m / IMG_W          # metres per pixel
+    px_cx, px_cy = xs.mean(), ys.mean()
+
+    step = 2                               # subsample every 2nd pixel (denser)
+    mask = (ys % step == 0) & (xs % step == 0)
+    xs_s, ys_s = xs[mask], ys[mask]
+
+    geo_xs = cx_m + (xs_s - px_cx) * scale
+    geo_ys = cy_m - (ys_s - px_cy) * scale   # flip Y axis
+
+    # Use a fixed minimum stroke radius so thin letter parts survive raster cleanup.
+    # At final 4096-px map resolution over ~8000 km, 1 px ≈ 2 km, so we need ≥ 3 km radius.
+    r = max(scale * step * 1.5, 3_500)
+    circles = [_Pt(float(x), float(y)).buffer(r) for x, y in zip(geo_xs, geo_ys)]
+    return _uu(circles)
+
+
+def add_adam_epstein_island(gdf):
+    gdf = gdf.copy()
+    if "country" in gdf.columns and (gdf["country"] == CUSTOM_ISLAND_COUNTRY).any():
+        return gdf
+
+    center = gpd.GeoSeries(
+        [Point(CUSTOM_ISLAND_CENTER_LON, CUSTOM_ISLAND_CENTER_LAT)],
+        crs=4326,
+    ).to_crs(gdf.crs).iloc[0]
+
+    # Shape = letters "EPSTEIN" rendered as geographic geometry (~300 km wide)
+    island_geom = _text_to_shapely_geom(
+        "EPSTEIN", center.x, center.y, total_width_m=300_000
+    )
+    if island_geom is None or island_geom.is_empty:
+        island_geom = center.buffer(CUSTOM_ISLAND_RADIUS_M, resolution=24)
+
+    row = {col: None for col in gdf.columns}
+    row["geometry"] = island_geom
+
+    if "country" in row:
+        row["country"] = CUSTOM_ISLAND_COUNTRY
+    if "adm0_a3" in row:
+        row["adm0_a3"] = CUSTOM_ISLAND_COUNTRY
+    if "name_en" in row:
+        row["name_en"] = CUSTOM_ISLAND_NAME
+    if "name" in row:
+        row["name"] = CUSTOM_ISLAND_NAME
+    if "admin" in row:
+        row["admin"] = CUSTOM_ISLAND_NAME
+    if "type_en" in row:
+        row["type_en"] = "Capital island"
+    if "type" in row:
+        row["type"] = "capital"
+    if "woe_name" in row:
+        row["woe_name"] = CUSTOM_ISLAND_NAME
+    if "woe_label" in row:
+        row["woe_label"] = CUSTOM_ISLAND_NAME
+    if "capital_city_name" in row:
+        row["capital_city_name"] = CUSTOM_ISLAND_NAME
+    if "is_capital_province" in row:
+        row["is_capital_province"] = 1
+
+    island_gdf = gpd.GeoDataFrame([row], columns=gdf.columns, geometry="geometry", crs=gdf.crs)
+    gdf = gpd.GeoDataFrame(pd.concat([gdf, island_gdf], ignore_index=True), geometry="geometry", crs=gdf.crs)
+
+    debug("Custom island added: Adam Epstein Ostrov (AEO)")
+    return gdf
+
+
 # -----------------------------
 # FIX: Cut RUSSIA to EUROPE part
 # -----------------------------
@@ -218,6 +325,7 @@ admin = admin.cx[minx:maxx, miny:maxy]
 
 # Tag capitals after geographic clipping so exported countries retain a capital row.
 admin = mark_capital_provinces(admin)
+admin = add_adam_epstein_island(admin)
 debug(f"Capital provinces tagged: {int(admin['is_capital_province'].sum())}")
 
 debug(f"Final part-1 regions: {len(admin)}")
@@ -287,8 +395,10 @@ def merge_small_absolute(gdf):
             # candidates ONLY in the same country
             candidates = group.drop(idx)
             if candidates.empty:
-                group = group.drop(idx)
-                continue
+                # Keep single-province countries intact (e.g., custom islands).
+                # Mark as effectively non-small for this pass and stop this group loop.
+                group.loc[idx, "area"] = MIN_AREA_ABS
+                break
 
             # merge with nearest polygon
             nearest_idx = candidates.distance(target.geometry).sort_values().index[0]

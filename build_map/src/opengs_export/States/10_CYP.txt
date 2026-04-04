@@ -1,0 +1,10 @@
+state={
+    id=10
+    name="STATE_CYP"
+    provinces={
+        92
+        93
+        94
+        95
+    }
+}

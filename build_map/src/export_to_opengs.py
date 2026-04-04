@@ -523,6 +523,59 @@ def _erase_tiny_global_land_artifacts(img, province_colors, max_pixels=2):
     return Image.fromarray(arr, mode="RGB")
 
 
+def _erase_tiny_global_sea_artifacts(img, province_colors, max_pixels=2):
+    arr = np.array(img, copy=True)
+
+    lut = np.full((256, 256, 256), -1, dtype=np.int32)
+    pid_to_color = {}
+    for color, pid in province_colors.items():
+        r, g, b = color
+        pid_i = int(pid)
+        lut[r, g, b] = pid_i
+        pid_to_color[pid_i] = np.array([r, g, b], dtype=np.uint8)
+
+    pid_map = lut[arr[:, :, 0], arr[:, :, 1], arr[:, :, 2]]
+    sea_mask = pid_map < 0
+    labels, n = ndi.label(sea_mask, structure=np.ones((3, 3), dtype=np.uint8))
+    if n <= 0:
+        return img
+
+    counts = np.bincount(labels.ravel())
+    absorbed_components = 0
+    absorbed_pixels = 0
+    structure = np.ones((3, 3), dtype=np.uint8)
+
+    for lbl in range(1, len(counts)):
+        size = int(counts[lbl])
+        if size <= 0 or size > max_pixels:
+            continue
+
+        comp = labels == lbl
+        border = ndi.binary_dilation(comp, structure=structure) & (~comp)
+        neighbor_ids = pid_map[border]
+        neighbor_ids = neighbor_ids[neighbor_ids >= 0]
+        if neighbor_ids.size == 0:
+            continue
+
+        vals, cnts = np.unique(neighbor_ids.astype(np.int32), return_counts=True)
+        target_pid = int(vals[np.argmax(cnts)])
+        color = pid_to_color.get(target_pid)
+        if color is None:
+            continue
+
+        arr[comp] = color
+        absorbed_components += 1
+        absorbed_pixels += size
+
+    if absorbed_pixels > 0:
+        print(
+            "[DEBUG] Global tiny sea artifact cleanup absorbed components: "
+            f"{absorbed_components}, pixels: {absorbed_pixels}"
+        )
+
+    return Image.fromarray(arr, mode="RGB")
+
+
 def export_province_map(land, sea_regions):
 
     minx, miny, maxx, maxy = land.total_bounds
@@ -621,6 +674,7 @@ def export_province_map(land, sea_regions):
     )
 
     img = _erase_tiny_global_land_artifacts(img, province_colors, max_pixels=2)
+    img = _erase_tiny_global_sea_artifacts(img, province_colors, max_pixels=2)
 
     # -------------------------
     # SAVE UNCOMPRESSED PNG
@@ -1395,10 +1449,9 @@ def export_provinces_txt(
     
     neighbors_by_pid = _build_neighbor_lookup(full_id_map)
 
-    # Build neighbor filters by type.
-    # NOTE: Land rows intentionally include adjacent sea IDs so runtime coastal
-    # checks (ports/shipyards) can detect "touches sea" from the land row itself.
-    # Sea rows stay sea-only to reduce cross-type graph leakage risk.
+    # Build neighbor lookup once from the full map and export direct neighbors
+    # for both land and sea rows. Some runtimes evaluate coastal checks from
+    # either side, so adjacency must remain bidirectional across land/sea.
     valid_sea_ids = {int(s_id) for _, s_id in sea_items}
     valid_land_ids = set(pid_to_color.keys())
 
@@ -1424,13 +1477,9 @@ def export_provinces_txt(
         capital_city = ""
         if is_capital:
             capital_city = _sanitize_txt_field(_row_capital_city_name(land_row, country_capitals))
-        # Keep all direct neighbors for land rows (land + sea) so coastal
-        # gameplay checks can rely on this field.
+        # Keep all direct neighbors so coastal checks can use this field directly.
         all_neighbors = neighbors_by_pid.get(int(pid), [])
-        valid_neighbors = [
-            n for n in all_neighbors
-            if n in valid_land_ids or n in valid_sea_ids
-        ]
+        valid_neighbors = [n for n in all_neighbors if n in valid_land_ids or n in valid_sea_ids]
         neighbor_ids = ",".join(str(n) for n in valid_neighbors)
         ideology = ideology_by_pid.get(int(pid), "unknown")
         recruitable_population = int(recruitable_by_pid.get(int(pid), 0) or 0)
@@ -1458,9 +1507,9 @@ def export_provinces_txt(
 
     for col, sea_id in sea_items:
         r, g, b = col
-        # Keep sea adjacency sea-only to avoid cross-type graph leakage.
+        # Keep all direct neighbors for sea rows as well (includes bordering land).
         all_neighbors = neighbors_by_pid.get(int(sea_id), [])
-        valid_neighbors = [n for n in all_neighbors if n in valid_sea_ids]
+        valid_neighbors = [n for n in all_neighbors if n in valid_land_ids or n in valid_sea_ids]
         neighbor_ids = ",".join(str(n) for n in valid_neighbors)
 
         # Preserve usable navigation geometry for sea provinces as well.

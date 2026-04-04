@@ -1,0 +1,14 @@
+state={
+    id=19
+    name="STATE_GEO"
+    provinces={
+        362
+        363
+        364
+        365
+        366
+        367
+        368
+        369
+    }
+}

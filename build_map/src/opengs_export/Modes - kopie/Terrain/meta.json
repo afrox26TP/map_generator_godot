@@ -1,0 +1,6 @@
+{
+    "id": "terrain",
+    "name": "Terrain",
+    "description": "Province terrain type map",
+    "map_file": "TerrainMap.png"
+}

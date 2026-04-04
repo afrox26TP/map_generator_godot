@@ -1,0 +1,16 @@
+state={
+    id=5
+    name="STATE_BEL"
+    provinces={
+        21
+        22
+        23
+        24
+        25
+        26
+        27
+        28
+        29
+        30
+    }
+}

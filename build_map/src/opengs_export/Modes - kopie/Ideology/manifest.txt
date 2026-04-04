@@ -1,0 +1,2 @@
+mode=Ideology
+map=IdeologyMap.png

@@ -1,0 +1,10 @@
+state={
+    id=26
+    name="STATE_KOS"
+    provinces={
+        549
+        550
+        551
+        552
+    }
+}

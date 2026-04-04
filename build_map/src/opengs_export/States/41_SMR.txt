@@ -1,0 +1,7 @@
+state={
+    id=41
+    name="STATE_SMR"
+    provinces={
+        771
+    }
+}
