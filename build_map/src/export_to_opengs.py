@@ -31,8 +31,10 @@ DEFAULT_RECRUITABLE_SHARE = RECRUITABLE_SHARE_BY_IDEOLOGY["demokracie"]
 CAPITAL_RECRUITABLE_MULTIPLIER = 3.0
 PROVINCE_RENDER_SUPERSAMPLE = 2
 THIN_BRIDGE_MAX_WIDTH_PX = 4
-SEA_TO_SEA_MIN_SHARED_EDGES = 8
+SEA_TO_SEA_MIN_SHARED_EDGES = 1
 INLAND_SEA_MAX_ARTIFACT_PIXELS = 5000
+LAND_EDGE_ARTIFACT_MAX_SHARED_EDGES = 3
+LAND_EDGE_ARTIFACT_MIN_ANCHOR_DISTANCE_PX = 500.0
 
 
 # --------------------------------------------------------
@@ -1486,7 +1488,7 @@ def _compute_pid_anchor(full_id_map, pid):
     return int(xs[best_idx]), int(ys[best_idx])
 
 
-def _sea_anchor_line_crosses_land(full_id_map, pid_a, pid_b, anchors_by_pid, max_land_pixels=8):
+def _sea_anchor_line_crosses_land(full_id_map, pid_a, pid_b, anchors_by_pid, max_land_pixels=24):
     ax, ay = anchors_by_pid.get(int(pid_a), (0, 0))
     bx, by = anchors_by_pid.get(int(pid_b), (0, 0))
 
@@ -1499,6 +1501,12 @@ def _sea_anchor_line_crosses_land(full_id_map, pid_a, pid_b, anchors_by_pid, max
     vals = full_id_map[ys, xs]
     land_hits = (vals >= 0) & (vals != int(pid_a)) & (vals != int(pid_b))
     return int(np.count_nonzero(land_hits)) > int(max_land_pixels)
+
+
+def _anchor_distance(anchors_by_pid, pid_a, pid_b):
+    ax, ay = anchors_by_pid.get(int(pid_a), (0, 0))
+    bx, by = anchors_by_pid.get(int(pid_b), (0, 0))
+    return float(np.hypot(float(ax - bx), float(ay - by)))
 
 
 def export_provinces_txt(
@@ -1629,6 +1637,55 @@ def export_provinces_txt(
         return_pair_counts=True,
     )
 
+    # Guard against long-distance artifacts: if a land-involved edge has only
+    # a tiny shared border and very distant anchors, it is almost always a
+    # stray pixel/speckle connection and should not be a movement edge.
+    anchor_by_pid = {}
+    for pid in set(neighbors_by_pid.keys()) | valid_land_ids | valid_sea_ids:
+        anchor_by_pid[int(pid)] = _compute_pid_anchor(full_id_map, int(pid))
+
+    removed_land_land_edges = 0
+    removed_land_sea_edges = 0
+    removed_examples = []
+    for (pid_a, pid_b), shared_edges in pair_counts.items():
+        a = int(pid_a)
+        b = int(pid_b)
+        if shared_edges > LAND_EDGE_ARTIFACT_MAX_SHARED_EDGES:
+            continue
+
+        involves_land = (a in valid_land_ids) or (b in valid_land_ids)
+        if not involves_land:
+            continue
+
+        if b not in neighbors_by_pid.get(a, []):
+            continue
+
+        dist = _anchor_distance(anchor_by_pid, a, b)
+        if dist <= LAND_EDGE_ARTIFACT_MIN_ANCHOR_DISTANCE_PX:
+            continue
+
+        neighbors_by_pid[a] = [n for n in neighbors_by_pid.get(a, []) if n != b]
+        neighbors_by_pid[b] = [n for n in neighbors_by_pid.get(b, []) if n != a]
+
+        if a in valid_land_ids and b in valid_land_ids:
+            removed_land_land_edges += 1
+        else:
+            removed_land_sea_edges += 1
+
+        if len(removed_examples) < 12:
+            removed_examples.append((a, b, int(shared_edges), float(dist)))
+
+    if removed_land_land_edges > 0 or removed_land_sea_edges > 0:
+        print(
+            "[DEBUG] Removed long low-contact land edges: "
+            f"land-land={removed_land_land_edges}, "
+            f"land-sea={removed_land_sea_edges}, "
+            f"shared_edges<={LAND_EDGE_ARTIFACT_MAX_SHARED_EDGES}, "
+            f"distance>{LAND_EDGE_ARTIFACT_MIN_ANCHOR_DISTANCE_PX:.0f}px"
+        )
+        if removed_examples:
+            print(f"[DEBUG] Removed edge examples: {removed_examples}")
+
     # Build neighbor lookup once from the full map and export direct neighbors
     # for both land and sea rows. Some runtimes evaluate coastal checks from
     # either side, so adjacency must remain bidirectional across land/sea.
@@ -1648,27 +1705,44 @@ def export_provinces_txt(
     # Sea movement is rendered using province anchor points. If a direct sea-to-sea
     # edge would send the anchor-to-anchor segment across land, drop that edge.
     sea_anchor_by_pid = {
-        int(sea_id): _compute_pid_anchor(full_id_map, int(sea_id))
+        int(sea_id): anchor_by_pid.get(int(sea_id), _compute_pid_anchor(full_id_map, int(sea_id)))
         for _, sea_id in sea_items
     }
     blocked_sea_edges = 0
+    preserved_critical_sea_edges = 0
     for sea_id in list(valid_sea_ids):
         sea_neighbors = list(neighbors_by_pid.get(sea_id, []))
         for neighbor_id in sea_neighbors:
             if neighbor_id <= sea_id or neighbor_id not in valid_sea_ids:
                 continue
             if _sea_anchor_line_crosses_land(full_id_map, sea_id, neighbor_id, sea_anchor_by_pid):
+                sea_degree_before = len([
+                    n for n in neighbors_by_pid.get(sea_id, []) if n in valid_sea_ids
+                ])
+                neighbor_degree_before = len([
+                    n for n in neighbors_by_pid.get(neighbor_id, []) if n in valid_sea_ids
+                ])
+
+                # Do not remove an edge if it would isolate either sea province.
+                if sea_degree_before <= 1 or neighbor_degree_before <= 1:
+                    preserved_critical_sea_edges += 1
+                    continue
+
                 neighbors_by_pid[sea_id] = [n for n in neighbors_by_pid.get(sea_id, []) if n != neighbor_id]
                 neighbors_by_pid[neighbor_id] = [n for n in neighbors_by_pid.get(neighbor_id, []) if n != sea_id]
                 blocked_sea_edges += 1
 
-    if blocked_sea_edges > 0:
-        print(f"[DEBUG] Blocked sea edges crossing land: {blocked_sea_edges}")
+    if blocked_sea_edges > 0 or preserved_critical_sea_edges > 0:
+        print(
+            "[DEBUG] Sea edge filter summary: "
+            f"blocked={blocked_sea_edges}, "
+            f"preserved_critical={preserved_critical_sea_edges}"
+        )
 
     # Fallback: if a sea province ends up with zero sea neighbors after filtering,
     # restore the strongest original sea contact (by shared-edge count) when safe.
     restored_isolated_sea_edges = 0
-    restored_isolated_sea_edges_nearest = 0
+    restored_isolated_sea_edges_forced_touch = 0
 
     def _add_bidirectional_sea_edge(pid_a, pid_b):
         neighbors_by_pid.setdefault(pid_a, [])
@@ -1697,6 +1771,7 @@ def export_provinces_txt(
 
         candidates.sort(key=lambda item: item[1], reverse=True)
         restored = False
+        strongest_touch_candidate = candidates[0][0] if candidates else None
         for candidate_id, _shared_edges in candidates:
             if _sea_anchor_line_crosses_land(
                 full_id_map,
@@ -1713,35 +1788,21 @@ def export_provinces_txt(
         if restored:
             continue
 
-        # 2) If no touching edge survives, connect to nearest legal sea province.
-        ax, ay = sea_anchor_by_pid.get(sea_id, (0, 0))
-        nearest_candidates = []
-        for other_id in valid_sea_ids:
-            if other_id == sea_id:
-                continue
-            bx, by = sea_anchor_by_pid.get(other_id, (0, 0))
-            dist2 = (ax - bx) * (ax - bx) + (ay - by) * (ay - by)
-            nearest_candidates.append((dist2, other_id))
+        # 1b) Safety net: keep graph connected by restoring the strongest real
+        # touching sea edge even when the anchor-line heuristic rejects it.
+        if strongest_touch_candidate is not None:
+            _add_bidirectional_sea_edge(sea_id, strongest_touch_candidate)
+            restored_isolated_sea_edges_forced_touch += 1
+            continue
 
-        nearest_candidates.sort(key=lambda item: item[0])
-        for _dist2, candidate_id in nearest_candidates:
-            if _sea_anchor_line_crosses_land(
-                full_id_map,
-                sea_id,
-                candidate_id,
-                sea_anchor_by_pid,
-                max_land_pixels=40,
-            ):
-                continue
-            _add_bidirectional_sea_edge(sea_id, candidate_id)
-            restored_isolated_sea_edges_nearest += 1
-            break
-
-    if restored_isolated_sea_edges > 0 or restored_isolated_sea_edges_nearest > 0:
+    if (
+        restored_isolated_sea_edges > 0
+        or restored_isolated_sea_edges_forced_touch > 0
+    ):
         print(
             "[DEBUG] Restored isolated sea edges: "
             f"touching={restored_isolated_sea_edges}, "
-            f"nearest={restored_isolated_sea_edges_nearest}"
+            f"forced_touch={restored_isolated_sea_edges_forced_touch}"
         )
 
     for pid in range(max_pid + 1):
