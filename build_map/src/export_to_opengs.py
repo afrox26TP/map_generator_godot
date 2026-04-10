@@ -35,6 +35,7 @@ SEA_TO_SEA_MIN_SHARED_EDGES = 1
 INLAND_SEA_MAX_ARTIFACT_PIXELS = 5000
 LAND_EDGE_ARTIFACT_MAX_SHARED_EDGES = 3
 LAND_EDGE_ARTIFACT_MIN_ANCHOR_DISTANCE_PX = 500.0
+SEA_ANCHOR_FILTER_MAX_SHARED_EDGES = 6
 
 
 # --------------------------------------------------------
@@ -1715,6 +1716,12 @@ def export_provinces_txt(
         for neighbor_id in sea_neighbors:
             if neighbor_id <= sea_id or neighbor_id not in valid_sea_ids:
                 continue
+
+            pair_key = (min(int(sea_id), int(neighbor_id)), max(int(sea_id), int(neighbor_id)))
+            shared_edges = int(pair_counts.get(pair_key, 0))
+            if shared_edges > SEA_ANCHOR_FILTER_MAX_SHARED_EDGES:
+                continue
+
             if _sea_anchor_line_crosses_land(full_id_map, sea_id, neighbor_id, sea_anchor_by_pid):
                 sea_degree_before = len([
                     n for n in neighbors_by_pid.get(sea_id, []) if n in valid_sea_ids
@@ -1736,7 +1743,8 @@ def export_provinces_txt(
         print(
             "[DEBUG] Sea edge filter summary: "
             f"blocked={blocked_sea_edges}, "
-            f"preserved_critical={preserved_critical_sea_edges}"
+            f"preserved_critical={preserved_critical_sea_edges}, "
+            f"max_shared_for_filter={SEA_ANCHOR_FILTER_MAX_SHARED_EDGES}"
         )
 
     # Fallback: if a sea province ends up with zero sea neighbors after filtering,
