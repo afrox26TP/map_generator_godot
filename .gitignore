@@ -10,7 +10,7 @@ venv/
 build_map/src/_build_log.txt
 build_map/src/_build_err.txt
 
-# Windows Explorer backup copies ("kopie" = copy in Czech/Slovak)
+
 *kopie*
 * - kopie/
 * - kopie.*/
