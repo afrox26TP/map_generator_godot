@@ -155,11 +155,13 @@ def iso_palette(iso: str) -> Dict[str, str]:
 
 
 def build_icon_svg(iso: str) -> str:
+    # AI-GENERATED
     colors = iso_palette(iso)
     return f"""<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"96\" height=\"96\" viewBox=\"0 0 96 96\">\n  <defs>\n    <linearGradient id=\"bg\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\">\n      <stop offset=\"0%\" stop-color=\"{colors['base']}\"/>\n      <stop offset=\"100%\" stop-color=\"{colors['edge']}\"/>\n    </linearGradient>\n  </defs>\n  <rect x=\"1\" y=\"1\" width=\"94\" height=\"94\" rx=\"14\" fill=\"url(#bg)\" stroke=\"#111111\" stroke-width=\"2\"/>\n  <path d=\"M48 16 L68 24 L64 56 L48 74 L32 56 L28 24 Z\" fill=\"{colors['accent']}\" stroke=\"#111111\" stroke-width=\"2\"/>\n  <path d=\"M27 66 L46 47 L50 51 L31 70 Z\" fill=\"#e8e8e8\" stroke=\"#111111\" stroke-width=\"1.2\"/>\n  <path d=\"M69 66 L50 47 L46 51 L65 70 Z\" fill=\"#e8e8e8\" stroke=\"#111111\" stroke-width=\"1.2\"/>\n  <rect x=\"26\" y=\"67\" width=\"7\" height=\"5\" fill=\"#5a3d2b\" stroke=\"#111111\" stroke-width=\"1\"/>\n  <rect x=\"63\" y=\"67\" width=\"7\" height=\"5\" fill=\"#5a3d2b\" stroke=\"#111111\" stroke-width=\"1\"/>\n  <text x=\"48\" y=\"45\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\" fill=\"#111111\" font-family=\"Verdana, Tahoma, sans-serif\">{iso}</text>\n</svg>\n"""
 
 
 def build_template_svg() -> str:
+        # AI-GENERATED
         # White fill keeps icon easy to tint in Godot via modulate/self_modulate.
         return """<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96">
     <rect x="1" y="1" width="94" height="94" rx="14" fill="#ffffff" fill-opacity="0.28" stroke="#ffffff" stroke-width="2"/>
@@ -173,6 +175,7 @@ def build_template_svg() -> str:
 
 
 def build_ideology_symbol_svg(ideology: str) -> str:
+    # AI-GENERATED
     symbols = {
         "demokracie": '<circle cx="48" cy="44" r="9" fill="#ffffff" fill-opacity="0.96"/><path d="M48 34 L51 43 L61 43 L53 49 L56 58 L48 52 L40 58 L43 49 L35 43 L45 43 Z" fill="#ffffff" fill-opacity="0.75"/>',
         "autokracie": '<path d="M35 46 L40 38 L48 44 L56 38 L61 46 L57 54 L39 54 Z" fill="#ffffff" fill-opacity="0.95"/><rect x="42" y="54" width="12" height="4" fill="#ffffff" fill-opacity="0.85"/>',
@@ -245,6 +248,7 @@ def ensure_parent_dir(path: str) -> None:
 
 
 def write_text_atomic(path: str, content: str) -> None:
+    # AI-EDITED
     ensure_parent_dir(path)
     tmp_path = path + ".tmp"
     with open(tmp_path, "w", encoding="utf-8", newline="") as handle:

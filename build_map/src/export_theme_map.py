@@ -12,6 +12,7 @@ from export_shared import EXPORT_SIZE, SEA_COLOR, OUTLINE_COLOR, OUT, draw_voron
 
 
 def export_theme_map(id_map, bounds, sea_regions, filename, values):
+    # AI-GENERATED
     h, w = id_map.shape
 
     img = Image.new("RGB", (w, h))
@@ -32,6 +33,7 @@ def export_theme_map(id_map, bounds, sea_regions, filename, values):
 
 
 def export_mode_folder(mode_name, file_name, description):
+    # AI-EDITED
     mode_dir = os.path.join(OUT, "Modes", mode_name)
     os.makedirs(mode_dir, exist_ok=True)
 
@@ -87,6 +89,7 @@ def export_gdp_map(id_map, sea_regions, bounds, gdp=None, max_pid=None):
             span = log_max - log_min or 1.0
 
             def lerp(a, b, t):
+                # AI-EDITED
                 return int(a + (b - a) * t)
 
             low = (245, 233, 184)   # light sand
@@ -126,6 +129,7 @@ def export_population_map(
     province_country=None,
     max_pid=None,
 ):
+    # AI-GENERATED
     """
     population: dict pid -> population number
     land_areas: dict pid -> area in km^2
@@ -187,6 +191,7 @@ def export_population_map(
 
                 for pid in range(max_pid + 1):
                     source = population_source.get(pid, "")
+                    # AI-EDITED
                     if source.startswith("matched_"):
                         continue
 
@@ -258,6 +263,7 @@ def export_recruitable_population_map(
     recruit_values = None
     if recruitable_population:
         metric = {
+            # AI-EDITED
             pid: max(float(recruitable_population.get(pid, 0) or 0.0), 0.0)
             for pid in range(max_pid + 1)
         }

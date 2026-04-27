@@ -1,3 +1,4 @@
+# AI-GENERATED
 import os
 import re
 from typing import Dict, List, Optional, Tuple
@@ -117,6 +118,7 @@ def load_country_gdp(land: gpd.GeoDataFrame, target_year: int) -> Dict[str, Dict
         if raw_df.shape[1] >= 2 and _looks_like_iso3(raw_df.iloc[:, 0]):
             rename = {0: "country_iso3", 1: "gdp_total"}
 
+            # AI-GENERATED
             # Accept multiple headerless layouts:
             # 5 cols: ISO3;gdp_total;gdp_per_capita;year;source
             # 4 cols: ISO3;gdp_total;year;source (population-style) OR ISO3;gdp_total;gdp_pc;year
@@ -148,6 +150,7 @@ def load_country_gdp(land: gpd.GeoDataFrame, target_year: int) -> Dict[str, Dict
             print("[GDP] country_gdp_totals.csv loaded as headerless format.")
         else:
             print("[GDP] country_gdp_totals.csv missing required columns; ignoring GDP input.")
+            # HELPED BY AI
             return {}
 
     land_isos = (

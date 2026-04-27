@@ -1,3 +1,4 @@
+# AI-GENERATED
 import argparse
 import ast
 import csv
@@ -295,6 +296,7 @@ def normalize_ideology(value: str) -> str:
     }
 
     if text in alias_map:
+        # AI-EDITED
         return alias_map[text]
 
     for token in text.split():

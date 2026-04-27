@@ -1,5 +1,6 @@
 ﻿from textwrap import dedent
 
+# HELPED BY AI
 BATCHES = {
     "b1_core": ["Q142", "Q183", "Q38", "Q29", "Q45"],
     "b2_benelux_alps": ["Q31", "Q55", "Q32", "Q39", "Q40"],

@@ -71,6 +71,7 @@ def _draw_filled_coords(draw, coords, color):
 
 
 def _draw_polygon_with_holes(draw, poly, bounds, size, fill_color, hole_color=None):
+    # AI-GENERATED
     exterior_coords = geom_to_pixel_coords(poly, bounds, size)
     _draw_filled_coords(draw, exterior_coords, fill_color)
 
@@ -142,6 +143,7 @@ def _downsample_by_majority(img, factor=2, chunk_rows=512):
 
 
 def _remove_one_pixel_land_bridges(img, province_colors, pid_to_country, max_width_px=1):
+    # AI-GENERATED
     """
     Break visually fake narrow land bridges inside a province and
     reassign seam pixels to neighboring provinces.
@@ -265,6 +267,7 @@ def _remove_one_pixel_land_bridges(img, province_colors, pid_to_country, max_wid
 
 
 def _despeckle_land_components(img, province_colors, pid_to_country, min_pixels=8):
+    # AI-GENERATED
     """Remove tiny isolated land-color components caused by raster artifacts."""
     arr = np.array(img, copy=True)
     h, w, _ = arr.shape
@@ -582,6 +585,7 @@ def _erase_tiny_global_sea_artifacts(img, province_colors, max_pixels=2):
 
 
 def _erase_inland_sea_components(img, province_colors):
+    # HELPED BY AI
     """Remove sea components not touching the map edge by recolouring them with
     the most common adjacent land province.
 
@@ -742,6 +746,7 @@ def export_province_map(land, sea_regions):
 
     # -------------------------
     # LAND PROVINCES
+    # HELPED BY AI
     # -------------------------
     # Draw large provinces first and smaller/enclave provinces later.
     # This minimizes order-dependent overwrites along complex borders.
@@ -901,6 +906,7 @@ def export_id_map(province_colors):
 
 # --------------------------------------------------------
 # EXPORT STATES
+# HELPED BY AI
 # --------------------------------------------------------
 def export_states(land):
     states = sorted(land["country"].unique())
@@ -985,6 +991,7 @@ def _normalize_flag(value):
 
 
 def _clean_optional_text(value):
+    # AI-GENERATED
     if value is None:
         return ""
     text = str(value).strip()
@@ -1014,6 +1021,7 @@ def _row_is_capital(land_row):
 
 
 def _build_country_capital_lookup(land):
+    # AI-EDITED
     lookup = {}
 
     for _, row in land.iterrows():
@@ -1082,6 +1090,7 @@ def _build_population_export_lookup(rows):
 
 
 def _build_gdp_export_lookup(rows):
+    # AI-EDITED
     lookup = {}
     for row in rows or []:
         pid = int(row.get("province_id") or 0)

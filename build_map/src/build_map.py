@@ -33,8 +33,10 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 debug("PART 1 START — loading & filtering admin1")
 
 admin = gpd.read_file(os.path.join(BASE, "ne_10m_admin_1_states_provinces.shp"))
+# AI-GENERATED
 admin = admin.to_crs(3035)
 admin["geometry"] = admin.geometry.buffer(0)
+# AI-END
 
 # -----------------------------
 # LIST OF COUNTRIES TO KEEP
@@ -138,11 +140,13 @@ debug(f"Regions loaded after country filter: {len(admin)}")
 
 
 def _clean_optional_text(value):
+    # HELPED BY AI
     if value is None:
         return ""
     text = str(value).strip()
     if text.lower() in {"", "nan", "none"}:
         return ""
+    # AI-END
     return text
 
 
@@ -162,24 +166,33 @@ def _extract_capital_city_name(row):
 def mark_capital_provinces(gdf):
     gdf = gdf.copy()
     type_en = gdf.get("type_en", pd.Series("", index=gdf.index)).fillna("").astype(str)
+    # AI-GENERATED
     type_raw = gdf.get("type", pd.Series("", index=gdf.index)).fillna("").astype(str)
+    # AI-END
     capital_mask = (
         type_en.str.contains("capital", case=False, regex=False)
+        # AI-GENERATED
         | type_raw.str.contains("capital", case=False, regex=False)
+        # AI-END
     )
     gdf["is_capital_province"] = capital_mask.astype(int)
     gdf["capital_city_name"] = ""
+    # AI-GENERATED
     if capital_mask.any():
         gdf.loc[capital_mask, "capital_city_name"] = gdf.loc[capital_mask].apply(
             _extract_capital_city_name,
             axis=1,
         )
+    # AI-END
 
     unresolved = []
+    # AI-GENERATED
     for country, (capital_name, lon, lat) in COUNTRY_CAPITAL_POINTS.items():
         country_mask = gdf["country"] == country
+        # HELPED BY AI
         if not country_mask.any():
             continue
+        # AI-END
         if int(gdf.loc[country_mask, "is_capital_province"].sum()) > 0:
             continue
 
@@ -187,6 +200,7 @@ def mark_capital_provinces(gdf):
         capital_point = gpd.GeoSeries([Point(lon, lat)], crs=4326).to_crs(gdf.crs).iloc[0]
 
         contains = group.geometry.contains(capital_point) | group.geometry.touches(capital_point)
+        # AI-EDITED
         if contains.any():
             matches = group[contains]
             target_idx = matches.geometry.area.idxmin()
@@ -196,18 +210,21 @@ def mark_capital_provinces(gdf):
             if float(distances.loc[target_idx]) > CAPITAL_POINT_FALLBACK_MAX_DISTANCE_M:
                 unresolved.append(country)
                 continue
+        # AI-END
 
         gdf.loc[target_idx, "is_capital_province"] = 1
         if not _clean_optional_text(gdf.loc[target_idx, "capital_city_name"]):
+            # AI-EDITED
             gdf.loc[target_idx, "capital_city_name"] = capital_name
+            # AI-END
 
     if unresolved:
         debug(f"Capital fallback unresolved countries: {', '.join(sorted(unresolved))}")
-
     return gdf
 
 
 def _text_to_shapely_geom(text, cx_m, cy_m, total_width_m, font_path=None):
+    # AI-GENERATED
     """Render *text* as a Shapely geometry (union of buffered pixel dots) centred at (cx_m, cy_m)."""
     from PIL import Image as _Im, ImageDraw as _IDraw, ImageFont as _IFont
     from shapely.geometry import Point as _Pt
@@ -254,6 +271,7 @@ def _text_to_shapely_geom(text, cx_m, cy_m, total_width_m, font_path=None):
     # At final 4096-px map resolution over ~8000 km, 1 px ≈ 2 km, so we need ≥ 3 km radius.
     r = max(scale * step * 1.5, 3_500)
     circles = [_Pt(float(x), float(y)).buffer(r) for x, y in zip(geo_xs, geo_ys)]
+    # AI-END
     return _uu(circles)
 
 

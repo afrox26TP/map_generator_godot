@@ -1,4 +1,5 @@
-﻿import os
+﻿# AI-GENERATED
+import os
 import re
 import glob
 import unicodedata
@@ -87,6 +88,7 @@ def remove_holes(g):
 
 
 def merge_small_absolute(gdf: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
+    # HELPED BY AI
     gdf = gdf.copy()
     gdf["area"] = gdf.geometry.area
     merged = []
@@ -126,6 +128,7 @@ def load_land() -> gpd.GeoDataFrame:
     admin["geometry"] = admin.geometry.buffer(0)
 
     admin["country"] = admin["adm0_a3"]
+    # HELPED BY AI
     admin = admin[admin["country"].isin(EUROPE_COUNTRIES)].reset_index(drop=True)
 
     def cut_russia(geom):
@@ -254,6 +257,7 @@ def apply_aliases(
         out_region.append(region_norm)
 
     pop_df["norm_country"] = out_country
+    # HELPED BY AI
     pop_df["norm_region"] = out_region
 
     if country_changes or region_rules:

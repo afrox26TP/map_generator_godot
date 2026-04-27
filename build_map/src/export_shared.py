@@ -1,5 +1,6 @@
 import os
 
+# HELPED BY AI
 EXPORT_SIZE = 4096
 SEA_COLOR = (20, 80, 200)
 OUTLINE_COLOR = (0, 32, 96)
